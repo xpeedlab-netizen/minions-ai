@@ -91,7 +91,7 @@ function PipPanel({
         {isEmpty && (
           <div className="mr-auto max-w-[88%] rounded-2xl rounded-tl-xs border border-border bg-[var(--pip-bg)] px-4 py-2.5 text-xs text-ink shadow-xs">
             <p className="leading-relaxed">
-              Hello! I&apos;m Pip. How can I help with your plumbing needs today?
+              Hello! I&apos;m Pip. How can I help you today?
             </p>
           </div>
         )}

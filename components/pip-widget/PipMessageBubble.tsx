@@ -26,14 +26,18 @@ export default function PipMessageBubble({ message, isFirstInRun }: Props) {
   }
 
   const firstSource = message.sources?.[0];
-  const showSourceTag = !message.error && Boolean(firstSource?.heading);
+  // Grounding is what "verified" means: a reply with no retrieved sources — the
+  // backend's no-match fallback, which carries no error flag — is neither an
+  // error nor a verified answer, so it gets plain text and a timestamp only.
+  const isGrounded = !message.error && Boolean(message.sources?.length);
+  const showSourceTag = isGrounded && Boolean(firstSource?.heading);
 
   return (
     <div className="mr-auto max-w-[88%]">
       <div className="rounded-2xl rounded-tl-xs border border-border bg-[var(--pip-bg)] px-4 py-2.5 text-xs text-ink shadow-xs">
         {/* "Pip Verified Answer" mirrors the hero mockup's label, and is withheld
-            on error turns where nothing was verified against the knowledge base. */}
-        {isFirstInRun && !message.error && (
+            whenever nothing was actually retrieved from the knowledge base. */}
+        {isFirstInRun && isGrounded && (
           <div className="mb-0.5 flex items-center justify-between font-mono text-[10px] text-ink/40">
             <span className="flex items-center gap-1">
               <Sparkles className="size-3" /> Pip Verified Answer
@@ -41,7 +45,7 @@ export default function PipMessageBubble({ message, isFirstInRun }: Props) {
             <span>{formatTime(message.timestamp)}</span>
           </div>
         )}
-        {isFirstInRun && message.error && (
+        {isFirstInRun && !isGrounded && (
           <div className="mb-0.5 flex items-center justify-end font-mono text-[10px] text-ink/40">
             <span>{formatTime(message.timestamp)}</span>
           </div>

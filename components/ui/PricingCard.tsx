@@ -1,0 +1,45 @@
+import { Check } from "lucide-react";
+import Button from "./Button";
+import type { PricingPlan } from "@/lib/data/pricing";
+
+export default function PricingCard({ plan }: { plan: PricingPlan }) {
+  return (
+    <div
+      className={`relative flex h-full flex-col rounded-2xl border p-8 ${
+        plan.popular
+          ? "border-teal bg-teal text-white shadow-lg lg:-translate-y-2"
+          : "border-border bg-white text-ink"
+      }`}
+    >
+      {plan.popular && (
+        <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-cream px-4 py-1 text-sm font-heading font-bold text-ink">
+          Most popular
+        </span>
+      )}
+      <h3 className="font-heading font-bold text-2xl">{plan.name}</h3>
+      <p className="mt-4">
+        {plan.price ? (
+          <>
+            <span className="font-mono text-4xl font-medium">{plan.price}</span>
+            <span className={plan.popular ? "text-white/70" : "text-ink/60"}>/mo</span>
+          </>
+        ) : (
+          <span className="font-mono text-4xl font-medium">Custom</span>
+        )}
+      </p>
+
+      <ul className="mt-6 flex-1 space-y-3">
+        {plan.features.map((f) => (
+          <li key={f} className="flex items-start gap-2.5 text-sm">
+            <Check className={`size-4 mt-0.5 shrink-0 ${plan.popular ? "text-cream" : "text-success"}`} />
+            <span>{f}</span>
+          </li>
+        ))}
+      </ul>
+
+      <Button href="/contact" variant={plan.popular ? "primary" : "outline"} className="mt-6 w-full">
+        {plan.ctaLabel}
+      </Button>
+    </div>
+  );
+}

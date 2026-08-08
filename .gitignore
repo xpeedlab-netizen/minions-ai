@@ -39,3 +39,22 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE / AI tools
+.claude
+.gemini
+.roo
+.trae
+.warp
+.windsurf
+.opencode
+.qoder
+.factory
+.kilocode
+.kiro
+.augment
+.codebuddy
+.codewhale
+.continue
+.cursor
+

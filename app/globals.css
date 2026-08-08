@@ -23,6 +23,17 @@ html {
   color-scheme: light;
 }
 
+/* Pip chat widget tokens. Aliased to the existing brand palette rather than
+   redeclared, so the widget tracks any future change to those tokens.
+   --pip-ink maps to --color-accent-blue (#3a6ea5), the blue already used for
+   Pip's avatar and answer bubbles in the hero mockup. */
+:root {
+  --pip-bg: var(--color-cream);
+  --pip-ink: var(--color-accent-blue);
+  --pip-accent: var(--color-coral);
+  --pip-online: var(--color-success);
+}
+
 body {
   font-family: var(--font-body);
 }

@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileStickyBar from "@/components/layout/MobileStickyBar";
+import PipChatWidget from "@/components/pip-widget/PipChatWidget";
+import { PipSessionProvider } from "@/components/pip-widget/usePipSession";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-heading",
@@ -69,10 +71,15 @@ export default function RootLayout({
       className={`${jakarta.variable} ${inter.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink font-body pb-16 md:pb-0">
-        <Header />
-        <main className="flex-1 flex flex-col">{children}</main>
-        <Footer />
-        <MobileStickyBar />
+        {/* One provider above every widget: inline mounts inside `children` and
+            the floating mount below share a single message list. */}
+        <PipSessionProvider>
+          <Header />
+          <main className="flex-1 flex flex-col">{children}</main>
+          <Footer />
+          <MobileStickyBar />
+          <PipChatWidget variant="floating" />
+        </PipSessionProvider>
       </body>
     </html>
   );

@@ -9,12 +9,12 @@ export default function PlumbingFinalCta() {
             Stop losing emergency jobs to the &quot;First Answer&quot; gap.
           </h2>
           <p className="mt-4 text-white/70 leading-relaxed max-w-2xl mx-auto">
-            Apply for our Founding Client Offer. We&apos;ll run a free ROI Audit on your current
+            Book a demo to see how Rex handles emergency calls. We&apos;ll run a free ROI Audit on your current
             call volume to show you exactly how many leads Rex would have saved last month.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button href="/contact" size="lg" showArrow>
-              Claim Founding Offer
+              Book a Call
             </Button>
             <Button
               href="/live-demo"
@@ -25,9 +25,7 @@ export default function PlumbingFinalCta() {
               Schedule Demo
             </Button>
           </div>
-          <p className="mt-6 font-mono text-xs uppercase tracking-wide text-white/40">
-            Limited to 10 plumbing companies per state
-          </p>
+
         </div>
       </div>
     </section>

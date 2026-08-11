@@ -22,7 +22,7 @@ export default function ElectricalLocalMap() {
             />
           </div>
           <div className="absolute -bottom-6 -right-4 max-w-[220px] rounded-xl border border-border bg-white p-3 shadow-lg">
-            <p className="font-mono text-[9px] uppercase tracking-wide text-ink/40">Last action</p>
+            <p className="font-mono text-[9px] uppercase tracking-wide text-ink/40">Example &mdash; not live data</p>
             <p className="mt-1 text-sm font-medium text-ink leading-snug">
               Zip dispatched tech to 60614 (Electrical Outage)
             </p>

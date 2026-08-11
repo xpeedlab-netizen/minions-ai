@@ -5,12 +5,12 @@ const cards = [
   {
     icon: CloudLightning,
     title: "The Sunday Surge",
-    body: "Storms don't wait for office hours. 65% of emergency roofing calls happen after 6 PM or on weekends.",
+    body: "Storms don't wait for office hours. Emergency roofing calls spike outside 9-to-5, when your office isn't picking up.",
   },
   {
     icon: TrendingDown,
     title: "The Lead Decay",
-    body: "Lead value drops by 10x if you wait just 10 minutes to respond. For a $15k roof, that's a expensive wait.",
+    body: "Lead value drops significantly if you wait too long to respond. For a high-ticket roof, that's an expensive wait.",
   },
   {
     icon: ClipboardList,

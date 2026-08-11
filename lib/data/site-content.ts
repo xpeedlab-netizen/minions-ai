@@ -7,14 +7,15 @@
 
 export const SETUP_TIME_PROMISE = "About a week";
 
+const guaranteeDays = 30;
 export const GUARANTEE = {
-  days: 30,
+  days: guaranteeDays,
   heading: "If it doesn't book you jobs, don't pay for it.",
-  body: "Try the crew for 30 days. If it hasn't booked you work you'd otherwise have missed, we refund the month and help you forward your line back. No contract, no cancellation fee, no argument.",
-  short: "No contract · Live in about a week · 30-day guarantee",
+  body: `Try the crew for ${guaranteeDays} days. If it hasn't booked you work you'd otherwise have missed, we refund the month and help you forward your line back. No contract, no cancellation fee, no argument.`,
+  short: `No contract · Live in about a week · ${guaranteeDays}-day guarantee`,
 };
 
-export const TRUST_BAR_TEXT = "New company. Month-to-month. 30-day guarantee. You can stop any time — that's the deal.";
+export const TRUST_BAR_TEXT = `New company. Month-to-month. ${guaranteeDays}-day guarantee. You can stop any time — that's the deal.`;
 
 export const PROOF_STATS = [
   {
@@ -45,7 +46,7 @@ export const FOUNDER_STORY = {
 
 export const HONEST_TRUTH = {
   heading: "The Honest Truth",
-  body: "We're new, and we're not going to pretend otherwise. We don't have a thousand reviews or a wall of client logos yet. What we do have is a system that works, and a month-to-month agreement you can walk away from. Judge us on what we build for you in week one, not on a testimonial we could have written ourselves.",
+  body: `We're new, and we're not going to pretend otherwise. We don't have a thousand reviews or a wall of client logos yet. What we do have is a system that works, a month-to-month agreement you can walk away from, and a ${guaranteeDays}-day guarantee — so the most this can cost you is one month. Judge us on what we build for you in week one, not on a testimonial we could have written ourselves.`,
 };
 
 export const INTEGRATION_COPY = {
@@ -93,7 +94,7 @@ export const APPROVED_FAQS = [
   {
     id: "why-trust-you",
     q: "You're new, and you're a small team overseas — why should I trust you?",
-    a: "Fair question. Here's the honest answer: you work directly with the two of us, not a rep. It's month-to-month with a 30-day guarantee. And you get to hear the thing working before you commit. That's the only case we can make right now, so it's the one we're making.",
+    a: `Fair question. Here's the honest answer: you work directly with the two of us, not a rep. It's month-to-month with a ${guaranteeDays}-day guarantee. And you get to hear the thing working before you commit. That's the only case we can make right now, so it's the one we're making.`,
   },
 ];
 

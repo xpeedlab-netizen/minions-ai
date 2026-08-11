@@ -14,7 +14,7 @@ export default function HvacGrowthBanner() {
               Efficiency is the new growth.
             </h2>
             <p className="text-sm text-white/60">
-              Join 500+ HVAC businesses scaling without adding overhead.
+              Scale your HVAC business without adding overhead.
             </p>
           </div>
         </div>

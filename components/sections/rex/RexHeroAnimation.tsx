@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, PhoneCall, CheckCircle2, Volume2, ShieldAlert } from "lucide-react";
@@ -32,8 +33,14 @@ export default function RexHeroAnimation() {
       {/* Header Bar */}
       <div className="flex items-center justify-between border-b border-border pb-4">
         <div className="flex items-center gap-3">
-          <div className="relative flex size-10 items-center justify-center rounded-2xl bg-teal text-white shadow-sm">
-            <PhoneCall className="size-5" />
+          <div className="relative flex size-12 items-center justify-center rounded-2xl bg-[#0b484e] border border-teal/30 p-1 shadow-sm overflow-hidden shrink-0">
+            <Image
+              src="/images/mascots/rex.png"
+              alt="Rex Mascot Avatar"
+              width={48}
+              height={48}
+              className="object-contain"
+            />
           </div>
           <div>
             <h3 className="font-heading font-bold text-ink text-base">Rex — AI Dispatcher</h3>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Workflow, UserCheck, Play } from "lucide-react";
@@ -37,8 +38,14 @@ export default function GiaHeroAnimation() {
       {/* Header Bar */}
       <div className="flex items-center justify-between border-b border-border pb-4">
         <div className="flex items-center gap-3">
-          <div className="relative flex size-10 items-center justify-center rounded-2xl bg-success text-white shadow-sm">
-            <Workflow className="size-5" />
+          <div className="relative flex size-12 items-center justify-center rounded-2xl bg-[#1B8A5A]/10 border border-[#1B8A5A]/30 p-1 shadow-sm overflow-hidden shrink-0">
+            <Image
+              src="/images/mascots/gia.png"
+              alt="Gia Mascot Avatar"
+              width={48}
+              height={48}
+              className="object-contain"
+            />
           </div>
           <div>
             <h3 className="font-heading font-bold text-ink text-base">Gia — CRM Autopilot</h3>

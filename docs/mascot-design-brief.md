@@ -59,8 +59,9 @@ Designed to pair seamlessly with the website's design system (`bg-ink #0A1118`, 
 
 ---
 
-## 7. Transparent Compositing & Background Extraction Spec (WO#04.2 Update)
-- **Extraction Protocol:** Characters must be rendered on a flat, solid, evenly lit background (matching container base target `#0B484E` or high-contrast solid) to eliminate color fringing, halos, or ghosting during background removal.
-- **Hero Asset Output:** Exported as high-resolution transparent PNG with anti-aliased alpha edge mapping.
-- **Compositing Treatment:** Includes ground contact shadow (`bg-black/60 blur-md`), soft radial light wrap glow (`bg-teal/25 blur-3xl`), and drop shadow (`drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)]`).
+## 7. Permanent True Transparency & Reusable Asset Standard (WO#04.3 Update)
+- **Chroma-Key Rendering Protocol:** All mascots are generated against a flat, saturated chroma-key background (e.g. Magenta `#FF007F` or Cyan `#00FFFF`) guaranteed not to collide with the character's accent color palette.
+- **Extraction & Alpha Mapping:** Assets are processed via color-distance alpha thresholding and feathered edge mapping to yield true transparent PNGs stored centrally in `/public/images/mascots/` (`rex.png`, `zip.png`, `pip.png`, `gia.png`, `otto.png`).
+- **Placement-Time Shadow & Glow Separation:** Contact shadows and ambient light wraps must NOT be baked into source image files. They are applied dynamically via container CSS at placement time (`bg-black/40 blur-md`, `bg-[accent]/20 blur-3xl`) to match each destination's specific lighting and background color.
+
 

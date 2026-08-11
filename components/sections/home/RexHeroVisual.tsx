@@ -4,7 +4,7 @@ import { PhoneCall, Sparkles } from "lucide-react";
 export default function RexHeroVisual() {
   return (
     <div className="bg-[#0b484e] p-6 sm:p-10 flex flex-col items-center justify-center relative min-h-[380px] sm:min-h-[460px] w-full overflow-hidden select-none">
-      {/* Soft ambient light wrap radial glow */}
+      {/* Soft ambient light wrap radial glow applied at placement time */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-80 h-80 rounded-full bg-teal/25 blur-3xl" />
         <div className="absolute w-[420px] h-[420px] rounded-full border border-teal/20 opacity-30" />
@@ -18,9 +18,9 @@ export default function RexHeroVisual() {
           {/* Ground Contact Shadow Ellipse beneath Rex */}
           <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-48 h-5 rounded-full bg-black/60 blur-md pointer-events-none" />
 
-          {/* Static Transparent 3D Mascot Hero Asset */}
+          {/* Reusable Transparent 3D Mascot Hero Asset */}
           <Image
-            src="/images/rex-3d-mascot-hero.png"
+            src="/images/mascots/rex.png"
             alt="Rex AI Voice Agent 3D Mascot"
             fill
             priority

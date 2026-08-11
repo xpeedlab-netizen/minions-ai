@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FileText, CheckCircle2, RefreshCw, FolderCheck, Sparkles } from "lucide-react";
@@ -22,8 +23,14 @@ export default function OttoHeroAnimation() {
       {/* Header Bar */}
       <div className="flex items-center justify-between border-b border-border pb-4">
         <div className="flex items-center gap-3">
-          <div className="relative flex size-10 items-center justify-center rounded-2xl bg-[#2C3E50] text-white shadow-sm">
-            <FileText className="size-5" />
+          <div className="relative flex size-12 items-center justify-center rounded-2xl bg-[#2C3E50]/10 border border-[#2C3E50]/30 p-1 shadow-sm overflow-hidden shrink-0">
+            <Image
+              src="/images/mascots/otto.png"
+              alt="Otto Mascot Avatar"
+              width={48}
+              height={48}
+              className="object-contain"
+            />
           </div>
           <div>
             <h3 className="font-heading font-bold text-ink text-base">Otto — Back-Office AI</h3>

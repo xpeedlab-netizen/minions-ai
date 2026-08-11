@@ -1,7 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, Clock, CalendarCheck, PhoneForwarded, Zap, ShieldCheck, CheckCircle2, FileText, Activity } from "lucide-react";
+import { ArrowRight, Clock, CalendarCheck, PhoneForwarded, ShieldCheck, CheckCircle2, FileText, Activity } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import RexHeroVisual from "./RexHeroVisual";
+import ZipHeroVisual from "./ZipHeroVisual";
+import PipHeroVisual from "./PipHeroVisual";
+import GiaHeroVisual from "./GiaHeroVisual";
+import OttoHeroVisual from "./OttoHeroVisual";
 
 export default function MeetTheCrew() {
   return (
@@ -81,26 +85,8 @@ export default function MeetTheCrew() {
                     </Link>
                   </div>
                 </div>
-                <div className="bg-cream p-8 sm:p-12 lg:order-1 flex items-center justify-center relative min-h-[320px] border-r border-border">
-                   {/* Urgent visual */}
-                   <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-xl w-full max-w-sm border border-border relative">
-                      <div className="absolute -top-4 -right-2 sm:-right-4 bg-ink text-white text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
-                        <Zap className="w-3.5 h-3.5 text-vest-orange" /> Missed Call
-                      </div>
-                      <div className="space-y-4 pt-2">
-                        <div className="flex gap-3 flex-row-reverse">
-                          <div className="bg-[#C4472A] p-3 rounded-2xl rounded-tr-sm text-sm text-white shadow-sm">
-                            &ldquo;Hi, sorry we missed your call! This is Zip from the team. How can we help you today?&rdquo;
-                          </div>
-                        </div>
-                        <div className="flex gap-3">
-                          <div className="bg-cream p-3 rounded-2xl rounded-tl-sm text-sm text-ink/80 border border-border">
-                            &ldquo;I need a quote for a new AC unit. Are you available?&rdquo;
-                          </div>
-                        </div>
-                      </div>
-                      <div className="mt-6 text-center text-[10px] text-ink/40 uppercase tracking-widest font-mono font-medium">Example — Not Live Data</div>
-                   </div>
+                <div className="lg:order-1">
+                  <ZipHeroVisual />
                 </div>
               </div>
             </div>
@@ -131,30 +117,7 @@ export default function MeetTheCrew() {
                     </Link>
                   </div>
                 </div>
-                <div className="bg-[#f0f4f8] p-8 sm:p-12 flex items-center justify-center relative min-h-[320px] border-l border-border">
-                   <div className="bg-white rounded-2xl p-5 shadow-xl w-full max-w-sm border border-border">
-                      <div className="flex items-center gap-3 border-b border-border pb-3 mb-4">
-                        <div className="w-10 h-10 rounded-full bg-[#3A6EA5]/10 flex items-center justify-center text-[#3A6EA5] font-bold">P</div>
-                        <div>
-                          <div className="font-bold text-ink text-sm">Pip Support</div>
-                          <div className="text-xs text-ink/50 font-medium">Typically replies instantly</div>
-                        </div>
-                      </div>
-                      <div className="space-y-4">
-                        <div className="flex gap-3">
-                          <div className="bg-cream p-3 rounded-2xl rounded-tl-sm text-sm text-ink/80 border border-border">
-                            &ldquo;Do you do free estimates for water heaters?&rdquo;
-                          </div>
-                        </div>
-                        <div className="flex gap-3 flex-row-reverse">
-                          <div className="bg-[#3A6EA5]/10 p-3 rounded-2xl rounded-tr-sm text-sm text-ink/90 border border-[#3A6EA5]/20">
-                            &ldquo;Yes! We offer free in-home estimates for all water heater replacements. Would you like me to find an available time for you?&rdquo;
-                          </div>
-                        </div>
-                      </div>
-                      <div className="mt-6 text-center text-[10px] text-ink/40 uppercase tracking-widest font-mono font-medium">Example — Not Live Data</div>
-                   </div>
-                </div>
+                <PipHeroVisual />
               </div>
             </div>
           </Reveal>
@@ -191,39 +154,8 @@ export default function MeetTheCrew() {
                     </Link>
                   </div>
                 </div>
-                <div className="bg-white/50 p-8 sm:p-12 lg:order-1 flex items-center justify-center border-r border-[#1B8A5A]/10 relative min-h-[320px]">
-                    <div className="w-full max-w-sm space-y-4">
-                      <div className="bg-white rounded-xl p-4 shadow-sm border border-border flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                           <div className="w-1.5 h-10 rounded-full bg-vest-orange"></div>
-                           <div>
-                             <div className="text-sm font-bold text-ink">New Lead Received</div>
-                             <div className="text-xs text-ink/50 font-medium mt-0.5">Pipeline Stage</div>
-                           </div>
-                        </div>
-                        <CheckCircle2 className="w-5 h-5 text-[#1B8A5A]" />
-                      </div>
-                      <div className="bg-white rounded-xl p-4 shadow-sm border border-border flex items-center justify-between ml-4 sm:ml-8">
-                        <div className="flex items-center gap-3">
-                           <div className="w-1.5 h-10 rounded-full bg-[#3A6EA5]"></div>
-                           <div>
-                             <div className="text-sm font-bold text-ink">Quote Sent</div>
-                             <div className="text-xs text-ink/50 font-medium mt-0.5">Automated Follow-up Queued</div>
-                           </div>
-                        </div>
-                        <CheckCircle2 className="w-5 h-5 text-[#1B8A5A]" />
-                      </div>
-                      <div className="bg-white rounded-xl p-4 shadow-sm border border-border flex items-center justify-between ml-8 sm:ml-16">
-                        <div className="flex items-center gap-3">
-                           <div className="w-1.5 h-10 rounded-full bg-[#1B8A5A]"></div>
-                           <div>
-                             <div className="text-sm font-bold text-ink">Job Won</div>
-                             <div className="text-xs text-ink/50 font-medium mt-0.5">Review Request Sent</div>
-                           </div>
-                        </div>
-                        <CheckCircle2 className="w-5 h-5 text-[#1B8A5A]" />
-                      </div>
-                    </div>
+                <div className="lg:order-1">
+                  <GiaHeroVisual />
                 </div>
               </div>
             </div>
@@ -255,28 +187,7 @@ export default function MeetTheCrew() {
                     </Link>
                   </div>
                 </div>
-                <div className="bg-[#2C3E50] p-8 sm:p-12 flex items-center justify-center min-h-[320px]">
-                   <div className="w-full max-w-sm">
-                      <div className="bg-white/5 rounded-2xl p-6 border border-white/10 shadow-inner">
-                        <div className="animate-pulse space-y-5">
-                          <div className="h-3 bg-white/20 rounded w-3/4"></div>
-                          <div className="h-3 bg-white/20 rounded w-1/2"></div>
-                          <div className="h-3 bg-white/20 rounded w-5/6"></div>
-                          
-                          <div className="pt-4 border-t border-white/10 mt-4 flex items-center gap-4">
-                             <div className="w-8 h-8 rounded bg-white/10 flex items-center justify-center shrink-0">
-                                <CheckCircle2 className="w-4 h-4 text-white/50" />
-                             </div>
-                             <div className="space-y-2 w-full">
-                               <div className="h-2 bg-white/20 rounded w-1/3"></div>
-                               <div className="h-2 bg-white/10 rounded w-1/2"></div>
-                             </div>
-                          </div>
-                        </div>
-                        <div className="mt-8 text-center text-[10px] text-white/40 uppercase tracking-widest font-mono font-medium">Processing Document...</div>
-                      </div>
-                   </div>
-                </div>
+                <OttoHeroVisual />
               </div>
             </div>
           </Reveal>

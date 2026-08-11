@@ -56,3 +56,11 @@ Designed to pair seamlessly with the website's design system (`bg-ink #0A1118`, 
 - **Lighting:** Three-point studio lighting (key light from top-left, soft warm fill, subtle rim light matching accent color).
 - **Background:** Clean solid neutral grey (`#1A232A` or isolated PNG transparent) for effortless composite overlay onto homepage containers.
 - **Camera:** Eye-level 85mm lens perspective, slight forced perspective for character presence without distortion.
+
+---
+
+## 7. Transparent Compositing & Background Extraction Spec (WO#04.2 Update)
+- **Extraction Protocol:** Characters must be rendered on a flat, solid, evenly lit background (matching container base target `#0B484E` or high-contrast solid) to eliminate color fringing, halos, or ghosting during background removal.
+- **Hero Asset Output:** Exported as high-resolution transparent PNG with anti-aliased alpha edge mapping.
+- **Compositing Treatment:** Includes ground contact shadow (`bg-black/60 blur-md`), soft radial light wrap glow (`bg-teal/25 blur-3xl`), and drop shadow (`drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)]`).
+

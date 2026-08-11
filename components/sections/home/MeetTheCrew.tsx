@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Clock, CalendarCheck, PhoneForwarded, Zap, ShieldCheck, CheckCircle2, FileText, Activity } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
-import RexAnimatedVisual from "./RexAnimatedVisual";
+import RexHeroVisual from "./RexHeroVisual";
 
 export default function MeetTheCrew() {
   return (
@@ -45,7 +45,7 @@ export default function MeetTheCrew() {
                     </Link>
                   </div>
                 </div>
-                <RexAnimatedVisual />
+                <RexHeroVisual />
               </div>
             </div>
           </Reveal>

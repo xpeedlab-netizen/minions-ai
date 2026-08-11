@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function PestMath() {
   return (
     <section className="bg-ink py-16 sm:py-24">
@@ -9,8 +7,8 @@ export default function PestMath() {
         </h2>
 
         <div className="mt-12 grid lg:grid-cols-2 gap-8 items-center">
-          <div className="border-l-4 border-coral pl-6">
-            <p className="font-heading font-extrabold text-6xl text-coral">100x</p>
+          <div className="border-l-4 border-teal pl-6">
+            <p className="font-heading font-extrabold text-6xl text-teal">100x</p>
             <p className="mt-3 text-white/70 leading-relaxed max-w-sm">
               The difference in contact rates when you respond in 5 minutes vs 30 minutes.
             </p>

@@ -6,7 +6,7 @@ export default function RoofingCrew() {
   return (
     <section className="bg-cream py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <p className="font-mono text-xs uppercase tracking-wide text-coral-text">What your crew does</p>
+        <p className="font-mono text-xs uppercase tracking-wide text-teal">What your crew does</p>
         <h2 className="mt-2 font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
           Modern Roofing Automation
         </h2>
@@ -36,7 +36,7 @@ export default function RoofingCrew() {
           {/* Secondary — Zip text-backs */}
           <Reveal delay={0.05}>
             <div className="h-full rounded-2xl border border-border bg-white p-6">
-              <span className="flex size-10 items-center justify-center rounded-xl bg-coral/15 text-coral-text">
+              <span className="flex size-10 items-center justify-center rounded-xl bg-teal/15 text-teal">
                 <MessageSquareText className="size-5" />
               </span>
               <h3 className="mt-4 font-heading font-bold text-ink">Instant text-backs (Zip)</h3>

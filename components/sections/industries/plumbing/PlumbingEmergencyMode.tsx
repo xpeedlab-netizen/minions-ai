@@ -17,9 +17,9 @@ export default function PlumbingEmergencyMode() {
           <p className="mt-4 text-white/70 leading-relaxed">
             Rex doesn&apos;t just &quot;take a message.&quot; He uses advanced semantic intent to
             identify high-stakes keywords like{" "}
-            <span className="text-coral font-semibold">&quot;flooding,&quot;</span>{" "}
-            <span className="text-coral font-semibold">&quot;burst pipe,&quot;</span> or{" "}
-            <span className="text-coral font-semibold">&quot;sewage backup.&quot;</span>
+            <span className="text-teal font-semibold">&quot;flooding,&quot;</span>{" "}
+            <span className="text-teal font-semibold">&quot;burst pipe,&quot;</span> or{" "}
+            <span className="text-teal font-semibold">&quot;sewage backup.&quot;</span>
           </p>
           <ul className="mt-6 space-y-3">
             {checklist.map((item) => (
@@ -32,7 +32,7 @@ export default function PlumbingEmergencyMode() {
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-white p-5 sm:p-6">
-          <div className="flex items-center gap-2 text-coral-text">
+          <div className="flex items-center gap-2 text-teal">
             <Asterisk className="size-4" />
             <span className="font-mono text-xs uppercase tracking-wide">
               Detected: Water Damage Emergency
@@ -48,12 +48,12 @@ export default function PlumbingEmergencyMode() {
               </p>
             </div>
             <div className="flex items-start justify-end gap-2.5">
-              <p className="max-w-[85%] rounded-2xl rounded-tr-sm bg-coral/15 px-4 py-2.5 text-sm text-ink/80">
+              <p className="max-w-[85%] rounded-2xl rounded-tr-sm bg-teal/15 px-4 py-2.5 text-sm text-ink/80">
                 I&apos;m on it. First, do you know where your main water shut-off valve is?
                 I&apos;m transferring you to our emergency plumber, Mike, right now so he can guide
                 you while he drives over.
               </p>
-              <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-coral font-mono text-[9px] font-bold text-white">
+              <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-teal font-mono text-[9px] font-bold text-white">
                 REX
               </span>
             </div>

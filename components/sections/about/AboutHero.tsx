@@ -11,7 +11,7 @@ export default function AboutHero() {
     <section className="bg-cream">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <span className="inline-block rounded-full bg-coral/15 px-3 py-1 font-mono text-xs uppercase tracking-wide text-coral-text">
+          <span className="inline-block rounded-full bg-teal/15 px-3 py-1 font-mono text-xs uppercase tracking-wide text-teal">
             The Mission
           </span>
           <h1 className="mt-5 font-heading font-extrabold text-ink text-4xl sm:text-5xl leading-[1.1] text-balance">
@@ -26,7 +26,7 @@ export default function AboutHero() {
 
         <div className="rounded-2xl border border-border bg-white p-6 shadow-sm">
           <div className="flex items-start gap-4">
-            <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-coral text-white">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-teal text-white">
               <ShieldCheck className="size-5" />
             </span>
             <div>
@@ -44,7 +44,7 @@ export default function AboutHero() {
                 key={t.label}
                 className="inline-flex items-center gap-1.5 rounded-full border border-border bg-cream px-3 py-1.5 font-mono text-xs text-ink/70"
               >
-                <t.icon className="size-3.5 text-coral-text" />
+                <t.icon className="size-3.5 text-teal" />
                 {t.label}
               </span>
             ))}

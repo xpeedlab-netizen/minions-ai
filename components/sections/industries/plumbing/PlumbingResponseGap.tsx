@@ -1,8 +1,6 @@
-import Image from "next/image";
-
 const bars = [
   { label: "Minions.AI Speed", value: "Instant", width: "5%", color: "bg-success" },
-  { label: "Traditional Dispatch", value: "Delayed", width: "85%", color: "bg-coral" },
+  { label: "Traditional Dispatch", value: "Delayed", width: "85%", color: "bg-teal" },
 ];
 
 export default function PlumbingResponseGap() {

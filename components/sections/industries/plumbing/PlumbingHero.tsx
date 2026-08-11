@@ -10,13 +10,13 @@ export default function PlumbingHero() {
     <section className="bg-cream">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <span className="inline-block rounded-full bg-coral/15 px-3 py-1 font-mono text-xs uppercase tracking-wide text-coral-text">
+          <span className="inline-block rounded-full bg-teal/15 px-3 py-1 font-mono text-xs uppercase tracking-wide text-teal">
             24/7 Emergency Dispatch
           </span>
           <h1 className="mt-5 font-heading font-extrabold text-teal-dark text-4xl sm:text-5xl leading-[1.1] text-balance">
             For Plumbing companies: catch every{" "}
-            <span className="text-coral-text">&quot;my basement is flooding&quot;</span> call —
-            even at <span className="text-coral-text">2 AM.</span>
+            <span className="text-teal">&quot;my basement is flooding&quot;</span> call —
+            even at <span className="text-teal">2 AM.</span>
           </h1>
           <p className="mt-6 text-lg text-ink/70 leading-relaxed max-w-xl">
             When a pipe bursts at midnight, customers call the first plumber who answers. Rex ensures

@@ -11,8 +11,8 @@ export default function MeetTheCrew() {
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-white text-balance">
             Meet your new digital &ldquo;Front Office&rdquo; crew.
           </h2>
-          <p className="mt-4 text-cream/60">
-            Each AI persona is specialized to handle a specific part of your customer&apos;s journey.
+          <p className="mt-4 text-cream/70 text-lg">
+            Each AI persona is specialized to handle a specific part of your customer&apos;s journey. Most shops start with Rex — you can add the rest of the crew whenever you need them.
           </p>
         </div>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-5">

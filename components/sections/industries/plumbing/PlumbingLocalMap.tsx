@@ -24,8 +24,8 @@ export default function PlumbingLocalMap() {
           <div className="absolute inset-0 bg-ink/20" />
 
           <div className="absolute left-4 top-4 sm:left-6 sm:top-6 max-w-[220px] rounded-xl bg-white p-4 shadow-lg">
-            <span className="flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-wide text-coral-text">
-              <span className="size-1.5 rounded-full bg-coral" />
+            <span className="flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-wide text-teal">
+              <span className="size-1.5 rounded-full bg-teal" />
               Active Service Zone
             </span>
             <p className="mt-2 text-sm text-ink/80 leading-relaxed">

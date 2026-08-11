@@ -45,7 +45,7 @@ export default function ResultsCallProof() {
           </div>
 
           <div className="mt-4 flex gap-2">
-            <span className="rounded-full bg-coral/10 px-3 py-1 font-mono text-xs text-coral-text">
+            <span className="rounded-full bg-teal/10 px-3 py-1 font-mono text-xs text-teal">
               Intention: Urgent
             </span>
             <span className="rounded-full bg-success/10 px-3 py-1 font-mono text-xs text-success">
@@ -66,7 +66,7 @@ export default function ResultsCallProof() {
               <CalendarDays className="size-4 text-ink/50" />
               <span className="text-sm font-medium text-ink">Mon, Morning Schedule</span>
             </div>
-            <div className="border-l-4 border-coral bg-coral/5 px-4 py-3 flex items-center justify-between">
+            <div className="border-l-4 border-teal bg-teal/5 px-4 py-3 flex items-center justify-between">
               <span className="text-sm font-medium text-ink">Emergency Leak Inspection</span>
               <span className="font-mono text-xs text-ink/50">7:00 AM</span>
             </div>

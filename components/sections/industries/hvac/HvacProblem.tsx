@@ -36,7 +36,7 @@ export default function HvacProblem() {
           {cards.map((c, i) => (
             <Reveal key={c.title} delay={i * 0.08} className="h-full">
               <div className="h-full rounded-2xl border border-border bg-cream p-6">
-                <c.icon className="size-6 text-coral-text" />
+                <c.icon className="size-6 text-teal" />
                 <h3 className="mt-4 font-heading font-bold text-ink">{c.title}</h3>
                 <p className="mt-2 text-sm text-ink/70 leading-relaxed">{c.body}</p>
               </div>

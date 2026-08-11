@@ -88,7 +88,7 @@ export default function HiwProcessGrid() {
           <Reveal delay={0.15}>
             <div className="h-full rounded-2xl bg-teal p-6">
               <div className="flex items-center gap-2">
-                <span className="flex size-8 items-center justify-center rounded-full bg-coral font-heading font-bold text-ink text-sm">
+                <span className="flex size-8 items-center justify-center rounded-full bg-teal font-heading font-bold text-ink text-sm">
                   4
                 </span>
                 <span className="rounded-full bg-white/10 px-3 py-1 font-mono text-xs text-white/70">DAY 7</span>

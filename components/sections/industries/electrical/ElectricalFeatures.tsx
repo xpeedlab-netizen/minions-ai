@@ -31,7 +31,7 @@ export default function ElectricalFeatures() {
           {cards.map((c, i) => (
             <Reveal key={c.title} delay={i * 0.08} className="h-full">
               <div className="h-full rounded-2xl border border-border bg-white p-6">
-                <span className="flex size-10 items-center justify-center rounded-xl bg-coral/15 text-coral-text">
+                <span className="flex size-10 items-center justify-center rounded-xl bg-teal/15 text-teal">
                   <c.icon className="size-5" />
                 </span>
                 <h3 className="mt-4 font-heading font-bold text-ink">{c.title}</h3>

@@ -23,7 +23,7 @@ export default function RexHeroAnimation() {
         <button
           type="button"
           onClick={handleSimulate}
-          className="rounded-xl border border-coral/30 bg-coral/10 px-3 py-1 font-mono text-xs font-semibold text-coral-text hover:bg-coral hover:text-white transition-colors min-h-[36px]"
+          className="rounded-xl border border-teal/30 bg-teal/10 px-3 py-1 font-mono text-xs font-semibold text-teal hover:bg-teal hover:text-white transition-colors min-h-[36px]"
         >
           Simulate Call
         </button>
@@ -55,10 +55,10 @@ export default function RexHeroAnimation() {
               exit={{ opacity: 0, scale: 0.95 }}
               className="flex flex-col items-center justify-center text-center py-4"
             >
-              <div className="relative flex size-16 items-center justify-center rounded-full bg-coral/20 text-coral animate-bounce">
+              <div className="relative flex size-16 items-center justify-center rounded-full bg-teal/20 text-teal animate-bounce">
                 <Phone className="size-8" />
               </div>
-              <p className="mt-3 font-mono text-xs text-coral tracking-wider uppercase font-semibold">
+              <p className="mt-3 font-mono text-xs text-teal tracking-wider uppercase font-semibold">
                 Incoming Call • 11:42 PM
               </p>
               <p className="mt-1 font-heading font-bold text-lg text-white">
@@ -84,7 +84,7 @@ export default function RexHeroAnimation() {
               </div>
 
               <div className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-2">
-                <div className="flex items-center gap-2 font-mono text-xs text-coral">
+                <div className="flex items-center gap-2 font-mono text-xs text-teal">
                   <Volume2 className="size-4 animate-pulse" />
                   <span>Rex Speaking Live:</span>
                 </div>
@@ -138,7 +138,7 @@ export default function RexHeroAnimation() {
 
       <div className="flex items-center justify-between rounded-xl border border-border bg-cream px-4 py-3 text-xs text-ink/70">
         <span className="flex items-center gap-2 font-mono">
-          <ShieldAlert className="size-4 text-coral-text" />
+          <ShieldAlert className="size-4 text-teal" />
           No missed calls while you sleep
         </span>
         <span className="font-heading font-bold text-teal">24/7 Coverage</span>

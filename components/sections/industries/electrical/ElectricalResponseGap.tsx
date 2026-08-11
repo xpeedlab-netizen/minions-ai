@@ -37,10 +37,10 @@ export default function ElectricalResponseGap() {
             <div>
               <div className="flex items-center justify-between font-mono text-xs uppercase tracking-wide">
                 <span className="text-ink/50">Typical Response Time</span>
-                <span className="text-coral-text font-bold">Delayed</span>
+                <span className="text-teal font-bold">Delayed</span>
               </div>
               <div className="mt-2 h-2 rounded-full bg-border overflow-hidden">
-                <div className="h-full w-[85%] rounded-full bg-coral" />
+                <div className="h-full w-[85%] rounded-full bg-teal" />
               </div>
             </div>
           </div>

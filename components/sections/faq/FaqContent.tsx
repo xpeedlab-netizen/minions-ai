@@ -47,7 +47,7 @@ export default function FaqContent() {
         <CategoryHeading
           id="ai-experience"
           icon={Headset}
-          iconBg="bg-coral"
+          iconBg="bg-teal"
           label="The AI & Experience"
         />
         <div className="mt-6">

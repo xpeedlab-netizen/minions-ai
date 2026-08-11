@@ -72,7 +72,7 @@ export default function LiveDemoOptionA() {
             className="flex flex-col gap-4 mt-6"
           >
             <div className="rounded-xl border border-border bg-cream p-4 flex gap-3">
-              <Info className="size-4 shrink-0 mt-0.5 text-coral-text" />
+              <Info className="size-4 shrink-0 mt-0.5 text-teal" />
               <p className="text-sm text-ink/60">
                 <strong className="text-ink">Important:</strong> Your browser will ask for microphone
                 access. Please click &lsquo;Allow&rsquo; to start the voice conversation.
@@ -123,7 +123,7 @@ export default function LiveDemoOptionA() {
                       isMuted
                         ? "bg-ink/20"
                         : i % 3 === 0
-                        ? "bg-coral"
+                        ? "bg-teal"
                         : i % 2 === 0
                         ? "bg-teal"
                         : "bg-teal-dark"
@@ -154,7 +154,7 @@ export default function LiveDemoOptionA() {
                   onClick={() => setIsMuted(!isMuted)}
                   className={`flex items-center gap-2 rounded-lg px-3.5 py-2 font-mono text-xs transition-colors border ${
                     isMuted
-                      ? "bg-coral-text/10 text-coral-text border-coral-text/30"
+                      ? "bg-teal-text/10 text-teal border-teal-text/30"
                       : "bg-white text-ink border-border hover:bg-cream"
                   }`}
                 >
@@ -175,7 +175,7 @@ export default function LiveDemoOptionA() {
                     setStarted(false);
                     setIsMuted(false);
                   }}
-                  className="flex items-center gap-2 rounded-lg bg-coral-text/10 border border-coral-text/20 px-3.5 py-2 font-mono text-xs text-coral-text hover:bg-coral-text hover:text-white transition-colors"
+                  className="flex items-center gap-2 rounded-lg bg-teal-text/10 border border-teal-text/20 px-3.5 py-2 font-mono text-xs text-teal hover:bg-teal-text hover:text-white transition-colors"
                 >
                   <PhoneOff className="size-3.5" /> End Call
                 </button>

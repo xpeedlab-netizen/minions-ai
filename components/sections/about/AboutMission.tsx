@@ -9,7 +9,7 @@ export default function AboutMission() {
           We watched too many tradespeople—HVAC masters, roofing pros, plumbing experts—pour
           thousands of dollars into Facebook and Google ads, only to see that money vanish.
         </p>
-        <blockquote className="mt-8 rounded-xl border-l-4 border-coral bg-white px-6 py-5 text-left shadow-sm">
+        <blockquote className="mt-8 rounded-xl border-l-4 border-teal bg-white px-6 py-5 text-left shadow-sm">
           <p className="text-ink/80 leading-relaxed italic">
             &quot;The heartbreak wasn&apos;t the cost of the ads. It was hearing the phone ring at
             7 PM while a tech was in a crawlspace, and knowing that missed call was a $500 job

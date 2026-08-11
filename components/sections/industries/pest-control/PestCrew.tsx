@@ -43,7 +43,7 @@ export default function PestCrew() {
                     className="object-cover"
                     sizes="(min-width: 1024px) 45vw, 90vw"
                   />
-                  <span className="absolute top-4 right-4 flex size-10 items-center justify-center rounded-full bg-white text-coral-text shadow-md">
+                  <span className="absolute top-4 right-4 flex size-10 items-center justify-center rounded-full bg-white text-teal shadow-md">
                     <r.icon className="size-5" />
                   </span>
                 </div>
@@ -75,7 +75,7 @@ export default function PestCrew() {
             </div>
           </Reveal>
           <Reveal delay={0.06}>
-            <div className="h-full rounded-2xl bg-coral p-6 sm:p-8">
+            <div className="h-full rounded-2xl bg-teal p-6 sm:p-8">
               <h3 className="font-heading font-bold text-lg text-white">Zip&apos;s Insta-Text Back</h3>
               <p className="mt-2 text-sm text-white/85 leading-relaxed">
                 If a call is missed, Zip texts back immediately. &quot;Hey, saw we missed your

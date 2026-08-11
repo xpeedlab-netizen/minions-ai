@@ -31,7 +31,7 @@ export default function ResultsRoiCalculator() {
           </div>
           <div className="mt-3 rounded-xl border border-border bg-white px-4 py-3 font-mono text-sm text-ink">
             Calls Missed × Job Value × Close Rate ={" "}
-            <span className="text-coral-text font-bold">Lost Revenue</span>
+            <span className="text-teal font-bold">Lost Revenue</span>
           </div>
         </div>
 
@@ -77,10 +77,10 @@ export default function ResultsRoiCalculator() {
           </div>
 
           <div className="mt-6 border-t border-border pt-5">
-            <p className="font-mono text-xs uppercase tracking-wide text-coral-text">
+            <p className="font-mono text-xs uppercase tracking-wide text-teal">
               Weekly Lost Revenue
             </p>
-            <p className="mt-1 font-heading font-extrabold text-4xl text-coral-text">
+            <p className="mt-1 font-heading font-extrabold text-4xl text-teal">
               ${weeklyLoss.toLocaleString()}
             </p>
             <p className="mt-1 text-sm text-ink/50">

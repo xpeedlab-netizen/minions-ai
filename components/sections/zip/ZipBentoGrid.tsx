@@ -17,7 +17,7 @@ export default function ZipBentoGrid() {
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <Reveal className="sm:col-span-2 lg:col-span-2">
             <div className="h-full rounded-2xl border border-border bg-white p-6">
-              <span className="flex size-10 items-center justify-center rounded-xl bg-coral/15 text-coral-text">
+              <span className="flex size-10 items-center justify-center rounded-xl bg-teal/15 text-teal">
                 <MessageCircleReply className="size-5" />
               </span>
               <h3 className="mt-4 font-heading font-bold text-ink">
@@ -66,7 +66,7 @@ export default function ZipBentoGrid() {
                   Covers evenings and weekends, so your dead hours stop being dead.
                 </p>
               </div>
-              <span className="shrink-0 rounded-full bg-coral px-3 py-1 font-mono text-xs font-bold text-ink">
+              <span className="shrink-0 rounded-full bg-teal px-3 py-1 font-mono text-xs font-bold text-ink">
                 24/7 ACTIVE
               </span>
             </div>

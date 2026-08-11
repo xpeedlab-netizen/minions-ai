@@ -64,7 +64,7 @@ export default function HeroAnimation() {
         {bars.map((h, i) => (
           <motion.span
             key={i}
-            className="w-1.5 rounded-full bg-coral origin-bottom"
+            className="w-1.5 rounded-full bg-teal origin-bottom"
             style={{ height: h }}
             animate={reduceMotion ? undefined : { scaleY: [0.35, 1, 0.35] }}
             transition={{
@@ -81,19 +81,17 @@ export default function HeroAnimation() {
         <motion.div
           key={label}
           className={`absolute ${className}`}
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{
-            opacity: 1,
-            y: reduceMotion ? 0 : [0, -8, 0],
+            opacity: reduceMotion ? 1 : [0, 1, 1, 0],
+            scale: reduceMotion ? 1 : [0.95, 1, 1, 0.95],
           }}
           transition={{
-            opacity: { duration: 0.6, delay: 0.4 + delay },
-            y: {
-              duration: 3,
-              repeat: Infinity,
-              delay: 0.4 + delay,
-              ease: "easeInOut",
-            },
+            duration: 6,
+            times: [0, 0.1, 0.9, 1],
+            repeat: Infinity,
+            delay: delay,
+            ease: "easeInOut",
           }}
         >
           <div className="flex items-center gap-1.5 rounded-xl border border-border bg-white px-2.5 py-1.5 shadow-sm">

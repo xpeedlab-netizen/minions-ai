@@ -37,7 +37,7 @@ export default function AboutOffshore() {
             <ul className="mt-5 space-y-4">
               {report.map((item, i) => (
                 <li key={item} className="flex gap-3">
-                  <span className="font-mono text-sm font-bold text-coral">
+                  <span className="font-mono text-sm font-bold text-teal">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="text-sm text-white/70 leading-relaxed">{item}</span>

@@ -45,11 +45,11 @@ export const FOUNDER_STORY = {
 
 export const HONEST_TRUTH = {
   heading: "The Honest Truth",
-  body: "We're new, and we're not going to pretend otherwise. We don't have a thousand reviews or a wall of client logos yet. What we do have is a system that works, a month-to-month agreement you can walk away from, and a 30-day guarantee — so the most this can cost you is one month. Judge us on what we build for you in week one, not on a testimonial we could have written ourselves.",
+  body: "We're new, and we're not going to pretend otherwise. We don't have a thousand reviews or a wall of client logos yet. What we do have is a system that works, and a month-to-month agreement you can walk away from. Judge us on what we build for you in week one, not on a testimonial we could have written ourselves.",
 };
 
 export const INTEGRATION_COPY = {
-  calendar: "Books straight into your Google Calendar.",
+  calendar: "Books directly into Google Calendar — the calendar you probably already use.",
   phone: "Keep your number — you forward your line to us. Takes about two minutes.",
   crm: "We set up and run the CRM for you — pipeline, follow-ups, reminders, review requests.",
 };

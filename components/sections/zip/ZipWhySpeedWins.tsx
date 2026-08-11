@@ -13,14 +13,14 @@ export default function ZipWhySpeedWins() {
             <strong className="text-ink">100× more likely</strong> to reach the lead and{" "}
             <strong className="text-ink">21× more likely</strong> to qualify it ({PROOF_STATS[0].source}). Meanwhile the average business takes 42 hours to respond ({PROOF_STATS[2].source}).
           </p>
-          <blockquote className="mt-6 rounded-r-xl border-l-4 border-coral bg-cream p-5 font-heading font-bold text-lg text-coral-text">
+          <blockquote className="mt-6 rounded-r-xl border-l-4 border-teal bg-cream p-5 font-heading font-bold text-lg text-teal">
             &ldquo;Zip responds in seconds. Your crew gets the job.&rdquo;
           </blockquote>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           <div className="rounded-2xl border border-border bg-white p-6 text-center">
-            <p className="font-mono text-4xl font-medium text-coral-text">100×</p>
+            <p className="font-mono text-4xl font-medium text-teal">100×</p>
             <p className="mt-1 font-mono text-xs uppercase tracking-wide text-ink/50">Better Reach</p>
           </div>
           <div className="rounded-2xl border border-border bg-white p-6 text-center">

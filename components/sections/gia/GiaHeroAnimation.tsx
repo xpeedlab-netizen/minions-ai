@@ -6,7 +6,7 @@ import { Workflow, UserCheck, Play } from "lucide-react";
 
 const STAGES = [
   { id: 1, name: "New Lead (Web)", color: "bg-[#3A6EA5]", lead: "Sample Lead (Service Quote)" },
-  { id: 2, name: "Auto SMS Sent", color: "bg-coral", lead: "Sample Lead (Confirmed)" },
+  { id: 2, name: "Auto SMS Sent", color: "bg-teal", lead: "Sample Lead (Confirmed)" },
   { id: 3, name: "Estimate Scheduled", color: "bg-teal", lead: "Sample Lead (Tomorrow 10 AM)" },
   { id: 4, name: "Review Sent", color: "bg-success", lead: "Sample Lead (Completed)" },
 ];
@@ -91,7 +91,7 @@ export default function GiaHeroAnimation() {
 
             <div className="space-y-1.5 font-mono text-xs text-ink/70 bg-cream p-3 rounded-lg border border-border/50">
               {activeStage === 0 && <p className="flex items-center gap-1.5">📩 New lead form submitted on website</p>}
-              {activeStage === 1 && <p className="flex items-center gap-1.5 text-coral">⚡ Instant SMS &amp; email response dispatched</p>}
+              {activeStage === 1 && <p className="flex items-center gap-1.5 text-teal">⚡ Instant SMS &amp; email response dispatched</p>}
               {activeStage === 2 && <p className="flex items-center gap-1.5 text-teal">📅 Appointment synced to Google Calendar</p>}
               {activeStage === 3 && <p className="flex items-center gap-1.5 text-success">⭐ Google Review request sent automatically</p>}
             </div>

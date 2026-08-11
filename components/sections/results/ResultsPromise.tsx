@@ -4,7 +4,7 @@ export default function ResultsPromise() {
   return (
     <section className="bg-cream pb-16 sm:pb-24">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
-        <BadgeCheck className="mx-auto size-8 text-coral-text" />
+        <BadgeCheck className="mx-auto size-8 text-teal" />
         <h2 className="mt-4 font-heading font-extrabold text-2xl sm:text-3xl text-teal">
           Our promise on reporting
         </h2>

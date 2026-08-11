@@ -13,8 +13,8 @@ export default function RoofingResponseGap() {
             </p>
             <p className="mt-2 font-heading font-extrabold text-3xl text-white/70">Delayed</p>
           </div>
-          <div className="flex h-full flex-col justify-between rounded-2xl border border-coral bg-coral/10 p-6">
-            <p className="font-mono text-xs uppercase tracking-wide text-coral">Minions.AI Powered</p>
+          <div className="flex h-full flex-col justify-between rounded-2xl border border-teal bg-teal/10 p-6">
+            <p className="font-mono text-xs uppercase tracking-wide text-teal">Minions.AI Powered</p>
             <p className="mt-2 font-heading font-extrabold text-3xl text-white">Instant</p>
           </div>
         </div>

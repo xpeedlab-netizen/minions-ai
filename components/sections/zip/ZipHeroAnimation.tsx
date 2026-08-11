@@ -33,7 +33,7 @@ export default function ZipHeroAnimation() {
       {/* Header Bar */}
       <div className="flex items-center justify-between border-b border-border pb-4">
         <div className="flex items-center gap-3">
-          <div className="relative flex size-10 items-center justify-center rounded-2xl bg-coral text-white shadow-sm">
+          <div className="relative flex size-10 items-center justify-center rounded-2xl bg-teal text-white shadow-sm">
             <Zap className="size-5" fill="currentColor" />
           </div>
           <div>
@@ -48,9 +48,9 @@ export default function ZipHeroAnimation() {
         {/* Timeline Header */}
         <div className="flex items-center justify-between text-xs font-mono text-ink/50 border-b border-border/40 pb-2">
           <span className="flex items-center gap-1">
-            <Clock className="size-3.5 text-coral-text" /> 2:05:00 PM • Missed Call
+            <Clock className="size-3.5 text-teal" /> 2:05:00 PM • Missed Call
           </span>
-          <span className="font-bold text-coral-text">Instant Text-Back</span>
+          <span className="font-bold text-teal">Instant Text-Back</span>
         </div>
 
         {/* Dynamic Chat Messages */}
@@ -59,7 +59,7 @@ export default function ZipHeroAnimation() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="rounded-xl bg-coral/10 border border-coral/20 px-3.5 py-2 text-xs text-coral-text flex items-center justify-between"
+            className="rounded-xl bg-teal/10 border border-teal/20 px-3.5 py-2 text-xs text-teal flex items-center justify-between"
           >
             <span>🚨 You missed a call while on the ladder</span>
             <span className="font-mono text-[10px]">2:05:00 PM</span>
@@ -120,7 +120,7 @@ export default function ZipHeroAnimation() {
                 <p className="leading-relaxed">
                   &ldquo;You&apos;re all set! I locked in 4:00 PM today for your consultation. See you soon!&rdquo;
                 </p>
-                <div className="mt-1 text-right font-mono text-[10px] text-coral-text font-bold">
+                <div className="mt-1 text-right font-mono text-[10px] text-teal font-bold">
                   ✓ Appointment Scheduled
                 </div>
               </motion.div>
@@ -135,7 +135,7 @@ export default function ZipHeroAnimation() {
           <MessageSquare className="size-4 text-teal" />
           100× more likely to reach lead in 5m (MIT Study)
         </span>
-        <span className="font-heading font-bold text-coral-text">Instant Text-Back</span>
+        <span className="font-heading font-bold text-teal">Instant Text-Back</span>
       </div>
     </div>
   );

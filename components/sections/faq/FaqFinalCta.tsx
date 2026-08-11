@@ -5,7 +5,7 @@ export default function FaqFinalCta() {
   return (
     <section className="bg-[#efe6da] py-16 sm:py-24">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
-        <div className="mx-auto flex size-14 items-center justify-center rounded-2xl border-2 border-coral text-coral">
+        <div className="mx-auto flex size-14 items-center justify-center rounded-2xl border-2 border-teal text-teal">
           <Bot className="size-6" />
         </div>
         <h2 className="mt-6 font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">

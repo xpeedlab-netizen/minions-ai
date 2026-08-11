@@ -11,7 +11,7 @@ const features = [
   },
   {
     icon: CircleAlert,
-    iconColor: "text-coral-text",
+    iconColor: "text-teal",
     title: "Emergency Flagging",
     body: "Instant detection of high-priority emergency calls for immediate dispatch.",
   },
@@ -23,7 +23,7 @@ const features = [
   },
   {
     icon: MessageSquare,
-    iconColor: "text-coral-text",
+    iconColor: "text-teal",
     title: "Instant Text-Backs",
     body: "If a call is missed, Zip sends an immediate text to keep the customer engaged.",
   },

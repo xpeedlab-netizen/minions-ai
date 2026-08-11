@@ -12,14 +12,14 @@ const cards = [
   {
     icon: CalendarDays,
     cornerIcon: CalendarDays,
-    iconBg: "bg-coral",
+    iconBg: "bg-teal",
     title: "Month-to-Month",
     body: "No golden handcuffs. If we don't bring you value, you don't stay. We earn our keep every single month through booked jobs.",
   },
   {
     icon: Zap,
     cornerIcon: RefreshCw,
-    iconBg: "bg-coral",
+    iconBg: "bg-teal",
     title: "Fast Replies",
     body: "Our support desk is as fast as our AI. When you have a question or need a tweak, we respond in minutes, not days.",
   },

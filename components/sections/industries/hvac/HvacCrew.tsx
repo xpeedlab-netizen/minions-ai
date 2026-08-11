@@ -11,7 +11,7 @@ const features = [
   },
   {
     icon: AlertTriangle,
-    iconBg: "bg-coral",
+    iconBg: "bg-teal",
     title: "Flags Emergencies",
     body: 'Otto identifies "No Heat" or "No Cooling" situations and escalates them to your on-call tech immediately.',
   },
@@ -23,7 +23,7 @@ const features = [
   },
   {
     icon: MessageSquareText,
-    iconBg: "bg-coral",
+    iconBg: "bg-teal",
     title: "Insta-Text Back",
     body: "Zip texts missed mobile leads instantly. Keep them on the hook while you're finishing the current job.",
   },
@@ -74,7 +74,7 @@ export default function HvacCrew() {
                   </p>
                 </div>
                 <span className="inline-flex w-fit items-center gap-2 rounded-full bg-black/30 px-3 py-2 font-mono text-xs text-white/80">
-                  <MapPin className="size-3.5 text-coral" />
+                  <MapPin className="size-3.5 text-teal" />
                   Current Service Area: Houston Metro &amp; Suburbs
                 </span>
               </div>
@@ -82,7 +82,7 @@ export default function HvacCrew() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <div className="flex h-full flex-col justify-center rounded-2xl bg-coral p-6 sm:p-8 text-center">
+            <div className="flex h-full flex-col justify-center rounded-2xl bg-teal p-6 sm:p-8 text-center">
               <p className="font-mono text-xs uppercase tracking-wide text-ink/70">
                 The Response Gap
               </p>

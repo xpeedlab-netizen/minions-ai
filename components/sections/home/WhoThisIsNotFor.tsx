@@ -18,7 +18,7 @@ export default function WhoThisIsNotFor() {
                 key={idx}
                 className="flex items-start gap-3 rounded-2xl border border-border bg-cream/50 p-4"
               >
-                <XCircle className="size-5 text-coral shrink-0 mt-0.5" />
+                <XCircle className="size-5 text-teal shrink-0 mt-0.5" />
                 <p className="text-sm text-ink/80 leading-relaxed font-medium">{reason}</p>
               </div>
             ))}

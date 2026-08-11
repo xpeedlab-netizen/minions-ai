@@ -16,7 +16,7 @@ export default function HvacHero() {
           </span>
           <h1 className="mt-5 font-heading font-extrabold text-ink text-4xl sm:text-5xl leading-[1.1] text-balance">
             For HVAC companies: catch every &quot;my AC just died&quot; call —{" "}
-            <span className="text-coral-text">even at 11pm.</span>
+            <span className="text-teal">even at 11pm.</span>
           </h1>
           <p className="mt-6 text-lg text-ink/70 leading-relaxed max-w-xl">
             When it&apos;s 98° and someone&apos;s AC quits, they call three companies and hire
@@ -36,7 +36,7 @@ export default function HvacHero() {
         <div className="relative mx-auto w-full max-w-sm pb-10 pr-6">
           <div className="absolute bottom-0 right-0 w-56 rotate-2 rounded-2xl border border-border bg-white p-4 shadow-lg">
             <div className="flex items-center gap-2">
-              <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-coral/15 text-coral-text">
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-teal/15 text-teal">
                 <Zap className="size-4" fill="currentColor" />
               </span>
               <div className="min-w-0">
@@ -63,7 +63,7 @@ export default function HvacHero() {
               />
             </div>
             <p className="mt-3 text-center font-heading font-bold text-ink">Rex</p>
-            <p className="text-center font-mono text-[10px] uppercase tracking-wide text-coral-text">
+            <p className="text-center font-mono text-[10px] uppercase tracking-wide text-teal">
               Chief Dispatcher
             </p>
             <div className="mt-3 flex items-center justify-center gap-1.5">

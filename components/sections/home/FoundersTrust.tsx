@@ -19,7 +19,7 @@ export default function FoundersTrust() {
             <div className="relative size-14 overflow-hidden rounded-full border-2 border-cream bg-teal/10 flex items-center justify-center font-heading font-bold text-teal text-lg">
               R
             </div>
-            <div className="relative size-14 overflow-hidden rounded-full border-2 border-cream bg-coral/10 flex items-center justify-center font-heading font-bold text-coral text-lg">
+            <div className="relative size-14 overflow-hidden rounded-full border-2 border-cream bg-teal/10 flex items-center justify-center font-heading font-bold text-teal text-lg">
               P
             </div>
           </div>

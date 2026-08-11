@@ -15,7 +15,7 @@ const founders = [
   {
     name: "Parvej",
     badge: "AI Architect",
-    badgeClass: "bg-coral/15 text-coral-text",
+    badgeClass: "bg-teal/15 text-teal",
     specialty: "Builds & Trains AI Agents",
     image: "/images/founder-parvej.jpg",
     body: "Parvej gives the 'Minions' their brains. He specializes in natural language processing to ensure your AI agents sound human and helpful.",
@@ -55,7 +55,7 @@ export default function AboutFounders() {
                       {f.badge}
                     </span>
                   </div>
-                  <p className="mt-2 font-heading font-bold text-sm text-coral-text">
+                  <p className="mt-2 font-heading font-bold text-sm text-teal">
                     {f.specialty}
                   </p>
                   <p className="mt-3 text-sm text-ink/60 leading-relaxed">{f.body}</p>

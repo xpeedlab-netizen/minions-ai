@@ -16,7 +16,7 @@ export default function RexHero() {
             Meet Rex: your new receptionist
           </span>
           <h1 className="mt-5 font-heading font-extrabold text-ink text-4xl sm:text-5xl leading-[1.1] text-balance">
-            An AI receptionist that <span className="text-coral-text">never sleeps</span>, never
+            An AI receptionist that <span className="text-teal">never sleeps</span>, never
             calls in sick, and never misses a ring.
           </h1>
           <p className="mt-6 text-lg text-ink/70 leading-relaxed max-w-xl">

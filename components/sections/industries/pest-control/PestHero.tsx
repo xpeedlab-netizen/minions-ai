@@ -6,7 +6,7 @@ export default function PestHero() {
     <section className="bg-cream">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <p className="font-mono text-sm uppercase tracking-wide text-coral-text mb-4">
+          <p className="font-mono text-sm uppercase tracking-wide text-teal mb-4">
             Pest Control Automation
           </p>
           <h1 className="font-heading font-extrabold text-teal-dark text-4xl sm:text-5xl leading-[1.1] text-balance">

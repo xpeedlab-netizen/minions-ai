@@ -65,7 +65,7 @@ export default function PipNoGuessPolicy() {
               </p>
               <p className="rounded-lg bg-black/20 px-3 py-2.5 text-white/70">
                 <span className="text-white/40">CHECK: </span>
-                Is this in FAQ? <span className="text-coral font-bold">[NO]</span>
+                Is this in FAQ? <span className="text-teal font-bold">[NO]</span>
               </p>
               <p className="rounded-lg bg-black/20 px-3 py-2.5 text-white/70">
                 <span className="text-white/40">ACTION: </span>

@@ -1,7 +1,7 @@
 import { Layers, Mail, CalendarClock, Star, Columns3 } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
-const tags = ["Pipeline Mapping", "Tagging Architecture", "Legacy Data Import"];
+const tags = ["Pipeline Mapping", "Tagging Architecture", "Data Import"];
 
 export default function GiaBentoGrid() {
   return (
@@ -10,8 +10,7 @@ export default function GiaBentoGrid() {
         <div className="max-w-2xl mx-auto text-center">
           <p className="font-mono text-xs uppercase tracking-wide text-ink/50">What Gia Does</p>
           <h2 className="mt-2 font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
-            Gia isn&apos;t just a bot; she&apos;s your digital office manager who never sleeps,
-            never complains, and never misses a follow-up.
+            Gia isn&apos;t just a bot; she&apos;s your digital office manager who keeps your pipeline moving 24/7.
           </h2>
         </div>
 
@@ -22,12 +21,12 @@ export default function GiaBentoGrid() {
                 <Layers className="size-5" />
               </span>
               <h3 className="mt-4 font-heading font-bold text-lg text-ink">
-                Full GoHighLevel Setup &amp; Rescue
+                Done-For-You CRM Setup &amp; Rescue
               </h3>
               <p className="mt-2 text-sm text-ink/60 leading-relaxed max-w-md">
                 Whether you&apos;re starting from scratch or sitting on a messy account you
-                don&apos;t know how to use, Gia cleans it up. We build the pipelines that make
-                sense for a plumbing, HVAC, or roofing business.
+                don&apos;t know how to use, we clean it up. We build the pipelines that make
+                sense for home-services teams.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {tags.map((t) => (
@@ -46,8 +45,7 @@ export default function GiaBentoGrid() {
               </span>
               <h3 className="mt-4 font-heading font-bold text-lg text-white">Lead Follow-up Sequences</h3>
               <p className="mt-2 text-sm text-white/70 leading-relaxed">
-                Immediate SMS and email responses the second a lead hits your website or Facebook
-                ad. No more phone tag.
+                Immediate SMS and email responses the second a lead hits your website or contact form.
               </p>
             </div>
           </Reveal>
@@ -85,7 +83,7 @@ export default function GiaBentoGrid() {
               </span>
               <h3 className="mt-4 font-heading font-bold text-white">Visual Pipelines</h3>
               <p className="mt-2 text-sm text-white/80 leading-relaxed">
-                See exactly where every dollar is sitting. From &lsquo;Quote Sent&rsquo; to
+                See exactly where every lead is sitting. From &lsquo;Quote Sent&rsquo; to
                 &lsquo;Invoice Paid&rsquo; in one glance.
               </p>
             </div>

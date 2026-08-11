@@ -1,32 +1,32 @@
-import { MessageCircle, GraduationCap, Mail, UserPlus, Languages } from "lucide-react";
+import { MessageCircle, GraduationCap, Mail, UserPlus, Globe } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
 const features = [
   {
     icon: MessageCircle,
     title: "24/7 Chat Widget",
-    body: "A friendly face on your website that greets every visitor, captures their info, and solves their problems while you sleep.",
+    body: "A friendly assistant on your website that greets visitors, answers questions, and captures lead info while you sleep.",
     preview: true,
   },
   {
     icon: GraduationCap,
     title: "Trained on Your FAQs",
-    body: "We feed Pip your pricing sheets, service area maps, and common questions. It learns your business specifically.",
+    body: "We feed Pip your pricing sheets, service areas, and common questions. It learns your business specifically.",
   },
   {
     icon: Mail,
     title: "Email Triage",
-    body: "Pip reads your support inbox and drafts responses for your approval or handles routine scheduling automatically.",
+    body: "Pip reads your support inbox and drafts responses or handles routine scheduling automatically.",
   },
   {
     icon: UserPlus,
     title: "Lead Capture",
-    body: 'Turns "just browsing" into scheduled appointments by collecting phone numbers and job details immediately.',
+    body: 'Turns website visitors into scheduled inquiries by collecting contact details and job info immediately.',
   },
   {
-    icon: Languages,
-    title: "Multi-language",
-    body: "Fluent in Spanish, French, and 20+ other languages to ensure you never miss a job due to a language barrier.",
+    icon: Globe,
+    title: "Clear Communication",
+    body: "Provides clear, polite, and instant answers so every caller and web visitor gets immediate help.",
   },
 ];
 
@@ -59,10 +59,10 @@ export default function PipFeatures() {
                 {f.preview && (
                   <div className="mt-4 space-y-2 rounded-xl border border-border bg-white p-3">
                     <p className="max-w-[85%] rounded-lg rounded-tl-sm bg-cream px-3 py-2 text-xs text-ink/70">
-                      Hi! Do you do emergency plumbing in North Hills?
+                      Hi! What areas do you service?
                     </p>
                     <p className="ml-auto max-w-[85%] rounded-lg rounded-tr-sm bg-teal px-3 py-2 text-xs text-white">
-                      Yes! We have a crew nearby. Would you like to see our emergency rates?
+                      We cover the full metro area! Would you like to check availability or see our service rates?
                     </p>
                   </div>
                 )}

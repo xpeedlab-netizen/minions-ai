@@ -32,6 +32,9 @@ export default function HeroAnimation() {
   return (
     <div className="animate-idle-bob relative aspect-square max-w-md mx-auto rounded-[2.5rem] bg-white border border-border overflow-hidden shadow-sm">
       <div className="absolute inset-0 bg-gradient-to-br from-teal/5 via-cream to-coral/5" />
+      <div className="absolute top-3 left-4 z-10 rounded-md bg-cream/90 border border-border/80 px-2 py-0.5 font-mono text-[10px] text-ink/60">
+        Example flow — not live telemetry
+      </div>
 
       {!reduceMotion &&
         [0, 1, 2].map((i) => (

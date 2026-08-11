@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Workflow, UserCheck, Play } from "lucide-react";
 
 const STAGES = [
-  { id: 1, name: "New Lead (Web)", color: "bg-[#3A6EA5]", lead: "Sarah M. (HVAC Repair)" },
-  { id: 2, name: "Auto SMS Sent", color: "bg-coral", lead: "Sarah M. (Confirmed)" },
-  { id: 3, name: "Estimate Scheduled", color: "bg-teal", lead: "Sarah M. (Tomorrow 10 AM)" },
-  { id: 4, name: "5★ Review Sent", color: "bg-success", lead: "Sarah M. (Completed)" },
+  { id: 1, name: "New Lead (Web)", color: "bg-[#3A6EA5]", lead: "Sample Lead (Service Quote)" },
+  { id: 2, name: "Auto SMS Sent", color: "bg-coral", lead: "Sample Lead (Confirmed)" },
+  { id: 3, name: "Estimate Scheduled", color: "bg-teal", lead: "Sample Lead (Tomorrow 10 AM)" },
+  { id: 4, name: "Review Sent", color: "bg-success", lead: "Sample Lead (Completed)" },
 ];
 
 export default function GiaHeroAnimation() {
@@ -20,6 +20,20 @@ export default function GiaHeroAnimation() {
 
   return (
     <div className="relative w-full max-w-lg mx-auto rounded-3xl border border-border bg-white p-6 shadow-lg overflow-hidden">
+      {/* Illustration Badge */}
+      <div className="mb-3 flex items-center justify-between">
+        <span className="rounded-md bg-cream border border-border px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-ink/60">
+          Example — not live telemetry
+        </span>
+        <button
+          type="button"
+          onClick={handleNext}
+          className="flex items-center gap-1.5 rounded-xl border border-success/30 bg-success/10 px-3 py-1 font-mono text-xs font-semibold text-success hover:bg-success hover:text-white transition-colors min-h-[36px]"
+        >
+          <Play className="size-3" fill="currentColor" /> Advance Stage
+        </button>
+      </div>
+
       {/* Header Bar */}
       <div className="flex items-center justify-between border-b border-border pb-4">
         <div className="flex items-center gap-3">
@@ -28,22 +42,15 @@ export default function GiaHeroAnimation() {
           </div>
           <div>
             <h3 className="font-heading font-bold text-ink text-base">Gia — CRM Autopilot</h3>
-            <p className="font-mono text-xs text-ink/50">GoHighLevel Lead Pipeline Automation</p>
+            <p className="font-mono text-xs text-ink/50">Managed CRM Pipeline Automation</p>
           </div>
         </div>
-        <button
-          type="button"
-          onClick={handleNext}
-          className="flex items-center gap-1.5 rounded-xl border border-success/30 bg-success/10 px-3 py-1.5 font-mono text-xs font-semibold text-success hover:bg-success hover:text-white transition-colors"
-        >
-          <Play className="size-3" fill="currentColor" /> Advance Stage
-        </button>
       </div>
 
       {/* Kanban Pipeline Stage Animation */}
       <div className="my-5 rounded-2xl bg-cream border border-border/70 p-4 space-y-4">
         <div className="flex items-center justify-between text-xs font-mono text-ink/50 border-b border-border/40 pb-2">
-          <span>GoHighLevel Live Pipeline</span>
+          <span>CRM Live Pipeline</span>
           <span className="text-success font-bold">Autopilot: Active</span>
         </div>
 
@@ -83,10 +90,10 @@ export default function GiaHeroAnimation() {
             </div>
 
             <div className="space-y-1.5 font-mono text-xs text-ink/70 bg-cream p-3 rounded-lg border border-border/50">
-              {activeStage === 0 && <p className="flex items-center gap-1.5">📩 New Lead form submitted on website</p>}
-              {activeStage === 1 && <p className="flex items-center gap-1.5 text-coral">⚡ Instant SMS &amp; Email Nurture dispatched</p>}
-              {activeStage === 2 && <p className="flex items-center gap-1.5 text-teal">📅 Cal.com synced to ServiceTitan calendar</p>}
-              {activeStage === 3 && <p className="flex items-center gap-1.5 text-success">⭐ 5-Star Google Review request sent auto</p>}
+              {activeStage === 0 && <p className="flex items-center gap-1.5">📩 New lead form submitted on website</p>}
+              {activeStage === 1 && <p className="flex items-center gap-1.5 text-coral">⚡ Instant SMS &amp; email response dispatched</p>}
+              {activeStage === 2 && <p className="flex items-center gap-1.5 text-teal">📅 Appointment synced to Google Calendar</p>}
+              {activeStage === 3 && <p className="flex items-center gap-1.5 text-success">⭐ Google Review request sent automatically</p>}
             </div>
           </motion.div>
         </AnimatePresence>
@@ -98,7 +105,7 @@ export default function GiaHeroAnimation() {
           <UserCheck className="size-4 text-success" />
           No rotting leads in inbox
         </span>
-        <span className="font-heading font-bold text-success">100% Pipeline Accuracy</span>
+        <span className="font-heading font-bold text-success">Automated Follow-ups</span>
       </div>
     </div>
   );

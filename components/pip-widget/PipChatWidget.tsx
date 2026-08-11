@@ -5,6 +5,7 @@ import { Bot, MessageCircle, Send, X } from "lucide-react";
 import PipMessageBubble from "./PipMessageBubble";
 import { STARTER_CHIPS } from "./starter-chips";
 import { usePipSession } from "./usePipSession";
+import { PIP_GREETING } from "@/lib/data/site-content";
 
 const OPEN_STATE_KEY = "pip_widget_open";
 
@@ -91,7 +92,7 @@ function PipPanel({
         {isEmpty && (
           <div className="mr-auto max-w-[88%] rounded-2xl rounded-tl-xs border border-border bg-[var(--pip-bg)] px-4 py-2.5 text-xs text-ink shadow-xs">
             <p className="leading-relaxed">
-              Hello! I&apos;m Pip. How can I help you today?
+              {PIP_GREETING}
             </p>
           </div>
         )}
@@ -179,29 +180,24 @@ function FloatingPipWidget({
   defaultOpen: boolean;
   className?: string;
 }) {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
-  const [hydrated, setHydrated] = useState(false);
-
-  // Open/closed state lives in sessionStorage: it persists while the tab is
-  // open but resets on a fresh visit, per spec ("per tab only").
-  useEffect(() => {
+  const [isOpen, setIsOpen] = useState(() => {
+    if (typeof window === "undefined") return defaultOpen;
     try {
       const stored = window.sessionStorage.getItem(OPEN_STATE_KEY);
-      if (stored !== null) setIsOpen(stored === "true");
+      if (stored !== null) return stored === "true";
     } catch {
-      // Storage unavailable — fall back to the default state.
+      // Storage unavailable — fall back to default
     }
-    setHydrated(true);
-  }, []);
+    return defaultOpen;
+  });
 
   useEffect(() => {
-    if (!hydrated) return;
     try {
       window.sessionStorage.setItem(OPEN_STATE_KEY, String(isOpen));
     } catch {
-      // Storage unavailable — state stays in memory for this tab.
+      // Storage unavailable — state stays in memory
     }
-  }, [isOpen, hydrated]);
+  }, [isOpen]);
 
   return (
     <div className={className ?? "fixed bottom-20 right-4 z-50 md:bottom-6 md:right-6"}>

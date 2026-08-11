@@ -4,22 +4,23 @@ import {
   CheckCircle2,
   CalendarCheck,
   PhoneForwarded,
-  Languages,
+  Globe,
   MessageSquareText,
   ShieldOff,
 } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
+import { INTEGRATION_COPY } from "@/lib/data/site-content";
 
 const features = [
   {
     icon: Clock,
     title: "24/7 Answering",
-    body: "Rex never sleeps. Weekend emergencies and midnight leaks get handled instantly.",
+    body: "Rex answers on every ring. After-hours calls and weekend emergencies get handled immediately.",
   },
   {
     icon: AudioLines,
     title: "Natural Sound",
-    body: "Powered by advanced neural voices that breathe, pause, and respond like a human.",
+    body: "Answers immediately, holds a normal back-and-forth conversation, and handles interruptions.",
   },
   {
     icon: CheckCircle2,
@@ -29,17 +30,17 @@ const features = [
   {
     icon: CalendarCheck,
     title: "Calendar Booking",
-    body: "Direct integration with ServiceTitan, Housecall Pro, or Google Calendar.",
+    body: INTEGRATION_COPY.calendar,
   },
   {
     icon: PhoneForwarded,
     title: "Warm Transfers",
-    body: "Can instantly patch through high-priority emergency calls to your cell.",
+    body: "Can instantly patch through high-priority emergency calls to your phone.",
   },
   {
-    icon: Languages,
-    title: "30+ Languages",
-    body: "Seamlessly switches languages to support every caller in your community.",
+    icon: Globe,
+    title: "Clear Accent Handling",
+    body: "Responds clearly and handles standard regional US accents so every caller is understood.",
   },
   {
     icon: MessageSquareText,
@@ -49,7 +50,7 @@ const features = [
   {
     icon: ShieldOff,
     title: "Spam Filtering",
-    body: "Blocks telemarketers and robocalls so you only hear about real business.",
+    body: "Filters out obvious telemarketers and robocalls so you only hear about real business.",
   },
 ];
 
@@ -62,8 +63,7 @@ export default function RexFeatures() {
             What Rex does for your shop
           </h2>
           <p className="mt-4 text-ink/60">
-            He&apos;s more than just a voicemail replacement. He&apos;s a fully trained member of
-            your dispatch team.
+            He&apos;s more than just a voicemail replacement. He&apos;s a focused digital assistant for your front office.
           </p>
         </div>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">

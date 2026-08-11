@@ -44,7 +44,7 @@ export const crew: CrewMember[] = [
     role: "CRM Automation",
     tagline: "The organised one. Nothing falls through her cracks.",
     description:
-      "Keeps your GoHighLevel tidy — follow-ups, reminders, review requests, all on autopilot.",
+      "Keeps your CRM tidy — follow-ups, reminders, review requests, all on autopilot.",
     href: "/crm-automation",
     image: "/images/gia-mascot.jpg",
     accent: "#1B8A5A",

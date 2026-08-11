@@ -63,7 +63,7 @@ export default function PrivacyPage() {
         <h2>Who we share it with</h2>
         <p>
           We use service providers to deliver the service, including our AI voice platform, CRM
-          (GoHighLevel), website hosting, analytics tools, and booking software. These providers
+          infrastructure, website hosting, analytics tools, and booking software. These providers
           only receive the data needed to perform their function and are not permitted to use it
           for their own marketing.
         </p>

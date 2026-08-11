@@ -27,7 +27,7 @@ export default function RoofingCrew() {
                 Fast storm-surge answering
               </h3>
               <p className="mt-2 text-white/70 leading-relaxed max-w-md">
-                Rex handles up to 500 simultaneous calls during hail events. He qualifies the
+                Rex handles multiple simultaneous calls during heavy weather events. He qualifies the
                 damage, gathers the location, and reassures the homeowner that help is on the way.
               </p>
             </div>
@@ -42,10 +42,10 @@ export default function RoofingCrew() {
               <h3 className="mt-4 font-heading font-bold text-ink">Instant text-backs (Zip)</h3>
               <p className="mt-2 text-sm text-ink/60 leading-relaxed">
                 When you&apos;re on a roof and miss a call, Zip automatically texts the lead a link
-                to upload photos of their damage instantly.
+                to upload photos of their damage.
               </p>
               <p className="mt-4 border-t border-border pt-3 font-mono text-xs text-teal">
-                &ldquo;Zip is on it&rdquo; → 98% Open Rate
+                &ldquo;Zip is on it&rdquo; → Instant Text Response
               </p>
             </div>
           </Reveal>
@@ -58,7 +58,7 @@ export default function RoofingCrew() {
               </span>
               <h3 className="mt-4 font-heading font-bold text-ink">Insurance intake assistance</h3>
               <p className="mt-2 text-sm text-ink/60 leading-relaxed">
-                Our AI collects carrier names and claim numbers upfront, so your sales team walks
+                Our AI collects carrier names and claim details upfront, so your sales team walks
                 into every estimate with a loaded folder.
               </p>
             </div>
@@ -73,8 +73,8 @@ export default function RoofingCrew() {
                 </span>
                 <h3 className="font-heading font-bold text-white">Scheduling roof inspections</h3>
                 <p className="mt-2 text-sm text-cream/60 leading-relaxed max-w-sm">
-                  Sync directly with your CRM. Rex books the inspection on your calendar while the
-                  homeowner is still on the phone.
+                  Sync directly with your calendar. Rex books the inspection while the
+                  homeowner is still on the line.
                 </p>
               </div>
               <div className="hidden sm:flex gap-1.5 shrink-0">

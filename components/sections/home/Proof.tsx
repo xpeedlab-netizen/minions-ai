@@ -1,22 +1,5 @@
 import Reveal from "@/components/ui/Reveal";
-
-const stats = [
-  {
-    stat: "100x",
-    label: "The drop in lead qualification chance if you wait just 30 minutes to call back.",
-    source: "— MIT Lead Response Study",
-  },
-  {
-    stat: "78%",
-    label: "Of customers buy from the company that responds to their inquiry first.",
-    source: "— Lead Connect Research",
-  },
-  {
-    stat: "24/7",
-    label: "Availability is the #1 factor in customer satisfaction for home services.",
-    source: "— HBR Service Excellence",
-  },
-];
+import { PROOF_STATS, PROOF_STATS_CLOSING } from "@/lib/data/site-content";
 
 export default function Proof() {
   return (
@@ -26,18 +9,21 @@ export default function Proof() {
           Speed is everything — and the research proves it.
         </h2>
         <div className="mt-10 grid sm:grid-cols-3 gap-6">
-          {stats.map((s, i) => (
+          {PROOF_STATS.map((s, i) => (
             <Reveal key={s.stat} delay={i * 0.1} className="h-full">
               <div className="flex h-full flex-col justify-between rounded-2xl border border-white/15 bg-white/5 p-6 sm:p-8 backdrop-blur-sm">
                 <div>
                   <p className="font-mono text-4xl sm:text-5xl font-medium text-white">{s.stat}</p>
-                  <p className="mt-3 text-white/80 leading-relaxed">{s.label}</p>
+                  <p className="mt-3 text-white/80 leading-relaxed text-sm sm:text-base">{s.description}</p>
                 </div>
-                <p className="mt-4 text-sm text-white/50">{s.source}</p>
+                <p className="mt-4 text-xs sm:text-sm text-white/60 font-mono">{s.source}</p>
               </div>
             </Reveal>
           ))}
         </div>
+        <p className="mt-10 font-heading font-extrabold text-2xl sm:text-3xl text-white text-center">
+          {PROOF_STATS_CLOSING}
+        </p>
       </div>
     </section>
   );

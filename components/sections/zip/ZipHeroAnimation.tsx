@@ -16,6 +16,20 @@ export default function ZipHeroAnimation() {
 
   return (
     <div className="relative w-full max-w-lg mx-auto rounded-3xl border border-border bg-white p-6 shadow-lg overflow-hidden">
+      {/* Illustration Label */}
+      <div className="mb-3 flex items-center justify-between">
+        <span className="rounded-md bg-cream border border-border px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-ink/60">
+          Example — not a live call
+        </span>
+        <button
+          type="button"
+          onClick={handleSimulate}
+          className="rounded-xl border border-teal/30 bg-teal/10 px-3 py-1 font-mono text-xs font-semibold text-teal hover:bg-teal hover:text-white transition-colors min-h-[36px]"
+        >
+          Simulate Missed Call
+        </button>
+      </div>
+
       {/* Header Bar */}
       <div className="flex items-center justify-between border-b border-border pb-4">
         <div className="flex items-center gap-3">
@@ -24,16 +38,9 @@ export default function ZipHeroAnimation() {
           </div>
           <div>
             <h3 className="font-heading font-bold text-ink text-base">Zip — Speed-to-Lead</h3>
-            <p className="font-mono text-xs text-ink/50">Sub-Second Missed-Call Text-Back</p>
+            <p className="font-mono text-xs text-ink/50">Automatic Missed-Call Text-Back</p>
           </div>
         </div>
-        <button
-          type="button"
-          onClick={handleSimulate}
-          className="rounded-xl border border-teal/30 bg-teal/10 px-3 py-1.5 font-mono text-xs font-semibold text-teal hover:bg-teal hover:text-white transition-colors"
-        >
-          Simulate Missed Call
-        </button>
       </div>
 
       {/* Messaging Simulation Interface */}
@@ -41,9 +48,9 @@ export default function ZipHeroAnimation() {
         {/* Timeline Header */}
         <div className="flex items-center justify-between text-xs font-mono text-ink/50 border-b border-border/40 pb-2">
           <span className="flex items-center gap-1">
-            <Clock className="size-3.5 text-coral-text" /> 2:05:00 PM • Missed Call (555-0192)
+            <Clock className="size-3.5 text-coral-text" /> 2:05:00 PM • Missed Call
           </span>
-          <span className="font-bold text-coral-text">Speed: 0.4 Seconds</span>
+          <span className="font-bold text-coral-text">Instant Text-Back</span>
         </div>
 
         {/* Dynamic Chat Messages */}
@@ -69,7 +76,7 @@ export default function ZipHeroAnimation() {
               >
                 <div className="flex items-center justify-between text-[10px] text-white/70 mb-1 font-mono">
                   <span>Zip Auto-SMS</span>
-                  <span>2:05:01 PM (+0.4s)</span>
+                  <span>2:05:01 PM</span>
                 </div>
                 <p className="leading-relaxed">
                   &ldquo;Hey! Saw we missed your call — I&apos;m finishing up a job site. What project can we help you quote today?&rdquo;
@@ -91,11 +98,11 @@ export default function ZipHeroAnimation() {
                 className="mr-auto max-w-[85%] rounded-2xl rounded-tl-xs bg-white border border-border px-4 py-2.5 text-xs text-ink shadow-xs"
               >
                 <div className="flex items-center justify-between text-[10px] text-ink/40 mb-1 font-mono">
-                  <span>Customer (Hot Lead)</span>
+                  <span>Customer</span>
                   <span>2:05:14 PM</span>
                 </div>
                 <p className="leading-relaxed">
-                  &ldquo;Hi! Looking for an urgent AC estimate. Can someone come by 4 PM today?&rdquo;
+                  &ldquo;Hi! Looking for an estimate. Can someone come by today?&rdquo;
                 </p>
               </motion.div>
             )}
@@ -111,10 +118,10 @@ export default function ZipHeroAnimation() {
                 className="ml-auto max-w-[88%] rounded-2xl rounded-tr-xs bg-teal px-4 py-2.5 text-xs text-white shadow-xs"
               >
                 <p className="leading-relaxed">
-                  &ldquo;You&apos;re all set! I locked in 4:00 PM today with Senior Tech Dave. See you soon!&rdquo;
+                  &ldquo;You&apos;re all set! I locked in 4:00 PM today for your consultation. See you soon!&rdquo;
                 </p>
                 <div className="mt-1 text-right font-mono text-[10px] text-coral-text font-bold">
-                  ✓ Job Booked in 14 Seconds
+                  ✓ Appointment Scheduled
                 </div>
               </motion.div>
             )}
@@ -126,9 +133,9 @@ export default function ZipHeroAnimation() {
       <div className="flex items-center justify-between rounded-xl border border-border bg-white px-4 py-3 text-xs text-ink/70">
         <span className="flex items-center gap-2 font-mono">
           <MessageSquare className="size-4 text-teal" />
-          First responder wins 78% of contracts
+          100× more likely to reach lead in 5m (MIT Study)
         </span>
-        <span className="font-heading font-bold text-coral-text">0.4s Instant Reply</span>
+        <span className="font-heading font-bold text-coral-text">Instant Text-Back</span>
       </div>
     </div>
   );

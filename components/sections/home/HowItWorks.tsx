@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { INTEGRATION_COPY } from "@/lib/data/site-content";
 
 const steps = [
   {
@@ -6,21 +7,21 @@ const steps = [
     title: "We learn your business",
     who: "Otto",
     img: "/images/otto-mascot.jpg",
-    body: 'Otto analyzes your services, your pricing, and your schedule. We don\'t just "answer"—we learn how you talk and what you offer so we can represent you perfectly.',
+    body: "Otto analyzes your services, your pricing, and your schedule. We don't just answer — we learn how you talk and what you offer so we can represent you properly.",
   },
   {
     n: "STEP 02",
     title: "We build and train your crew",
     who: "Rex",
     img: "/images/rex-mascot.jpg",
-    body: "Rex leads the technical build. We integrate with your CRM (ServiceTitan, Housecall Pro, etc.) so when the AI books a job, it shows up right on your calendar.",
+    body: `Rex leads the technical setup. ${INTEGRATION_COPY.calendar} ${INTEGRATION_COPY.crm}`,
   },
   {
     n: "STEP 03",
     title: "You forward your calls",
     who: "Zip",
     img: "/images/zip-mascot.jpg",
-    body: "Zip stands ready. You forward your business line to our dedicated AI number. From that second on, every call is answered in 2 seconds or less, 24/7/365.",
+    body: `${INTEGRATION_COPY.phone} From that second on, every call is answered immediately, 24/7.`,
   },
 ];
 

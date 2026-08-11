@@ -22,7 +22,7 @@ export const pricingPlans: PricingPlan[] = [
     popular: true,
     features: [
       "200 Minutes Included",
-      "Full CRM Integration",
+      "Done-For-You CRM Setup",
       "24/7 Coverage",
       "Outbound Confirmations",
     ],
@@ -32,7 +32,7 @@ export const pricingPlans: PricingPlan[] = [
     name: "Commercial Crew",
     price: null,
     minutes: "Unlimited Minutes",
-    features: ["Unlimited Minutes", "Multi-Location Support", "Custom Voice Cloning"],
+    features: ["Unlimited Minutes", "Multi-Location Support", "Custom Call Workflows"],
     ctaLabel: "Talk to Sales",
   },
 ];
@@ -50,6 +50,6 @@ export const pricingFaq = [
   { q: "Can I change plans?", a: "Any time, up or down." },
   {
     q: "What does the Commercial Crew include?",
-    a: "Unlimited minutes, multi-location support, and custom voice cloning for larger operations. Talk to sales for a plan built around your business.",
+    a: "Unlimited minutes, multi-location support, and custom call workflows for larger operations. Talk to sales for a plan built around your business.",
   },
 ];

@@ -20,7 +20,7 @@ export const footerProduct: NavLink[] = [
   { label: "How it Works", href: "/how-it-works" },
   { label: "Pricing", href: "/pricing" },
   { label: "The Crew", href: "/#crew" },
-  { label: "Integrations", href: "/crm-automation" },
+  { label: "CRM Answering", href: "/crm-automation" },
 ];
 
 export const footerLegal: NavLink[] = [

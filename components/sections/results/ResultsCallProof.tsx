@@ -5,13 +5,18 @@ export default function ResultsCallProof() {
   return (
     <section className="bg-cream pb-16 sm:pb-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-6 items-start">
-        {/* Real Call Analysis */}
+        {/* Call Workflow Illustration */}
         <div className="rounded-2xl border border-border bg-white p-6">
           <div className="flex items-start justify-between">
             <div>
-              <h3 className="font-heading font-bold text-lg text-teal">Real Call Analysis</h3>
+              <div className="mb-2">
+                <span className="rounded-md bg-cream border border-border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wide text-ink/60">
+                  Example — product illustration
+                </span>
+              </div>
+              <h3 className="font-heading font-bold text-lg text-teal">Emergency Dispatch Workflow</h3>
               <p className="mt-1 text-sm text-ink/60">
-                Rex analyzing a 2:00 AM plumbing emergency call.
+                How Rex qualifies an after-hours emergency call.
               </p>
             </div>
             <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-cream text-ink/50">
@@ -30,7 +35,7 @@ export default function ResultsCallProof() {
             </div>
             <div className="flex items-start justify-end gap-2">
               <p className="rounded-xl rounded-tr-sm bg-teal px-3 py-2 text-sm text-white max-w-[80%]">
-                &ldquo;I hear you. I&apos;ve got an emergency slot for 7:00 AM. Does that
+                &ldquo;I hear you. I&apos;ve got an emergency slot available for 7:00 AM. Does that
                 work?&rdquo;
               </p>
               <div className="relative size-7 shrink-0 overflow-hidden rounded-full">
@@ -44,7 +49,7 @@ export default function ResultsCallProof() {
               Intention: Urgent
             </span>
             <span className="rounded-full bg-success/10 px-3 py-1 font-mono text-xs text-success">
-              Outcome: Booked
+              Outcome: Scheduled
             </span>
           </div>
         </div>
@@ -53,16 +58,16 @@ export default function ResultsCallProof() {
         <div className="rounded-2xl border border-border bg-white p-6">
           <h3 className="font-heading font-bold text-lg text-teal">The Result</h3>
           <p className="mt-1 font-mono text-xs uppercase tracking-wide text-ink/50">
-            Automatic Booking
+            Automatic Calendar Entry
           </p>
 
           <div className="mt-5 rounded-xl border border-border overflow-hidden">
             <div className="flex items-center gap-2 border-b border-border bg-cream px-4 py-3">
               <CalendarDays className="size-4 text-ink/50" />
-              <span className="text-sm font-medium text-ink">Mon, Oct 24</span>
+              <span className="text-sm font-medium text-ink">Mon, Morning Schedule</span>
             </div>
             <div className="border-l-4 border-coral bg-coral/5 px-4 py-3 flex items-center justify-between">
-              <span className="text-sm font-medium text-ink">Emergency Leak Repair</span>
+              <span className="text-sm font-medium text-ink">Emergency Leak Inspection</span>
               <span className="font-mono text-xs text-ink/50">7:00 AM</span>
             </div>
             <div className="px-4 py-3 border-t border-border" />

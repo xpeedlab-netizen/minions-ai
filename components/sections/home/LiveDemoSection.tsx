@@ -1,38 +1,36 @@
 "use client";
 
-import { useState } from "react";
-import { PhoneCall } from "lucide-react";
-import Button from "@/components/ui/Button";
+import { DEMO_VIDEO_URL } from "@/lib/data/placeholders";
 
 export default function LiveDemoSection() {
-  const [started, setStarted] = useState(false);
+  // Per T12: When DEMO_VIDEO_URL is unset, the demo section MUST NOT render at all.
+  if (!DEMO_VIDEO_URL || DEMO_VIDEO_URL.trim() === "") {
+    return null;
+  }
 
   return (
-    <section className="bg-cream py-16 sm:py-24">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border-2 border-coral bg-white p-8 sm:p-12 text-center">
+    <section className="bg-cream py-16 sm:py-24 border-t border-border" id="demo">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-border bg-white p-6 sm:p-10 shadow-sm text-center">
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
-            Don&apos;t take our word for it.
-            <br />
-            Talk to the crew yourself.
+            See how the crew handles a live call
           </h2>
-          <p className="mt-4 text-ink/70 leading-relaxed max-w-xl mx-auto">
-            We&apos;ve set up a live line where you can experience the speed, tone, and
-            intelligence of Minions.AI right now.
+          <p className="mt-3 text-ink/70 leading-relaxed max-w-xl mx-auto text-sm sm:text-base">
+            Watch a 60-second walkthrough of our AI dispatcher qualifying a lead and writing the booking directly to Google Calendar.
           </p>
-          <Button type="button" onClick={() => setStarted(true)} size="lg" showArrow className="mt-8">
-            <PhoneCall className="size-4" />
-            Talk to the AI now
-          </Button>
-          <p className="mt-4 font-mono text-xs text-ink/40">
-            Standard call rates may apply. Rex is standing by.
-          </p>
-          {started && (
-            <p className="mt-6 rounded-xl bg-cream px-4 py-3 text-sm text-ink/70 font-mono">
-              This is a design preview — the live voice demo connects once our AI provider is
-              wired up.
-            </p>
-          )}
+
+          <div className="mt-8 relative aspect-video w-full overflow-hidden rounded-2xl border border-border bg-black">
+            <video
+              src={DEMO_VIDEO_URL}
+              controls
+              preload="metadata"
+              playsInline
+              className="h-full w-full object-cover"
+              aria-label="Recorded demonstration video of Minions.AI handling a customer call"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </div>
     </section>

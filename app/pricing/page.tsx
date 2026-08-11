@@ -4,6 +4,8 @@ import FaqAccordion from "@/components/ui/FaqAccordion";
 import FinalCta from "@/components/sections/FinalCta";
 import Reveal from "@/components/ui/Reveal";
 import { pricingPlans, pricingFaq } from "@/lib/data/pricing";
+import { BOOKING_CALENDAR_URL, DEMO_VIDEO_URL } from "@/lib/data/placeholders";
+import FaqSection from "@/components/sections/faq/FaqSection";
 
 export const metadata: Metadata = {
   title: "Pricing — Flat Monthly Plans for AI Answering & Automation",
@@ -12,6 +14,8 @@ export const metadata: Metadata = {
 };
 
 export default function PricingPage() {
+  const secondaryHref = DEMO_VIDEO_URL ? "/live-demo" : BOOKING_CALENDAR_URL;
+
   return (
     <>
       <section className="bg-cream py-16 sm:py-24">
@@ -47,12 +51,17 @@ export default function PricingPage() {
         </div>
       </section>
 
+      <FaqSection
+        title="General FAQ"
+        subtitle="Common questions about setup, guarantees, and how the AI crew operates."
+      />
+
       <FinalCta
         heading="Ready to pick a plan?"
         primaryLabel="Book a call to pick a plan"
-        primaryHref="/contact"
-        secondaryLabel="Hear the AI first"
-        secondaryHref="/live-demo"
+        primaryHref={BOOKING_CALENDAR_URL}
+        secondaryLabel={DEMO_VIDEO_URL ? "Hear the AI first" : "Contact Sales"}
+        secondaryHref={secondaryHref}
       />
     </>
   );

@@ -7,14 +7,13 @@ export default function LiveDemoHero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" />
             <span className="relative inline-flex size-2 rounded-full bg-success" />
           </span>
-          Live demo system online
+          Assistant preview
         </span>
         <h1 className="mt-5 font-heading font-extrabold text-4xl sm:text-5xl text-ink text-balance">
-          Talk to the crew right now. See why your customers won&apos;t hang up.
+          Experience how the crew answers customer inquiries.
         </h1>
         <p className="mt-6 text-lg text-ink/70 leading-relaxed">
-          This is the real thing, not a video. Have a conversation. Ask about hours and pricing.
-          Book a pretend appointment. This is exactly what your customers would get.
+          Test Pip live in browser chat or book a 15-minute call to hear test recordings built specifically around your business services.
         </p>
       </div>
     </section>

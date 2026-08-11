@@ -15,6 +15,20 @@ export default function RexHeroAnimation() {
 
   return (
     <div className="relative w-full max-w-lg mx-auto rounded-3xl border border-border bg-white p-6 shadow-lg overflow-hidden">
+      {/* Illustration Badge */}
+      <div className="mb-3 flex items-center justify-between">
+        <span className="rounded-md bg-cream border border-border px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-ink/60">
+          Example — not a live call
+        </span>
+        <button
+          type="button"
+          onClick={handleSimulate}
+          className="rounded-xl border border-coral/30 bg-coral/10 px-3 py-1 font-mono text-xs font-semibold text-coral-text hover:bg-coral hover:text-white transition-colors min-h-[36px]"
+        >
+          Simulate Call
+        </button>
+      </div>
+
       {/* Header Bar */}
       <div className="flex items-center justify-between border-b border-border pb-4">
         <div className="flex items-center gap-3">
@@ -26,18 +40,10 @@ export default function RexHeroAnimation() {
             <p className="font-mono text-xs text-ink/50">24/7 Phone Answering &amp; Booking</p>
           </div>
         </div>
-        <button
-          type="button"
-          onClick={handleSimulate}
-          className="rounded-xl border border-coral/30 bg-coral/10 px-3 py-1.5 font-mono text-xs font-semibold text-coral-text hover:bg-coral hover:text-white transition-colors"
-        >
-          Simulate Call
-        </button>
       </div>
 
       {/* Main Call Visual Stage */}
       <div className="my-6 min-h-[220px] flex flex-col justify-center rounded-2xl bg-ink p-5 text-white relative overflow-hidden">
-        {/* Background Ambient Pulse */}
         <div className="absolute -top-12 -right-12 size-40 rounded-full bg-teal/20 blur-2xl" />
 
         <AnimatePresence mode="wait">
@@ -72,7 +78,7 @@ export default function RexHeroAnimation() {
               <div className="flex items-center justify-between">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-teal/30 px-3 py-1 font-mono text-xs text-teal-light border border-teal/40">
                   <span className="size-2 rounded-full bg-teal animate-pulse" />
-                  Answered 1st Ring (0.8s)
+                  Answered on 1st Ring
                 </span>
                 <span className="font-mono text-xs text-white/50">11:42 PM</span>
               </div>
@@ -83,7 +89,7 @@ export default function RexHeroAnimation() {
                   <span>Rex Speaking Live:</span>
                 </div>
                 <p className="text-sm leading-relaxed text-white/90 italic">
-                  &ldquo;Thanks for calling Apex Plumbing. Don&apos;t worry — I&apos;m dispatching emergency tech Marcus to your address right now.&rdquo;
+                  &ldquo;Thanks for calling. Don&apos;t worry — I can take your info and get emergency service scheduled for you right away.&rdquo;
                 </p>
               </div>
             </motion.div>
@@ -102,17 +108,16 @@ export default function RexHeroAnimation() {
               </div>
               <div>
                 <p className="font-heading font-extrabold text-xl text-white">
-                  $1,250 Emergency Job Booked!
+                  Emergency Job Scheduled!
                 </p>
                 <p className="mt-1 text-xs text-white/70">
-                  Tech Dispatched &bull; Calendar Synced &bull; Customer Confirmed
+                  Details Captured &bull; Calendar Synced &bull; Confirmation Sent
                 </p>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Live Audio Waves Visualizer */}
         <div className="mt-4 flex items-center justify-center gap-1.5 h-6">
           {[0.6, 1, 0.4, 0.8, 0.3, 0.9, 0.5, 0.7, 0.4].map((h, i) => (
             <motion.span
@@ -131,13 +136,12 @@ export default function RexHeroAnimation() {
         </div>
       </div>
 
-      {/* Bottom Proof Strip */}
       <div className="flex items-center justify-between rounded-xl border border-border bg-cream px-4 py-3 text-xs text-ink/70">
         <span className="flex items-center gap-2 font-mono">
           <ShieldAlert className="size-4 text-coral-text" />
           No missed calls while you sleep
         </span>
-        <span className="font-heading font-bold text-teal">100% Call Capture</span>
+        <span className="font-heading font-bold text-teal">24/7 Coverage</span>
       </div>
     </div>
   );

@@ -8,7 +8,10 @@ import LiveDemoSection from "@/components/sections/home/LiveDemoSection";
 import PricingPreview from "@/components/sections/home/PricingPreview";
 import FoundersTrust from "@/components/sections/home/FoundersTrust";
 import HonestProof from "@/components/sections/home/HonestProof";
+import WhoThisIsNotFor from "@/components/sections/home/WhoThisIsNotFor";
+import FaqSection from "@/components/sections/faq/FaqSection";
 import FinalCta from "@/components/sections/FinalCta";
+import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
 export default function Home() {
   return (
@@ -23,11 +26,13 @@ export default function Home() {
       <PricingPreview />
       <FoundersTrust />
       <HonestProof />
+      <WhoThisIsNotFor />
+      <FaqSection />
       <FinalCta
         heading="The next call is worth a job. Let's make sure you catch it."
         subtext="Join the early access crew and stop losing leads to the voicemail graveyard."
         primaryLabel="Hire the Crew Now"
-        primaryHref="/contact"
+        primaryHref={BOOKING_CALENDAR_URL}
         hideSecondary
       />
     </>

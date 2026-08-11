@@ -4,6 +4,7 @@ import PipFeatures from "@/components/sections/pip/PipFeatures";
 import PipNoGuessPolicy from "@/components/sections/pip/PipNoGuessPolicy";
 import ObjectionsSection from "@/components/sections/service/ObjectionsSection";
 import PipFinalCta from "@/components/sections/pip/PipFinalCta";
+import FaqSection from "@/components/sections/faq/FaqSection";
 
 export const metadata: Metadata = {
   title: "AI Customer Support — Chat & Email Answered 24/7",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 const pipFaq = [
   {
     q: "Will Pip make things up (hallucinate)?",
-    a: 'No. Pip only answers from information you\'ve approved. If it isn\'t at least 95% sure of an answer, it says so and escalates to you instead of guessing — that\'s the No-Guess Policy.',
+    a: "No. Pip only answers from information you've approved. If it isn't sure of an answer, it says so and escalates to you instead of guessing — that's the No-Guess Policy.",
   },
   {
     q: "What if the customer is angry or upset?",
@@ -32,7 +33,8 @@ export default function CustomerSupportAiPage() {
       <PipHero />
       <PipFeatures />
       <PipNoGuessPolicy />
-      <ObjectionsSection items={pipFaq} heading="Tough Questions for a Tough Bot" />
+      <ObjectionsSection items={pipFaq} heading="Tough Questions for a Support Assistant" />
+      <FaqSection />
       <PipFinalCta />
     </>
   );

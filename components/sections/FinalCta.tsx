@@ -1,11 +1,12 @@
 import Button from "@/components/ui/Button";
+import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
 export default function FinalCta({
   heading,
   subtext,
-  primaryLabel = "Hear the AI now",
-  primaryHref = "/live-demo",
-  secondaryLabel = "Book a 15-minute call",
+  primaryLabel = "Book a 15-minute call",
+  primaryHref = BOOKING_CALENDAR_URL,
+  secondaryLabel = "Contact Support",
   secondaryHref = "/contact",
   hideSecondary = false,
 }: {

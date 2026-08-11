@@ -9,8 +9,10 @@ import {
   useRef,
   useState,
 } from "react";
+import { SITE_PHONE_NUMBER } from "@/lib/data/placeholders";
 
 const SESSION_KEY = "pip_session_id";
+const FALLBACK_MESSAGE = `Let me grab a human for that — try calling ${SITE_PHONE_NUMBER} or book a call instead.`;
 
 export type PipSource = { source_page?: string; heading?: string };
 
@@ -46,8 +48,6 @@ function newId() {
 
 /**
  * Reads the shared session id from localStorage, minting one if absent.
- * Every widget instance on the site reads the same key, so conversation
- * context follows the visitor across pages and across mount points.
  */
 function readOrCreateSessionId(): string {
   try {
@@ -57,34 +57,29 @@ function readOrCreateSessionId(): string {
     window.localStorage.setItem(SESSION_KEY, fresh);
     return fresh;
   } catch {
-    // Private browsing / storage disabled — fall back to an in-memory id.
     return newId();
   }
 }
 
 const PipSessionContext = createContext<PipSessionValue | null>(null);
 
-/**
- * Holds the single source of truth for the conversation. Mounted once in the
- * root layout so every PipChatWidget on a page — inline and floating alike —
- * reads and writes the same message list. The backend already threads them as
- * one conversation via the shared session_id; this keeps the UI in step.
- */
 export function PipSessionProvider({ children }: { children: React.ReactNode }) {
-  const [sessionId, setSessionId] = useState("");
+  const [sessionId, setSessionId] = useState(() => {
+    if (typeof window === "undefined") return "";
+    return readOrCreateSessionId();
+  });
   const [messages, setMessages] = useState<PipMessage[]>([]);
   const [isPending, setIsPending] = useState(false);
 
-  // Mirrors sessionId so sendMessage can read it without being re-created.
-  const sessionIdRef = useRef("");
-  // Guards against two mounted widgets firing overlapping turns: `isPending`
-  // reaches them via render, but a ref settles a same-tick double submit.
+  const sessionIdRef = useRef(sessionId);
   const inFlightRef = useRef(false);
 
   useEffect(() => {
-    const id = readOrCreateSessionId();
-    sessionIdRef.current = id;
-    setSessionId(id);
+    if (!sessionIdRef.current && typeof window !== "undefined") {
+      const id = readOrCreateSessionId();
+      sessionIdRef.current = id;
+      setSessionId(id);
+    }
   }, []);
 
   const sendMessage = useCallback(async (question: string) => {
@@ -113,20 +108,14 @@ export function PipSessionProvider({ children }: { children: React.ReactNode }) 
         }),
       });
 
-      // Never branch on res.ok — the proxy always answers 200 in the canonical
-      // shape. `error: true` in the body is the only failure signal.
       const data = (await res.json()) as PipApiResponse;
 
-      // Render data.answer as-is: the backend and proxy both author
-      // human-appropriate copy for their own error paths.
       setMessages((prev) => [
         ...prev,
         {
           id: newId(),
           role: "pip",
-          text:
-            data.answer ??
-            "Let me grab a human for that — try calling (346) 626-4720 or book a call instead.",
+          text: data.answer ?? FALLBACK_MESSAGE,
           timestamp: Date.now(),
           sources: data.sources ?? [],
           error: data.error === true,
@@ -139,18 +128,16 @@ export function PipSessionProvider({ children }: { children: React.ReactNode }) 
         try {
           window.localStorage.setItem(SESSION_KEY, data.session_id);
         } catch {
-          // Storage unavailable — the in-memory id still carries the session.
+          // Storage unavailable
         }
       }
     } catch {
-      // The proxy is same-origin and catches its own upstream failures, so this
-      // only fires if the app itself is unreachable (offline, navigation abort).
       setMessages((prev) => [
         ...prev,
         {
           id: newId(),
           role: "pip",
-          text: "Let me grab a human for that — try calling (346) 626-4720 or book a call instead.",
+          text: FALLBACK_MESSAGE,
           timestamp: Date.now(),
           sources: [],
           error: true,

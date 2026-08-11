@@ -3,7 +3,7 @@ import PipChatWidget from "@/components/pip-widget/PipChatWidget";
 export default function LiveDemoOptionC() {
   return (
     <div className="rounded-2xl border border-border bg-cream p-6">
-      <p className="font-mono text-xs uppercase tracking-wide text-teal">Option C</p>
+
       <h2 className="mt-1 font-heading font-extrabold text-xl sm:text-2xl text-ink">Try the chat</h2>
 
       <div className="mt-4 h-[440px]">

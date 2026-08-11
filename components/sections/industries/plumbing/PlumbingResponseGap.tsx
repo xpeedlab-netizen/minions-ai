@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 const bars = [
-  { label: "Minions.AI Speed", value: "0.4 Seconds", width: "8%", color: "bg-success" },
-  { label: "Human Dispatch Avg", value: "12 Minutes", width: "85%", color: "bg-coral" },
+  { label: "Minions.AI Speed", value: "Instant", width: "5%", color: "bg-success" },
+  { label: "Traditional Dispatch", value: "Delayed", width: "85%", color: "bg-coral" },
 ];
 
 export default function PlumbingResponseGap() {
@@ -35,24 +35,9 @@ export default function PlumbingResponseGap() {
         <div className="rounded-2xl bg-white p-6 sm:p-8">
           <h3 className="font-heading font-bold text-lg text-ink">Why it matters for Plumbers</h3>
           <p className="mt-3 text-ink/70 leading-relaxed">
-            &quot;In an emergency, the customer is in a panic. If they hit a voicemail, they hang
-            up and click the next Google ad. We capture them before they leave your brand.&quot;
+            In an emergency, the customer is in a panic. If they hit a voicemail, they hang
+            up and click the next Google ad. We capture them before they leave your brand.
           </p>
-          <div className="mt-6 flex items-center gap-3 border-t border-border pt-5">
-            <div className="relative size-11 overflow-hidden rounded-full border border-border">
-              <Image
-                src="/images/plumbing-photo-2.jpg"
-                alt="Dave Henderson"
-                fill
-                className="object-cover"
-                sizes="44px"
-              />
-            </div>
-            <div>
-              <p className="font-heading font-bold text-ink text-sm">Dave Henderson</p>
-              <p className="text-xs text-ink/50">Owner, Reliable Pipe Works</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

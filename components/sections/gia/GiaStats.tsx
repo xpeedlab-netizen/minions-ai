@@ -1,8 +1,8 @@
 const items = [
   { value: "24/7", label: "Automated Follow-ups" },
   { value: "Google", label: "Calendar Syncing" },
-  { value: "100%", label: "Done-For-You Setup" },
-  { value: "0", label: "Long-Term Lock-in" },
+  { value: "Full", label: "Done-For-You Setup" },
+  { value: "No", label: "Long-Term Lock-in" },
 ];
 
 export default function GiaStats() {

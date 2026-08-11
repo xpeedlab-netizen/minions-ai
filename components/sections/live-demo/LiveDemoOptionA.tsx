@@ -44,7 +44,7 @@ export default function LiveDemoOptionA() {
 
       <div className="mt-6 flex items-start justify-between">
         <div>
-          <p className="font-mono text-xs uppercase tracking-wide text-teal">Option A</p>
+
           <h2 className="mt-1 font-heading font-extrabold text-2xl sm:text-3xl text-ink">
             Talk in your browser
           </h2>

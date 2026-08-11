@@ -10,7 +10,7 @@ export default function LiveDemoOptionB() {
 
   return (
     <div className="rounded-2xl border border-border bg-white p-6">
-      <p className="font-mono text-xs uppercase tracking-wide text-teal">Option B</p>
+
       <h2 className="mt-1 font-heading font-extrabold text-xl sm:text-2xl text-ink">
         Have it call your phone
       </h2>

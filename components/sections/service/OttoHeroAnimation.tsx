@@ -69,13 +69,13 @@ export default function OttoHeroAnimation() {
           <div className="flex items-center justify-between rounded-xl bg-white border border-border p-3 text-xs">
             <span className="font-mono text-ink/50">Extracted W-2 &amp; Insurance:</span>
             <span className="font-mono text-success font-semibold flex items-center gap-1">
-              <CheckCircle2 className="size-3.5" /> 100% Data Verified
+              <CheckCircle2 className="size-3.5" /> Fully Verified
             </span>
           </div>
 
           <div className="flex items-center justify-between rounded-xl bg-white border border-border p-3 text-xs">
             <span className="font-mono text-ink/50">Auto-Chaser Status:</span>
-            <span className="font-mono text-teal font-semibold">0 Reminders Needed (Sent Auto)</span>
+            <span className="font-mono text-teal font-semibold">No Reminders Needed (Sent Auto)</span>
           </div>
         </div>
 
@@ -95,9 +95,8 @@ export default function OttoHeroAnimation() {
       </div>
 
       {/* Bottom Proof Strip */}
-      <div className="flex items-center justify-between rounded-xl border border-border bg-white px-4 py-2.5 text-xs text-ink/70">
+      <div className="flex items-center justify-center rounded-xl border border-border bg-white px-4 py-2.5 text-xs text-ink/70">
         <span className="font-mono">Zero manual data entry required</span>
-        <span className="font-heading font-bold text-[#2C3E50]">10x Faster Onboarding</span>
       </div>
     </div>
   );

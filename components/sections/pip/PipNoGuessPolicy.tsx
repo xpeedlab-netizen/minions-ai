@@ -27,7 +27,7 @@ export default function PipNoGuessPolicy() {
           </h2>
           <p className="mt-4 text-white/70 leading-relaxed">
             Unlike generic AI chatbots that hallucinate when they&apos;re confused, Pip has a strict
-            &quot;No Guessing&quot; rule. If it doesn&apos;t know the answer with 95% certainty, it
+            &quot;No Guessing&quot; rule. If it isn&apos;t confident in an answer, it
             does one of two things:
           </p>
           <ul className="mt-6 space-y-5">

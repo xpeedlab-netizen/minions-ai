@@ -8,10 +8,7 @@ export default function GiaFinalCta() {
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
             Stop Fighting Your CRM. Start Winning More Jobs.
           </h2>
-          <p className="mt-4 text-ink/70 text-lg max-w-xl mx-auto">
-            Join 200+ contractors who use Gia to keep their pipelines full and their schedules
-            organized.
-          </p>
+
           <Button href="/contact" size="lg" showArrow className="mt-8">
             Book a free CRM audit
           </Button>

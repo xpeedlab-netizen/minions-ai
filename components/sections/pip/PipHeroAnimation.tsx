@@ -9,7 +9,7 @@ export default function PipHeroAnimation() {
       <div className="flex items-center justify-between text-[11px] font-mono text-ink/50 border-b border-border/40 pb-2">
         <span>Midnight Support Chat</span>
         <span className="text-teal font-bold flex items-center gap-1">
-          <ShieldCheck className="size-3.5" /> No-Guess Policy Active
+          <ShieldCheck className="size-3.5" /> No-Guess Policy
         </span>
       </div>
 
@@ -18,9 +18,8 @@ export default function PipHeroAnimation() {
       </div>
 
       {/* Bottom Proof Bar */}
-      <div className="mt-4 flex items-center justify-between rounded-xl border border-border bg-cream px-4 py-2.5 text-xs text-ink/70">
+      <div className="mt-4 flex items-center justify-center rounded-xl border border-border bg-cream px-4 py-2.5 text-xs text-ink/70">
         <span className="font-mono">Zero repetitive emails in your inbox</span>
-        <span className="font-heading font-bold text-[#3A6EA5]">95%+ Resolution Rate</span>
       </div>
     </div>
   );

@@ -21,24 +21,8 @@ export default function PestMath() {
 
           <div className="rounded-2xl border border-white/10 bg-teal-dark p-6 sm:p-8">
             <p className="text-white/90 leading-relaxed text-lg">
-              &quot;Before Minions.AI, we were losing roughly 40% of our weekend wasp calls to the
-              &quot;next guy&quot; on Google. Now, we book them while we sleep.&quot;
+              Don&apos;t lose your weekend wasp calls to the &quot;next guy&quot; on Google. Zip texts them back instantly, booking the job while you sleep.
             </p>
-            <div className="mt-6 flex items-center gap-3">
-              <div className="relative size-11 overflow-hidden rounded-full border border-white/20">
-                <Image
-                  src="/images/pest-control-photo.jpg"
-                  alt="Dave Miller"
-                  fill
-                  className="object-cover"
-                  sizes="44px"
-                />
-              </div>
-              <div>
-                <p className="font-heading font-bold text-white text-sm">Dave Miller</p>
-                <p className="text-xs text-white/50">Owner, Shield Pest Defense</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

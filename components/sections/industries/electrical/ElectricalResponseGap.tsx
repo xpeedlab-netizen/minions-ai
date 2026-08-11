@@ -28,7 +28,7 @@ export default function ElectricalResponseGap() {
             <div>
               <div className="flex items-center justify-between font-mono text-xs uppercase tracking-wide">
                 <span className="text-ink/50">With Minions.AI (Rex)</span>
-                <span className="text-success font-bold">5 Seconds</span>
+                <span className="text-success font-bold">Instant</span>
               </div>
               <div className="mt-2 h-2 rounded-full bg-border overflow-hidden">
                 <div className="h-full w-[2%] rounded-full bg-success" />
@@ -37,7 +37,7 @@ export default function ElectricalResponseGap() {
             <div>
               <div className="flex items-center justify-between font-mono text-xs uppercase tracking-wide">
                 <span className="text-ink/50">Typical Response Time</span>
-                <span className="text-coral-text font-bold">45 Minutes</span>
+                <span className="text-coral-text font-bold">Delayed</span>
               </div>
               <div className="mt-2 h-2 rounded-full bg-border overflow-hidden">
                 <div className="h-full w-[85%] rounded-full bg-coral" />

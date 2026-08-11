@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Clock, CalendarCheck, PhoneForwarded, Zap, ShieldCheck, CheckCircle2, FileText, Activity } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
+import RexAnimatedVisual from "./RexAnimatedVisual";
 
 export default function MeetTheCrew() {
   return (
@@ -44,36 +45,7 @@ export default function MeetTheCrew() {
                     </Link>
                   </div>
                 </div>
-                <div className="bg-[#0b484e] p-8 sm:p-12 flex items-center justify-center relative min-h-[320px]">
-                    {/* Visual: Calendar / Call interaction */}
-                    <div className="bg-white rounded-2xl p-5 shadow-2xl w-full max-w-sm">
-                      <div className="flex items-center justify-between border-b border-border pb-3 mb-4">
-                        <span className="font-bold text-ink">Incoming Call</span>
-                        <span className="text-teal text-sm font-bold flex items-center gap-1.5">
-                          <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-teal"></span>
-                          </span>
-                          Live
-                        </span>
-                      </div>
-                      <div className="space-y-4">
-                        <div className="flex gap-3">
-                          <div className="w-8 h-8 rounded-full bg-ink/10 flex-shrink-0" />
-                          <div className="bg-cream p-3 rounded-2xl rounded-tl-sm text-sm text-ink/80">
-                            &ldquo;Hi, I have a leak in my roof and it&apos;s getting worse.&rdquo;
-                          </div>
-                        </div>
-                        <div className="flex gap-3 flex-row-reverse">
-                          <div className="w-8 h-8 rounded-full bg-teal flex-shrink-0 flex items-center justify-center text-white text-xs font-bold">R</div>
-                          <div className="bg-teal/10 p-3 rounded-2xl rounded-tr-sm text-sm text-ink/80">
-                            &ldquo;I can help with that. Is water actively coming into the house right now?&rdquo;
-                          </div>
-                        </div>
-                      </div>
-                      <div className="mt-6 text-center text-[10px] text-ink/40 uppercase tracking-widest font-mono font-medium">Example — Not Live Data</div>
-                    </div>
-                </div>
+                <RexAnimatedVisual />
               </div>
             </div>
           </Reveal>

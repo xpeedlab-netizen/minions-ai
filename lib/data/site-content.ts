@@ -105,6 +105,8 @@ export const WHO_THIS_IS_NOT_FOR = {
     "You take fewer than about ten calls a month",
     "You want a fully custom-built system rather than something live in a week",
     "You need someone who can come to your office in person",
+    // Verified fact: it's two founders — documented in FOUNDER_STORY.body and FAQ why-trust-you
+    "You need a large company with a dedicated support team and account managers",
   ],
   closing: "Not sure? Book fifteen minutes and we'll tell you straight.",
 };

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { INTEGRATION_COPY } from "@/lib/data/site-content";
+import Reveal from "@/components/ui/Reveal";
 
 const steps = [
   {
@@ -34,19 +35,20 @@ export default function HowItWorks() {
         </h2>
         <div className="mt-12 space-y-6">
           {steps.map((s, i) => (
-            <div
-              key={s.n}
-              className={`flex flex-col ${i % 2 === 1 ? "sm:flex-row-reverse" : "sm:flex-row"} items-center gap-6 rounded-2xl border border-border bg-cream p-6 sm:p-8`}
-            >
-              <div className="relative size-24 sm:size-32 shrink-0 overflow-hidden rounded-xl border border-border bg-white">
-                <Image src={s.img} alt={s.who} fill className="object-cover" />
+            <Reveal key={s.n} delay={i * 0.1}>
+              <div
+                className={`flex flex-col ${i % 2 === 1 ? "sm:flex-row-reverse" : "sm:flex-row"} items-center gap-6 rounded-2xl border border-border bg-cream p-6 sm:p-8`}
+              >
+                <div className="relative size-24 sm:size-32 shrink-0 overflow-hidden rounded-xl border border-border bg-white">
+                  <Image src={s.img} alt={s.who} fill className="object-cover" />
+                </div>
+                <div>
+                  <p className="font-mono text-xs text-teal tracking-wide">{s.n}</p>
+                  <h3 className="mt-1 font-heading font-bold text-xl text-ink">{s.title}</h3>
+                  <p className="mt-2 text-ink/70 leading-relaxed max-w-xl">{s.body}</p>
+                </div>
               </div>
-              <div>
-                <p className="font-mono text-xs text-teal tracking-wide">{s.n}</p>
-                <h3 className="mt-1 font-heading font-bold text-xl text-ink">{s.title}</h3>
-                <p className="mt-2 text-ink/70 leading-relaxed max-w-xl">{s.body}</p>
-              </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

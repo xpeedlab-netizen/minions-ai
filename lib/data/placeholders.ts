@@ -13,3 +13,12 @@ export const FOUNDER_PHOTO_URL: string = "/images/founders-placeholder.png";
  * without leaving empty containers, broken players, or orphaned headings.
  */
 export const DEMO_VIDEO_URL: string = "";
+
+/**
+ * URL of the founder introduction video.
+ * When set to empty string (""), the founder video section will NOT render at all —
+ * no empty box, no "coming soon" copy, no layout gap.
+ * When a URL is set, the section renders with a poster frame, accessible controls,
+ * no autoplay-with-sound, and lazy loading.
+ */
+export const FOUNDER_VIDEO_URL: string = "";

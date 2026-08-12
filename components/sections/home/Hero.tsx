@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button";
 import HeroAnimation from "@/components/sections/home/HeroAnimation";
 import { BOOKING_CALENDAR_URL, DEMO_VIDEO_URL } from "@/lib/data/placeholders";
+import { GUARANTEE } from "@/lib/data/site-content";
 
 export default function Hero() {
   const primaryHref = DEMO_VIDEO_URL ? "/live-demo" : BOOKING_CALENDAR_URL;
@@ -29,6 +30,9 @@ export default function Hero() {
               See pricing
             </Button>
           </div>
+          <p className="mt-4 text-sm text-ink/50 font-mono">
+            {GUARANTEE.short}
+          </p>
         </div>
 
         <div className="relative">

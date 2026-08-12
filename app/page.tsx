@@ -10,6 +10,7 @@ import LiveDemoSection from "@/components/sections/home/LiveDemoSection";
 import PricingPreview from "@/components/sections/home/PricingPreview";
 import GuaranteeSection from "@/components/sections/home/GuaranteeSection";
 import FoundersTrust from "@/components/sections/home/FoundersTrust";
+import FounderVideoSection from "@/components/sections/home/FounderVideoSection";
 import HonestProof from "@/components/sections/home/HonestProof";
 import WhoThisIsNotFor from "@/components/sections/home/WhoThisIsNotFor";
 import FaqSection from "@/components/sections/faq/FaqSection";
@@ -31,6 +32,7 @@ export default function Home() {
       <PricingPreview />
       <GuaranteeSection />
       <FoundersTrust />
+      <FounderVideoSection />
       <HonestProof />
       <WhoThisIsNotFor />
       <FaqSection />

@@ -6,7 +6,7 @@ export default function Proof() {
     <section className="bg-teal py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-white text-balance text-center">
-          Speed is everything — and the research proves it.
+          Speed to Lead Wins the Job — And the Research Proves It.
         </h2>
         <div className="mt-10 grid sm:grid-cols-3 gap-6">
           {PROOF_STATS.map((s, i) => (

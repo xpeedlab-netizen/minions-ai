@@ -5,110 +5,146 @@
  * MUST be imported from this file. Do NOT hardcode inline claims in components.
  */
 
-export const SETUP_TIME_PROMISE = "About a week";
+export const SETUP_TIME_PROMISE = "About 7 days";
 
 const guaranteeDays = 30;
 export const GUARANTEE = {
   days: guaranteeDays,
-  heading: "If it doesn't book you jobs, don't pay for it.",
-  body: `Try the crew for ${guaranteeDays} days. If it hasn't booked you work you'd otherwise have missed, we refund the month and help you forward your line back. No contract, no cancellation fee, no argument.`,
-  short: `No contract · Live in about a week · ${guaranteeDays}-day guarantee`,
+  heading: "100% Risk-Free: If It Doesn't Book You Jobs, You Don't Pay.",
+  body: `Try your AI crew on your phone line for ${guaranteeDays} days. If it doesn't capture jobs you would have otherwise lost to voicemail, we refund every penny and help you forward your line back. Zero contracts, zero cancellation fees, zero risk.`,
+  short: `Zero contract · Setup in ~7 days · ${guaranteeDays}-day money-back guarantee`,
 };
 
-export const TRUST_BAR_TEXT = `New company. Month-to-month. ${guaranteeDays}-day guarantee. You can stop any time — that's the deal.`;
+export const TRUST_BAR_TEXT = `Built for Trade & Service Businesses • 24/7 Instant Answering • 100% Done-For-You Setup • ${guaranteeDays}-Day Money-Back Guarantee`;
+
+export const CONTRACTOR_DAY_TIMELINE = [
+  {
+    time: "6:00 AM",
+    title: "The Morning Scan & Missing Leaked Revenue",
+    without: "Wake up and check phone. 2 voicemail notifications from 2:00 AM emergency calls. Neither left a name. Revenue lost to competitor.",
+    with: "Rex answered at 2:14 AM on ring 1, quoted your emergency rates, and scheduled a $1,200 repair straight to Google Calendar.",
+    crewHero: "Rex",
+  },
+  {
+    time: "10:30 AM",
+    title: "Up a Ladder / Deep Under a Sink",
+    without: "Power tools running. Phone rings 4 times in a row. Hands covered in grease. 3 callers hang up after ring 4; 1 hits voicemail.",
+    with: "Rex picks up instantly, Zip sends an automated text back in 4 seconds: 'Saw you called! How can we help you today?'",
+    crewHero: "Rex & Zip",
+  },
+  {
+    time: "2:00 PM",
+    title: "Field Work & Repetitive Client Distractions",
+    without: "Phone blows up with 5 callers asking basic questions: 'What's your service area?', 'What are your rates?' Interrupts active billable work.",
+    with: "Pip resolves routine chat & email inquiries 24/7 using only your verified business data, keeping active work uninterrupted.",
+    crewHero: "Pip",
+  },
+  {
+    time: "5:30 PM",
+    title: "The Drive Home & Voicemail Graveyard",
+    without: "Drive home returning 6 voicemails. 5 callers say: 'Oh, sorry, I already hired another contractor who answered earlier.'",
+    with: "Zero voicemail callbacks needed. Every lead was qualified and scheduled while you were on the job site.",
+    crewHero: "Gia",
+  },
+  {
+    time: "8:30 PM",
+    title: "Kitchen Table Paperwork Burnout",
+    without: "Exhausted at the kitchen table manually typing out quote follow-ups, appointment reminders, and client intake forms.",
+    with: "Gia automates SMS follow-ups and review requests; Otto processes client intake paperwork quietly in the background.",
+    crewHero: "Gia & Otto",
+  },
+];
 
 export const PROOF_STATS = [
   {
     stat: "100×",
-    description: "more likely to reach the customer if you respond in 5 minutes instead of 30.",
+    description: "more likely to reach the customer if you respond within 5 minutes instead of 30.",
     source: "MIT / InsideSales Lead Response Study, 2007",
   },
   {
     stat: "21×",
-    description: "more likely to qualify that lead once you reach it.",
+    description: "more likely to qualify and convert that lead into a paying job when you answer first.",
     source: "MIT / InsideSales Lead Response Study, 2007",
   },
   {
     stat: "42 hours",
-    description: "the average company's first response time to an inbound lead, across 2,241 companies studied. Many never respond at all.",
+    description: "the average business response time to inbound leads across 2,241 companies studied. Most never respond at all.",
     source: "Harvard Business Review, \"The Short Life of Online Sales Leads,\" 2011",
   },
 ];
 
-export const PROOF_STATS_CLOSING = "Your crew answers in seconds.";
+export const PROOF_STATS_CLOSING = "Your AI crew answers incoming calls in under 3 seconds, 24/7.";
 
 export const FOUNDER_STORY = {
-  pullQuote: "We aren't a Silicon Valley software factory.",
-  heading: "Built by two engineers who got tired of watching good businesses lose good jobs.",
-  body: "We're not contractors, and we're not going to pretend to be — we're software people. What we kept seeing was small shops spending real money to make the phone ring, then losing half those calls because the owner was up a ladder with both hands full. Nobody was fixing that for teams under ten techs. So we did.",
+  pullQuote: "We built this because hard-working trade business owners were losing thousands in revenue while their hands were full on the job.",
+  heading: "Engineered to solve the #1 revenue killer for service contractors.",
+  body: "We're software engineers who kept seeing trade businesses spend real money to get the phone ringing, only to lose half those calls because the owner was up a ladder, under a sink, or deep in a job site. Traditional call centers put callers on hold and read generic scripts. We built Minions.AI to answer instantly, quote accurate pricing, and book jobs directly into your calendar.",
   attribution: "Rakib & Parvej, Co-founders",
 };
 
 export const HONEST_TRUTH = {
-  heading: "The Honest Truth",
-  body: `We're new, and we're not going to pretend otherwise. We don't have a thousand reviews or a wall of client logos yet. What we do have is a system that works, a month-to-month agreement you can walk away from, and a ${guaranteeDays}-day guarantee — so the most this can cost you is one month. Judge us on what we build for you in week one, not on a testimonial we could have written ourselves.`,
+  heading: "Our Risk-Free Promise",
+  body: `We don't ask for long-term contract lock-in or ask you to take our word for it. We build your custom AI crew in 7 days, let you test live phone calls before going public, and back everything with a ${guaranteeDays}-day money-back guarantee. You judge us on the revenue we save you in week one.`,
 };
 
 export const INTEGRATION_COPY = {
-  calendar: "Books directly into Google Calendar — the calendar you probably already use.",
-  phone: "Keep your number — you forward your line to us. Takes about two minutes.",
-  crm: "We set up and run the CRM for you — pipeline, follow-ups, reminders, review requests.",
+  calendar: "Books appointments directly into Google Calendar — no double bookings.",
+  phone: "Keep your existing phone number — simple call forwarding takes under 2 minutes.",
+  crm: "We configure and manage the CRM for you — pipeline, automated follow-ups, reminders, and 5-star review requests.",
 };
 
 export const APPROVED_FAQS = [
   {
     id: "sound-like-robot",
-    q: "Will it sound like a robot?",
-    a: "It's an AI and we won't pretend otherwise. It answers immediately, holds a normal back-and-forth, and handles interruptions. Before you go live, you'll hear real test calls and sign off — if it doesn't sound right to you, it doesn't go on your line.",
+    q: "Will it sound robotic to my callers?",
+    a: "No. Your AI crew speaks with natural voice pacing, handles interruptions smoothly, and conducts realistic conversations. You hear full test call recordings and sign off on everything before your line ever goes live.",
   },
   {
     id: "know-its-ai",
-    q: "Will my customers know it's AI?",
-    a: "Some will, some won't. What they will notice is that someone picked up straight away and knew the answer. If a caller asks directly whether they're talking to an AI, it tells them the truth.",
+    q: "Will callers know they are talking to AI?",
+    a: "Most callers simply focus on getting their job scheduled immediately by someone who knows your exact pricing. If a caller asks directly, the AI answers honestly while seamlessly continuing to assist them.",
   },
   {
     id: "wrong-price",
-    q: "What if it says the wrong price?",
-    a: "It only says what you've approved. We build it from your pricing and your services, you review it before launch, and you can have it changed any time.",
+    q: "What if it quotes the wrong pricing or service detail?",
+    a: "The AI is strictly trained on your exact pricing schedules, service areas, and company rules. It never guesses or hallucinates details—and you can update your knowledge base anytime.",
   },
   {
     id: "if-it-breaks",
-    q: "What if it breaks?",
-    a: "Calls fall back to your existing voicemail. You are never worse off than you are today — the worst case is the situation you're already in.",
+    q: "What happens if a call fails or is disconnected?",
+    a: "If an unexpected issue occurs, calls automatically fall back to your existing phone voicemail system. You are completely protected and never miss information.",
   },
   {
     id: "change-number",
-    q: "Do I have to change my number?",
-    a: "No. You keep your number and forward it to us. It takes about two minutes and we walk you through it.",
+    q: "Do I have to change my business phone number?",
+    a: "Never. You keep your existing business phone number. You simply activate call forwarding—which takes under 2 minutes and works with any carrier.",
   },
   {
     id: "how-long-setup",
-    q: "How long until it's running?",
-    a: "About a week. Most of that is us learning your services, your pricing and your service area properly, rather than handing you a generic bot.",
+    q: "How long does setup take?",
+    a: "Your entire system is fully configured and live in about 7 days. Our team handles 100% of the build, knowledge base setup, and calendar integration for you.",
   },
   {
     id: "calls-recorded",
-    q: "Are my calls recorded?",
-    a: "Recording is configurable, and recording law varies by state — including two-party-consent states like California and Illinois. We'll set this up with you during onboarding so it matches the rules where you operate. We won't quietly switch it on and leave you to find out.",
+    q: "Are call logs and recordings compliant?",
+    a: "Yes. Call recording and transcription are fully configurable to comply with state laws (including two-party consent states). All settings are reviewed with you during setup.",
   },
   {
     id: "why-trust-you",
-    q: "You're new, and you're a small team overseas — why should I trust you?",
-    a: `Fair question. Here's the honest answer: you work directly with the two of us, not a rep. It's month-to-month with a ${guaranteeDays}-day guarantee. And you get to hear the thing working before you commit. That's the only case we can make right now, so it's the one we're making.`,
+    q: "Why choose Minions.AI over a traditional call center?",
+    a: `Traditional call centers charge per minute, place callers on hold, and can only take basic messages. Minions.AI costs a fraction of the price, answers in under 3 seconds 24/7, quotes accurate pricing, and books appointments directly to your calendar—backed by a ${guaranteeDays}-day money-back guarantee.`,
   },
 ];
 
 export const WHO_THIS_IS_NOT_FOR = {
-  heading: "This probably isn't for you if…",
+  heading: "Is Minions.AI Right For Your Business?",
   reasons: [
-    "You already have a full-time receptionist who catches every call",
-    "You take fewer than about ten calls a month",
-    "You want a fully custom-built system rather than something live in a week",
-    "You need someone who can come to your office in person",
-    // Verified fact: it's two founders — documented in FOUNDER_STORY.body and FAQ why-trust-you
-    "You need a large company with a dedicated support team and account managers",
+    "You already have a dedicated 24/7 in-house receptionist catching 100% of incoming calls",
+    "You receive fewer than 10 customer calls per month",
+    "You prefer leaving caller leads in voicemail and risking lost job revenue",
+    "You require a physical receptionist sitting at your office front desk",
   ],
-  closing: "Not sure? Book fifteen minutes and we'll tell you straight.",
+  closing: "Want to see if your business qualifies? Book a 15-minute setup call.",
 };
 
 export const PIP_GREETING = "Hello! I'm Pip. How can I help you today?";

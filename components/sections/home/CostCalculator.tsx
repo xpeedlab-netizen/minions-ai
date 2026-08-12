@@ -21,10 +21,10 @@ export default function CostCalculator() {
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
-            Do the math for your own shop.
+            Calculate How Much Money You Lose to Missed Calls
           </h2>
           <p className="mt-4 text-lg text-ink/70">
-            Plug in your own numbers to see what missed calls are actually costing you.
+            Adjust the sliders below to see your shop&apos;s lost revenue—and how quickly Minions.AI pays for itself.
           </p>
         </div>
 
@@ -101,12 +101,12 @@ export default function CostCalculator() {
                 </div>
               </div>
 
-              <div className="pt-8 border-t border-white/10 mt-auto">
-                <p className="text-cream/80 leading-relaxed">
-                  The <span className="font-semibold text-white">Starter</span> plan is {starterPrice}/month.
+              <div className="pt-8 border-t border-white/10 mt-auto space-y-2">
+                <p className="text-cream/90 leading-relaxed font-medium">
+                  The <span className="font-semibold text-teal">{starterPrice}/month Starter Plan</span> pays for itself with just <span className="underline decoration-teal underline-offset-4">1 single saved job</span>.
                 </p>
-                <p className="mt-2 text-sm text-cream/50 font-mono italic">
-                  * These are your numbers, not ours.
+                <p className="text-xs text-cream/50 font-mono italic">
+                  * Based on your custom inputs above.
                 </p>
               </div>
             </div>

@@ -29,7 +29,7 @@ export default function WhoThisIsNotFor() {
               {WHO_THIS_IS_NOT_FOR.closing}
             </p>
             <Button href={BOOKING_CALENDAR_URL} showArrow>
-              Book 15 Minutes
+              Book a 15-Minute Setup Call
             </Button>
           </div>
         </div>

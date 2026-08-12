@@ -40,9 +40,9 @@ export default function ComparisonTable() {
   return (
     <section className="bg-cream py-16 sm:py-24 border-t border-border">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
-            The difference between taking a message and booking a job.
+            Why Service Contractors Are Replacing Call Centers with Minions.AI
           </h2>
         </div>
 

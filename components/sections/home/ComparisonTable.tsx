@@ -69,13 +69,13 @@ export default function ComparisonTable() {
           <thead>
             <tr>
               <th className="p-4 sm:p-6 w-1/4"></th>
-              <th className="p-4 sm:p-6 w-1/4 text-lg font-heading font-bold text-ink">
+              <th className="p-4 sm:p-6 w-1/4 font-heading text-base font-bold tracking-[-0.01em] text-ink/70">
                 Traditional Answering Service
               </th>
-              <th className="p-4 sm:p-6 w-1/4 text-lg font-heading font-bold text-ink">
+              <th className="p-4 sm:p-6 w-1/4 font-heading text-base font-bold tracking-[-0.01em] text-ink/70">
                 Voicemail
               </th>
-              <th className="p-4 sm:p-6 w-1/4 text-lg font-heading font-bold text-teal bg-cream rounded-t-2xl border-t border-x border-border shadow-sm">
+              <th className="p-4 sm:p-6 w-1/4 font-heading text-base font-bold tracking-[-0.01em] text-teal bg-cream rounded-t-2xl border-t border-x border-border">
                 Rex (Minions.AI)
               </th>
             </tr>
@@ -83,22 +83,22 @@ export default function ComparisonTable() {
           <tbody className="divide-y divide-border">
             {features.map((f) => (
               <tr key={f.name}>
-                <th scope="row" className="p-4 sm:p-6 font-medium text-ink/80 text-left">
+                <th scope="row" className="p-4 sm:p-6 text-[0.9375rem] font-medium text-ink/80 text-left">
                   {f.name}
                 </th>
-                <td className="p-4 sm:p-6 text-ink/70">
+                <td className="p-4 sm:p-6 text-[0.9375rem] text-ink/65">
                   <div className="flex items-center gap-3">
                     {renderIcon(f.service.type)}
                     {f.service.text}
                   </div>
                 </td>
-                <td className="p-4 sm:p-6 text-ink/70">
+                <td className="p-4 sm:p-6 text-[0.9375rem] text-ink/65">
                   <div className="flex items-center gap-3">
                     {renderIcon(f.voicemail.type)}
                     {f.voicemail.text}
                   </div>
                 </td>
-                <td className="p-4 sm:p-6 text-ink font-medium bg-cream border-x border-border shadow-sm">
+                <td className="p-4 sm:p-6 text-[0.9375rem] text-ink font-medium bg-cream border-x border-border">
                   <div className="flex items-center gap-3">
                     {renderIcon(f.rex.type)}
                     {f.rex.text}
@@ -110,9 +110,9 @@ export default function ComparisonTable() {
               <th scope="row" className="p-4 sm:p-6 font-medium text-ink/80 border-b border-border text-left">
                 {costRow.name}
               </th>
-              <td className="p-4 sm:p-6 text-ink/70 border-b border-border">{costRow.service}</td>
-              <td className="p-4 sm:p-6 text-ink/70 border-b border-border">{costRow.voicemail}</td>
-              <td className="p-4 sm:p-6 text-ink font-bold bg-cream rounded-b-2xl border-b border-x border-border shadow-sm">
+              <td className="p-4 sm:p-6 text-[0.9375rem] text-ink/65 border-b border-border">{costRow.service}</td>
+              <td className="p-4 sm:p-6 text-[0.9375rem] text-ink/65 border-b border-border">{costRow.voicemail}</td>
+              <td className="p-4 sm:p-6 text-[0.9375rem] text-ink font-bold bg-cream rounded-b-2xl border-b border-x border-border">
                 {costRow.rex}
               </td>
             </tr>

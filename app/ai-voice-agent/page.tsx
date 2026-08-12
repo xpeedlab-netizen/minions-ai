@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import RexHero from "@/components/sections/rex/RexHero";
 import RexVoiceActions from "@/components/sections/rex/RexVoiceActions";
 import RexAudioDemo from "@/components/sections/rex/RexAudioDemo";
-import RexFeatures from "@/components/sections/rex/RexFeatures";
 import RexVsOthers from "@/components/sections/rex/RexVsOthers";
 import RexTrainingProcess from "@/components/sections/rex/RexTrainingProcess";
 import RexCompliance from "@/components/sections/rex/RexCompliance";
@@ -21,7 +20,6 @@ export default function AiVoiceAgentPage() {
       <RexHero />
       <RexVoiceActions />
       <RexAudioDemo />
-      <RexFeatures />
       <RexVsOthers />
       <RexTrainingProcess />
       <RexCompliance />

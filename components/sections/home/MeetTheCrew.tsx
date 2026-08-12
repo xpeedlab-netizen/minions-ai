@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
-import Section, { SectionHeading } from "@/components/ui/Section";
+import Section, { SectionHeading, Eyebrow, SectionLead } from "@/components/ui/Section";
 import RexHeroVisual from "./RexHeroVisual";
 import ZipHeroVisual from "./ZipHeroVisual";
 import PipHeroVisual from "./PipHeroVisual";
@@ -196,22 +196,20 @@ export default function MeetTheCrew() {
   return (
     <Section id="crew" tone="cream" width="full" density="feature">
       <div className="max-w-3xl text-center mx-auto">
-        <span className="inline-block rounded-full bg-teal/10 px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-teal font-bold mb-4">
-          Your Digital Front-Office Staff
-        </span>
+        <Eyebrow className="mb-5">Your Digital Front-Office Staff</Eyebrow>
         <SectionHeading className="text-ink">
           Meet the 5 Specialized Crew Members Who Protect Your Revenue
         </SectionHeading>
-        <p className="mt-6 text-ink/70 text-lg leading-relaxed">
+        <SectionLead className="mx-auto text-center">
           Each AI persona is built to take over a specific bottleneck in your service business—so you can stay focused on billable trade work while your front office runs on autopilot 24/7.
-        </p>
+        </SectionLead>
       </div>
 
       <div className="mt-16 space-y-12 sm:space-y-16">
         {crew.map((m, i) => (
           <Reveal key={m.id} delay={i * 0.08}>
             <article
-              className={`rounded-3xl overflow-hidden border border-border shadow-xl ${m.panelClass}`}
+              className={`rounded-3xl overflow-hidden border border-border ${m.panelClass}`}
             >
               <div className="grid lg:grid-cols-2">
                 <div
@@ -233,13 +231,13 @@ export default function MeetTheCrew() {
                   {/* h3 sits one clear step below the section h2 — previously these five
                       were text-3xl sm:text-4xl, identical to every section heading. */}
                   <h3
-                    className={`font-heading font-extrabold text-xl sm:text-2xl mb-4 text-balance leading-tight ${m.dark ? "text-white" : "text-ink"}`}
+                    className={`font-heading font-bold text-xl sm:text-2xl mb-4 text-balance leading-[1.15] tracking-[-0.01em] ${m.dark ? "text-white" : "text-ink"}`}
                   >
                     {m.headline}
                   </h3>
 
                   <p
-                    className={`text-lg mb-6 leading-relaxed ${m.dark ? "text-cream/80" : "text-ink/70"}`}
+                    className={`mb-6 max-w-md text-base leading-[1.65] sm:text-[1.0625rem] ${m.dark ? "text-cream/70" : "text-ink/65"}`}
                   >
                     {m.body}
                   </p>

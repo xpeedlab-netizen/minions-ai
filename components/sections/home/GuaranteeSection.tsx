@@ -16,28 +16,35 @@ export default function GuaranteeSection() {
       className="relative overflow-hidden"
       innerClassName="relative z-10 text-center"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-teal/20 to-transparent opacity-50 pointer-events-none" />
+      {/* Matches the atmosphere treatment on FoundersTrust so the page's two dark bands
+          read as the same deliberate device rather than two different accidents. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-1/4 left-1/2 size-[40rem] -translate-x-1/2 rounded-full bg-teal/15 blur-3xl"
+      />
 
-      <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-teal/20 text-teal mb-8">
-        <ShieldCheck className="size-8" />
+      <div className="mx-auto mb-8 flex size-14 items-center justify-center rounded-2xl border border-teal/25 bg-teal/10 text-teal">
+        <ShieldCheck className="size-7" strokeWidth={1.75} />
       </div>
 
       <SectionHeading className="text-white">{GUARANTEE.heading}</SectionHeading>
 
-      <p className="mt-6 text-lg text-cream/80 leading-relaxed">
+      <p className="mx-auto mt-6 max-w-xl text-base leading-[1.65] text-cream/70 sm:text-[1.0625rem]">
         {GUARANTEE.body}
       </p>
 
-      <p className="mt-8 font-mono text-sm text-teal font-bold uppercase tracking-wide">
+      <p className="mt-8 font-mono text-xs font-bold uppercase tracking-[0.08em] text-teal">
         {GUARANTEE.days}-Day Guarantee
       </p>
 
       {/* Absorbed HonestProof */}
-      <div className="mt-12 pt-10 border-t border-white/10">
+      <div className="mt-14 border-t border-white/10 pt-12">
         <SectionHeading as="h3" className="text-white">
           {HONEST_TRUTH.heading}
         </SectionHeading>
-        <p className="mt-4 text-cream/80 leading-relaxed">{HONEST_TRUTH.body}</p>
+        <p className="mx-auto mt-4 max-w-xl text-[0.9375rem] leading-[1.65] text-cream/70">
+          {HONEST_TRUTH.body}
+        </p>
       </div>
     </Section>
   );

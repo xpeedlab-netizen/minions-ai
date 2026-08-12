@@ -85,16 +85,81 @@ export function SectionHeading({
   className?: string;
   as?: "h2" | "h3";
 }) {
+  /*
+   * Measured against Linear (48px / weight 510 / -1.056px tracking / 1.0 line-height)
+   * and Sierra (38-44px / weight 400 / ~1.1 line-height).
+   *
+   * Both set display type LIGHTER and TIGHTER than we did. We were shipping
+   * font-extrabold with default tracking, which at 48px reads as shouting — and a page
+   * where every heading shouts has no hierarchy at all. Dropping to `bold` and pulling
+   * tracking in is what makes large type read as designed rather than merely big.
+   */
   const scale =
     Tag === "h2"
-      ? "text-3xl sm:text-4xl lg:text-5xl"
-      : "text-xl sm:text-2xl";
+      ? "text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em]"
+      : "text-xl sm:text-2xl leading-[1.15] tracking-[-0.01em]";
 
   return (
-    <Tag
-      className={`font-heading font-extrabold ${scale} text-balance leading-tight ${className}`}
-    >
+    <Tag className={`font-heading font-bold ${scale} text-balance ${className}`}>
       {children}
     </Tag>
+  );
+}
+
+/**
+ * The small uppercase mono label that introduces a section.
+ *
+ * Was hand-rolled five different ways across the page (different padding, different
+ * radius, some with borders, some without, teal-on-teal in one place). One component
+ * means one look — and it's the cheapest way to make a section feel "placed" rather
+ * than dropped in, which is the trick both Sierra and Decagon lean on hardest.
+ */
+export function Eyebrow({
+  children,
+  tone = "light",
+  className = "",
+}: {
+  children: ReactNode;
+  /** `light` for cream/white bands, `dark` for ink/teal bands. */
+  tone?: "light" | "dark";
+  className?: string;
+}) {
+  const toneClass =
+    tone === "dark"
+      ? "border-white/15 bg-white/5 text-teal"
+      : "border-teal/15 bg-teal/5 text-teal";
+
+  return (
+    <span
+      className={`inline-block rounded-full border ${toneClass} px-3.5 py-1.5 font-mono text-xs font-bold uppercase tracking-[0.08em] ${className}`}
+    >
+      {children}
+    </span>
+  );
+}
+
+/**
+ * Standard supporting paragraph under a SectionHeading.
+ *
+ * Linear and Sierra both cap body copy at 16px/24px with a ~576px measure. We were
+ * using `text-lg` (18px) uncapped, which produces long lines that are genuinely
+ * harder to scan — the "cluttered" feeling is often just an over-long measure.
+ */
+export function SectionLead({
+  children,
+  tone = "light",
+  className = "",
+}: {
+  children: ReactNode;
+  tone?: "light" | "dark";
+  className?: string;
+}) {
+  const toneClass = tone === "dark" ? "text-cream/70" : "text-ink/65";
+  return (
+    <p
+      className={`mt-5 max-w-xl text-base sm:text-[1.0625rem] leading-[1.6] ${toneClass} ${className}`}
+    >
+      {children}
+    </p>
   );
 }

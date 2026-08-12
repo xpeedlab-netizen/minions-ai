@@ -17,18 +17,18 @@ export default function FaqSection({
   return (
     <section className={className} id="faq">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-ink text-balance leading-tight">
+        <div className="mb-12 text-center">
+          <h2 className="text-balance font-heading text-3xl font-bold leading-[1.05] tracking-[-0.02em] text-ink sm:text-4xl lg:text-5xl">
             {title}
           </h2>
           {subtitle && (
-            <p className="mt-4 text-ink/70 leading-relaxed max-w-2xl mx-auto">
+            <p className="mx-auto mt-5 max-w-xl text-base leading-[1.6] text-ink/65">
               {subtitle}
             </p>
           )}
         </div>
 
-        <div className="rounded-3xl border border-border bg-white p-6 sm:p-10 shadow-sm">
+        <div className="rounded-3xl border border-border bg-white p-6 sm:p-10">
           <FaqAccordion items={items} defaultOpenIndex={0} />
         </div>
       </div>

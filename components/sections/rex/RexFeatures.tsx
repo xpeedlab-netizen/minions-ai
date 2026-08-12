@@ -79,13 +79,13 @@ export default function RexFeatures() {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-14">
           <span className="inline-block rounded-full bg-teal/10 px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-teal font-bold mb-4">
-            Built-In Dispatching Architecture
+            24/7 Front-Office Dispatcher
           </span>
           <h2 className="font-heading font-extrabold text-3xl sm:text-5xl text-ink text-balance">
-            Everything Rex Handles for Your Service Business
+            8 Ways Rex Automates Your Phone Line &amp; Captures Revenue
           </h2>
-          <p className="mt-4 text-lg text-ink/70 leading-relaxed">
-            Rex isn&apos;t a basic voicemail bot—he&apos;s a focused digital front-office dispatcher built to capture revenue 24/7/365.
+          <p className="mt-4 text-lg text-ink/75 leading-relaxed">
+            Rex isn&apos;t a basic voicemail recording—he is a full-service AI dispatcher who quotes exact service rates, schedules calendar appointments, qualifies leads, and transfers emergency calls 24/7/365.
           </p>
         </div>
 

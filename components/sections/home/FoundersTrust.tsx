@@ -1,5 +1,6 @@
 import Image from "next/image";
 import YouTubeEmbed from "@/components/ui/YouTubeEmbed";
+import { Eyebrow } from "@/components/ui/Section";
 import { FOUNDER_STORY } from "@/lib/data/site-content";
 import { FOUNDER_PHOTOS, FOUNDER_VIDEO_ID } from "@/lib/data/placeholders";
 
@@ -41,13 +42,11 @@ export default function FoundersTrust() {
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-teal font-bold">
-            Why We Built This
-          </span>
+          <Eyebrow tone="dark">Why We Built This</Eyebrow>
 
           {/* The pull-quote leads at display scale — it is the most human line on the
               page, so it gets the typographic weight instead of a 20px italic aside. */}
-          <blockquote className="mt-8 font-heading font-extrabold text-2xl sm:text-4xl lg:text-[2.75rem] leading-[1.15] text-white text-balance">
+          <blockquote className="mt-8 font-heading font-bold text-2xl sm:text-4xl lg:text-[2.75rem] leading-[1.1] tracking-[-0.025em] text-white text-balance">
             &ldquo;{FOUNDER_STORY.pullQuote}&rdquo;
           </blockquote>
         </div>
@@ -97,12 +96,12 @@ export default function FoundersTrust() {
 
         {/* Story */}
         <div className="mt-14 grid gap-6 lg:grid-cols-[1fr_1.25fr] lg:gap-14 lg:items-baseline">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white text-balance leading-tight lg:sticky lg:top-24">
+          <h2 className="font-heading font-bold text-2xl sm:text-3xl leading-[1.1] tracking-[-0.02em] text-white text-balance lg:sticky lg:top-24">
             {FOUNDER_STORY.heading}
           </h2>
 
           <div>
-            <p className="text-lg text-cream/75 leading-relaxed">
+            <p className="max-w-xl text-base leading-[1.7] text-cream/70 sm:text-[1.0625rem]">
               {FOUNDER_STORY.body}
             </p>
 

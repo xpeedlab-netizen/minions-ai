@@ -19,13 +19,23 @@ export default function FinalCta({
   hideSecondary?: boolean;
 }) {
   return (
-    <section className="bg-teal py-16 sm:py-24">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight text-balance">
+    <section className="relative overflow-hidden bg-teal py-20 sm:py-28">
+      {/* Same bloom device as Proof — the two teal bands bookend the page, so they
+          should share a treatment. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-1/2 left-1/2 size-[44rem] -translate-x-1/2 rounded-full bg-white/5 blur-3xl"
+      />
+      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 className="text-balance font-heading text-3xl font-bold leading-[1.05] tracking-[-0.02em] text-white sm:text-4xl lg:text-5xl">
           {heading}
         </h2>
-        {subtext && <p className="mt-4 text-white/80 text-lg max-w-xl mx-auto">{subtext}</p>}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        {subtext && (
+          <p className="mx-auto mt-6 max-w-xl text-base leading-[1.6] text-white/75 sm:text-[1.0625rem]">
+            {subtext}
+          </p>
+        )}
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button href={primaryHref} size="lg" showArrow>
             {primaryLabel}
           </Button>

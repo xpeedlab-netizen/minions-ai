@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import LiveDemoHero from "@/components/sections/live-demo/LiveDemoHero";
 import LiveDemoOptionC from "@/components/sections/live-demo/LiveDemoOptionC";
 import LiveDemoFinalCta from "@/components/sections/live-demo/LiveDemoFinalCta";
-import { DEMO_VIDEO_URL, BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
+import { DEMO_VIDEO_ID, BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 import Button from "@/components/ui/Button";
+import YouTubeEmbed from "@/components/ui/YouTubeEmbed";
 
 export const metadata: Metadata = {
   title: "Product Demo & Assistant Preview — Minions.AI",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default function LiveDemoPage() {
-  const hasVideo = Boolean(DEMO_VIDEO_URL && String(DEMO_VIDEO_URL).trim() !== "");
+  const hasVideo = Boolean(DEMO_VIDEO_ID && DEMO_VIDEO_ID.trim() !== "");
 
   return (
     <>
@@ -26,18 +27,11 @@ export default function LiveDemoPage() {
               <h2 className="mt-1 font-heading font-extrabold text-2xl text-ink">
                 Watch the AI Dispatcher in Action
               </h2>
-              <div className="mt-4 relative aspect-video w-full overflow-hidden rounded-xl bg-black border border-border">
-                <video
-                  src={DEMO_VIDEO_URL}
-                  controls
-                  preload="metadata"
-                  playsInline
-                  className="h-full w-full object-cover"
-                  aria-label="Recorded AI dispatch demonstration video"
-                >
-                  Your browser does not support video playback.
-                </video>
-              </div>
+              <YouTubeEmbed
+                videoId={DEMO_VIDEO_ID}
+                title="Recorded AI dispatch demonstration"
+                className="mt-4"
+              />
             </div>
           ) : (
             <div className="rounded-2xl border border-border bg-white p-6 sm:p-8 flex flex-col justify-between h-full">

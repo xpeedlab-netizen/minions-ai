@@ -94,9 +94,9 @@ export default function RexVsOthers() {
                 At an average job value of $500, capturing just one emergency call you would have missed covers your entire monthly subscription.
               </p>
             </div>
-            <div className="shrink-0 bg-teal/20 border border-teal/40 rounded-xl p-4 text-center">
-              <span className="font-mono text-3xl font-extrabold text-teal">$35,000+</span>
-              <p className="text-[11px] text-cream/80 font-mono uppercase mt-0.5">Annual Payroll Savings</p>
+            <div className="shrink-0 bg-teal/25 border border-teal/40 rounded-2xl p-5 text-center shadow-sm">
+              <span className="font-mono text-3xl sm:text-4xl font-extrabold text-[#4FD1C5] block">$35,000+</span>
+              <p className="text-[11px] text-cream/90 font-mono uppercase font-bold tracking-wider mt-1">Annual Payroll Savings</p>
             </div>
           </div>
         </Reveal>

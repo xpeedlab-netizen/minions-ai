@@ -1,41 +1,51 @@
 import Hero from "@/components/sections/home/Hero";
 import TrustStrip from "@/components/sections/home/TrustStrip";
-import Problem from "@/components/sections/home/Problem";
-import ContractorTimeline from "@/components/sections/home/ContractorTimeline";
-import CostCalculator from "@/components/sections/home/CostCalculator";
+import TheRealCost from "@/components/sections/home/TheRealCost";
+import LiveDemoSection from "@/components/sections/home/LiveDemoSection";
 import Proof from "@/components/sections/home/Proof";
 import HowItWorks from "@/components/sections/home/HowItWorks";
-import ComparisonTable from "@/components/sections/home/ComparisonTable";
 import MeetTheCrew from "@/components/sections/home/MeetTheCrew";
-import LiveDemoSection from "@/components/sections/home/LiveDemoSection";
+import ComparisonTable from "@/components/sections/home/ComparisonTable";
 import PricingPreview from "@/components/sections/home/PricingPreview";
 import GuaranteeSection from "@/components/sections/home/GuaranteeSection";
 import FoundersTrust from "@/components/sections/home/FoundersTrust";
-import FounderVideoSection from "@/components/sections/home/FounderVideoSection";
-import HonestProof from "@/components/sections/home/HonestProof";
 import WhoThisIsNotFor from "@/components/sections/home/WhoThisIsNotFor";
 import FaqSection from "@/components/sections/faq/FaqSection";
 import FinalCta from "@/components/sections/FinalCta";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
+/**
+ * Landing page band sequence.
+ *
+ * Tone alternates deliberately — no two adjacent bands share a background — with the
+ * three accent bands (teal / ink / teal) acting as punctuation across the scroll.
+ * Three sections carry `feature` density (TheRealCost, MeetTheCrew, PricingPreview);
+ * everything else is standard, which is what gives the page its rhythm.
+ *
+ *   cream · ink(thin) · cream · white · teal · white · cream · white · INK(founders) ·
+ *   cream · ink · white · cream · teal
+ *
+ * The two dark bands are deliberate punctuation: FoundersTrust (why we built this)
+ * and GuaranteeSection (what we promise). They are kept apart by PricingPreview so
+ * neither loses its impact.
+ */
 export default function Home() {
   return (
     <>
       <Hero />
       <TrustStrip />
-      <Problem />
-      <ContractorTimeline />
-      <CostCalculator />
+      <TheRealCost />
+      {/* Hidden until DEMO_VIDEO_ID is set. */}
+      <LiveDemoSection />
       <Proof />
       <HowItWorks />
-      <ComparisonTable />
       <MeetTheCrew />
-      <LiveDemoSection />
+      <ComparisonTable />
+      {/* Founders is a dark inverted band (story + video as one moment), so it sits
+          between two light sections rather than next to the ink GuaranteeSection. */}
+      <FoundersTrust />
       <PricingPreview />
       <GuaranteeSection />
-      <FoundersTrust />
-      <FounderVideoSection />
-      <HonestProof />
       <WhoThisIsNotFor />
       <FaqSection />
       <FinalCta

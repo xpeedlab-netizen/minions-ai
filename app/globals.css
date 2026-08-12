@@ -14,6 +14,15 @@
   --color-success: #1b8a5a;
   --color-border: #dce4ec;
 
+  /* Per-crew accent colors. Rex/Pip/Gia alias existing brand tokens rather than
+     redeclaring them; Zip and Otto are the only genuinely new values. These replace
+     the 8 hardcoded hexes that MeetTheCrew used to carry inline. */
+  --color-crew-rex: var(--color-teal);
+  --color-crew-zip: #c4472a;
+  --color-crew-pip: var(--color-accent-blue);
+  --color-crew-gia: var(--color-success);
+  --color-crew-otto: #2c3e50;
+
   --font-heading: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, monospace;

@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
 import ZipHero from "@/components/sections/zip/ZipHero";
+import ZipSmsSimulator from "@/components/sections/zip/ZipSmsSimulator";
 import ZipWhySpeedWins from "@/components/sections/zip/ZipWhySpeedWins";
 import ZipBentoGrid from "@/components/sections/zip/ZipBentoGrid";
 import ZipHonestPitch from "@/components/sections/zip/ZipHonestPitch";
 import ZipFinalCta from "@/components/sections/zip/ZipFinalCta";
 
 export const metadata: Metadata = {
-  title: "Missed-Call Text-Back & Speed-to-Lead Automation",
+  title: "Zip Speed-to-Lead & Missed-Call SMS Recovery — Minions.AI",
   description:
-    "The second you miss a call, your customer gets a friendly text. Zip responds to every missed call and web lead in seconds, so you're first — and first usually wins.",
+    "The instant you miss a call or receive a web lead, Zip fires off a friendly SMS text-back in under 5 seconds. Logged automatically in your dedicated CRM lead pipeline.",
 };
 
 export default function SpeedToLeadPage() {
   return (
     <>
       <ZipHero />
+      <ZipSmsSimulator />
       <ZipWhySpeedWins />
       <ZipBentoGrid />
       <ZipHonestPitch />

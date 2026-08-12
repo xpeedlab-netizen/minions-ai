@@ -1,26 +1,27 @@
 import Button from "@/components/ui/Button";
 import ZipHeroAnimation from "./ZipHeroAnimation";
+import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
 export default function ZipHero() {
   return (
-    <section className="bg-cream">
+    <section className="bg-cream border-b border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <span className="inline-block rounded-full bg-teal/15 px-3 py-1 font-mono text-xs uppercase tracking-wide text-teal">
-            Speed-to-Lead
+          <span className="inline-block rounded-full bg-[#C4472A]/15 px-3 py-1 font-mono text-xs uppercase tracking-wide text-[#C4472A] font-bold">
+            Automated Missed-Call Recovery &amp; Speed-to-Lead
           </span>
-          <h1 className="mt-5 font-heading font-extrabold text-ink text-4xl sm:text-5xl leading-[1.1] text-balance">
-            The second you miss a call, your customer gets a text.
+          <h1 className="mt-5 font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-balance">
+            Instant Missed-Call Text-Back in Under 5 Seconds.
           </h1>
-          <p className="mt-6 text-lg text-ink/70 leading-relaxed max-w-xl">
-            When you can&apos;t pick up, Zip fires off a friendly text right away —
-            &lsquo;Sorry we missed you! What can we help with?&rsquo; — and keeps the conversation
-            going until the job&apos;s on your calendar. Missed call to booked job, without you
-            lifting a finger.
+          <p className="mt-6 text-lg text-ink/75 leading-relaxed max-w-xl">
+            When you can&apos;t pick up, Zip fires off a friendly SMS text back in under 5 seconds—&lsquo;Sorry we missed you! How can we help?&rsquo;—automatically logging the lead in your dedicated pipeline so no prospect ever vanishes into voicemail.
           </p>
-          <div className="mt-8">
-            <Button href="/live-demo" size="lg" showArrow>
-              See Zip in action
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>
+              Deploy Zip in 7 Days
+            </Button>
+            <Button href="/pricing" variant="outline" size="lg">
+              See Pricing Plans
             </Button>
           </div>
         </div>

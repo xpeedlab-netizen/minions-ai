@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import RexHero from "@/components/sections/rex/RexHero";
+import RexVoiceActions from "@/components/sections/rex/RexVoiceActions";
 import RexAudioDemo from "@/components/sections/rex/RexAudioDemo";
 import RexFeatures from "@/components/sections/rex/RexFeatures";
 import RexVsOthers from "@/components/sections/rex/RexVsOthers";
@@ -11,13 +12,14 @@ import RexFinalCta from "@/components/sections/rex/RexFinalCta";
 export const metadata: Metadata = {
   title: "Rex 24/7 AI Voice Dispatcher & Receptionist — Minions.AI",
   description:
-    "Rex answers your phone on ring one 24/7/365, quotes exact service pricing, and books appointments straight into your Google Calendar. Live in 7 days.",
+    "Rex answers your phone on ring one 24/7/365, quotes exact service pricing, and books, modifies, or cancels appointments straight into your Google Calendar. Live in 7 days.",
 };
 
 export default function AiVoiceAgentPage() {
   return (
     <>
       <RexHero />
+      <RexVoiceActions />
       <RexAudioDemo />
       <RexFeatures />
       <RexVsOthers />

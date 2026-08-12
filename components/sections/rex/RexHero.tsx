@@ -6,7 +6,7 @@ import { GUARANTEE } from "@/lib/data/site-content";
 
 export default function RexHero() {
   const primaryHref = "#audio-demo";
-  const primaryLabel = "Hear Rex Answer Real Calls";
+  const primaryLabel = "Hear Live Call Demos";
 
   return (
     <section className="bg-cream border-b border-border">
@@ -23,12 +23,12 @@ export default function RexHero() {
             When you&apos;re up a ladder, under a sink, or sleeping at 2 AM, Rex answers on ring one. He conducts natural voice conversations, quotes your exact service pricing, and books appointments straight into your Google Calendar 24/7.
           </p>
           
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+          <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4">
             <Button href={primaryHref} size="lg" showArrow>
               {primaryLabel}
             </Button>
             <Button href={BOOKING_CALENDAR_URL} variant="outline" size="lg">
-              Book a 15-Min Setup Call
+              Book 15-Min Setup Call
             </Button>
           </div>
 

@@ -25,7 +25,7 @@ type ButtonAsButton = BaseProps & {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-xl font-heading font-bold transition-transform duration-150 ease-out active:scale-[0.98] hover:scale-[1.03] focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2";
+  "inline-flex items-center justify-center gap-2 rounded-xl font-heading font-bold whitespace-nowrap transition-transform duration-150 ease-out active:scale-[0.98] hover:scale-[1.03] focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2";
 
 const sizes: Record<NonNullable<BaseProps["size"]>, string> = {
   md: "min-h-12 px-6 text-base",

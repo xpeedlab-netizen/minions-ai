@@ -15,14 +15,14 @@ export const GUARANTEE = {
   short: `Zero contract · Setup in ~7 days · ${guaranteeDays}-day money-back guarantee`,
 };
 
-export const TRUST_BAR_TEXT = `Built for Trade & Service Businesses • 24/7 Instant Answering • 100% Done-For-You Setup • ${guaranteeDays}-Day Money-Back Guarantee`;
+export const TRUST_BAR_TEXT = `Built for Trade & Service Businesses • 24/7 Instant Voice Dispatch • Grounded Web Chat • Automated Lead Pipeline • ${guaranteeDays}-Day Guarantee`;
 
 export const CONTRACTOR_DAY_TIMELINE = [
   {
     time: "6:00 AM",
     title: "The Morning Scan & Missing Leaked Revenue",
     without: "Wake up and check phone. 2 voicemail notifications from 2:00 AM emergency calls. Neither left a name. Revenue lost to competitor.",
-    with: "Rex answered at 2:14 AM on ring 1, quoted your emergency rates, and scheduled a $1,200 repair straight to Google Calendar.",
+    with: "Rex answered at 2:14 AM on ring 1, quoted emergency rates, and scheduled a $1,200 repair straight to Google Calendar.",
     crewHero: "Rex",
   },
   {
@@ -36,14 +36,14 @@ export const CONTRACTOR_DAY_TIMELINE = [
     time: "2:00 PM",
     title: "Field Work & Repetitive Client Distractions",
     without: "Phone blows up with 5 callers asking basic questions: 'What's your service area?', 'What are your rates?' Interrupts active billable work.",
-    with: "Pip resolves routine chat & email inquiries 24/7 using only your verified business data, keeping active work uninterrupted.",
+    with: "Pip resolves routine chat inquiries 24/7 using only your verified business data, keeping active work uninterrupted.",
     crewHero: "Pip",
   },
   {
     time: "5:30 PM",
     title: "The Drive Home & Voicemail Graveyard",
     without: "Drive home returning 6 voicemails. 5 callers say: 'Oh, sorry, I already hired another contractor who answered earlier.'",
-    with: "Zero voicemail callbacks needed. Every lead was qualified and scheduled while you were on the job site.",
+    with: "Zero voicemail callbacks needed. Every lead was qualified, logged in your CRM pipeline, and scheduled while you were on the job site.",
     crewHero: "Gia",
   },
   {
@@ -78,26 +78,26 @@ export const PROOF_STATS_CLOSING = "Your AI crew answers incoming calls in under
 export const FOUNDER_STORY = {
   pullQuote: "We built this because hard-working trade business owners were losing thousands in revenue while their hands were full on the job.",
   heading: "Engineered to solve the #1 revenue killer for service contractors.",
-  body: "We're software engineers who kept seeing trade businesses spend real money to get the phone ringing, only to lose half those calls because the owner was up a ladder, under a sink, or deep in a job site. Traditional call centers put callers on hold and read generic scripts. We built Minions.AI to answer instantly, quote accurate pricing, and book jobs directly into your calendar.",
+  body: "We're software engineers who kept seeing trade businesses spend real money to get the phone ringing, only to lose half those calls because the owner was up a ladder, under a sink, or deep in a job site. Traditional call centers put callers on hold and read generic scripts. We built Minions.AI as an integrated AI front desk: voice dispatching, grounded web chat, and automatic lead logging.",
   attribution: "Rakib & Parvej, Co-founders",
 };
 
 export const HONEST_TRUTH = {
   heading: "Our Risk-Free Promise",
-  body: `We don't ask for long-term contract lock-in or ask you to take our word for it. We build your custom AI crew in 7 days, let you test live phone calls before going public, and back everything with a ${guaranteeDays}-day money-back guarantee. You judge us on the revenue we save you in week one.`,
+  body: `We don't ask for long-term contract lock-in or ask you to take our word for it. We build your custom AI front desk in 7 days, let you test live phone calls before going public, and back everything with a ${guaranteeDays}-day money-back guarantee. One recovered $400–$3,500 job pays for your entire month.`,
 };
 
 export const INTEGRATION_COPY = {
-  calendar: "Books appointments directly into Google Calendar — no double bookings.",
+  calendar: "Books, modifies, and cancels appointments directly on Google Calendar — no double bookings.",
   phone: "Keep your existing phone number — simple call forwarding takes under 2 minutes.",
-  crm: "We configure and manage the CRM for you — pipeline, automated follow-ups, reminders, and 5-star review requests.",
+  crm: "We configure and manage your dedicated lead pipeline — calls, chats, and missed calls logged automatically with zero manual entry.",
 };
 
 export const APPROVED_FAQS = [
   {
     id: "sound-like-robot",
     q: "Will it sound robotic to my callers?",
-    a: "No. Your AI crew speaks with natural voice pacing, handles interruptions smoothly, and conducts realistic conversations. You hear full test call recordings and sign off on everything before your line ever goes live.",
+    a: "No. Your AI voice agent speaks with natural voice pacing, conducts realistic back-and-forth conversations, and handles interruptions smoothly. You hear full test call recordings and sign off on everything before your line ever goes live.",
   },
   {
     id: "know-its-ai",
@@ -107,12 +107,12 @@ export const APPROVED_FAQS = [
   {
     id: "wrong-price",
     q: "What if it quotes the wrong pricing or service detail?",
-    a: "The AI is strictly trained on your exact pricing schedules, service areas, and company rules. It never guesses or hallucinates details—and you can update your knowledge base anytime.",
+    a: "The AI is strictly trained on your exact pricing schedules, service areas, and company rules. It never guesses or hallucinates details—and both voice and website chat answers are grounded in your verified data.",
   },
   {
     id: "if-it-breaks",
     q: "What happens if a call fails or is disconnected?",
-    a: "If an unexpected issue occurs, calls automatically fall back to your existing phone voicemail system. You are completely protected and never miss information.",
+    a: "If an unexpected issue occurs, calls automatically fall back to your existing phone voicemail system or warm-transfer directly to your mobile phone. You are completely protected.",
   },
   {
     id: "change-number",
@@ -122,7 +122,7 @@ export const APPROVED_FAQS = [
   {
     id: "how-long-setup",
     q: "How long does setup take?",
-    a: "Your entire system is fully configured and live in about 7 days. Our team handles 100% of the build, knowledge base setup, and calendar integration for you.",
+    a: "Your entire system is fully configured and live in about 7 days. Our team handles 100% of the build, knowledge base setup, calendar sync, and CRM pipeline configuration for you.",
   },
   {
     id: "calls-recorded",
@@ -132,7 +132,7 @@ export const APPROVED_FAQS = [
   {
     id: "why-trust-you",
     q: "Why choose Minions.AI over a traditional call center?",
-    a: `Traditional call centers charge per minute, place callers on hold, and can only take basic messages. Minions.AI costs a fraction of the price, answers in under 3 seconds 24/7, quotes accurate pricing, and books appointments directly to your calendar—backed by a ${guaranteeDays}-day money-back guarantee.`,
+    a: `Traditional call centers charge per minute, place callers on hold, and can only take basic messages. Minions.AI costs a fraction of the price, answers in under 3 seconds 24/7, quotes accurate pricing, books directly to your calendar, and logs every lead automatically—backed by a ${guaranteeDays}-day money-back guarantee.`,
   },
 ];
 

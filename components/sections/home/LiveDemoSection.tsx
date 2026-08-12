@@ -1,38 +1,38 @@
-"use client";
+import Section, { SectionHeading } from "@/components/ui/Section";
+import YouTubeEmbed from "@/components/ui/YouTubeEmbed";
+import { DEMO_VIDEO_ID } from "@/lib/data/placeholders";
 
-import { DEMO_VIDEO_URL } from "@/lib/data/placeholders";
-
+/**
+ * Demo video band.
+ *
+ * Position: directly after TheRealCost. The visitor has just watched their own money
+ * leak on the calculator, so proof-it-works lands at peak curiosity. Previously this
+ * sat after MeetTheCrew, well past that moment — and rendered nothing at all, because
+ * it used a <video> tag that cannot play a YouTube URL.
+ *
+ * Dual-state preserved: with DEMO_VIDEO_ID unset, nothing renders — no empty box,
+ * no orphaned heading, no layout gap.
+ */
 export default function LiveDemoSection() {
-  // Per T12: When DEMO_VIDEO_URL is unset, the demo section MUST NOT render at all.
-  if (!DEMO_VIDEO_URL || DEMO_VIDEO_URL.trim() === "") {
+  if (!DEMO_VIDEO_ID || DEMO_VIDEO_ID.trim() === "") {
     return null;
   }
 
   return (
-    <section className="bg-cream py-16 sm:py-24 border-t border-border" id="demo">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-border bg-white p-6 sm:p-10 shadow-sm text-center">
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
-            See how the crew handles a live call
-          </h2>
-          <p className="mt-3 text-ink/70 leading-relaxed max-w-xl mx-auto text-sm sm:text-base">
-            Watch a 60-second walkthrough of our AI dispatcher qualifying a lead and writing the booking directly to Google Calendar.
-          </p>
+    <Section tone="white" width="default" id="demo" innerClassName="text-center">
+      <SectionHeading className="text-ink">
+        See how the crew handles a live call
+      </SectionHeading>
+      <p className="mt-4 text-lg text-ink/70 leading-relaxed max-w-2xl mx-auto">
+        Watch a 60-second walkthrough of our AI dispatcher qualifying a lead and writing the booking directly to Google Calendar.
+      </p>
 
-          <div className="mt-8 relative aspect-video w-full overflow-hidden rounded-2xl border border-border bg-black">
-            <video
-              src={DEMO_VIDEO_URL}
-              controls
-              preload="metadata"
-              playsInline
-              className="h-full w-full object-cover"
-              aria-label="Recorded demonstration video of Minions.AI handling a customer call"
-            >
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
+      <div className="mt-10">
+        <YouTubeEmbed
+          videoId={DEMO_VIDEO_ID}
+          title="Minions.AI handling a customer call — recorded demonstration"
+        />
       </div>
-    </section>
+    </Section>
   );
 }

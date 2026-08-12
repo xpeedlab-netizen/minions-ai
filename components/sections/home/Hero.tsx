@@ -1,15 +1,15 @@
 import Button from "@/components/ui/Button";
 import HeroAnimation from "@/components/sections/home/HeroAnimation";
-import { BOOKING_CALENDAR_URL, DEMO_VIDEO_URL } from "@/lib/data/placeholders";
+import { BOOKING_CALENDAR_URL, DEMO_VIDEO_ID } from "@/lib/data/placeholders";
 import { GUARANTEE } from "@/lib/data/site-content";
 
 export default function Hero() {
-  const primaryHref = DEMO_VIDEO_URL ? "/live-demo" : BOOKING_CALENDAR_URL;
-  const primaryLabel = DEMO_VIDEO_URL ? "Hear the AI answer a call" : "Book a 15-minute call";
+  const hasDemo = Boolean(DEMO_VIDEO_ID && DEMO_VIDEO_ID.trim() !== "");
+  const primaryHref = hasDemo ? "/live-demo" : BOOKING_CALENDAR_URL;
 
   return (
-    <section className="relative overflow-hidden bg-cream">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid lg:grid-cols-2 gap-12 items-center">
+    <section className="relative overflow-hidden bg-cream py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <span className="inline-block rounded-full bg-ink px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-white">
             24/7 AI Voice & Lead Dispatcher for Service Businesses
@@ -22,7 +22,7 @@ export default function Hero() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Button href={primaryHref} size="lg" showArrow>
-              {DEMO_VIDEO_URL ? "Hear the AI answer a call" : "Book a 15-Minute Setup Call"}
+              {hasDemo ? "Hear the AI answer a call" : "Book a 15-Minute Setup Call"}
             </Button>
             <Button href="/pricing" variant="outline" size="lg">
               See pricing plans

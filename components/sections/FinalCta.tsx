@@ -21,7 +21,7 @@ export default function FinalCta({
   return (
     <section className="bg-teal py-16 sm:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl leading-tight text-balance">
+        <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight text-balance">
           {heading}
         </h2>
         {subtext && <p className="mt-4 text-white/80 text-lg max-w-xl mx-auto">{subtext}</p>}

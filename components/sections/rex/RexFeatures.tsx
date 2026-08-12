@@ -4,9 +4,9 @@ import {
   CheckCircle2,
   CalendarCheck,
   PhoneForwarded,
-  Globe,
+  Sparkles,
   MessageSquareText,
-  ShieldOff,
+  ShieldCheck,
 } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import { INTEGRATION_COPY } from "@/lib/data/site-content";
@@ -14,43 +14,51 @@ import { INTEGRATION_COPY } from "@/lib/data/site-content";
 const features = [
   {
     icon: Clock,
-    title: "24/7 Answering",
-    body: "Rex answers on every ring. After-hours calls and weekend emergencies get handled immediately.",
+    title: "Ring-1 24/7 Answering",
+    badge: "Zero Missed Calls",
+    body: "Rex answers on ring one, day or night. After-hours emergency calls and weekend leads get handled instantly before callers hang up.",
   },
   {
     icon: AudioLines,
-    title: "Natural Sound",
-    body: "Answers immediately, holds a normal back-and-forth conversation, and handles interruptions.",
+    title: "Natural Human Voice",
+    badge: "Realistic Pacing",
+    body: "Speaks with natural voice inflections, conducts realistic back-and-forth conversations, and handles caller interruptions gracefully.",
   },
   {
-    icon: CheckCircle2,
-    title: "Lead Qualification",
-    body: "Rex asks the right questions to make sure it's a job worth your technician's time.",
+    icon: Sparkles,
+    title: "Accurate Pricing Quotes",
+    badge: "100% Custom Rules",
+    body: "Quotes your exact service fees, diagnostic charges, and hourly rates—trained strictly on your business rules with zero hallucinations.",
   },
   {
     icon: CalendarCheck,
-    title: "Calendar Booking",
+    title: "Direct Calendar Booking",
+    badge: "Google Calendar",
     body: INTEGRATION_COPY.calendar,
   },
   {
     icon: PhoneForwarded,
-    title: "Warm Transfers",
-    body: "Can instantly patch through high-priority emergency calls to your phone.",
+    title: "Warm Emergency Transfers",
+    badge: "High-Priority Dispatch",
+    body: "Instantly patches high-priority gas leaks, major pipe bursts, or electrical emergencies straight to your mobile cell phone.",
   },
   {
-    icon: Globe,
-    title: "Clear Accent Handling",
-    body: "Responds clearly and handles standard regional US accents so every caller is understood.",
+    icon: CheckCircle2,
+    title: "Service Area Verification",
+    badge: "Qualifies Leads",
+    body: "Asks prospective callers their zip code and service details to ensure the job is in your territory and worth your technician's time.",
   },
   {
     icon: MessageSquareText,
-    title: "Instant Summaries",
-    body: "Receive a text and email summary the second Rex hangs up the phone.",
+    title: "Instant SMS & Email Alerts",
+    badge: "Real-Time Log",
+    body: "Receive a full call summary text and transcript the second Rex hangs up the phone so you're always in complete control.",
   },
   {
-    icon: ShieldOff,
-    title: "Spam Filtering",
-    body: "Filters out obvious telemarketers and robocalls so you only hear about real business.",
+    icon: ShieldCheck,
+    title: "Robocall & Spam Filtering",
+    badge: "Blocks Telemarketers",
+    body: "Filters out annoying telemarketers, spam robocalls, and sales pitches so you only get notified about genuine customer revenue.",
   },
 ];
 
@@ -58,23 +66,34 @@ export default function RexFeatures() {
   return (
     <section className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
-            What Rex does for your shop
+        <div className="max-w-3xl mx-auto text-center">
+          <span className="inline-block rounded-full bg-teal/10 px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-teal font-bold mb-4">
+            8 Core Dispatching Abilities
+          </span>
+          <h2 className="font-heading font-extrabold text-3xl sm:text-5xl text-ink text-balance">
+            Everything Rex Handles for Your Service Business
           </h2>
-          <p className="mt-4 text-ink/60">
-            He&apos;s more than just a voicemail replacement. He&apos;s a focused digital assistant for your front office.
+          <p className="mt-4 text-lg text-ink/70 leading-relaxed">
+            Rex isn&apos;t a basic voicemail bot—he&apos;s a focused digital front-office dispatcher built to capture revenue 24/7/365.
           </p>
         </div>
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((f, i) => (
             <Reveal key={f.title} delay={(i % 4) * 0.06} className="h-full">
-              <div className="h-full rounded-2xl border border-border bg-cream p-6">
-                <span className="flex size-10 items-center justify-center rounded-xl bg-white border border-border text-teal">
-                  <f.icon className="size-5" />
-                </span>
-                <h3 className="mt-4 font-heading font-bold text-ink">{f.title}</h3>
-                <p className="mt-2 text-sm text-ink/60 leading-relaxed">{f.body}</p>
+              <div className="h-full rounded-2xl border border-border bg-cream p-6 shadow-sm hover:border-teal/30 transition-all flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="flex size-10 items-center justify-center rounded-xl bg-white border border-border text-teal">
+                      <f.icon className="size-5" />
+                    </span>
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider bg-teal/10 text-teal px-2.5 py-1 rounded-md">
+                      {f.badge}
+                    </span>
+                  </div>
+                  <h3 className="font-heading font-bold text-ink text-lg">{f.title}</h3>
+                  <p className="mt-2 text-sm text-ink/70 leading-relaxed">{f.body}</p>
+                </div>
               </div>
             </Reveal>
           ))}

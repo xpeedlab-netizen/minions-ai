@@ -1,4 +1,10 @@
-# CLAUDE.md — Operating Contract
+<!-- BEGIN:nextjs-agent-rules -->
+# Next.js & System Rules
+
+This version of Next.js has breaking changes — APIs, conventions, and file structure may differ from training data. Read relevant guides in `node_modules/next/dist/docs/` before writing code. Heed deprecation notices.
+<!-- END:nextjs-agent-rules -->
+
+# AGENTS.md / CLAUDE.md — Operating Contract & Single Source of Truth
 
 ## Session Start Protocol
 1. Read `.claude/memory.md`
@@ -29,7 +35,7 @@ If a change touches multiple features unexpectedly, pause and confirm design int
 - Integrations must reflect ServiceTitan, Housecall Pro, Jobber, FieldRoutes, PestPac, and GorillaDesk (Never GHL).
 
 ## Session End Protocol
-1. Append ONE single-line entry to `memory.md` under `## Sessions`:
+1. Append ONE single-line entry to `.claude/memory.md` under `## Sessions`:
    `YYYY-MM-DD | <task> | decision: <summary> | changed: <files> | docs: <updated docs> | open: <none/question>`
 2. If memory.md exceeds 120 lines, move oldest Session entries to `.claude/archive/memory-YYYY-MM.md`.
 

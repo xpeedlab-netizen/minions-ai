@@ -1,34 +1,68 @@
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, ArrowRight, Sparkles } from "lucide-react";
 import Button from "@/components/ui/Button";
 import GiaHeroAnimation from "./GiaHeroAnimation";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
 export default function GiaHero() {
   return (
-    <section className="bg-cream border-b border-border">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-3.5 py-1 font-mono text-xs uppercase tracking-wide text-[#1B8A5A] font-bold shadow-sm">
-            <ShieldCheck className="size-3.5 text-[#1B8A5A]" />
-            Automated Lead &amp; Appointment Pipeline
-          </span>
-          <h1 className="mt-5 font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-balance">
-            Every Call &amp; Chat Tracked Automatically. Zero Manual Entry.
+    <section className="relative bg-cream border-b border-border overflow-hidden py-16 sm:py-24">
+      {/* Background Decorative Gradients */}
+      <div className="absolute top-0 right-0 -mr-20 -mt-20 size-96 rounded-full bg-success/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 -mb-20 size-80 rounded-full bg-teal/5 blur-3xl pointer-events-none" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        {/* Left Column: Copy & Actions */}
+        <div className="lg:col-span-6 space-y-6">
+          <div className="inline-flex items-center gap-2 rounded-full border border-success/30 bg-success/10 px-3.5 py-1.5 font-mono text-xs font-semibold text-success shadow-xs">
+            <span className="relative flex size-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" />
+              <span className="relative inline-flex size-2 rounded-full bg-success" />
+            </span>
+            <ShieldCheck className="size-3.5 text-success" />
+            <span>Gia — Managed CRM &amp; Pipeline Autopilot</span>
+          </div>
+
+          <h1 className="font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-balance">
+            Every Call &amp; Chat Tracked Automatically. <br className="hidden sm:inline" />
+            <span className="bg-gradient-to-r from-success to-teal bg-clip-text text-transparent">
+              Zero Manual CRM Entry.
+            </span>
           </h1>
-          <p className="mt-6 text-lg text-ink/75 leading-relaxed max-w-xl">
-            Every phone call, website chat, and missed call automatically populates your dedicated lead pipeline. Gia tracks every prospect from first ring to won job—sending appointment reminders and 5-star review requests on autopilot.
+
+          <p className="text-lg text-ink/75 leading-relaxed max-w-xl">
+            Stop losing leads in messy inboxes. Gia automatically builds, organizes, and updates your customer pipeline from every incoming phone call, website message, and missed call — sending instant SMS follow-ups and review requests on autopilot.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>
+
+          {/* Value Highlights */}
+          <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs text-ink/80">
+            <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
+              <Sparkles className="size-4 text-success shrink-0" />
+              <span>100% Done-For-You Setup</span>
+            </div>
+            <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
+              <Sparkles className="size-4 text-success shrink-0" />
+              <span>Google Calendar Sync</span>
+            </div>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="pt-4 flex flex-col sm:flex-row gap-4">
+            <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow className="bg-success hover:bg-success/90 text-white shadow-md">
               Deploy Gia in 7 Days
             </Button>
-            <Button href="/pricing" variant="outline" size="lg">
+            <Button href="/pricing" variant="outline" size="lg" className="border-border hover:bg-white">
               See Pricing Plans
             </Button>
           </div>
+
+          <p className="font-mono text-xs text-ink/50 flex items-center gap-2 pt-1">
+            <span className="size-1.5 rounded-full bg-success" />
+            No technical setup required. We build and manage your pipeline for you.
+          </p>
         </div>
 
-        <div className="relative">
+        {/* Right Column: Interactive CRM Simulator */}
+        <div className="lg:col-span-6 relative">
           <GiaHeroAnimation />
         </div>
       </div>

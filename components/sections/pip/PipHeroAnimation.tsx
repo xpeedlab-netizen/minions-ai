@@ -29,7 +29,7 @@ export default function PipHeroAnimation() {
       </div>
 
       <div className="mt-4 h-[440px]">
-        <PipChatWidget variant="inline" defaultOpen />
+        <PipChatWidget variant="inline" defaultOpen hideHeader />
       </div>
 
       {/* Bottom Proof Bar */}

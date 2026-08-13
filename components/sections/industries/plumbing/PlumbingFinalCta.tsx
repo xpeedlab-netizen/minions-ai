@@ -1,31 +1,45 @@
 import Button from "@/components/ui/Button";
+import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
+import { Droplets, Sparkles, ShieldCheck } from "lucide-react";
 
 export default function PlumbingFinalCta() {
   return (
     <section className="bg-cream py-16 sm:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-teal-dark p-10 sm:p-14 text-center">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white text-balance">
-            Stop losing emergency jobs to the &quot;First Answer&quot; gap.
-          </h2>
-          <p className="mt-4 text-white/70 leading-relaxed max-w-2xl mx-auto">
-            Book a demo to see how Rex handles emergency calls. We&apos;ll run a free ROI Audit on your current
-            call volume to show you exactly how many leads Rex would have saved last month.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button href="/contact" size="lg" showArrow>
-              Book a Call
-            </Button>
-            <Button
-              href="/live-demo"
-              variant="outline"
-              size="lg"
-              className="!border-white !text-white hover:!bg-white/10"
-            >
-              Schedule Demo
-            </Button>
-          </div>
+        <div className="relative rounded-[32px] border-2 border-teal/30 bg-gradient-to-br from-ink via-ink to-teal-dark p-10 sm:p-16 text-center text-white shadow-2xl overflow-hidden">
+          {/* Decorative Background Glows */}
+          <div className="absolute top-0 right-1/4 size-72 rounded-full bg-teal/20 blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 size-72 rounded-full bg-accent-blue/20 blur-3xl pointer-events-none" />
 
+          <div className="relative z-10 space-y-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-teal/20 border border-teal/40 px-4 py-1.5 font-mono text-xs font-bold text-teal-300 uppercase tracking-wider">
+              <Droplets className="size-4 text-teal-300" />
+              <span>Minions AI for Plumbing Fleet Owners</span>
+            </div>
+
+            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white text-balance leading-tight">
+              Stop Losing Emergency Jobs to the <br className="hidden sm:inline" />
+              &quot;First Answer&quot; Gap. Deploy Your AI Crew.
+            </h2>
+
+            <p className="text-white/75 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+              We configure your emergency dispatch rules, water shutoff advice, and ServiceTitan integration in 7 days. Zero technical work required on your end.
+            </p>
+
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow className="bg-teal hover:bg-teal-dark text-white shadow-lg w-full sm:w-auto">
+                Deploy Plumbing AI Crew in 7 Days
+              </Button>
+              <Button href="/live-demo" variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">
+                Hear Plumbing Voice Demo
+              </Button>
+            </div>
+
+            <p className="font-mono text-xs text-white/50 pt-2 flex items-center justify-center gap-2">
+              <Sparkles className="size-3.5 text-teal-300" />
+              Compatible with ServiceTitan, Housecall Pro, Jobber &amp; Google Calendar
+            </p>
+          </div>
         </div>
       </div>
     </section>

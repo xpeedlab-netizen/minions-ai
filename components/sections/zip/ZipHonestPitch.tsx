@@ -16,8 +16,8 @@ export default function ZipHonestPitch() {
           &ldquo;This is the fastest win we install, and it&apos;s usually the one shops feel in
           the first week. If you only do one thing with us, do this.&rdquo;
         </p>
-        <div className="relative mt-6 size-12 mx-auto overflow-hidden rounded-full border-2 border-white shadow">
-          <Image src="/images/zip-mascot.jpg" alt="Zip" fill className="object-cover" />
+        <div className="relative mt-6 size-12 mx-auto overflow-hidden rounded-full border-2 border-white bg-coral/10 p-0.5 shadow">
+          <Image src="/images/mascots/zip.png" alt="Zip" fill className="object-contain" />
         </div>
       </div>
     </section>

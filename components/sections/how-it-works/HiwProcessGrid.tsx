@@ -25,8 +25,8 @@ export default function HiwProcessGrid() {
                 help. If we can&apos;t, we&apos;ll say so.
               </p>
               <div className="relative mt-5 flex items-center gap-3 rounded-xl bg-cream p-3">
-                <div className="relative size-9 shrink-0 overflow-hidden rounded-full">
-                  <Image src="/images/rex-mascot.jpg" alt="Rex" fill className="object-cover" />
+                <div className="relative size-9 shrink-0 overflow-hidden rounded-full border border-border bg-teal/10 p-0.5">
+                  <Image src="/images/mascots/rex.png" alt="Rex" fill className="object-contain" />
                 </div>
                 <p className="text-sm text-ink/70 italic">
                   &ldquo;No fluff. Just checking if our crew fits your shop.&rdquo; — Rex
@@ -100,9 +100,9 @@ export default function HiwProcessGrid() {
               </p>
               <div className="mt-5 flex items-center gap-3">
                 <div className="flex -space-x-2">
-                  {["/images/rex-mascot.jpg", "/images/zip-mascot.jpg", "/images/pip-mascot.jpg"].map((img) => (
-                    <div key={img} className="relative size-8 overflow-hidden rounded-full border-2 border-teal">
-                      <Image src={img} alt="" fill className="object-cover" />
+                  {["/images/mascots/rex.png", "/images/mascots/zip.png", "/images/mascots/pip.png"].map((img) => (
+                    <div key={img} className="relative size-8 overflow-hidden rounded-full border-2 border-teal bg-white p-0.5">
+                      <Image src={img} alt="" fill className="object-contain" />
                     </div>
                   ))}
                 </div>

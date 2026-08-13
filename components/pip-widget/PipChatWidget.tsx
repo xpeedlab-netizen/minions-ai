@@ -13,6 +13,7 @@ type Props = {
   variant: "floating" | "inline";
   defaultOpen?: boolean;
   className?: string;
+  hideHeader?: boolean;
 };
 
 function PipPanelHeader({ onClose }: { onClose?: () => void }) {
@@ -54,9 +55,11 @@ function PipPanelHeader({ onClose }: { onClose?: () => void }) {
 
 function PipPanel({
   variant,
+  hideHeader,
   onClose,
 }: {
   variant: "floating" | "inline";
+  hideHeader?: boolean;
   onClose?: () => void;
 }) {
   const { messages, isPending, sendMessage } = usePipSession();
@@ -86,7 +89,7 @@ function PipPanel({
           : "flex h-full w-full min-h-0 flex-col overflow-hidden rounded-2xl border border-border bg-white"
       }
     >
-      <PipPanelHeader onClose={onClose} />
+      {!hideHeader && <PipPanelHeader onClose={onClose} />}
 
       <div ref={scrollRef} className="flex-1 min-h-0 space-y-3 overflow-y-auto bg-cream p-4">
         {isEmpty && (
@@ -162,11 +165,11 @@ function PipPanel({
   );
 }
 
-export default function PipChatWidget({ variant, defaultOpen = false, className }: Props) {
+export default function PipChatWidget({ variant, defaultOpen = false, className, hideHeader }: Props) {
   if (variant === "inline") {
     return (
       <div className={className ?? "h-full w-full"}>
-        <PipPanel variant="inline" />
+        <PipPanel variant="inline" hideHeader={hideHeader} />
       </div>
     );
   }

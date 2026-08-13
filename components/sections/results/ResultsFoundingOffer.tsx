@@ -15,8 +15,8 @@ export default function ResultsFoundingOffer() {
         <div className="relative overflow-hidden rounded-3xl bg-teal p-8 sm:p-12">
           <Star className="absolute -top-4 right-6 size-24 text-white/5" />
           <div className="flex items-center gap-3">
-            <div className="relative size-11 overflow-hidden rounded-full border-2 border-white/20">
-              <Image src="/images/zip-mascot.jpg" alt="Zip" fill className="object-cover" />
+            <div className="relative size-11 overflow-hidden rounded-full border-2 border-white/20 bg-coral/20 p-0.5">
+              <Image src="/images/mascots/zip.png" alt="Zip" fill className="object-contain" />
             </div>
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white">
               Founding-client offer

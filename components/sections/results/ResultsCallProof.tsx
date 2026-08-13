@@ -38,8 +38,8 @@ export default function ResultsCallProof() {
                 &ldquo;I hear you. I&apos;ve got an emergency slot available for 7:00 AM. Does that
                 work?&rdquo;
               </p>
-              <div className="relative size-7 shrink-0 overflow-hidden rounded-full">
-                <Image src="/images/rex-mascot.jpg" alt="Rex" fill className="object-cover" />
+              <div className="relative size-7 shrink-0 overflow-hidden rounded-full border border-border bg-teal/10 p-0.5">
+                <Image src="/images/mascots/rex.png" alt="Rex" fill className="object-contain" />
               </div>
             </div>
           </div>

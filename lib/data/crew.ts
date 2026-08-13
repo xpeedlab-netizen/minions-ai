@@ -16,7 +16,7 @@ export const crew: CrewMember[] = [
     description:
       "Answers every incoming call in your company name, handles custom service Q&A, quotes accurate pricing, and books appointments straight to your calendar.",
     href: "/ai-voice-agent",
-    image: "/images/rex-mascot.jpg",
+    image: "/images/mascots/rex.png",
     accent: "#0E5C63",
   },
   {
@@ -26,7 +26,7 @@ export const crew: CrewMember[] = [
     description:
       "Instantly sends an SMS text-back to missed callers and web leads in seconds, ensuring your business is always the first responder to seal the deal.",
     href: "/speed-to-lead",
-    image: "/images/zip-mascot.jpg",
+    image: "/images/mascots/zip.png",
     accent: "#C4472A",
   },
   {
@@ -36,7 +36,7 @@ export const crew: CrewMember[] = [
     description:
       "Resolves customer FAQs, pricing questions, and service availability via web chat and email using only your verified business data.",
     href: "/customer-support-ai",
-    image: "/images/pip-mascot.jpg",
+    image: "/images/mascots/pip.png",
     accent: "#3A6EA5",
   },
   {
@@ -46,7 +46,7 @@ export const crew: CrewMember[] = [
     description:
       "Keeps your pipeline organized on autopilot — sending appointment reminders, quote follow-ups, and review requests without extra manual work.",
     href: "/crm-automation",
-    image: "/images/gia-mascot.jpg",
+    image: "/images/mascots/gia.png",
     accent: "#1B8A5A",
   },
   {
@@ -56,7 +56,7 @@ export const crew: CrewMember[] = [
     description:
       "Automates client intake, document collection, and status updates so your team spends zero hours pushing administrative paperwork.",
     href: "/back-office-automation",
-    image: "/images/otto-mascot.jpg",
+    image: "/images/mascots/otto.png",
     accent: "#2C3E50",
   },
 ];

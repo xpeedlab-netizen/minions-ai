@@ -1,24 +1,33 @@
-import { ShieldCheck } from "lucide-react";
 import Button from "@/components/ui/Button";
+import { GUARANTEE } from "@/lib/data/site-content";
+import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
 export default function PipFinalCta() {
   return (
-    <section className="bg-cream py-16 sm:py-24">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-        <div className="mx-auto mb-6 flex size-14 items-center justify-center rounded-2xl border border-border bg-white text-teal shadow-sm">
-          <ShieldCheck className="size-6" />
-        </div>
-        <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
-          Ready to stop answering &quot;When are you open?&quot; at 10 PM?
+    <section className="bg-ink py-16 sm:py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center text-white">
+        <h2 className="font-heading font-extrabold text-3xl sm:text-5xl leading-tight text-balance">
+          Turn Your Website Into a 24/7 Revenue-Capturing Front Desk.
         </h2>
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button href="/contact" size="lg" showArrow>
-            Get Pip on my team
+        <p className="mt-4 text-cream/80 text-lg max-w-xl mx-auto leading-relaxed">
+          Deploy Pip&apos;s grounded website chat assistant in about 7 days. Backed by a 100% 30-day money-back guarantee with zero long-term contract risk.
+        </p>
+        <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-4">
+          <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>
+            Deploy Pip in 7 Days
           </Button>
-          <Button href="/live-demo" variant="outline" size="lg">
-            Watch Pip in action
+          <Button
+            href="/pricing"
+            variant="outline"
+            size="lg"
+            className="!border-white !text-white hover:!bg-white/10"
+          >
+            See Pricing Plans
           </Button>
         </div>
+        <p className="mt-6 font-mono text-xs text-cream/60 font-medium">
+          {GUARANTEE.short}
+        </p>
       </div>
     </section>
   );

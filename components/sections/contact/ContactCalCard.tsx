@@ -8,8 +8,8 @@ export default function ContactCalCard() {
     <div className="rounded-2xl border border-border bg-white shadow-sm overflow-hidden">
       <div className="flex items-center justify-between border-b border-border px-6 py-5">
         <div className="flex items-center gap-3">
-          <div className="relative size-10 overflow-hidden rounded-full border border-border">
-            <Image src="/images/rex-mascot.jpg" alt="Rex" fill className="object-cover" />
+          <div className="relative size-10 overflow-hidden rounded-full border border-border bg-teal/10 p-0.5">
+            <Image src="/images/mascots/rex.png" alt="Rex" fill className="object-contain" />
           </div>
           <div>
             <p className="font-heading font-bold text-ink">Chat with Rex</p>

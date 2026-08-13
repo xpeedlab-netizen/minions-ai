@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
 import ElectricalHero from "@/components/sections/industries/electrical/ElectricalHero";
-import ElectricalResponseGap from "@/components/sections/industries/electrical/ElectricalResponseGap";
-import ElectricalFeatures from "@/components/sections/industries/electrical/ElectricalFeatures";
-import ElectricalLocalMap from "@/components/sections/industries/electrical/ElectricalLocalMap";
+import ElectricalStats from "@/components/sections/industries/electrical/ElectricalStats";
+import ElectricalProblem from "@/components/sections/industries/electrical/ElectricalProblem";
+import ElectricalCrewBento from "@/components/sections/industries/electrical/ElectricalCrewBento";
+import ElectricalRoiCalculator from "@/components/sections/industries/electrical/ElectricalRoiCalculator";
 import ElectricalFinalCta from "@/components/sections/industries/electrical/ElectricalFinalCta";
 
 export const metadata: Metadata = {
-  title: "AI Answering & Lead Follow-Up for Electrical Companies",
+  title: "24/7 AI Emergency Dispatch & Lead Automation for Electricians | Minions AI",
   description:
-    "When the lights go out, customers call the first person who answers. Rex ensures that's you, 24/7. No more missed emergencies, no more lost revenue.",
+    "When the lights go out or breakers arc, customers call the first electrician who answers. Our AI crew answers 24/7, guides main breaker safety, texts back missed leads in < 5 seconds, and books jobs directly into ServiceTitan or Housecall Pro.",
 };
 
 export default function ElectricalIndustryPage() {
   return (
     <>
       <ElectricalHero />
-      <ElectricalResponseGap />
-      <ElectricalFeatures />
-      <ElectricalLocalMap />
+      <ElectricalStats />
+      <ElectricalProblem />
+      <ElectricalCrewBento />
+      <ElectricalRoiCalculator />
       <ElectricalFinalCta />
     </>
   );

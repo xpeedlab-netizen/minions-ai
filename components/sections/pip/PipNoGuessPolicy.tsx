@@ -71,8 +71,8 @@ export default function PipNoGuessPolicy() {
                 <span className="text-white/40">ACTION: </span>
                 <span className="font-bold">ESCALATE TO HUMAN</span>
               </p>
-              <p className="rounded-lg bg-success/15 px-3 py-2.5 text-success">
-                <span className="text-success/70">OUTPUT: </span>
+              <p className="rounded-lg bg-[#4ade80]/15 px-3 py-2.5 text-[#4ade80]">
+                <span className="text-[#4ade80]/80">OUTPUT: </span>
                 &quot;That&apos;s a specific technical request! Let me put you in touch with our
                 lead electrician, Mike, who can confirm the schedule for you.&quot;
               </p>

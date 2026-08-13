@@ -1,29 +1,30 @@
 import type { Metadata } from "next";
 import PipHero from "@/components/sections/pip/PipHero";
-import PipFeatures from "@/components/sections/pip/PipFeatures";
+import PipChatSimulator from "@/components/sections/pip/PipChatSimulator";
+import PipBentoGrid from "@/components/sections/pip/PipBentoGrid";
 import PipNoGuessPolicy from "@/components/sections/pip/PipNoGuessPolicy";
 import ObjectionsSection from "@/components/sections/service/ObjectionsSection";
 import PipFinalCta from "@/components/sections/pip/PipFinalCta";
 import FaqSection from "@/components/sections/faq/FaqSection";
 
 export const metadata: Metadata = {
-  title: "AI Customer Support — Chat & Email Answered 24/7",
+  title: "Pip 24/7 Grounded Website Chat Assistant — Minions.AI",
   description:
-    "Pip answers your customers' routine questions by chat and email around the clock, using only your approved information — and escalates anything tricky straight to you.",
+    "Pip answers routine website inquiries 24/7—pricing ranges, service areas, guarantees, and licensing—grounded strictly in your verified business content with zero hallucinations.",
 };
 
 const pipFaq = [
   {
     q: "Will Pip make things up (hallucinate)?",
-    a: "No. Pip only answers from information you've approved. If it isn't sure of an answer, it says so and escalates to you instead of guessing — that's the No-Guess Policy.",
+    a: "No. Pip only answers from information you've approved. If it isn't sure of an answer, it says so and escalates to you instead of guessing — that's our No-Guess Policy.",
   },
   {
-    q: "What if the customer is angry or upset?",
-    a: "Pip recognizes frustration in a conversation and hands it straight to a human rather than trying to talk someone down. You get pinged immediately, with the full conversation history attached.",
+    q: "What if a website visitor needs an emergency call?",
+    a: "Pip recognizes emergency requests (like gas leaks or burst pipes) and provides your direct emergency phone line or patches the request directly to Rex, your AI Voice Dispatcher.",
   },
   {
-    q: "How long does it take to train Pip?",
-    a: "About a week. You send over your pricing sheets, service area maps, and FAQs, and we handle the setup — no technical work on your end.",
+    q: "How long does it take to train Pip for my business?",
+    a: "About 7 days. You send over your pricing sheets, service area zip codes, and customer FAQs, and our team handles the entire setup with 100% done-for-you onboarding.",
   },
 ];
 
@@ -31,10 +32,14 @@ export default function CustomerSupportAiPage() {
   return (
     <>
       <PipHero />
-      <PipFeatures />
+      <PipChatSimulator />
+      <PipBentoGrid />
       <PipNoGuessPolicy />
-      <ObjectionsSection items={pipFaq} heading="Tough Questions for a Support Assistant" />
-      <FaqSection />
+      <ObjectionsSection items={pipFaq} heading="Tough Questions for a Website Support Assistant" />
+      <FaqSection
+        title="Pip Grounded Web Chat FAQ"
+        subtitle="Common questions trade business owners ask before adding Pip to their website."
+      />
       <PipFinalCta />
     </>
   );

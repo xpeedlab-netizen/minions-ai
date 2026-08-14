@@ -3,17 +3,25 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
+const MotionDiv = motion.div;
+const MotionLi = motion.li;
+
 export default function Reveal({
   children,
   delay = 0,
   className = "",
+  as = "div",
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
+  /** Rendered element — use "li" to avoid inserting a bare <div> between a
+   * list parent (<ul>/<ol>) and its required <li> child. */
+  as?: "div" | "li";
 }) {
+  const MotionTag = as === "li" ? MotionLi : MotionDiv;
   return (
-    <motion.div
+    <MotionTag
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
@@ -21,6 +29,6 @@ export default function Reveal({
       className={className}
     >
       {children}
-    </motion.div>
+    </MotionTag>
   );
 }

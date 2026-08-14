@@ -60,11 +60,14 @@ export default function TheRealCost() {
 
       <ul className="mt-10 grid sm:grid-cols-3 gap-6">
         {problemCards.map((c, i) => (
-          <Reveal key={c.title} delay={i * 0.08} className="h-full">
-            <li className="flex h-full flex-col rounded-2xl border border-border bg-cream p-6 hover:border-teal/40 transition-colors">
-              <h4 className="font-heading font-bold text-ink text-lg tracking-[-0.01em]">{c.title}</h4>
-              <p className="mt-3 text-sm text-ink/70 leading-relaxed">{c.body}</p>
-            </li>
+          <Reveal
+            key={c.title}
+            as="li"
+            delay={i * 0.08}
+            className="flex h-full flex-col rounded-2xl border border-border bg-cream p-6 hover:border-teal/40 transition-colors"
+          >
+            <h3 className="font-heading font-bold text-ink text-lg tracking-[-0.01em]">{c.title}</h3>
+            <p className="mt-3 text-sm text-ink/70 leading-relaxed">{c.body}</p>
           </Reveal>
         ))}
       </ul>
@@ -90,54 +93,52 @@ export default function TheRealCost() {
         */}
         <ol className="mt-10 space-y-6 relative before:absolute before:top-2 before:bottom-2 before:left-[7px] before:w-0.5 before:bg-border sm:before:left-2">
           {CONTRACTOR_DAY_TIMELINE.map((item, i) => (
-            <Reveal key={item.time} delay={i * 0.08}>
-              <li className="relative pl-8 sm:pl-10">
-                {/* Spine node */}
-                <span
-                  className="absolute left-0 top-2 size-4 rounded-full border-2 border-teal bg-white sm:left-[3px]"
-                  aria-hidden
-                />
+            <Reveal key={item.time} as="li" delay={i * 0.08} className="relative pl-8 sm:pl-10">
+              {/* Spine node */}
+              <span
+                className="absolute left-0 top-2 size-4 rounded-full border-2 border-teal bg-white sm:left-[3px]"
+                aria-hidden
+              />
 
-                <div className="rounded-3xl border border-border bg-cream p-5 sm:p-8">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4 mb-6">
-                    <div className="flex flex-wrap items-center gap-3">
-                      <span className="inline-flex items-center gap-1.5 bg-ink text-white px-3 py-1 rounded-lg font-mono text-sm font-bold">
-                        <Clock className="size-4 text-teal" aria-hidden /> {item.time}
-                      </span>
-                      <h4 className="font-heading font-bold text-lg sm:text-xl text-ink">
-                        {item.title}
-                      </h4>
-                    </div>
-                    <span className="shrink-0 self-start sm:self-auto bg-teal/10 text-teal text-xs font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-teal/20">
-                      Protected by {item.crewHero}
+              <div className="rounded-3xl border border-border bg-cream p-5 sm:p-8">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4 mb-6">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="inline-flex items-center gap-1.5 bg-ink text-white px-3 py-1 rounded-lg font-mono text-sm font-bold">
+                      <Clock className="size-4 text-teal" aria-hidden /> {item.time}
                     </span>
+                    <h4 className="font-heading font-bold text-lg sm:text-xl text-ink">
+                      {item.title}
+                    </h4>
+                  </div>
+                  <span className="shrink-0 self-start sm:self-auto bg-teal/10 text-teal text-xs font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-teal/20">
+                    Protected by {item.crewHero}
+                  </span>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+                  {/* Without */}
+                  <div className="rounded-2xl bg-white border border-coral-text/20 p-5 space-y-2">
+                    <div className="flex items-center gap-2 text-coral-text font-bold text-sm">
+                      <XCircle className="size-5 shrink-0" aria-hidden />
+                      <span>Without Minions.AI (The Daily Grind)</span>
+                    </div>
+                    <p className="text-sm text-ink/70 leading-relaxed font-medium">
+                      {item.without}
+                    </p>
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-                    {/* Without */}
-                    <div className="rounded-2xl bg-white border border-coral-text/20 p-5 space-y-2">
-                      <div className="flex items-center gap-2 text-coral-text font-bold text-sm">
-                        <XCircle className="size-5 shrink-0" aria-hidden />
-                        <span>Without Minions.AI (The Daily Grind)</span>
-                      </div>
-                      <p className="text-sm text-ink/70 leading-relaxed font-medium">
-                        {item.without}
-                      </p>
+                  {/* With */}
+                  <div className="rounded-2xl bg-white border border-teal/30 p-5 space-y-2">
+                    <div className="flex items-center gap-2 text-teal font-bold text-sm">
+                      <CheckCircle2 className="size-5 shrink-0" aria-hidden />
+                      <span>With Minions.AI (Automated Growth)</span>
                     </div>
-
-                    {/* With */}
-                    <div className="rounded-2xl bg-white border border-teal/30 p-5 space-y-2">
-                      <div className="flex items-center gap-2 text-teal font-bold text-sm">
-                        <CheckCircle2 className="size-5 shrink-0" aria-hidden />
-                        <span>With Minions.AI (Automated Growth)</span>
-                      </div>
-                      <p className="text-sm text-ink/90 leading-relaxed font-medium">
-                        {item.with}
-                      </p>
-                    </div>
+                    <p className="text-sm text-ink/90 leading-relaxed font-medium">
+                      {item.with}
+                    </p>
                   </div>
                 </div>
-              </li>
+              </div>
             </Reveal>
           ))}
         </ol>

@@ -49,33 +49,36 @@ export default function HowItWorks() {
 
         <ol className="relative grid gap-10 lg:grid-cols-3 lg:gap-8">
           {steps.map((s, i) => (
-            <Reveal key={s.n} delay={i * 0.08} className="h-full">
-              <li className="flex h-full flex-row items-start gap-5 lg:flex-col lg:items-start lg:gap-0">
-                {/* Medallion frame holding generated product UI step image */}
-                <div className="relative size-24 shrink-0 overflow-hidden rounded-2xl border border-border bg-cream shadow-sm sm:size-28 lg:size-36">
-                  <Image
-                    src={s.img}
-                    alt={s.who}
-                    fill
-                    sizes="(min-width: 1024px) 9rem, (min-width: 640px) 7rem, 6rem"
-                    className="object-cover"
-                  />
-                </div>
+            <Reveal
+              key={s.n}
+              as="li"
+              delay={i * 0.08}
+              className="flex h-full flex-row items-start gap-5 lg:flex-col lg:items-start lg:gap-0"
+            >
+              {/* Medallion frame holding generated product UI step image */}
+              <div className="relative size-24 shrink-0 overflow-hidden rounded-2xl border border-border bg-cream shadow-sm sm:size-28 lg:size-36">
+                <Image
+                  src={s.img}
+                  alt={s.who}
+                  fill
+                  sizes="(min-width: 1024px) 9rem, (min-width: 640px) 7rem, 6rem"
+                  className="object-cover"
+                />
+              </div>
 
-                <div className="lg:mt-7">
-                  <div className="flex items-baseline gap-3">
-                    <span className="font-mono text-3xl font-medium leading-none tabular-nums text-teal/25 lg:text-4xl">
-                      {s.n}
-                    </span>
-                    <h3 className="font-heading text-xl font-bold leading-[1.15] tracking-[-0.01em] text-balance text-ink sm:text-2xl">
-                      {s.title}
-                    </h3>
-                  </div>
-                  <p className="mt-3 text-[0.9375rem] leading-[1.6] text-ink/65">
-                    {s.body}
-                  </p>
+              <div className="lg:mt-7">
+                <div className="flex items-baseline gap-3">
+                  <span className="font-mono text-3xl font-medium leading-none tabular-nums text-teal/25 lg:text-4xl">
+                    {s.n}
+                  </span>
+                  <h3 className="font-heading text-xl font-bold leading-[1.15] tracking-[-0.01em] text-balance text-ink sm:text-2xl">
+                    {s.title}
+                  </h3>
                 </div>
-              </li>
+                <p className="mt-3 text-[0.9375rem] leading-[1.6] text-ink/65">
+                  {s.body}
+                </p>
+              </div>
             </Reveal>
           ))}
         </ol>

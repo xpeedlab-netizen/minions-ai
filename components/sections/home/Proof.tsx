@@ -35,24 +35,26 @@ export default function Proof() {
             each source line resolve against the tallest column. */}
         <dl className="mt-14 grid items-stretch gap-y-10 sm:grid-cols-3 sm:gap-y-0 sm:divide-x sm:divide-white/15">
           {PROOF_STATS.map((s, i) => (
-            <Reveal key={s.stat} delay={i * 0.08} className="h-full">
-              <div className="flex h-full flex-col px-0 text-center sm:px-8">
-                {/* text-balance + a capped measure keep "42 hours" from setting a much
-                    wider column than "100x" and skewing the row. */}
-                <dt className="text-balance font-mono text-[2.75rem] font-medium leading-[1.05] tabular-nums text-white lg:text-6xl">
-                  {s.stat}
-                </dt>
-                <dd className="mt-5 flex flex-1 flex-col">
-                  <p className="mx-auto max-w-[22rem] text-[0.9375rem] leading-[1.6] text-white/75">
-                    {s.description}
-                  </p>
-                  {/* mt-auto pins every source to the bottom of the tallest column, so
-                      the three citations align on one line. */}
-                  <p className="mx-auto mt-auto max-w-[22rem] pt-6 font-mono text-[0.6875rem] leading-[1.5] text-white/45">
-                    {s.source}
-                  </p>
-                </dd>
-              </div>
+            <Reveal
+              key={s.stat}
+              delay={i * 0.08}
+              className="flex h-full flex-col px-0 text-center sm:px-8"
+            >
+              {/* text-balance + a capped measure keep "42 hours" from setting a much
+                  wider column than "100x" and skewing the row. */}
+              <dt className="text-balance font-mono text-[2.75rem] font-medium leading-[1.05] tabular-nums text-white lg:text-6xl">
+                {s.stat}
+              </dt>
+              <dd className="mt-5 flex flex-1 flex-col">
+                <p className="mx-auto max-w-[22rem] text-[0.9375rem] leading-[1.6] text-white/75">
+                  {s.description}
+                </p>
+                {/* mt-auto pins every source to the bottom of the tallest column, so
+                    the three citations align on one line. */}
+                <p className="mx-auto mt-auto max-w-[22rem] pt-6 font-mono text-[0.6875rem] leading-[1.5] text-white/45">
+                  {s.source}
+                </p>
+              </dd>
             </Reveal>
           ))}
         </dl>

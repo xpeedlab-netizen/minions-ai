@@ -93,7 +93,7 @@ export default function HeroAnimation() {
         >
           <div className="flex items-center gap-1.5 rounded-xl border border-border bg-white px-2.5 py-1.5 shadow-sm">
             <Icon className="size-3.5 text-teal" strokeWidth={2.25} />
-            <span className="font-mono text-[10px] uppercase tracking-wide text-ink/70">
+            <span className="font-mono text-[10px] uppercase tracking-wide text-ink">
               {label}
             </span>
           </div>

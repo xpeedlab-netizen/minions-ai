@@ -1,8 +1,14 @@
 import type { NextRequest } from "next/server";
 import { SITE_PHONE_NUMBER } from "@/lib/data/placeholders";
 
+// Booking turns can chain several sequential LLM calls (intent + tool
+// execution + summarization) with provider-side retries on rate limits,
+// which can legitimately take 15-20s. Give this route more room than the
+// platform default so a slow-but-successful n8n response isn't cut off.
+export const maxDuration = 30;
+
 const N8N_WEBHOOK_URL = "https://n8n.getminions.ai/webhook/rag-chat-query";
-const TIMEOUT_MS = 15_000;
+const TIMEOUT_MS = 25_000;
 
 type PipResponse = {
   answer: string;

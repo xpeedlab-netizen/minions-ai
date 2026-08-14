@@ -58,11 +58,21 @@ export async function POST(request: NextRequest) {
       cache: "no-store",
     });
 
-    if (!upstream.ok) {
-      return Response.json(proxyFallback(session_id), { status: 200 });
+    // n8n returns a well-formed PipResponse body even for its own
+    // recoverable error cases (e.g. a 502 for "please try again shortly"),
+    // so read the body on every status rather than discarding it whenever
+    // upstream.ok is false -- that used to throw away a real, useful
+    // message in favor of this route's generic fallback.
+    let data: PipResponse | null = null;
+    try {
+      data = (await upstream.json()) as PipResponse;
+    } catch {
+      data = null;
     }
 
-    const data = (await upstream.json()) as PipResponse;
+    if (!data || typeof data.answer !== "string" || !data.answer) {
+      return Response.json(proxyFallback(session_id), { status: 200 });
+    }
 
     return Response.json(
       { ...data, session_id: data.session_id || session_id },

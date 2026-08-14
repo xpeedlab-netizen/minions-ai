@@ -38,7 +38,15 @@ export async function POST(request: NextRequest) {
   try {
     const upstream = await fetch(N8N_WEBHOOK_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        // This is a trusted server-to-server call, which never carries a
+        // browser Origin header. The n8n workflow's origin allow-list
+        // rejects requests with no Origin (by design, to block spoofed
+        // external calls), so this proxy must identify itself explicitly
+        // as coming from this site.
+        Origin: "https://www.getminions.ai",
+      },
       body: JSON.stringify({ question, session_id }),
       signal: controller.signal,
       cache: "no-store",

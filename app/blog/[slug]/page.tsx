@@ -187,6 +187,18 @@ export default async function BlogPostPage({ params }: PageProps) {
             </p>
           )}
 
+          {/* Featured Editorial Hero Image */}
+          {post.featured_image && (
+            <div className="my-8 overflow-hidden rounded-2xl border border-border bg-cream shadow-sm">
+              <img
+                src={post.featured_image}
+                alt={post.title}
+                className="w-full h-auto max-h-[480px] object-cover object-center transition-transform duration-300 hover:scale-[1.01]"
+                loading="eager"
+              />
+            </div>
+          )}
+
           {/* Hook Callout Box */}
           {post.hook && (
             <div className="my-8 rounded-2xl border-l-4 border-coral bg-cream p-6">

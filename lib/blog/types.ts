@@ -20,6 +20,8 @@ export interface BlogPost {
   readingTimeMinutes: number;
   tags: string[];
   metaDescription: string;
+  featured_image?: string;
+  og_image?: string;
   assetId?: string;
   docUrl?: string;
 }
@@ -34,6 +36,8 @@ export interface BlogPublishPayload {
   audience?: BlogAudience;
   pillar?: string;
   tags?: string[];
+  featured_image?: string;
+  og_image?: string;
   asset_id?: string;
   doc_url?: string;
 }

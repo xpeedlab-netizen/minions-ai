@@ -135,7 +135,31 @@ export default function ArticleContent({ content }: ArticleContentProps) {
           );
         }
 
-        // 4. Detect Section Headings (starts with ## or # or ends with a colon on short lines)
+        // 4. Detect Markdown Images (![alt](url))
+        if (/^\s*!\[(.*?)\]\((.*?)\)/.test(trimmed)) {
+          const imgMatch = trimmed.match(/!\[(.*?)\]\((.*?)\)/);
+          if (imgMatch) {
+            const altText = imgMatch[1] || "Editorial Image";
+            const imgSrc = imgMatch[2];
+            return (
+              <div key={blockIdx} className="my-8 overflow-hidden rounded-2xl border border-border bg-cream shadow-sm">
+                <img
+                  src={imgSrc}
+                  alt={altText}
+                  className="w-full h-auto max-h-[520px] object-cover object-center transition-transform duration-300 hover:scale-[1.01]"
+                  loading="eager"
+                />
+                {altText && altText !== "Hero Image" && (
+                  <p className="px-4 py-2 text-xs font-mono text-ink/60 bg-cream/50 border-t border-border/40 text-center italic">
+                    {altText}
+                  </p>
+                )}
+              </div>
+            );
+          }
+        }
+
+        // 5. Detect Section Headings (starts with ## or # or ends with a colon on short lines)
         if (/^#{1,3}\s+/.test(trimmed)) {
           const headingText = trimmed.replace(/^#{1,3}\s+/, "");
           return (

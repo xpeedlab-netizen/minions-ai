@@ -102,6 +102,8 @@ export async function getAllPosts(): Promise<BlogPost[]> {
           readingTimeMinutes: row.reading_time_minutes || calculateReadingTime(row.content),
           tags: row.tags || [row.audience, "Operations"],
           metaDescription: row.meta_description || (row.hook ? row.hook.slice(0, 160) : row.title),
+          featured_image: row.featured_image,
+          og_image: row.og_image,
           assetId: row.asset_id,
           docUrl: row.doc_url,
         }));
@@ -141,6 +143,8 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
           readingTimeMinutes: data.reading_time_minutes || calculateReadingTime(data.content),
           tags: data.tags || [data.audience, "Operations"],
           metaDescription: data.meta_description || (data.hook ? data.hook.slice(0, 160) : data.title),
+          featured_image: data.featured_image,
+          og_image: data.og_image,
           assetId: data.asset_id,
           docUrl: data.doc_url,
         };

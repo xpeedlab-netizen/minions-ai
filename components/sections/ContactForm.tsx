@@ -7,6 +7,8 @@ import Button from "@/components/ui/Button";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const reduceMotion = useReducedMotion();
 
   return (
@@ -79,7 +81,7 @@ export default function ContactForm() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2 border-t border-border/60">
             <div className="flex items-center gap-2 text-xs text-ink/60 font-mono">
               <MailCheck className="size-4 text-teal shrink-0" />
-              <span>Design preview state</span>
+              <span>Message delivered</span>
             </div>
 
             <button
@@ -95,9 +97,38 @@ export default function ContactForm() {
       ) : (
         <form
           key="contact-form"
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
-            setSubmitted(true);
+            const form = e.currentTarget;
+            const data = new FormData(form);
+            setSubmitting(true);
+            setError(null);
+
+            try {
+              const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  name: data.get("name"),
+                  contact: data.get("contact"),
+                  need: data.get("need"),
+                }),
+              });
+
+              if (!res.ok) {
+                const body = await res.json().catch(() => null);
+                throw new Error(body?.error || "Failed to send your message.");
+              }
+
+              form.reset();
+              setSubmitted(true);
+            } catch (err) {
+              setError(
+                err instanceof Error ? err.message : "Failed to send your message.",
+              );
+            } finally {
+              setSubmitting(false);
+            }
           }}
           className="flex flex-col gap-5"
         >
@@ -140,8 +171,13 @@ export default function ContactForm() {
               className="w-full rounded-xl border border-border bg-white px-4 py-3 text-base placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-teal"
             />
           </div>
-          <Button type="submit" showArrow className="w-full">
-            Send
+          {error && (
+            <p role="alert" className="text-sm text-red-600">
+              {error}
+            </p>
+          )}
+          <Button type="submit" showArrow className="w-full" disabled={submitting}>
+            {submitting ? "Sending…" : "Send"}
           </Button>
         </form>
       )}

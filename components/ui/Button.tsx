@@ -10,6 +10,7 @@ type BaseProps = {
   size?: "md" | "lg";
   showArrow?: boolean;
   className?: string;
+  disabled?: boolean;
 };
 
 type ButtonAsLink = BaseProps & {
@@ -48,8 +49,9 @@ export default function Button({
   href,
   onClick,
   type = "button",
+  disabled = false,
 }: ButtonAsLink | ButtonAsButton) {
-  const classes = `${base} ${variant !== "text" ? sizes[size] : ""} ${variants[variant]} ${className}`;
+  const classes = `${base} ${variant !== "text" ? sizes[size] : ""} ${variants[variant]} ${className} ${disabled ? "opacity-60 cursor-not-allowed hover:scale-100 active:scale-100" : ""}`;
 
   if (href) {
     return (
@@ -61,7 +63,7 @@ export default function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes}>
+    <button type={type} onClick={onClick} disabled={disabled} className={classes}>
       {children}
       {showArrow && <ArrowRight className="size-[1.1em]" strokeWidth={2.5} />}
     </button>

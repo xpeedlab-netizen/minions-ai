@@ -1,0 +1,25 @@
+{
+  "slug": "why-your-ai-keeps-breaking-your-schedule",
+  "title": "Why Your AI Keeps Breaking Your Schedule (And What Actually Fixes It)",
+  "subtitle": "Contractors are losing $3,000 emergency jobs not to bad work, but to broken data flow.",
+  "hook": "You are under a sink with water spraying your arms. Your phone rings. By ring four, that $3,000 emergency plumbing job is gone to your competitor down the street.",
+  "core_argument": "Smart AI does not fix broken booking flows if data fails to bridge the gap between voice and your job board.",
+  "content": "You run a plumbing, HVAC, or pest control business with five trucks on the road. You pay for CRM tools, phone lines, and dispatching. And yet every single month, multiple emergency jobs vanish into thin air. Not because the customer canceled. But because the information never made it from the phone call to the schedule.\n\nThe real issue is not that contractors lack AI. You already have automated voicemails, AI transcriptions, and CRM reminders. But none of these systems actually talk to each other in real time. A voicemail arrives as an audio file. The transcription sits in an email inbox. Your dispatcher is in the field. Your technician's calendar remains completely empty.\n\nMost generic 'smart scheduling' tools assume ideal conditions. They assume your field techs have high-speed 5G in basements, that your CRM API never has a timeout, and that customers speak in clean, robotic sentences. The second real-world field conditions hit—spotty LTE, background compressor noise, screaming toddlers—generic chatbots fall apart.\n\nWe built Minions.AI around the reality of home services:\n\n1. Live Voice Answering: Answers your existing business line in under 1.8 seconds—no app to open, no dashboard to configure.\n2. Deep CRM Dispatch Integration: Automatically extracts customer intent, address, and urgency, creating the scheduled job directly in your calendar or CRM.\n3. Human-in-the-Loop Escalation: When a situation is ambiguous, it cleanly hands off to your team with full context instead of guessing or dropping the lead.\n\nStop losing thousands of dollars to missed calls while you are working. Let your AI partner answer the phone before your competitor does.",
+  "audience": "ICP",
+  "pillar": "Contractor Realities",
+  "author": {
+    "name": "Minions.AI Team",
+    "role": "Operations & Dispatch Engineering"
+  },
+  "publishedAt": "2026-08-15T12:00:00.000Z",
+  "readingTimeMinutes": 3,
+  "tags": [
+    "Contractors",
+    "HVAC & Plumbing",
+    "AI Dispatch",
+    "Speed to Lead"
+  ],
+  "metaDescription": "Why contractors lose $3,000 emergency jobs to missed calls and broken scheduling tools—and how real-time AI dispatching solves it.",
+  "assetId": "ASSET-0020",
+  "docUrl": "https://docs.google.com/document/d/1uFQEYtaMb0_3pWMBeGaIPPv9sXCRxG1oW-dHl4nLMAc/edit"
+}

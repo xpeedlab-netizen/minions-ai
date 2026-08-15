@@ -61,6 +61,9 @@ export default function Header() {
           </Link>
           <NavDropdown label="The Crew" items={services} />
           <NavDropdown label="Industries" items={industries} />
+          <Link href="/blog" className="font-medium text-ink hover:text-teal transition-colors min-h-[44px] flex items-center">
+            Blog
+          </Link>
         </nav>
 
         <div className="hidden lg:flex items-center gap-6">
@@ -104,6 +107,13 @@ export default function Header() {
               className="min-h-12 flex items-center font-medium text-ink border-b border-border"
             >
               Pricing
+            </Link>
+            <Link
+              href="/blog"
+              onClick={() => setMobileOpen(false)}
+              className="min-h-12 flex items-center font-medium text-ink border-b border-border"
+            >
+              Blog & Field Guides
             </Link>
             <p className="mt-3 mb-1 text-xs font-mono uppercase tracking-wide text-ink/50">The Crew</p>
             {services.map((item) => (

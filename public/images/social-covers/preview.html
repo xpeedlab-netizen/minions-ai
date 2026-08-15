@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minions.AI — Social Cover Banners Preview</title>
+  <style>
+    :root {
+      --bg: #FFF8F0;
+      --ink: #12242A;
+      --teal: #0E5C63;
+      --orange: #FF6B4A;
+      --border: #DCE4EC;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    p.sub {
+      color: #666;
+      font-size: 1.1rem;
+    }
+    .cover-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 36px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .cover-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+    .platform-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .specs-badge {
+      font-family: monospace;
+      font-size: 0.85rem;
+      background: var(--bg);
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .banner-preview-box {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+      background: #000;
+    }
+    .banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .action-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--teal);
+      color: #FFFFFF;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .download-btn:hover {
+      background: var(--ink);
+    }
+    .btn-secondary {
+      background: var(--ink);
+    }
+    .btn-secondary:hover {
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Minions.AI — Social Cover Banners</h1>
+      <p class="sub">Platform-Optimized Header & Cover Images Featuring Fixed Mascot Crew & Official Logo</p>
+    </header>
+
+    <!-- Twitter Header -->
+    <div class="cover-card">
+      <div class="cover-header">
+        <div class="platform-title">𝕏 / Twitter Header Banner</div>
+        <div class="specs-badge">1500 × 500 px • 3:1 Ratio • Avatar Offset Safe</div>
+      </div>
+      <div class="banner-preview-box">
+        <img class="banner-img" src="./twitter/twitter_cover_dark.png" alt="Twitter Dark">
+      </div>
+      <div class="action-row">
+        <div><strong>Dark Ink Theme (Primary)</strong> — Safe from profile avatar overlap on bottom-left</div>
+        <div>
+          <a class="download-btn" href="./twitter/twitter_cover_dark.png" download>Download Dark PNG</a>
+          <a class="download-btn btn-secondary" href="./twitter/twitter_cover_teal.png" download>Download Teal PNG</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- LinkedIn Company Banner -->
+    <div class="cover-card">
+      <div class="cover-header">
+        <div class="platform-title">💼 LinkedIn Company Banner</div>
+        <div class="specs-badge">1584 × 396 px • 4:1 Ratio • High-DPI Desktop & Mobile</div>
+      </div>
+      <div class="banner-preview-box">
+        <img class="banner-img" src="./linkedin/linkedin_cover_dark.png" alt="LinkedIn Dark">
+      </div>
+      <div class="action-row">
+        <div><strong>Dark Ink Theme (Primary)</strong> — Positioned to avoid logo clipping on left</div>
+        <div>
+          <a class="download-btn" href="./linkedin/linkedin_cover_dark.png" download>Download Dark PNG</a>
+          <a class="download-btn btn-secondary" href="./linkedin/linkedin_cover_teal.png" download>Download Teal PNG</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- YouTube Banner -->
+    <div class="cover-card">
+      <div class="cover-header">
+        <div class="platform-title">▶️ YouTube Channel Art</div>
+        <div class="specs-badge">2560 × 1440 px • 1546×423 Center Universal Safe Zone</div>
+      </div>
+      <div class="banner-preview-box">
+        <img class="banner-img" src="./youtube/youtube_banner_dark.png" alt="YouTube Dark">
+      </div>
+      <div class="action-row">
+        <div><strong>Dark Ink Theme (Primary)</strong> — 100% visible on Mobile, Desktop, Tablet, and TV</div>
+        <div>
+          <a class="download-btn" href="./youtube/youtube_banner_dark.png" download>Download Dark PNG</a>
+          <a class="download-btn btn-secondary" href="./youtube/youtube_banner_teal.png" download>Download Teal PNG</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Facebook Cover -->
+    <div class="cover-card">
+      <div class="cover-header">
+        <div class="platform-title">📘 Facebook Page Cover</div>
+        <div class="specs-badge">1640 × 624 px • High-Res 2.63:1 • Mobile Safe</div>
+      </div>
+      <div class="banner-preview-box">
+        <img class="banner-img" src="./facebook/facebook_cover_dark.png" alt="Facebook Dark">
+      </div>
+      <div class="action-row">
+        <div><strong>Dark Ink Theme (Primary)</strong> — Centered to prevent side clipping on mobile app</div>
+        <div>
+          <a class="download-btn" href="./facebook/facebook_cover_dark.png" download>Download Dark PNG</a>
+          <a class="download-btn btn-secondary" href="./facebook/facebook_cover_teal.png" download>Download Teal PNG</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- GitHub Social -->
+    <div class="cover-card">
+      <div class="cover-header">
+        <div class="platform-title">🐙 GitHub Social Preview & OpenGraph</div>
+        <div class="specs-badge">1280 × 640 px • 2:1 OpenGraph Card Ratio</div>
+      </div>
+      <div class="banner-preview-box">
+        <img class="banner-img" src="./github/github_social_dark.png" alt="GitHub Dark">
+      </div>
+      <div class="action-row">
+        <div><strong>Dark Ink Theme (Primary)</strong> — Perfect for repository card & social link unfurls</div>
+        <div>
+          <a class="download-btn" href="./github/github_social_dark.png" download>Download Dark PNG</a>
+          <a class="download-btn btn-secondary" href="./github/github_social_teal.png" download>Download Teal PNG</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

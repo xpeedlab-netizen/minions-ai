@@ -55,14 +55,6 @@ Registry URL: [Open Google Sheet](https://docs.google.com/spreadsheets/d/1sO_u4T
 | **`claims_ok: N`** | The article contains a specific new number or claim needing verification. | Held in review queue. Telegram alerts you that manual check is required. |
 | **`blog_status: PUBLISHED`** | Successfully inserted into the live Supabase database and active on web. | Viewable at `https://getminions.ai/blog/<slug>`. |
 
-### 📱 Social Distribution Rule: The First-Comment Link Strategy (Facebook & LinkedIn)
-- **Algorithm Rule**: Both Facebook and LinkedIn penalize outbound external links placed directly in the main post body (cutting reach by 60–80%).
-- **Automated Workflow Execution**:
-  1. **Main Post (`POST /{PAGE_ID}/feed`)**: Contains 100% pure text copy, visceral hook, operational pain points, and callout to the live demo (ZERO links).
-  2. **Automated First Comment (`POST /{POST_ID}/comments`)**: n8n captures the resulting post ID and immediately comments:  
-     `👉 Read the full operational breakdown & field guide: https://getminions.ai/blog/<slug>`
-  3. **Result**: 100% clean algorithmic reach + high-visibility clickable link at the top of the comments.
-
 ---
 
 ### Tab 3: `claims` (Brand Claims & Gate Audit)

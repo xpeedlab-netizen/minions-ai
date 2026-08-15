@@ -65,10 +65,11 @@ export async function POST(req: NextRequest) {
         assetId: post.assetId
       }
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const err = error as { message?: string };
     console.error("Error in blog publish API:", error);
     return NextResponse.json(
-      { success: false, error: error?.message || "Internal server error" },
+      { success: false, error: err?.message || "Internal server error" },
       { status: 500 }
     );
   }

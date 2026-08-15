@@ -1,4 +1,4 @@
-import { Sparkles, Bug } from "lucide-react";
+import { Bug } from "lucide-react";
 import Button from "@/components/ui/Button";
 import PestHeroAnimation from "./PestHeroAnimation";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
@@ -23,9 +23,9 @@ export default function PestHero() {
           </div>
 
           <h1 className="font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-balance">
-            Catch Every &quot;Wasp Nest Near Kids&apos; Room&quot; Call. <br className="hidden sm:inline" />
+            Turn Midnight Pest Panics into <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-teal to-coral-text bg-clip-text text-transparent">
-              Turn Panics into $2,500+ Recurring Subscriptions.
+              $2,500+ Recurring Subscriptions.
             </span>
           </h1>
 
@@ -33,20 +33,8 @@ export default function PestHero() {
             Rex answers 1st ring 24/7, triages pest panics, pitches $59/mo quarterly protection plans, and books directly into FieldRoutes or PestPac.
           </p>
 
-          {/* Value Highlights */}
-          <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs text-ink/80">
-            <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
-              <Sparkles className="size-4 text-teal shrink-0" />
-              <span>FieldRoutes &amp; PestPac Sync</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
-              <Sparkles className="size-4 text-teal shrink-0" />
-              <span>Quarterly Upsell Script</span>
-            </div>
-          </div>
-
           {/* Action Buttons */}
-          <div className="pt-4 flex flex-col sm:flex-row gap-4">
+          <div className="pt-2 flex flex-col sm:flex-row gap-4">
             <Button href="/live-demo" size="lg" showArrow className="bg-teal hover:bg-teal-dark text-white shadow-md">
               Hear Pest Control Voice Demo
             </Button>

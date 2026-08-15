@@ -1,4 +1,4 @@
-import { Sparkles, Zap } from "lucide-react";
+import { Zap } from "lucide-react";
 import Button from "@/components/ui/Button";
 import ElectricalHeroAnimation from "./ElectricalHeroAnimation";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
@@ -23,9 +23,9 @@ export default function ElectricalHero() {
           </div>
 
           <h1 className="font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-balance">
-            Catch Every &quot;Breaker Is Sparkling&quot; Call. <br className="hidden sm:inline" />
+            Never Lose Another <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-teal to-accent-blue bg-clip-text text-transparent">
-              Stop Losing $5,000+ Panel Upgrade Leads.
+              $5,000+ Panel Upgrade Lead.
             </span>
           </h1>
 
@@ -33,20 +33,8 @@ export default function ElectricalHero() {
             Rex answers 1st ring 24/7, guides emergency main shutoffs, quotes dispatch fees, and pages on-call electricians into ServiceTitan.
           </p>
 
-          {/* Value Highlights */}
-          <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs text-ink/80">
-            <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
-              <Sparkles className="size-4 text-teal shrink-0" />
-              <span>ServiceTitan &amp; Housecall Sync</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
-              <Sparkles className="size-4 text-teal shrink-0" />
-              <span>Main Breaker Safety Triage</span>
-            </div>
-          </div>
-
           {/* Action Buttons */}
-          <div className="pt-4 flex flex-col sm:flex-row gap-4">
+          <div className="pt-2 flex flex-col sm:flex-row gap-4">
             <Button href="/live-demo" size="lg" showArrow className="bg-teal hover:bg-teal-dark text-white shadow-md">
               Hear Electrical Voice Demo
             </Button>

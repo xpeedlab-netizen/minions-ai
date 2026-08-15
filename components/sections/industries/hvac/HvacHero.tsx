@@ -1,4 +1,4 @@
-import { Sparkles, Flame } from "lucide-react";
+import { Flame } from "lucide-react";
 import Button from "@/components/ui/Button";
 import HvacHeroAnimation from "./HvacHeroAnimation";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
@@ -23,9 +23,9 @@ export default function HvacHero() {
           </div>
 
           <h1 className="font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-balance">
-            Catch Every &quot;My AC Just Died&quot; Call. <br className="hidden sm:inline" />
+            Never Lose Another <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-teal to-coral-text bg-clip-text text-transparent">
-              Stop Losing $10,000 System Leads.
+              $10,000 Emergency AC Lead.
             </span>
           </h1>
 
@@ -33,20 +33,8 @@ export default function HvacHero() {
             Rex answers 1st ring 24/7 during heatwaves, collects diagnostic fees, and books replacement estimates directly into ServiceTitan or Housecall Pro.
           </p>
 
-          {/* Value Highlights */}
-          <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs text-ink/80">
-            <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
-              <Sparkles className="size-4 text-teal shrink-0" />
-              <span>ServiceTitan &amp; Housecall Sync</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
-              <Sparkles className="size-4 text-teal shrink-0" />
-              <span>Midnight Emergency Triage</span>
-            </div>
-          </div>
-
           {/* Action Buttons */}
-          <div className="pt-4 flex flex-col sm:flex-row gap-4">
+          <div className="pt-2 flex flex-col sm:flex-row gap-4">
             <Button href="/live-demo" size="lg" showArrow className="bg-teal hover:bg-teal-dark text-white shadow-md">
               Hear HVAC Voice Demo
             </Button>

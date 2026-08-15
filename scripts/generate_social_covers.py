@@ -24,112 +24,88 @@ TEAL_DARK = (10, 70, 76, 255)      # #0A464C
 ORANGE = (255, 107, 74, 255)       # #FF6B4A
 CREAM = (255, 248, 240, 255)       # #FFF8F0
 WHITE = (255, 255, 255, 255)       # #FFFFFF
-MUTED_TEXT = (180, 205, 215, 255)  # Soft slate
+MUTED_TEXT = (200, 220, 230, 255)  # High-contrast soft slate
 
 def draw_background(width, height, is_teal=False):
-    """Draws a premium gradient dark backdrop with subtle glow orbs."""
+    """Draws a premium dark gradient backdrop with atmospheric glow."""
     img = Image.new("RGBA", (width, height), TEAL if is_teal else INK)
     draw = ImageDraw.Draw(img)
     
-    # Ambient glow on right side behind mascots
-    glow_color = (255, 107, 74, 35) if is_teal else (14, 92, 99, 70)
-    for r in range(int(height * 0.9), int(height * 0.2), -30):
-        alpha = int(45 * (1 - r / (height * 0.9)))
-        draw.ellipse([width * 0.75 - r, height * 0.5 - r, width * 0.75 + r, height * 0.5 + r],
+    # Soft ambient orb behind mascots
+    glow_color = (255, 107, 74, 30) if is_teal else (14, 92, 99, 65)
+    for r in range(int(height * 0.85), int(height * 0.2), -30):
+        alpha = int(40 * (1 - r / (height * 0.85)))
+        draw.ellipse([width * 0.78 - r, height * 0.5 - r, width * 0.78 + r, height * 0.5 + r],
                      fill=(*glow_color[:3], alpha))
         
     return img
 
-def render_spacious_trio(canvas, zone_start_x, zone_end_x, baseline_y, mascot_height=360):
+def render_non_overlapping_duo(canvas, start_x, end_x, baseline_y, mascot_size=260, min_gap=36):
     """
-    Renders a spacious, eye-soothing 3-agent trio (Pip in center-back, Rex & Zip in foreground).
-    """
-    rex = Image.open(os.path.join(MASCOTS_DIR, "rex.png")).convert("RGBA")
-    zip_img = Image.open(os.path.join(MASCOTS_DIR, "zip.png")).convert("RGBA")
-    pip = Image.open(os.path.join(MASCOTS_DIR, "pip.png")).convert("RGBA")
-    
-    zone_w = zone_end_x - zone_start_x
-    
-    # Center-back mascot (Pip)
-    back_h = int(mascot_height * 0.88)
-    back_w = back_h
-    pip_res = pip.resize((back_w, back_h), Image.Resampling.LANCZOS)
-    
-    # Foreground heroes (Rex, Zip)
-    front_h = mascot_height
-    front_w = front_h
-    rex_res = rex.resize((front_w, front_h), Image.Resampling.LANCZOS)
-    zip_res = zip_img.resize((front_w, front_h), Image.Resampling.LANCZOS)
-    
-    # Calculate positions
-    pip_x = int(zone_start_x + (zone_w - back_w) / 2)
-    pip_y = int(baseline_y - back_h + 10)
-    
-    rex_x = int(zone_start_x + 10)
-    rex_y = int(baseline_y - front_h + 35)
-    
-    zip_x = int(zone_end_x - front_w - 10)
-    zip_y = int(baseline_y - front_h + 35)
-    
-    # 1. Paste Pip (Back with soft shadow)
-    shadow_pip = Image.new("RGBA", (back_w + 30, back_h + 30), (0,0,0,0))
-    s_draw = ImageDraw.Draw(shadow_pip)
-    s_draw.ellipse([15, back_h - 10, back_w + 15, back_h + 15], fill=(0,0,0,120))
-    shadow_pip = shadow_pip.filter(ImageFilter.GaussianBlur(12))
-    canvas.paste(shadow_pip, (pip_x - 15, pip_y), shadow_pip)
-    canvas.paste(pip_res, (pip_x, pip_y), pip_res)
-    
-    # 2. Paste Rex (Left foreground)
-    shadow_rex = Image.new("RGBA", (front_w + 30, front_h + 30), (0,0,0,0))
-    s_draw = ImageDraw.Draw(shadow_rex)
-    s_draw.ellipse([15, front_h - 10, front_w + 15, front_h + 15], fill=(0,0,0,140))
-    shadow_rex = shadow_rex.filter(ImageFilter.GaussianBlur(14))
-    canvas.paste(shadow_rex, (rex_x - 15, rex_y), shadow_rex)
-    canvas.paste(rex_res, (rex_x, rex_y), rex_res)
-    
-    # 3. Paste Zip (Right foreground)
-    shadow_zip = Image.new("RGBA", (front_w + 30, front_h + 30), (0,0,0,0))
-    s_draw = ImageDraw.Draw(shadow_zip)
-    s_draw.ellipse([15, front_h - 10, front_w + 15, front_h + 15], fill=(0,0,0,140))
-    shadow_zip = shadow_zip.filter(ImageFilter.GaussianBlur(14))
-    canvas.paste(shadow_zip, (zip_x - 15, zip_y), shadow_zip)
-    canvas.paste(zip_res, (zip_x, zip_y), zip_res)
-
-def render_spacious_duo(canvas, zone_start_x, zone_end_x, baseline_y, mascot_height=300):
-    """
-    Renders an ultra-clean, spacious 2-agent duo (Rex & Zip) side-by-side with generous spacing.
+    Renders 2 flagship mascots (Rex & Zip) side-by-side with guaranteed ZERO overlap and >= min_gap.
     """
     rex = Image.open(os.path.join(MASCOTS_DIR, "rex.png")).convert("RGBA")
     zip_img = Image.open(os.path.join(MASCOTS_DIR, "zip.png")).convert("RGBA")
     
-    zone_w = zone_end_x - zone_start_x
-    front_h = mascot_height
-    front_w = front_h
+    zone_w = end_x - start_x
+    w = mascot_size
     
-    rex_res = rex.resize((front_w, front_h), Image.Resampling.LANCZOS)
-    zip_res = zip_img.resize((front_w, front_h), Image.Resampling.LANCZOS)
+    # Calculate spacing
+    available_gap = zone_w - (w * 2)
+    gap = max(min_gap, int(available_gap / 3))
     
-    # Generous spacing between the two
-    gap = int((zone_w - (front_w * 2)) / 3)
-    rex_x = int(zone_start_x + gap)
-    zip_x = int(rex_x + front_w + gap)
-    y = int(baseline_y - front_h + 30)
+    rex_x = int(start_x + gap)
+    zip_x = int(rex_x + w + gap)
+    y = int(baseline_y - w)
     
-    # Rex
-    shadow_rex = Image.new("RGBA", (front_w + 30, front_h + 30), (0,0,0,0))
+    rex_res = rex.resize((w, w), Image.Resampling.LANCZOS)
+    zip_res = zip_img.resize((w, w), Image.Resampling.LANCZOS)
+    
+    # Shadows
+    shadow_rex = Image.new("RGBA", (w + 24, w + 24), (0,0,0,0))
     s_draw = ImageDraw.Draw(shadow_rex)
-    s_draw.ellipse([15, front_h - 10, front_w + 15, front_h + 15], fill=(0,0,0,130))
-    shadow_rex = shadow_rex.filter(ImageFilter.GaussianBlur(12))
-    canvas.paste(shadow_rex, (rex_x - 15, y), shadow_rex)
+    s_draw.ellipse([12, w - 8, w + 12, w + 12], fill=(0,0,0,130))
+    shadow_rex = shadow_rex.filter(ImageFilter.GaussianBlur(10))
+    canvas.paste(shadow_rex, (rex_x - 12, y), shadow_rex)
     canvas.paste(rex_res, (rex_x, y), rex_res)
     
-    # Zip
-    shadow_zip = Image.new("RGBA", (front_w + 30, front_h + 30), (0,0,0,0))
+    shadow_zip = Image.new("RGBA", (w + 24, w + 24), (0,0,0,0))
     s_draw = ImageDraw.Draw(shadow_zip)
-    s_draw.ellipse([15, front_h - 10, front_w + 15, front_h + 15], fill=(0,0,0,130))
-    shadow_zip = shadow_zip.filter(ImageFilter.GaussianBlur(12))
-    canvas.paste(shadow_zip, (zip_x - 15, y), shadow_zip)
+    s_draw.ellipse([12, w - 8, w + 12, w + 12], fill=(0,0,0,130))
+    shadow_zip = shadow_zip.filter(ImageFilter.GaussianBlur(10))
+    canvas.paste(shadow_zip, (zip_x - 12, y), shadow_zip)
     canvas.paste(zip_res, (zip_x, y), zip_res)
+
+def render_non_overlapping_trio(canvas, start_x, end_x, baseline_y, mascot_size=220, min_gap=30):
+    """
+    Renders 3 mascots (Rex, Pip, Zip) side-by-side with guaranteed ZERO overlap.
+    """
+    rex = Image.open(os.path.join(MASCOTS_DIR, "rex.png")).convert("RGBA")
+    pip = Image.open(os.path.join(MASCOTS_DIR, "pip.png")).convert("RGBA")
+    zip_img = Image.open(os.path.join(MASCOTS_DIR, "zip.png")).convert("RGBA")
+    
+    zone_w = end_x - start_x
+    w = mascot_size
+    
+    available_gap = zone_w - (w * 3)
+    gap = max(min_gap, int(available_gap / 4))
+    
+    p1_x = int(start_x + gap)
+    p2_x = int(p1_x + w + gap)
+    p3_x = int(p2_x + w + gap)
+    y = int(baseline_y - w)
+    
+    rex_res = rex.resize((w, w), Image.Resampling.LANCZOS)
+    pip_res = pip.resize((w, w), Image.Resampling.LANCZOS)
+    zip_res = zip_img.resize((w, w), Image.Resampling.LANCZOS)
+    
+    for x, im in [(p1_x, rex_res), (p2_x, pip_res), (p3_x, zip_res)]:
+        shadow = Image.new("RGBA", (w + 20, w + 20), (0,0,0,0))
+        s_draw = ImageDraw.Draw(shadow)
+        s_draw.ellipse([10, w - 8, w + 10, w + 10], fill=(0,0,0,120))
+        shadow = shadow.filter(ImageFilter.GaussianBlur(10))
+        canvas.paste(shadow, (x - 10, y), shadow)
+        canvas.paste(im, (x, y), im)
 
 def generate_twitter_header(is_teal=False):
     """Generates 1500x500 Twitter / X Header Banner."""
@@ -137,32 +113,34 @@ def generate_twitter_header(is_teal=False):
     img = draw_background(W, H, is_teal)
     draw = ImageDraw.Draw(img)
     
+    # Larger, punchy logo
     logo = Image.open(LOGO_PATH).convert("RGBA")
-    logo_h = 58
+    logo_h = 68
     logo_w = int(logo.width * (logo_h / logo.height))
     logo_resized = logo.resize((logo_w, logo_h), Image.Resampling.LANCZOS)
     
-    left_x = 120
-    img.paste(logo_resized, (left_x, 90), logo_resized)
+    left_x = 100
+    img.paste(logo_resized, (left_x, 75), logo_resized)
     
-    font_hl = ImageFont.truetype(FONT_BOLD, 36)
-    font_sub = ImageFont.truetype(FONT_REG, 22)
-    font_badge = ImageFont.truetype(FONT_BOLD, 18)
+    # High-visibility bold typography
+    font_hl = ImageFont.truetype(FONT_BOLD, 42)
+    font_sub = ImageFont.truetype(FONT_REG, 24)
+    font_badge = ImageFont.truetype(FONT_BOLD, 20)
     
-    draw.text((left_x, 175), "The 24/7 AI Front Office Crew", font=font_hl, fill=WHITE)
-    draw.text((left_x, 225), "Never miss a call • Speed-to-lead • Book more jobs", font=font_sub, fill=MUTED_TEXT)
+    draw.text((left_x, 168), "The 24/7 AI Front Office Crew", font=font_hl, fill=WHITE)
+    draw.text((left_x, 226), "Never miss a call • Speed-to-lead • Book more jobs", font=font_sub, fill=MUTED_TEXT)
     
-    badge_y = 285
-    draw.rounded_rectangle([left_x, badge_y, left_x + 360, badge_y + 44], radius=22, fill=(255, 255, 255, 25))
-    draw.ellipse([left_x + 16, badge_y + 16, left_x + 28, badge_y + 28], fill=ORANGE)
-    draw.text((left_x + 38, badge_y + 11), "ServiceTitan • Jobber • HCP", font=font_badge, fill=WHITE)
+    badge_y = 295
+    draw.rounded_rectangle([left_x, badge_y, left_x + 390, badge_y + 50], radius=25, fill=(255, 255, 255, 28))
+    draw.ellipse([left_x + 18, badge_y + 18, left_x + 32, badge_y + 32], fill=ORANGE)
+    draw.text((left_x + 44, badge_y + 13), "ServiceTitan • Jobber • HCP", font=font_badge, fill=WHITE)
     
-    url_x = left_x + 380
-    draw.rounded_rectangle([url_x, badge_y, url_x + 190, badge_y + 44], radius=22, fill=ORANGE)
-    draw.text((url_x + 24, badge_y + 11), "getminions.ai", font=font_badge, fill=WHITE)
+    url_x = left_x + 410
+    draw.rounded_rectangle([url_x, badge_y, url_x + 205, badge_y + 50], radius=25, fill=ORANGE)
+    draw.text((url_x + 26, badge_y + 13), "getminions.ai", font=font_badge, fill=WHITE)
     
-    # Spacious 3-Agent Trio
-    render_spacious_trio(img, 840, 1420, baseline_y=470, mascot_height=350)
+    # Zero-overlapping Duo: Rex & Zip (height 240px, gap 45px)
+    render_non_overlapping_duo(img, start_x=880, end_x=1420, baseline_y=420, mascot_size=240, min_gap=40)
     
     return img
 
@@ -173,31 +151,31 @@ def generate_linkedin_banner(is_teal=False):
     draw = ImageDraw.Draw(img)
     
     logo = Image.open(LOGO_PATH).convert("RGBA")
-    logo_h = 50
+    logo_h = 56
     logo_w = int(logo.width * (logo_h / logo.height))
     logo_resized = logo.resize((logo_w, logo_h), Image.Resampling.LANCZOS)
     
-    left_x = 100
-    img.paste(logo_resized, (left_x, 70), logo_resized)
+    left_x = 90
+    img.paste(logo_resized, (left_x, 60), logo_resized)
     
-    font_hl = ImageFont.truetype(FONT_BOLD, 30)
-    font_sub = ImageFont.truetype(FONT_REG, 19)
-    font_badge = ImageFont.truetype(FONT_BOLD, 16)
+    font_hl = ImageFont.truetype(FONT_BOLD, 34)
+    font_sub = ImageFont.truetype(FONT_REG, 21)
+    font_badge = ImageFont.truetype(FONT_BOLD, 17)
     
-    draw.text((left_x, 138), "24/7 AI Phone Answering & Speed-to-Lead Crew", font=font_hl, fill=WHITE)
-    draw.text((left_x, 182), "Built specifically for Trade & Home Service Businesses", font=font_sub, fill=MUTED_TEXT)
+    draw.text((left_x, 132), "24/7 AI Phone Answering & Speed-to-Lead Crew", font=font_hl, fill=WHITE)
+    draw.text((left_x, 180), "Built specifically for Trade & Home Service Businesses", font=font_sub, fill=MUTED_TEXT)
     
-    badge_y = 230
-    draw.rounded_rectangle([left_x, badge_y, left_x + 370, badge_y + 38], radius=19, fill=(255, 255, 255, 25))
-    draw.ellipse([left_x + 14, badge_y + 13, left_x + 26, badge_y + 25], fill=ORANGE)
-    draw.text((left_x + 36, badge_y + 9), "CRM & Dispatch Integration Ready", font=font_badge, fill=WHITE)
+    badge_y = 232
+    draw.rounded_rectangle([left_x, badge_y, left_x + 380, badge_y + 42], radius=21, fill=(255, 255, 255, 28))
+    draw.ellipse([left_x + 15, badge_y + 15, left_x + 27, badge_y + 27], fill=ORANGE)
+    draw.text((left_x + 38, badge_y + 10), "CRM & Dispatch Integration Ready", font=font_badge, fill=WHITE)
     
-    url_x = left_x + 390
-    draw.rounded_rectangle([url_x, badge_y, url_x + 175, badge_y + 38], radius=19, fill=ORANGE)
-    draw.text((url_x + 22, badge_y + 9), "getminions.ai", font=font_badge, fill=WHITE)
+    url_x = left_x + 400
+    draw.rounded_rectangle([url_x, badge_y, url_x + 185, badge_y + 42], radius=21, fill=ORANGE)
+    draw.text((url_x + 24, badge_y + 10), "getminions.ai", font=font_badge, fill=WHITE)
     
-    # Ultra-Spacious 2-Hero Duo on LinkedIn
-    render_spacious_duo(img, 980, 1500, baseline_y=375, mascot_height=290)
+    # Zero-overlapping Duo on LinkedIn (height 230px, gap 50px)
+    render_non_overlapping_duo(img, start_x=960, end_x=1520, baseline_y=340, mascot_size=230, min_gap=45)
     
     return img
 
@@ -208,32 +186,32 @@ def generate_youtube_banner(is_teal=False):
     draw = ImageDraw.Draw(img)
     
     safe_y_start = 508
-    safe_x_start = 550
+    safe_x_start = 540
     
     logo = Image.open(LOGO_PATH).convert("RGBA")
-    logo_h = 64
+    logo_h = 72
     logo_w = int(logo.width * (logo_h / logo.height))
     logo_resized = logo.resize((logo_w, logo_h), Image.Resampling.LANCZOS)
-    img.paste(logo_resized, (safe_x_start, safe_y_start + 40), logo_resized)
+    img.paste(logo_resized, (safe_x_start, safe_y_start + 45), logo_resized)
     
-    font_hl = ImageFont.truetype(FONT_BOLD, 36)
-    font_sub = ImageFont.truetype(FONT_REG, 23)
-    font_badge = ImageFont.truetype(FONT_BOLD, 19)
+    font_hl = ImageFont.truetype(FONT_BOLD, 42)
+    font_sub = ImageFont.truetype(FONT_REG, 25)
+    font_badge = ImageFont.truetype(FONT_BOLD, 21)
     
-    draw.text((safe_x_start, safe_y_start + 125), "Never Miss Another Call or Lead", font=font_hl, fill=WHITE)
-    draw.text((safe_x_start, safe_y_start + 180), "24/7 AI Voice Dispatch, Instant SMS & Booking", font=font_sub, fill=MUTED_TEXT)
+    draw.text((safe_x_start, safe_y_start + 138), "Never Miss Another Call or Lead", font=font_hl, fill=WHITE)
+    draw.text((safe_x_start, safe_y_start + 196), "24/7 AI Voice Dispatch, Instant SMS & Booking", font=font_sub, fill=MUTED_TEXT)
     
-    badge_y = safe_y_start + 240
-    draw.rounded_rectangle([safe_x_start, badge_y, safe_x_start + 420, badge_y + 46], radius=23, fill=(255, 255, 255, 25))
-    draw.ellipse([safe_x_start + 16, badge_y + 17, safe_x_start + 30, badge_y + 31], fill=ORANGE)
-    draw.text((safe_x_start + 42, badge_y + 11), "ServiceTitan • Jobber • FieldRoutes", font=font_badge, fill=WHITE)
+    badge_y = safe_y_start + 258
+    draw.rounded_rectangle([safe_x_start, badge_y, safe_x_start + 440, badge_y + 52], radius=26, fill=(255, 255, 255, 28))
+    draw.ellipse([safe_x_start + 18, badge_y + 19, safe_x_start + 34, badge_y + 35], fill=ORANGE)
+    draw.text((safe_x_start + 46, badge_y + 13), "ServiceTitan • Jobber • FieldRoutes", font=font_badge, fill=WHITE)
     
-    url_x = safe_x_start + 440
-    draw.rounded_rectangle([url_x, badge_y, url_x + 195, badge_y + 46], radius=23, fill=ORANGE)
-    draw.text((url_x + 24, badge_y + 11), "getminions.ai", font=font_badge, fill=WHITE)
+    url_x = safe_x_start + 460
+    draw.rounded_rectangle([url_x, badge_y, url_x + 210, badge_y + 52], radius=26, fill=ORANGE)
+    draw.text((url_x + 26, badge_y + 13), "getminions.ai", font=font_badge, fill=WHITE)
     
-    # Spacious 3-Hero Trio inside Center Safe Strip
-    render_spacious_trio(img, 1340, 1980, baseline_y=safe_y_start + 395, mascot_height=330)
+    # Zero-overlapping Trio in YouTube Safe Strip (Rex, Pip, Zip side-by-side)
+    render_non_overlapping_trio(img, start_x=1340, end_x=2000, baseline_y=safe_y_start + 380, mascot_size=190, min_gap=30)
     
     return img
 
@@ -244,31 +222,31 @@ def generate_facebook_cover(is_teal=False):
     draw = ImageDraw.Draw(img)
     
     logo = Image.open(LOGO_PATH).convert("RGBA")
-    logo_h = 66
+    logo_h = 74
     logo_w = int(logo.width * (logo_h / logo.height))
     logo_resized = logo.resize((logo_w, logo_h), Image.Resampling.LANCZOS)
     
-    left_x = 120
-    img.paste(logo_resized, (left_x, 110), logo_resized)
+    left_x = 110
+    img.paste(logo_resized, (left_x, 95), logo_resized)
     
-    font_hl = ImageFont.truetype(FONT_BOLD, 38)
-    font_sub = ImageFont.truetype(FONT_REG, 23)
-    font_badge = ImageFont.truetype(FONT_BOLD, 19)
+    font_hl = ImageFont.truetype(FONT_BOLD, 44)
+    font_sub = ImageFont.truetype(FONT_REG, 26)
+    font_badge = ImageFont.truetype(FONT_BOLD, 21)
     
-    draw.text((left_x, 200), "The 24/7 AI Front Office Crew", font=font_hl, fill=WHITE)
-    draw.text((left_x, 255), "Stop losing revenue to unanswered contractor calls", font=font_sub, fill=MUTED_TEXT)
+    draw.text((left_x, 192), "The 24/7 AI Front Office Crew", font=font_hl, fill=WHITE)
+    draw.text((left_x, 252), "Stop losing revenue to unanswered contractor calls", font=font_sub, fill=MUTED_TEXT)
     
-    badge_y = 320
-    draw.rounded_rectangle([left_x, badge_y, left_x + 380, badge_y + 48], radius=24, fill=(255, 255, 255, 25))
-    draw.ellipse([left_x + 18, badge_y + 19, left_x + 32, badge_y + 32], fill=ORANGE)
-    draw.text((left_x + 44, badge_y + 12), "ServiceTitan • Jobber • HCP", font=font_badge, fill=WHITE)
+    badge_y = 325
+    draw.rounded_rectangle([left_x, badge_y, left_x + 400, badge_y + 52], radius=26, fill=(255, 255, 255, 28))
+    draw.ellipse([left_x + 18, badge_y + 19, left_x + 34, badge_y + 35], fill=ORANGE)
+    draw.text((left_x + 46, badge_y + 13), "ServiceTitan • Jobber • HCP", font=font_badge, fill=WHITE)
     
-    url_x = left_x + 400
-    draw.rounded_rectangle([url_x, badge_y, url_x + 195, badge_y + 48], radius=24, fill=ORANGE)
-    draw.text((url_x + 24, badge_y + 12), "getminions.ai", font=font_badge, fill=WHITE)
+    url_x = left_x + 420
+    draw.rounded_rectangle([url_x, badge_y, url_x + 210, badge_y + 52], radius=26, fill=ORANGE)
+    draw.text((url_x + 26, badge_y + 13), "getminions.ai", font=font_badge, fill=WHITE)
     
-    # Spacious 3-Hero Trio
-    render_spacious_trio(img, 980, 1540, baseline_y=580, mascot_height=420)
+    # Zero-overlapping Duo: Rex & Zip (height 260px, gap 50px)
+    render_non_overlapping_duo(img, start_x=940, end_x=1520, baseline_y=510, mascot_size=260, min_gap=45)
     
     return img
 
@@ -279,31 +257,31 @@ def generate_github_social(is_teal=False):
     draw = ImageDraw.Draw(img)
     
     logo = Image.open(LOGO_PATH).convert("RGBA")
-    logo_h = 62
+    logo_h = 70
     logo_w = int(logo.width * (logo_h / logo.height))
     logo_resized = logo.resize((logo_w, logo_h), Image.Resampling.LANCZOS)
     
     left_x = 80
-    img.paste(logo_resized, (left_x, 110), logo_resized)
+    img.paste(logo_resized, (left_x, 95), logo_resized)
     
-    font_hl = ImageFont.truetype(FONT_BOLD, 34)
-    font_sub = ImageFont.truetype(FONT_REG, 21)
-    font_badge = ImageFont.truetype(FONT_BOLD, 18)
+    font_hl = ImageFont.truetype(FONT_BOLD, 38)
+    font_sub = ImageFont.truetype(FONT_REG, 23)
+    font_badge = ImageFont.truetype(FONT_BOLD, 19)
     
-    draw.text((left_x, 195), "Autonomous AI Crew for Trade Ops", font=font_hl, fill=WHITE)
-    draw.text((left_x, 245), "Voice Agents • Speed-to-Lead SMS • CRM Pipelines", font=font_sub, fill=MUTED_TEXT)
+    draw.text((left_x, 188), "Autonomous AI Crew for Trade Ops", font=font_hl, fill=WHITE)
+    draw.text((left_x, 244), "Voice Agents • Speed-to-Lead SMS • CRM Pipelines", font=font_sub, fill=MUTED_TEXT)
     
-    badge_y = 310
-    draw.rounded_rectangle([left_x, badge_y, left_x + 350, badge_y + 44], radius=22, fill=(255, 255, 255, 25))
-    draw.ellipse([left_x + 16, badge_y + 16, left_x + 28, badge_y + 28], fill=ORANGE)
-    draw.text((left_x + 38, badge_y + 11), "ServiceTitan • Jobber • HCP", font=font_badge, fill=WHITE)
+    badge_y = 315
+    draw.rounded_rectangle([left_x, badge_y, left_x + 370, badge_y + 48], radius=24, fill=(255, 255, 255, 28))
+    draw.ellipse([left_x + 17, badge_y + 18, left_x + 31, badge_y + 32], fill=ORANGE)
+    draw.text((left_x + 42, badge_y + 12), "ServiceTitan • Jobber • HCP", font=font_badge, fill=WHITE)
     
-    url_x = left_x + 370
-    draw.rounded_rectangle([url_x, badge_y, url_x + 185, badge_y + 44], radius=22, fill=ORANGE)
-    draw.text((url_x + 24, badge_y + 11), "getminions.ai", font=font_badge, fill=WHITE)
+    url_x = left_x + 390
+    draw.rounded_rectangle([url_x, badge_y, url_x + 195, badge_y + 48], radius=24, fill=ORANGE)
+    draw.text((url_x + 24, badge_y + 12), "getminions.ai", font=font_badge, fill=WHITE)
     
-    # Spacious 3-Hero Trio
-    render_spacious_trio(img, 720, 1220, baseline_y=580, mascot_height=380)
+    # Zero-overlapping Duo: Rex & Zip (height 220px, gap 40px)
+    render_non_overlapping_duo(img, start_x=720, end_x=1200, baseline_y=510, mascot_size=220, min_gap=35)
     
     return img
 
@@ -339,7 +317,7 @@ def main():
         img_teal.save(p_teal_art, "PNG", optimize=True)
         generated.append(p_teal_pub)
         
-    print(f"Generated {len(generated)} clean, spacious, eye-soothing cover banners!")
+    print(f"Generated {len(generated)} non-overlapping, high-visibility social cover banners!")
 
 if __name__ == "__main__":
     main()

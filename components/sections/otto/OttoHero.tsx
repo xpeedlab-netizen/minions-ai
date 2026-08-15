@@ -1,4 +1,4 @@
-import { ShieldCheck, Sparkles } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import Button from "@/components/ui/Button";
 import OttoHeroAnimation from "./OttoHeroAnimation";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
@@ -23,9 +23,9 @@ export default function OttoHero() {
           </div>
 
           <h1 className="font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-balance">
-            Stop Paying Skilled Teams to Push Paperwork. <br className="hidden sm:inline" />
+            Stop Paying Skilled Teams <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-teal to-accent-blue bg-clip-text text-transparent">
-              Zero Data Entry.
+              to Push Administrative Paperwork.
             </span>
           </h1>
 
@@ -33,20 +33,8 @@ export default function OttoHero() {
             Otto automates client intake, chases missing documents and COIs, extracts data, and routes files straight into your CRM or Google Drive.
           </p>
 
-          {/* Value Highlights */}
-          <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs text-ink/80">
-            <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
-              <Sparkles className="size-4 text-teal shrink-0" />
-              <span>Automated Document Chasing</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
-              <Sparkles className="size-4 text-teal shrink-0" />
-              <span>Bank-Grade NDA Compliant</span>
-            </div>
-          </div>
-
           {/* Action Buttons */}
-          <div className="pt-4 flex flex-col sm:flex-row gap-4">
+          <div className="pt-2 flex flex-col sm:flex-row gap-4">
             <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow className="bg-teal hover:bg-teal-dark text-white shadow-md">
               Deploy Otto in 7 Days
             </Button>

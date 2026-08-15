@@ -10,6 +10,7 @@ RULE: every entry below is EXACTLY ONE LINE. No multi-line entries, no sub-bulle
 [PORT] Local development server is configured to run at http://localhost:3050.
 
 ## Sessions
+2026-08-15 | Unify Gia & Otto Hero Layout | decision: Removed redundant pre-CTA cards and unified stacked headlines in GiaHero and OttoHero for complete site-wide visual consistency | changed: components/sections/{gia,otto}/*Hero.tsx | docs: walkthrough.md | open: none
 2026-08-15 | Unify Industry Hero Titles | decision: Replaced 2-message stacked hero headlines with single punchy title and removed redundant pre-CTA cards across all 5 industry heroes | changed: components/sections/industries/*Hero.tsx | docs: walkthrough.md | open: none
 2026-08-15 | Condense Crew Copy | decision: Streamlined copy across all 5 crew pages (Rex, Zip, Pip, Gia, Otto), eliminating repetitive customization preambles and condensing cards to 1-sentence value hooks | changed: components/sections/{rex,zip,pip,gia,otto}/* | docs: walkthrough.md | open: none
 2026-08-15 | Condense Industry Copy | decision: Streamlined copy across all 5 industry pages (Pest, HVAC, Plumbing, Roofing, Electrical), reducing word count ~60% into punchy 1-sentence hooks | changed: components/sections/industries/* | docs: walkthrough.md | open: none

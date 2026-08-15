@@ -57,36 +57,88 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": post.title,
-    "description": post.metaDescription,
-    "datePublished": post.publishedAt,
-    "author": {
-      "@type": "Organization",
-      "name": post.author.name
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Minions.AI",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://getminions.ai/favicon.ico"
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.metaDescription || post.hook,
+      "datePublished": post.publishedAt,
+      "inLanguage": "en-US",
+      "articleSection": post.pillar || "Field Operations",
+      "keywords": post.tags ? post.tags.join(", ") : "AI Dispatch, Trade Contractors, Speed to Lead",
+      "author": {
+        "@type": "Organization",
+        "name": post.author.name,
+        "url": "https://getminions.ai"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Minions.AI",
+        "url": "https://getminions.ai",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://getminions.ai/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://getminions.ai/blog/${post.slug}`
       }
     },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://getminions.ai/blog/${post.slug}`
-    }
-  };
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getminions.ai"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog & Field Guides",
+          "item": "https://getminions.ai/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": post.title,
+          "item": `https://getminions.ai/blog/${post.slug}`
+        }
+      ]
+    },
+    ...(post.core_argument
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": post.title,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": `${post.core_argument} ${post.hook ? `Field context: ${post.hook}` : ""}`
+                }
+              }
+            ]
+          }
+        ]
+      : [])
+  ];
 
   return (
     <article className="bg-cream min-h-screen py-12 md:py-16">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {structuredData.map((schema, sIdx) => (
+        <script
+          key={sIdx}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
 
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         

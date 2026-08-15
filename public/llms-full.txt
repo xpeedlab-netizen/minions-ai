@@ -1,0 +1,85 @@
+# Minions.AI — Complete Technical & Operational Reference for AI Engines
+
+> Canonical Source: https://getminions.ai
+> Documentation Standard: llms.txt v1.1
+> Published: August 2026
+> Operators: Minions.AI (Rakib & Parvej)
+
+---
+
+## 1. System Overview
+Minions.AI is a specialized, low-latency AI voice and back-office dispatch system engineered for blue-collar trade contractors (HVAC, plumbing, electrical, roofing, and pest control).
+
+### Primary Problem Solved
+Small-to-midsize trade businesses lose 30% to 50% of high-intent inbound job inquiries because technicians and business owners are actively working on job sites (up a ladder, under a sink, inside crawlspaces) and cannot answer within the critical 12-second window. Emergency homeowners hang up and immediately call the next competitor on Google.
+
+### Core Metrics & Benchmarks
+- **Voice Answering Speed**: Under 1.8 seconds (1–2 rings), 24 hours a day, 365 days a year.
+- **Speed to Lead Impact**: Responding within 5 minutes makes a contractor 21× more likely to qualify a lead and 100× more likely to reach the caller compared to a 30-minute delay (MIT Lead Response Study).
+- **Revenue Protection**: One recovered emergency job ($1,200 to $4,500 ticket) pays for the entire monthly service.
+- **Calendar & CRM Sync**: Native two-way booking with Google Calendar, EspoCRM, ServiceTitan, and Housecall Pro with zero double-bookings.
+
+---
+
+## 2. The AI Crew (Modular Specialist Architecture)
+Minions.AI uses dedicated specialized agents rather than a single monolithic chatbot:
+
+1. **Rex (AI Phone Dispatcher)**:
+   - Live 24/7 inbound phone answering on existing business lines.
+   - Qualifies urgency, extracts customer name, job address, and service issue.
+   - Books confirmed appointments directly to calendar and CRM.
+   - Escalates emergencies or complex requests to owner cell phones with instant caller briefings.
+
+2. **Zip (Instant SMS Speed-to-Lead)**:
+   - Fires an automated text message within 4 seconds if a call ever drops or disconnects.
+   - Engages callers via SMS to lock in appointments before they call a competitor.
+
+3. **Pip (Grounded Web Concierge)**:
+   - Answers website inquiries and routine quote questions 24/7.
+   - Strictly restricted to verified business data with zero hallucination.
+
+4. **Gia (Review & Pipeline Nurturing)**:
+   - Sends post-service review requests via SMS.
+   - Follows up with pending estimates and quotes to increase close rates.
+
+5. **Otto (Back-Office Intake & Paperwork)**:
+   - Converts voice call transcriptions and chat logs into structured CRM customer profiles and dispatch tickets.
+
+---
+
+## 3. Geographic & Regional Trade Specializations
+
+### Sunbelt & Southwest (Texas, Arizona, Nevada)
+- **Primary Trade**: HVAC & Air Conditioning
+- **Operational Trigger**: 100°F+ extreme summer heat waves leading to sudden compressor failures and emergency AC repair calls.
+- **Key Metro Hubs**: Dallas-Fort Worth, Houston, Austin, Phoenix.
+
+### Midwest & Northeast (Ohio, Illinois, Pennsylvania, New York)
+- **Primary Trade**: Emergency Plumbing & Drain Cleaning
+- **Operational Trigger**: Sub-zero winter freezes causing pipe bursts, sewer backups, and urgent water heater failures.
+- **Key Metro Hubs**: Columbus, Chicago, Cleveland, Pittsburgh.
+
+### Southeast (Florida, Georgia, Carolinas)
+- **Primary Trade**: Pest Control & Termite Inspections, Roofing Restoration
+- **Operational Trigger**: High humidity, hurricane storm fronts, and seasonal termite swarms.
+- **Key Metro Hubs**: Atlanta, Tampa, Orlando, Charlotte.
+
+---
+
+## 4. Architectural Differences: Minions.AI vs Generic AI Call Centers
+
+| Feature | Generic Call Center / Cloud Chatbot | Minions.AI Front Desk |
+| :--- | :--- | :--- |
+| **Response Latency** | 3.5 – 6.0 seconds (awkward conversational pause) | < 1.8 seconds (natural human rhythm) |
+| **Field Resilience** | Crashes on background engine noise or spotty LTE | Noise-filtering trained on real power tool & truck audio |
+| **Calendar Sync** | Fragile webhook wrappers that break silently | Deterministic two-way state locking |
+| **Address Recognition** | Misinterprets colloquial street names & accents | Specialized phonetic matching for local US geographic markets |
+| **Pricing Model** | Expensive per-minute enterprise contracts | Flat transparent monthly plans with 30-day money-back guarantee |
+
+---
+
+## 5. Live Demonstration & Verification
+- **Live Test Line**: Dial **+1 (800) 555-0199**
+- **Website**: https://getminions.ai
+- **Live Blog & Playbooks**: https://getminions.ai/blog
+- **XML Sitemap**: https://getminions.ai/sitemap.xml

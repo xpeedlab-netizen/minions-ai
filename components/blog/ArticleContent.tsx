@@ -27,7 +27,45 @@ export default function ArticleContent({ content }: ArticleContentProps) {
       {rawBlocks.map((block, blockIdx) => {
         const trimmed = block.trim();
 
-        // 1. Detect if block is a numbered list (either multi-line or single-line containing 1. ... 2. ...)
+        // 1. Detect Markdown Images (![alt](url)) - Highest Priority
+        if (trimmed.includes("![") && trimmed.includes("](") && trimmed.includes(")")) {
+          const parts = trimmed.split(/(!\[.*?\]\(.*?\))/g).filter(Boolean);
+          return (
+            <div key={blockIdx} className="space-y-6">
+              {parts.map((part, pIdx) => {
+                const imgMatch = part.match(/!\[(.*?)\]\((.*?)\)/);
+                if (imgMatch) {
+                  const altText = imgMatch[1] || "Editorial Image";
+                  const imgSrc = imgMatch[2];
+                  return (
+                    <div key={pIdx} className="my-8 overflow-hidden rounded-2xl border border-border bg-cream shadow-sm">
+                      <img
+                        src={imgSrc}
+                        alt={altText}
+                        className="w-full h-auto max-h-[520px] object-cover object-center transition-transform duration-300 hover:scale-[1.01]"
+                        loading="eager"
+                      />
+                      {altText && altText !== "Hero Image" && (
+                        <p className="px-4 py-2 text-xs font-mono text-ink/60 bg-cream/50 border-t border-border/40 text-center italic">
+                          {altText}
+                        </p>
+                      )}
+                    </div>
+                  );
+                }
+                const cleanPart = part.trim();
+                if (!cleanPart) return null;
+                return (
+                  <p key={pIdx} className="leading-relaxed text-ink/85">
+                    {cleanPart}
+                  </p>
+                );
+              })}
+            </div>
+          );
+        }
+
+        // 2. Detect if block is a numbered list (either multi-line or single-line containing 1. ... 2. ...)
         const isNumberedList = /^\s*1[\.\)]\s+/m.test(trimmed) || /(?:^|\n)\s*\d+[\.\)]\s+/.test(trimmed);
 
         if (isNumberedList) {

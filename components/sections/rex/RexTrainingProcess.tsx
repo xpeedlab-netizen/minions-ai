@@ -1,18 +1,18 @@
 const steps = [
   {
     n: "1",
-    title: "Custom Knowledge Build",
-    body: "Our team ingests your exact service pricing, diagnostic fees, service areas, and company rules into Rex's brain.",
+    title: "Custom Knowledge Ingestion",
+    body: "We train Rex on your exact service pricing, diagnostic fees, service zip codes, and business rules.",
   },
   {
     n: "2",
     title: "Voice Tone & Test Calls",
-    body: "We configure Rex's voice tone and run simulated test calls for your review. You sign off before anything goes on your line.",
+    body: "We configure Rex's voice cadence and test call flows. You review and sign off before launch.",
   },
   {
     n: "3",
     title: "2-Minute Call Forwarding",
-    body: "Keep your existing business phone number. Simply dial a quick call-forwarding code, and Rex begins answering 24/7/365.",
+    body: "Keep your existing business number. Dial a quick call-forwarding code, and Rex begins answering 24/7.",
   },
 ];
 
@@ -21,14 +21,14 @@ export default function RexTrainingProcess() {
     <section className="bg-cream py-16 sm:py-24 border-t border-border">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <span className="inline-block rounded-full bg-teal/10 px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-teal font-bold mb-4">
+          <span className="inline-block rounded-full bg-teal/10 px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-teal font-bold mb-3">
             Zero-Hassle Onboarding
           </span>
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
-            100% Done-For-You Setup in 3 Simple Steps
+            100% Done-For-You Setup in 3 Steps
           </h2>
-          <p className="mt-4 text-ink/70 max-w-md text-base leading-relaxed">
-            Our team handles the entire technical setup, knowledge base programming, and calendar integration for your business.
+          <p className="mt-3 text-ink/70 max-w-md text-base leading-relaxed">
+            We handle the technical setup, knowledge base programming, and calendar integration in 7 days.
           </p>
           <ol className="mt-8 space-y-6">
             {steps.map((s) => (

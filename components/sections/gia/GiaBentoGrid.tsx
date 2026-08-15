@@ -1,9 +1,8 @@
-import { Layers, Mail, CalendarClock, Star, Columns3, CheckCircle2, Sparkles, RefreshCw } from "lucide-react";
+import { Layers, Mail, CalendarClock, Star, CheckCircle2, Sparkles, RefreshCw } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
 const tags = [
   "Pipeline Architecture",
-  "Tagging & Segmentation",
   "Automated Workflows",
   "Google Calendar Sync",
   "Zero Manual Entry",
@@ -13,8 +12,9 @@ const crmIntegrations = [
   "ServiceTitan",
   "Housecall Pro",
   "Jobber",
+  "FieldRoutes",
+  "PestPac",
   "Google Calendar",
-  "Zapier / Webhooks",
 ];
 
 export default function GiaBentoGrid() {
@@ -22,21 +22,21 @@ export default function GiaBentoGrid() {
     <section className="bg-cream py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-3">
+        <div className="max-w-3xl mx-auto text-center space-y-3 mb-10">
           <div className="inline-flex items-center gap-2 rounded-full bg-success/10 border border-success/30 px-3.5 py-1 font-mono text-xs font-bold text-success uppercase tracking-wider">
             <Sparkles className="size-3.5" />
             <span>Built-In CRM Autopilot Architecture</span>
           </div>
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance leading-tight">
-            Gia isn&apos;t just software — she&apos;s your digital office manager running your pipeline 24/7.
+            Gia runs your pipeline and follow-up on 24/7 autopilot.
           </h2>
-          <p className="text-base text-ink/70 max-w-2xl mx-auto">
-            From the second a lead calls or fills out a form to post-job Google review collection, Gia executes every follow-up task on autopilot.
+          <p className="text-base text-ink/70 max-w-xl mx-auto">
+            From instant lead capture to post-job Google review collection with zero manual entry.
           </p>
         </div>
 
         {/* Bento Grid Layout */}
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {/* Card 1: Main Large Card — Done-For-You CRM Architecture */}
           <Reveal className="lg:col-span-2">
             <div className="relative h-full rounded-3xl border border-ink/20 bg-ink p-7 text-white shadow-xl overflow-hidden flex flex-col justify-between">
@@ -53,10 +53,10 @@ export default function GiaBentoGrid() {
                 </div>
 
                 <h3 className="mt-6 font-heading font-extrabold text-2xl text-white">
-                  Done-For-You CRM Setup &amp; Pipeline Engineering
+                  Done-For-You Pipeline Setup &amp; Workflow Logic
                 </h3>
-                <p className="mt-3 text-sm text-white/75 leading-relaxed max-w-xl">
-                  Whether you&apos;re starting fresh or struggling with a messy CRM account you don&apos;t know how to configure, we build and optimize your pipelines from scratch. Custom deal stages, tagging rules, and automated trigger logic designed specifically for home service teams.
+                <p className="mt-2.5 text-sm text-white/75 leading-relaxed max-w-xl">
+                  We build and optimize your pipelines from scratch: deal stages, automated triggers, and lead tagging customized to your trade.
                 </p>
               </div>
 
@@ -88,10 +88,10 @@ export default function GiaBentoGrid() {
                 </div>
 
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-white">
-                  Instant Lead Follow-up Sequences
+                  Instant Lead Follow-Up
                 </h3>
-                <p className="mt-3 text-sm text-white/80 leading-relaxed">
-                  Immediate 2-way SMS and email responses dispatched within 5 seconds the moment a prospect submits a website lead form or misses a phone call.
+                <p className="mt-2 text-sm text-white/80 leading-relaxed">
+                  Fires off 2-way SMS and email responses within 5 seconds of any web form or missed call.
                 </p>
               </div>
 
@@ -111,15 +111,15 @@ export default function GiaBentoGrid() {
                 </span>
 
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
-                  Smart Appointment Reminders
+                  Smart SMS Reminders
                 </h3>
-                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
-                  Automated 24-hour and 1-hour SMS reminders with 1-click confirmation links so your technicians never arrive at empty driveways again.
+                <p className="mt-2 text-sm text-ink/70 leading-relaxed">
+                  Sends 24h &amp; 1h confirmation links to ensure homeowners are ready when technicians arrive.
                 </p>
               </div>
 
               <div className="mt-6 pt-4 border-t border-border/60 font-mono text-xs text-ink/60 flex items-center justify-between">
-                <span>No-Show Reduction</span>
+                <span>No-Show Drop</span>
                 <span className="font-bold text-success">Up to 85%</span>
               </div>
             </div>
@@ -134,15 +134,15 @@ export default function GiaBentoGrid() {
                 </span>
 
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
-                  Automated 5-Star Review Engine
+                  5-Star Review Engine
                 </h3>
-                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
-                  Gia automatically pings happy customers with a 1-click Google Review link the moment a technician marks a job as complete in your CRM.
+                <p className="mt-2 text-sm text-ink/70 leading-relaxed">
+                  Triggers an automated Google review link the second a job is marked closed in your CRM.
                 </p>
               </div>
 
               <div className="mt-6 pt-4 border-t border-border/60 font-mono text-xs text-ink/60 flex items-center justify-between">
-                <span>Review Conversion</span>
+                <span>Review Link</span>
                 <span className="font-bold text-amber-600">Automated 1-Click</span>
               </div>
             </div>
@@ -162,15 +162,15 @@ export default function GiaBentoGrid() {
                 </div>
 
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-white">
-                  Multi-Tool CRM Synchronization
+                  CRM Sync Engine
                 </h3>
-                <p className="mt-3 text-sm text-white/80 leading-relaxed">
-                  Connect Gia directly to your existing tech stack. We handle full two-way data sync across your preferred software platforms.
+                <p className="mt-2 text-sm text-white/80 leading-relaxed">
+                  Bi-directional data sync with your existing dispatch and calendar tools.
                 </p>
               </div>
 
               <div className="mt-6 pt-4 border-t border-white/15 font-mono text-xs text-white/90">
-                <p className="text-[10px] uppercase text-white/60 mb-2 font-bold">Supported Platforms</p>
+                <p className="text-[10px] uppercase text-white/60 mb-2 font-bold">Supported CRMs</p>
                 <div className="flex flex-wrap gap-1.5">
                   {crmIntegrations.map((c) => (
                     <span key={c} className="rounded-md bg-white/20 px-2 py-0.5 text-[10px]">

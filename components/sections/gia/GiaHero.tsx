@@ -1,4 +1,4 @@
-import { ShieldCheck, ArrowRight, Sparkles } from "lucide-react";
+import { ShieldCheck, Sparkles } from "lucide-react";
 import Button from "@/components/ui/Button";
 import GiaHeroAnimation from "./GiaHeroAnimation";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
@@ -30,7 +30,7 @@ export default function GiaHero() {
           </h1>
 
           <p className="text-lg text-ink/75 leading-relaxed max-w-xl">
-            Stop losing leads in messy inboxes. Gia automatically builds, organizes, and updates your customer pipeline from every incoming phone call, website message, and missed call — sending instant SMS follow-ups and review requests on autopilot.
+            Gia logs every call and chat into your CRM, dispatches appointment reminders, and collects 5-star Google reviews on autopilot.
           </p>
 
           {/* Value Highlights */}

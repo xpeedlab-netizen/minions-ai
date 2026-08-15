@@ -6,7 +6,6 @@ const tags = [
   "OCR Parsing",
   "Automated Reminders",
   "Folder Routing",
-  "NDA Compliant",
 ];
 
 const integrations = [
@@ -14,7 +13,8 @@ const integrations = [
   "Dropbox",
   "ServiceTitan",
   "Housecall Pro",
-  "Zapier / Webhooks",
+  "Jobber",
+  "Zapier",
 ];
 
 export default function OttoBentoGrid() {
@@ -22,7 +22,7 @@ export default function OttoBentoGrid() {
     <section className="bg-cream py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-3">
+        <div className="max-w-3xl mx-auto text-center space-y-3 mb-10">
           <div className="inline-flex items-center gap-2 rounded-full bg-teal/10 border border-teal/30 px-3.5 py-1 font-mono text-xs font-bold text-teal uppercase tracking-wider">
             <Sparkles className="size-3.5" />
             <span>Built-In Back-Office &amp; Document Engine</span>
@@ -30,13 +30,13 @@ export default function OttoBentoGrid() {
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance leading-tight">
             Otto automates the document grind so your team focuses on billable work.
           </h2>
-          <p className="text-base text-ink/70 max-w-2xl mx-auto">
-            From client onboarding forms to chasing missing W-2s and filing PDFs in the right folder, Otto quietly handles administrative paperwork in the background.
+          <p className="text-base text-ink/70 max-w-xl mx-auto">
+            From client onboarding forms to chasing missing files and routing PDFs into the right folders.
           </p>
         </div>
 
         {/* Bento Grid Layout */}
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {/* Card 1: Main Large Card — Client Intake & Onboarding */}
           <Reveal className="lg:col-span-2">
             <div className="relative h-full rounded-3xl border border-ink/20 bg-ink p-7 text-white shadow-xl overflow-hidden flex flex-col justify-between">
@@ -55,8 +55,8 @@ export default function OttoBentoGrid() {
                 <h3 className="mt-6 font-heading font-extrabold text-2xl text-white">
                   Autonomous Client Intake &amp; Onboarding
                 </h3>
-                <p className="mt-3 text-sm text-white/75 leading-relaxed max-w-xl">
-                  Eliminate manual PDF email attachments. Otto creates sleek digital intake forms that capture client details, verify required file uploads, and automatically spin up dedicated client matter records.
+                <p className="mt-2.5 text-sm text-white/75 leading-relaxed max-w-xl">
+                  Captures client details via digital intake forms, validates uploaded documents, and creates organized client folders automatically.
                 </p>
               </div>
 
@@ -90,8 +90,8 @@ export default function OttoBentoGrid() {
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-white">
                   Automated Document Chasing
                 </h3>
-                <p className="mt-3 text-sm text-white/80 leading-relaxed">
-                  Polite automated SMS and email reminders that follow up with clients who haven&apos;t sent their W-2s, COIs, or IDs — until every document is received.
+                <p className="mt-2 text-sm text-white/80 leading-relaxed">
+                  Sends polite automated SMS and email reminders to clients with missing documents until all files are received.
                 </p>
               </div>
 
@@ -113,13 +113,13 @@ export default function OttoBentoGrid() {
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
                   AI Optical Data Extraction
                 </h3>
-                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
-                  Otto reads PDFs, tax forms, and scanned images — instantly extracting key text fields, EINs, names, and dates directly into structured CRM variables.
+                <p className="mt-2 text-sm text-ink/70 leading-relaxed">
+                  Reads PDFs, permits, and scanned images—extracting key fields and numbers straight into your CRM variables.
                 </p>
               </div>
 
               <div className="mt-6 pt-4 border-t border-border/60 font-mono text-xs text-ink/60 flex items-center justify-between">
-                <span>Extraction Accuracy</span>
+                <span>Extraction Precision</span>
                 <span className="font-bold text-teal">High Precision OCR</span>
               </div>
             </div>
@@ -136,8 +136,8 @@ export default function OttoBentoGrid() {
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
                   Auto-Filing &amp; Folder Routing
                 </h3>
-                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
-                  Every uploaded file is automatically renamed, categorized, and filed into the exact client folder in Google Drive, Dropbox, or your CRM.
+                <p className="mt-2 text-sm text-ink/70 leading-relaxed">
+                  Categorizes and files every uploaded document into the exact client folder in Google Drive, Dropbox, or your CRM.
                 </p>
               </div>
 
@@ -162,10 +162,10 @@ export default function OttoBentoGrid() {
                 </div>
 
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-white">
-                  Bank-Grade NDA &amp; Privacy Protection
+                  Bank-Grade NDA &amp; Security
                 </h3>
-                <p className="mt-3 text-sm text-white/80 leading-relaxed">
-                  Built specifically for law firms, accountants, and contractors handling sensitive data. Permissioned access, full NDA compliance, and end-to-end encryption.
+                <p className="mt-2 text-sm text-white/80 leading-relaxed">
+                  Permissioned access, full NDA compliance, and end-to-end encryption for sensitive customer data.
                 </p>
               </div>
 

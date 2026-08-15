@@ -1,7 +1,7 @@
-import { Sparkles, PhoneCall, ShieldCheck } from "lucide-react";
+import { Sparkles, ShieldCheck } from "lucide-react";
 import Button from "@/components/ui/Button";
 import RexHeroAnimation from "./RexHeroAnimation";
-import { BOOKING_CALENDAR_URL, DEMO_VIDEO_URL } from "@/lib/data/placeholders";
+import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 import { GUARANTEE } from "@/lib/data/site-content";
 
 export default function RexHero() {
@@ -19,8 +19,8 @@ export default function RexHero() {
           <h1 className="mt-5 font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-balance">
             Never Miss Another $5,000 Call While Your Hands Are Full.
           </h1>
-          <p className="mt-6 text-lg text-ink/75 leading-relaxed max-w-xl">
-            When you&apos;re up a ladder, under a sink, or sleeping at 2 AM, Rex answers on ring one. He conducts natural voice conversations, quotes your exact service pricing, and books appointments straight into your Google Calendar 24/7.
+          <p className="mt-4 text-lg text-ink/75 leading-relaxed max-w-xl">
+            Rex answers on ring one 24/7, quotes exact service pricing, and books appointments directly into your Google Calendar.
           </p>
           
           <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4">

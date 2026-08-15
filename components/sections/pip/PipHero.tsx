@@ -13,8 +13,8 @@ export default function PipHero() {
           <h1 className="mt-5 font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-balance">
             Instant Website Answers Grounded in Real Business Data.
           </h1>
-          <p className="mt-6 text-lg text-ink/75 leading-relaxed max-w-xl">
-            Pip handles routine customer inquiries on your website 24/7—pricing ranges, service areas, guarantees, and licensing—grounded strictly in your verified business content with zero AI hallucinations or fake quotes.
+          <p className="mt-4 text-lg text-ink/75 leading-relaxed max-w-xl">
+            Pip handles routine website inquiries 24/7—pricing ranges, service areas, and guarantees—with zero hallucinations.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>

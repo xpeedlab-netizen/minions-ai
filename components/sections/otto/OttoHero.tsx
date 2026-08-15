@@ -30,7 +30,7 @@ export default function OttoHero() {
           </h1>
 
           <p className="text-lg text-ink/75 leading-relaxed max-w-xl">
-            Otto handles the administrative grind for contractors, law firms, and accounting teams — automated client intake, chasing missing W-2s and COIs, extracting key document data, and routing files directly into your CRM or Google Drive.
+            Otto automates client intake, chases missing documents and COIs, extracts data, and routes files straight into your CRM or Google Drive.
           </p>
 
           {/* Value Highlights */}

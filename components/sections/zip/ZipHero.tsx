@@ -13,8 +13,8 @@ export default function ZipHero() {
           <h1 className="mt-5 font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-balance">
             Instant Missed-Call Text-Back in Under 5 Seconds.
           </h1>
-          <p className="mt-6 text-lg text-ink/75 leading-relaxed max-w-xl">
-            When you can&apos;t pick up, Zip fires off a friendly SMS text back in under 5 seconds—&lsquo;Sorry we missed you! How can we help?&rsquo;—automatically logging the lead in your dedicated pipeline so no prospect ever vanishes into voicemail.
+          <p className="mt-4 text-lg text-ink/75 leading-relaxed max-w-xl">
+            When you can&apos;t pick up, Zip texts back in under 5 seconds—qualifying the lead before they call your competitor.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>

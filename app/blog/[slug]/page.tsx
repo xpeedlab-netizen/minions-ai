@@ -5,6 +5,7 @@ import { getAllPosts, getPostBySlug } from "@/lib/blog/storage";
 import { ArrowLeft, Clock, Calendar, Tag, Phone, ShieldCheck, Sparkles, Share2 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { SITE_PHONE_NUMBER } from "@/lib/data/placeholders";
+import ArticleContent from "@/components/blog/ArticleContent";
 
 interface PageProps {
   params: Promise<{
@@ -55,9 +56,6 @@ export default async function BlogPostPage({ params }: PageProps) {
   if (!post) {
     notFound();
   }
-
-  // Format paragraphs from plain text / markdown
-  const paragraphs = post.content.split("\n\n").filter(Boolean);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -166,29 +164,8 @@ export default async function BlogPostPage({ params }: PageProps) {
           )}
 
           {/* Article Body Content */}
-          <div className="mt-10 space-y-6 text-ink/85 text-base sm:text-lg leading-relaxed font-body border-t border-border pt-8">
-            {paragraphs.map((para, idx) => {
-              // Check if paragraph is a numbered list or bullet point
-              if (para.startsWith("1.") || para.startsWith("2.") || para.startsWith("3.") || para.startsWith("4.")) {
-                return (
-                  <div key={idx} className="bg-cream/50 p-4 rounded-xl border border-border/80 my-3">
-                    <p className="font-medium text-ink">{para}</p>
-                  </div>
-                );
-              }
-              if (para.startsWith("• ") || para.startsWith("- ")) {
-                return (
-                  <li key={idx} className="ml-4 list-disc text-ink/90">
-                    {para.replace(/^[•-]\s+/, "")}
-                  </li>
-                );
-              }
-              return (
-                <p key={idx} className="leading-relaxed">
-                  {para}
-                </p>
-              );
-            })}
+          <div className="mt-10 border-t border-border pt-8">
+            <ArticleContent content={post.content} />
           </div>
 
           {/* Tags */}

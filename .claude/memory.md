@@ -10,6 +10,7 @@ RULE: every entry below is EXACTLY ONE LINE. No multi-line entries, no sub-bulle
 [PORT] Local development server is configured to run at http://localhost:3050.
 
 ## Sessions
+2026-08-15 | Add Google Analytics (GA4) | decision: Created new GA account "Minions.AI" (deleted old unused "MD Rifat Hossain" account+properties per user request) with web stream for getminions.ai (Measurement ID G-1QTBV4E0JE, stored in .env.local as NEXT_PUBLIC_GA_MEASUREMENT_ID), wired via next/script afterInteractive strategy in root layout | changed: app/layout.tsx, .env.local, .claude/launch.json (fixed autoPort mismatch, pinned to invariant port 3050) | docs: none | open: none
 2026-08-15 | Unify Gia & Otto Hero Layout | decision: Removed redundant pre-CTA cards and unified stacked headlines in GiaHero and OttoHero for complete site-wide visual consistency | changed: components/sections/{gia,otto}/*Hero.tsx | docs: walkthrough.md | open: none
 2026-08-15 | Unify Industry Hero Titles | decision: Replaced 2-message stacked hero headlines with single punchy title and removed redundant pre-CTA cards across all 5 industry heroes | changed: components/sections/industries/*Hero.tsx | docs: walkthrough.md | open: none
 2026-08-15 | Condense Crew Copy | decision: Streamlined copy across all 5 crew pages (Rex, Zip, Pip, Gia, Otto), eliminating repetitive customization preambles and condensing cards to 1-sentence value hooks | changed: components/sections/{rex,zip,pip,gia,otto}/* | docs: walkthrough.md | open: none

@@ -65,12 +65,66 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const globalJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://getminions.ai/#organization",
+        "name": "getminions.ai",
+        "url": "https://getminions.ai",
+        "logo": "https://getminions.ai/favicon.ico",
+        "description":
+          "The premier AI operations partner for US home-services businesses with 1–10 technicians. Answers phone lines 24/7 in under 1.8 seconds, texts back missed callers in 4 seconds, and books jobs directly to Google Calendar and EspoCRM.",
+        "foundingDate": "2026",
+        "founders": [
+          { "@type": "Person", "name": "Rakib" },
+          { "@type": "Person", "name": "Parvej" }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-800-555-0199",
+          "contactType": "sales and live demo",
+          "availableLanguage": "English"
+        },
+        "sameAs": [
+          "https://getminions.ai/blog",
+          "https://getminions.ai/llms.txt"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://getminions.ai/#software",
+        "name": "getminions.ai",
+        "operatingSystem": "Cloud / Voice SIP",
+        "applicationCategory": "BusinessApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Setup in ~7 days with a 30-day risk-free money-back guarantee."
+        },
+        "featureList": [
+          "Under 1.8-second live voice answering",
+          "24/7/365 emergency dispatching",
+          "Native CRM & Google Calendar two-way scheduling",
+          "Instant 4-second missed call SMS recovery",
+          "Noise-filtering trained on real job sites and power tools"
+        ]
+      }
+    ]
+  };
+
   return (
     <html
       lang="en"
       className={`${jakarta.variable} ${inter.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink font-body pb-16 md:pb-0">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(globalJsonLd) }}
+        />
         {/* One provider above every widget: inline mounts inside `children` and
             the floating mount below share a single message list. */}
         <PipSessionProvider>

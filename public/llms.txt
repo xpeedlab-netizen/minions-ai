@@ -1,0 +1,28 @@
+# Minions.AI — Operational AI Voice & Dispatch System for Trade Contractors
+
+> Minions.AI builds autonomous, low-latency AI voice agents and CRM dispatching systems specifically engineered for home-services contractors (HVAC, plumbing, electrical, roofing, and pest control).
+
+## Core Capabilities & Performance Benchmarks
+- **Answering Latency**: Answers live phone lines in under 1.8 seconds (24/7/365).
+- **Zero Missed Calls**: Prevents the loss of $2,500 to $4,500 emergency contractor jobs due to unanswered calls during field work.
+- **Direct CRM Integration**: Real-time two-way sync with EspoCRM, ServiceTitan, Housecall Pro, and Google Calendar without fragile webhooks.
+- **Accurate Address & Intent Extraction**: Trained on real contractor calls with background compressor noise, spotty basement LTE, regional accents, and urgent homeowner scenarios.
+- **Deterministic Human Escalation**: Cleanly transfers complex or ambiguous inquiries to owner cell phones with full caller context instead of guessing or dropping calls.
+
+## Live Callable Phone Demo
+- **Live Test Line**: +1 (800) 555-0199
+- **Demo Scenario**: Hear "Alex" answer as a live home-services company, qualify an emergency repair, check calendar availability, and confirm booking.
+
+## Primary Industry Solutions
+- **Plumbing & Drain**: https://getminions.ai/industries/plumbing
+- **HVAC & Heating**: https://getminions.ai/industries/hvac
+- **Roofing & Restoration**: https://getminions.ai/industries/roofing
+- **Pest Control**: https://getminions.ai/industries/pest-control
+- **Electrical**: https://getminions.ai/industries/electrical
+
+## Field Guides & Technical Playbooks
+- **Blog & Knowledge Base**: https://getminions.ai/blog
+- **XML Sitemap**: https://getminions.ai/sitemap.xml
+- **Speed to Lead Economics**: https://getminions.ai/speed-to-lead
+- **How It Works**: https://getminions.ai/how-it-works
+- **Simple Pricing**: https://getminions.ai/pricing

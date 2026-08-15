@@ -1,12 +1,12 @@
-import { PhoneCall, MessageSquare, Bot, Layers, FileText, CheckCircle2, Sparkles, MapPin } from "lucide-react";
+import { PhoneCall, MessageSquare, Bot, Layers, FileText, CheckCircle2, Sparkles } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
 const tags = [
-  "HVAC Voice Logic",
+  "24/7 HVAC Dispatch",
   "ServiceTitan Sync",
-  "Diagnostic Fee Verification",
-  "Midnight Emergency Triage",
-  "5-Star Review Trigger",
+  "Diagnostic Fees",
+  "Emergency Triage",
+  "5-Star Reviews",
 ];
 
 export default function HvacCrewBento() {
@@ -23,12 +23,12 @@ export default function HvacCrewBento() {
             Meet your 24/7 specialized HVAC front-office crew.
           </h2>
           <p className="text-base text-ink/70 max-w-2xl mx-auto">
-            From phone dispatching and instant text-backs to automated ServiceTitan calendar booking and Google review collection, your Minions crew handles every customer touchpoint.
+            From emergency dispatching and instant text-backs to automated ServiceTitan calendar bookings.
           </p>
         </div>
 
         {/* Bento Grid Layout */}
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {/* Card 1: Rex — 24/7 AI Voice Dispatcher (Featured Large Card) */}
           <Reveal className="lg:col-span-2">
             <div className="relative h-full rounded-3xl border border-ink/20 bg-ink p-7 text-white shadow-xl overflow-hidden flex flex-col justify-between">
@@ -47,8 +47,8 @@ export default function HvacCrewBento() {
                 <h3 className="mt-6 font-heading font-extrabold text-2xl text-white">
                   24/7 Live Voice Dispatching with HVAC Logic
                 </h3>
-                <p className="mt-3 text-sm text-white/75 leading-relaxed max-w-xl">
-                  Rex answers every incoming service call in your company name on the 1st ring. He triages &quot;No Heat&quot; or &quot;No AC&quot; emergencies, quotes diagnostic fees ($89-$149), filters out out-of-area junk callers, and books service slots directly into ServiceTitan.
+                <p className="mt-2.5 text-sm text-white/75 leading-relaxed max-w-xl">
+                  Answers every call on ring one, triages &quot;No AC&quot; or &quot;No Heat&quot; emergencies, quotes diagnostic fees, and books service slots directly into ServiceTitan or Housecall Pro.
                 </p>
               </div>
 
@@ -80,10 +80,10 @@ export default function HvacCrewBento() {
                 </div>
 
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
-                  5-Second Instant SMS Text-Back
+                  5-Second Instant Text-Back
                 </h3>
-                <p className="mt-3 text-sm text-ink/75 leading-relaxed">
-                  The instant a homeowner misses a call or submits a web quote request, Zip texts them back in &lt; 5 seconds to lock in the appointment before competitor #2 responds.
+                <p className="mt-2 text-sm text-ink/75 leading-relaxed">
+                  Texts missed callers in &lt; 5 seconds to lock in replacement estimates before competitor #2 responds.
                 </p>
               </div>
 
@@ -105,8 +105,8 @@ export default function HvacCrewBento() {
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
                   Pip — 24/7 Web Chat Support
                 </h3>
-                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
-                  Answers website questions about HVAC maintenance agreements, annual AC tune-ups, filter replacements, and SEER efficiency ratings with zero hallucinations.
+                <p className="mt-2 text-sm text-ink/70 leading-relaxed">
+                  Answers website questions about maintenance plans, tune-ups, filter sizes, and SEER ratings.
                 </p>
               </div>
 
@@ -128,8 +128,8 @@ export default function HvacCrewBento() {
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
                   Gia — CRM &amp; Google Review Engine
                 </h3>
-                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
-                  Sends 24h &amp; 1h SMS reminders to prevent empty driveways, and pings happy customers for a 5-star Google Review the second an HVAC job is closed in ServiceTitan.
+                <p className="mt-2 text-sm text-ink/70 leading-relaxed">
+                  Sends 24h/1h appointment reminders and triggers 5-star Google review requests post-installation.
                 </p>
               </div>
 
@@ -154,10 +154,10 @@ export default function HvacCrewBento() {
                 </div>
 
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-white">
-                  Otto — Warranty &amp; Rebate Paperwork
+                  Otto — Warranty &amp; Rebate Docs
                 </h3>
-                <p className="mt-3 text-sm text-white/80 leading-relaxed">
-                  Automates HVAC equipment warranty registration, model/serial number extraction from field photos, and utility rebate filing without office paperwork delays.
+                <p className="mt-2 text-sm text-white/80 leading-relaxed">
+                  Automates equipment warranty registrations, model/serial photo extraction, and utility rebate filings.
                 </p>
               </div>
 

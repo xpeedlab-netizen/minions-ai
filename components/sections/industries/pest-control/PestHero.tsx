@@ -1,4 +1,4 @@
-import { ShieldCheck, Sparkles, Bug } from "lucide-react";
+import { Sparkles, Bug } from "lucide-react";
 import Button from "@/components/ui/Button";
 import PestHeroAnimation from "./PestHeroAnimation";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
@@ -19,7 +19,7 @@ export default function PestHero() {
               <span className="relative inline-flex size-2 rounded-full bg-teal" />
             </span>
             <Bug className="size-3.5 text-teal" />
-            <span>Minions AI for Pest Control Operators &bull; Flagship Target Market</span>
+            <span>Minions AI for Pest Control Operators</span>
           </div>
 
           <h1 className="font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-balance">
@@ -30,18 +30,18 @@ export default function PestHero() {
           </h1>
 
           <p className="text-lg text-ink/75 leading-relaxed max-w-xl">
-            When homeowners spot rodents, wasps, or bed bugs, they panic. They don&apos;t leave voicemails — they call until someone answers. Rex answers on the 1st ring 24/7, quotes initial treatments, converts one-off callers into $59/mo quarterly protection plans, and locks slots straight into FieldRoutes, GorillaDesk, or PestPac.
+            Rex answers 1st ring 24/7, triages pest panics, pitches $59/mo quarterly protection plans, and books directly into FieldRoutes or PestPac.
           </p>
 
           {/* Value Highlights */}
           <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs text-ink/80">
             <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
               <Sparkles className="size-4 text-teal shrink-0" />
-              <span>FieldRoutes, PestPac &amp; GorillaDesk Sync</span>
+              <span>FieldRoutes &amp; PestPac Sync</span>
             </div>
             <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
               <Sparkles className="size-4 text-teal shrink-0" />
-              <span>Quarterly Maintenance Upsell Script</span>
+              <span>Quarterly Upsell Script</span>
             </div>
           </div>
 
@@ -57,7 +57,7 @@ export default function PestHero() {
 
           <p className="font-mono text-xs text-ink/50 flex items-center gap-2 pt-1">
             <span className="size-1.5 rounded-full bg-teal" />
-            Zero technical setup. We configure your route zips &amp; pricing logic in 7 days.
+            Zero technical setup. Live in your routes in 7 days.
           </p>
         </div>
 

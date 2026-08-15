@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Calculator, DollarSign, Sparkles, ArrowRight, ShieldCheck } from "lucide-react";
+import { Calculator, Sparkles } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
@@ -21,16 +21,16 @@ export default function HvacRoiCalculator() {
     <section className="bg-cream py-16 sm:py-24 border-b border-border">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-3 mb-12">
+        <div className="max-w-3xl mx-auto text-center space-y-3 mb-10">
           <div className="inline-flex items-center gap-2 rounded-full bg-teal/10 border border-teal/30 px-3.5 py-1 font-mono text-xs font-bold text-teal uppercase tracking-wider">
             <Calculator className="size-3.5" />
-            <span>Interactive HVAC Revenue Recovery Calculator</span>
+            <span>HVAC Revenue Calculator</span>
           </div>
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance leading-tight">
-            How much revenue is your HVAC business leaking in missed calls?
+            How much revenue is your HVAC business leaking?
           </h2>
-          <p className="text-base text-ink/70 max-w-2xl mx-auto">
-            Adjust the sliders below based on your fleet size to calculate how much annual revenue Minions AI can capture for your company.
+          <p className="text-base text-ink/70 max-w-xl mx-auto">
+            Adjust your monthly missed call volume to see your annual recovered revenue.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function HvacRoiCalculator() {
                 className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-teal"
               />
               <div className="flex justify-between text-[10px] font-mono text-white/40">
-                <span>5 Calls (Small Shop)</span>
+                <span>5 Calls</span>
                 <span>50 Calls</span>
                 <span>100 Calls (Peak Heatwave)</span>
               </div>
@@ -67,12 +67,12 @@ export default function HvacRoiCalculator() {
 
             {/* Ticket Mix Selector */}
             <div className="space-y-2">
-              <span className="text-xs font-mono text-white/70">Average Job Ticket Size Mix:</span>
+              <span className="text-xs font-mono text-white/70">Average Job Ticket Mix:</span>
               <div className="grid grid-cols-3 gap-2">
                 {[
-                  { label: "Repair Avg ($850)", val: 850 },
+                  { label: "Repair ($850)", val: 850 },
                   { label: "Blended ($2,450)", val: 2450 },
-                  { label: "System Install ($8,500)", val: 8500 },
+                  { label: "System ($8,500)", val: 8500 },
                 ].map((t) => (
                   <button
                     key={t.val}
@@ -93,7 +93,7 @@ export default function HvacRoiCalculator() {
             {/* Slider 2: Estimated Close Rate */}
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs font-mono">
-                <span className="text-white/70">Estimated Lead Conversion Rate:</span>
+                <span className="text-white/70">Estimated Close Rate:</span>
                 <span className="font-bold text-success text-sm bg-success/20 px-3 py-1 rounded-lg border border-success/40">
                   {closeRate}% Conversion
                 </span>
@@ -120,7 +120,7 @@ export default function HvacRoiCalculator() {
                 -${annualLostRevenue.toLocaleString()}
               </p>
               <p className="mt-1 font-mono text-[11px] text-white/50">
-                Currently lost to voicemails &amp; slow text-backs
+                Lost to voicemails &amp; slow text-backs
               </p>
             </div>
 

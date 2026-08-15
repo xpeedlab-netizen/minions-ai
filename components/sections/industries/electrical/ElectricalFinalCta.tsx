@@ -1,6 +1,6 @@
 import Button from "@/components/ui/Button";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
-import { Zap, Sparkles, ShieldCheck } from "lucide-react";
+import { Zap, Sparkles } from "lucide-react";
 
 export default function ElectricalFinalCta() {
   return (
@@ -22,8 +22,8 @@ export default function ElectricalFinalCta() {
               Deploy Your Electrical AI Crew.
             </h2>
 
-            <p className="text-white/75 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-              We configure your emergency safety rules, panel photo upload links, and ServiceTitan / Housecall Pro integration in 7 days. Zero technical work required on your end.
+            <p className="text-white/75 text-base sm:text-lg max-w-lg mx-auto leading-relaxed">
+              We configure your safety rules, panel photo upload links, and ServiceTitan / Housecall Pro sync in 7 days.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">

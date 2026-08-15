@@ -1,6 +1,6 @@
 import Button from "@/components/ui/Button";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
-import { Bug, Sparkles, ShieldCheck } from "lucide-react";
+import { Bug, Sparkles } from "lucide-react";
 
 export default function PestFinalCta() {
   return (
@@ -22,8 +22,8 @@ export default function PestFinalCta() {
               Deploy Your AI Crew Before Next Peak.
             </h2>
 
-            <p className="text-white/75 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-              We configure your route zips, quarterly subscription upsell scripts, and FieldRoutes / PestPac / GorillaDesk integration in 7 days. Zero technical work required on your end.
+            <p className="text-white/75 text-base sm:text-lg max-w-lg mx-auto leading-relaxed">
+              We configure your routes, quarterly upsell scripts, and FieldRoutes / PestPac integration in 7 days.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -37,7 +37,7 @@ export default function PestFinalCta() {
 
             <p className="font-mono text-xs text-white/50 pt-2 flex items-center justify-center gap-2">
               <Sparkles className="size-3.5 text-teal-300" />
-              Compatible with FieldRoutes, PestPac, GorillaDesk, ServiceTitan &amp; Google Calendar
+              Compatible with FieldRoutes, PestPac, GorillaDesk &amp; ServiceTitan
             </p>
           </div>
         </div>

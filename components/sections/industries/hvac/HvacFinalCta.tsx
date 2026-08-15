@@ -1,6 +1,6 @@
 import Button from "@/components/ui/Button";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
-import { Flame, Sparkles, ShieldCheck } from "lucide-react";
+import { Flame, Sparkles } from "lucide-react";
 
 export default function HvacFinalCta() {
   return (
@@ -22,8 +22,8 @@ export default function HvacFinalCta() {
               Deploy Your AI Crew Before Peak Heat.
             </h2>
 
-            <p className="text-white/75 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-              We configure your diagnostic rules, ServiceTitan integration, and 5-second text-backs in 7 days. Zero technical work required on your end.
+            <p className="text-white/75 text-base sm:text-lg max-w-lg mx-auto leading-relaxed">
+              We configure your diagnostic rules, ServiceTitan integration, and 5-second text-backs in 7 days.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">

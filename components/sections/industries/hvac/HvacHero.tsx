@@ -1,4 +1,4 @@
-import { ShieldCheck, Sparkles, Flame } from "lucide-react";
+import { Sparkles, Flame } from "lucide-react";
 import Button from "@/components/ui/Button";
 import HvacHeroAnimation from "./HvacHeroAnimation";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
@@ -30,7 +30,7 @@ export default function HvacHero() {
           </h1>
 
           <p className="text-lg text-ink/75 leading-relaxed max-w-xl">
-            When it&apos;s 98° outside and a homeowner&apos;s AC quits, they call three companies and hire whoever answers first. Rex answers on the 1st ring 24/7, quotes diagnostic fees, verifies service area, and books technicians directly into ServiceTitan.
+            Rex answers 1st ring 24/7 during heatwaves, collects diagnostic fees, and books replacement estimates directly into ServiceTitan or Housecall Pro.
           </p>
 
           {/* Value Highlights */}
@@ -41,7 +41,7 @@ export default function HvacHero() {
             </div>
             <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
               <Sparkles className="size-4 text-teal shrink-0" />
-              <span>24/7 Midnight Emergency Triage</span>
+              <span>Midnight Emergency Triage</span>
             </div>
           </div>
 
@@ -57,7 +57,7 @@ export default function HvacHero() {
 
           <p className="font-mono text-xs text-ink/50 flex items-center gap-2 pt-1">
             <span className="size-1.5 rounded-full bg-teal" />
-            Zero technical setup. We configure your diagnostic rules &amp; calendar in 7 days.
+            Zero technical setup. Configured in 7 days.
           </p>
         </div>
 

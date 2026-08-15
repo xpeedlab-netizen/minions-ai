@@ -1,6 +1,6 @@
 import Button from "@/components/ui/Button";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
-import { Droplets, Sparkles, ShieldCheck } from "lucide-react";
+import { Droplets, Sparkles } from "lucide-react";
 
 export default function PlumbingFinalCta() {
   return (
@@ -22,8 +22,8 @@ export default function PlumbingFinalCta() {
               &quot;First Answer&quot; Gap. Deploy Your AI Crew.
             </h2>
 
-            <p className="text-white/75 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-              We configure your emergency dispatch rules, water shutoff advice, and ServiceTitan integration in 7 days. Zero technical work required on your end.
+            <p className="text-white/75 text-base sm:text-lg max-w-lg mx-auto leading-relaxed">
+              We configure your emergency dispatch rules, water shutoff advice, and ServiceTitan integration in 7 days.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">

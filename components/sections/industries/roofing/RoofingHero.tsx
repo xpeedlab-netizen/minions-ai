@@ -1,4 +1,4 @@
-import { ShieldCheck, Sparkles, CloudLightning } from "lucide-react";
+import { Sparkles, CloudLightning } from "lucide-react";
 import Button from "@/components/ui/Button";
 import RoofingHeroAnimation from "./RoofingHeroAnimation";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
@@ -30,7 +30,7 @@ export default function RoofingHero() {
           </h1>
 
           <p className="text-lg text-ink/75 leading-relaxed max-w-xl">
-            When a severe hail or wind storm hits, 200+ homeowners call simultaneously. While your estimators are up on a steep roof with nail guns, Rex answers on the 1st ring, collects insurance carrier info, sends instant damage photo links, and schedules inspection slots into ServiceTitan or Jobber.
+            Rex answers 200+ storm calls at once, gathers insurance details, sends damage photo links, and books inspections in ServiceTitan or Jobber.
           </p>
 
           {/* Value Highlights */}
@@ -41,7 +41,7 @@ export default function RoofingHero() {
             </div>
             <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
               <Sparkles className="size-4 text-teal shrink-0" />
-              <span>Instant Damage Photo Upload Link</span>
+              <span>Instant Damage Photo Links</span>
             </div>
           </div>
 
@@ -57,7 +57,7 @@ export default function RoofingHero() {
 
           <p className="font-mono text-xs text-ink/50 flex items-center gap-2 pt-1">
             <span className="size-1.5 rounded-full bg-teal" />
-            Zero technical setup. We configure your insurance intake &amp; service zips in 7 days.
+            Zero technical setup. Configured in 7 days.
           </p>
         </div>
 

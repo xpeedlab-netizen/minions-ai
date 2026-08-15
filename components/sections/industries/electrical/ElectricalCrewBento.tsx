@@ -2,11 +2,11 @@ import { PhoneCall, MessageSquare, Bot, Layers, FileText, CheckCircle2, Sparkles
 import Reveal from "@/components/ui/Reveal";
 
 const tags = [
-  "Electrical Voice Logic",
-  "ServiceTitan & Housecall Sync",
-  "Main Breaker Safety Triage",
-  "EV Charger Photo Upload",
-  "5-Star Review Trigger",
+  "24/7 Voice Dispatch",
+  "ServiceTitan Sync",
+  "Main Breaker Triage",
+  "EV Photo Links",
+  "5-Star Reviews",
 ];
 
 export default function ElectricalCrewBento() {
@@ -23,12 +23,12 @@ export default function ElectricalCrewBento() {
             Meet your 24/7 specialized electrical front-office crew.
           </h2>
           <p className="text-base text-ink/70 max-w-2xl mx-auto">
-            From emergency call dispatching and panel photo text-backs to automated ServiceTitan calendar booking and 5-star review collection, your Minions crew runs your office.
+            From emergency call dispatching and panel photo text-backs to automated ServiceTitan bookings.
           </p>
         </div>
 
         {/* Bento Grid Layout */}
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {/* Card 1: Rex — 24/7 AI Voice Dispatcher (Featured Large Card) */}
           <Reveal className="lg:col-span-2">
             <div className="relative h-full rounded-3xl border border-ink/20 bg-ink p-7 text-white shadow-xl overflow-hidden flex flex-col justify-between">
@@ -47,8 +47,8 @@ export default function ElectricalCrewBento() {
                 <h3 className="mt-6 font-heading font-extrabold text-2xl text-white">
                   24/7 Emergency Voice Dispatching with Safety Logic
                 </h3>
-                <p className="mt-3 text-sm text-white/75 leading-relaxed max-w-xl">
-                  Rex answers every incoming call in your company name on the 1st ring. He identifies sparkling breakers, main panel outages, and electrical burning smells, guides emergency panel safety shut-offs, quotes dispatch fees, and pages on-call electricians into ServiceTitan or Housecall Pro.
+                <p className="mt-2.5 text-sm text-white/75 leading-relaxed max-w-xl">
+                  Answers on ring one, guides emergency breaker shutoffs during arcing hazards, quotes dispatch fees, and pages on-call electricians into ServiceTitan.
                 </p>
               </div>
 
@@ -82,8 +82,8 @@ export default function ElectricalCrewBento() {
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
                   5-Second Instant SMS Text-Back
                 </h3>
-                <p className="mt-3 text-sm text-ink/75 leading-relaxed">
-                  The second a homeowner misses a call or submits a web quote form for an EV charger or panel upgrade, Zip texts them back in &lt; 5 seconds with an instant photo upload link.
+                <p className="mt-2 text-sm text-ink/75 leading-relaxed">
+                  Texts missed callers in &lt; 5 seconds with an instant photo link for EV chargers and panel upgrades.
                 </p>
               </div>
 
@@ -105,8 +105,8 @@ export default function ElectricalCrewBento() {
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
                   Pip — 24/7 Web Chat Support
                 </h3>
-                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
-                  Answers website questions about 200A panel upgrades, EV Level 2 charger specs, whole-home surge protection, and commercial rates grounded in your business data.
+                <p className="mt-2 text-sm text-ink/70 leading-relaxed">
+                  Answers website questions about 200A panel upgrades, EV Level 2 chargers, and surge protection.
                 </p>
               </div>
 
@@ -128,8 +128,8 @@ export default function ElectricalCrewBento() {
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
                   Gia — CRM &amp; Google Review Engine
                 </h3>
-                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
-                  Sends 24h &amp; 1h SMS reminders so homeowners are home for electricians, and pings happy customers for a 5-star Google Review the second an electrical job is closed.
+                <p className="mt-2 text-sm text-ink/70 leading-relaxed">
+                  Sends 24h/1h SMS reminders to homeowners and triggers 5-star Google review requests when jobs close.
                 </p>
               </div>
 
@@ -156,8 +156,8 @@ export default function ElectricalCrewBento() {
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-white">
                   Otto — Permit &amp; Rebate Docs
                 </h3>
-                <p className="mt-3 text-sm text-white/80 leading-relaxed">
-                  Automates municipal electrical permit applications, EV charger utility rebate filings, and panel inspection documentation without office paperwork delays.
+                <p className="mt-2 text-sm text-white/80 leading-relaxed">
+                  Automates municipal electrical permits, EV utility rebate filings, and panel inspection logs.
                 </p>
               </div>
 

@@ -5,23 +5,26 @@ const cards = [
   {
     icon: Moon,
     iconColor: "text-coral-text bg-coral/15 border-coral/30",
-    title: "The 10:45 PM Panic Call Dropoff",
-    subtitle: "Homeowners Won't Wait for Morning",
-    body: "When a mother spots a wasp nest near the nursery at 11 PM, she won't leave a voicemail. If you don't answer on the 1st ring, she calls your competitor and hands them a $2,500 lifetime subscription.",
+    title: "10:45 PM Panic Calls",
+    subtitle: "Missed Emergency Dropoff",
+    body: "Homeowners with late-night infestations call down Google until someone answers. Rex locks the deal on ring one.",
+    loss: "$60k+ / Year",
   },
   {
     icon: RefreshCw,
     iconColor: "text-accent-blue bg-accent-blue/15 border-accent-blue/30",
     title: "The One-Off Spray Trap",
-    subtitle: "Missing Recurring Plan Conversions",
-    body: "One-time $149 sprays don't build a 7-figure pest control business — recurring subscriptions do. If your front office forgets to pitch quarterly plans on every call, you bleed recurring MRR.",
+    subtitle: "Lost Subscription LTV",
+    body: "Single sprays bleed margin. Rex automatically pitches recurring $59/mo protection on every inbound call.",
+    loss: "$75k+ / Year",
   },
   {
     icon: MapPinOff,
     iconColor: "text-teal bg-teal/15 border-teal/30",
-    title: "Route Disruption & Out-Of-Area Sinks",
-    subtitle: "Wasted Gas & Low Tech Efficiency",
-    body: "Sending technicians 35 miles away for a one-time $99 flea job burns fuel and disrupts your route density. Your AI must enforce zip code territory logic on every booking.",
+    title: "Route Disruption",
+    subtitle: "Wasted Gas & Drive Time",
+    body: "Zero wasted fuel on 35-mile one-offs. Rex enforces strict zip code territory and route density logic.",
+    loss: "$25k+ / Year",
   },
 ];
 
@@ -32,45 +35,45 @@ export default function PestProblem() {
         <div className="max-w-3xl mx-auto text-center space-y-3">
           <div className="inline-flex items-center gap-2 rounded-full bg-coral/10 border border-coral/30 px-3.5 py-1 font-mono text-xs font-bold text-coral-text uppercase tracking-wider">
             <AlertCircle className="size-3.5" />
-            <span>The Hidden Revenue Leaks in Pest Control</span>
+            <span>The 3 Costliest Pest Revenue Leaks</span>
           </div>
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance leading-tight">
             Pest emergencies are high urgency — missed calls destroy recurring subscription growth.
           </h2>
           <p className="text-base text-ink/70 max-w-2xl mx-auto">
-            In the pest control industry, customer LTV is built on quarterly subscriptions. Every missed emergency call isn&apos;t just a missed $149 spray — it&apos;s $2,500+ in lost recurring revenue.
+            Every missed emergency call isn&apos;t just a missed $149 spray — it&apos;s $2,500+ in lost recurring revenue.
           </p>
         </div>
 
-        <div className="mt-14 grid sm:grid-cols-3 gap-6">
+        <div className="mt-12 grid sm:grid-cols-3 gap-6">
           {cards.map((c, i) => (
             <Reveal key={c.title} delay={i * 0.08} className="h-full">
-              <div className="h-full rounded-3xl border border-border/80 bg-white p-7 shadow-xs hover:shadow-md hover:border-teal/40 transition-all flex flex-col justify-between">
+              <div className="h-full rounded-3xl border border-border/80 bg-white p-6 shadow-xs hover:shadow-md hover:border-teal/40 transition-all flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className={`flex size-11 items-center justify-center rounded-2xl border ${c.iconColor}`}>
+                    <span className={`flex size-10 items-center justify-center rounded-2xl border ${c.iconColor}`}>
                       <c.icon className="size-5" />
                     </span>
                     <span className="font-mono text-[10px] font-bold text-ink/50 bg-cream px-2.5 py-1 rounded-full uppercase">
-                      Revenue Leak #{i + 1}
+                      Leak #{i + 1}
                     </span>
                   </div>
 
-                  <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
+                  <h3 className="mt-5 font-heading font-extrabold text-lg text-ink">
                     {c.title}
                   </h3>
-                  <p className="mt-1 font-mono text-xs font-semibold text-teal">
+                  <p className="mt-0.5 font-mono text-xs font-semibold text-teal">
                     {c.subtitle}
                   </p>
 
-                  <p className="mt-3 text-sm text-ink/70 leading-relaxed">
+                  <p className="mt-2.5 text-sm text-ink/70 leading-relaxed">
                     {c.body}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-border/50 font-mono text-xs text-coral-text flex items-center justify-between">
-                  <span>Estimated Annual Loss:</span>
-                  <span className="font-bold font-mono">$150k+ / Year</span>
+                <div className="mt-5 pt-3.5 border-t border-border/50 font-mono text-xs text-coral-text flex items-center justify-between">
+                  <span>Estimated Loss:</span>
+                  <span className="font-bold font-mono">{c.loss}</span>
                 </div>
               </div>
             </Reveal>

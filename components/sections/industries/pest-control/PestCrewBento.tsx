@@ -2,11 +2,11 @@ import { PhoneCall, MessageSquare, Bot, Layers, FileText, CheckCircle2, Sparkles
 import Reveal from "@/components/ui/Reveal";
 
 const tags = [
-  "PCO Voice Logic",
-  "FieldRoutes & PestPac Sync",
-  "Quarterly Plan Upsell Script",
-  "Species Photo Upload Link",
-  "5-Star Review Trigger",
+  "24/7 Voice Dispatch",
+  "FieldRoutes Sync",
+  "Quarterly Upsells",
+  "Species Photo Links",
+  "5-Star Reviews",
 ];
 
 export default function PestCrewBento() {
@@ -17,18 +17,18 @@ export default function PestCrewBento() {
         <div className="max-w-3xl mx-auto text-center space-y-3">
           <div className="inline-flex items-center gap-2 rounded-full bg-teal/10 border border-teal/30 px-3.5 py-1 font-mono text-xs font-bold text-teal uppercase tracking-wider">
             <Sparkles className="size-3.5" />
-            <span>Flagship Pest Control AI Crew Architecture</span>
+            <span>Pest Control AI Front-Office Crew</span>
           </div>
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance leading-tight">
             Meet your 24/7 specialized pest control front-office crew.
           </h2>
           <p className="text-base text-ink/70 max-w-2xl mx-auto">
-            From emergency call dispatching and pest photo text-backs to automated FieldRoutes calendar booking and quarterly renewal reminders, your Minions crew runs your office.
+            From midnight emergency dispatching to automated FieldRoutes bookings and quarterly renewal reminders.
           </p>
         </div>
 
         {/* Bento Grid Layout */}
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {/* Card 1: Rex — 24/7 AI Voice Dispatcher (Featured Large Card) */}
           <Reveal className="lg:col-span-2">
             <div className="relative h-full rounded-3xl border border-ink/20 bg-ink p-7 text-white shadow-xl overflow-hidden flex flex-col justify-between">
@@ -45,10 +45,10 @@ export default function PestCrewBento() {
                 </div>
 
                 <h3 className="mt-6 font-heading font-extrabold text-2xl text-white">
-                  24/7 Voice Dispatching with Subscription Upsell Scripting
+                  24/7 Voice Dispatching with Subscription Upsells
                 </h3>
-                <p className="mt-3 text-sm text-white/75 leading-relaxed max-w-xl">
-                  Rex answers every incoming call in your company name on the 1st ring. He triages rodents, wasps, or bed bugs, quotes initial treatment fees, converts one-off callers into $59/mo quarterly protection plans, and books route slots in FieldRoutes, PestPac, or GorillaDesk.
+                <p className="mt-2.5 text-sm text-white/75 leading-relaxed max-w-xl">
+                  Answers every call on ring one, quotes treatment fees, pitches $59/mo quarterly protection plans, and books route slots directly in FieldRoutes, PestPac, or GorillaDesk.
                 </p>
               </div>
 
@@ -80,10 +80,10 @@ export default function PestCrewBento() {
                 </div>
 
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
-                  Instant Species Photo Upload Link
+                  Instant Photo Upload Link
                 </h3>
-                <p className="mt-3 text-sm text-ink/75 leading-relaxed">
-                  The second a homeowner misses a call or submits a web form, Zip texts them back in &lt; 5 seconds with an instant photo upload link to identify pest species before competitors reply.
+                <p className="mt-2 text-sm text-ink/75 leading-relaxed">
+                  Texts missed callers in &lt; 5s with an instant photo upload link to identify pest species before competitors reply.
                 </p>
               </div>
 
@@ -105,8 +105,8 @@ export default function PestCrewBento() {
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
                   Pip — 24/7 Web Chat Support
                 </h3>
-                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
-                  Answers website questions about family and pet safety guidelines, chemical ingredients, quarterly spray schedules, and re-service guarantees.
+                <p className="mt-2 text-sm text-ink/70 leading-relaxed">
+                  Answers website questions about pet safety, chemicals, and spray schedules with zero hallucinations.
                 </p>
               </div>
 
@@ -128,8 +128,8 @@ export default function PestCrewBento() {
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
                   Gia — CRM &amp; Renewal Engine
                 </h3>
-                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
-                  Sends 24h &amp; 1h appointment reminders, triggers automated quarterly re-service reminders, and pings happy customers for a 5-star Google Review post-treatment.
+                <p className="mt-2 text-sm text-ink/70 leading-relaxed">
+                  Dispatches 24h/1h appointment reminders, triggers quarterly renewals, and collects 5-star Google reviews.
                 </p>
               </div>
 
@@ -156,8 +156,8 @@ export default function PestCrewBento() {
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-white">
                   Otto — WDO &amp; Chemical Logs
                 </h3>
-                <p className="mt-3 text-sm text-white/80 leading-relaxed">
-                  Automates Wood Destroying Organism (WDO) inspection reports, chemical usage logging, and state health compliance filings without office paperwork delays.
+                <p className="mt-2 text-sm text-white/80 leading-relaxed">
+                  Automates Wood Destroying Organism (WDO) reports, chemical logs, and state compliance filings without paperwork.
                 </p>
               </div>
 

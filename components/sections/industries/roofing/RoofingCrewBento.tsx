@@ -2,11 +2,11 @@ import { PhoneCall, MessageSquare, Bot, Layers, FileText, CheckCircle2, Sparkles
 import Reveal from "@/components/ui/Reveal";
 
 const tags = [
-  "Roofing Voice Logic",
-  "ServiceTitan & Jobber Sync",
-  "Insurance Carrier Intake",
-  "Damage Photo Upload Link",
-  "5-Star Review Trigger",
+  "24/7 Storm Dispatch",
+  "ServiceTitan & Jobber",
+  "Insurance Intake",
+  "Damage Photo Links",
+  "5-Star Reviews",
 ];
 
 export default function RoofingCrewBento() {
@@ -23,12 +23,12 @@ export default function RoofingCrewBento() {
             Meet your 24/7 specialized roofing front-office crew.
           </h2>
           <p className="text-base text-ink/70 max-w-2xl mx-auto">
-            From storm-surge phone dispatching and damage photo text-backs to automated inspection scheduling and Google review collection, your Minions crew runs your front office.
+            From storm-surge phone dispatching and damage photo text-backs to automated inspection bookings.
           </p>
         </div>
 
         {/* Bento Grid Layout */}
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {/* Card 1: Rex — 24/7 AI Voice Dispatcher (Featured Large Card) */}
           <Reveal className="lg:col-span-2">
             <div className="relative h-full rounded-3xl border border-ink/20 bg-ink p-7 text-white shadow-xl overflow-hidden flex flex-col justify-between">
@@ -47,8 +47,8 @@ export default function RoofingCrewBento() {
                 <h3 className="mt-6 font-heading font-extrabold text-2xl text-white">
                   24/7 Storm-Surge Voice Answering with Insurance Intake
                 </h3>
-                <p className="mt-3 text-sm text-white/75 leading-relaxed max-w-xl">
-                  Rex answers every incoming call in your company name on the 1st ring during storm surges. He gathers insurance carrier policy numbers, quotes emergency tarping fees, and schedules roof inspection slots directly into ServiceTitan or Jobber.
+                <p className="mt-2.5 text-sm text-white/75 leading-relaxed max-w-xl">
+                  Answers 200+ storm calls concurrently, collects insurance policy numbers, quotes emergency tarping fees, and books roof inspection slots in ServiceTitan or Jobber.
                 </p>
               </div>
 
@@ -80,10 +80,10 @@ export default function RoofingCrewBento() {
                 </div>
 
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
-                  Instant Damage Photo Upload Link
+                  Instant Damage Photo Link
                 </h3>
-                <p className="mt-3 text-sm text-ink/75 leading-relaxed">
-                  The instant a homeowner misses a call or submits a web form, Zip texts them back in &lt; 5 seconds with an instant photo upload link to collect roof damage pictures before competitors arrive.
+                <p className="mt-2 text-sm text-ink/75 leading-relaxed">
+                  Texts missed callers in &lt; 5 seconds with a photo upload link to collect roof damage pictures before storm chasers arrive.
                 </p>
               </div>
 
@@ -105,8 +105,8 @@ export default function RoofingCrewBento() {
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
                   Pip — 24/7 Web Chat Support
                 </h3>
-                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
-                  Answers website questions about architectural shingle warranties, insurance claim processes, deductible guidelines, and roof replacement timelines.
+                <p className="mt-2 text-sm text-ink/70 leading-relaxed">
+                  Answers website questions about shingle warranties, insurance claim processes, deductibles, and timelines.
                 </p>
               </div>
 
@@ -126,10 +126,10 @@ export default function RoofingCrewBento() {
                 </span>
 
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
-                  Gia — CRM &amp; Google Review Engine
+                  Gia — CRM &amp; Review Engine
                 </h3>
-                <p className="mt-3 text-sm text-ink/70 leading-relaxed">
-                  Dispatches 24h &amp; 1h SMS reminders so homeowners are present for roof inspections, and pings happy customers for a 5-star Google Review post-claim settlement.
+                <p className="mt-2 text-sm text-ink/70 leading-relaxed">
+                  Sends 24h/1h inspection reminders and triggers 5-star Google review requests post-claim settlement.
                 </p>
               </div>
 
@@ -156,8 +156,8 @@ export default function RoofingCrewBento() {
                 <h3 className="mt-6 font-heading font-extrabold text-xl text-white">
                   Otto — Claim &amp; Permit Docs
                 </h3>
-                <p className="mt-3 text-sm text-white/80 leading-relaxed">
-                  Automates insurance adjuster report extractions, municipal roofing permit applications, and shingle manufacturer warranty registrations.
+                <p className="mt-2 text-sm text-white/80 leading-relaxed">
+                  Automates adjuster report extractions, municipal roofing permits, and manufacturer warranty registrations.
                 </p>
               </div>
 

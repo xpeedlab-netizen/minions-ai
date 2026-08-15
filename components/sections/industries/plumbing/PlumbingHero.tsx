@@ -1,4 +1,4 @@
-import { ShieldCheck, Sparkles, Droplets } from "lucide-react";
+import { Sparkles, Droplets } from "lucide-react";
 import Button from "@/components/ui/Button";
 import PlumbingHeroAnimation from "./PlumbingHeroAnimation";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
@@ -30,7 +30,7 @@ export default function PlumbingHero() {
           </h1>
 
           <p className="text-lg text-ink/75 leading-relaxed max-w-xl">
-            Burst pipes and water main leaks don&apos;t wait for business hours. When a pipe snaps at 2 AM, homeowners hire the first plumber who answers. Rex answers on the 1st ring 24/7, guides emergency valve shutoffs, quotes dispatch fees, and pages on-call plumbers into ServiceTitan.
+            Rex answers 1st ring 24/7, guides emergency main valve shutoffs, quotes dispatch fees, and books jobs directly into ServiceTitan.
           </p>
 
           {/* Value Highlights */}
@@ -41,7 +41,7 @@ export default function PlumbingHero() {
             </div>
             <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
               <Sparkles className="size-4 text-teal shrink-0" />
-              <span>2 AM Water Shutoff Guidance</span>
+              <span>2 AM Water Shutoff Advice</span>
             </div>
           </div>
 
@@ -57,7 +57,7 @@ export default function PlumbingHero() {
 
           <p className="font-mono text-xs text-ink/50 flex items-center gap-2 pt-1">
             <span className="size-1.5 rounded-full bg-teal" />
-            Zero technical setup. We configure your emergency dispatch rules &amp; zips in 7 days.
+            Zero technical setup. Configured in 7 days.
           </p>
         </div>
 

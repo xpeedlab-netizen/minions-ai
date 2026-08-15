@@ -1,4 +1,4 @@
-import { ShieldCheck, Sparkles, Zap } from "lucide-react";
+import { Sparkles, Zap } from "lucide-react";
 import Button from "@/components/ui/Button";
 import ElectricalHeroAnimation from "./ElectricalHeroAnimation";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
@@ -30,14 +30,14 @@ export default function ElectricalHero() {
           </h1>
 
           <p className="text-lg text-ink/75 leading-relaxed max-w-xl">
-            When a breaker panel arcs or power cuts out at 11 PM, homeowners call until an electrician answers. Rex answers on the 1st ring 24/7, guides emergency panel safety, quotes dispatch fees, and pages on-call electricians into ServiceTitan or Housecall Pro.
+            Rex answers 1st ring 24/7, guides emergency main shutoffs, quotes dispatch fees, and pages on-call electricians into ServiceTitan.
           </p>
 
           {/* Value Highlights */}
           <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs text-ink/80">
             <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
               <Sparkles className="size-4 text-teal shrink-0" />
-              <span>ServiceTitan &amp; Housecall Pro Sync</span>
+              <span>ServiceTitan &amp; Housecall Sync</span>
             </div>
             <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-white/70 px-3 py-2">
               <Sparkles className="size-4 text-teal shrink-0" />
@@ -57,7 +57,7 @@ export default function ElectricalHero() {
 
           <p className="font-mono text-xs text-ink/50 flex items-center gap-2 pt-1">
             <span className="size-1.5 rounded-full bg-teal" />
-            Zero technical setup. We configure your emergency dispatch rules &amp; zips in 7 days.
+            Zero technical setup. Configured in 7 days.
           </p>
         </div>
 

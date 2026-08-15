@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Calculator, DollarSign, Sparkles, ShieldCheck } from "lucide-react";
+import { Calculator, Sparkles } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
@@ -21,16 +21,16 @@ export default function PlumbingRoiCalculator() {
     <section className="bg-cream py-16 sm:py-24 border-b border-border">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-3 mb-12">
+        <div className="max-w-3xl mx-auto text-center space-y-3 mb-10">
           <div className="inline-flex items-center gap-2 rounded-full bg-teal/10 border border-teal/30 px-3.5 py-1 font-mono text-xs font-bold text-teal uppercase tracking-wider">
             <Calculator className="size-3.5" />
-            <span>Interactive Plumbing Revenue Recovery Calculator</span>
+            <span>Plumbing Revenue Calculator</span>
           </div>
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance leading-tight">
-            How much revenue is your plumbing business leaking in missed emergency calls?
+            How much revenue is your plumbing business leaking?
           </h2>
-          <p className="text-base text-ink/70 max-w-2xl mx-auto">
-            Adjust the sliders below based on your call volume to calculate how much annual revenue Minions AI can capture for your company.
+          <p className="text-base text-ink/70 max-w-xl mx-auto">
+            Adjust your monthly missed call volume to see your annual recovered revenue.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export default function PlumbingRoiCalculator() {
             {/* Slider 1: Missed Calls per month */}
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs font-mono">
-                <span className="text-white/70">Estimated Missed Emergency Calls / Month:</span>
+                <span className="text-white/70">Estimated Missed Calls / Month:</span>
                 <span className="font-bold text-teal-300 text-sm bg-teal/20 px-3 py-1 rounded-lg border border-teal/40">
                   {missedCalls} Calls / Mo
                 </span>
@@ -59,7 +59,7 @@ export default function PlumbingRoiCalculator() {
                 className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-teal"
               />
               <div className="flex justify-between text-[10px] font-mono text-white/40">
-                <span>5 Calls (Small Shop)</span>
+                <span>5 Calls</span>
                 <span>40 Calls</span>
                 <span>80 Calls (High Volume)</span>
               </div>
@@ -67,12 +67,12 @@ export default function PlumbingRoiCalculator() {
 
             {/* Ticket Mix Selector */}
             <div className="space-y-2">
-              <span className="text-xs font-mono text-white/70">Average Job Ticket Size Mix:</span>
+              <span className="text-xs font-mono text-white/70">Average Job Ticket Mix:</span>
               <div className="grid grid-cols-3 gap-2">
                 {[
-                  { label: "Drain Clog ($450)", val: 450 },
+                  { label: "Drain ($450)", val: 450 },
                   { label: "Blended ($2,250)", val: 2250 },
-                  { label: "Water Heater ($6,500)", val: 6500 },
+                  { label: "Heater ($6,500)", val: 6500 },
                 ].map((t) => (
                   <button
                     key={t.val}
@@ -93,7 +93,7 @@ export default function PlumbingRoiCalculator() {
             {/* Slider 2: Estimated Close Rate */}
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs font-mono">
-                <span className="text-white/70">Estimated Lead Conversion Rate:</span>
+                <span className="text-white/70">Estimated Close Rate:</span>
                 <span className="font-bold text-success text-sm bg-success/20 px-3 py-1 rounded-lg border border-success/40">
                   {closeRate}% Conversion
                 </span>
@@ -120,7 +120,7 @@ export default function PlumbingRoiCalculator() {
                 -${annualLostRevenue.toLocaleString()}
               </p>
               <p className="mt-1 font-mono text-[11px] text-white/50">
-                Currently lost to voicemails &amp; delayed text-backs
+                Lost to voicemails &amp; delayed text-backs
               </p>
             </div>
 

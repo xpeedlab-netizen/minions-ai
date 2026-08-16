@@ -77,10 +77,12 @@ function savePostToFile(post: BlogPost): void {
 }
 
 function extractFeaturedImage(content?: string, explicitImg?: string): string | undefined {
-  if (explicitImg) return explicitImg;
+  if (explicitImg && explicitImg.startsWith("http")) return explicitImg;
   if (!content) return undefined;
   const match = content.match(/!\[.*?\]\((https?:\/\/[^\s\)]+)\)/);
-  return match ? match[1] : undefined;
+  if (match) return match[1];
+  const urlMatch = content.match(/(https?:\/\/[^\s\)]+(?:aliyuncs\.com|supabase\.co)[^\s\)]+\.(?:png|jpg|jpeg|webp)[^\s\)]*)/i);
+  return urlMatch ? urlMatch[1] : undefined;
 }
 
 // Public Dual-Mode Database/File API

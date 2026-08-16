@@ -5,6 +5,9 @@ import { ArrowRight, BookOpen, Clock, Tag, Sparkles, Phone } from "lucide-react"
 import Button from "@/components/ui/Button";
 import { SITE_PHONE_NUMBER } from "@/lib/data/placeholders";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: "Blog & Field Guide | Minions.AI",
   description: "Operational insights, AI voice dispatch benchmarks, and multi-agent systems playbooks for trade contractors and AI automation engineers.",

@@ -76,6 +76,13 @@ function savePostToFile(post: BlogPost): void {
   fs.writeFileSync(filePath, JSON.stringify(post, null, 2), "utf8");
 }
 
+function extractFeaturedImage(content?: string, explicitImg?: string): string | undefined {
+  if (explicitImg) return explicitImg;
+  if (!content) return undefined;
+  const match = content.match(/!\[.*?\]\((https?:\/\/[^\s\)]+)\)/);
+  return match ? match[1] : undefined;
+}
+
 // Public Dual-Mode Database/File API
 export async function getAllPosts(): Promise<BlogPost[]> {
   const supabase = getSupabaseClient();
@@ -88,25 +95,28 @@ export async function getAllPosts(): Promise<BlogPost[]> {
         .order("published_at", { ascending: false });
 
       if (!error && data && data.length > 0) {
-        return data.map((row: any) => ({
-          slug: row.slug,
-          title: row.title,
-          subtitle: row.subtitle,
-          hook: row.hook,
-          core_argument: row.core_argument,
-          content: row.content,
-          audience: row.audience,
-          pillar: row.pillar,
-          author: typeof row.author === "string" ? JSON.parse(row.author) : row.author || { name: "Minions.AI Team", role: "Operations & AI Dispatch" },
-          publishedAt: row.published_at,
-          readingTimeMinutes: row.reading_time_minutes || calculateReadingTime(row.content),
-          tags: row.tags || [row.audience, "Operations"],
-          metaDescription: row.meta_description || (row.hook ? row.hook.slice(0, 160) : row.title),
-          featured_image: row.featured_image,
-          og_image: row.og_image,
-          assetId: row.asset_id,
-          docUrl: row.doc_url,
-        }));
+        return data.map((row: any) => {
+          const img = extractFeaturedImage(row.content, row.featured_image);
+          return {
+            slug: row.slug,
+            title: row.title,
+            subtitle: row.subtitle,
+            hook: row.hook,
+            core_argument: row.core_argument,
+            content: row.content,
+            audience: row.audience,
+            pillar: row.pillar,
+            author: typeof row.author === "string" ? JSON.parse(row.author) : row.author || { name: "Minions.AI Team", role: "Operations & AI Dispatch" },
+            publishedAt: row.published_at,
+            readingTimeMinutes: row.reading_time_minutes || calculateReadingTime(row.content || ""),
+            tags: row.tags || [row.audience, "Operations"],
+            metaDescription: row.meta_description || (row.hook ? row.hook.slice(0, 160) : row.title),
+            featured_image: img,
+            og_image: row.og_image || img,
+            assetId: row.asset_id,
+            docUrl: row.doc_url,
+          };
+        });
       }
     } catch (e) {
       console.error("Failed to fetch posts from Supabase database, falling back to local files:", e);

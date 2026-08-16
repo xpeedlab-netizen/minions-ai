@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { CheckCircle2, Phone, Sparkles, Terminal, Copy, Check, ShieldAlert, Cpu } from "lucide-react";
 import { SITE_PHONE_NUMBER } from "@/lib/data/placeholders";
 

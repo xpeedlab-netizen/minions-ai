@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckCircle2, Phone, Sparkles } from "lucide-react";
+import { CheckCircle2, Phone, Sparkles, Terminal, Copy, Check, ShieldAlert, Cpu } from "lucide-react";
 import { SITE_PHONE_NUMBER } from "@/lib/data/placeholders";
 
 interface ArticleContentProps {
@@ -16,6 +16,44 @@ function cleanTextFormatting(text: string): string {
     .trim();
 }
 
+function CodeBlockRenderer({ code, language }: { code: string; language?: string }) {
+  const [copied, setCopied] = React.useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="my-8 overflow-hidden rounded-2xl border border-ink/40 bg-[#0c0d12] shadow-2xl">
+      {/* Top Window Bar */}
+      <div className="flex items-center justify-between px-4 py-3 bg-[#161822] border-b border-ink/30 text-xs font-mono text-ink/70">
+        <div className="flex items-center gap-2">
+          <div className="flex gap-1.5">
+            <div className="size-3 rounded-full bg-[#ff5f56]" />
+            <div className="size-3 rounded-full bg-[#ffbd2e]" />
+            <div className="size-3 rounded-full bg-[#27c93f]" />
+          </div>
+          <span className="ml-2 text-cream/70 font-semibold">{language || "json"}</span>
+        </div>
+        <button
+          onClick={handleCopy}
+          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-ink/50 text-cream/80 hover:text-white hover:bg-ink/80 transition-colors"
+        >
+          {copied ? <Check className="size-3.5 text-teal" /> : <Copy className="size-3.5" />}
+          <span>{copied ? "Copied" : "Copy"}</span>
+        </button>
+      </div>
+
+      {/* Code Text */}
+      <pre className="p-5 text-sm font-mono leading-relaxed text-[#00F2FE] overflow-x-auto selection:bg-teal/30">
+        <code>{code.trim()}</code>
+      </pre>
+    </div>
+  );
+}
+
 export default function ArticleContent({ content }: ArticleContentProps) {
   const cleanedContent = cleanTextFormatting(content);
 
@@ -23,7 +61,7 @@ export default function ArticleContent({ content }: ArticleContentProps) {
   const rawBlocks = cleanedContent.split(/\n\n+/).filter(Boolean);
 
   return (
-    <div className="space-y-8 text-ink/90 text-[1.09375rem] leading-[1.72] tracking-[-0.011em] font-body">
+    <div className="space-y-8 text-ink/90 text-[1.09375rem] leading-[1.75] tracking-[-0.011em] font-body">
       {rawBlocks.map((block, blockIdx) => {
         const trimmed = block.trim();
 
@@ -63,7 +101,7 @@ export default function ArticleContent({ content }: ArticleContentProps) {
                 const cleanPart = part.trim();
                 if (!cleanPart) return null;
                 return (
-                  <p key={pIdx} className="leading-[1.72] text-ink/85 mb-6">
+                  <p key={pIdx} className="leading-[1.75] text-ink/85 mb-6">
                     {cleanPart}
                   </p>
                 );
@@ -72,11 +110,81 @@ export default function ArticleContent({ content }: ArticleContentProps) {
           );
         }
 
-        // 2. Detect if block is a numbered list (either multi-line or single-line containing 1. ... 2. ...)
-        const isNumberedList = /^\s*1[\.\)]\s+/m.test(trimmed) || /(?:^|\n)\s*\d+[\.\)]\s+/.test(trimmed);
+        // 2. Detect Code Fences (```json ... ```)
+        if (trimmed.startsWith("```")) {
+          const lines = trimmed.split("\n");
+          const language = lines[0].replace(/^```/, "").trim() || "json";
+          const code = lines.slice(1, lines[lines.length - 1].startsWith("```") ? -1 : undefined).join("\n");
+          return <CodeBlockRenderer key={blockIdx} code={code} language={language} />;
+        }
 
+        // 3. Detect Rule Callout Cards (e.g. "Rule 1: ...", "Rule 2: ...", "Rule 3: ...")
+        if (/^Rule\s+\d+:/i.test(trimmed)) {
+          const ruleMatch = trimmed.match(/^(Rule\s+\d+:)\s*([\s\S]*)$/i);
+          const ruleHeader = ruleMatch ? ruleMatch[1] : "Rule";
+          const ruleBody = ruleMatch ? ruleMatch[2] : trimmed;
+
+          return (
+            <div
+              key={blockIdx}
+              className="my-6 rounded-2xl border border-border/80 bg-cream/70 p-5 sm:p-6 border-l-4 border-l-teal shadow-sm"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold uppercase tracking-wide bg-teal/10 text-teal border border-teal/20">
+                  {ruleHeader}
+                </span>
+              </div>
+              <p className="text-base sm:text-lg leading-relaxed text-ink/90 font-medium">
+                {ruleBody}
+              </p>
+            </div>
+          );
+        }
+
+        // 4. Detect Section Headings (starts with ### or ## or #)
+        if (/^#{1,3}\s+/.test(trimmed)) {
+          const headingText = trimmed.replace(/^#{1,3}\s+/, "");
+          return (
+            <h2 key={blockIdx} className="font-heading text-2xl sm:text-3xl font-extrabold text-ink pt-8 pb-3 border-b border-border/60 tracking-tight">
+              {headingText}
+            </h2>
+          );
+        }
+
+        // 5. Detect Call-to-Action phone dial paragraphs (e.g. "call +1 800 ...")
+        if (/call\s+(\+?1?[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4})/i.test(trimmed)) {
+          const phoneMatch = trimmed.match(/(\+?1?[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4})/);
+          const rawPhone = phoneMatch ? phoneMatch[1] : SITE_PHONE_NUMBER;
+          const cleanPhone = rawPhone.replace(/\D/g, "");
+
+          return (
+            <div
+              key={blockIdx}
+              className="my-8 rounded-2xl border-2 border-coral/30 bg-coral/5 p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm"
+            >
+              <div>
+                <span className="inline-flex items-center gap-1.5 rounded-md bg-coral/10 text-coral-text px-2.5 py-1 text-xs font-mono font-bold uppercase tracking-wider mb-2">
+                  <Sparkles className="size-3.5" />
+                  Live Phone Demo
+                </span>
+                <p className="font-heading font-bold text-lg sm:text-xl text-ink">
+                  {trimmed}
+                </p>
+              </div>
+              <a
+                href={`tel:${cleanPhone}`}
+                className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-coral hover:bg-coral-text text-white px-6 py-3.5 font-heading font-bold text-sm shadow-md transition-colors"
+              >
+                <Phone className="size-4" />
+                Dial {rawPhone}
+              </a>
+            </div>
+          );
+        }
+
+        // 6. Detect Numbered Lists (1. Title: Description)
+        const isNumberedList = /^\s*1[\.\)]\s+/m.test(trimmed) || /(?:^|\n)\s*\d+[\.\)]\s+/.test(trimmed);
         if (isNumberedList) {
-          // Split by numeric item boundaries: 1. / 2. / 3.
           const items = trimmed
             .split(/(?:^|\n|\s{2,})(?=\d+[\.\)]\s+)/)
             .map((item) => item.trim())
@@ -90,7 +198,6 @@ export default function ArticleContent({ content }: ArticleContentProps) {
                   const num = match ? match[1] : itemIdx + 1;
                   const itemBody = match ? match[2] : item;
 
-                  // Check if item has a bold title before a colon (e.g. "Title: Description")
                   const colonIndex = itemBody.indexOf(":");
                   let itemTitle = "";
                   let itemDesc = itemBody;
@@ -130,102 +237,9 @@ export default function ArticleContent({ content }: ArticleContentProps) {
           }
         }
 
-        // 2. Detect Bullet Lists (- item, • item, * item)
-        if (/^\s*[-•*]\s+/m.test(trimmed)) {
-          const bulletItems = trimmed
-            .split(/\n+/)
-            .map((l) => l.trim())
-            .filter((l) => /^[-•*]\s+/.test(l));
-
-          return (
-            <ul key={blockIdx} className="my-6 space-y-3">
-              {bulletItems.map((item, itemIdx) => (
-                <li key={itemIdx} className="flex items-start gap-3 text-base sm:text-lg text-ink/85">
-                  <CheckCircle2 className="size-5 text-teal shrink-0 mt-1" />
-                  <span>{item.replace(/^[-•*]\s+/, "")}</span>
-                </li>
-              ))}
-            </ul>
-          );
-        }
-
-        // 3. Detect Call-to-Action phone dial paragraphs (e.g. "Call +1 (614) ...")
-        if (/call\s+(\+?1?[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4})/i.test(trimmed)) {
-          const phoneMatch = trimmed.match(/(\+?1?[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4})/);
-          const rawPhone = phoneMatch ? phoneMatch[1] : SITE_PHONE_NUMBER;
-          const cleanPhone = rawPhone.replace(/\D/g, "");
-
-          return (
-            <div
-              key={blockIdx}
-              className="my-8 rounded-2xl border-2 border-coral/30 bg-coral/5 p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6"
-            >
-              <div>
-                <span className="inline-flex items-center gap-1.5 rounded-md bg-coral/10 text-coral-text px-2.5 py-1 text-xs font-mono font-bold uppercase tracking-wider mb-2">
-                  <Sparkles className="size-3.5" />
-                  Live Phone Demo
-                </span>
-                <p className="font-heading font-bold text-lg sm:text-xl text-ink">
-                  {trimmed}
-                </p>
-              </div>
-              <a
-                href={`tel:${cleanPhone}`}
-                className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-coral hover:bg-coral-text text-white px-6 py-3.5 font-heading font-bold text-sm shadow-md transition-colors"
-              >
-                <Phone className="size-4" />
-                Dial {rawPhone}
-              </a>
-            </div>
-          );
-        }
-
-        // 4. Detect Markdown Images (![alt](url))
-        if (/^\s*!\[(.*?)\]\((.*?)\)/.test(trimmed)) {
-          const imgMatch = trimmed.match(/!\[(.*?)\]\((.*?)\)/);
-          if (imgMatch) {
-            const altText = imgMatch[1] || "Editorial Image";
-            const imgSrc = imgMatch[2];
-            return (
-              <div key={blockIdx} className="my-8 overflow-hidden rounded-2xl border border-border bg-cream shadow-sm">
-                <img
-                  src={imgSrc}
-                  alt={altText}
-                  className="w-full h-auto max-h-[520px] object-cover object-center transition-transform duration-300 hover:scale-[1.01]"
-                  loading="eager"
-                />
-                {altText && altText !== "Hero Image" && (
-                  <p className="px-4 py-2 text-xs font-mono text-ink/60 bg-cream/50 border-t border-border/40 text-center italic">
-                    {altText}
-                  </p>
-                )}
-              </div>
-            );
-          }
-        }
-
-        // 5. Detect Section Headings (starts with ## or # or ends with a colon on short lines)
-        if (/^#{1,3}\s+/.test(trimmed)) {
-          const headingText = trimmed.replace(/^#{1,3}\s+/, "");
-          return (
-            <h2 key={blockIdx} className="font-heading text-2xl sm:text-3xl font-extrabold text-ink pt-6 pb-2 border-b border-border/60">
-              {headingText}
-            </h2>
-          );
-        }
-
-        // 5. Detect Blockquotes (starts with > or enclosed in quotes)
-        if (trimmed.startsWith("> ")) {
-          return (
-            <blockquote key={blockIdx} className="my-6 border-l-4 border-teal bg-cream/70 p-5 rounded-r-xl italic text-ink/90 text-lg">
-              {trimmed.replace(/^>\s+/, "")}
-            </blockquote>
-          );
-        }
-
-        // 6. Standard Clean Paragraph
+        // 7. Standard Paragraph
         return (
-          <p key={blockIdx} className="leading-relaxed text-ink/85">
+          <p key={blockIdx} className="leading-[1.75] text-ink/85 mb-6">
             {trimmed}
           </p>
         );

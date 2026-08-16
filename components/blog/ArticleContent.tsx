@@ -23,7 +23,7 @@ export default function ArticleContent({ content }: ArticleContentProps) {
   const rawBlocks = cleanedContent.split(/\n\n+/).filter(Boolean);
 
   return (
-    <div className="space-y-8 text-ink/90 text-lg leading-relaxed font-body">
+    <div className="space-y-8 text-ink/90 text-[1.09375rem] leading-[1.72] tracking-[-0.011em] font-body">
       {rawBlocks.map((block, blockIdx) => {
         const trimmed = block.trim();
 
@@ -35,18 +35,25 @@ export default function ArticleContent({ content }: ArticleContentProps) {
               {parts.map((part, pIdx) => {
                 const imgMatch = part.match(/!\[(.*?)\]\((.*?)\)/);
                 if (imgMatch) {
-                  const altText = imgMatch[1] || "Editorial Image";
+                  const altText = imgMatch[1] || "Editorial Cover Card";
                   const imgSrc = imgMatch[2];
                   return (
-                    <div key={pIdx} className="my-8 overflow-hidden rounded-2xl border border-border bg-cream shadow-sm">
-                      <img
-                        src={imgSrc}
-                        alt={altText}
-                        className="w-full h-auto max-h-[520px] object-cover object-center transition-transform duration-300 hover:scale-[1.01]"
-                        loading="eager"
-                      />
-                      {altText && altText !== "Hero Image" && (
-                        <p className="px-4 py-2 text-xs font-mono text-ink/60 bg-cream/50 border-t border-border/40 text-center italic">
+                    <div key={pIdx} className="relative my-8 group">
+                      {/* Ambient Teal & Coral Diffusion Glow */}
+                      <div className="absolute -inset-1.5 bg-gradient-to-r from-teal/25 via-accent-blue/20 to-coral/25 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition duration-700 -z-10" />
+                      
+                      {/* Cinematic 16:9 Image Stage with Inner Ring */}
+                      <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-ink shadow-2xl shadow-ink/20">
+                        <img
+                          src={imgSrc}
+                          alt={altText}
+                          className="w-full aspect-[16/9] object-cover object-center transition-transform duration-500 hover:scale-[1.01]"
+                          loading="eager"
+                        />
+                        <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl" />
+                      </div>
+                      {altText && altText !== "Editorial Image" && (
+                        <p className="mt-3 text-center text-xs font-mono tracking-tight text-ink/60 italic">
                           {altText}
                         </p>
                       )}
@@ -56,7 +63,7 @@ export default function ArticleContent({ content }: ArticleContentProps) {
                 const cleanPart = part.trim();
                 if (!cleanPart) return null;
                 return (
-                  <p key={pIdx} className="leading-relaxed text-ink/85">
+                  <p key={pIdx} className="leading-[1.72] text-ink/85 mb-6">
                     {cleanPart}
                   </p>
                 );

@@ -140,7 +140,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         />
       ))}
 
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[720px] px-4 sm:px-6">
         
         {/* Breadcrumb / Back Link */}
         <div className="mb-8">
@@ -154,7 +154,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
 
         {/* Article Container */}
-        <div className="rounded-3xl border border-border bg-white p-6 sm:p-12 shadow-sm">
+        <div className="rounded-3xl border border-border bg-white p-6 sm:p-10 shadow-sm">
           
           {/* Metadata Header */}
           <div className="flex flex-wrap items-center gap-3 mb-6 pb-6 border-b border-border">

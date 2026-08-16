@@ -131,7 +131,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   ];
 
   return (
-    <article className="bg-cream min-h-screen py-12 md:py-16">
+    <article className="bg-[#faf9f6] min-h-screen py-10 md:py-16">
       {structuredData.map((schema, sIdx) => (
         <script
           key={sIdx}
@@ -140,29 +140,29 @@ export default async function BlogPostPage({ params }: PageProps) {
         />
       ))}
 
-      <div className="mx-auto max-w-[720px] px-4 sm:px-6">
+      {/* Main Wide Container */}
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumb / Back Link */}
-        <div className="mb-8">
+        <div className="mb-8 max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-ink/70 hover:text-teal transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-ink/60 hover:text-teal transition-colors"
           >
             <ArrowLeft className="size-4" />
             Back to All Playbooks
           </Link>
         </div>
 
-        {/* Article Container */}
-        <div className="rounded-3xl border border-border bg-white p-6 sm:p-10 shadow-sm">
-          
-          {/* Metadata Header */}
-          <div className="flex flex-wrap items-center gap-3 mb-6 pb-6 border-b border-border">
-            <span className="inline-flex items-center gap-1.5 rounded-lg bg-teal/10 text-teal px-3 py-1 text-xs font-mono font-bold tracking-wide uppercase">
+        {/* Editorial Header Section (Wide & Expansive) */}
+        <header className="max-w-3xl mx-auto text-left mb-10">
+          {/* Category & Read Time Metadata */}
+          <div className="flex flex-wrap items-center gap-3 mb-5">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-teal/10 text-teal px-3.5 py-1 text-xs font-mono font-bold tracking-wide uppercase border border-teal/20">
               <Tag className="size-3.5" />
               {post.audience} Playbook
             </span>
-            <span className="inline-flex items-center gap-1.5 text-xs font-mono text-ink/60 bg-cream px-3 py-1 rounded-lg border border-border">
+            <span className="inline-flex items-center gap-1.5 text-xs font-mono text-ink/60 bg-white px-3 py-1 rounded-full border border-border/80 shadow-xs">
               <Clock className="size-3.5 text-teal" />
               {post.readingTimeMinutes} min read
             </span>
@@ -176,37 +176,19 @@ export default async function BlogPostPage({ params }: PageProps) {
             </span>
           </div>
 
-          {/* Title & Subtitle */}
-          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink tracking-tight mb-6 leading-tight">
+          {/* Grand H1 Headline */}
+          <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-black text-ink tracking-tight leading-[1.12] mb-6">
             {post.title}
           </h1>
 
-          {post.subtitle && (
-            <p className="text-xl text-ink/80 font-medium leading-relaxed mb-8">
-              {post.subtitle}
-            </p>
-          )}
-
-          {/* Featured Editorial Hero Image */}
-          {post.featured_image && (
-            <div className="my-8 overflow-hidden rounded-2xl border border-border bg-cream shadow-sm">
-              <img
-                src={post.featured_image}
-                alt={post.title}
-                className="w-full h-auto max-h-[480px] object-cover object-center transition-transform duration-300 hover:scale-[1.01]"
-                loading="eager"
-              />
-            </div>
-          )}
-
-          {/* Hook Callout Box */}
+          {/* Field Reality Hook Callout */}
           {post.hook && (
-            <div className="my-8 rounded-2xl border-l-4 border-coral bg-cream p-6">
+            <div className="my-6 rounded-2xl border-l-4 border-coral bg-white p-6 shadow-xs border border-border/60">
               <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-coral mb-2">
                 <Sparkles className="size-4" />
                 The Field Reality
               </div>
-              <p className="font-heading font-semibold text-lg text-ink leading-relaxed">
+              <p className="font-heading font-semibold text-lg sm:text-xl text-ink leading-snug">
                 &ldquo;{post.hook}&rdquo;
               </p>
             </div>
@@ -214,32 +196,34 @@ export default async function BlogPostPage({ params }: PageProps) {
 
           {/* Core Argument Box */}
           {post.core_argument && (
-            <div className="my-6 rounded-xl border border-teal/20 bg-teal/5 p-4 flex items-start gap-3">
+            <div className="my-4 rounded-xl border border-teal/20 bg-teal/5 p-4 flex items-start gap-3">
               <ShieldCheck className="size-5 text-teal shrink-0 mt-0.5" />
               <div>
                 <span className="text-xs font-mono font-bold uppercase tracking-wide text-teal block mb-1">
                   Core Argument
                 </span>
-                <p className="text-sm font-medium text-ink/90">
+                <p className="text-sm sm:text-base font-medium text-ink/90">
                   {post.core_argument}
                 </p>
               </div>
             </div>
           )}
+        </header>
 
-          {/* Article Body Content */}
-          <div className="mt-10 border-t border-border pt-8">
+        {/* Article Body Section (Ergonomic 780px Measure) */}
+        <div className="max-w-3xl mx-auto">
+          <div className="pt-2">
             <ArticleContent content={post.content} />
           </div>
 
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
-            <div className="mt-12 pt-6 border-t border-border flex flex-wrap items-center gap-2">
+            <div className="mt-14 pt-6 border-t border-border/80 flex flex-wrap items-center gap-2">
               <span className="text-xs font-mono text-ink/50 uppercase tracking-wider mr-2">Tags:</span>
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-lg bg-cream px-3 py-1 text-xs font-mono font-medium text-teal border border-border"
+                  className="rounded-lg bg-white px-3 py-1 text-xs font-mono font-medium text-teal border border-border/80 shadow-xs"
                 >
                   #{tag}
                 </span>
@@ -248,9 +232,9 @@ export default async function BlogPostPage({ params }: PageProps) {
           )}
 
           {/* Author Footer */}
-          <div className="mt-8 pt-6 border-t border-border flex flex-wrap items-center justify-between gap-4">
+          <div className="mt-8 pt-6 border-t border-border/80 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3.5">
-              <div className="size-11 rounded-full bg-teal flex items-center justify-center text-white font-heading font-extrabold text-base">
+              <div className="size-12 rounded-full bg-teal flex items-center justify-center text-white font-heading font-extrabold text-lg shadow-sm">
                 M
               </div>
               <div>
@@ -266,28 +250,32 @@ export default async function BlogPostPage({ params }: PageProps) {
               Browse more playbooks ➔
             </Link>
           </div>
-        </div>
 
-        {/* Live Demo Conversion Banner */}
-        <div className="mt-12 rounded-3xl bg-ink text-white p-8 sm:p-10 text-center relative overflow-hidden shadow-lg">
-          <h3 className="font-heading text-2xl sm:text-3xl font-extrabold mb-3">
-            Want to see this in action for your own business?
-          </h3>
-          <p className="text-cream/80 text-sm sm:text-base max-w-xl mx-auto mb-6 leading-relaxed">
-            Call our live test line right now. Hear how our voice agent handles a real emergency service inquiry in under 1.8 seconds.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href={`tel:${SITE_PHONE_NUMBER.replace(/\D/g, "")}`}
-              className="inline-flex items-center gap-2 rounded-xl bg-coral hover:bg-coral-text text-white px-6 py-3.5 font-heading font-bold text-sm shadow-md transition-colors"
-            >
-              <Phone className="size-4" />
-              Dial Live AI Demo: {SITE_PHONE_NUMBER}
-            </a>
-            <Button href="/pricing" variant="secondary">
-              View Simple Pricing
-            </Button>
+          {/* Live Demo Conversion Card */}
+          <div className="mt-14 rounded-3xl bg-ink text-white p-8 sm:p-12 text-center relative overflow-hidden shadow-xl border border-ink/20">
+            <div className="absolute top-0 right-0 -mt-8 -mr-8 size-40 bg-teal/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 -mb-8 -ml-8 size-40 bg-coral/20 rounded-full blur-3xl pointer-events-none" />
+
+            <h3 className="font-heading text-2xl sm:text-3xl font-extrabold mb-3 relative z-10">
+              Want to see this in action for your own business?
+            </h3>
+            <p className="text-cream/80 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed relative z-10">
+              Call our live test line right now. Hear how our voice agent handles a real emergency service inquiry in under 1.8 seconds.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 relative z-10">
+              <a
+                href={`tel:${SITE_PHONE_NUMBER.replace(/\D/g, "")}`}
+                className="inline-flex items-center gap-2 rounded-xl bg-coral hover:bg-coral-text text-white px-6 py-3.5 font-heading font-bold text-sm shadow-md transition-colors"
+              >
+                <Phone className="size-4" />
+                Dial Live AI Demo: {SITE_PHONE_NUMBER}
+              </a>
+              <Button href="/pricing" variant="secondary">
+                View Simple Pricing
+              </Button>
+            </div>
           </div>
+
         </div>
 
       </div>

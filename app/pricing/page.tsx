@@ -6,11 +6,12 @@ import Reveal from "@/components/ui/Reveal";
 import { pricingPlans, pricingFaq } from "@/lib/data/pricing";
 import { BOOKING_CALENDAR_URL, DEMO_VIDEO_URL } from "@/lib/data/placeholders";
 import FaqSection from "@/components/sections/faq/FaqSection";
+import SecurityTrustSection from "@/components/sections/home/SecurityTrustSection";
 
 export const metadata: Metadata = {
   title: "Pricing — Flat Monthly Plans for AI Answering & Automation",
   description:
-    "Professional AI, predictable pricing. Starter Crew $299, Full Crew $799, or a custom Commercial Crew plan.",
+    "Professional AI, predictable pricing. Starter Crew $299, Full Crew $799, or a custom Commercial Crew plan. 30-day money back guarantee.",
 };
 
 export default function PricingPage() {
@@ -41,6 +42,8 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
+
+      <SecurityTrustSection />
 
       <section className="bg-cream py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">

@@ -74,24 +74,39 @@ export default function RootLayout({
       {
         "@type": "Organization",
         "@id": "https://www.getminions.ai/#organization",
-        "name": "getminions.ai",
+        "name": "Minions.AI",
+        "legalName": "Minions.AI",
         "url": "https://www.getminions.ai",
-        "logo": "https://www.getminions.ai/favicon.ico",
+        "logo": "https://www.getminions.ai/images/minions_ai_logo_primary_transparent.png",
         "description":
-          "The premier AI operations partner for US home-services businesses with 1–10 technicians. Answers phone lines 24/7 in under 1.8 seconds, texts back missed callers in 4 seconds, and books jobs directly to Google Calendar and EspoCRM.",
+          "The 24/7 AI front office and speed-to-lead crew for trade & home service contractors. Answers calls in under 1.8s, qualifies emergency repairs, and schedules jobs directly to ServiceTitan, Jobber, and Housecall Pro.",
         "foundingDate": "2026",
         "founders": [
-          { "@type": "Person", "name": "Rakib" },
-          { "@type": "Person", "name": "Parvej" }
+          {
+            "@type": "Person",
+            "name": "Rakib",
+            "jobTitle": "Co-Founder & Operations Architecture",
+            "sameAs": "https://www.linkedin.com/in/rakibs"
+          },
+          {
+            "@type": "Person",
+            "name": "Parvej",
+            "jobTitle": "Co-Founder & AI Voice Engineering",
+            "sameAs": "https://www.linkedin.com/in/parvej"
+          }
         ],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-800-555-0199",
-          "contactType": "sales and live demo",
+          "email": "hello@getminions.ai",
+          "contactType": "customer support and sales",
           "availableLanguage": "English"
         },
         "sameAs": [
-          "https://www.getminions.ai/blog",
+          "https://www.linkedin.com/company/getminions-ai",
+          "https://x.com/getminions_ai",
+          "https://github.com/xpeedlab-netizen/minions-ai",
+          "https://www.youtube.com/@getminions-ai",
           "https://www.getminions.ai/llms.txt"
         ]
       },

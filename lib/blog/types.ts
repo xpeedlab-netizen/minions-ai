@@ -40,4 +40,8 @@ export interface BlogPublishPayload {
   og_image?: string;
   asset_id?: string;
   doc_url?: string;
+  author?: {
+    name: string;
+    role?: string;
+  };
 }

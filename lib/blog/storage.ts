@@ -179,6 +179,8 @@ export async function savePost(payload: BlogPublishPayload): Promise<BlogPost> {
     .slice(0, 160)
     .trim();
 
+  const authorName = payload.author?.name || "Minions.AI Team";
+
   const post: BlogPost = {
     slug,
     title: payload.title,
@@ -189,9 +191,9 @@ export async function savePost(payload: BlogPublishPayload): Promise<BlogPost> {
     audience: payload.audience || "ICP",
     pillar: payload.pillar || "Contractor Realities",
     author: {
-      name: "Minions.AI Team",
-      role: "Operations & AI Dispatch",
-      avatar: "/brand/minions-crew.png",
+      name: authorName,
+      role: payload.author?.role || "Co-Founder, Minions.AI",
+      avatar: "/images/minions_ai_logo_primary_transparent.png",
     },
     publishedAt: now,
     readingTimeMinutes: readingTime,

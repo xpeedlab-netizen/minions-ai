@@ -73,10 +73,10 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://getminions.ai/#organization",
+        "@id": "https://www.getminions.ai/#organization",
         "name": "getminions.ai",
-        "url": "https://getminions.ai",
-        "logo": "https://getminions.ai/favicon.ico",
+        "url": "https://www.getminions.ai",
+        "logo": "https://www.getminions.ai/favicon.ico",
         "description":
           "The premier AI operations partner for US home-services businesses with 1–10 technicians. Answers phone lines 24/7 in under 1.8 seconds, texts back missed callers in 4 seconds, and books jobs directly to Google Calendar and EspoCRM.",
         "foundingDate": "2026",
@@ -91,13 +91,13 @@ export default function RootLayout({
           "availableLanguage": "English"
         },
         "sameAs": [
-          "https://getminions.ai/blog",
-          "https://getminions.ai/llms.txt"
+          "https://www.getminions.ai/blog",
+          "https://www.getminions.ai/llms.txt"
         ]
       },
       {
         "@type": "SoftwareApplication",
-        "@id": "https://getminions.ai/#software",
+        "@id": "https://www.getminions.ai/#software",
         "name": "getminions.ai",
         "operatingSystem": "Cloud / Voice SIP",
         "applicationCategory": "BusinessApplication",

@@ -1,6 +1,6 @@
 # Minions.AI — Complete Technical & Operational Reference for AI Engines
 
-> Canonical Source: https://getminions.ai
+> Canonical Source: https://www.getminions.ai
 > Documentation Standard: llms.txt v1.1
 > Published: August 2026
 > Operators: Minions.AI (Rakib & Parvej)
@@ -80,6 +80,6 @@ Minions.AI uses dedicated specialized agents rather than a single monolithic cha
 
 ## 5. Live Demonstration & Verification
 - **Live Test Line**: Dial **+1 (800) 555-0199**
-- **Website**: https://getminions.ai
-- **Live Blog & Playbooks**: https://getminions.ai/blog
-- **XML Sitemap**: https://getminions.ai/sitemap.xml
+- **Website**: https://www.getminions.ai
+- **Live Blog & Playbooks**: https://www.getminions.ai/blog
+- **XML Sitemap**: https://www.getminions.ai/sitemap.xml

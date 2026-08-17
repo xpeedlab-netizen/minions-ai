@@ -14,15 +14,15 @@
 - **Demo Scenario**: Hear "Alex" answer as a live home-services company, qualify an emergency repair, check calendar availability, and confirm booking.
 
 ## Primary Industry Solutions
-- **Plumbing & Drain**: https://getminions.ai/industries/plumbing
-- **HVAC & Heating**: https://getminions.ai/industries/hvac
-- **Roofing & Restoration**: https://getminions.ai/industries/roofing
-- **Pest Control**: https://getminions.ai/industries/pest-control
-- **Electrical**: https://getminions.ai/industries/electrical
+- **Plumbing & Drain**: https://www.getminions.ai/industries/plumbing
+- **HVAC & Heating**: https://www.getminions.ai/industries/hvac
+- **Roofing & Restoration**: https://www.getminions.ai/industries/roofing
+- **Pest Control**: https://www.getminions.ai/industries/pest-control
+- **Electrical**: https://www.getminions.ai/industries/electrical
 
 ## Field Guides & Technical Playbooks
-- **Blog & Knowledge Base**: https://getminions.ai/blog
-- **XML Sitemap**: https://getminions.ai/sitemap.xml
-- **Speed to Lead Economics**: https://getminions.ai/speed-to-lead
-- **How It Works**: https://getminions.ai/how-it-works
-- **Simple Pricing**: https://getminions.ai/pricing
+- **Blog & Knowledge Base**: https://www.getminions.ai/blog
+- **XML Sitemap**: https://www.getminions.ai/sitemap.xml
+- **Speed to Lead Economics**: https://www.getminions.ai/speed-to-lead
+- **How It Works**: https://www.getminions.ai/how-it-works
+- **Simple Pricing**: https://www.getminions.ai/pricing

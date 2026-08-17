@@ -70,20 +70,20 @@ export default async function BlogPostPage({ params }: PageProps) {
       "author": {
         "@type": "Organization",
         "name": post.author.name,
-        "url": "https://getminions.ai"
+        "url": "https://www.getminions.ai"
       },
       "publisher": {
         "@type": "Organization",
         "name": "Minions.AI",
-        "url": "https://getminions.ai",
+        "url": "https://www.getminions.ai",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://getminions.ai/favicon.ico"
+          "url": "https://www.getminions.ai/favicon.ico"
         }
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": `https://getminions.ai/blog/${post.slug}`
+        "@id": `https://www.getminions.ai/blog/${post.slug}`
       }
     },
     {
@@ -94,19 +94,19 @@ export default async function BlogPostPage({ params }: PageProps) {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://getminions.ai"
+          "item": "https://www.getminions.ai"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog & Field Guides",
-          "item": "https://getminions.ai/blog"
+          "item": "https://www.getminions.ai/blog"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": post.title,
-          "item": `https://getminions.ai/blog/${post.slug}`
+          "item": `https://www.getminions.ai/blog/${post.slug}`
         }
       ]
     },

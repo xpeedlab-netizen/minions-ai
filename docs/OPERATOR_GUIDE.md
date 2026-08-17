@@ -53,7 +53,7 @@ Registry URL: [Open Google Sheet](https://docs.google.com/spreadsheets/d/1sO_u4T
 | :--- | :--- | :--- |
 | **`claims_ok: Y`** | All claims are 100% compliant with brand rules (no fake clients, no unverified stats). | **Auto-publishes immediately** to `getminions.ai/blog` and your **Facebook Page**. |
 | **`claims_ok: N`** | The article contains a specific new number or claim needing verification. | Held in review queue. Telegram alerts you that manual check is required. |
-| **`blog_status: PUBLISHED`** | Successfully inserted into the live Supabase database and active on web. | Viewable at `https://getminions.ai/blog/<slug>`. |
+| **`blog_status: PUBLISHED`** | Successfully inserted into the live Supabase database and active on web. | Viewable at `https://www.getminions.ai/blog/<slug>`. |
 
 ---
 
@@ -100,7 +100,7 @@ Registry URL: [Open Google Sheet](https://docs.google.com/spreadsheets/d/1sO_u4T
 
 - 📊 **Google Sheet Registry**: [docs.google.com/spreadsheets/d/1sO_u4TVY_YN8j_X1NPV8OZluqkGnxyrhuIAcOdMhNvY](https://docs.google.com/spreadsheets/d/1sO_u4TVY_YN8j_X1NPV8OZluqkGnxyrhuIAcOdMhNvY/edit)
 - 📘 **Official Facebook Page**: [facebook.com/122104756401433688](https://www.facebook.com/122104756401433688)
-- 📚 **Live Blog Hub**: [getminions.ai/blog](https://getminions.ai/blog)
-- 🤖 **AI Search Index**: [getminions.ai/llms.txt](https://getminions.ai/llms.txt)
-- 🗺️ **XML Sitemap**: [getminions.ai/sitemap.xml](https://getminions.ai/sitemap.xml)
+- 📚 **Live Blog Hub**: [getminions.ai/blog](https://www.getminions.ai/blog)
+- 🤖 **AI Search Index**: [getminions.ai/llms.txt](https://www.getminions.ai/llms.txt)
+- 🗺️ **XML Sitemap**: [getminions.ai/sitemap.xml](https://www.getminions.ai/sitemap.xml)
 - 🗄️ **Supabase Database Dashboard**: [supabase.com/dashboard/project/kneafaxwkopodiausljf](https://supabase.com/dashboard/project/kneafaxwkopodiausljf)

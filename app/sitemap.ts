@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog/storage";
 
-const BASE_URL = "https://getminions.ai";
+const BASE_URL = "https://www.getminions.ai";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts();

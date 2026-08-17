@@ -78,6 +78,27 @@ export default function PrivacyPage() {
       </div>
 
       <div>
+        <h2>Google API Services & User Data Policy</h2>
+        <p>
+          Minions AI integrations access Google user data to provide authentication and calendar automation features. Specifically:
+        </p>
+        <ul className="list-disc pl-6 space-y-2 mt-2">
+          <li>
+            <strong>Google Account Information (Email, Profile, OpenID):</strong> Used solely to authenticate your identity and provision your workspace account.
+          </li>
+          <li>
+            <strong>Google Calendar Data (Calendar Events & Read-only Access):</strong> Used exclusively to check scheduling availability, book outreach meetings, and synchronize appointments directly on your calendar.
+          </li>
+        </ul>
+        <p className="mt-3">
+          <strong>Limited Use Disclosure:</strong> Minions AI&apos;s use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" className="text-teal underline">Google API Services User Data Policy</a>, including the Limited Use requirements.
+        </p>
+        <p className="mt-2">
+          We do not sell Google user data, nor do we use Google user data to train generalized AI/ML models. You can revoke Minions AI&apos;s access to your Google account at any time via your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" className="text-teal underline">Google Account Security Settings</a>.
+        </p>
+      </div>
+
+      <div>
         <h2>Retention</h2>
         <p>
           We keep contact and demo data only as long as needed to respond to you, deliver the

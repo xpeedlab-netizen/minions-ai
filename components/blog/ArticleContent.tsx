@@ -11,6 +11,7 @@ interface ArticleContentProps {
 // Clean typography and punctuation artifacts
 function cleanTextFormatting(text: string): string {
   return text
+    .replace(/!\[([^\]]*)\]\s*\((https?:\/\/[^)\s]+)\)/g, "\n\n![$1]($2)\n\n")
     .replace(/\s+,\s+/g, ", ")
     .replace(/\s+,\s*$/gm, ",")
     .replace(/—/g, ", ")
@@ -28,7 +29,7 @@ function CodeBlockRenderer({ code, language }: { code: string; language?: string
   };
 
   return (
-    <div className="my-8 overflow-hidden rounded-2xl border border-ink/40 bg-[#0c0d12] shadow-2xl">
+    <div className="my-8 overflow-hidden rounded-2xl border border-ink/40 bg-[#0c0d12] shadow-2xl max-w-full">
       {/* Top Window Bar */}
       <div className="flex items-center justify-between px-4 py-3 bg-[#161822] border-b border-ink/30 text-xs font-mono text-ink/70">
         <div className="flex items-center gap-2">
@@ -49,7 +50,7 @@ function CodeBlockRenderer({ code, language }: { code: string; language?: string
       </div>
 
       {/* Code Text */}
-      <pre className="p-5 text-sm font-mono leading-relaxed text-[#00F2FE] overflow-x-auto selection:bg-teal/30">
+      <pre className="p-4 sm:p-5 text-xs sm:text-sm font-mono leading-relaxed text-[#00F2FE] overflow-x-auto selection:bg-teal/30 max-w-full">
         <code>{code.trim()}</code>
       </pre>
     </div>
@@ -63,37 +64,60 @@ export default function ArticleContent({ content }: ArticleContentProps) {
   const rawBlocks = cleanedContent.split(/\n\n+/).filter(Boolean);
 
   return (
-    <div className="space-y-8 text-ink/90 text-[1.09375rem] leading-[1.75] tracking-[-0.011em] font-body">
+    <div className="space-y-8 text-ink/90 text-[1.09375rem] leading-[1.75] tracking-[-0.011em] font-body max-w-full">
       {rawBlocks.map((block, blockIdx) => {
         const trimmed = block.trim();
 
-        // 1. Detect Markdown Images (![alt](url)) - Highest Priority
-        if (trimmed.includes("![") && trimmed.includes("](") && trimmed.includes(")")) {
+        // 1. Detect Markdown Images (![alt](url)) or standalone image URLs - Highest Priority
+        if (
+          (trimmed.includes("![") && trimmed.includes("](") && trimmed.includes(")")) ||
+          /^\(?(https?:\/\/[^\s)]+\.(png|jpe?g|webp|svg|gif)(\?[^\s)]*)?)\)?$/i.test(trimmed) ||
+          /^\(?(https?:\/\/image\.pollinations\.ai\/[^\s)]+)\)?$/i.test(trimmed)
+        ) {
+          // Check if it is a standalone image URL
+          if (/^\(?(https?:\/\/[^\s)]+)\)?$/i.test(trimmed) && (trimmed.includes("pollinations.ai") || /\.(png|jpe?g|webp|svg|gif)/i.test(trimmed))) {
+            const rawUrl = trimmed.replace(/^\(|\)$/g, "").trim();
+            return (
+              <div key={blockIdx} className="relative my-8 group max-w-full">
+                <div className="absolute -inset-1.5 bg-gradient-to-r from-teal/25 via-accent-blue/20 to-coral/25 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition duration-700 -z-10" />
+                <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-ink shadow-2xl shadow-ink/20 aspect-[16/9] w-full max-w-full">
+                  <img
+                    src={rawUrl}
+                    alt="Editorial Graphic"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-[1.01]"
+                    loading="lazy"
+                  />
+                  <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl" />
+                </div>
+              </div>
+            );
+          }
+
           const parts = trimmed.split(/(!\[.*?\]\(.*?\))/g).filter(Boolean);
           return (
-            <div key={blockIdx} className="space-y-6">
+            <div key={blockIdx} className="space-y-6 max-w-full">
               {parts.map((part, pIdx) => {
                 const imgMatch = part.match(/!\[(.*?)\]\((.*?)\)/);
                 if (imgMatch) {
                   const altText = imgMatch[1] || "Editorial Cover Card";
                   const imgSrc = imgMatch[2];
                   return (
-                    <div key={pIdx} className="relative my-8 group">
+                    <div key={pIdx} className="relative my-8 group max-w-full">
                       {/* Ambient Teal & Coral Diffusion Glow */}
                       <div className="absolute -inset-1.5 bg-gradient-to-r from-teal/25 via-accent-blue/20 to-coral/25 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition duration-700 -z-10" />
                       
                       {/* Cinematic 16:9 Image Stage with Inner Ring */}
-                      <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-ink shadow-2xl shadow-ink/20">
+                      <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-ink shadow-2xl shadow-ink/20 aspect-[16/9] w-full max-w-full">
                         <img
                           src={imgSrc}
                           alt={altText}
-                          className="w-full aspect-[16/9] object-cover object-center transition-transform duration-500 hover:scale-[1.01]"
+                          className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-[1.01]"
                           loading="eager"
                         />
                         <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl" />
                       </div>
-                      {altText && altText !== "Editorial Image" && (
-                        <p className="mt-3 text-center text-xs font-mono tracking-tight text-ink/60 italic">
+                      {altText && altText !== "Editorial Image" && altText !== "Editorial Cover Card" && (
+                        <p className="mt-3 text-center text-xs font-mono tracking-tight text-ink/60 italic truncate px-2">
                           {altText}
                         </p>
                       )}
@@ -103,7 +127,7 @@ export default function ArticleContent({ content }: ArticleContentProps) {
                 const cleanPart = part.trim();
                 if (!cleanPart) return null;
                 return (
-                  <p key={pIdx} className="leading-[1.75] text-ink/85 mb-6">
+                  <p key={pIdx} className="leading-[1.75] text-ink/85 mb-6 break-words [overflow-wrap:anywhere]">
                     {cleanPart}
                   </p>
                 );

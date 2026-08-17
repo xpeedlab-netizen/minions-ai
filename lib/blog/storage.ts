@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { BlogPost, BlogPublishPayload } from "./types";
+import { BlogPost, BlogPublishPayload, BlogAudience, BlogPostAuthor } from "./types";
 import { getSupabaseClient } from "./supabase";
 
 const BLOG_CONTENT_DIR = path.join(process.cwd(), "content", "blog");
@@ -86,6 +86,26 @@ function extractFeaturedImage(content?: string, explicitImg?: string): string | 
 }
 
 // Public Dual-Mode Database/File API
+interface SupabaseBlogRow {
+  slug: string;
+  title: string;
+  subtitle?: string;
+  hook?: string;
+  core_argument?: string;
+  content: string;
+  audience: BlogAudience;
+  pillar: string;
+  author?: string | BlogPostAuthor;
+  published_at: string;
+  reading_time_minutes?: number;
+  tags?: string[];
+  meta_description?: string;
+  featured_image?: string;
+  og_image?: string;
+  asset_id?: string;
+  doc_url?: string;
+}
+
 export async function getAllPosts(): Promise<BlogPost[]> {
   const supabase = getSupabaseClient();
 
@@ -97,7 +117,7 @@ export async function getAllPosts(): Promise<BlogPost[]> {
         .order("published_at", { ascending: false });
 
       if (!error && data && data.length > 0) {
-        return data.map((row: any) => {
+        return (data as unknown as SupabaseBlogRow[]).map((row) => {
           const img = extractFeaturedImage(row.content, row.featured_image);
           return {
             slug: row.slug,

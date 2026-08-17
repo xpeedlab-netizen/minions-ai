@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, MessageSquare, CheckCheck, Clock } from "lucide-react";
+import { MessageSquare, CheckCheck, Clock } from "lucide-react";
 
 export default function ZipHeroAnimation() {
   const [step, setStep] = useState<0 | 1 | 2 | 3>(3);

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FileText, CheckCircle2, RefreshCw, FolderCheck, Sparkles } from "lucide-react";
+import { CheckCircle2, RefreshCw, FolderCheck, Sparkles } from "lucide-react";
 
 export default function OttoHeroAnimation() {
   const [isProcessing, setIsProcessing] = useState(false);

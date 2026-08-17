@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, PhoneCall, CheckCircle2, Volume2, ShieldAlert } from "lucide-react";
+import { Phone, CheckCircle2, Volume2, ShieldAlert } from "lucide-react";
 
 export default function RexHeroAnimation() {
   const [callState, setCallState] = useState<"idle" | "ringing" | "answering" | "booked">("answering");

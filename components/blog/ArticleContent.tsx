@@ -11,11 +11,15 @@ interface ArticleContentProps {
 // Clean typography and punctuation artifacts
 function cleanTextFormatting(text: string): string {
   return text
+    .replace(/^(\s*#{1,6}\s+[^\n]+)/gm, "\n\n$1\n\n")
     .replace(/!\[([^\]]*)\]\s*\((https?:\/\/[^)\s]+)\)/g, "\n\n![$1]($2)\n\n")
+    .replace(/(```[\s\S]*?```)/g, "\n\n$1\n\n")
+    .replace(/^(\s*>[^\n]+)/gm, "\n\n$1\n\n")
     .replace(/\s+,\s+/g, ", ")
     .replace(/\s+,\s*$/gm, ",")
-    .replace(/—/g, ", ")
-    .replace(/--/g, ", ")
+    .replace(/—/g, " — ")
+    .replace(/--/g, " — ")
+    .replace(/\n{3,}/g, "\n\n")
     .trim();
 }
 
@@ -58,13 +62,13 @@ function CodeBlockRenderer({ code, language }: { code: string; language?: string
 }
 
 export default function ArticleContent({ content }: ArticleContentProps) {
-  const cleanedContent = cleanTextFormatting(content);
+  const cleanedContent = cleanTextFormatting(content || "");
 
   // Split content by paragraphs or blocks
   const rawBlocks = cleanedContent.split(/\n\n+/).filter(Boolean);
 
   return (
-    <div className="space-y-8 text-ink/90 text-[1.09375rem] leading-[1.75] tracking-[-0.011em] font-body max-w-full">
+    <div className="space-y-6 text-ink/90 text-base sm:text-lg leading-[1.8] font-normal tracking-normal font-sans max-w-full">
       {rawBlocks.map((block, blockIdx) => {
         const trimmed = block.trim();
 
@@ -103,10 +107,8 @@ export default function ArticleContent({ content }: ArticleContentProps) {
                   const imgSrc = imgMatch[2];
                   return (
                     <div key={pIdx} className="relative my-8 group max-w-full">
-                      {/* Ambient Teal & Coral Diffusion Glow */}
                       <div className="absolute -inset-1.5 bg-gradient-to-r from-teal/25 via-accent-blue/20 to-coral/25 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition duration-700 -z-10" />
                       
-                      {/* Cinematic 16:9 Image Stage with Inner Ring */}
                       <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-ink shadow-2xl shadow-ink/20 aspect-[16/9] w-full max-w-full">
                         <img
                           src={imgSrc}
@@ -127,7 +129,7 @@ export default function ArticleContent({ content }: ArticleContentProps) {
                 const cleanPart = part.trim();
                 if (!cleanPart) return null;
                 return (
-                  <p key={pIdx} className="leading-[1.75] text-ink/85 mb-6 break-words [overflow-wrap:anywhere]">
+                  <p key={pIdx} className="leading-[1.8] text-ink/85 mb-6 break-words [overflow-wrap:anywhere] font-normal">
                     {cleanPart}
                   </p>
                 );
@@ -168,12 +170,31 @@ export default function ArticleContent({ content }: ArticleContentProps) {
         }
 
         // 4. Detect Section Headings (starts with ### or ## or #)
-        if (/^#{1,3}\s+/.test(trimmed)) {
-          const headingText = trimmed.replace(/^#{1,3}\s+/, "");
+        if (/^#{1,6}\s+/.test(trimmed)) {
+          const lines = trimmed.split("\n");
+          const firstLine = lines[0].trim();
+          const restText = lines.slice(1).join("\n").trim();
+
+          const isH3 = firstLine.startsWith("###");
+          const headingText = firstLine.replace(/^#{1,6}\s+/, "").trim();
+
           return (
-            <h2 key={blockIdx} className="font-heading text-2xl sm:text-3xl font-extrabold text-ink pt-8 pb-3 border-b border-border/60 tracking-tight">
-              {headingText}
-            </h2>
+            <div key={blockIdx} className="space-y-4">
+              {isH3 ? (
+                <h3 className="font-heading text-xl sm:text-2xl font-bold text-ink pt-6 pb-1 tracking-tight text-teal">
+                  {headingText}
+                </h3>
+              ) : (
+                <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-ink pt-8 pb-2 border-b border-border/60 tracking-tight">
+                  {headingText}
+                </h2>
+              )}
+              {restText && (
+                <p className="leading-[1.8] text-ink/85 font-normal text-base sm:text-lg">
+                  {restText}
+                </p>
+              )}
+            </div>
           );
         }
 
@@ -243,14 +264,14 @@ export default function ArticleContent({ content }: ArticleContentProps) {
                       </div>
                       <div className="flex-1">
                         {itemTitle ? (
-                          <p className="text-base sm:text-lg leading-relaxed text-ink/90">
+                          <p className="text-base sm:text-lg leading-relaxed text-ink/90 font-normal">
                             <strong className="font-heading font-bold text-ink text-lg block sm:inline mr-1">
                               {itemTitle}
                             </strong>
                             {itemDesc}
                           </p>
                         ) : (
-                          <p className="text-base sm:text-lg leading-relaxed text-ink/90">
+                          <p className="text-base sm:text-lg leading-relaxed text-ink/90 font-normal">
                             {itemBody}
                           </p>
                         )}
@@ -265,7 +286,7 @@ export default function ArticleContent({ content }: ArticleContentProps) {
 
         // 7. Standard Paragraph
         return (
-          <p key={blockIdx} className="leading-[1.75] text-ink/85 mb-6">
+          <p key={blockIdx} className="leading-[1.8] text-ink/85 text-base sm:text-lg font-normal mb-6">
             {trimmed}
           </p>
         );

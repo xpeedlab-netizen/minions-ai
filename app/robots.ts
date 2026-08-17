@@ -8,6 +8,19 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/api/"],
       },
+      {
+        userAgent: [
+          "GPTBot",
+          "ChatGPT-User",
+          "ClaudeBot",
+          "PerplexityBot",
+          "Googlebot",
+          "bingbot",
+          "Applebot",
+        ],
+        allow: "/",
+        disallow: ["/api/"],
+      },
     ],
     sitemap: "https://www.getminions.ai/sitemap.xml",
   };

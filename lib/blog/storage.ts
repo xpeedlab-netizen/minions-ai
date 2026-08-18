@@ -201,6 +201,24 @@ export async function savePost(payload: BlogPublishPayload): Promise<BlogPost> {
 
   const authorName = payload.author?.name || "Minions.AI Team";
 
+  // Preserve the original publish date on re-publish/edit; only a brand-new slug gets "now".
+  let publishedAt = now;
+  const supabaseForLookup = getSupabaseClient();
+  if (supabaseForLookup) {
+    try {
+      const { data: existing } = await supabaseForLookup
+        .from("blogs")
+        .select("published_at")
+        .eq("slug", slug)
+        .maybeSingle();
+      if (existing?.published_at) {
+        publishedAt = existing.published_at;
+      }
+    } catch (e) {
+      console.warn("Could not look up existing published_at, defaulting to now:", e);
+    }
+  }
+
   const post: BlogPost = {
     slug,
     title: payload.title,
@@ -215,7 +233,7 @@ export async function savePost(payload: BlogPublishPayload): Promise<BlogPost> {
       role: payload.author?.role || "Co-Founder, Minions.AI",
       avatar: "/images/minions_ai_logo_primary_transparent.png",
     },
-    publishedAt: now,
+    publishedAt,
     readingTimeMinutes: readingTime,
     tags: payload.tags || [payload.audience || "ICP", payload.pillar || "Operations"],
     metaDescription: cleanDescription,

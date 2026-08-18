@@ -16,6 +16,7 @@ function cleanTextFormatting(text: string): string {
     .replace(/(```[\s\S]*?```)/g, "\n\n$1\n\n")
     .replace(/^(\s*>[^\n]+)/gm, "\n\n$1\n\n")
     .replace(/(?:^|\n|\s+)(Rule\s+\d+:)/gi, "\n\n$1")
+    .replace(/(?:^|\n|\s+)(\*\*[^*\n]{3,60}:\*\*)/g, "\n\n$1")
     .replace(/\s+,\s+/g, ", ")
     .replace(/\s+,\s*$/gm, ",")
     .replace(/—/g, " — ")
@@ -147,10 +148,18 @@ export default function ArticleContent({ content }: ArticleContentProps) {
           return <CodeBlockRenderer key={blockIdx} code={code} language={language} />;
         }
 
-        // 3. Detect Rule Callout Cards (e.g. "Rule 1: ...", "Rule 2: ...", "Rule 3: ...")
-        if (/^Rule\s+\d+:/i.test(trimmed)) {
-          const ruleMatch = trimmed.match(/^(Rule\s+\d+:)\s*([\s\S]*)$/i);
-          const ruleHeader = ruleMatch ? ruleMatch[1] : "Rule";
+        // 3. Detect Takeaway Callout Cards: legacy "Rule N: ..." posts, and the current
+        // "**Short action lead:** ..." format (variable count, no fixed label).
+        const legacyRuleMatch = /^Rule\s+\d+:/i.test(trimmed)
+          ? trimmed.match(/^(Rule\s+\d+:)\s*([\s\S]*)$/i)
+          : null;
+        const boldLeadMatch = /^\*\*[^*\n]{3,60}:\*\*/.test(trimmed)
+          ? trimmed.match(/^\*\*([^*\n]{3,60}:)\*\*\s*([\s\S]*)$/)
+          : null;
+
+        if (legacyRuleMatch || boldLeadMatch) {
+          const ruleMatch = legacyRuleMatch || boldLeadMatch;
+          const ruleHeader = ruleMatch ? ruleMatch[1] : "Takeaway";
           const ruleBody = ruleMatch ? ruleMatch[2] : trimmed;
 
           return (

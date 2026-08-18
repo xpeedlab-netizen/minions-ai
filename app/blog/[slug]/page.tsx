@@ -26,25 +26,33 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!post) {
     return {
-      title: "Article Not Found | Minions.AI",
+      title: "Article Not Found",
     };
   }
 
+  const ogImage = post.og_image || post.featured_image;
+
   return {
-    title: `${post.title} | Minions.AI`,
+    title: post.title,
     description: post.metaDescription || post.hook || post.title,
+    alternates: {
+      canonical: `https://www.getminions.ai/blog/${post.slug}`,
+    },
     openGraph: {
-      title: `${post.title} | Minions.AI`,
+      title: post.title,
       description: post.metaDescription,
+      url: `https://www.getminions.ai/blog/${post.slug}`,
       type: "article",
       publishedTime: post.publishedAt,
       authors: [post.author.name],
       tags: post.tags,
+      ...(ogImage ? { images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.metaDescription,
+      ...(ogImage ? { images: [ogImage] } : {}),
     },
   };
 }

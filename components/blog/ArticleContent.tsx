@@ -15,6 +15,7 @@ function cleanTextFormatting(text: string): string {
     .replace(/!\[([^\]]*)\]\s*\((https?:\/\/[^)\s]+)\)/g, "\n\n![$1]($2)\n\n")
     .replace(/(```[\s\S]*?```)/g, "\n\n$1\n\n")
     .replace(/^(\s*>[^\n]+)/gm, "\n\n$1\n\n")
+    .replace(/(?:^|\n|\s+)(Rule\s+\d+:)/gi, "\n\n$1")
     .replace(/\s+,\s+/g, ", ")
     .replace(/\s+,\s*$/gm, ",")
     .replace(/—/g, " — ")

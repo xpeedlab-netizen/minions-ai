@@ -189,31 +189,16 @@ export default async function BlogPostPage({ params }: PageProps) {
             {post.title}
           </h1>
 
-          {/* Field Reality Hook Callout */}
-          {post.hook && (
+          {/* Hero Pull-Quote: The Field Reality */}
+          {(post.hook || post.core_argument) && (
             <div className="my-6 rounded-2xl border-l-4 border-coral bg-white p-6 shadow-xs border border-border/60">
               <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-coral mb-2">
                 <Sparkles className="size-4" />
                 The Field Reality
               </div>
               <p className="font-heading font-semibold text-lg sm:text-xl text-ink leading-snug">
-                &ldquo;{post.hook}&rdquo;
+                &ldquo;{post.hook || post.core_argument}&rdquo;
               </p>
-            </div>
-          )}
-
-          {/* Core Argument Box */}
-          {post.core_argument && (
-            <div className="my-4 rounded-xl border border-teal/20 bg-teal/5 p-4 flex items-start gap-3">
-              <ShieldCheck className="size-5 text-teal shrink-0 mt-0.5" />
-              <div>
-                <span className="text-xs font-mono font-bold uppercase tracking-wide text-teal block mb-1">
-                  Core Argument
-                </span>
-                <p className="text-sm sm:text-base font-medium text-ink/90">
-                  {post.core_argument}
-                </p>
-              </div>
             </div>
           )}
         </header>

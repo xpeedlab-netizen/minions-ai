@@ -8,19 +8,33 @@ interface ArticleContentProps {
   content: string;
 }
 
+// Takeaway/action lists sometimes come back as plain "Label: description"
+// lines joined by single newlines instead of bolded, blank-line-separated
+// items (every line in the paragraph matches the pattern, including the
+// first). Promote the whole run to bold, blank-line-separated leads so each
+// item renders as its own callout instead of collapsing into one paragraph.
+function promoteLabelRuns(text: string): string {
+  const labelLine = /^[A-Z][^\n:]{3,70}:\s+\S/;
+  return text
+    .split(/\n\n+/)
+    .map((block) => {
+      const lines = block.split("\n").map((l) => l.trim());
+      if (lines.length < 2 || !lines.every((l) => labelLine.test(l))) return block;
+      return lines.map((l) => l.replace(/^([A-Z][^\n:]{3,70}:)(\s+)/, "**$1**$2")).join("\n\n");
+    })
+    .join("\n\n");
+}
+
 // Clean typography and punctuation artifacts
 function cleanTextFormatting(text: string): string {
-  return text
-    .replace(/^(\s*#{1,6}\s+[^\n]+)/gm, "\n\n$1\n\n")
-    .replace(/!\[([^\]]*)\]\s*\((https?:\/\/[^)\s]+)\)/g, "\n\n![$1]($2)\n\n")
-    .replace(/(```[\s\S]*?```)/g, "\n\n$1\n\n")
-    .replace(/^(\s*>[^\n]+)/gm, "\n\n$1\n\n")
-    .replace(/(?:^|\n|\s+)(Rule\s+\d+:)/gi, "\n\n$1")
-    // Takeaway/action lists sometimes come back as plain "Label: description"
-    // lines joined by single newlines instead of bolded, blank-line-separated
-    // items. Promote each to a bold lead so it renders as its own callout
-    // instead of collapsing into one paragraph.
-    .replace(/(?<!\n)\n(?!\n)([A-Z][^\n:]{3,70}:)(\s+)/g, "\n\n**$1**$2")
+  return promoteLabelRuns(
+    text
+      .replace(/^(\s*#{1,6}\s+[^\n]+)/gm, "\n\n$1\n\n")
+      .replace(/!\[([^\]]*)\]\s*\((https?:\/\/[^)\s]+)\)/g, "\n\n![$1]($2)\n\n")
+      .replace(/(```[\s\S]*?```)/g, "\n\n$1\n\n")
+      .replace(/^(\s*>[^\n]+)/gm, "\n\n$1\n\n")
+      .replace(/(?:^|\n|\s+)(Rule\s+\d+:)/gi, "\n\n$1")
+  )
     .replace(/(?:^|\n|\s+)(\*\*[^*\n]{3,60}:\*\*)/g, "\n\n$1")
     .replace(/\s+,\s+/g, ", ")
     .replace(/\s+,\s*$/gm, ",")
@@ -28,6 +42,41 @@ function cleanTextFormatting(text: string): string {
     .replace(/--/g, " — ")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
+}
+
+// Detects an inline "(1) ... (2) ... (3) ..." enumeration inside a sentence
+// and splits it into a lead-in plus the individual items, so it can render
+// as a proper sub-list instead of one run-on clause.
+function splitInlineNumberedList(text: string): { intro: string; items: string[] } | null {
+  const markers = [...text.matchAll(/\((\d+)\)\s*/g)];
+  if (markers.length < 2) return null;
+
+  const intro = text.slice(0, markers[0].index).trim();
+  const items = markers.map((marker, i) => {
+    const start = marker.index + marker[0].length;
+    const end = i + 1 < markers.length ? markers[i + 1].index : text.length;
+    return text.slice(start, end).trim();
+  });
+
+  return { intro, items };
+}
+
+function TextWithInlineList({ text, className }: { text: string; className?: string }) {
+  const split = splitInlineNumberedList(text);
+  if (!split) return <p className={className}>{text}</p>;
+
+  return (
+    <>
+      {split.intro && <p className={className}>{split.intro}</p>}
+      <ul className="mt-2 space-y-1.5 list-disc pl-5 marker:text-teal">
+        {split.items.map((item, i) => (
+          <li key={i} className={className}>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
 }
 
 function CodeBlockRenderer({ code, language }: { code: string; language?: string }) {
@@ -177,9 +226,10 @@ export default function ArticleContent({ content }: ArticleContentProps) {
                   {ruleHeader}
                 </span>
               </div>
-              <p className="text-base sm:text-lg leading-relaxed text-ink/90 font-medium">
-                {ruleBody}
-              </p>
+              <TextWithInlineList
+                text={ruleBody}
+                className="text-base sm:text-lg leading-relaxed text-ink/90 font-medium"
+              />
             </div>
           );
         }

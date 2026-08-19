@@ -16,6 +16,11 @@ function cleanTextFormatting(text: string): string {
     .replace(/(```[\s\S]*?```)/g, "\n\n$1\n\n")
     .replace(/^(\s*>[^\n]+)/gm, "\n\n$1\n\n")
     .replace(/(?:^|\n|\s+)(Rule\s+\d+:)/gi, "\n\n$1")
+    // Takeaway/action lists sometimes come back as plain "Label: description"
+    // lines joined by single newlines instead of bolded, blank-line-separated
+    // items. Promote each to a bold lead so it renders as its own callout
+    // instead of collapsing into one paragraph.
+    .replace(/(?<!\n)\n(?!\n)([A-Z][^\n:]{3,70}:)(\s+)/g, "\n\n**$1**$2")
     .replace(/(?:^|\n|\s+)(\*\*[^*\n]{3,60}:\*\*)/g, "\n\n$1")
     .replace(/\s+,\s+/g, ", ")
     .replace(/\s+,\s*$/gm, ",")

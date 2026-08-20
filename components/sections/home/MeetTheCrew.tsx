@@ -60,8 +60,6 @@ type CrewMember = {
   flip?: boolean;
   panelClass: string;
   badgeClass: string;
-  tileClass: string;
-  calloutClass: string;
   calloutLabelClass: string;
   ctaClass: string;
 };
@@ -87,8 +85,6 @@ const crew: CrewMember[] = [
     dark: true,
     panelClass: "bg-ink",
     badgeClass: "bg-teal/20 text-teal",
-    tileClass: "bg-white/10 border-white/5 text-white [&_svg]:text-teal",
-    calloutClass: "bg-teal/20 border-teal/40",
     calloutLabelClass: "text-teal",
     ctaClass: "bg-teal text-white hover:bg-teal-dark",
   },
@@ -112,8 +108,6 @@ const crew: CrewMember[] = [
     flip: true,
     panelClass: "bg-white",
     badgeClass: "bg-crew-zip/10 text-crew-zip",
-    tileClass: "bg-cream border-border text-ink [&_svg]:text-crew-zip",
-    calloutClass: "bg-crew-zip/10 border-crew-zip/30",
     calloutLabelClass: "text-crew-zip",
     ctaClass: "bg-crew-zip text-white hover:opacity-90",
   },
@@ -136,8 +130,6 @@ const crew: CrewMember[] = [
     visual: <PipHeroVisual />,
     panelClass: "bg-white",
     badgeClass: "bg-crew-pip/10 text-crew-pip",
-    tileClass: "bg-cream border-border text-ink [&_svg]:text-crew-pip",
-    calloutClass: "bg-crew-pip/10 border-crew-pip/30",
     calloutLabelClass: "text-crew-pip",
     ctaClass: "bg-crew-pip text-white hover:opacity-90",
   },
@@ -161,8 +153,6 @@ const crew: CrewMember[] = [
     flip: true,
     panelClass: "bg-cream-dark",
     badgeClass: "bg-white text-crew-gia",
-    tileClass: "bg-white/80 border-crew-gia/20 text-ink [&_svg]:text-crew-gia",
-    calloutClass: "bg-white/80 border-crew-gia/30 shadow-sm",
     calloutLabelClass: "text-crew-gia",
     ctaClass: "bg-crew-gia text-white hover:opacity-90",
   },
@@ -185,8 +175,6 @@ const crew: CrewMember[] = [
     visual: <OttoHeroVisual />,
     panelClass: "bg-white",
     badgeClass: "bg-crew-otto/10 text-crew-otto",
-    tileClass: "bg-cream border-border text-ink [&_svg]:text-crew-otto",
-    calloutClass: "bg-crew-otto/10 border-crew-otto/30",
     calloutLabelClass: "text-crew-otto",
     ctaClass: "bg-crew-otto text-white hover:opacity-90",
   },
@@ -242,28 +230,38 @@ export default function MeetTheCrew() {
                     {m.body}
                   </p>
 
-                  {/* One ability pattern for all five members. */}
-                  <ul className="grid grid-cols-2 gap-3 mb-6">
-                    {m.abilities.map((a) => (
-                      <li
-                        key={a.label}
-                        className={`p-3 rounded-xl border text-xs font-medium flex items-center gap-2 ${m.tileClass}`}
-                      >
-                        {a.icon}
-                        {a.label}
+                  {/*
+                    Abilities as a run of inline labels rather than four bordered tiles.
+                    Five panels × four boxes each was 20 near-identical rounded rectangles
+                    on one section — the tiles were carrying no information the label text
+                    didn't already carry, just chrome. A dot-separated wrap does the same
+                    scan job in a fraction of the visual weight.
+                  */}
+                  <ul
+                    className={`mb-6 flex flex-wrap items-center gap-x-2.5 gap-y-2 text-xs font-medium ${m.dark ? "text-white/80" : "text-ink/70"}`}
+                  >
+                    {m.abilities.map((a, idx) => (
+                      <li key={a.label} className="flex items-center gap-2.5">
+                        {idx > 0 && (
+                          <span aria-hidden className={m.dark ? "text-white/25" : "text-ink/20"}>
+                            &middot;
+                          </span>
+                        )}
+                        <span className="flex items-center gap-1.5">
+                          {a.icon}
+                          {a.label}
+                        </span>
                       </li>
                     ))}
                   </ul>
 
-                  <div className={`rounded-xl p-4 mb-8 border ${m.calloutClass}`}>
-                    <p
-                      className={`text-xs font-mono font-bold uppercase tracking-wide mb-1 ${m.calloutLabelClass}`}
-                    >
-                      How {m.name} Saves Your Revenue:
+                  {/* Revenue note as a left-rule statement, not a second boxed callout
+                      stacked directly under the first one. */}
+                  <div className={`mb-8 border-l-2 pl-4 ${m.dark ? "border-teal/50" : "border-current"} ${m.calloutLabelClass}`}>
+                    <p className="mb-1 font-mono text-xs font-bold uppercase tracking-wide">
+                      How {m.name} Saves Your Revenue
                     </p>
-                    <p
-                      className={`text-xs sm:text-sm font-medium ${m.dark ? "text-cream/90" : "text-ink/80"}`}
-                    >
+                    <p className={`text-xs sm:text-sm font-medium ${m.dark ? "text-cream/90" : "text-ink/80"}`}>
                       {m.revenueNote}
                     </p>
                   </div>

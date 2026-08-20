@@ -51,23 +51,24 @@ export default function TheRealCost() {
       {/* ---- Beat 1: the claim ---- */}
       <div className="max-w-3xl">
         <SectionHeading className="text-ink">
-          85% of Callers Who Hit Voicemail Hire Your Competitor Next.
+          Every Call That Hits Voicemail Is a Job Your Competitor Books Instead.
         </SectionHeading>
         <SectionLead className="max-w-2xl">
           When your hands are tied on a job site, unanswered calls mean lost business. By the time you finally check voicemail, the customer has already booked with the shop that answered on the first ring.
         </SectionLead>
       </div>
 
-      <ul className="mt-10 grid sm:grid-cols-3 gap-6">
+      {/*
+        Hairline-divided columns, not boxes — matches the pattern Proof already
+        established for this exact "three things, stated plainly" shape. Bordered
+        cream cards here duplicated a container the page already uses six other
+        places; the hairline rule says the same thing with one line instead of four.
+      */}
+      <ul className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-3 sm:divide-x sm:divide-border">
         {problemCards.map((c, i) => (
-          <Reveal
-            key={c.title}
-            as="li"
-            delay={i * 0.08}
-            className="flex h-full flex-col rounded-2xl border border-border bg-cream p-6 hover:border-teal/40 transition-colors"
-          >
+          <Reveal key={c.title} as="li" delay={i * 0.08} className="sm:px-8 sm:first:pl-0">
             <h3 className="font-heading font-bold text-ink text-lg tracking-[-0.01em]">{c.title}</h3>
-            <p className="mt-3 text-sm text-ink/70 leading-relaxed">{c.body}</p>
+            <p className="mt-3 text-sm leading-relaxed text-ink/65">{c.body}</p>
           </Reveal>
         ))}
       </ul>
@@ -84,56 +85,36 @@ export default function TheRealCost() {
         </SectionLead>
 
         {/*
-          Side-by-side without/with contrast, one row per hour of the day. The two
-          labelled panels ARE the argument — collapsing them into a single narrow
-          column loses the comparison entirely, so the row stays full width.
-
-          The spine sits on the left at every breakpoint and the cards are inset past
-          it, so it reads as an actual timeline rather than running behind the cards.
+          One flowing row per hour instead of a stacked pair of full-width panels.
+          The old layout gave "without" and "with" equal-sized boxes with duplicate
+          borders and headers — 5 rows of that ran to ~1,400px of near-identical
+          card chrome before saying anything new. The time and crew name now read
+          as a compact label column; without -> with reads as one sentence pair
+          separated by an arrow, so the eye tracks the transformation in one line
+          instead of re-reading two headers per row.
         */}
-        <ol className="mt-10 space-y-6 relative before:absolute before:top-2 before:bottom-2 before:left-[7px] before:w-0.5 before:bg-border sm:before:left-2">
+        <ol className="mt-10 divide-y divide-border border-t border-border">
           {CONTRACTOR_DAY_TIMELINE.map((item, i) => (
-            <Reveal key={item.time} as="li" delay={i * 0.08} className="relative pl-8 sm:pl-10">
-              {/* Spine node */}
-              <span
-                className="absolute left-0 top-2 size-4 rounded-full border-2 border-teal bg-white sm:left-[3px]"
-                aria-hidden
-              />
-
-              <div className="rounded-3xl border border-border bg-cream p-5 sm:p-8">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4 mb-6">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="inline-flex items-center gap-1.5 bg-ink text-white px-3 py-1 rounded-lg font-mono text-sm font-bold">
-                      <Clock className="size-4 text-teal" aria-hidden /> {item.time}
-                    </span>
-                    <h4 className="font-heading font-bold text-lg sm:text-xl text-ink">
-                      {item.title}
-                    </h4>
-                  </div>
-                  <span className="shrink-0 self-start sm:self-auto bg-teal/10 text-teal text-xs font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-teal/20">
-                    Protected by {item.crewHero}
+            <Reveal key={item.time} as="li" delay={i * 0.06} className="py-7 sm:py-8">
+              <div className="sm:grid sm:grid-cols-[9rem_1fr] sm:gap-8">
+                <div className="mb-3 flex items-center gap-2 sm:mb-0 sm:flex-col sm:items-start sm:gap-1.5">
+                  <span className="inline-flex items-center gap-1.5 font-mono text-sm font-bold text-ink">
+                    <Clock className="size-4 text-teal" aria-hidden /> {item.time}
+                  </span>
+                  <span className="font-mono text-[0.6875rem] font-bold uppercase tracking-wider text-teal">
+                    {item.crewHero}
                   </span>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-                  {/* Without */}
-                  <div className="rounded-2xl bg-white border border-coral-text/20 p-5 space-y-2">
-                    <div className="flex items-center gap-2 text-coral-text font-bold text-sm">
-                      <XCircle className="size-5 shrink-0" aria-hidden />
-                      <span>Without Minions.AI (The Daily Grind)</span>
-                    </div>
-                    <p className="text-sm text-ink/70 leading-relaxed font-medium">
+                <div>
+                  <h4 className="font-heading font-bold text-lg text-ink">{item.title}</h4>
+                  <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-start">
+                    <p className="flex gap-2 text-sm leading-relaxed text-ink/55 sm:flex-1">
+                      <XCircle className="mt-0.5 size-4 shrink-0 text-coral-text/70" aria-hidden />
                       {item.without}
                     </p>
-                  </div>
-
-                  {/* With */}
-                  <div className="rounded-2xl bg-white border border-teal/30 p-5 space-y-2">
-                    <div className="flex items-center gap-2 text-teal font-bold text-sm">
-                      <CheckCircle2 className="size-5 shrink-0" aria-hidden />
-                      <span>With Minions.AI (Automated Growth)</span>
-                    </div>
-                    <p className="text-sm text-ink/90 leading-relaxed font-medium">
+                    <p className="flex gap-2 text-sm font-medium leading-relaxed text-ink sm:flex-1">
+                      <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-teal" aria-hidden />
                       {item.with}
                     </p>
                   </div>

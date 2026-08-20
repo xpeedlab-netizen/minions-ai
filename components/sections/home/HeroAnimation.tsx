@@ -1,104 +1,165 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
-import { Phone, Calendar, CheckCircle2 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { PhoneCall } from "lucide-react";
 
-const steps = [
-  {
-    icon: Phone,
-    label: "Call answered",
-    className: "top-5 left-4 sm:left-6",
-    delay: 0,
-  },
-  {
-    icon: Calendar,
-    label: "Job scheduled",
-    className: "top-1/2 right-3 sm:right-5 -translate-y-1/2",
-    delay: 0.9,
-  },
-  {
-    icon: CheckCircle2,
-    label: "Job closed",
-    className: "bottom-6 left-6 sm:left-10",
-    delay: 1.8,
-  },
+/**
+ * Hero call widget.
+ *
+ * Replaces the old pulsing-phone-icon animation — a shape shared by nearly every
+ * "AI voice agent" landing page — with the actual product moment: a call card that
+ * shows who's talking, a live transcript playing out, and a running clock. This is
+ * the site's answer to Stripe's code block / Linear's app preview: the thing in the
+ * hero should look like the product, not like a generic icon animation.
+ *
+ * Not a real phone call — no telephony is wired to this component — so the footer
+ * says so explicitly, matching the disclaimer already used on RexHeroVisual's
+ * transcript card further down the page.
+ */
+
+type Line = { from: "caller" | "rex"; text: string };
+
+const SCRIPT: Line[] = [
+  { from: "caller", text: "Hi, I've got a burst pipe under my kitchen sink." },
+  { from: "rex", text: "I can get someone out today. What's the address?" },
+  { from: "caller", text: "412 Oak Street. How fast can you get here?" },
+  { from: "rex", text: "Booked for 2:30 PM — you're all set." },
 ];
 
-const bars = [7, 15, 22, 13, 8];
+const LINE_INTERVAL_MS = 2200;
+const bars = [6, 14, 20, 12, 7, 16, 9];
 
 export default function HeroAnimation() {
   const reduceMotion = useReducedMotion();
+  const [visible, setVisible] = useState(1);
+  const [seconds, setSeconds] = useState(14);
+
+  useEffect(() => {
+    if (reduceMotion) {
+      setVisible(SCRIPT.length);
+      return;
+    }
+    const id = setInterval(() => {
+      setVisible((v) => (v >= SCRIPT.length ? 1 : v + 1));
+    }, LINE_INTERVAL_MS);
+    return () => clearInterval(id);
+  }, [reduceMotion]);
+
+  useEffect(() => {
+    const id = setInterval(() => setSeconds((s) => s + 1), 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  const mm = String(Math.floor(seconds / 60)).padStart(2, "0");
+  const ss = String(seconds % 60).padStart(2, "0");
+  const speaking = SCRIPT[Math.min(visible, SCRIPT.length) - 1]?.from ?? "rex";
 
   return (
-    <div className="animate-idle-bob relative aspect-square max-w-md mx-auto rounded-[2.5rem] bg-white border border-border overflow-hidden shadow-sm">
-      <div className="absolute inset-0 bg-gradient-to-br from-teal/5 via-cream to-coral/5" />
+    <div className="relative mx-auto w-full max-w-md">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -inset-6 rounded-[2.5rem] bg-teal/10 blur-3xl"
+      />
 
-      {!reduceMotion &&
-        [0, 1, 2].map((i) => (
-          <motion.span
-            key={i}
-            className="absolute left-1/2 top-1/2 rounded-full border-2 border-teal/25"
-            style={{ width: 72, height: 72, marginLeft: -36, marginTop: -36 }}
-            animate={{ scale: [1, 3], opacity: [0.55, 0] }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              delay: i,
-              ease: "easeOut",
-            }}
-          />
-        ))}
-
-      <motion.div
-        className="absolute left-1/2 top-1/2 flex size-16 sm:size-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-teal text-white shadow-lg"
-        animate={reduceMotion ? undefined : { scale: [1, 1.06, 1] }}
-        transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <Phone className="size-7 sm:size-8" strokeWidth={2.25} />
-      </motion.div>
-
-      <div className="absolute left-1/2 top-[64%] flex -translate-x-1/2 items-end gap-1.5">
-        {bars.map((h, i) => (
-          <motion.span
-            key={i}
-            className="w-1.5 rounded-full bg-teal origin-bottom"
-            style={{ height: h }}
-            animate={reduceMotion ? undefined : { scaleY: [0.35, 1, 0.35] }}
-            transition={{
-              duration: 1.2,
-              repeat: Infinity,
-              delay: i * 0.15,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
-
-      {steps.map(({ icon: Icon, label, className, delay }) => (
-        <motion.div
-          key={label}
-          className={`absolute ${className}`}
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{
-            opacity: reduceMotion ? 1 : [0, 1, 1, 0],
-            scale: reduceMotion ? 1 : [0.95, 1, 1, 0.95],
-          }}
-          transition={{
-            duration: 6,
-            times: [0, 0.1, 0.9, 1],
-            repeat: Infinity,
-            delay: delay,
-            ease: "easeInOut",
-          }}
-        >
-          <div className="flex items-center gap-1.5 rounded-xl border border-border bg-white px-2.5 py-1.5 shadow-sm">
-            <Icon className="size-3.5 text-teal" strokeWidth={2.25} />
-            <span className="font-mono text-[10px] uppercase tracking-wide text-ink">
-              {label}
+      <div className="relative overflow-hidden rounded-[2rem] border border-border bg-white shadow-xl">
+        {/* Header: identity + live clock */}
+        <div className="flex items-center justify-between border-b border-border bg-cream px-5 py-4">
+          <div className="flex items-center gap-2">
+            <PhoneCall className="size-4 text-teal" aria-hidden />
+            <span className="font-mono text-xs font-bold uppercase tracking-wide text-ink">
+              Rex &mdash; Answering Sequence
             </span>
           </div>
-        </motion.div>
-      ))}
+          <div className="flex items-center gap-2">
+            <span className="relative flex size-2">
+              <span
+                aria-hidden
+                className="absolute inline-flex size-full animate-ping rounded-full bg-teal opacity-75"
+              />
+              <span className="relative inline-flex size-2 rounded-full bg-teal" />
+            </span>
+            <span className="font-mono text-[11px] font-bold tabular-nums text-teal">
+              {mm}:{ss}
+            </span>
+          </div>
+        </div>
+
+        {/* Waveform: reacts to who's currently "speaking" */}
+        <div className="flex items-center justify-center gap-6 border-b border-border bg-cream/60 px-5 py-5">
+          <div className="flex items-center gap-2">
+            <div className="flex h-6 items-end gap-1">
+              {bars.map((h, i) => (
+                <motion.span
+                  key={i}
+                  className="w-1 origin-bottom rounded-full bg-ink/30"
+                  style={{ height: h }}
+                  animate={
+                    reduceMotion
+                      ? undefined
+                      : { scaleY: speaking === "caller" ? [0.4, 1, 0.4] : 0.3 }
+                  }
+                  transition={{ duration: 1, repeat: Infinity, delay: i * 0.08, ease: "easeInOut" }}
+                />
+              ))}
+            </div>
+            <span className="font-mono text-[10px] uppercase tracking-wide text-ink/40">
+              Caller
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <div className="flex h-6 items-end gap-1">
+              {bars.map((h, i) => (
+                <motion.span
+                  key={i}
+                  className="w-1 origin-bottom rounded-full bg-teal"
+                  style={{ height: h }}
+                  animate={
+                    reduceMotion
+                      ? undefined
+                      : { scaleY: speaking === "rex" ? [0.4, 1, 0.4] : 0.3 }
+                  }
+                  transition={{ duration: 1, repeat: Infinity, delay: i * 0.08, ease: "easeInOut" }}
+                />
+              ))}
+            </div>
+            <span className="font-mono text-[10px] uppercase tracking-wide text-teal">Rex</span>
+          </div>
+        </div>
+
+        {/* Transcript */}
+        <div className="flex min-h-[228px] flex-col justify-end gap-2.5 px-5 py-5">
+          <AnimatePresence initial={false}>
+            {SCRIPT.slice(0, visible).map((line, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className={`flex ${line.from === "rex" ? "justify-end" : "justify-start"}`}
+              >
+                <p
+                  className={`max-w-[85%] rounded-2xl px-3.5 py-2 text-[13px] leading-snug ${
+                    line.from === "rex"
+                      ? "rounded-tr-sm bg-teal/10 text-ink"
+                      : "rounded-tl-sm border border-border bg-cream text-ink/80"
+                  }`}
+                >
+                  {line.text}
+                </p>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
+
+        <div className="border-t border-border px-5 py-3">
+          <span className="font-mono text-[10px] uppercase tracking-wide text-ink/40">
+            Example call &mdash; not live audio
+          </span>
+        </div>
+      </div>
     </div>
   );
 }

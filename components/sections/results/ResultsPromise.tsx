@@ -2,7 +2,7 @@ import { BadgeCheck } from "lucide-react";
 
 export default function ResultsPromise() {
   return (
-    <section className="bg-cream pb-16 sm:pb-24">
+    <section className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
         <BadgeCheck className="mx-auto size-8 text-teal" />
         <h2 className="mt-4 font-heading font-bold text-2xl sm:text-3xl text-teal">

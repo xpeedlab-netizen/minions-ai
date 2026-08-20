@@ -45,7 +45,7 @@ export default function PricingPage() {
 
       <SecurityTrustSection />
 
-      <section className="bg-cream py-16 sm:py-24">
+      <section className="bg-cream-dark py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading font-bold text-2xl sm:text-3xl text-ink mb-8">
             Pricing FAQ

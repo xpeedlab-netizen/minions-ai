@@ -58,7 +58,7 @@ export default function ZipSmsSimulator() {
   const activeScenario = scenarios.find((s) => s.id === activeScenarioId) || scenarios[0];
 
   return (
-    <section className="bg-cream py-16 sm:py-24 border-t border-border" id="sms-demo">
+    <section className="bg-cream-dark py-16 sm:py-24 border-t border-border" id="sms-demo">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

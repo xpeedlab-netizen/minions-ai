@@ -15,7 +15,7 @@ export default function FaqPage() {
     <>
       <FaqHero />
 
-      <section className="bg-cream pb-16 sm:pb-24">
+      <section className="bg-cream-dark pb-16 sm:pb-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[220px_1fr] gap-12">
           <FaqSidebar />
           <FaqContent />

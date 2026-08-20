@@ -11,7 +11,7 @@ const tags = [
 
 export default function HvacCrewBento() {
   return (
-    <section className="bg-cream py-16 sm:py-24">
+    <section className="bg-cream-dark py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-3">

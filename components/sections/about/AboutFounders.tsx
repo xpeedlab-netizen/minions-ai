@@ -37,7 +37,7 @@ const founders = [
 
 export default function AboutFounders() {
   return (
-    <section className="bg-cream py-16 sm:py-24">
+    <section className="bg-cream-dark py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 rounded-full bg-teal/10 px-3.5 py-1 text-xs font-semibold text-teal">

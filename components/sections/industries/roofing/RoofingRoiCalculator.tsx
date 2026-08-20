@@ -18,7 +18,7 @@ export default function RoofingRoiCalculator() {
   const roiMultiplier = (annualLostRevenue / Math.max(1, annualMinionsCost)).toFixed(1);
 
   return (
-    <section className="bg-cream py-16 sm:py-24 border-b border-border">
+    <section className="bg-white py-16 sm:py-24 border-b border-border">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center space-y-3 mb-10">

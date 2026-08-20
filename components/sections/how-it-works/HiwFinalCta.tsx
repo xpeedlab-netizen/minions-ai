@@ -3,7 +3,7 @@ import Button from "@/components/ui/Button";
 
 export default function HiwFinalCta() {
   return (
-    <section className="bg-cream py-16 sm:py-24">
+    <section className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="font-heading font-bold text-3xl sm:text-4xl text-teal text-balance">
           Ready to get your week back?

@@ -8,7 +8,7 @@ const checklist = [
 
 export default function HiwReassurance() {
   return (
-    <section className="bg-cream py-16 sm:py-24">
+    <section className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-ink p-10 sm:p-14 grid lg:grid-cols-2 gap-10 items-center">
           <div>

@@ -64,7 +64,7 @@ const customChips = [
 
 export default function RexVoiceActions() {
   return (
-    <section className="bg-cream py-16 sm:py-24 border-t border-border" id="voice-actions">
+    <section className="bg-cream-dark py-16 sm:py-24 border-t border-border" id="voice-actions">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Section Header */}

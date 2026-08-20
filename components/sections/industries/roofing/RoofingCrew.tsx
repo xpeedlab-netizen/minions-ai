@@ -7,7 +7,7 @@ export default function RoofingCrew() {
     <section className="bg-cream py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <p className="font-mono text-xs uppercase tracking-wide text-teal">What your crew does</p>
-        <h2 className="mt-2 font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
+        <h2 className="mt-2 font-heading font-bold text-3xl sm:text-4xl text-ink text-balance">
           Modern Roofing Automation
         </h2>
 
@@ -23,7 +23,7 @@ export default function RoofingCrew() {
                   24/7 Voice Dispatch
                 </span>
               </div>
-              <h3 className="mt-4 font-heading font-extrabold text-2xl text-white">
+              <h3 className="mt-4 font-heading font-bold text-2xl text-white">
                 Fast storm-surge answering
               </h3>
               <p className="mt-2 text-white/70 leading-relaxed max-w-md">

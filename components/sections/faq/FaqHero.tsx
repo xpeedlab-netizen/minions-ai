@@ -8,7 +8,7 @@ export default function FaqHero() {
           <BookOpen className="size-3.5 text-teal" />
           Knowledge Base
         </span>
-        <h1 className="mt-5 font-heading font-extrabold text-4xl sm:text-5xl text-ink text-balance">
+        <h1 className="mt-5 font-heading font-bold text-4xl sm:text-5xl text-ink text-balance">
           Your questions, answered straight.
         </h1>
         <p className="mt-4 text-lg text-ink/70 leading-relaxed">

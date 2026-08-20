@@ -24,7 +24,7 @@ export default function LiveDemoPage() {
           {hasVideo ? (
             <div className="rounded-2xl border border-border bg-white p-6 shadow-sm">
               <p className="font-mono text-xs uppercase tracking-wide text-teal">Recorded Video Demo</p>
-              <h2 className="mt-1 font-heading font-extrabold text-2xl text-ink">
+              <h2 className="mt-1 font-heading font-bold text-2xl text-ink">
                 Watch the AI Dispatcher in Action
               </h2>
               <YouTubeEmbed
@@ -39,7 +39,7 @@ export default function LiveDemoPage() {
                 <span className="inline-block rounded-full bg-ink px-3 py-1 font-mono text-xs uppercase tracking-wide text-white">
                   Done-For-You Onboarding
                 </span>
-                <h2 className="mt-4 font-heading font-extrabold text-2xl sm:text-3xl text-ink">
+                <h2 className="mt-4 font-heading font-bold text-2xl sm:text-3xl text-ink">
                   Hear your custom crew before you launch
                 </h2>
                 <p className="mt-4 text-ink/75 leading-relaxed">

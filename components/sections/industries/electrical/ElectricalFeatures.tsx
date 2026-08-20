@@ -24,7 +24,7 @@ export default function ElectricalFeatures() {
   return (
     <section className="bg-cream py-16 sm:py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-ink text-balance text-center">
+        <h2 className="font-heading font-bold text-2xl sm:text-3xl text-ink text-balance text-center">
           Built for Electrical Service Teams
         </h2>
         <div className="mt-10 grid sm:grid-cols-3 gap-6">

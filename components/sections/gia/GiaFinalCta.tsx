@@ -17,7 +17,7 @@ export default function GiaFinalCta() {
               <span>Gia — 100% Done-For-You Setup</span>
             </div>
 
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white text-balance leading-tight">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white text-balance leading-tight">
               Stop Fighting Your CRM. <br className="hidden sm:inline" />
               Start Winning More Jobs on Autopilot.
             </h2>

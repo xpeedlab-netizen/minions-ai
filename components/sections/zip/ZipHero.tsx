@@ -10,7 +10,7 @@ export default function ZipHero() {
           <span className="inline-block rounded-full bg-[#C4472A]/15 px-3 py-1 font-mono text-xs uppercase tracking-wide text-[#C4472A] font-bold">
             Automated Missed-Call Recovery &amp; Speed-to-Lead
           </span>
-          <h1 className="mt-5 font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-balance">
+          <h1 className="mt-5 font-heading font-bold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-balance">
             Instant Missed-Call Text-Back in Under 5 Seconds.
           </h1>
           <p className="mt-4 text-lg text-ink/75 leading-relaxed max-w-xl">

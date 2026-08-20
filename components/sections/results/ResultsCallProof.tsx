@@ -52,7 +52,7 @@ export default function ResultsCallProof() {
             <TrendingUp className="size-4 text-teal" />
             <span>Pilot Performance & Trade Case Studies</span>
           </div>
-          <h2 className="mt-3 font-heading font-extrabold text-3xl sm:text-4xl text-ink">
+          <h2 className="mt-3 font-heading font-bold text-3xl sm:text-4xl text-ink">
             Real Impact for Working Contractors
           </h2>
           <p className="mt-3 text-base text-ink/70">

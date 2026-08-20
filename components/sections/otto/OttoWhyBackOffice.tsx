@@ -33,7 +33,7 @@ export default function OttoWhyBackOffice() {
             <span>Why Firms Choose Back-Office Autopilot</span>
           </div>
 
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-white text-balance leading-tight">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white text-balance leading-tight">
             Stop Paying Skilled People to Push Paperwork. <br className="hidden sm:inline" />
             Let Otto Eliminate the Administrative Grind.
           </h2>

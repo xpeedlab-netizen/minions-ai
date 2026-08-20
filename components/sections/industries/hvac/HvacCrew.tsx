@@ -33,7 +33,7 @@ export default function HvacCrew() {
   return (
     <section className="bg-cream py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-teal-dark text-balance text-center">
+        <h2 className="font-heading font-bold text-3xl sm:text-4xl text-teal-dark text-balance text-center">
           Meet your new specialized HVAC crew.
         </h2>
 
@@ -65,7 +65,7 @@ export default function HvacCrew() {
               <div className="absolute inset-0 bg-linear-to-t from-ink via-ink/70 to-ink/20" />
               <div className="relative flex h-full flex-col justify-between p-6 sm:p-8">
                 <div>
-                  <h3 className="font-heading font-extrabold text-2xl text-white text-balance">
+                  <h3 className="font-heading font-bold text-2xl text-white text-balance">
                     &quot;Do you service my area?&quot;
                   </h3>
                   <p className="mt-3 max-w-md text-sm text-white/70 leading-relaxed">

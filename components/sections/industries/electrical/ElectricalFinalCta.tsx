@@ -17,7 +17,7 @@ export default function ElectricalFinalCta() {
               <span>Minions AI for Electrical Fleet Owners</span>
             </div>
 
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white text-balance leading-tight">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white text-balance leading-tight">
               Never Lose Another Sparkling Breaker Call. <br className="hidden sm:inline" />
               Deploy Your Electrical AI Crew.
             </h2>

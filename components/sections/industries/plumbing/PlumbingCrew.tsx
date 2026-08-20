@@ -34,7 +34,7 @@ export default function PlumbingCrew() {
     <section className="bg-cream py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-teal-dark text-balance">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-teal-dark text-balance">
             Meet your new plumbing front-office crew
           </h2>
           <p className="mt-4 text-ink/60">

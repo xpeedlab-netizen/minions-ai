@@ -5,7 +5,7 @@ export default function ResultsHero() {
         <span className="inline-block rounded-full bg-teal/10 px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-teal">
           Case Studies &amp; Proof
         </span>
-        <h1 className="mt-5 font-heading font-extrabold text-4xl sm:text-5xl text-teal text-balance">
+        <h1 className="mt-5 font-heading font-bold text-4xl sm:text-5xl text-teal text-balance">
           We&apos;d rather show you than tell you.
         </h1>
         <p className="mt-6 text-lg text-ink/70 leading-relaxed">

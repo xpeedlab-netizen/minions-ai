@@ -22,7 +22,7 @@ export default function PlumbingHero() {
             <span>Minions AI for Plumbing Contractors &bull; 24/7 Dispatch</span>
           </div>
 
-          <h1 className="font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-balance">
+          <h1 className="font-heading font-bold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-balance">
             Never Lose Another <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-teal to-accent-blue bg-clip-text text-transparent">
               $5,000+ Emergency Repiping Lead.

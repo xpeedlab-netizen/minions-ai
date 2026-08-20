@@ -144,7 +144,7 @@ export default function OttoHeroAnimation() {
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h3 className="font-heading font-extrabold text-white text-base">Otto Back-Office AI</h3>
+              <h3 className="font-heading font-bold text-white text-base">Otto Back-Office AI</h3>
               <span className="flex size-2 rounded-full bg-teal animate-pulse" />
             </div>
             <p className="font-mono text-[11px] text-white/50">Paperwork &amp; Document Engine</p>

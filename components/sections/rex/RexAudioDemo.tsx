@@ -74,7 +74,7 @@ export default function RexAudioDemo() {
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-teal font-bold shadow-sm mb-4">
             <Volume2 className="size-3.5 text-teal" /> Interactive Call Simulator
           </span>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-5xl text-ink text-balance">
+          <h2 className="font-heading font-bold text-3xl sm:text-5xl text-ink text-balance">
             Hear How Rex Answers Real Calls for Trade Businesses
           </h2>
           <p className="mt-4 text-lg text-ink/70 leading-relaxed">

@@ -22,7 +22,7 @@ export default function PipNoGuessPolicy() {
           <span className="inline-block rounded-full bg-white/10 px-3 py-1 font-mono text-xs uppercase tracking-wide text-white/70">
             The No-Guess Policy
           </span>
-          <h2 className="mt-5 font-heading font-extrabold text-3xl sm:text-4xl text-white text-balance">
+          <h2 className="mt-5 font-heading font-bold text-3xl sm:text-4xl text-white text-balance">
             Pip doesn&apos;t make things up.
           </h2>
           <p className="mt-4 text-white/70 leading-relaxed">

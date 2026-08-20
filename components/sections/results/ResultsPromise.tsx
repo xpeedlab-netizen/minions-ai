@@ -5,7 +5,7 @@ export default function ResultsPromise() {
     <section className="bg-cream pb-16 sm:pb-24">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
         <BadgeCheck className="mx-auto size-8 text-teal" />
-        <h2 className="mt-4 font-heading font-extrabold text-2xl sm:text-3xl text-teal">
+        <h2 className="mt-4 font-heading font-bold text-2xl sm:text-3xl text-teal">
           Our promise on reporting
         </h2>
         <p className="mt-4 text-ink/70 leading-relaxed">

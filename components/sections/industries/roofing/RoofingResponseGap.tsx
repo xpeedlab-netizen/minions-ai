@@ -2,7 +2,7 @@ export default function RoofingResponseGap() {
   return (
     <section className="bg-teal py-16 sm:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-white text-balance">
+        <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white text-balance">
           The 100x Response Gap
         </h2>
 

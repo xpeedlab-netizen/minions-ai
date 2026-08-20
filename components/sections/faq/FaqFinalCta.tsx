@@ -8,7 +8,7 @@ export default function FaqFinalCta() {
         <div className="mx-auto flex size-14 items-center justify-center rounded-2xl border-2 border-teal text-teal">
           <Bot className="size-6" />
         </div>
-        <h2 className="mt-6 font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
+        <h2 className="mt-6 font-heading font-bold text-3xl sm:text-4xl text-ink text-balance">
           Still have questions?
         </h2>
         <p className="mt-4 text-lg text-ink/70 leading-relaxed">

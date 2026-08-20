@@ -81,7 +81,7 @@ export default function RexFeatures() {
           <span className="inline-block rounded-full bg-teal/10 px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-teal font-bold mb-4">
             24/7 Front-Office Dispatcher
           </span>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-5xl text-ink text-balance">
+          <h2 className="font-heading font-bold text-3xl sm:text-5xl text-ink text-balance">
             8 Ways Rex Automates Your Phone Line &amp; Captures Revenue
           </h2>
           <p className="mt-4 text-lg text-ink/75 leading-relaxed">

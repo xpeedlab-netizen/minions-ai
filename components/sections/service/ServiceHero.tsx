@@ -29,7 +29,7 @@ export default function ServiceHero({
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <p className="font-mono text-sm text-teal mb-4">{eyebrow}</p>
-          <h1 className="font-heading font-extrabold text-ink text-4xl sm:text-5xl leading-[1.1] text-balance">
+          <h1 className="font-heading font-bold text-ink text-4xl sm:text-5xl leading-[1.1] text-balance">
             {h1}
           </h1>
           <p className="mt-6 text-lg text-ink/70 leading-relaxed max-w-xl">{subhead}</p>

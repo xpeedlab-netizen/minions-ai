@@ -19,7 +19,7 @@ export default function PlumbingCrewBento() {
             <Sparkles className="size-3.5" />
             <span>Dedicated Plumbing AI Crew Architecture</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance leading-tight">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance leading-tight">
             Meet your 24/7 specialized plumbing front-office crew.
           </h2>
           <p className="text-base text-ink/70 max-w-2xl mx-auto">
@@ -44,7 +44,7 @@ export default function PlumbingCrewBento() {
                   </span>
                 </div>
 
-                <h3 className="mt-6 font-heading font-extrabold text-2xl text-white">
+                <h3 className="mt-6 font-heading font-bold text-2xl text-white">
                   24/7 Voice Dispatching with Plumbing Logic
                 </h3>
                 <p className="mt-2.5 text-sm text-white/75 leading-relaxed max-w-xl">
@@ -79,7 +79,7 @@ export default function PlumbingCrewBento() {
                   </span>
                 </div>
 
-                <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
+                <h3 className="mt-6 font-heading font-bold text-xl text-ink">
                   5-Second Instant SMS Text-Back
                 </h3>
                 <p className="mt-2 text-sm text-ink/75 leading-relaxed">
@@ -102,7 +102,7 @@ export default function PlumbingCrewBento() {
                   <Bot className="size-5" />
                 </span>
 
-                <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
+                <h3 className="mt-6 font-heading font-bold text-xl text-ink">
                   Pip — 24/7 Web Chat Support
                 </h3>
                 <p className="mt-2 text-sm text-ink/70 leading-relaxed">
@@ -125,7 +125,7 @@ export default function PlumbingCrewBento() {
                   <Layers className="size-5" />
                 </span>
 
-                <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
+                <h3 className="mt-6 font-heading font-bold text-xl text-ink">
                   Gia — CRM &amp; Google Review Engine
                 </h3>
                 <p className="mt-2 text-sm text-ink/70 leading-relaxed">
@@ -153,7 +153,7 @@ export default function PlumbingCrewBento() {
                   </span>
                 </div>
 
-                <h3 className="mt-6 font-heading font-extrabold text-xl text-white">
+                <h3 className="mt-6 font-heading font-bold text-xl text-white">
                   Otto — Permit &amp; Inspection Docs
                 </h3>
                 <p className="mt-2 text-sm text-white/80 leading-relaxed">

@@ -6,7 +6,7 @@ export default function PipFinalCta() {
   return (
     <section className="bg-ink py-16 sm:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center text-white">
-        <h2 className="font-heading font-extrabold text-3xl sm:text-5xl leading-tight text-balance">
+        <h2 className="font-heading font-bold text-3xl sm:text-5xl leading-tight text-balance">
           Turn Your Website Into a 24/7 Revenue-Capturing Front Desk.
         </h2>
         <p className="mt-4 text-cream/80 text-lg max-w-xl mx-auto leading-relaxed">

@@ -37,7 +37,7 @@ export default function ElectricalProblem() {
             <AlertCircle className="size-3.5" />
             <span>The 3 Costliest Electrical Revenue Leaks</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance leading-tight">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance leading-tight">
             Electrical emergencies are high-hazard — missed calls lose big ticket jobs.
           </h2>
           <p className="text-base text-ink/70 max-w-2xl mx-auto">
@@ -59,7 +59,7 @@ export default function ElectricalProblem() {
                     </span>
                   </div>
 
-                  <h3 className="mt-5 font-heading font-extrabold text-lg text-ink">
+                  <h3 className="mt-5 font-heading font-bold text-lg text-ink">
                     {c.title}
                   </h3>
                   <p className="mt-0.5 font-mono text-xs font-semibold text-teal">

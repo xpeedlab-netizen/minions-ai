@@ -134,7 +134,7 @@ export default function RoofingHeroAnimation() {
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h3 className="font-heading font-extrabold text-white text-base">Rex — Roofing Dispatcher</h3>
+              <h3 className="font-heading font-bold text-white text-base">Rex — Roofing Dispatcher</h3>
               <span className="flex size-2 rounded-full bg-success animate-pulse" />
             </div>
             <p className="font-mono text-[11px] text-white/50">ServiceTitan / Jobber Live Sync</p>

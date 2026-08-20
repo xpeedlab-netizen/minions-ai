@@ -21,7 +21,7 @@ export default function PricingPage() {
     <>
       <section className="bg-cream py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl text-ink text-balance">
+          <h1 className="font-heading font-bold text-4xl sm:text-5xl text-ink text-balance">
             Professional AI, predictable pricing.
           </h1>
           <p className="mt-6 text-lg text-ink/70 leading-relaxed">
@@ -47,7 +47,7 @@ export default function PricingPage() {
 
       <section className="bg-cream py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-ink mb-8">
+          <h2 className="font-heading font-bold text-2xl sm:text-3xl text-ink mb-8">
             Pricing FAQ
           </h2>
           <FaqAccordion items={pricingFaq.map((f) => ({ q: f.q, a: f.a }))} />

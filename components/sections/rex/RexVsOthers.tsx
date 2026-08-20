@@ -14,7 +14,7 @@ export default function RexVsOthers() {
           <span className="inline-block rounded-full bg-teal/10 px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-teal font-bold mb-4">
             Cost &amp; Performance ROI Matrix
           </span>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-5xl text-ink text-balance">
+          <h2 className="font-heading font-bold text-3xl sm:text-5xl text-ink text-balance">
             Why Contractors Save $35,000+/Year With Rex
           </h2>
           <p className="mt-4 text-lg text-ink/70 leading-relaxed">
@@ -87,7 +87,7 @@ export default function RexVsOthers() {
               <p className="font-mono text-xs text-teal font-bold uppercase tracking-wider mb-1">
                 The Payback Math
               </p>
-              <h3 className="font-heading font-extrabold text-2xl text-white">
+              <h3 className="font-heading font-bold text-2xl text-white">
                 1 Single Saved Job Pays For Your Entire Month of Rex
               </h3>
               <p className="text-sm text-cream/70 mt-1">

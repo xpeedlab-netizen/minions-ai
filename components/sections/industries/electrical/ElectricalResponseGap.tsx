@@ -6,7 +6,7 @@ export default function ElectricalResponseGap() {
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl border border-border bg-white p-8 sm:p-10 grid sm:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-ink text-balance">
+            <h2 className="font-heading font-bold text-2xl sm:text-3xl text-ink text-balance">
               The 100x Response Gap
             </h2>
             <p className="mt-4 text-ink/70 leading-relaxed">

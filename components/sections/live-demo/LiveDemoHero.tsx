@@ -9,7 +9,7 @@ export default function LiveDemoHero() {
           </span>
           Assistant preview
         </span>
-        <h1 className="mt-5 font-heading font-extrabold text-4xl sm:text-5xl text-ink text-balance">
+        <h1 className="mt-5 font-heading font-bold text-4xl sm:text-5xl text-ink text-balance">
           Experience how the crew answers customer inquiries.
         </h1>
         <p className="mt-6 text-lg text-ink/70 leading-relaxed">

@@ -59,7 +59,7 @@ export default function PipChatSimulator() {
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-[#3A6EA5] font-bold shadow-sm mb-4">
             <Sparkles className="size-3.5" /> Interactive Web Chat Simulator
           </span>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-5xl text-ink text-balance">
+          <h2 className="font-heading font-bold text-3xl sm:text-5xl text-ink text-balance">
             See How Pip Answers Website Visitors With 100% Accuracy
           </h2>
           <p className="mt-4 text-lg text-ink/70 leading-relaxed">

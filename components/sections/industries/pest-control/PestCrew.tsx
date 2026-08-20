@@ -27,7 +27,7 @@ export default function PestCrew() {
   return (
     <section className="bg-cream py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-teal-dark text-balance">
+        <h2 className="font-heading font-bold text-3xl sm:text-4xl text-teal-dark text-balance">
           What your crew does for Pest Control
         </h2>
 

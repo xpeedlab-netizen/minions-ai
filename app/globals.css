@@ -52,6 +52,17 @@ h2,
 h3,
 h4 {
   font-family: var(--font-heading);
+  /*
+   * Site-wide fallback matching SectionHeading's hand-tuned scale (Linear/Sierra
+   * benchmark: heavier display type reads tighter). Utility classes like
+   * `leading-[1.08]` or `tracking-tight` on individual headings still win — this
+   * only fills in the ~190 headings across industry/crew/about pages that never
+   * set their own line-height or letter-spacing and were falling back to the
+   * browser default (loose, un-tracked), which read inconsistently against the
+   * ones that did.
+   */
+  line-height: 1.15;
+  letter-spacing: -0.01em;
 }
 
 @keyframes idle-bob {

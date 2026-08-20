@@ -11,7 +11,7 @@ export default function PlumbingEmergencyMode() {
     <section className="bg-teal-dark py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-white text-balance">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white text-balance">
             Peak Emergency Mode
           </h2>
           <p className="mt-4 text-white/70 leading-relaxed">

@@ -14,7 +14,7 @@ export default function AboutHero() {
           <span className="inline-block rounded-full bg-teal/15 px-3 py-1 font-mono text-xs uppercase tracking-wide text-teal">
             The Mission
           </span>
-          <h1 className="mt-5 font-heading font-extrabold text-ink text-4xl sm:text-5xl leading-[1.1] text-balance">
+          <h1 className="mt-5 font-heading font-bold text-ink text-4xl sm:text-5xl leading-[1.1] text-balance">
             Two people. One promise: you&apos;ll never lose a job to a missed call again.
           </h1>
           <p className="mt-6 text-lg text-ink/70 leading-relaxed max-w-xl">

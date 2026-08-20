@@ -18,7 +18,7 @@ export default function ResultsRoiCalculator() {
     <section className="bg-[#F4EDE5] py-16 sm:py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-start">
         <div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance">
             The math, on your numbers.
           </h2>
           <p className="mt-4 text-ink/70 leading-relaxed max-w-md">

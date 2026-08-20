@@ -17,7 +17,7 @@ export default function OttoFinalCta() {
               <span>Otto — 100% Managed Back-Office Autopilot</span>
             </div>
 
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white text-balance leading-tight">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white text-balance leading-tight">
               The Paperwork Is Just... Done. <br className="hidden sm:inline" />
               Deploy Otto in 7 Days.
             </h2>

@@ -11,7 +11,7 @@ export default function LiveDemoOptionB() {
   return (
     <div className="rounded-2xl border border-border bg-white p-6">
 
-      <h2 className="mt-1 font-heading font-extrabold text-xl sm:text-2xl text-ink">
+      <h2 className="mt-1 font-heading font-bold text-xl sm:text-2xl text-ink">
         Have it call your phone
       </h2>
       <p className="mt-2 text-sm text-ink/60 leading-relaxed">

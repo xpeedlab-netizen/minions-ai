@@ -85,7 +85,7 @@ export default async function BlogIndexPage() {
                     </div>
 
                     <Link href={`/blog/${featuredPost.slug}`} className="block">
-                      <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-extrabold text-ink group-hover:text-teal transition-colors mb-4 leading-tight">
+                      <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-ink group-hover:text-teal transition-colors mb-4 leading-tight">
                         {featuredPost.title}
                       </h2>
                     </Link>
@@ -221,7 +221,7 @@ export default async function BlogIndexPage() {
           <div className="absolute bottom-0 left-0 -mb-8 -ml-8 size-40 bg-coral/20 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-2xl mx-auto relative z-10">
-            <h3 className="font-heading text-2xl sm:text-3xl font-extrabold mb-4">
+            <h3 className="font-heading text-2xl sm:text-3xl font-bold mb-4">
               Never Miss a $3,000 Emergency Job Again
             </h3>
             <p className="text-cream/80 text-base mb-8 leading-relaxed">

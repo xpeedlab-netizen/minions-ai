@@ -30,7 +30,7 @@ export default function ElectricalLocalMap() {
         </div>
 
         <div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance">
             Trained on Your Local Map
           </h2>
           <p className="mt-4 text-ink/70 leading-relaxed max-w-md">

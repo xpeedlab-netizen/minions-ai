@@ -16,7 +16,7 @@ export default function RexHero() {
             <Sparkles className="size-3.5 text-teal" />
             Rex: 24/7 AI Voice Dispatcher
           </span>
-          <h1 className="mt-5 font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-balance">
+          <h1 className="mt-5 font-heading font-bold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-balance">
             Never Miss Another $5,000 Call While Your Hands Are Full.
           </h1>
           <p className="mt-4 text-lg text-ink/75 leading-relaxed max-w-xl">

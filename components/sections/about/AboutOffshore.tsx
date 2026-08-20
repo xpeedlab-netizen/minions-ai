@@ -12,7 +12,7 @@ export default function AboutOffshore() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-ink p-10 sm:p-14 grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-white text-balance">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white text-balance">
               Straight talk about offshore.
             </h2>
             <p className="mt-5 text-white/70 leading-relaxed">

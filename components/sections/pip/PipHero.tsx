@@ -10,7 +10,7 @@ export default function PipHero() {
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-[#3A6EA5] font-bold shadow-sm">
             Grounded 24/7 Website Chat Assistant
           </span>
-          <h1 className="mt-5 font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-balance">
+          <h1 className="mt-5 font-heading font-bold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-balance">
             Instant Website Answers Grounded in Real Business Data.
           </h1>
           <p className="mt-4 text-lg text-ink/75 leading-relaxed max-w-xl">

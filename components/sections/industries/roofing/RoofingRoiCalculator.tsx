@@ -26,7 +26,7 @@ export default function RoofingRoiCalculator() {
             <Calculator className="size-3.5" />
             <span>Roofing Revenue Calculator</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance leading-tight">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance leading-tight">
             How much storm revenue is your roofing business leaking?
           </h2>
           <p className="text-base text-ink/70 max-w-xl mx-auto">

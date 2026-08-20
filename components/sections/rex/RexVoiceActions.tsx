@@ -73,7 +73,7 @@ export default function RexVoiceActions() {
             <Sparkles className="size-3.5 text-teal" />
             Built-In Voice Capabilities
           </span>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-5xl text-ink text-balance">
+          <h2 className="font-heading font-bold text-3xl sm:text-5xl text-ink text-balance">
             5 Core Voice Actions Rex Executes Live
           </h2>
           <p className="mt-3 text-base text-ink/70 max-w-xl mx-auto">
@@ -161,7 +161,7 @@ export default function RexVoiceActions() {
                   </span>
                 </div>
 
-                <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-ink text-balance">
+                <h3 className="font-heading font-bold text-2xl sm:text-3xl text-ink text-balance">
                   We Fully Customize Rex for Your Business Operations
                 </h3>
 

@@ -45,7 +45,7 @@ export default function LiveDemoOptionA() {
       <div className="mt-6 flex items-start justify-between">
         <div>
 
-          <h2 className="mt-1 font-heading font-extrabold text-2xl sm:text-3xl text-ink">
+          <h2 className="mt-1 font-heading font-bold text-2xl sm:text-3xl text-ink">
             Talk in your browser
           </h2>
         </div>

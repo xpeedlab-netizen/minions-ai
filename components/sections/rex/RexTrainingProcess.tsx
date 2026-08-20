@@ -24,7 +24,7 @@ export default function RexTrainingProcess() {
           <span className="inline-block rounded-full bg-teal/10 px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-teal font-bold mb-3">
             Zero-Hassle Onboarding
           </span>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance">
             100% Done-For-You Setup in 3 Steps
           </h2>
           <p className="mt-3 text-ink/70 max-w-md text-base leading-relaxed">

@@ -4,7 +4,7 @@ export default function ResultsFinalCta() {
   return (
     <section className="bg-[#E8E1DA] py-16 sm:py-24">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
+        <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance">
           Ready for the real thing?
         </h2>
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">

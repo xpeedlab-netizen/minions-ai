@@ -10,7 +10,7 @@ export default function HvacGrowthBanner() {
             <TrendingUp className="size-5" />
           </span>
           <div>
-            <h2 className="font-heading font-extrabold text-white text-xl">
+            <h2 className="font-heading font-bold text-white text-xl">
               Efficiency is the new growth.
             </h2>
             <p className="text-sm text-white/60">

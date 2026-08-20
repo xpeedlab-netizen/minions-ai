@@ -22,7 +22,7 @@ export default function OttoHero() {
             <span>Otto — Back-Office &amp; Document Automation AI</span>
           </div>
 
-          <h1 className="font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-balance">
+          <h1 className="font-heading font-bold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-balance">
             Stop Paying Skilled Teams <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-teal to-accent-blue bg-clip-text text-transparent">
               to Push Administrative Paperwork.

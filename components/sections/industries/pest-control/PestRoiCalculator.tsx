@@ -26,7 +26,7 @@ export default function PestRoiCalculator() {
             <Calculator className="size-3.5" />
             <span>Pest Control LTV Calculator</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance leading-tight">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance leading-tight">
             How much recurring LTV are you leaking in missed calls?
           </h2>
           <p className="text-base text-ink/70 max-w-xl mx-auto">

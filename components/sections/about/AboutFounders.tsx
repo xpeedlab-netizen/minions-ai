@@ -44,7 +44,7 @@ export default function AboutFounders() {
             <ShieldCheck className="size-4 text-teal" />
             <span>Verifiable Leadership</span>
           </div>
-          <h2 className="mt-3 font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
+          <h2 className="mt-3 font-heading font-bold text-3xl sm:text-4xl text-ink text-balance">
             The Founders Behind Minions.AI
           </h2>
           <p className="mt-3 text-base text-ink/70">

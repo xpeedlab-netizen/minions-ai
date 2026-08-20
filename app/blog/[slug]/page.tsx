@@ -249,7 +249,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <div className="absolute top-0 right-0 -mt-8 -mr-8 size-40 bg-teal/20 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 -mb-8 -ml-8 size-40 bg-coral/20 rounded-full blur-3xl pointer-events-none" />
 
-            <h3 className="font-heading text-2xl sm:text-3xl font-extrabold mb-3 relative z-10">
+            <h3 className="font-heading text-2xl sm:text-3xl font-bold mb-3 relative z-10">
               Want to see this in action for your own business?
             </h3>
             <p className="text-cream/80 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed relative z-10">

@@ -17,7 +17,7 @@ export default function PestFinalCta() {
               <span>Minions AI for Pest Control Operators</span>
             </div>
 
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white text-balance leading-tight">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white text-balance leading-tight">
               Never Lose Another Swarm-Season Call. <br className="hidden sm:inline" />
               Deploy Your AI Crew Before Next Peak.
             </h2>

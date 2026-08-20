@@ -66,7 +66,7 @@ export default function ZipSmsSimulator() {
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-[#C4472A] font-bold shadow-sm mb-4">
             <Sparkles className="size-3.5" /> Interactive Speed-to-Lead Simulator
           </span>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-5xl text-ink text-balance">
+          <h2 className="font-heading font-bold text-3xl sm:text-5xl text-ink text-balance">
             See Zip Turn Missed Calls Into Booked Jobs in Under 5 Seconds
           </h2>
           <p className="mt-4 text-lg text-ink/70 leading-relaxed">

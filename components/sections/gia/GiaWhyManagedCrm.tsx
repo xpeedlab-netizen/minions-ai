@@ -35,7 +35,7 @@ export default function GiaWhyManagedCrm() {
             <span>Why Contractors Choose Managed CRM</span>
           </div>
 
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-white text-balance leading-tight">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white text-balance leading-tight">
             Stop Fighting Complex Dashboards. <br className="hidden sm:inline" />
             Let Gia Manage Your Pipeline.
           </h2>

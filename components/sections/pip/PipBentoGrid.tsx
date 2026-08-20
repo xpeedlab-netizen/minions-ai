@@ -57,7 +57,7 @@ export default function PipBentoGrid() {
           <span className="inline-block rounded-full bg-[#3A6EA5]/10 px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-[#3A6EA5] font-bold mb-3">
             Grounded Chat Architecture
           </span>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-5xl text-ink text-balance">
+          <h2 className="font-heading font-bold text-3xl sm:text-5xl text-ink text-balance">
             5 Core Grounded Abilities Built Into Pip
           </h2>
           <p className="mt-3 text-base text-ink/70 max-w-xl mx-auto">
@@ -123,7 +123,7 @@ export default function PipBentoGrid() {
                 <span className="font-mono text-xs font-bold text-teal uppercase tracking-wider block mb-1">
                   Website Protection 24/7/365
                 </span>
-                <h3 className="font-heading font-extrabold text-2xl text-white">
+                <h3 className="font-heading font-bold text-2xl text-white">
                   Never Leave a Midnight Website Visitor Unanswered
                 </h3>
                 <p className="mt-1 text-sm text-cream/70 leading-relaxed">
@@ -154,7 +154,7 @@ export default function PipBentoGrid() {
                 </span>
               </div>
 
-              <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-ink text-balance">
+              <h3 className="font-heading font-bold text-2xl sm:text-3xl text-ink text-balance">
                 We Fully Customize Pip for Your Business Operations
               </h3>
 

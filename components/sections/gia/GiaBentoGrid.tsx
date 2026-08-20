@@ -27,7 +27,7 @@ export default function GiaBentoGrid() {
             <Sparkles className="size-3.5" />
             <span>Built-In CRM Autopilot Architecture</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance leading-tight">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance leading-tight">
             Gia runs your pipeline and follow-up on 24/7 autopilot.
           </h2>
           <p className="text-base text-ink/70 max-w-xl mx-auto">
@@ -52,7 +52,7 @@ export default function GiaBentoGrid() {
                   </span>
                 </div>
 
-                <h3 className="mt-6 font-heading font-extrabold text-2xl text-white">
+                <h3 className="mt-6 font-heading font-bold text-2xl text-white">
                   Done-For-You Pipeline Setup &amp; Workflow Logic
                 </h3>
                 <p className="mt-2.5 text-sm text-white/75 leading-relaxed max-w-xl">
@@ -87,7 +87,7 @@ export default function GiaBentoGrid() {
                   </span>
                 </div>
 
-                <h3 className="mt-6 font-heading font-extrabold text-xl text-white">
+                <h3 className="mt-6 font-heading font-bold text-xl text-white">
                   Instant Lead Follow-Up
                 </h3>
                 <p className="mt-2 text-sm text-white/80 leading-relaxed">
@@ -110,7 +110,7 @@ export default function GiaBentoGrid() {
                   <CalendarClock className="size-5" />
                 </span>
 
-                <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
+                <h3 className="mt-6 font-heading font-bold text-xl text-ink">
                   Smart SMS Reminders
                 </h3>
                 <p className="mt-2 text-sm text-ink/70 leading-relaxed">
@@ -133,7 +133,7 @@ export default function GiaBentoGrid() {
                   <Star className="size-5" />
                 </span>
 
-                <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
+                <h3 className="mt-6 font-heading font-bold text-xl text-ink">
                   5-Star Review Engine
                 </h3>
                 <p className="mt-2 text-sm text-ink/70 leading-relaxed">
@@ -161,7 +161,7 @@ export default function GiaBentoGrid() {
                   </span>
                 </div>
 
-                <h3 className="mt-6 font-heading font-extrabold text-xl text-white">
+                <h3 className="mt-6 font-heading font-bold text-xl text-white">
                   CRM Sync Engine
                 </h3>
                 <p className="mt-2 text-sm text-white/80 leading-relaxed">

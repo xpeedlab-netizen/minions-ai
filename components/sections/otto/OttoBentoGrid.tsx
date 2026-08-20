@@ -27,7 +27,7 @@ export default function OttoBentoGrid() {
             <Sparkles className="size-3.5" />
             <span>Built-In Back-Office &amp; Document Engine</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance leading-tight">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance leading-tight">
             Otto automates the document grind so your team focuses on billable work.
           </h2>
           <p className="text-base text-ink/70 max-w-xl mx-auto">
@@ -52,7 +52,7 @@ export default function OttoBentoGrid() {
                   </span>
                 </div>
 
-                <h3 className="mt-6 font-heading font-extrabold text-2xl text-white">
+                <h3 className="mt-6 font-heading font-bold text-2xl text-white">
                   Autonomous Client Intake &amp; Onboarding
                 </h3>
                 <p className="mt-2.5 text-sm text-white/75 leading-relaxed max-w-xl">
@@ -87,7 +87,7 @@ export default function OttoBentoGrid() {
                   </span>
                 </div>
 
-                <h3 className="mt-6 font-heading font-extrabold text-xl text-white">
+                <h3 className="mt-6 font-heading font-bold text-xl text-white">
                   Automated Document Chasing
                 </h3>
                 <p className="mt-2 text-sm text-white/80 leading-relaxed">
@@ -110,7 +110,7 @@ export default function OttoBentoGrid() {
                   <ScanText className="size-5" />
                 </span>
 
-                <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
+                <h3 className="mt-6 font-heading font-bold text-xl text-ink">
                   AI Optical Data Extraction
                 </h3>
                 <p className="mt-2 text-sm text-ink/70 leading-relaxed">
@@ -133,7 +133,7 @@ export default function OttoBentoGrid() {
                   <FolderCheck className="size-5" />
                 </span>
 
-                <h3 className="mt-6 font-heading font-extrabold text-xl text-ink">
+                <h3 className="mt-6 font-heading font-bold text-xl text-ink">
                   Auto-Filing &amp; Folder Routing
                 </h3>
                 <p className="mt-2 text-sm text-ink/70 leading-relaxed">
@@ -161,7 +161,7 @@ export default function OttoBentoGrid() {
                   </span>
                 </div>
 
-                <h3 className="mt-6 font-heading font-extrabold text-xl text-white">
+                <h3 className="mt-6 font-heading font-bold text-xl text-white">
                   Bank-Grade NDA &amp; Security
                 </h3>
                 <p className="mt-2 text-sm text-white/80 leading-relaxed">

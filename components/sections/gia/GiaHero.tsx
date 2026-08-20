@@ -22,7 +22,7 @@ export default function GiaHero() {
             <span>Gia — Managed CRM &amp; Pipeline Autopilot</span>
           </div>
 
-          <h1 className="font-heading font-extrabold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-balance">
+          <h1 className="font-heading font-bold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-balance">
             Every Call &amp; Chat Tracked Automatically. <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-success to-teal bg-clip-text text-transparent">
               Zero Manual CRM Entry.

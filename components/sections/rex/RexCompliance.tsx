@@ -4,7 +4,7 @@ export default function RexCompliance() {
   return (
     <section className="bg-teal py-16 sm:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white text-balance">
+        <h2 className="font-heading font-bold text-2xl sm:text-3xl text-white text-balance">
           How Call Recording &amp; Consent Work
         </h2>
         <p className="mt-4 text-white/80 leading-relaxed max-w-2xl mx-auto text-base sm:text-lg">

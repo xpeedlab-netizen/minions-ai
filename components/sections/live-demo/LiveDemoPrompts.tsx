@@ -10,7 +10,7 @@ export default function LiveDemoPrompts() {
     <section className="pb-16 sm:pb-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-ink p-8 sm:p-10">
-          <h3 className="font-heading font-extrabold text-xl text-white">What to try:</h3>
+          <h3 className="font-heading font-bold text-xl text-white">What to try:</h3>
           <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {prompts.map((p) => (
               <div key={p.q} className="rounded-xl bg-white/5 border border-white/10 p-4">

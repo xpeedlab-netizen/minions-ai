@@ -56,7 +56,7 @@ export default function ZipBentoGrid() {
           <span className="inline-block rounded-full bg-[#C4472A]/10 px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-[#C4472A] font-bold mb-3">
             Speed-to-Lead Architecture
           </span>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-5xl text-ink text-balance">
+          <h2 className="font-heading font-bold text-3xl sm:text-5xl text-ink text-balance">
             5 Core Speed-to-Lead Abilities Built Into Zip
           </h2>
           <p className="mt-3 text-base text-ink/70 max-w-xl mx-auto">
@@ -92,7 +92,7 @@ export default function ZipBentoGrid() {
                 <span className="font-mono text-xs font-bold text-teal uppercase tracking-wider block mb-1">
                   24/7/365 Protection
                 </span>
-                <h3 className="font-heading font-extrabold text-2xl text-white">
+                <h3 className="font-heading font-bold text-2xl text-white">
                   Weekend &amp; After-Hours Automatic Coverage
                 </h3>
                 <p className="mt-1 text-sm text-cream/70 leading-relaxed">
@@ -123,7 +123,7 @@ export default function ZipBentoGrid() {
                 </span>
               </div>
 
-              <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-ink text-balance">
+              <h3 className="font-heading font-bold text-2xl sm:text-3xl text-ink text-balance">
                 We Fully Customize Zip for Your Business Operations
               </h3>
 

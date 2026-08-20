@@ -9,7 +9,7 @@ export default function ZipHonestPitch() {
           <CheckCircle2 className="size-3.5 text-success" />
           The Honest Pitch
         </span>
-        <h2 className="mt-5 font-heading font-extrabold text-3xl sm:text-4xl text-ink text-balance">
+        <h2 className="mt-5 font-heading font-bold text-3xl sm:text-4xl text-ink text-balance">
           This is the fastest win we install.
         </h2>
         <p className="mt-4 text-ink/70 leading-relaxed italic">

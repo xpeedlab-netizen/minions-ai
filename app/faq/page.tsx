@@ -3,6 +3,7 @@ import FaqHero from "@/components/sections/faq/FaqHero";
 import FaqSidebar from "@/components/sections/faq/FaqSidebar";
 import FaqContent from "@/components/sections/faq/FaqContent";
 import FaqFinalCta from "@/components/sections/faq/FaqFinalCta";
+import { APPROVED_FAQS } from "@/lib/data/site-content";
 
 export const metadata: Metadata = {
   title: "FAQ — AI Phone Answering Questions, Answered Straight",
@@ -11,8 +12,25 @@ export const metadata: Metadata = {
 };
 
 export default function FaqPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: APPROVED_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <FaqHero />
 
       <section className="bg-cream-dark pb-16 sm:pb-24">

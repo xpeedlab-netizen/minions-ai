@@ -189,17 +189,20 @@ export default async function BlogPostPage({ params }: PageProps) {
             {post.title}
           </h1>
 
-          {/* Hero Pull-Quote: The Field Reality */}
+          {/* Quick Answer RAG Extraction Block & The Field Reality */}
           {(post.hook || post.core_argument) && (
-            <div className="my-6 rounded-2xl border-l-4 border-coral bg-white p-6 shadow-xs border border-border/60">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-coral mb-2">
+            <section className="my-6 rounded-2xl border-l-4 border-coral bg-white p-6 shadow-xs border border-border/60">
+              {/* Visually hidden h2 explicitly signals a direct answer to AI scrapers */}
+              <h2 className="sr-only">Quick Answer</h2>
+              <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-coral mb-2" aria-hidden="true">
                 <Sparkles className="size-4" />
-                The Field Reality
+                The Field Reality / Quick Answer
               </div>
+              {/* Contiguous, direct answer chunk (< 150 words) */}
               <p className="font-heading font-semibold text-lg sm:text-xl text-ink leading-snug">
-                &ldquo;{post.hook || post.core_argument}&rdquo;
+                {post.core_argument || post.hook}
               </p>
-            </div>
+            </section>
           )}
         </header>
 

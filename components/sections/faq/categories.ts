@@ -1,7 +1,13 @@
-export const faqCategories = [
-  { id: "ai-experience", label: "The AI & Experience" },
-  { id: "setup-tech", label: "Setup & Tech" },
-  { id: "pricing-contracts", label: "Pricing & Contracts" },
-  { id: "compliance-safety", label: "Compliance & Safety" },
-  { id: "the-team", label: "The Team" },
+export const FAQ_CATEGORIES = [
+  { id: "all", label: "All Questions", icon: "HelpCircle" },
+  { id: "ai-experience", label: "AI Voice & Experience", icon: "Headset" },
+  { id: "setup-tech", label: "Setup & CRMs", icon: "SlidersHorizontal" },
+  { id: "pricing-contracts", label: "Pricing & Guarantee", icon: "Receipt" },
+  { id: "compliance-safety", label: "Compliance & Safety", icon: "ShieldCheck" },
+  { id: "the-team", label: "Founders & Support", icon: "Users" },
 ] as const;
+
+export type FaqCategoryId = (typeof FAQ_CATEGORIES)[number]["id"];
+
+export const faqCategories = FAQ_CATEGORIES;
+

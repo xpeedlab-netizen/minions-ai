@@ -38,7 +38,7 @@ export default function RealEstateRoiCalculator() {
         </div>
 
         {/* Calculator Widget Box */}
-        <div className="relative rounded-[32px] border border-white/10 bg-ink/95 backdrop-blur-2xl p-6 sm:p-10 text-white shadow-2xl overflow-hidden grid lg:grid-cols-12 gap-8 items-center ring-1 ring-white/10">
+        <div className="relative rounded-[32px] border border-white/10 bg-ink/95 backdrop-blur-2xl p-5 sm:p-10 text-white shadow-2xl overflow-hidden grid lg:grid-cols-12 gap-8 items-center ring-1 ring-white/10">
           {/* Background Glow */}
           <div className="absolute top-0 right-0 size-80 rounded-full bg-teal/20 blur-3xl pointer-events-none" />
 
@@ -46,9 +46,9 @@ export default function RealEstateRoiCalculator() {
           <div className="lg:col-span-7 space-y-6 relative z-10">
             {/* Slider 1: Missed Inbound Calls / Month */}
             <div className="space-y-2">
-              <div className="flex justify-between items-center text-xs font-mono">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs font-mono">
                 <span className="text-white/70">Estimated Missed Calls / Inquiries / Mo:</span>
-                <span className="font-bold text-teal-300 text-sm bg-teal/20 px-3 py-1 rounded-lg border border-teal/40">
+                <span className="font-bold text-teal-300 text-sm bg-teal/20 px-3 py-1 rounded-lg border border-teal/40 w-full sm:w-auto text-center sm:text-left">
                   {missedCalls} Calls / Mo
                 </span>
               </div>
@@ -64,7 +64,7 @@ export default function RealEstateRoiCalculator() {
               <div className="flex justify-between text-[10px] font-mono text-white/40">
                 <span>5 Calls</span>
                 <span>30 Calls</span>
-                <span>60 Calls (Peak Season)</span>
+                <span>60 Calls (Peak)</span>
               </div>
             </div>
 
@@ -95,9 +95,9 @@ export default function RealEstateRoiCalculator() {
 
             {/* Slider 2: Average Commission Rate */}
             <div className="space-y-2">
-              <div className="flex justify-between items-center text-xs font-mono">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs font-mono">
                 <span className="text-white/70">Average Commission Side:</span>
-                <span className="font-bold text-success text-sm bg-success/20 px-3 py-1 rounded-lg border border-success/40">
+                <span className="font-bold text-success text-sm bg-success/20 px-3 py-1 rounded-lg border border-success/40 w-full sm:w-auto text-center sm:text-left">
                   {commissionRate}% (~${commissionPerDeal.toLocaleString()} / deal)
                 </span>
               </div>

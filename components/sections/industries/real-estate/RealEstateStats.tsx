@@ -39,7 +39,7 @@ export default function RealEstateStats() {
           {items.map((s) => (
             <div
               key={s.label}
-              className="relative rounded-2xl border border-border/80 bg-white p-5 shadow-xs hover:border-teal/40 transition-colors"
+              className="relative rounded-2xl border border-border/80 bg-white p-5 shadow-sm hover:shadow-xl hover:border-teal/40 hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-center justify-between">
                 <span className="flex size-9 items-center justify-center rounded-xl bg-teal/10 text-teal">

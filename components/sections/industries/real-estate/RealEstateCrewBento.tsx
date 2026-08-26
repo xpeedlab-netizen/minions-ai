@@ -32,7 +32,7 @@ export default function RealEstateCrewBento() {
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {/* Card 1: Alex — 24/7 Real Estate Voice ISA (Featured Large Card) */}
           <Reveal className="lg:col-span-2">
-            <div className="relative h-full rounded-3xl border border-ink/20 bg-ink p-7 text-white shadow-xl overflow-hidden flex flex-col justify-between">
+            <div className="relative h-full rounded-3xl border border-ink/20 bg-ink p-7 text-white shadow-xl overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:shadow-teal/20 hover:border-teal/40 hover:-translate-y-1 transition-all duration-300">
               <div className="absolute top-0 right-0 -mr-16 -mt-16 size-64 rounded-full bg-teal/20 blur-3xl pointer-events-none" />
 
               <div>
@@ -69,7 +69,7 @@ export default function RealEstateCrewBento() {
 
           {/* Card 2: Zip — 5-Second Speed to Lead */}
           <Reveal delay={0.05}>
-            <div className="relative h-full rounded-3xl border border-coral/30 bg-coral/10 p-7 text-ink shadow-sm flex flex-col justify-between">
+            <div className="relative h-full rounded-3xl border border-coral/30 bg-coral/10 p-7 text-ink shadow-sm flex flex-col justify-between hover:shadow-xl hover:shadow-coral/20 hover:border-coral/50 hover:-translate-y-1 transition-all duration-300">
               <div>
                 <div className="flex items-center justify-between">
                   <span className="flex size-11 items-center justify-center rounded-2xl bg-coral/20 text-coral-text">
@@ -97,7 +97,7 @@ export default function RealEstateCrewBento() {
 
           {/* Card 3: Pip — Listing FAQ AI */}
           <Reveal delay={0.1}>
-            <div className="relative h-full rounded-3xl border border-border bg-white p-7 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div className="relative h-full rounded-3xl border border-border bg-white p-7 shadow-xs hover:shadow-xl hover:border-teal/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
               <div>
                 <span className="flex size-11 items-center justify-center rounded-2xl bg-accent-blue/10 text-accent-blue border border-accent-blue/30">
                   <Bot className="size-5" />
@@ -120,7 +120,7 @@ export default function RealEstateCrewBento() {
 
           {/* Card 4: Gia — 100-Point CRM Scoring */}
           <Reveal delay={0.15}>
-            <div className="relative h-full rounded-3xl border border-border bg-white p-7 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div className="relative h-full rounded-3xl border border-border bg-white p-7 shadow-xs hover:shadow-xl hover:border-teal/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
               <div>
                 <span className="flex size-11 items-center justify-center rounded-2xl bg-success/10 text-success border border-success/30">
                   <Layers className="size-5" />
@@ -143,7 +143,7 @@ export default function RealEstateCrewBento() {
 
           {/* Card 5: Otto — Showing Agreements & CMA Briefs */}
           <Reveal delay={0.2}>
-            <div className="relative h-full rounded-3xl border border-ink/20 bg-ink p-7 text-white shadow-lg flex flex-col justify-between">
+            <div className="relative h-full rounded-3xl border border-ink/20 bg-ink p-7 text-white shadow-lg flex flex-col justify-between hover:shadow-2xl hover:border-white/30 hover:-translate-y-1 transition-all duration-300">
               <div>
                 <div className="flex items-center justify-between">
                   <span className="flex size-11 items-center justify-center rounded-2xl bg-white/15 text-white">

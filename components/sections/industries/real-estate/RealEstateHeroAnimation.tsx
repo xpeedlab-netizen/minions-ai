@@ -62,7 +62,7 @@ export default function RealEstateHeroAnimation() {
   }, []);
 
   return (
-    <div className="relative rounded-[28px] border-4 border-ink/10 bg-ink p-5 sm:p-7 text-white shadow-2xl overflow-hidden">
+    <div className="relative rounded-[28px] border border-white/10 bg-ink/95 backdrop-blur-2xl p-5 sm:p-7 text-white shadow-2xl overflow-hidden ring-1 ring-white/10">
       {/* Glow Effects */}
       <div className="absolute top-0 right-0 size-72 rounded-full bg-teal/20 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 size-72 rounded-full bg-coral/15 blur-3xl pointer-events-none" />

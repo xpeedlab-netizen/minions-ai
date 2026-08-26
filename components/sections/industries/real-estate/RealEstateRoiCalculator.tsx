@@ -38,7 +38,7 @@ export default function RealEstateRoiCalculator() {
         </div>
 
         {/* Calculator Widget Box */}
-        <div className="relative rounded-[32px] border-4 border-ink/10 bg-ink p-6 sm:p-10 text-white shadow-2xl overflow-hidden grid lg:grid-cols-12 gap-8 items-center">
+        <div className="relative rounded-[32px] border border-white/10 bg-ink/95 backdrop-blur-2xl p-6 sm:p-10 text-white shadow-2xl overflow-hidden grid lg:grid-cols-12 gap-8 items-center ring-1 ring-white/10">
           {/* Background Glow */}
           <div className="absolute top-0 right-0 size-80 rounded-full bg-teal/20 blur-3xl pointer-events-none" />
 
@@ -119,7 +119,7 @@ export default function RealEstateRoiCalculator() {
               <p className="font-mono text-xs uppercase tracking-wide text-white/50">
                 Annual Leaked Commission (GCI)
               </p>
-              <p className="mt-1 font-mono text-3xl sm:text-4xl font-extrabold text-coral-text">
+              <p className="mt-1 font-mono text-3xl sm:text-4xl font-extrabold text-coral-text drop-shadow-[0_0_15px_rgba(255,107,107,0.4)]">
                 -${annualLostRevenue.toLocaleString()}
               </p>
               <p className="mt-1 font-mono text-[11px] text-white/50">

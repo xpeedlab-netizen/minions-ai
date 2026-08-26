@@ -7,8 +7,8 @@ export default function RealEstateHero() {
   return (
     <section className="relative bg-cream border-b border-border overflow-hidden py-16 sm:py-24">
       {/* Background Decorative Glows */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 size-96 rounded-full bg-teal/10 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 -mb-20 size-80 rounded-full bg-coral/10 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 -mr-20 -mt-20 size-96 rounded-full bg-teal/15 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 -mb-20 size-80 rounded-full bg-coral/15 blur-[100px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left Column: Copy & Actions */}
@@ -24,8 +24,10 @@ export default function RealEstateHero() {
 
           <h1 className="font-heading font-bold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-balance">
             Stop Losing <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-teal to-coral-text bg-clip-text text-transparent">
-              $15,000 Commissions
+            <span className="relative inline-block">
+              <span className="bg-gradient-to-r from-teal via-[#4ade80] to-coral-text bg-clip-text text-transparent drop-shadow-sm">
+                $15,000 Commissions
+              </span>
             </span>{" "}
             to Voicemail.
           </h1>

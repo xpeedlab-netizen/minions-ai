@@ -9,7 +9,7 @@ export const services: NavLink[] = [
 ];
 
 export const industries: NavLink[] = [
-  { label: "Real Estate (New)", href: "/industries/real-estate" },
+  { label: "Real Estate", href: "/industries/real-estate" },
   { label: "Pest Control", href: "/industries/pest-control" },
   { label: "HVAC", href: "/industries/hvac" },
   { label: "Plumbing", href: "/industries/plumbing" },

@@ -39,29 +39,27 @@ const scriptSteps = [
 
 export default function RealEstateHeroAnimation() {
   const [activeStep, setActiveStep] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const timer = setInterval(() => {
-      // Add 2 extra steps to keep the final state on screen for a moment before looping
       setActiveStep((prev) => (prev + 1) % (scriptSteps.length + 2));
     }, 3200);
     return () => clearInterval(timer);
   }, []);
 
-  const visibleSteps = scriptSteps.slice(0, Math.min(activeStep + 1, scriptSteps.length));
-  // Show confirmation only when we've reached the end of the script
-  const showConfirmation = activeStep >= scriptSteps.length - 1;
+  if (!mounted) return null; // Avoid hydration mismatch on initial render
 
-  // We only show the last 3 messages so the chat doesn't grow infinitely large
+  const visibleSteps = scriptSteps.slice(0, Math.min(activeStep + 1, scriptSteps.length));
+  const showConfirmation = activeStep >= scriptSteps.length - 1;
   const displaySteps = visibleSteps.slice(-3);
 
   return (
     <div className="relative rounded-[24px] border border-white/10 bg-[#0F172A]/90 backdrop-blur-2xl p-4 sm:p-6 text-white shadow-2xl overflow-hidden ring-1 ring-white/5">
-      {/* Subtle Glows */}
       <div className="absolute -top-24 -right-24 size-64 rounded-full bg-teal/20 blur-[80px] pointer-events-none" />
       <div className="absolute -bottom-24 -left-24 size-64 rounded-full bg-teal/10 blur-[80px] pointer-events-none" />
 
-      {/* Clean Header */}
       <div className="relative z-10 flex items-center justify-between border-b border-white/10 pb-4 mb-5">
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-full bg-teal/20 text-teal-300">
@@ -72,7 +70,6 @@ export default function RealEstateHeroAnimation() {
             <p className="text-xs text-white/50">Marcus Vance • Live AI Voice Call</p>
           </div>
         </div>
-        {/* Audio Waveform */}
         <div className="flex items-center gap-1 opacity-70">
           {[40, 75, 30, 90, 50, 80].map((h, i) => (
             <span
@@ -84,16 +81,13 @@ export default function RealEstateHeroAnimation() {
         </div>
       </div>
 
-      {/* Chat Container */}
       <div className="relative z-10 min-h-[260px] flex flex-col justify-end gap-4 pb-2">
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence initial={false}>
           {displaySteps.map((s, idx) => {
             const isAgent = s.role === "agent";
-            // Use a stable key based on the text to ensure Framer Motion tracks it properly
             return (
               <motion.div
                 key={s.text}
-                layout
                 initial={{ opacity: 0, y: 15, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
@@ -101,15 +95,10 @@ export default function RealEstateHeroAnimation() {
                 className={`flex flex-col ${isAgent ? "items-start pr-8 sm:pr-12" : "items-end pl-8 sm:pl-12"}`}
               >
                 {isAgent && s.badge && (
-                  <motion.span 
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                    className="mb-1.5 flex items-center gap-1 text-[10px] font-semibold text-teal-300 uppercase tracking-wider"
-                  >
+                  <div className="mb-1.5 flex items-center gap-1 text-[10px] font-semibold text-teal-300 uppercase tracking-wider">
                     <Sparkles className="size-3" />
                     {s.badge}
-                  </motion.span>
+                  </div>
                 )}
                 <div
                   className={`relative px-4 py-3 text-sm leading-relaxed ${
@@ -126,7 +115,6 @@ export default function RealEstateHeroAnimation() {
         </AnimatePresence>
       </div>
 
-      {/* Conditional Confirmation Card (Pops in at the end) */}
       <AnimatePresence>
         {showConfirmation && (
           <motion.div

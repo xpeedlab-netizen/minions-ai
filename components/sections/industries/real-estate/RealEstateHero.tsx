@@ -37,12 +37,12 @@ export default function RealEstateHero() {
           </p>
 
           {/* Action Buttons */}
-          <div className="pt-2 flex flex-col sm:flex-row gap-4">
+          <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
             <Button href="/live-demo" size="lg" showArrow className="bg-teal hover:bg-teal-dark text-white shadow-md">
-              Hear Real Estate Voice Demo
+              Hear Real Estate Demo
             </Button>
             <Button href={BOOKING_CALENDAR_URL} variant="outline" size="lg" className="border-border hover:bg-white">
-              Book 15-Min Broker Demo
+              Book 15-Min Demo
             </Button>
           </div>
 

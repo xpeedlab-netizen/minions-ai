@@ -1,5 +1,4 @@
 import { PhoneMissed, Scale, Car, AlertCircle, ArrowDownRight } from "lucide-react";
-import Reveal from "@/components/ui/Reveal";
 
 const leaks = [
   {
@@ -40,7 +39,7 @@ export default function RealEstateProblem() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           
           {/* Visual: Lead Decay Chart */}
-          <Reveal className="relative w-full aspect-square max-h-[400px] rounded-[32px] border border-border/80 bg-white p-8 shadow-sm flex flex-col">
+          <div className="relative w-full aspect-square max-h-[400px] rounded-[32px] border border-border/80 bg-white p-8 shadow-sm flex flex-col">
             <div className="flex justify-between items-center mb-8">
               <h3 className="font-mono text-sm font-bold text-ink/70 uppercase tracking-wide">Lead Conversion Probability</h3>
               <span className="bg-coral/10 text-coral-text px-2 py-1 rounded-md text-[10px] font-bold font-mono">78% Rule</span>
@@ -75,22 +74,20 @@ export default function RealEstateProblem() {
               <div className="absolute bottom-[-20px] left-[25%] font-mono text-[10px] text-ink/40">90s</div>
               <div className="absolute bottom-[-20px] right-0 font-mono text-[10px] text-ink/40">5m</div>
             </div>
-          </Reveal>
+          </div>
 
           {/* List: Condensed Leaks */}
           <div className="space-y-4">
             {leaks.map((leak, i) => (
-              <Reveal key={leak.title} delay={i * 0.1}>
-                <div className="flex items-center gap-5 p-5 rounded-2xl bg-white border border-border/80 shadow-sm hover:shadow-md hover:border-teal/40 transition-all group">
-                  <span className={`flex size-12 shrink-0 items-center justify-center rounded-xl border ${leak.iconColor} group-hover:scale-110 transition-transform`}>
-                    <leak.icon className="size-5" />
-                  </span>
-                  <div className="flex-1">
-                    <h3 className="font-heading font-bold text-lg text-ink">{leak.title}</h3>
-                    <p className="font-mono text-xs font-semibold text-coral-text mt-1">{leak.loss}</p>
-                  </div>
+              <div key={leak.title} className="flex items-center gap-5 p-5 rounded-2xl bg-white border border-border/80 shadow-sm hover:shadow-md hover:border-teal/40 transition-all group">
+                <span className={`flex size-12 shrink-0 items-center justify-center rounded-xl border ${leak.iconColor} group-hover:scale-110 transition-transform`}>
+                  <leak.icon className="size-5" />
+                </span>
+                <div className="flex-1">
+                  <h3 className="font-heading font-bold text-lg text-ink">{leak.title}</h3>
+                  <p className="font-mono text-xs font-semibold text-coral-text mt-1">{leak.loss}</p>
                 </div>
-              </Reveal>
+              </div>
             ))}
           </div>
 

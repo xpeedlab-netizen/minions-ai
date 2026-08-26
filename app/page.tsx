@@ -3,6 +3,7 @@ import TheRealCost from "@/components/sections/home/TheRealCost";
 import LiveDemoSection from "@/components/sections/home/LiveDemoSection";
 import Proof from "@/components/sections/home/Proof";
 import HowItWorks from "@/components/sections/home/HowItWorks";
+import IndustriesSection from "@/components/sections/home/IndustriesSection";
 import MeetTheCrew from "@/components/sections/home/MeetTheCrew";
 import ComparisonTable from "@/components/sections/home/ComparisonTable";
 import PricingPreview from "@/components/sections/home/PricingPreview";
@@ -41,6 +42,7 @@ export default function Home() {
       <LiveDemoSection />
       <Proof />
       <HowItWorks />
+      <IndustriesSection />
       <MeetTheCrew />
       <ComparisonTable />
       {/* Founders is a dark inverted band (story + video as one moment), so it sits

@@ -9,10 +9,11 @@ export const services: NavLink[] = [
 ];
 
 export const industries: NavLink[] = [
+  { label: "Real Estate (New)", href: "/industries/real-estate" },
+  { label: "Pest Control", href: "/industries/pest-control" },
   { label: "HVAC", href: "/industries/hvac" },
   { label: "Plumbing", href: "/industries/plumbing" },
   { label: "Roofing", href: "/industries/roofing" },
-  { label: "Pest Control", href: "/industries/pest-control" },
   { label: "Electrical", href: "/industries/electrical" },
 ];
 
@@ -20,8 +21,9 @@ export const footerProduct: NavLink[] = [
   { label: "How it Works", href: "/how-it-works" },
   { label: "Pricing", href: "/pricing" },
   { label: "The Crew", href: "/#crew" },
+  { label: "Industries", href: "/#industries" },
+  { label: "Real Estate AI (New)", href: "/industries/real-estate" },
   { label: "Blog & Guides", href: "/blog" },
-  { label: "CRM Answering", href: "/crm-automation" },
 ];
 
 export const footerLegal: NavLink[] = [

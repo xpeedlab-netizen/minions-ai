@@ -56,7 +56,7 @@ export default function RealEstateHeroAnimation() {
   const displaySteps = visibleSteps.slice(-3);
 
   return (
-    <div className="relative rounded-[24px] border border-white/10 bg-[#0F172A]/90 backdrop-blur-2xl p-4 sm:p-6 text-white shadow-2xl overflow-hidden ring-1 ring-white/5">
+    <div className="relative w-full rounded-[24px] border border-white/10 bg-[#0F172A]/90 backdrop-blur-2xl p-4 sm:p-6 text-white shadow-2xl overflow-hidden ring-1 ring-white/5">
       <div className="absolute -top-24 -right-24 size-64 rounded-full bg-teal/20 blur-[80px] pointer-events-none" />
       <div className="absolute -bottom-24 -left-24 size-64 rounded-full bg-teal/10 blur-[80px] pointer-events-none" />
 
@@ -101,7 +101,7 @@ export default function RealEstateHeroAnimation() {
                   </div>
                 )}
                 <div
-                  className={`relative px-4 py-3 text-sm leading-relaxed ${
+                  className={`relative px-4 py-3 text-sm leading-relaxed break-words ${
                     isAgent
                       ? "bg-white/10 text-white/95 rounded-2xl rounded-tl-sm border border-white/5 shadow-sm"
                       : "bg-teal text-white rounded-2xl rounded-tr-sm shadow-md"

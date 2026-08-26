@@ -12,7 +12,7 @@ export default function RealEstateHero() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left Column: Copy & Actions */}
-        <div className="lg:col-span-6 space-y-6">
+        <div className="lg:col-span-6 space-y-6 min-w-0">
           <div className="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-3.5 py-1.5 font-mono text-xs font-semibold text-teal shadow-xs">
             <span className="relative flex size-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal opacity-75" />
@@ -58,7 +58,7 @@ export default function RealEstateHero() {
         </div>
 
         {/* Right Column: Interactive Real Estate Voice Simulator */}
-        <div className="lg:col-span-6 relative">
+        <div className="lg:col-span-6 relative w-full min-w-0">
           <RealEstateHeroAnimation />
         </div>
       </div>

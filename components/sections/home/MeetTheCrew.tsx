@@ -261,7 +261,9 @@ export default function MeetTheCrew() {
         </div>
 
         {/* Two columns at lg: the hero holds the left, the three supports stack down the
-            right. Below lg the same grid collapses to one column, which puts Rex
+            right, CENTRED in their cell — collapsed they measure ~381px against Rex's
+            ~719px, and top-aligning them left a 290px void that read as a missing fourth
+            card once the decorative glow behind it was removed. Below lg the same grid collapses to one column, which puts Rex
             full-width above three stacked rows — the intended mobile order, with no
             sideways scroll and no orphan cell. */}
         <div className="mt-12 grid gap-4 lg:grid-cols-2 lg:gap-6">
@@ -306,7 +308,7 @@ export default function MeetTheCrew() {
             </article>
           </Reveal>
 
-          <ul className="flex flex-col gap-4 lg:gap-6">
+          <ul className="flex flex-col gap-4 lg:justify-center lg:gap-6">
             {supports.map((m, i) => (
               <SupportRow key={m.id} m={m} delay={0.08 + i * 0.06} />
             ))}

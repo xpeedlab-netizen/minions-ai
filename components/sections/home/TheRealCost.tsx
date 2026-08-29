@@ -66,9 +66,11 @@ export default function TheRealCost() {
         </SectionLead>
       </div>
 
-      {/* Two cards, held to a 4xl measure so they read as a pair rather than as a
-          three-up grid with a gap where the third used to be. */}
-      <ul className="mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">
+      {/* Two cards spanning the full band. Capped at max-w-4xl they measured 896px
+          inside a 1152px band, which left a 256px orphan gap on the right that read as
+          a third card failing to load. Full width also suits the brief's "minimal in
+          quantity, generous in size". */}
+      <ul className="mt-12 grid gap-6 sm:grid-cols-2">
         {problemCards.map((c, i) => (
           <Reveal key={c.title} as="li" delay={i * 0.08} className="h-full">
             <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-cream">
@@ -77,7 +79,7 @@ export default function TheRealCost() {
                   src={c.src}
                   alt={c.alt}
                   fill
-                  sizes="(max-width: 640px) 100vw, 42vw"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>

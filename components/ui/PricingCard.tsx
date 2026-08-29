@@ -20,7 +20,7 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
 
       {plan.description && (
         <p
-          className={`mt-2 text-xs leading-relaxed ${
+          className={`mt-2 text-[0.9375rem] leading-relaxed ${
             plan.popular ? "text-white/80" : "text-ink/65"
           }`}
         >
@@ -33,24 +33,26 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
           {plan.price ? (
             <>
               <span className="font-mono text-3xl sm:text-4xl font-medium">{plan.price}</span>
-              <span className={plan.popular ? "text-white/70" : "text-ink/60"}>/mo</span>
+              <span className={plan.popular ? "text-white/80" : "text-ink/75"}>/mo</span>
             </>
           ) : (
             <span className="font-mono text-3xl sm:text-4xl font-medium">Custom</span>
           )}
         </div>
         <p
-          className={`text-xs mt-1 font-medium ${
+          className={`mt-1 text-sm font-medium ${
             plan.popular ? "text-cream" : "text-teal"
           }`}
         >
-          {plan.setupFee ? `+ ${plan.setupFee} one-time setup` : "Custom setup scope"}
+          {/* `setupFee` already reads "One-time setup" / "Custom scope" in pricing.ts, so
+              appending "one-time setup" here rendered "+ One-time setup one-time setup". */}
+          {plan.setupFee ? `+ ${plan.setupFee}` : "Custom setup scope"}
         </p>
       </div>
 
       <ul className="mt-6 flex-1 space-y-3">
         {plan.features.map((f) => (
-          <li key={f} className="flex items-start gap-2.5 text-sm">
+          <li key={f} className="flex items-start gap-2.5 text-[0.9375rem]">
             <Check
               className={`size-4 mt-0.5 shrink-0 ${
                 plan.popular ? "text-cream" : "text-success"

@@ -15,7 +15,7 @@ export default function ResultsFinalCta() {
             Talk to a Human
           </Button>
         </div>
-        <p className="mt-5 font-mono text-xs text-ink/50">
+        <p className="mt-5 font-mono text-xs text-ink/75">
           Only 4 Founding Slots remaining for Q4.
         </p>
       </div>

@@ -23,6 +23,20 @@
   --color-crew-gia: var(--color-success);
   --color-crew-otto: #2c3e50;
 
+  /* Dark-ground variants. The four accents above were chosen against cream and are
+     unreadable on the ink band: teal measures 2.08:1 on #12242a, zip 3.26, pip 3.01,
+     gia 3.68 — all below the 4.5:1 floor, and the crew rail is an ink band. These are
+     the same hues lightened until they clear it (6.8–7.7:1). The originals are
+     untouched (invariants.md #8); use `-on-dark` only on ink or teal grounds. */
+  /* Text-safe green. --color-success (#1b8a5a) is 4.35:1 on white — just under the
+     4.5:1 floor — so it is fine as an icon fill or a background but not as body text. */
+  --color-success-text: #116b43;
+
+  --color-crew-rex-on-dark: #4db8bf;
+  --color-crew-zip-on-dark: #ff8a63;
+  --color-crew-pip-on-dark: #7fb0e0;
+  --color-crew-gia-on-dark: #4cc98d;
+
   --font-heading: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, monospace;

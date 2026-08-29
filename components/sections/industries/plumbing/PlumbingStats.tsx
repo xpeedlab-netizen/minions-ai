@@ -3,8 +3,8 @@ import { DollarSign, Zap, PhoneOff, CalendarCheck2 } from "lucide-react";
 const items = [
   {
     value: "$380k+",
-    unit: "Recovered",
-    label: "Annual Revenue Saved",
+    unit: "Projected",
+    label: "Annual Revenue At Stake",
     sub: "From 2-3 saved emergency jobs/wk",
     icon: DollarSign,
   },

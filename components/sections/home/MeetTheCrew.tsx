@@ -65,7 +65,6 @@ type Support = {
   /** Mascot PNGs are fixed brand assets — see .claude/invariants.md #1. */
   src: string;
   roleClass: string;
-  glowClass: string;
 };
 
 /*
@@ -76,7 +75,7 @@ type Support = {
  */
 const rex = {
   name: "Rex",
-  role: "24/7 Voice",
+  role: "24/7 AI receptionist",
   hook: "Answers on ring one, quotes your pricing, books the job — 24/7.",
   points: [
     "Picks up in under 3 seconds, day or night, in your company name.",
@@ -95,7 +94,7 @@ const supports: Support[] = [
   {
     id: "zip",
     name: "Zip",
-    role: "Speed-to-Lead",
+    role: "Missed-call text back",
     hook: "Catches what a phone line physically can't.",
     points: [
       "Texts back within five seconds when two calls land at once.",
@@ -103,13 +102,12 @@ const supports: Support[] = [
       "Covers the channels that never ring — web forms, ad leads, portal inquiries.",
     ],
     src: "/images/mascots/zip.png",
-    roleClass: "text-crew-zip",
-    glowClass: "bg-crew-zip/20",
+    roleClass: "text-crew-zip-on-dark",
   },
   {
     id: "pip",
     name: "Pip",
-    role: "Support Chat",
+    role: "Website chat",
     hook: "Handles every written question, from a stranger at 11pm to a customer asking where the tech is.",
     points: [
       "Answers from your verified business data only — never invents a price or a policy.",
@@ -123,13 +121,12 @@ const supports: Support[] = [
     stat: "73% of customers try self-service first. Only 14% get a full answer.",
     source: "Gartner Customer Service & Support consumer study, 2024",
     src: "/images/mascots/pip.png",
-    roleClass: "text-crew-pip",
-    glowClass: "bg-crew-pip/20",
+    roleClass: "text-crew-pip-on-dark",
   },
   {
     id: "gia",
     name: "Gia",
-    role: "CRM & Follow-ups",
+    role: "Follow-up & reviews",
     hook: "Works every quote that didn't close, until they book or say no.",
     points: [
       "Follows up on a real cadence instead of once and never again.",
@@ -144,8 +141,7 @@ const supports: Support[] = [
     stat: "93% of converted leads were reached within six contact attempts.",
     source: "Velocify, Ultimate Contact Strategy (3.5M lead records), 2013",
     src: "/images/mascots/gia.png",
-    roleClass: "text-crew-gia",
-    glowClass: "bg-crew-gia/20",
+    roleClass: "text-crew-gia-on-dark",
   },
 ];
 
@@ -155,7 +151,7 @@ function Detail({ points }: { points: string[] }) {
       {points.map((p) => (
         <li
           key={p}
-          className="flex gap-2.5 text-[0.8125rem] leading-relaxed text-white/70"
+          className="flex gap-2.5 text-[0.9375rem] leading-relaxed text-white/75"
         >
           <span
             aria-hidden
@@ -174,12 +170,7 @@ function SupportRow({ m, delay }: { m: Support; delay: number }) {
 
   return (
     <Reveal as="li" delay={delay}>
-      <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] transition-colors duration-300 hover:border-white/20">
-        <div
-          aria-hidden
-          className={`pointer-events-none absolute -left-8 -top-10 size-32 rounded-full blur-3xl ${m.glowClass}`}
-        />
-
+      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] transition-colors duration-300 hover:border-white/20">
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
@@ -201,19 +192,19 @@ function SupportRow({ m, delay }: { m: Support; delay: number }) {
 
           <div className="min-w-0 flex-1">
             <p
-              className={`font-mono text-[0.625rem] font-bold uppercase tracking-wider ${m.roleClass}`}
+              className={`font-mono text-xs font-bold uppercase tracking-wider ${m.roleClass}`}
             >
               {m.role}
             </p>
             <h3 className="mt-1 font-heading text-lg font-bold tracking-[-0.01em] text-white">
               {m.name}
             </h3>
-            <p className="mt-1 text-[0.8125rem] leading-relaxed text-white/60">{m.hook}</p>
+            <p className="mt-1 text-[0.9375rem] leading-relaxed text-white/75">{m.hook}</p>
           </div>
 
           <Plus
             aria-hidden
-            className={`size-5 shrink-0 text-white/40 transition-transform duration-300 ${
+            className={`size-5 shrink-0 text-white/70 transition-transform duration-300 ${
               open ? "rotate-45" : ""
             }`}
           />
@@ -237,10 +228,10 @@ function SupportRow({ m, delay }: { m: Support; delay: number }) {
             <Detail points={m.points} />
             {m.stat && (
               <div className="mt-4 border-l-2 border-white/20 pl-3.5">
-                <p className="text-[0.8125rem] font-medium leading-snug text-white">
+                <p className="text-[0.9375rem] font-medium leading-snug text-white">
                   {m.stat}
                 </p>
-                <p className="mt-1 font-mono text-[0.625rem] uppercase tracking-wide text-white/40">
+                <p className="mt-1 font-mono text-xs uppercase tracking-wide text-white/70">
                   {m.source}
                 </p>
               </div>
@@ -255,24 +246,17 @@ function SupportRow({ m, delay }: { m: Support; delay: number }) {
 export default function MeetTheCrew() {
   return (
     <Section id="crew" tone="ink" width="wide" className="relative overflow-hidden">
-      {/* Depth, matching the treatment on the teal Proof band so the page's two dark
-          bands share one atmosphere rather than being flat rectangles. */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-1/4 left-1/2 size-[40rem] -translate-x-1/2 rounded-full bg-teal/10 blur-3xl"
-      />
-
       <div className="relative z-10">
         <div className="max-w-2xl">
           <Eyebrow tone="dark" className="mb-5">
-            Your Digital Front Office
+            What you get
           </Eyebrow>
           <SectionHeading className="text-white">
-            Four specialists. One front desk.
+            A 24/7 AI receptionist, and three more behind it.
           </SectionHeading>
           <SectionLead tone="dark">
-            Rex answers the phone. The other three cover everything a phone line
-            can&apos;t reach.
+            Rex answers the phone. The other three cover the texts, the website chat and
+            the follow-up — the places a phone line can&apos;t reach.
           </SectionLead>
         </div>
 
@@ -282,12 +266,7 @@ export default function MeetTheCrew() {
             sideways scroll and no orphan cell. */}
         <div className="mt-12 grid gap-4 lg:grid-cols-2 lg:gap-6">
           <Reveal>
-            <article className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.06] p-6 sm:p-8">
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -top-16 left-1/2 size-64 -translate-x-1/2 rounded-full bg-teal/25 blur-3xl"
-              />
-
+            <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 sm:p-8">
               {/* Deliberately much larger than the support avatars. A small difference
                   would read as a mistake; this reads as the hero.
 
@@ -306,13 +285,13 @@ export default function MeetTheCrew() {
               </div>
 
               <div className="relative mt-6">
-                <p className="font-mono text-[0.625rem] font-bold uppercase tracking-wider text-teal">
+                <p className="font-mono text-xs font-bold uppercase tracking-wider text-crew-rex-on-dark">
                   {rex.role}
                 </p>
                 <h3 className="mt-1.5 font-heading text-2xl font-bold tracking-[-0.01em] text-white">
                   {rex.name}
                 </h3>
-                <p className="mt-2 text-[0.9375rem] leading-relaxed text-white/75">
+                <p className="mt-2 text-base leading-relaxed text-white/85">
                   {rex.hook}
                 </p>
 
@@ -320,7 +299,7 @@ export default function MeetTheCrew() {
                   <Detail points={rex.points} />
                 </div>
 
-                <p className="mt-5 text-[0.8125rem] italic leading-relaxed text-white/45">
+                <p className="mt-5 text-[0.9375rem] italic leading-relaxed text-white/75">
                   {rex.aside}
                 </p>
               </div>
@@ -341,7 +320,7 @@ export default function MeetTheCrew() {
             <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>
               Book a 15-minute call
             </Button>
-            <p className="text-sm leading-relaxed text-white/55">
+            <p className="text-[0.9375rem] leading-relaxed text-white/75">
               Not sure which ones you need? We&apos;ll scope it on the call.
             </p>
           </div>

@@ -58,7 +58,7 @@ export default function Proof() {
                 </p>
                 {/* mt-auto pins every source to the bottom of the tallest column, so
                     the three citations align on one line. */}
-                <p className="mx-auto mt-auto max-w-[22rem] pt-6 font-mono text-[0.6875rem] leading-[1.5] text-white/45">
+                <p className="mx-auto mt-auto max-w-[22rem] pt-6 font-mono text-xs leading-[1.5] text-white/80">
                   {s.source}
                 </p>
               </dd>

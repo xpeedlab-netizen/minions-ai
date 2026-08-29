@@ -4,7 +4,7 @@ const items = [
   {
     value: "$360k+",
     unit: "Annual GCI",
-    label: "Saved Commission Pipeline",
+    label: "Commission Pipeline At Stake",
     sub: "From 2 saved buyer/seller deals per month",
     icon: DollarSign,
   },

@@ -138,7 +138,7 @@ export default function FoundersTrust() {
           people real engineers, or another fly-by-night agency.
         */}
         <div className="mt-14 border-t border-white/10 pt-6">
-          <p className="font-mono text-[0.6875rem] uppercase leading-[1.7] tracking-[0.1em] text-cream/40 sm:text-xs">
+          <p className="font-mono text-xs uppercase leading-[1.7] tracking-[0.1em] text-cream/40 sm:text-xs">
             Built on enterprise voice infrastructure — Retell AI · n8n · Google Calendar · EspoCRM
           </p>
         </div>

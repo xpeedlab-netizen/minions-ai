@@ -4,7 +4,7 @@ const items = [
   {
     value: "$640k+",
     unit: "Recurring LTV",
-    label: "Annual Contract Value Saved",
+    label: "Annual Contract Value At Stake",
     sub: "From 5-8 saved quarterly plan leads/wk",
     icon: DollarSign,
   },

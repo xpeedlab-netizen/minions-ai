@@ -38,7 +38,7 @@ export default function ResultsRoiCalculator() {
         <div className="rounded-2xl border-2 border-teal bg-white p-6 sm:p-8">
           <div className="space-y-5">
             <label className="block">
-              <span className="font-mono text-xs uppercase tracking-wide text-ink/50">
+              <span className="font-mono text-xs uppercase tracking-wide text-ink/75">
                 Calls Missed Per Week
               </span>
               <input
@@ -50,7 +50,7 @@ export default function ResultsRoiCalculator() {
               />
             </label>
             <label className="block">
-              <span className="font-mono text-xs uppercase tracking-wide text-ink/50">
+              <span className="font-mono text-xs uppercase tracking-wide text-ink/75">
                 Average Job Value ($)
               </span>
               <input
@@ -62,7 +62,7 @@ export default function ResultsRoiCalculator() {
               />
             </label>
             <label className="block">
-              <span className="font-mono text-xs uppercase tracking-wide text-ink/50">
+              <span className="font-mono text-xs uppercase tracking-wide text-ink/75">
                 Close Rate (%)
               </span>
               <input
@@ -83,7 +83,7 @@ export default function ResultsRoiCalculator() {
             <p className="mt-1 font-heading font-extrabold text-4xl text-teal">
               ${weeklyLoss.toLocaleString()}
             </p>
-            <p className="mt-1 text-sm text-ink/50">
+            <p className="mt-1 text-sm text-ink/75">
               That&apos;s ${yearlyLoss.toLocaleString()} per year you aren&apos;t seeing.
             </p>
           </div>

@@ -20,7 +20,7 @@ export default function Footer() {
             {/* Infrastructure credit. Lived at the foot of FoundersTrust until that band
                 was removed; the footer is the right home for it — quiet, and it keeps the
                 Retell AI name on the homepage for the search intent it actually serves. */}
-            <p className="mt-3 font-mono text-[0.6875rem] leading-[1.6] text-current/60 max-w-xs">
+            <p className="mt-3 max-w-xs font-mono text-sm leading-[1.6] text-current/60">
               Built on enterprise voice infrastructure — Retell AI · n8n · Google Calendar · EspoCRM
             </p>
           </div>
@@ -65,7 +65,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-8 text-xs">
+        <div className="mt-12 border-t border-white/10 pt-8 text-sm">
           <p>© {new Date().getFullYear()} Minions.AI. All rights reserved.</p>
         </div>
       </div>

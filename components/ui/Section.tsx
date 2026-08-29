@@ -176,10 +176,10 @@ export function SectionLead({
   tone?: "light" | "dark";
   className?: string;
 }) {
-  const toneClass = tone === "dark" ? "text-cream/70" : "text-ink/65";
+  const toneClass = tone === "dark" ? "text-cream/85" : "text-ink/75";
   return (
     <p
-      className={`mt-5 max-w-xl text-base sm:text-[1.0625rem] leading-[1.6] ${toneClass} ${className}`}
+      className={`mt-5 max-w-xl text-[1.0625rem] sm:text-[1.125rem] leading-[1.6] ${toneClass} ${className}`}
     >
       {children}
     </p>

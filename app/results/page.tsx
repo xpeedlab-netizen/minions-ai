@@ -7,9 +7,9 @@ import ResultsPromise from "@/components/sections/results/ResultsPromise";
 import ResultsFinalCta from "@/components/sections/results/ResultsFinalCta";
 
 export const metadata: Metadata = {
-  title: "Results & Proof — See the Crew in Action",
+  title: "How It Works In Practice — Hear the Crew Live",
   description:
-    "No padded reviews or fake testimonials. Watch our AI handle real customer calls, book appointments on the fly, and recover revenue that usually slips through the cracks.",
+    "No testimonials and no case studies — we are pre-launch and will not invent them. Call our live demo line and hear the AI answer, qualify the caller, and book an appointment.",
 };
 
 export default function ResultsPage() {

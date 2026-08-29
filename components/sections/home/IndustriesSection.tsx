@@ -119,11 +119,11 @@ export default function IndustriesSection() {
                     className="mt-0.5 size-4 shrink-0 text-teal opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   />
                 </div>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink/55">{ind.meta}</p>
+                <p className="mt-1.5 text-[0.9375rem] leading-relaxed text-ink/75">{ind.meta}</p>
               </div>
 
               {ind.primary && (
-                <span className="w-fit rounded-full bg-teal/10 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wide text-teal">
+                <span className="w-fit rounded-full bg-teal/10 px-2.5 py-1 font-mono text-xs font-bold uppercase tracking-wide text-teal">
                   Primary focus
                 </span>
               )}

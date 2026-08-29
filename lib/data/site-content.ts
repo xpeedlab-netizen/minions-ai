@@ -17,7 +17,7 @@ export const GUARANTEE = {
 
 /* "Built for Trade & Service Businesses" excluded real estate, one of the two
    co-primary markets (invariants.md #3). Both are now named explicitly. */
-export const TRUST_BAR_TEXT = `Built for Pest Control & Real Estate • 24/7 Instant Voice Dispatch • Grounded Web Chat • Automated Lead Pipeline • ${guaranteeDays}-Day Guarantee`;
+export const TRUST_BAR_TEXT = `Built for Pest Control & Real Estate • 24/7 Phone Answering • Missed-Call Text Back • Website Chat • ${guaranteeDays}-Day Guarantee`;
 
 export const CONTRACTOR_DAY_TIMELINE = [
   {

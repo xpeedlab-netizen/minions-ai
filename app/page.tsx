@@ -7,6 +7,14 @@ import FinalCta from "@/components/sections/FinalCta";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
 /**
+ * Revalidated daily because the pricing cards print the current month (lib/current-month.ts).
+ * Without this the label would freeze at whatever month the last deploy happened in, which
+ * is worse than no label at all. Nothing else on the page is time-dependent.
+ */
+export const revalidate = 86400;
+
+
+/**
  * Landing page band sequence — the six-band plan from the landing brief.
  *
  *   01 Hero          cream   say what this is; book, or dial the demo line

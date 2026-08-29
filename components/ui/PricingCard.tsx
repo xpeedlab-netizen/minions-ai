@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import Button from "./Button";
+import { currentPricingMonth } from "@/lib/current-month";
 import type { PricingPlan } from "@/lib/data/pricing";
 
 export default function PricingCard({ plan }: { plan: PricingPlan }) {
@@ -16,6 +17,18 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
           {plan.badge || "Most popular"}
         </span>
       )}
+      {/* Sits INSIDE the card above the name rather than pinned to a corner: the popular
+          card already carries a badge at -top-3, and a second floating chip collided with
+          it below sm. Same reason it is left-ranged — it reads as a date stamp on the
+          figures below, not as a second award ribbon. */}
+      <span
+        className={`mb-3 inline-flex w-fit items-center rounded-full px-2.5 py-1 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.08em] ${
+          plan.popular ? "bg-white/15 text-cream" : "border border-border bg-cream text-teal"
+        }`}
+      >
+        {currentPricingMonth()} pricing
+      </span>
+
       <h3 className="font-heading font-bold text-2xl">{plan.name}</h3>
 
       {plan.description && (

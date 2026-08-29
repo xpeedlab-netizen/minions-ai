@@ -1,5 +1,6 @@
 import { Check, Sparkles, Clock } from "lucide-react";
 import Button from "@/components/ui/Button";
+import { currentPricingMonth } from "@/lib/current-month";
 import type { PricingPlan } from "@/lib/data/pricing";
 
 export default function ServicePlanCard({ plan }: { plan: PricingPlan }) {
@@ -21,6 +22,16 @@ export default function ServicePlanCard({ plan }: { plan: PricingPlan }) {
       )}
 
       <div>
+        {/* Date stamp on the rates. Kept identical in wording to the homepage card so a
+            visitor moving between the two pages sees one label, not two claims. */}
+        <span
+          className={`mb-3 inline-flex w-fit items-center rounded-full px-2.5 py-1 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.08em] ${
+            isPopular ? "bg-white/15 text-cream" : "border border-border bg-cream text-teal"
+          }`}
+        >
+          {currentPricingMonth()} pricing
+        </span>
+
         <div className="flex items-center justify-between">
           <h3 className="font-heading font-bold text-2xl">{plan.name}</h3>
         </div>

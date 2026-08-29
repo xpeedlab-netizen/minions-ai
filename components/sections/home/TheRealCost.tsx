@@ -31,10 +31,18 @@ import Reveal from "@/components/ui/Reveal";
 
 const problemCards = [
   {
+    /* v3 (2026-08-29) replaced v2 for the same reason card 2 went to v4: it read as
+       AI-generated. v2's tell was the phone SCREEN — the model filled it with
+       meaningless blobs standing in for call buttons, which is the artefact a viewer
+       spots first on a lit screen in a dark frame. Fixed by specifying the screen as a
+       plain, uniform, featureless coral rectangle of light with no icons, buttons, call
+       controls or symbols at all, so there is no UI for the model to invent. Also
+       pinned "exactly one phone and one nightstand" (v1 produced mirrored duplicate
+       nightstands) and "hands relaxed and closed, tucked or out of frame". */
     title: "The 2 AM call",
     body: "Your highest-margin work. Miss it and the caller keeps scrolling until someone picks up.",
-    src: "/images/illustrations/pain-2am-emergency-v2.webp",
-    alt: "A homeowner asleep at night while a phone glows unanswered on the nightstand",
+    src: "/images/illustrations/pain-2am-emergency-v3.webp",
+    alt: "A man asleep in bed at night while a phone rings unanswered on the nightstand beside him, its screen glowing",
   },
   {
     /* Real estate's only representation in the page's imagery. The hero is a trades

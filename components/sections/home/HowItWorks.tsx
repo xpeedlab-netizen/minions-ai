@@ -95,6 +95,27 @@ export default function HowItWorks() {
           negation, because the model defaults to young clean-cut men for "business
           owner". The phone in his hand is specified dark and switched off so there is
           no lit screen for it to fill with invented UI.
+
+          v3 (2026-08-29) CHANGED WHO HE IS, not his age. v2 read as a trades/service
+          owner — plain short-sleeve work shirt, belt, work jeans, work boots — which
+          left the homepage covering pest control twice (this figure and the hero) and
+          real estate exactly once (the agent in TheRealCost). Both are co-primary
+          markets under invariants.md #3. v3 makes him the real estate side: a
+          broker-owner of about 62, the decision maker who owns the brokerage, in a
+          tailored blazer over an open-collar dress shirt with dress trousers and
+          leather shoes. Hero = pest control, this band = real estate, so the two
+          markets now get equal billing across the page.
+
+          A yellow hard hat was considered and rejected: PPE signals commercial
+          construction, a market we do not serve (ServiceTitan itself uses hard hats
+          only on its Commercial card), it contradicts a band whose message is "you
+          don't have to do this yourself", and a saturated yellow would be the only
+          yellow on the site, competing with the coral phone screen that is supposed to
+          be the single meaningful accent.
+
+          step-owner-portrait-v2.webp IS DELIBERATELY RETAINED ON DISK though nothing
+          references it — the owner asked for it to be kept. Do not delete it in an
+          unused-asset sweep.
         */}
         {/* Capped below lg. Unconstrained, the 4:5 window rendered 637x796 at a 700px
             viewport, which made this the TALLEST band on the page (1,618px) through the
@@ -103,8 +124,8 @@ export default function HowItWorks() {
         <Reveal delay={0.12} className="mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-none lg:sticky lg:top-24">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-cream">
             <Image
-              src="/images/illustrations/step-owner-portrait-v2.webp"
-              alt="A US small-business owner in his sixties standing calmly with his phone switched off and lowered at his side while his AI crew is built for him"
+              src="/images/illustrations/step-owner-portrait-v3.webp"
+              alt="A real estate broker-owner in his sixties, in a blazer and open-collar shirt, standing calmly with his phone switched off and lowered at his side while his AI crew is built for him"
               fill
               sizes="(max-width: 1024px) 100vw, 42vw"
               className="object-cover"

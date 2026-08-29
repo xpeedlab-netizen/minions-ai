@@ -88,12 +88,31 @@ export default function Hero() {
             they should be recognising their own problem. The collage lands the
             recognition instantly. HeroAnimation is still in the repo if this needs
             reverting.
+
+            v2 (2026-08-29) FIXED THE TRADE, THE ATTIRE AND THE AGE. v1 showed a plumber
+            under a kitchen sink in an untucked plaid flannel shirt, aged about thirty.
+            Three problems in the page's largest image: plumbing is neither co-primary
+            market (invariants.md #3 names pest control and real estate, and pest control
+            appeared nowhere in the homepage imagery), flannel reads handyman rather than
+            an established service company, and the buyer is an owner in their late
+            fifties to sixties. Attire was taken from how the category actually presents
+            itself — ServiceTitan's own photography is uniformed techs in solid tucked
+            work shirts with embroidered chest logos, work belts and caps — so this is a
+            pest control owner of about 60 in that uniform, with the chest patch left
+            blank rather than inventing a logo.
+
+            KNOWN AND ACCEPTED: the phone in the foreground is composited rather than
+            photographed in place — it overlaps the torn edge, is oversized for its
+            position on the ground plane, casts no contact shadow, and is rendered
+            crisper than the surrounding halftone. This was raised with the owner and
+            deliberately kept: the phone is the message and it is unmissable. Do not
+            "fix" it unprompted.
           */}
           <div className="relative">
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl">
               <Image
-                src="/images/illustrations/hero-missed-call.webp"
-                alt="A plumber working under a kitchen sink with both hands busy while a phone glows with an unanswered call on the floor beside him"
+                src="/images/illustrations/hero-missed-call-v2.webp"
+                alt="A pest control business owner in company uniform crouched at the foundation of a house, both hands on his sprayer, while his phone lies ringing unanswered in the grass beside him"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 55vw"

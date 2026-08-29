@@ -45,21 +45,18 @@ import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
  */
 
 /**
- * CLOSING ILLUSTRATION, v1 -> v2. The original outcome-home-on-time.webp was the last image
- * never audited against the ICP, and it failed on two counts at once: the figure read as a man
- * of about thirty-five, roughly 25 years younger than the buyer (see the ICP casting pattern in
- * memory.md), and it had drifted off the locked collage style into a plain photographic collage.
- * v2 restates the full sme.careers-derived style block — one torn halftone fragment with a white
- * deckled edge over flat axis-aligned coral/teal rectangles on cream, drafting hairlines and
- * registration marks, no text — and casts him at 58 in the same uniform shirt and cap as the hero
- * owner, so the page opens and closes on the same man at the two ends of his day.
+ * CLOSING ILLUSTRATION — v1 IS THE LIVE ONE, BY OWNER DECISION. This band ran v1, was moved to
+ * v2, and was moved back. Do not "re-fix" it to v2.
  *
- * NO PHONE APPEARS IN THIS IMAGE, DELIBERATELY. Every other illustration in the set uses a
- * coral-lit phone as its accent; this is the one band whose whole message is that the phone is no
- * longer his problem, so the coral lives in the blocks instead. Do not "restore" a phone here.
+ * The case for v2 was that v1's figure reads about thirty-five against a buyer in his late fifties
+ * to sixties (the ICP casting pattern in memory.md), so v2 recast him at 58 in the same uniform
+ * shirt and cap as the hero owner. The owner saw both at true render size and chose v1 anyway. The
+ * closing band is the one place on the page selling the FUTURE rather than the buyer's present, and
+ * a young father with a small child carries that better than an older man with a grandchild — so
+ * the ICP age rule does not govern here the way it governs the hero and the setup portrait.
  *
- * outcome-home-on-time.webp (v1) IS DELIBERATELY RETAINED ON DISK at the owner's request even
- * though nothing references it. Do not delete it in an unused-asset sweep.
+ * Neither file may be deleted. outcome-home-on-time-v2.webp is now the unreferenced one and is
+ * retained on purpose, same standing exception as step-owner-portrait-v2.webp.
  */
 export default function Home() {
   return (
@@ -75,8 +72,8 @@ export default function Home() {
         primaryLabel="Book Your 15-Minute Setup Call"
         primaryHref={BOOKING_CALENDAR_URL}
         hideSecondary
-        image="/images/illustrations/outcome-home-on-time-v2.webp"
-        imageAlt="A pest control owner in his late fifties, still in his uniform shirt and cap, crouched on his own porch steps with both arms around his granddaughter at the end of the day"
+        image="/images/illustrations/outcome-home-on-time.webp"
+        imageAlt="A service business owner home in the evening, kneeling to greet his young daughter with his phone put away"
       />
     </>
   );

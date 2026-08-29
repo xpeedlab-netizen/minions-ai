@@ -90,9 +90,16 @@ export default function TheRealCost() {
         <SectionHeading className="text-ink">
           A missed call is revenue that never starts.
         </SectionHeading>
-        {/* Two lines, not four. Both markets stay named (invariants.md #3) and the
-            valuation argument stays — it is only stated once now instead of twice. */}
-        <SectionLead className="max-w-2xl">
+        {/*
+          Five lines down to three. Both markets stay named (invariants.md #3) and the
+          valuation argument stays — this band is the only place the page makes it, so it
+          is the one thing that cannot be cut for length. Three is the floor without
+          dropping either the two markets or the valuation clause.
+
+          The `max-w-2xl` this used to pass did nothing: SectionLead caps itself at
+          max-w-xl and wins the cascade. Removed rather than forced.
+        */}
+        <SectionLead>
           A pest control operator loses a quarterly plan; a broker loses a listing to
           whoever picked up. Both are recurring revenue — the number a buyer values you on.
         </SectionLead>

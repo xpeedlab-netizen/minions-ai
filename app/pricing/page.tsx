@@ -74,15 +74,24 @@ export default function PricingPage() {
   return (
     <>
       {/* 1. Hero */}
-      <Section tone="cream" width="narrow" density="feature" innerClassName="text-center">
+      {/* width="default" (max-w-5xl), NOT narrow. At max-w-3xl the three check pills
+          below wrap 2+1 and leave "No Monthly Contracts Required" orphaned on its own
+          centred row. They need ~740px to sit on one line. */}
+      <Section tone="cream" width="default" density="feature" innerClassName="text-center">
         <span className="inline-flex items-center gap-1.5 rounded-full bg-teal/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-teal">
           <Sparkles className="size-3.5" /> One-Time Setup • No Required Retainers
         </span>
-        {/* The teal second clause is the hero's only accent and predates this pass —
-            kept. Only the face changed: it was font-heading extrabold, and is now the
-            site's display scale so it matches every other page's top-level heading. */}
+        {/* The teal second clause and the explicit <br /> both predate this pass and are
+            both load-bearing. WITHOUT THE BREAK, text-balance splits this as
+            "One setup. Zero / technical headaches." — the break lands mid-clause and the
+            teal span starts on one line and finishes on the next. The break forces the
+            intended two-line stack. Only the face changed here: it was font-heading
+            extrabold, and is now the site's display scale so it matches every other
+            page's top-level heading. */}
         <h1 className="mt-4 type-display text-4xl sm:text-5xl lg:text-6xl leading-[1.0] tracking-[-0.005em] text-balance text-ink">
-          One setup. <span className="text-teal">Zero technical headaches.</span>
+          One setup.
+          <br />
+          <span className="text-teal">Zero technical headaches.</span>
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-[1.0625rem] sm:text-[1.125rem] leading-[1.6] text-ink/75 text-balance">
           We build, test, connect to your CRM, and launch your custom AI phone agent for a

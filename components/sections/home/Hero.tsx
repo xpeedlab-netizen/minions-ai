@@ -52,7 +52,17 @@ export default function Hero() {
               For pest control &amp; real estate owners
             </span>
 
-            <h1 className="mt-6 type-display text-5xl leading-[0.98] tracking-[-0.005em] text-balance text-ink sm:text-6xl lg:text-7xl">
+            {/*
+              TOPS OUT AT 6xl, NOT 7xl. The headline went from 25 characters to 45 when it
+              took on "AI receptionist", and at 72px in this column (549px at 1536) that
+              set FOUR lines: the left column measured 624px against the hero image's
+              603px, so the text was driving the row height instead of the image, and the
+              primary CTA was pushed 72px further down the page. One step down sets three
+              lines, puts the column back inside the image's height, and matches the top
+              step PartnersHero already uses. Do not restore lg:text-7xl without either
+              shortening the headline or widening this column.
+            */}
+            <h1 className="mt-6 type-display text-5xl leading-[0.98] tracking-[-0.005em] text-balance text-ink sm:text-6xl">
               Your AI receptionist answers every call, 24/7.
             </h1>
 

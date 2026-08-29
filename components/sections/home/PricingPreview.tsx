@@ -34,15 +34,21 @@ export default function PricingPreview() {
       <SectionHeading className="max-w-2xl text-ink">
         One fixed fee. Then it is yours.
       </SectionHeading>
-      {/* Cut from five lines to two. The valuation argument ("recurring revenue is the
-          number an acquirer pays for") was dropped here rather than compressed: band 02
-          already makes it in full, so at this point in the scroll it was a restatement
-          costing three lines. What survives is the part that only this band can say —
-          the category comparison and the no-lock-in terms. */}
-      <SectionLead className="max-w-2xl">
-        No per-minute billing, no hold music, no contract. Compare it to a front-desk hire
-        rather than a phone bill: you pay across three milestones and own every account and
-        number outright.
+      {/*
+        Cut from five lines to two. The valuation argument ("recurring revenue is the
+        number an acquirer pays for") was dropped rather than compressed: band 02 already
+        makes it in full, so at this point in the scroll it was a restatement costing three
+        lines. What survives is the part only this band can say — the category comparison
+        and the ownership terms.
+
+        NO max-w OVERRIDE HERE. SectionLead caps itself at max-w-xl (576px) on purpose —
+        see its docblock on measure — and a `max-w-2xl` passed through className loses the
+        cascade to it, so the override this used to carry did nothing at all. Two lines
+        means ~115 characters at that measure; budget for it rather than widening.
+      */}
+      <SectionLead>
+        No per-minute billing, no hold music, no contract — a front-desk hire, not a phone
+        bill. You own every account.
       </SectionLead>
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mx-auto lg:max-w-4xl">
         {pricingPlans.map((plan, i) => (

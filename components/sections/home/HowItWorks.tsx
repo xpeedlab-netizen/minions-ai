@@ -113,9 +113,24 @@ export default function HowItWorks() {
           yellow on the site, competing with the coral phone screen that is supposed to
           be the single meaningful accent.
 
-          step-owner-portrait-v2.webp IS DELIBERATELY RETAINED ON DISK though nothing
-          references it — the owner asked for it to be kept. Do not delete it in an
-          unused-asset sweep.
+          v4 (2026-08-29) FIXED THE STYLE, not the person. v3 was correct on age, market
+          and dress but was rendered in the wrong visual language: a full-length figure
+          traced with a white sticker outline, in smooth continuous-tone grey, with blue
+          "+" registration marks. Every other illustration on the page is a RECTANGULAR
+          torn-paper fragment with a deckled edge, coarse visible halftone dots, and dark
+          ink circular crosshairs. Three deviations at once, and it was the most visible
+          inconsistency left on the landing page.
+
+          v4 restates the locked style block with those three failures negated by name —
+          not a cut-out silhouette, not a floating full-length figure, not continuous-tone
+          grey — and reframes him WAIST-UP inside the fragment with his brokerage office
+          soft behind him, which also reads better at the 485x606 render size than a
+          full-length figure did. Generated natively at 4:5 so object-cover has nothing
+          to trim.
+
+          step-owner-portrait-v2.webp AND v3.webp ARE DELIBERATELY RETAINED ON DISK though
+          nothing references them — the owner asked for superseded variants to be kept. Do
+          not delete them in an unused-asset sweep.
         */}
         {/* Capped below lg. Unconstrained, the 4:5 window rendered 637x796 at a 700px
             viewport, which made this the TALLEST band on the page (1,618px) through the
@@ -124,8 +139,8 @@ export default function HowItWorks() {
         <Reveal delay={0.12} className="mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-none lg:sticky lg:top-24">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-cream">
             <Image
-              src="/images/illustrations/step-owner-portrait-v3.webp"
-              alt="A real estate broker-owner in his sixties, in a blazer and open-collar shirt, standing calmly with his phone switched off and lowered at his side while his AI crew is built for him"
+              src="/images/illustrations/step-owner-portrait-v4.webp"
+              alt="A real estate broker-owner in his sixties, in a blazer over an open-collar shirt, standing at ease in his own brokerage office while his AI crew is built for him"
               fill
               sizes="(max-width: 1024px) 100vw, 42vw"
               className="object-cover"

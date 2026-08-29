@@ -38,11 +38,24 @@ const problemCards = [
        plain, uniform, featureless coral rectangle of light with no icons, buttons, call
        controls or symbols at all, so there is no UI for the model to invent. Also
        pinned "exactly one phone and one nightstand" (v1 produced mirrored duplicate
-       nightstands) and "hands relaxed and closed, tucked or out of frame". */
+       nightstands) and "hands relaxed and closed, tucked or out of frame".
+
+       v4 (2026-08-29) fixed the last ICP AGE mismatch on the page. v3's sleeper read as
+       a man of about thirty-five with dark hair, against a buyer in his late fifties to
+       sixties — and this card is unambiguously the visitor's own bad night, so he was
+       looking at someone else. Recast at 60 with the age named as the most important
+       part of the brief (thick silver-grey hair, deep forehead creases, grey stubble,
+       heavier older build) plus an explicit "do NOT make him a man in his thirties"
+       negation, which is required rather than optional — the model defaults hard to
+       young men otherwise. Every v3 constraint above was restated, not assumed.
+
+       FRAMING: this card renders 4:3 from a square source, so object-cover crops 25%
+       vertically. The prompt pinned his head and the glowing phone inside the central
+       horizontal band for that reason. Check any replacement at the real card crop. */
     title: "The 2 AM call",
     body: "Your highest-margin work. Miss it and the caller keeps scrolling until someone picks up.",
-    src: "/images/illustrations/pain-2am-emergency-v3.webp",
-    alt: "A man asleep in bed at night while a phone rings unanswered on the nightstand beside him, its screen glowing",
+    src: "/images/illustrations/pain-2am-emergency-v4.webp",
+    alt: "A business owner in his sixties asleep in bed at night while a phone rings unanswered on the nightstand beside him, its screen glowing",
   },
   {
     /* Real estate's only representation in the page's imagery. The hero is a trades

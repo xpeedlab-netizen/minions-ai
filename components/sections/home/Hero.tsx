@@ -6,7 +6,7 @@ import {
   SITE_PHONE_NUMBER,
   SITE_PHONE_TEL,
 } from "@/lib/data/placeholders";
-import { GUARANTEE, TRUST_BAR_TEXT } from "@/lib/data/site-content";
+import { TUNING_WINDOW, TRUST_BAR_TEXT } from "@/lib/data/site-content";
 
 /**
  * Hero — band 01 of the landing brief.
@@ -77,7 +77,7 @@ export default function Hero() {
             </p>
 
             <p className="mt-6 font-mono text-[0.9375rem] font-medium text-ink/75">
-              {GUARANTEE.short}
+              {TUNING_WINDOW.short}
             </p>
           </div>
 

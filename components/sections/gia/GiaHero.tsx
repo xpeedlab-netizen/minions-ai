@@ -36,7 +36,7 @@ export default function GiaHero() {
           {/* Action Buttons */}
           <div className="pt-2 flex flex-col sm:flex-row gap-4">
             <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow className="bg-success hover:bg-success/90 text-white shadow-md">
-              Deploy Gia in 7 Days
+              Deploy Gia With Your Crew
             </Button>
             <Button href="/pricing" variant="outline" size="lg" className="border-border hover:bg-white">
               See Pricing Plans

@@ -1,5 +1,5 @@
 import Button from "@/components/ui/Button";
-import { GUARANTEE } from "@/lib/data/site-content";
+import { TUNING_WINDOW } from "@/lib/data/site-content";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
 export default function RexFinalCta() {
@@ -10,7 +10,7 @@ export default function RexFinalCta() {
           Stop Leaving Your Business&apos;s Phone Line to Chance.
         </h2>
         <p className="mt-4 text-white/80 text-lg max-w-xl mx-auto leading-relaxed">
-          Deploy Rex on your phone line in about 7 days. Backed by a 100% 30-day money-back guarantee with zero contract risk.
+          Get Rex on your phone line in 3–4 weeks with the Core Crew build. Fixed price, a 30-day tuning window after go-live, and no long-term contract.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>
@@ -26,7 +26,7 @@ export default function RexFinalCta() {
           </Button>
         </div>
         <p className="mt-6 font-mono text-xs text-white/70 font-medium">
-          {GUARANTEE.short}
+          {TUNING_WINDOW.short}
         </p>
       </div>
     </section>

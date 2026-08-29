@@ -13,7 +13,9 @@ export default function PestRoiCalculator() {
   // Math Calculations
   const monthlyLostRevenue = Math.round(missedCalls * (closeRate / 100) * avgTicket);
   const annualLostRevenue = monthlyLostRevenue * 12;
-  const annualMinionsCost = 5988; // ~$499/mo annual plan estimate
+  // First-year cost of a Core Crew build ($2,500 one-time) plus an optional care plan
+  // at $297/mo. There is no $499/mo subscription — that plan was retired on 2026-08-29.
+  const annualMinionsCost = 6064; // $2,500 build + ($297 x 12)
   const netAnnualProfit = Math.max(0, annualLostRevenue - annualMinionsCost);
   const roiMultiplier = (annualLostRevenue / Math.max(1, annualMinionsCost)).toFixed(1);
 

@@ -143,10 +143,12 @@ export default function RootLayout({
         "operatingSystem": "Cloud / Voice SIP",
         "applicationCategory": "BusinessApplication",
         "offers": {
-          "@type": "Offer",
-          "price": "0",
+          "@type": "AggregateOffer",
+          "lowPrice": "2500",
+          "highPrice": "4500",
+          "offerCount": "2",
           "priceCurrency": "USD",
-          "description": "Setup in ~7 days with a 30-day risk-free money-back guarantee."
+          "description": "A fixed one-time build fee — Core Crew $2,500, Full Crew $4,500 — live in 3–6 weeks, with a 30-day tuning window included after go-live."
         },
         "featureList": [
           "Under 1.8-second live voice answering",

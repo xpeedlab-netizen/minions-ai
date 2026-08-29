@@ -27,7 +27,7 @@ export default function CostCalculator() {
             Estimate your monthly AI call costs
           </h2>
           <p className="mt-3 text-sm sm:text-base text-ink/70 leading-relaxed">
-            These are Retell AI&apos;s cloud infrastructure charges &mdash; billed directly to your account at wholesale cost with <strong>zero markup from us</strong>.
+            These are Retell AI&apos;s cloud infrastructure charges &mdash; billed directly to your account at wholesale cost with <strong>zero markup from us</strong>. They sit outside the one-time build fee. If you later take a care plan, this usage is absorbed into that monthly figure instead.
           </p>
         </div>
 

@@ -5,19 +5,34 @@
  * MUST be imported from this file. Do NOT hardcode inline claims in components.
  */
 
-export const SETUP_TIME_PROMISE = "About 7 days";
+/**
+ * TIMELINE. The site promised "about 7 days" everywhere until 2026-08-29. The approved
+ * deployment proposal commits to 3-4 weeks (Core Crew) and 5-6 weeks (Full Crew), so the
+ * day-scale promise was retired site-wide — it was not deliverable. Use the package-level
+ * constants when the copy is about one package; use SETUP_TIME_PROMISE when it is not.
+ */
+export const SETUP_TIME_PROMISE = "3–6 weeks";
+export const SETUP_TIME_CORE = "3–4 weeks";
+export const SETUP_TIME_FULL = "5–6 weeks";
 
-const guaranteeDays = 30;
-export const GUARANTEE = {
-  days: guaranteeDays,
-  heading: "100% Risk-Free: If It Doesn't Book Appointments, You Don't Pay.",
-  body: `Try your AI crew on your phone line for ${guaranteeDays} days. If it doesn't capture appointments you would have otherwise lost to voicemail, we refund every penny and help you forward your line back. Zero contracts, zero cancellation fees, zero risk.`,
-  short: `Zero contract · Setup in ~7 days · ${guaranteeDays}-day money-back guarantee`,
+/**
+ * THERE IS NO MONEY-BACK GUARANTEE. This replaced a GUARANTEE constant that promised
+ * "we refund every penny" — a claim the proposal does not make and the business does not
+ * offer. What is actually included is a 30-day tuning window: after go-live we keep
+ * adjusting the system against real calls, at no extra cost. Do not restore a refund
+ * promise here, in a component, or in page metadata.
+ */
+const tuningDays = 30;
+export const TUNING_WINDOW = {
+  days: tuningDays,
+  heading: "Your build does not end at go-live. It ends 30 days later.",
+  body: `Most systems are handed over the day they start working, which is the day you know least about them. Yours stays open for ${tuningDays} days after your agent takes its first live call — scripts, routing and follow-up tuned against real conversations rather than assumptions, included in the build fee. Every account, workflow and phone number is created in your name and stays yours.`,
+  short: `You own every account · ${tuningDays}-day tuning window included · No long-term lock-in`,
 };
 
 /* "Built for Trade & Service Businesses" excluded real estate, one of the two
    co-primary markets (invariants.md #3). Both are now named explicitly. */
-export const TRUST_BAR_TEXT = `Built for Pest Control & Real Estate • 24/7 Phone Answering • Missed-Call Text Back • Website Chat • ${guaranteeDays}-Day Guarantee`;
+export const TRUST_BAR_TEXT = `Built for Pest Control & Real Estate • 24/7 Phone Answering • Missed-Call Text Back • Website Chat • ${tuningDays}-Day Tuning Window`;
 
 export const CONTRACTOR_DAY_TIMELINE = [
   {
@@ -93,8 +108,8 @@ export const FOUNDER_STORY = {
 };
 
 export const HONEST_TRUTH = {
-  heading: "Our Risk-Free Promise",
-  body: `We don't ask for long-term contract lock-in or ask you to take our word for it. We build your custom AI front desk in 7 days, let you test live phone calls before going public, and back everything with a ${guaranteeDays}-day money-back guarantee. One recovered $400–$3,500 booking pays for your entire month.`,
+  heading: "Our Promise, In Plain Terms",
+  body: `We don't ask for long-term contract lock-in, and we don't ask you to pay for a finished system before you have seen one work. You approve the script before any build starts, you run the test calls yourself, and 40% of the fee only falls due once we hand you a working system to try. After go-live the build stays open for ${tuningDays} days of tuning at no extra cost. One recovered $400–$3,500 booking covers a meaningful share of the build.`,
 };
 
 export const INTEGRATION_COPY = {
@@ -132,7 +147,7 @@ export const APPROVED_FAQS = [
   {
     id: "how-long-setup",
     q: "How long does setup take?",
-    a: "Your entire system is fully configured and live in about 7 days. Our team handles 100% of the build, knowledge base setup, calendar sync, and CRM pipeline configuration for you.",
+    a: "3 to 4 weeks for Core Crew and 5 to 6 weeks for Full Crew, from kickoff to your agent taking live calls. Our team handles 100% of the build, knowledge base setup, calendar sync, and CRM pipeline configuration for you — what we need from you is a 60–90 minute kickoff session, your call script inputs, and feedback returned within 3 business days at each review point.",
   },
   {
     id: "calls-recorded",
@@ -142,7 +157,7 @@ export const APPROVED_FAQS = [
   {
     id: "why-trust-you",
     q: "Why choose Minions.AI over a traditional call center?",
-    a: `Traditional call centers charge per minute, place callers on hold, and can only take basic messages. Minions.AI costs a fraction of the price, answers in under 3 seconds 24/7, quotes accurate pricing, books directly to your calendar, and logs every lead automatically—backed by a ${guaranteeDays}-day money-back guarantee.`,
+    a: `Traditional call centers charge per minute, place callers on hold, and can only take basic messages. Minions.AI is a one-time build fee rather than a per-minute bill, answers in under 3 seconds 24/7, quotes accurate pricing, books directly to your calendar, and logs every lead automatically — then stays open for ${tuningDays} days of tuning after go-live.`,
   },
 ];
 

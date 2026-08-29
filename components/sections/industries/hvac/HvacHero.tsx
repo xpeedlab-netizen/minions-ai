@@ -45,7 +45,7 @@ export default function HvacHero() {
 
           <p className="font-mono text-xs text-ink/50 flex items-center gap-2 pt-1">
             <span className="size-1.5 rounded-full bg-teal" />
-            Zero technical setup. Configured in 7 days.
+            Zero technical setup. Live in 3–6 weeks.
           </p>
         </div>
 

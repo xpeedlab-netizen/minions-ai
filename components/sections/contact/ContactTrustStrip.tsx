@@ -1,6 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 
-const items = ["Month-to-month", "Live in about a week", "Real humans, fast replies"];
+const items = ["Fixed price, no lock-in", "Live in 3–6 weeks", "Real humans, fast replies"];
 
 export default function ContactTrustStrip() {
   return (

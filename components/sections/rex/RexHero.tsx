@@ -2,7 +2,7 @@ import { Sparkles, ShieldCheck } from "lucide-react";
 import Button from "@/components/ui/Button";
 import RexHeroAnimation from "./RexHeroAnimation";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
-import { GUARANTEE } from "@/lib/data/site-content";
+import { TUNING_WINDOW } from "@/lib/data/site-content";
 
 export default function RexHero() {
   const primaryHref = "#audio-demo";
@@ -34,7 +34,7 @@ export default function RexHero() {
 
           <div className="mt-6 flex items-center gap-2 text-ink/60 font-mono text-xs font-semibold">
             <ShieldCheck className="size-4 text-teal shrink-0" />
-            <span>{GUARANTEE.short}</span>
+            <span>{TUNING_WINDOW.short}</span>
           </div>
         </div>
 

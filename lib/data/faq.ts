@@ -1,4 +1,4 @@
-import { APPROVED_FAQS, GUARANTEE, SETUP_TIME_PROMISE } from "./site-content";
+import { APPROVED_FAQS, TUNING_WINDOW, SETUP_TIME_CORE, SETUP_TIME_FULL } from "./site-content";
 
 export type FaqItem = {
   id?: string;
@@ -58,15 +58,15 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "setup-tech",
     categoryLabel: "Setup & CRMs",
     q: "How long does setup take?",
-    a: `Your entire system is fully configured and live in ${SETUP_TIME_PROMISE.toLowerCase()}. Our team handles 100% of the build, knowledge base setup, calendar sync, and CRM pipeline configuration for you.`,
-    tag: "7-Day Onboarding",
+    a: `${SETUP_TIME_CORE} for Core Crew and ${SETUP_TIME_FULL} for Full Crew, from kickoff to your agent taking live calls. Our team handles 100% of the build, knowledge base setup, calendar sync, and CRM pipeline configuration for you. What we need from you is a 60–90 minute kickoff session, your call script inputs, and feedback returned within 3 business days at each review point — that last one is the single biggest factor in hitting the dates.`,
+    tag: "3–6 Week Build",
   },
   {
     id: "supported-crms",
     category: "setup-tech",
     categoryLabel: "Setup & CRMs",
     q: "Which CRMs and dispatch calendars do you support?",
-    a: "We integrate directly with ServiceTitan, Housecall Pro, Jobber, FieldRoutes, PestPac, and GorillaDesk, as well as Google Calendar for direct two-way job scheduling without double bookings.",
+    a: "We integrate directly with ServiceTitan, Housecall Pro, Jobber, FieldRoutes, PestPac and GorillaDesk on the field-service side, and with GoHighLevel, HubSpot, Salesforce, Zoho and Pipedrive on the sales side — plus Google Calendar for two-way job scheduling without double bookings, and 400+ other systems via direct webhooks and APIs.",
     tag: "Direct CRM Sync",
   },
   {
@@ -82,26 +82,26 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
   {
     id: "why-trust-you",
     category: "pricing-contracts",
-    categoryLabel: "Pricing & Guarantee",
+    categoryLabel: "Pricing & Terms",
     q: "Why choose Minions.AI over a traditional call center?",
-    a: `Traditional call centers charge per minute, place callers on hold, and can only take basic messages. Minions.AI costs a fraction of the price, answers in under 3 seconds 24/7, quotes accurate pricing, books directly to your calendar, and logs every lead automatically—backed by a ${GUARANTEE.days}-day money-back guarantee.`,
+    a: `Traditional call centers charge per minute, place callers on hold, and can only take basic messages. Minions.AI is a one-time build fee rather than a per-minute bill, answers in under 3 seconds 24/7, quotes accurate pricing, books directly to your calendar, and logs every lead automatically — then stays open for ${TUNING_WINDOW.days} days of tuning after go-live.`,
     tag: "Call Center vs AI",
   },
   {
     id: "contracts-and-billing",
     category: "pricing-contracts",
-    categoryLabel: "Pricing & Guarantee",
+    categoryLabel: "Pricing & Terms",
     q: "Are there long-term contracts or cancellation fees?",
-    a: "Zero long-term contracts. Everything is billed on a transparent month-to-month basis. If you ever decide to pause or cancel, you can forward your phone line back with zero penalties.",
-    tag: "Month-to-Month",
+    a: "No long-term contract. The build is a fixed one-time fee paid across three milestones — 40% on signature, 40% when we hand you the working system to test, 20% at go-live — and the price does not change without your written approval. Either party may pause the project in writing, in which case work already delivered is invoiced at the last completed milestone and nothing beyond it. Ongoing care afterwards is optional and cancellable on 30 days' notice.",
+    tag: "Fixed Price, No Lock-In",
   },
   {
-    id: "money-back-guarantee",
+    id: "tuning-window",
     category: "pricing-contracts",
-    categoryLabel: "Pricing & Guarantee",
-    q: `How does the ${GUARANTEE.days}-day money-back guarantee work?`,
-    a: `Try your custom AI crew on your live phone line for ${GUARANTEE.days} days. If it doesn't capture jobs you would have otherwise lost to voicemail, we refund every penny and help you forward your line back. Zero risk.`,
-    tag: "100% Risk-Free",
+    categoryLabel: "Pricing & Terms",
+    q: `What does the ${TUNING_WINDOW.days}-day tuning window cover?`,
+    a: `For ${TUNING_WINDOW.days} days after your agent takes its first live call, we keep working on it at no extra cost — script wording, routing rules, follow-up sequences and edge cases you only discover once real callers are on the line. It is included in the build fee. We do not offer a money-back guarantee; what we offer instead is that you approve the script before we build, you run the test calls yourself, and 60% of the fee falls due only after you have a working system in front of you.`,
+    tag: "Included In Your Build",
   },
 
   // 4. Compliance & Legal

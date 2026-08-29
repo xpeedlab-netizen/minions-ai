@@ -1,5 +1,5 @@
 import Button from "@/components/ui/Button";
-import { GUARANTEE } from "@/lib/data/site-content";
+import { TUNING_WINDOW } from "@/lib/data/site-content";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
 export default function ZipFinalCta() {
@@ -10,11 +10,11 @@ export default function ZipFinalCta() {
           Stop Losing $500–$5,000 Jobs to Competitors Who Respond First.
         </h2>
         <p className="mt-4 text-cream/80 text-lg max-w-xl mx-auto leading-relaxed">
-          Deploy Zip&apos;s instant missed-call text-back engine in about 7 days. Backed by a 100% 30-day money-back guarantee with zero long-term contract risk.
+          Zip&apos;s instant missed-call text-back engine ships with the Full Crew build — 5–6 weeks from kickoff, a 30-day tuning window after go-live, and no long-term contract.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-4">
           <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>
-            Deploy Zip in 7 Days
+            Deploy Zip With Your Crew
           </Button>
           <Button
             href="/pricing"
@@ -26,7 +26,7 @@ export default function ZipFinalCta() {
           </Button>
         </div>
         <p className="mt-6 font-mono text-xs text-cream/60 font-medium">
-          {GUARANTEE.short}
+          {TUNING_WINDOW.short}
         </p>
       </div>
     </section>

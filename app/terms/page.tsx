@@ -46,9 +46,22 @@ export default function TermsPage() {
       <div>
         <h2>Fees, billing and cancellation</h2>
         <p>
-          Plans are billed monthly at the flat rate shown on our pricing page, plus a one-time
-          setup fee. Usage beyond included minutes is billed at the applicable overage rate. Plans
-          are month-to-month after setup and may be cancelled at any time going forward.
+          Builds are quoted as a fixed one-time fee for an agreed scope, shown on our pricing
+          page. The fee is payable across three milestones — 40% on signature, 40% when we hand
+          you the working system for testing, and 20% at go-live — and does not change without
+          your written approval. Either party may pause a project in writing, in which case work
+          already delivered is invoiced at the last completed milestone and nothing beyond it.
+        </p>
+        <p>
+          Third-party running costs are billed to you directly by the providers concerned and are
+          not part of the build fee: voice platform usage charged per minute of call time, phone
+          number rental and carrier charges, SMS and email sending credits, your automation
+          platform subscription, and your CRM subscription if you do not already hold one.
+        </p>
+        <p>
+          Ongoing care after go-live is optional, is charged monthly, and may be cancelled on 30
+          days&apos; notice. Accounts, workflows and phone numbers are created in your name and
+          remain yours if we part ways.
         </p>
       </div>
 

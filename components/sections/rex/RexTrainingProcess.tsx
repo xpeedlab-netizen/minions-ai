@@ -28,7 +28,7 @@ export default function RexTrainingProcess() {
             100% Done-For-You Setup in 3 Steps
           </h2>
           <p className="mt-3 text-ink/70 max-w-md text-base leading-relaxed">
-            We handle the technical setup, knowledge base programming, and calendar integration in 7 days.
+            We handle the technical setup, knowledge base programming, and calendar integration across a 3–4 week build.
           </p>
           <ol className="mt-8 space-y-6">
             {steps.map((s) => (

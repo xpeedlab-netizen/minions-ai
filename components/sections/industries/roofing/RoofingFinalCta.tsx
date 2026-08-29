@@ -23,12 +23,12 @@ export default function RoofingFinalCta() {
             </h2>
 
             <p className="text-white/75 text-base sm:text-lg max-w-lg mx-auto leading-relaxed">
-              We configure your insurance intake, photo upload links, and ServiceTitan / Jobber calendar sync in 7 days.
+              We configure your insurance intake, photo upload links, and ServiceTitan / Jobber calendar sync across a 3–6 week build.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow className="bg-teal hover:bg-teal-dark text-white shadow-lg w-full sm:w-auto">
-                Deploy Roofing AI Crew in 7 Days
+                Deploy Your Roofing AI Crew
               </Button>
               <Button href="/live-demo" variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">
                 Hear Roofing Voice Demo

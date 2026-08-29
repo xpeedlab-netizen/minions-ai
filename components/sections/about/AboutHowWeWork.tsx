@@ -13,8 +13,8 @@ const cards = [
     icon: CalendarDays,
     cornerIcon: CalendarDays,
     iconBg: "bg-teal",
-    title: "Month-to-Month",
-    body: "No golden handcuffs. If we don't bring you value, you don't stay. We earn our keep every single month through booked jobs.",
+    title: "No Lock-In",
+    body: "No golden handcuffs. The build is a fixed price paid across three milestones, you own every account and phone number, and any ongoing care afterwards is optional and cancellable on 30 days' notice.",
   },
   {
     icon: Zap,

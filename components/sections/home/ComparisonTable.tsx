@@ -38,13 +38,15 @@ function renderIcon(type: Cell["type"]) {
 }
 
 export default function ComparisonTable() {
-  const starterPrice = pricingPlans[0].price || "$299";
+  // Core Crew is a ONE-TIME build fee, not a monthly rate. This column used to read
+  // "Flat monthly, from <price>", which turned the build fee into a subscription.
+  const corePrice = pricingPlans[0].price || "$2,500";
 
   const costRow = {
     name: "Typical cost per month",
     service: "Ongoing per-minute or per-call fees",
     voicemail: "Free",
-    rex: `Flat monthly, from ${starterPrice}`,
+    rex: `One-time build, from ${corePrice}`,
   };
 
   const columns = [

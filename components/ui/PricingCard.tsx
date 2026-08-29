@@ -29,11 +29,23 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
       )}
 
       <div className="mt-4 pb-4 border-b border-current/10">
-        <div className="flex items-baseline gap-1">
+        {/* THIS IS A ONE-TIME FEE, NOT A SUBSCRIPTION. This block used to append "/mo" to
+            plan.price, which quoted the whole build as a monthly rate. There is no monthly
+            charge in a package: ongoing care is optional, starts at $297, and is only
+            raised at the 30-day review. Do not reintroduce a "/mo" suffix here. */}
+        <div className="flex items-baseline gap-2">
           {plan.price ? (
             <>
+              {plan.originalPrice && (
+                <span
+                  className={`font-mono text-lg line-through ${
+                    plan.popular ? "text-white/50" : "text-ink/40"
+                  }`}
+                >
+                  {plan.originalPrice}
+                </span>
+              )}
               <span className="font-mono text-3xl sm:text-4xl font-medium">{plan.price}</span>
-              <span className={plan.popular ? "text-white/80" : "text-ink/75"}>/mo</span>
             </>
           ) : (
             <span className="font-mono text-3xl sm:text-4xl font-medium">Custom</span>
@@ -44,9 +56,8 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
             plan.popular ? "text-cream" : "text-teal"
           }`}
         >
-          {/* `setupFee` already reads "One-time setup" / "Custom scope" in pricing.ts, so
-              appending "one-time setup" here rendered "+ One-time setup one-time setup". */}
-          {plan.setupFee ? `+ ${plan.setupFee}` : "Custom setup scope"}
+          {plan.setupFee || "Custom scope"}
+          {plan.turnaround ? ` · ${plan.turnaround}` : ""}
         </p>
       </div>
 

@@ -2,7 +2,7 @@ export const FAQ_CATEGORIES = [
   { id: "all", label: "All Questions", icon: "HelpCircle" },
   { id: "ai-experience", label: "AI Voice & Experience", icon: "Headset" },
   { id: "setup-tech", label: "Setup & CRMs", icon: "SlidersHorizontal" },
-  { id: "pricing-contracts", label: "Pricing & Guarantee", icon: "Receipt" },
+  { id: "pricing-contracts", label: "Pricing & Terms", icon: "Receipt" },
   { id: "compliance-safety", label: "Compliance & Safety", icon: "ShieldCheck" },
   { id: "the-team", label: "Founders & Support", icon: "Users" },
 ] as const;

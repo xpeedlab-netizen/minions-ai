@@ -24,7 +24,7 @@ const pipFaq = [
   },
   {
     q: "How long does it take to train Pip for my business?",
-    a: "About 7 days. You send over your pricing sheets, service area zip codes, and customer FAQs, and our team handles the entire setup with 100% done-for-you onboarding.",
+    a: "3 to 4 weeks for Core Crew and 5 to 6 weeks for Full Crew. You send over your pricing sheets, service area zip codes, and customer FAQs, and our team handles the entire setup with 100% done-for-you onboarding.",
   },
 ];
 

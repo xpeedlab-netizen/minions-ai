@@ -1,6 +1,6 @@
 import { Phone, ShieldCheck, ArrowRight, MessageSquare } from "lucide-react";
 import Button from "@/components/ui/Button";
-import { GUARANTEE } from "@/lib/data/site-content";
+import { TUNING_WINDOW } from "@/lib/data/site-content";
 import { SITE_PHONE_NUMBER, SITE_PHONE_TEL } from "@/lib/data/placeholders";
 
 export default function FaqFinalCta() {
@@ -12,7 +12,7 @@ export default function FaqFinalCta() {
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <span className="inline-flex items-center gap-1.5 rounded-full border border-teal/20 bg-teal/5 px-3.5 py-1 font-mono text-xs font-semibold uppercase tracking-wider text-teal">
           <ShieldCheck className="size-3.5 text-teal" />
-          {GUARANTEE.days}-Day Risk-Free Guarantee
+          {TUNING_WINDOW.days}-Day Tuning Window Included
         </span>
 
         <h2 className="mt-5 font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-ink text-balance tracking-tight">
@@ -39,7 +39,7 @@ export default function FaqFinalCta() {
         </div>
 
         <p className="mt-6 font-mono text-xs text-ink/50">
-          Zero long-term contracts · Setup in ~7 days · Full money-back refund guarantee
+          No long-term contract · Fixed price, paid across three milestones · You own every account
         </p>
       </div>
     </section>

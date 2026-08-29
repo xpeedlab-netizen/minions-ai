@@ -1,9 +1,14 @@
 import { ShieldCheck } from "lucide-react";
 import Section, { SectionHeading } from "@/components/ui/Section";
-import { GUARANTEE, HONEST_TRUTH } from "@/lib/data/site-content";
+import { TUNING_WINDOW, HONEST_TRUTH } from "@/lib/data/site-content";
 
 /**
- * Guarantee band. Absorbs what used to be the standalone HonestProof section —
+ * Trust band, unrendered on the homepage since 2026-08-29 (see app/page.tsx) but kept
+ * compiling. It used to carry a money-back guarantee; that claim was retired site-wide
+ * because the approved deployment proposal offers a 30-day TUNING WINDOW instead, not a
+ * refund. If this band is ever restored, it must not promise money back.
+ *
+ * Absorbs what used to be the standalone HonestProof section —
  * two text elements that occupied an entire py-16 sm:py-24 band on their own, the
  * emptiest moment on the page. Guarantee and honest-promise are one trust statement,
  * and the ink band already had the room.
@@ -27,14 +32,14 @@ export default function GuaranteeSection() {
         <ShieldCheck className="size-7" strokeWidth={1.75} />
       </div>
 
-      <SectionHeading className="text-white">{GUARANTEE.heading}</SectionHeading>
+      <SectionHeading className="text-white">{TUNING_WINDOW.heading}</SectionHeading>
 
       <p className="mx-auto mt-6 max-w-xl text-base leading-[1.65] text-cream/70 sm:text-[1.0625rem]">
-        {GUARANTEE.body}
+        {TUNING_WINDOW.body}
       </p>
 
       <p className="mt-8 font-mono text-xs font-bold uppercase tracking-[0.08em] text-teal">
-        {GUARANTEE.days}-Day Guarantee
+        {TUNING_WINDOW.days}-Day Tuning Window
       </p>
 
       {/* Absorbed HonestProof */}

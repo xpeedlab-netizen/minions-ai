@@ -1,12 +1,12 @@
-import { GUARANTEE, SETUP_TIME_PROMISE } from "@/lib/data/site-content";
+import { TUNING_WINDOW, SETUP_TIME_PROMISE } from "@/lib/data/site-content";
 import Button from "@/components/ui/Button";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
 const stats = [
   { label: "Coverage", value: "24/7" },
-  { label: "Setup Promise", value: SETUP_TIME_PROMISE },
-  { label: "Contract Term", value: "Month-to-month" },
-  { label: "Money-Back Guarantee", value: `${GUARANTEE.days} Days` },
+  { label: "Build Time", value: SETUP_TIME_PROMISE },
+  { label: "Contract Term", value: "No lock-in" },
+  { label: "Tuning Window", value: `${TUNING_WINDOW.days} Days` },
 ];
 
 export default function HvacTestimonial() {
@@ -15,13 +15,13 @@ export default function HvacTestimonial() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         <div className="relative">
           <span className="rounded-full bg-ink px-3 py-1 font-mono text-xs uppercase tracking-wide text-white">
-            30-Day Guarantee
+            30-Day Tuning Window
           </span>
           <h2 className="mt-4 font-heading font-bold text-2xl sm:text-3xl text-teal-dark leading-snug text-balance">
-            {GUARANTEE.heading}
+            {TUNING_WINDOW.heading}
           </h2>
           <p className="mt-4 text-ink/75 leading-relaxed text-base">
-            {GUARANTEE.body}
+            {TUNING_WINDOW.body}
           </p>
           <div className="mt-6">
             <Button href={BOOKING_CALENDAR_URL} showArrow>

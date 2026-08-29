@@ -18,7 +18,7 @@ export default function PipHero() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>
-              Deploy Pip in 7 Days
+              Add Pip To Your Build
             </Button>
             <Button href="/pricing" variant="outline" size="lg">
               See Pricing Plans

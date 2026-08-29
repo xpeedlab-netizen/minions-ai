@@ -11,7 +11,7 @@ interface FaqHeroProps {
 
 const POPULAR_SEARCH_TAGS = [
   "ServiceTitan",
-  "Month-to-Month",
+  "Payment Milestones",
   "Keep Your Number",
   "Recording Consent",
   "Fail-Safe",

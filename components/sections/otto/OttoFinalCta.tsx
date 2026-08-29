@@ -19,7 +19,7 @@ export default function OttoFinalCta() {
 
             <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white text-balance leading-tight">
               The Paperwork Is Just... Done. <br className="hidden sm:inline" />
-              Deploy Otto in 7 Days.
+              Put Otto On The Paperwork.
             </h2>
 
             <p className="text-white/75 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
@@ -28,7 +28,7 @@ export default function OttoFinalCta() {
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow className="bg-teal hover:bg-teal-dark text-white shadow-lg w-full sm:w-auto">
-                Deploy Otto in 7 Days
+                Deploy Otto With Your Crew
               </Button>
               <Button href="/contact" variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">
                 Book Process Review

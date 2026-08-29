@@ -15,7 +15,7 @@ export default function HiwProcessGrid() {
                 <span className="flex size-8 items-center justify-center rounded-full bg-teal font-heading font-bold text-white text-sm">
                   1
                 </span>
-                <span className="rounded-full bg-cream px-3 py-1 font-mono text-xs text-ink/50">DAY 1</span>
+                <span className="rounded-full bg-cream px-3 py-1 font-mono text-xs text-ink/50">WEEK 1</span>
               </div>
               <h3 className="relative mt-4 font-heading font-bold text-xl text-ink">
                 Discovery call (15 minutes)
@@ -42,7 +42,7 @@ export default function HiwProcessGrid() {
                 <span className="flex size-8 items-center justify-center rounded-full bg-teal font-heading font-bold text-white text-sm">
                   2
                 </span>
-                <span className="rounded-full bg-cream px-3 py-1 font-mono text-xs text-ink/50">DAYS 2–5</span>
+                <span className="rounded-full bg-cream px-3 py-1 font-mono text-xs text-ink/50">WEEK 2</span>
               </div>
               <h3 className="mt-4 font-heading font-bold text-xl text-ink">
                 We build and train your crew.
@@ -65,7 +65,7 @@ export default function HiwProcessGrid() {
                 <span className="flex size-8 items-center justify-center rounded-full bg-teal font-heading font-bold text-white text-sm">
                   3
                 </span>
-                <span className="rounded-full bg-cream px-3 py-1 font-mono text-xs text-ink/50">DAY 6</span>
+                <span className="rounded-full bg-cream px-3 py-1 font-mono text-xs text-ink/50">WEEK 3</span>
               </div>
               <h3 className="mt-4 font-heading font-bold text-xl text-ink">You listen and approve.</h3>
               <p className="mt-2 text-sm text-ink/60 leading-relaxed">
@@ -91,12 +91,12 @@ export default function HiwProcessGrid() {
                 <span className="flex size-8 items-center justify-center rounded-full bg-teal font-heading font-bold text-ink text-sm">
                   4
                 </span>
-                <span className="rounded-full bg-white/10 px-3 py-1 font-mono text-xs text-white/70">DAY 7</span>
+                <span className="rounded-full bg-white/10 px-3 py-1 font-mono text-xs text-white/70">WEEK 4</span>
               </div>
               <h3 className="mt-4 font-heading font-bold text-xl text-white">Go live.</h3>
               <p className="mt-2 text-sm text-white/70 leading-relaxed">
                 You forward your calls — a two-minute step we walk you through — and your crew
-                starts working. We keep tuning it as real calls come in.
+                starts working. We keep tuning it for 30 days as real calls come in, included.
               </p>
               <div className="mt-5 flex items-center gap-3">
                 <div className="flex -space-x-2">

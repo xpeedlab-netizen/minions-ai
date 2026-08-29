@@ -32,7 +32,7 @@ If a change touches multiple features unexpectedly, pause and confirm design int
 
 ## Fixed Crew Assets & Integration Rule
 - Mascot PNG images in `/public/images/mascots/*.png` are FIXED. Never generate new crew assets or use `.jpg` placeholders.
-- Integrations must reflect ServiceTitan, Housecall Pro, Jobber, FieldRoutes, PestPac, and GorillaDesk (Never GHL).
+- Integrations must reflect ServiceTitan, Housecall Pro, Jobber, FieldRoutes, PestPac, and GorillaDesk as the primary field-service list. GoHighLevel may also be named as a sales-side CRM alongside HubSpot, Salesforce, Zoho and Pipedrive (owner-approved 2026-08-29; see invariants.md #5), but must never displace the six above.
 
 ## Session End Protocol
 1. Append ONE single-line entry to `.claude/memory.md` under `## Sessions`:

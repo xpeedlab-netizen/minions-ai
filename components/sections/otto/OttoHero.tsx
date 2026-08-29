@@ -36,7 +36,7 @@ export default function OttoHero() {
           {/* Action Buttons */}
           <div className="pt-2 flex flex-col sm:flex-row gap-4">
             <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow className="bg-teal hover:bg-teal-dark text-white shadow-md">
-              Deploy Otto in 7 Days
+              Deploy Otto With Your Crew
             </Button>
             <Button href="/pricing" variant="outline" size="lg" className="border-border hover:bg-white">
               See Pricing Plans

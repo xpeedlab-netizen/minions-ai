@@ -23,12 +23,12 @@ export default function GiaFinalCta() {
             </h2>
 
             <p className="text-white/75 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-              We build your pipelines, configure your 2-way SMS follow-ups, and sync your calendar in 7 days. Zero technical work on your end.
+              We build your pipelines, configure your 2-way SMS follow-ups, and sync your calendar. Gia ships with the Full Crew build — 5–6 weeks from kickoff to live calls, with zero technical work on your end.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow className="bg-success hover:bg-success/90 text-white shadow-lg w-full sm:w-auto">
-                Deploy Gia in 7 Days
+                Deploy Gia With Your Crew
               </Button>
               <Button href="/contact" variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">
                 Book Free CRM Audit

@@ -47,11 +47,24 @@ export default function ServicePlanCard({ plan }: { plan: PricingPlan }) {
             <span className="text-xs uppercase font-mono tracking-wider font-semibold opacity-75">
               One-Time Build
             </span>
-            <div className="flex items-baseline gap-1">
+            <div className="flex items-baseline gap-2">
               {plan.price ? (
-                <span className="font-mono text-3xl sm:text-4xl font-extrabold">
-                  {plan.price}
-                </span>
+                <>
+                  {/* Anchor price from the approved proposal, struck through beside the
+                      current figure. Do not invent one for a plan that has no anchor. */}
+                  {plan.originalPrice && (
+                    <span
+                      className={`font-mono text-base line-through ${
+                        isPopular ? "text-white/50" : "text-ink/40"
+                      }`}
+                    >
+                      {plan.originalPrice}
+                    </span>
+                  )}
+                  <span className="font-mono text-3xl sm:text-4xl font-extrabold">
+                    {plan.price}
+                  </span>
+                </>
               ) : (
                 <span className="font-mono text-3xl sm:text-4xl font-extrabold">
                   Custom
@@ -69,7 +82,7 @@ export default function ServicePlanCard({ plan }: { plan: PricingPlan }) {
                 isPopular ? "text-cream" : "text-teal"
               }`}
             >
-              {plan.turnaround || "5–7 Days"}
+              {plan.turnaround || "3–6 weeks"}
             </span>
           </div>
         </div>

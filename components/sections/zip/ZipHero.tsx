@@ -18,7 +18,7 @@ export default function ZipHero() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>
-              Deploy Zip in 7 Days
+              Deploy Zip With Your Crew
             </Button>
             <Button href="/pricing" variant="outline" size="lg">
               See Pricing Plans

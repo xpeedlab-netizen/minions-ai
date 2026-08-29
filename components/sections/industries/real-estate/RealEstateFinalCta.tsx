@@ -12,7 +12,7 @@ export default function RealEstateFinalCta() {
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center space-y-8">
         <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 font-mono text-xs font-bold text-teal-300 uppercase tracking-wider">
           <Sparkles className="size-3.5" />
-          <span>7-Day Turnkey Brokerage Setup</span>
+          <span>Turnkey Brokerage Setup</span>
         </div>
 
         <h2 className="font-heading font-bold text-3xl sm:text-5xl text-white text-balance leading-tight max-w-3xl mx-auto">
@@ -20,7 +20,7 @@ export default function RealEstateFinalCta() {
         </h2>
 
         <p className="text-base sm:text-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
-          Deploy your custom AI real estate ISA in about 7 days. Backed by our 100% 30-day money-back guarantee with zero long-term contract lock-in.
+          Deploy your custom AI real estate ISA in 3–6 weeks depending on scope. Fixed price, a 30-day tuning window after go-live, and no long-term contract lock-in.
         </p>
 
         <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">

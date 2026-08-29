@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Section, { Eyebrow } from "@/components/ui/Section";
 
@@ -11,43 +12,65 @@ import Section, { Eyebrow } from "@/components/ui/Section";
  *
  * Ink rather than cream is the one concession to the document's mood: it separates the
  * partner pitch from the customer-facing pages the moment the page loads.
+ *
+ * THE ILLUSTRATION IS THE INTRODUCTION ITSELF — an agency owner and a service-business
+ * owner talking across a table, with the client's phone ringing unanswered beside them.
+ * That is the partner's moment, not the customer's: every other illustration in
+ * /public/images/illustrations shows the END CUSTOMER's pain, which is the wrong subject
+ * on a page addressed to the person who introduces them. Same house style as the rest of
+ * the set (torn halftone, coral/teal offsets, registration marks) so it reads as one
+ * family.
  */
 export default function PartnersHero() {
   return (
     <Section tone="ink" width="wide" density="feature">
-      <div className="max-w-2xl">
-        <Eyebrow tone="dark">Partner Program</Eyebrow>
-        {/*
-          Rendered as a real <h1> rather than <SectionHeading>, which only emits h2/h3.
-          The class list is SectionHeading's own h2 scale, copied deliberately so the
-          page has one top-level heading without widening that component's API.
-        */}
-        <h1 className="mt-6 type-display text-4xl sm:text-5xl lg:text-6xl leading-[1.0] tracking-[-0.005em] text-balance">
-          Your clients are missing calls. You could be the one who fixes it.
-        </h1>
-        <p className="mt-6 max-w-xl text-[1.0625rem] sm:text-lg leading-[1.6] text-cream/85">
-          Minions.AI builds AI voice agents that answer every call, book the job and update
-          the CRM — for the kind of businesses you already serve. Bring us the relationship,
-          we handle the build, and you earn on every client for as long as they stay.
-        </p>
+      <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+        <div>
+          <Eyebrow tone="dark">Partner Program</Eyebrow>
+          {/*
+            Rendered as a real <h1> rather than <SectionHeading>, which only emits h2/h3.
+            The class list is SectionHeading's own h2 scale, copied deliberately so the
+            page has one top-level heading without widening that component's API.
+          */}
+          <h1 className="mt-6 type-display text-4xl sm:text-5xl lg:text-6xl leading-[1.0] tracking-[-0.005em] text-balance">
+            Your clients are missing calls. You could be the one who fixes it.
+          </h1>
+          <p className="mt-6 max-w-xl text-[1.0625rem] sm:text-lg leading-[1.6] text-cream/85">
+            Minions.AI builds AI voice agents that answer every call, book the job and update
+            the CRM — for the kind of businesses you already serve. Bring us the relationship,
+            we handle the build, and you earn on every client for as long as they stay.
+          </p>
 
-        <div className="mt-9 flex flex-wrap gap-4">
-          <Button href="#apply" size="lg">
-            Apply to partner
-          </Button>
-          <Button
-            href="#commission"
-            size="lg"
-            variant="outline"
-            className="border-white/30 text-white hover:bg-white/10"
-          >
-            See what you earn
-          </Button>
+          <div className="mt-9 flex flex-wrap gap-4">
+            <Button href="#apply" size="lg">
+              Apply to partner
+            </Button>
+            <Button
+              href="#commission"
+              size="lg"
+              variant="outline"
+              className="border-white/30 text-white hover:bg-white/10"
+            >
+              See what you earn
+            </Button>
+          </div>
+
+          <p className="mt-8 font-mono text-xs uppercase tracking-[0.08em] text-cream/60">
+            No cost to join · No volume commitment · Approval usually within 3 business days
+          </p>
         </div>
 
-        <p className="mt-8 font-mono text-xs uppercase tracking-[0.08em] text-cream/60">
-          No cost to join · No volume commitment · Approval usually within 3 business days
-        </p>
+        <div className="overflow-hidden rounded-2xl">
+          <Image
+            src="/images/illustrations/partner-introduction.webp"
+            alt="An agency owner and a service-business owner talking across a café table over a tablet, the owner's phone ringing unanswered beside them"
+            width={1200}
+            height={1200}
+            priority
+            sizes="(max-width: 1024px) 100vw, 45vw"
+            className="h-auto w-full"
+          />
+        </div>
       </div>
     </Section>
   );

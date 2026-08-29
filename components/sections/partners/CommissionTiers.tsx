@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Check } from "lucide-react";
 import Section, { SectionHeading, SectionLead, Eyebrow } from "@/components/ui/Section";
 import { partnerTiers } from "@/lib/data/partners";
@@ -34,17 +35,38 @@ function Bulleted({ text }: { text: string }) {
 export default function CommissionTiers() {
   return (
     <Section tone="white" width="full" id="commission">
-      <Eyebrow>Commission</Eyebrow>
-      <SectionHeading className="mt-6">
-        Three ways in, depending on how involved you want to be.
-      </SectionHeading>
-      <SectionLead>
-        Pick the tier that matches the effort you actually want to put in. You can start at
-        one and move up whenever it suits you — nothing is locked. Worked figures below use a
-        typical Core Crew client: $2,500 build plus $297 a month.
-      </SectionLead>
+      {/*
+        The illustration sits BESIDE the section header rather than above the cards: the
+        tier cards are dense with figures, and an image over them would compete with the
+        numbers that are the whole point of this band. Hidden below lg for the same reason
+        — on a narrow screen it would push the rates a full screen down.
+      */}
+      <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+        <div>
+          <Eyebrow>Commission</Eyebrow>
+          <SectionHeading className="mt-6">
+            Three ways in, depending on how involved you want to be.
+          </SectionHeading>
+          <SectionLead>
+            Pick the tier that matches the effort you actually want to put in. You can start
+            at one and move up whenever it suits you — nothing is locked. Worked figures
+            below use a typical Core Crew client: $2,500 build plus $297 a month.
+          </SectionLead>
+        </div>
 
-      <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="hidden overflow-hidden rounded-2xl lg:block">
+          <Image
+            src="/images/illustrations/partner-recurring-revenue.webp"
+            alt="An agency owner at her desk reading a statement, beside a rising coral bar motif"
+            width={1200}
+            height={1200}
+            sizes="35vw"
+            className="h-auto w-full"
+          />
+        </div>
+      </div>
+
+      <div className="mt-12 grid gap-6 lg:grid-cols-3">
         {partnerTiers.map((tier) => (
           <div
             key={tier.id}

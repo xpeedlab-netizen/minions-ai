@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/blog/storage";
 import { ArrowLeft, Clock, Calendar, Tag, Phone, ShieldCheck, Sparkles, Share2 } from "lucide-react";
 import Button from "@/components/ui/Button";
-import { SITE_PHONE_NUMBER } from "@/lib/data/placeholders";
+import { SITE_PHONE_NUMBER, SITE_PHONE_TEL } from "@/lib/data/placeholders";
 import ArticleContent from "@/components/blog/ArticleContent";
 
 interface PageProps {
@@ -260,7 +260,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 relative z-10">
               <a
-                href={`tel:${SITE_PHONE_NUMBER.replace(/\D/g, "")}`}
+                href={`tel:${SITE_PHONE_TEL}`}
                 className="inline-flex items-center gap-2 rounded-xl bg-coral hover:bg-coral-text text-white px-6 py-3.5 font-heading font-bold text-sm shadow-md transition-colors"
               >
                 <Phone className="size-4" />

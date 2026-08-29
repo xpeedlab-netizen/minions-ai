@@ -3,7 +3,18 @@
  * These represent external configurations, links, and media assets.
  */
 
-export const SITE_PHONE_NUMBER: string = "(800) 555-0199";
+/**
+ * The live public demo line, held in Retell (nickname "Pest Control Line").
+ * This is the site's ONLY phone number and it is a real, answerable US line —
+ * the previous value was the placeholder (800) 555-0199, which is a fake 555
+ * number sitting in the header of a company that sells call answering.
+ *
+ * Display form and dial form are separate constants on purpose. Call sites used
+ * to derive the dial form with `.replace(/\D/g, "")`, which silently dropped the
+ * country code; `tel:` wants E.164.
+ */
+export const SITE_PHONE_NUMBER: string = "(346) 626-4720";
+export const SITE_PHONE_TEL: string = "+13466264720";
 export const BOOKING_CALENDAR_URL: string = "/contact";
 export const FOUNDER_PHOTO_URL: string = "/images/founders-placeholder.png";
 

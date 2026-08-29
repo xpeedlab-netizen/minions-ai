@@ -13,7 +13,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { FAQ_CATEGORIES, FaqCategoryId } from "./categories";
-import { SITE_PHONE_NUMBER } from "@/lib/data/placeholders";
+import { SITE_PHONE_NUMBER, SITE_PHONE_TEL } from "@/lib/data/placeholders";
 
 const ICON_MAP = {
   HelpCircle,
@@ -96,7 +96,7 @@ export default function FaqSidebar({
         </p>
 
         <a
-          href={`tel:${SITE_PHONE_NUMBER.replace(/\D/g, "")}`}
+          href={`tel:${SITE_PHONE_TEL}`}
           className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-coral px-4 py-2.5 font-heading font-bold text-xs text-white hover:bg-coral-text shadow-sm transition-transform active:scale-95"
         >
           <Phone className="size-3.5" />

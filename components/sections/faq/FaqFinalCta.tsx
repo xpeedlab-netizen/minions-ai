@@ -1,7 +1,7 @@
 import { Phone, ShieldCheck, ArrowRight, MessageSquare } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { GUARANTEE } from "@/lib/data/site-content";
-import { SITE_PHONE_NUMBER } from "@/lib/data/placeholders";
+import { SITE_PHONE_NUMBER, SITE_PHONE_TEL } from "@/lib/data/placeholders";
 
 export default function FaqFinalCta() {
   return (
@@ -30,7 +30,7 @@ export default function FaqFinalCta() {
           </Button>
 
           <a
-            href={`tel:${SITE_PHONE_NUMBER.replace(/\D/g, "")}`}
+            href={`tel:${SITE_PHONE_TEL}`}
             className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white px-6 py-3 font-heading font-bold text-sm text-ink shadow-xs hover:bg-cream-dark hover:border-teal/30 transition-all min-h-12"
           >
             <Phone className="size-4 text-teal" />

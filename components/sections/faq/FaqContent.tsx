@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { KNOWLEDGE_BASE_FAQS, FaqItem } from "@/lib/data/faq";
 import { FAQ_CATEGORIES, FaqCategoryId } from "./categories";
-import { SITE_PHONE_NUMBER } from "@/lib/data/placeholders";
+import { SITE_PHONE_NUMBER, SITE_PHONE_TEL } from "@/lib/data/placeholders";
 
 const CATEGORY_ICONS = {
   "ai-experience": Headset,
@@ -113,7 +113,7 @@ export default function FaqContent({
               Clear Filter & View All
             </button>
             <a
-              href={`tel:${SITE_PHONE_NUMBER.replace(/\D/g, "")}`}
+              href={`tel:${SITE_PHONE_TEL}`}
               className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-cream px-5 py-2.5 font-heading font-bold text-xs text-ink hover:bg-cream-dark transition-colors"
             >
               <Phone className="size-3.5 text-teal" />

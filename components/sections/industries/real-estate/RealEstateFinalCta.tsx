@@ -1,6 +1,6 @@
 import { Sparkles, Phone, ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
-import { BOOKING_CALENDAR_URL, SITE_PHONE_NUMBER } from "@/lib/data/placeholders";
+import { BOOKING_CALENDAR_URL, SITE_PHONE_NUMBER, SITE_PHONE_TEL } from "@/lib/data/placeholders";
 
 export default function RealEstateFinalCta() {
   return (
@@ -34,7 +34,7 @@ export default function RealEstateFinalCta() {
           </Button>
 
           <a
-            href={`tel:${SITE_PHONE_NUMBER.replace(/\D/g, "")}`}
+            href={`tel:${SITE_PHONE_TEL}`}
             className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 font-mono text-sm font-semibold text-white hover:bg-white/10 transition-colors w-full sm:w-auto"
           >
             <Phone className="size-4 text-teal" />

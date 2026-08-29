@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { services, industries } from "@/lib/data/nav";
-import { SITE_PHONE_NUMBER, BOOKING_CALENDAR_URL, DEMO_VIDEO_URL } from "@/lib/data/placeholders";
+import { SITE_PHONE_NUMBER, SITE_PHONE_TEL, BOOKING_CALENDAR_URL, DEMO_VIDEO_URL } from "@/lib/data/placeholders";
 import Button from "@/components/ui/Button";
 
 function NavDropdown({ label, items }: { label: string; items: typeof services }) {
@@ -68,7 +68,7 @@ export default function Header() {
 
         <div className="hidden lg:flex items-center gap-6">
           <a
-            href={`tel:${SITE_PHONE_NUMBER.replace(/\D/g, "")}`}
+            href={`tel:${SITE_PHONE_TEL}`}
             className="flex items-center gap-2 font-mono text-sm font-semibold text-ink/80 hover:text-teal transition-colors min-h-[44px]"
           >
             <Phone className="size-4 text-teal" />
@@ -138,7 +138,7 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href={`tel:${SITE_PHONE_NUMBER.replace(/\D/g, "")}`}
+              href={`tel:${SITE_PHONE_TEL}`}
               className="min-h-12 flex items-center gap-2 font-mono text-sm font-semibold text-teal pt-2"
             >
               <Phone className="size-4 text-teal" />

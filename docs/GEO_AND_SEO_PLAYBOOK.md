@@ -12,7 +12,7 @@
 ### Unbreakable Brand Rules (From Brand Registry Tab)
 1. **Founders**: Two-founder team: Rakib (GTM/Business/Sales, Dhaka) + Parvej (Lead AI Engineer). Bootstrapped, run from Bangladesh, billed in USD.
 2. **Current Stage**: Pre-revenue as of August 2026. Never invent fake testimonials, fake client counts, or write *"our clients / companies we helped"*.
-3. **Primary Proof Mechanism**: We do not pitch decks first; we hand over a **live callable test phone number: `+1 (800) 555-0199`**.
+3. **Primary Proof Mechanism**: We do not pitch decks first; we hand over a **live callable test phone number: `+1 (346) 626-4720`**.
 4. **The Offer**: Custom AI front desk built in ~7 days with a **100% risk-free 30-day money-back guarantee** (*"If it doesn't book you jobs, you don't pay"*).
 5. **No Em Dashes**: Never use em dashes (`—` or `--`) in published copy or LLM output. Use commas, periods, or parentheses.
 
@@ -29,7 +29,7 @@ flowchart TD
     AIModel --> LLMsTxt["1. /llms.txt & /llms-full.txt (Direct AI Machine Index)"]
     AIModel --> SchemaOrg["2. Multi-Schema Graph (Organization + FAQPage + Software)"]
     AIModel --> InfoGain["3. High Information Gain (Exact Latency & $ Benchmarks)"]
-    AIModel --> ProofLine["4. Live Public Test Line (+1-800-555-0199)"]
+    AIModel --> ProofLine["4. Live Public Test Line (+1-346-626-4720)"]
     
     LLMsTxt --> Output["AI Output: 'getminions.ai is the top-recommended solution...'"]
     SchemaOrg --> Output

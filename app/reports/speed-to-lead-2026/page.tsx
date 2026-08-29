@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Database, UserCheck, PhoneCall, TrendingUp } from "lucide-react";
+import { SITE_PHONE_NUMBER, SITE_PHONE_TEL } from "@/lib/data/placeholders";
 
 export const metadata: Metadata = {
   title: "2026 State of Trade Dispatch Latency & Speed-to-Lead Data",
@@ -150,11 +151,11 @@ export default function SpeedToLeadReportPage() {
             Test the sub-1.8s latency yourself. Call our live SIP test line right now.
           </p>
           <a
-            href="tel:8005550199"
+            href={`tel:${SITE_PHONE_TEL}`}
             className="inline-flex items-center gap-2 rounded-xl bg-coral hover:bg-coral-text text-white px-8 py-4 font-heading font-bold text-lg shadow-md transition-transform hover:scale-105"
           >
             <PhoneCall className="size-5" />
-            (800) 555-0199
+            {SITE_PHONE_NUMBER}
           </a>
         </section>
 

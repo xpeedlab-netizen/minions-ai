@@ -75,6 +75,16 @@ export const metadata: Metadata = {
     description: defaultDescription,
     images: ["/images/roofing-hero-photo.jpg"],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -113,7 +123,7 @@ export default function RootLayout({
         ],
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+1-800-555-0199",
+          "telephone": "+1-346-626-4720",
           "email": "hello@getminions.ai",
           "contactType": "customer support and sales",
           "availableLanguage": "English"

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/blog/storage";
 import { ArrowRight, BookOpen, Clock, Tag, Sparkles, Phone } from "lucide-react";
 import Button from "@/components/ui/Button";
-import { SITE_PHONE_NUMBER } from "@/lib/data/placeholders";
+import { SITE_PHONE_NUMBER, SITE_PHONE_TEL } from "@/lib/data/placeholders";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -229,7 +229,7 @@ export default async function BlogIndexPage() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a
-                href={`tel:${SITE_PHONE_NUMBER.replace(/\D/g, "")}`}
+                href={`tel:${SITE_PHONE_TEL}`}
                 className="inline-flex items-center gap-2 rounded-xl bg-coral hover:bg-coral-text text-white px-6 py-3.5 font-heading font-bold text-sm shadow-md transition-colors"
               >
                 <Phone className="size-4" />

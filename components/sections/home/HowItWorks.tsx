@@ -80,11 +80,21 @@ export default function HowItWorks() {
         </div>
 
         {/*
-          One portrait figure, not a framed square, and generated NATIVELY at 4:5
-          (1000x1250) rather than cropped out of a square — so `object-cover` here has
-          nothing to trim and the composition is exactly what was authored. It replaced
-          the step-knowledge-base collage, whose figures did not read as US-based; the
-          ICP is United States pest control and real estate operators.
+          One portrait figure, not a framed square, and generated NATIVELY at 4:5 rather
+          than cropped out of a square — so `object-cover` here has nothing to trim and
+          the composition is exactly what was authored.
+
+          v2 (2026-08-29) FIXED AN ICP MISMATCH, not an art problem. The v1 figure read
+          as a man in his early thirties. The corrected ICP research says the buyer is a
+          pest control owner in their late fifties to sixties: NAR members are median 57
+          with 44% aged 60 or older, and the Census ABS puts 51% of employer-business
+          owners at 55+. So the one figure on the page that is meant to BE the visitor
+          was roughly 25 years younger than the visitor — in the band whose whole job is
+          "we build it, you don't have to". Regenerated at 62, with the age named as the
+          most important part of the brief and "do not make him young" as an explicit
+          negation, because the model defaults to young clean-cut men for "business
+          owner". The phone in his hand is specified dark and switched off so there is
+          no lit screen for it to fill with invented UI.
         */}
         {/* Capped below lg. Unconstrained, the 4:5 window rendered 637x796 at a 700px
             viewport, which made this the TALLEST band on the page (1,618px) through the
@@ -93,8 +103,8 @@ export default function HowItWorks() {
         <Reveal delay={0.12} className="mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-none lg:sticky lg:top-24">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-cream">
             <Image
-              src="/images/illustrations/step-owner-portrait.webp"
-              alt="A US small-business owner standing calmly with their phone lowered at their side while their AI crew is built for them"
+              src="/images/illustrations/step-owner-portrait-v2.webp"
+              alt="A US small-business owner in his sixties standing calmly with his phone switched off and lowered at his side while his AI crew is built for him"
               fill
               sizes="(max-width: 1024px) 100vw, 42vw"
               className="object-cover"

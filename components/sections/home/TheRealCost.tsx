@@ -41,13 +41,24 @@ const problemCards = [
        figure, so putting the showing scene here means each co-primary market
        (invariants.md #3) is actually pictured above the fold-and-a-half.
 
-       The -v3 suffix is deliberate: overwriting an image in place does not reach the
+       The -vN suffix is deliberate: overwriting an image in place does not reach the
        browser, because /_next/image caches optimised output by URL in memory and Chrome
-       holds the decoded bitmap through a normal reload. Bump the suffix instead. */
+       holds the decoded bitmap through a normal reload. Bump the suffix instead.
+
+       v4 (2026-08-29) replaced v3 because v3 read as AI-generated at a glance: the
+       agent's raised open palm had malformed splayed fingers, the man behind her had a
+       smeared face, and the background was mush. Regenerated with Nano Banana 2 on the
+       Pro model, restating the full locked style block, negating every previous subject
+       by name, and adding explicit anti-artefact constraints — no open palms or splayed
+       fingers (hands closed around the phone or out of frame), every face fully resolved
+       and symmetrical, correct joint anatomy, documentary 35mm look rather than a
+       render. The subject changed from "holding off the couple with a raised hand" to
+       "taking the call while they wait", which removes the hand the model kept failing
+       on. Native 1024px square, not upscaled to the 1200px of the rest of the set. */
     title: "Two calls at once",
     body: "You can only talk to one person. Voicemail takes a message from the other one — whoever answered takes the customer.",
-    src: "/images/illustrations/pain-mid-showing-v3.webp",
-    alt: "A real estate agent holding off a buyer couple with one raised hand while a stack of incoming calls crowds in beside her",
+    src: "/images/illustrations/pain-mid-showing-v4.webp",
+    alt: "A real estate agent taking a phone call during a viewing while the buyer couple behind her waits, with a stack of incoming calls queued beside her",
   },
 ];
 

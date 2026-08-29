@@ -42,7 +42,7 @@ export const pricingPlans: PricingPlan[] = [
     setupFee: "One-time setup",
     popular: true,
     badge: "Most Popular",
-    description: "For busy trade businesses needing 24/7 automated booking, dispatch, and outbound workflows.",
+    description: "For busy pest control and real estate teams needing 24/7 automated booking, dispatch, and outbound workflows.",
     turnaround: "Live in 5–7 days",
     features: [
       "Everything in Starter Build",

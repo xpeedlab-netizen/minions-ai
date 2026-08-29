@@ -12,10 +12,17 @@ import { PROOF_STATS, PROOF_STATS_CLOSING } from "@/lib/data/site-content";
  * Changes: the cards lose their boxes and become columns divided by hairlines (the
  * pattern every metrics row on Linear/Sierra uses); the stat scales up and goes
  * tabular so the digits align; the source drops to a whisper. Copy is unchanged.
+ *
+ * DENSITY: this band is punctuation, not a destination — it exists to break the run of
+ * light content bands and hand the visitor one hard number. On sme.careers the
+ * equivalent palate-cleanser bands run 342-544px; this one measured 723px, which made
+ * it read as another full chapter. It now runs `compact`, and the closing line has
+ * dropped from text-3xl to a quiet lead: the band was firing TWO display-scale
+ * moments (the h2 and the closing statement) at each other across three stats.
  */
 export default function Proof() {
   return (
-    <Section tone="teal" width="wide" className="relative overflow-hidden">
+    <Section tone="teal" width="wide" density="compact" className="relative overflow-hidden">
       {/* Depth, so the teal band isn't a flat rectangle. */}
       <div
         aria-hidden
@@ -24,7 +31,7 @@ export default function Proof() {
 
       <div className="relative z-10">
         <SectionHeading className="mx-auto max-w-3xl text-center text-white">
-          Speed to Lead Wins the Job — And the Research Proves It.
+          Speed to Lead Wins the Deal — And the Research Proves It.
         </SectionHeading>
 
         {/*
@@ -33,7 +40,7 @@ export default function Proof() {
         */}
         {/* items-stretch + h-full on the Reveal wrapper is what lets the `mt-auto` on
             each source line resolve against the tallest column. */}
-        <dl className="mt-14 grid items-stretch gap-y-10 sm:grid-cols-3 sm:gap-y-0 sm:divide-x sm:divide-white/15">
+        <dl className="mt-10 grid items-stretch gap-y-10 sm:grid-cols-3 sm:gap-y-0 sm:divide-x sm:divide-white/15">
           {PROOF_STATS.map((s, i) => (
             <Reveal
               key={s.stat}
@@ -59,7 +66,7 @@ export default function Proof() {
           ))}
         </dl>
 
-        <p className="mx-auto mt-14 max-w-2xl text-balance text-center font-heading text-2xl font-bold leading-[1.15] tracking-[-0.01em] text-white sm:text-3xl">
+        <p className="mx-auto mt-12 max-w-xl text-balance text-center font-heading text-lg font-semibold leading-[1.4] tracking-[-0.01em] text-white/90">
           {PROOF_STATS_CLOSING}
         </p>
       </div>

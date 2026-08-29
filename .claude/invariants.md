@@ -2,7 +2,7 @@
 
 1. MUST use pre-rendered 3D PNG crew portraits (`/images/mascots/{rex,zip,pip,gia,otto}.png`) with `object-contain`.
 2. NEVER generate new mascot images using AI generation tools or use legacy `.jpg` mascot images.
-3. MUST portray Pest Control Operators (PCOs) as the primary #1 launch market across site messaging.
+3. MUST portray **Pest Control Operators (PCOs) and Real Estate Agencies as the two co-primary target markets**, given equal weight in brand-level messaging. HVAC, Plumbing, Roofing, and Electrical are genuinely supported but explicitly secondary — never presented as a main focus. Brand-level copy (metadata, footer, trust bar, pricing, founder story) MUST NOT use trades-only framing such as "blue-collar", "contractors", or "trade businesses" as its sole umbrella, because that silently excludes real estate. (Twice-revised: the original rule named PCOs alone; a 2026-08-29 revision named Real Estate alone as flagship; the user then clarified that both are main and the rest are not. This wording is the clarified intent.)
 4. MUST feature ServiceTitan, Housecall Pro, Jobber, FieldRoutes, PestPac, and GorillaDesk as CRM/dispatch partners.
 5. NEVER reference GoHighLevel (GHL) in any page, component, data file, or UI text.
 6. MUST maintain local dev server port 3050 (`next dev -p 3050`).

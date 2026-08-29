@@ -1,87 +1,102 @@
 import Image from "next/image";
 import { INTEGRATION_COPY } from "@/lib/data/site-content";
 import Reveal from "@/components/ui/Reveal";
-import Section, { SectionHeading } from "@/components/ui/Section";
+import Section, { SectionHeading, Eyebrow } from "@/components/ui/Section";
 
 const steps = [
   {
     n: "01",
     title: "Custom Knowledge Base Build",
-    who: "Knowledge Base Build",
-    img: "/images/kb-build-step.jpg",
-    body: "Our team analyzes your services, pricing schedules, service areas, and customer FAQs. We train your AI crew so they sound natural and represent your brand with 100% accuracy.",
+    body: "We analyze your services, pricing, service areas, and FAQs, then train your crew to represent your brand accurately.",
   },
   {
     n: "02",
     title: "Calendar & CRM Integration",
-    who: "Calendar & CRM Integration",
-    img: "/images/crm-sync-step.jpg",
-    body: `We connect your AI crew to your tools. ${INTEGRATION_COPY.calendar} ${INTEGRATION_COPY.crm}`,
+    /* Only the calendar half of INTEGRATION_COPY. Appending the CRM sentence too made
+       this row run to twice the length of the other two. The title already says CRM;
+       the pipeline detail lives on /how-it-works. */
+    body: INTEGRATION_COPY.calendar,
   },
   {
     n: "03",
     title: "2-Minute Call Forwarding",
-    who: "2-Minute Call Forwarding",
-    img: "/images/call-forward-step.jpg",
-    body: `${INTEGRATION_COPY.phone} From that second on, every call is answered instantly, 24/7/365.`,
+    body: `${INTEGRATION_COPY.phone} From that second on, every call is answered instantly.`,
   },
 ];
 
 /**
- * Setup process.
+ * Setup process — an asymmetric stepper.
  *
- * Numbered progression: an oversized step numeral anchors each row, a connecting
- * rule runs between them on desktop. The ordinal and image carry the eye.
+ * ARCHETYPE CHANGE. This was a three-up grid of full-column square illustrations, which
+ * made it structurally IDENTICAL to TheRealCost four hundred pixels up the page: same
+ * columns, same square images, same h3-over-one-sentence, heights within 60px of each
+ * other. Measured at 1440px the page ran five consecutive three-column grids; this was
+ * the most obvious duplicate of the five and the cheapest to break.
+ *
+ * The replacement is the move sme.careers uses for its own "Start Earning in weeks"
+ * band, and it is the strongest layout on that page: heading top-left, the numbered
+ * steps as compact stacked rows in a narrow left column, and ONE tall figure holding
+ * the whole right column. Three payoffs — the band stops being a grid, the steps read
+ * as a sequence rather than three peers (which is what a numbered process actually is),
+ * and the portrait image finally breaks the all-square rhythm.
+ *
+ * Three images became one on purpose. The step collages were decoration: nothing in
+ * "Calendar & CRM Integration" is made clearer by a picture, and paying for three
+ * illustrations to say so is what inflated the band. The step collages this orphaned
+ * (`step-knowledge-base`, `step-calendar-crm`, `step-call-forwarding`) were deleted at
+ * the owner's request once nothing referenced them.
  */
 export default function HowItWorks() {
   return (
-    <Section tone="white" width="wide">
-      <SectionHeading className="mx-auto max-w-2xl text-center text-ink">
-        100% Done-For-You Setup in 3 Simple Steps
-      </SectionHeading>
+    <Section tone="cream" width="wide">
+      <div className="grid items-start gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
+        <div>
+          <Eyebrow className="mb-5">Done-For-You Onboarding</Eyebrow>
+          <SectionHeading className="max-w-xl text-ink">
+            We build it. You forward your line.
+          </SectionHeading>
 
-      <div className="relative mt-14">
-        {/* The rule sits at the vertical center of the mascot medallions on desktop */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-[16%] right-[16%] top-[4.5rem] hidden h-px bg-gradient-to-r from-transparent via-border to-transparent lg:block"
-        />
-
-        <ol className="relative grid gap-10 lg:grid-cols-3 lg:gap-8">
-          {steps.map((s, i) => (
-            <Reveal
-              key={s.n}
-              as="li"
-              delay={i * 0.08}
-              className="flex h-full flex-row items-start gap-5 lg:flex-col lg:items-start lg:gap-0"
-            >
-              {/* Medallion frame holding generated product UI step image */}
-              <div className="relative size-24 shrink-0 overflow-hidden rounded-2xl border border-border bg-cream shadow-sm sm:size-28 lg:size-36">
-                <Image
-                  src={s.img}
-                  alt={s.who}
-                  fill
-                  sizes="(min-width: 1024px) 9rem, (min-width: 640px) 7rem, 6rem"
-                  className="object-cover"
-                />
-              </div>
-
-              <div className="lg:mt-7">
-                <div className="flex items-baseline gap-3">
-                  <span className="font-mono text-3xl font-medium leading-none tabular-nums text-teal/25 lg:text-4xl">
+          <ol className="mt-10 space-y-3">
+            {steps.map((s, i) => (
+              <Reveal key={s.n} as="li" delay={i * 0.08}>
+                <div className="flex gap-5 rounded-2xl border border-border bg-white p-5 sm:p-6">
+                  <span className="font-mono text-sm font-bold leading-6 tabular-nums text-teal">
                     {s.n}
                   </span>
-                  <h3 className="font-heading text-xl font-bold leading-[1.15] tracking-[-0.01em] text-balance text-ink sm:text-2xl">
-                    {s.title}
-                  </h3>
+                  <div className="min-w-0">
+                    <h3 className="font-heading text-base font-bold leading-[1.3] tracking-[-0.01em] text-ink">
+                      {s.title}
+                    </h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-ink/65">{s.body}</p>
+                  </div>
                 </div>
-                <p className="mt-3 text-[0.9375rem] leading-[1.6] text-ink/65">
-                  {s.body}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </ol>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+
+        {/*
+          One portrait figure, not a framed square, and generated NATIVELY at 4:5
+          (1000x1250) rather than cropped out of a square — so `object-cover` here has
+          nothing to trim and the composition is exactly what was authored. It replaced
+          the step-knowledge-base collage, whose figures did not read as US-based; the
+          ICP is United States pest control and real estate operators.
+        */}
+        {/* Capped below lg. Unconstrained, the 4:5 window rendered 637x796 at a 700px
+            viewport, which made this the TALLEST band on the page (1,618px) through the
+            whole tablet range — the portrait aspect that helps on desktop works against
+            it once the columns stack. */}
+        <Reveal delay={0.12} className="mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-none lg:sticky lg:top-24">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-white">
+            <Image
+              src="/images/illustrations/step-owner-portrait.webp"
+              alt="A US small-business owner standing calmly with their phone lowered at their side while their AI crew is built for them"
+              fill
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              className="object-cover"
+            />
+          </div>
+        </Reveal>
       </div>
     </Section>
   );

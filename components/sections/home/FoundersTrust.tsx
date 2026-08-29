@@ -128,6 +128,20 @@ export default function FoundersTrust() {
             </div>
           </div>
         </div>
+
+        {/*
+          Infrastructure line. Deliberately placed here and nowhere higher: naming the
+          stack in the hero would make a contractor think about *how* it works at the
+          moment they should be recognising their own problem, and it invites a
+          "why not go direct?" comparison. Down here, next to real founder faces, it
+          answers the only question a visitor still has before booking — are these
+          people real engineers, or another fly-by-night agency.
+        */}
+        <div className="mt-14 border-t border-white/10 pt-6">
+          <p className="font-mono text-[0.6875rem] uppercase leading-[1.7] tracking-[0.1em] text-cream/40 sm:text-xs">
+            Built on enterprise voice infrastructure — Retell AI · n8n · Google Calendar · EspoCRM
+          </p>
+        </div>
       </div>
     </section>
   );

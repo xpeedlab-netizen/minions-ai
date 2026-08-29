@@ -22,7 +22,8 @@ export const footerProduct: NavLink[] = [
   { label: "Pricing", href: "/pricing" },
   { label: "The Crew", href: "/#crew" },
   { label: "Industries", href: "/#industries" },
-  { label: "Real Estate AI (New)", href: "/industries/real-estate" },
+  { label: "Real Estate AI", href: "/industries/real-estate" },
+  { label: "Pest Control AI", href: "/industries/pest-control" },
   { label: "Blog & Guides", href: "/blog" },
 ];
 

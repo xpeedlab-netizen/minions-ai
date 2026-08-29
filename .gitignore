@@ -57,3 +57,7 @@ next-env.d.ts
 .continue
 .cursor
 
+
+# Local scratch artifacts (typography comparison render, one-off ROI script)
+type-comparison.png
+update_roi.py

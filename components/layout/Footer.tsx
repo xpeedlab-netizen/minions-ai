@@ -10,9 +10,18 @@ export default function Footer() {
             <Link href="/" className="font-heading font-extrabold text-2xl text-white">
               Minions<span className="text-vest-orange">.AI</span>
             </Link>
+            {/* "Professional automation for the blue-collar backbone" read well but
+                silently excluded half the target market — a real-estate broker does not
+                identify as blue-collar. Both co-primary verticals are now named. */}
             <p className="mt-4 text-sm leading-relaxed max-w-xs">
-              Professional automation for the blue-collar backbone. Not affiliated with any film
-              franchise.
+              The AI front office for pest control operators and real estate agencies. Not
+              affiliated with any film franchise.
+            </p>
+            {/* Infrastructure credit. Lived at the foot of FoundersTrust until that band
+                was removed; the footer is the right home for it — quiet, and it keeps the
+                Retell AI name on the homepage for the search intent it actually serves. */}
+            <p className="mt-3 font-mono text-[0.6875rem] leading-[1.6] text-current/60 max-w-xs">
+              Built on enterprise voice infrastructure — Retell AI · n8n · Google Calendar · EspoCRM
             </p>
           </div>
 

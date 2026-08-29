@@ -53,7 +53,7 @@ export default function SecurityTrustSection() {
           Your Call Recordings & Business Data Are 100% Secure.
         </SectionHeading>
         <p className="mt-4 text-base sm:text-lg text-ink/70">
-          Contractors trust us with their phone lines every day. We protect your customers, your data, and your reputation with bank-level encryption.
+          Operators and agencies trust us with their phone lines every day. We protect your customers, your data, and your reputation with bank-level encryption.
         </p>
       </div>
 

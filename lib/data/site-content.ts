@@ -10,12 +10,14 @@ export const SETUP_TIME_PROMISE = "About 7 days";
 const guaranteeDays = 30;
 export const GUARANTEE = {
   days: guaranteeDays,
-  heading: "100% Risk-Free: If It Doesn't Book You Jobs, You Don't Pay.",
-  body: `Try your AI crew on your phone line for ${guaranteeDays} days. If it doesn't capture jobs you would have otherwise lost to voicemail, we refund every penny and help you forward your line back. Zero contracts, zero cancellation fees, zero risk.`,
+  heading: "100% Risk-Free: If It Doesn't Book Appointments, You Don't Pay.",
+  body: `Try your AI crew on your phone line for ${guaranteeDays} days. If it doesn't capture appointments you would have otherwise lost to voicemail, we refund every penny and help you forward your line back. Zero contracts, zero cancellation fees, zero risk.`,
   short: `Zero contract · Setup in ~7 days · ${guaranteeDays}-day money-back guarantee`,
 };
 
-export const TRUST_BAR_TEXT = `Built for Trade & Service Businesses • 24/7 Instant Voice Dispatch • Grounded Web Chat • Automated Lead Pipeline • ${guaranteeDays}-Day Guarantee`;
+/* "Built for Trade & Service Businesses" excluded real estate, one of the two
+   co-primary markets (invariants.md #3). Both are now named explicitly. */
+export const TRUST_BAR_TEXT = `Built for Pest Control & Real Estate • 24/7 Instant Voice Dispatch • Grounded Web Chat • Automated Lead Pipeline • ${guaranteeDays}-Day Guarantee`;
 
 export const CONTRACTOR_DAY_TIMELINE = [
   {
@@ -63,7 +65,7 @@ export const PROOF_STATS = [
   },
   {
     stat: "21×",
-    description: "more likely to qualify and convert that lead into a paying job when you answer first.",
+    description: "more likely to qualify and convert that lead into a paying customer when you answer first.",
     source: "MIT / InsideSales Lead Response Study, 2007",
   },
   {
@@ -75,16 +77,24 @@ export const PROOF_STATS = [
 
 export const PROOF_STATS_CLOSING = "Your AI crew answers incoming calls in under 3 seconds, 24/7.";
 
+/*
+ * Reworked so it speaks to both co-primary markets (invariants.md #3). The previous
+ * version was trades-only — "trade business owners", "up a ladder, under a sink" —
+ * which read as someone else's story to a real-estate broker. The shared truth is
+ * that both businesses pay to make the phone ring and then cannot answer it: the PCO
+ * is on a route, the agent is mid-showing. That is the story, and it covers both
+ * without going generic.
+ */
 export const FOUNDER_STORY = {
-  pullQuote: "We built this because hard-working trade business owners were losing thousands in revenue while their hands were full on the job.",
-  heading: "Engineered to solve the #1 revenue killer for service contractors.",
-  body: "We're software engineers who kept seeing trade businesses spend real money to get the phone ringing, only to lose half those calls because the owner was up a ladder, under a sink, or deep in a job site. Traditional call centers put callers on hold and read generic scripts. We built Minions.AI as an integrated AI front desk: voice dispatching, grounded web chat, and automatic lead logging.",
+  pullQuote: "We built this because owners were losing thousands in revenue while their hands were full — on a route, or in the middle of a showing.",
+  heading: "Engineered to solve the #1 revenue killer: the call nobody answered.",
+  body: "We're software engineers who kept seeing the same thing. A pest control operator on a route, or an agent mid-showing, spends real money to get the phone ringing — then loses half those calls because nobody could pick up. Traditional call centers put people on hold and read generic scripts. We built Minions.AI as an integrated AI front desk: voice dispatching, grounded web chat, and automatic lead logging.",
   attribution: "Rakib & Parvej, Co-founders",
 };
 
 export const HONEST_TRUTH = {
   heading: "Our Risk-Free Promise",
-  body: `We don't ask for long-term contract lock-in or ask you to take our word for it. We build your custom AI front desk in 7 days, let you test live phone calls before going public, and back everything with a ${guaranteeDays}-day money-back guarantee. One recovered $400–$3,500 job pays for your entire month.`,
+  body: `We don't ask for long-term contract lock-in or ask you to take our word for it. We build your custom AI front desk in 7 days, let you test live phone calls before going public, and back everything with a ${guaranteeDays}-day money-back guarantee. One recovered $400–$3,500 booking pays for your entire month.`,
 };
 
 export const INTEGRATION_COPY = {

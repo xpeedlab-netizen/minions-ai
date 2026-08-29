@@ -75,6 +75,18 @@ export default function Section({
 /**
  * Standard section header. Enforces the one h2 scale used across the whole page,
  * so no card h3 can ever visually rival a section title.
+ *
+ * ALIGNMENT RULE: headings range left by default. The one band that centres on the
+ * home page is Proof (teal) — it is a full-width statement with no asymmetric partner,
+ * which is the only case that earns it. FoundersTrust used to be the second such band
+ * and has been removed.
+ *
+ * Alignment is NOT the lever for making a long scroll feel varied: the page once had
+ * eight bands ranging left and one centred, and it still read as the same band eight
+ * times, because every one of them was a heading over a three-column card grid.
+ * Variety comes from changing the ARCHETYPE — grid vs. stepper vs. text table vs.
+ * horizontal rail — not from nudging the heading. See the header comment on each home
+ * section for which archetype it owns.
  */
 export function SectionHeading({
   children,
@@ -94,16 +106,20 @@ export function SectionHeading({
    * where every heading shouts has no hierarchy at all. Dropping to `bold` and pulling
    * tracking in is what makes large type read as designed rather than merely big.
    */
+  /*
+   * The h2 branch is display type and takes Anton (`.type-display`, defined in
+   * globals.css); the h3 branch stays on Archivo. Anton is already condensed and
+   * heavy, so it wants far *looser* tracking than the old geometric face did —
+   * the -0.02em that suited Plus Jakarta Sans collapses Anton's counters. Its
+   * single 400 weight is the design weight, so `font-bold` here would only
+   * trigger a synthetic bold; `.type-display` sets the weight itself.
+   */
   const scale =
     Tag === "h2"
-      ? "text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em]"
-      : "text-xl sm:text-2xl leading-[1.15] tracking-[-0.01em]";
+      ? "type-display text-4xl sm:text-5xl lg:text-6xl leading-[1.0] tracking-[-0.005em]"
+      : "font-heading font-bold text-xl sm:text-2xl leading-[1.15] tracking-[-0.01em]";
 
-  return (
-    <Tag className={`font-heading font-bold ${scale} text-balance ${className}`}>
-      {children}
-    </Tag>
-  );
+  return <Tag className={`${scale} text-balance ${className}`}>{children}</Tag>;
 }
 
 /**
@@ -124,9 +140,15 @@ export function Eyebrow({
   tone?: "light" | "dark";
   className?: string;
 }) {
+  /*
+   * The dark variant used `text-teal` (#0e5c63), which on the ink band (#12242a) is a
+   * contrast ratio of roughly 1.5:1 — the label was effectively invisible once
+   * MeetTheCrew moved onto ink. Cream is the correct pairing on a dark ground; the
+   * teal brand token itself is untouched (invariants.md #8).
+   */
   const toneClass =
     tone === "dark"
-      ? "border-white/15 bg-white/5 text-teal"
+      ? "border-white/20 bg-white/10 text-cream"
       : "border-teal/15 bg-teal/5 text-teal";
 
   return (

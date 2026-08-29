@@ -1,16 +1,10 @@
 import Hero from "@/components/sections/home/Hero";
 import TheRealCost from "@/components/sections/home/TheRealCost";
-import LiveDemoSection from "@/components/sections/home/LiveDemoSection";
 import Proof from "@/components/sections/home/Proof";
 import HowItWorks from "@/components/sections/home/HowItWorks";
 import IndustriesSection from "@/components/sections/home/IndustriesSection";
 import MeetTheCrew from "@/components/sections/home/MeetTheCrew";
-import ComparisonTable from "@/components/sections/home/ComparisonTable";
 import PricingPreview from "@/components/sections/home/PricingPreview";
-import GuaranteeSection from "@/components/sections/home/GuaranteeSection";
-import FoundersTrust from "@/components/sections/home/FoundersTrust";
-import WhoThisIsNotFor from "@/components/sections/home/WhoThisIsNotFor";
-import FaqSection from "@/components/sections/faq/FaqSection";
 import FinalCta from "@/components/sections/FinalCta";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
@@ -18,46 +12,38 @@ import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
  * Landing page band sequence.
  *
  * Tone alternates deliberately — no two adjacent bands share a background — with the
- * four accent bands (teal / INK / INK / teal) acting as punctuation across the scroll.
- * Three sections carry `feature` density (TheRealCost, MeetTheCrew, PricingPreview);
- * everything else is standard, which is what gives the page its rhythm.
+ * accent bands (teal / INK) acting as punctuation across the scroll.
  *
- *   cream(hero) · white · teal · white · cream · white · INK(founders) ·
- *   cream · INK(guarantee) · white · cream · teal
+ *   cream(hero) · white · teal · cream · white · INK(crew) · cream · teal
  *
- * The standalone TrustStrip band was folded into the hero as a hairline rule. As its own
- * full-width ink bar it cut the page in two immediately under the fold — a hard dark
- * interruption before the visitor had finished the headline — for one line of text.
+ * FoundersTrust was removed at the owner's direction. It was the page's only dark
+ * band, so MeetTheCrew inherits the INK slot — the mascot PNGs read better on dark
+ * than on cream anyway, and it keeps two dark punctuations in the scroll.
  *
- * The two dark bands are deliberate punctuation: FoundersTrust (why we built this)
- * and GuaranteeSection (what we promise). They are kept apart by PricingPreview so
- * neither loses its impact.
+ * Deliberately short. Sections that restated an argument the page had already made
+ * (ComparisonTable, GuaranteeSection, WhoThisIsNotFor) or that duplicate a dedicated
+ * route (FaqSection -> /faq) were removed rather than shortened: the page's problem
+ * was section count, not paragraph length inside each one. The guarantee still appears
+ * as a line in FinalCta, which is where it converts.
  */
 export default function Home() {
   return (
     <>
       <Hero />
       <TheRealCost />
-      {/* Hidden until DEMO_VIDEO_ID is set. */}
-      <LiveDemoSection />
       <Proof />
       <HowItWorks />
       <IndustriesSection />
       <MeetTheCrew />
-      <ComparisonTable />
-      {/* Founders is a dark inverted band (story + video as one moment), so it sits
-          between two light sections rather than next to the ink GuaranteeSection. */}
-      <FoundersTrust />
       <PricingPreview />
-      <GuaranteeSection />
-      <WhoThisIsNotFor />
-      <FaqSection />
       <FinalCta
-        heading="Every Missed Call Belongs to Your Competitor. Fix It Today."
-        subtext="Deploy your 24/7 custom AI crew in about 7 days. Backed by a 100% 30-day money-back guarantee with zero contract risk."
+        heading="Get home on time. Let the crew answer."
+        subtext="Deploy your AI crew in about 7 days. Backed by a 30-day money-back guarantee."
         primaryLabel="Book Your 15-Minute Setup Call"
         primaryHref={BOOKING_CALENDAR_URL}
         hideSecondary
+        image="/images/illustrations/outcome-home-on-time.webp"
+        imageAlt="A contractor arriving home in the evening and being greeted by his daughter, phone away in his pocket"
       />
     </>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter, IBM_Plex_Mono } from "next/font/google";
+import { Anton, Archivo, Inter, IBM_Plex_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/layout/Header";
@@ -8,11 +8,27 @@ import MobileStickyBar from "@/components/layout/MobileStickyBar";
 import PipChatWidget from "@/components/pip-widget/PipChatWidget";
 import { PipSessionProvider } from "@/components/pip-widget/usePipSession";
 
-const jakarta = Plus_Jakarta_Sans({
+/*
+ * Two-tier heading system.
+ *
+ * Anton is a single-weight condensed display face — enormous impact at hero and
+ * section-headline sizes, but it degrades badly below ~24px, and the site carries
+ * ~190 h3/h4s (crew names, industry card titles, step labels) that must stay
+ * readable. So Anton is scoped to display type only (`font-display`, applied by
+ * the h1s and by SectionHeading's h2 branch) and Archivo carries every other
+ * heading. Applying one condensed face globally was the obvious-looking move and
+ * would have wrecked the small headings.
+ */
+const anton = Anton({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+const archivo = Archivo({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["400", "700", "800"],
-  style: ["normal", "italic"],
+  weight: ["400", "600", "700", "800"],
 });
 
 const inter = Inter({
@@ -28,7 +44,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const defaultDescription =
-  "Never miss another call. Minions.AI builds a friendly AI crew that answers your phone 24/7, texts back missed leads in seconds, and books jobs to your calendar. Hear it live.";
+  "Never miss another call. Minions.AI builds an AI crew for pest control operators and real estate agencies that answers your phone 24/7, texts back missed leads in seconds, and books straight to your calendar. Hear it live.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.getminions.ai"),
@@ -79,7 +95,7 @@ export default function RootLayout({
         "url": "https://www.getminions.ai",
         "logo": "https://www.getminions.ai/images/minions_ai_logo_primary_transparent.png",
         "description":
-          "The 24/7 AI front office and speed-to-lead crew for trade & home service contractors. Answers calls in under 1.8s, qualifies emergency repairs, and schedules jobs directly to ServiceTitan, Jobber, and Housecall Pro.",
+          "The 24/7 AI front office and speed-to-lead crew for pest control operators, real estate agencies, and home service businesses. Answers calls in under 1.8s, qualifies the lead, and books straight into FieldRoutes, PestPac, GorillaDesk, Follow Up Boss, ServiceTitan, Jobber, or Housecall Pro.",
         "foundingDate": "2026",
         "founders": [
           {
@@ -136,7 +152,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${jakarta.variable} ${inter.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${anton.variable} ${archivo.variable} ${inter.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink font-body pb-16 md:pb-0">
         <script

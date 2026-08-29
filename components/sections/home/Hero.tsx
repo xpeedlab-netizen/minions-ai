@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Button from "@/components/ui/Button";
-import HeroAnimation from "@/components/sections/home/HeroAnimation";
 import { BOOKING_CALENDAR_URL, DEMO_VIDEO_ID } from "@/lib/data/placeholders";
 import { GUARANTEE, TRUST_BAR_TEXT } from "@/lib/data/site-content";
 
@@ -48,12 +48,19 @@ export default function Hero() {
               24/7 AI Voice &amp; Lead Dispatcher for Service Businesses
             </span>
 
-            <h1 className="mt-6 font-heading text-4xl font-bold leading-[1.02] tracking-[-0.03em] text-balance text-ink sm:text-5xl lg:text-6xl">
-              Stop Losing $5,000 Jobs to Voicemail.
+            {/*
+              "Jobs" and "on a roof, under a sink" were trades-only: a real-estate
+              broker — one of the two co-primary markets (invariants.md #3) — has
+              showings and commissions, not jobs. "Calls" is the one noun both
+              businesses share, and the subhead now names both situations plus the
+              universal one, so neither reader is reading about someone else.
+            */}
+            <h1 className="mt-6 type-display text-5xl leading-[0.98] tracking-[-0.005em] text-balance text-ink sm:text-6xl lg:text-7xl">
+              Stop Sending $5,000 Calls to Voicemail.
             </h1>
 
             <p className="mt-6 max-w-lg text-base leading-[1.6] text-ink/65 sm:text-lg">
-              When your hands are full on a roof, under a sink, or sleeping, Rex answers every incoming call instantly, quotes your exact pricing, and books appointments straight to your calendar 24/7.
+              Whether you&apos;re out on a route, mid-showing, or asleep at 2 AM, Rex answers every call instantly, qualifies the lead, and books it straight to your calendar 24/7.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:gap-4">
@@ -70,8 +77,27 @@ export default function Hero() {
             </p>
           </div>
 
+          {/*
+            The hero visual is the pain illustration rather than the live-call
+            transcript widget. The widget demonstrated the product working, which is
+            real proof, but it asked the visitor to *read a simulation* at the moment
+            they should be recognising their own problem. The collage lands the
+            recognition instantly and matches the three cards directly below it, so
+            the top of the page now reads as one designed system instead of a product
+            demo followed by unrelated artwork. HeroAnimation is still in the repo if
+            this needs reverting.
+          */}
           <div className="relative">
-            <HeroAnimation />
+            <div className="relative aspect-square w-full overflow-hidden rounded-3xl">
+              <Image
+                src="/images/illustrations/hero-missed-call.webp"
+                alt="A plumber working under a kitchen sink with both hands busy while a phone glows with an unanswered call on the floor beside him"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 55vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
 

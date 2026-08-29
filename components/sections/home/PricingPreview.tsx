@@ -7,7 +7,9 @@ import { pricingPlans } from "@/lib/data/pricing";
 export default function PricingPreview() {
   return (
     <Section tone="cream" width="wide" density="feature">
-      <SectionHeading className="text-ink text-center">
+      {/* Ranged left, matching every other light content band. See the alignment
+          note on SectionHeading — only the two accent bands centre. */}
+      <SectionHeading className="max-w-2xl text-ink">
         Professional AI, predictable pricing.
       </SectionHeading>
       <div className="mt-12 grid sm:grid-cols-3 gap-6">

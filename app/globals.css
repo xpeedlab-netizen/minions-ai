@@ -65,6 +65,19 @@ h4 {
   letter-spacing: -0.01em;
 }
 
+/*
+ * Display type — Anton, scoped to the hero h1 and SectionHeading's h2 branch only.
+ *
+ * Declared as a plain class rather than a `--font-*` theme token: a `--font-display`
+ * entry in @theme did not emit a `font-display` utility, so headings silently fell
+ * back to the h1-h4 rule above and rendered in Archivo. A class also outranks that
+ * element selector on specificity, which is exactly what's wanted here.
+ */
+.type-display {
+  font-family: var(--font-display), var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+}
+
 @keyframes idle-bob {
   0%,
   100% {

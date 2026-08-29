@@ -90,11 +90,11 @@ export default function TheRealCost() {
         <SectionHeading className="text-ink">
           A missed call is revenue that never starts.
         </SectionHeading>
+        {/* Two lines, not four. Both markets stay named (invariants.md #3) and the
+            valuation argument stays — it is only stated once now instead of twice. */}
         <SectionLead className="max-w-2xl">
-          For a pest control operator it is a quarterly plan that never begins. For a
-          broker it is a listing that goes to whoever picked up. Both are recurring
-          revenue — and recurring revenue is what the business is worth the day you
-          decide to sell it.
+          A pest control operator loses a quarterly plan; a broker loses a listing to
+          whoever picked up. Both are recurring revenue — the number a buyer values you on.
         </SectionLead>
       </div>
 

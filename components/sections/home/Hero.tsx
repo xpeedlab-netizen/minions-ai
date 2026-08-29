@@ -6,7 +6,7 @@ import {
   SITE_PHONE_NUMBER,
   SITE_PHONE_TEL,
 } from "@/lib/data/placeholders";
-import { TUNING_WINDOW, TRUST_BAR_TEXT } from "@/lib/data/site-content";
+import { TRUST_BAR_TEXT } from "@/lib/data/site-content";
 
 /**
  * Hero — band 01 of the landing brief.
@@ -14,9 +14,15 @@ import { TUNING_WINDOW, TRUST_BAR_TEXT } from "@/lib/data/site-content";
  * COPY. The headline was "Stop Sending $5,000 Calls to Voicemail." Two problems: the
  * $5,000 is a number we cannot source, and it opens on fear rather than on the outcome.
  * The buyer is an owner in their late fifties or sixties who says software is essential
- * (66%) and still won't invest in it (20%) — that buyer is persuaded by the phone being
- * answered, not by the technology. So the outcome leads and the search term follows one
- * line later: "AI receptionist" is how you describe what does it, not the first promise.
+ * (66%) and still won't invest in it (20%).
+ *
+ * THAT ARGUMENT PUT "AI receptionist" IN THE SUBHEAD AND KEPT IT OUT OF THE H1 — the
+ * reading being that this buyer is persuaded by the phone being answered, not by the
+ * technology. THE OWNER REVERSED THAT ON 2026-08-29: the H1 now names the thing outright.
+ * The outcome ("answers every call, 24/7") still closes the line, so the headline promises
+ * the result and identifies the product in one breath, and the search term is now in the
+ * page's most weighted element rather than one line below it. Do not quietly move it back
+ * to the subhead — that is a decision the owner has already made twice.
  *
  * SECONDARY ACTION. Was "See pricing plans", which sent the visitor away from the one
  * action this page exists for. It is now the live demo number as a real `tel:` link at
@@ -47,15 +53,17 @@ export default function Hero() {
             </span>
 
             <h1 className="mt-6 type-display text-5xl leading-[0.98] tracking-[-0.005em] text-balance text-ink sm:text-6xl lg:text-7xl">
-              Every call answered, 24/7.
+              Your AI receptionist answers every call, 24/7.
             </h1>
 
-            {/* "AI receptionist" sits here rather than in the headline — it is the term
-                people search, so it has to be on the page, but it is not the argument. */}
+            {/* Trimmed once the H1 took on "AI receptionist": this no longer has to
+                introduce the thing, so it opens on the behaviour instead. Both markets
+                stay named — "mid-route" is the pest control tech, "mid-showing" the agent
+                (invariants.md #3) — and "you keep your number" stays last because it is
+                the objection this buyer raises first. */}
             <p className="mt-6 max-w-lg text-[1.0625rem] leading-[1.6] text-ink/75 sm:text-lg">
-              An AI receptionist picks up on the first ring — 2 AM, weekends, or while
-              you&apos;re on a route or mid-showing. It quotes from your real price list
-              and books the appointment straight onto your calendar. You keep your
+              Answers on the first ring at 2 AM, on weekends, mid-route and mid-showing —
+              quotes from your real price list, books onto your calendar, and you keep your
               number.
             </p>
 
@@ -74,10 +82,6 @@ export default function Hero() {
 
             <p className="mt-3 text-[0.9375rem] leading-relaxed text-ink/75">
               Call it now and hear it answer. No form, no signup.
-            </p>
-
-            <p className="mt-6 font-mono text-[0.9375rem] font-medium text-ink/75">
-              {TUNING_WINDOW.short}
             </p>
           </div>
 

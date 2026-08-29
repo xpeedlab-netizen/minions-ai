@@ -34,12 +34,15 @@ export default function PricingPreview() {
       <SectionHeading className="max-w-2xl text-ink">
         One fixed fee. Then it is yours.
       </SectionHeading>
+      {/* Cut from five lines to two. The valuation argument ("recurring revenue is the
+          number an acquirer pays for") was dropped here rather than compressed: band 02
+          already makes it in full, so at this point in the scroll it was a restatement
+          costing three lines. What survives is the part that only this band can say —
+          the category comparison and the no-lock-in terms. */}
       <SectionLead className="max-w-2xl">
-        No per-minute billing, no hold music and no contract. Compare it to a front-desk
-        hire rather than to a phone bill: this answers every call, every hour, and it
-        exists to add recurring revenue — which is the number an acquirer pays for. You pay
-        across three milestones, you own every account and phone number, and nothing here
-        puts a recurring line on your books unless you later ask for one.
+        No per-minute billing, no hold music, no contract. Compare it to a front-desk hire
+        rather than a phone bill: you pay across three milestones and own every account and
+        number outright.
       </SectionLead>
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mx-auto lg:max-w-4xl">
         {pricingPlans.map((plan, i) => (

@@ -23,7 +23,7 @@ import Reveal from "@/components/ui/Reveal";
  * be. Cut from three cards to two so it reads in a single glance, per the brief. The
  * card dropped was "Call Centers Fall Short" — it argued against a competitor instead of
  * landing recognition, and its copy leaned on Rex by name before the visitor has met
- * him. The `pain-call-center-hold.webp` collage is now unreferenced but retained.
+ * him. Its `pain-call-center-hold.webp` collage was deleted once nothing referenced it.
  *
  * The copy sits INSIDE the card on a cream ground under a full-bleed 4:3 image. It gives
  * the row an actual object to be, and 4:3 breaks the all-square image rhythm.

@@ -43,16 +43,20 @@ export default function Hero() {
               number.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-3.5">
               <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>
                 Book a 15-minute call
               </Button>
               <a
                 href={`tel:${SITE_PHONE_TEL}`}
-                className="group inline-flex min-h-[44px] items-center gap-2.5 text-base font-semibold text-teal underline decoration-teal/30 decoration-2 underline-offset-4 transition-colors hover:decoration-teal focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-4 sm:text-lg"
+                className="group inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl border border-ink/20 bg-white px-4 py-2.5 text-sm font-bold text-ink shadow-sm transition-all hover:border-teal hover:text-teal focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2 active:scale-95 sm:text-base"
               >
-                <Phone aria-hidden className="size-4.5 shrink-0" />
-                {SITE_PHONE_NUMBER}
+                <span className="relative flex size-2">
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+                </span>
+                <Phone aria-hidden className="size-4 shrink-0 text-teal transition-transform group-hover:scale-110" />
+                <span>Hear AI Live: {SITE_PHONE_NUMBER}</span>
               </a>
             </div>
 

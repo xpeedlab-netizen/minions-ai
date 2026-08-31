@@ -58,25 +58,46 @@ export default function PricingPreview() {
         ))}
       </div>
 
-      {/* 40 / 40 / 20 Safe Payment Milestone Badge */}
+      {/* 40 / 40 / 20 Safe Payment Milestone Card */}
       <Reveal delay={0.2} className="mt-8 lg:mx-auto lg:max-w-4xl">
         <div className="rounded-2xl border border-ink/10 bg-white p-5 shadow-sm sm:p-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-3.5">
-              <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-teal/10 font-mono text-xs font-bold text-teal">
-                40/40/20
-              </div>
-              <div>
-                <p className="font-heading text-sm font-bold text-ink sm:text-base">
-                  Structured Milestone Safety · Zero Upfront Risk
-                </p>
-                <p className="text-xs text-ink/75 sm:text-[0.8125rem]">
-                  40% on signature · 40% only after you test the working system · 20% at live go-live
-                </p>
-              </div>
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-ink/10 pb-4">
+            <div>
+              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-teal">
+                Payment Safety
+              </span>
+              <h3 className="font-heading text-base font-bold text-ink sm:text-lg">
+                Pay in 3 Safe Milestones — Zero Upfront Risk
+              </h3>
             </div>
-            <div className="flex items-center gap-1.5 font-mono text-xs font-semibold text-teal shrink-0 rounded-full bg-teal/10 px-3 py-1.5">
-              <span>30-Day Tuning Window Included</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-teal/10 px-3 py-1 font-mono text-xs font-semibold text-teal">
+              30-day tuning window included
+            </span>
+          </div>
+
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            <div className="rounded-xl border border-border bg-cream p-3.5 sm:p-4">
+              <span className="font-mono text-base font-bold text-teal sm:text-lg">40%</span>
+              <p className="mt-0.5 font-heading text-xs font-bold text-ink sm:text-sm">On Signature</p>
+              <p className="mt-1 text-[11px] leading-relaxed text-ink/70">
+                Reserves your build slot and starts custom discovery.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border bg-cream p-3.5 sm:p-4">
+              <span className="font-mono text-base font-bold text-teal sm:text-lg">40%</span>
+              <p className="mt-0.5 font-heading text-xs font-bold text-ink sm:text-sm">At Working UAT</p>
+              <p className="mt-1 text-[11px] leading-relaxed text-ink/70">
+                Due only when you receive the working system to test.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border bg-cream p-3.5 sm:p-4">
+              <span className="font-mono text-base font-bold text-teal sm:text-lg">20%</span>
+              <p className="mt-0.5 font-heading text-xs font-bold text-ink sm:text-sm">At Go-Live</p>
+              <p className="mt-1 text-[11px] leading-relaxed text-ink/70">
+                Due when your agent answers its first live customer call.
+              </p>
             </div>
           </div>
         </div>

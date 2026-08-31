@@ -143,7 +143,7 @@ export default function HeroAudioPreview() {
         <div className="flex items-center gap-2">
           <span className="inline-flex items-center gap-1 rounded-full bg-teal/10 px-2.5 py-0.5 font-mono text-[11px] font-bold text-teal">
             <Sparkles className="size-3" />
-            0.6s latency
+            Answers on Ring 1
           </span>
         </div>
       </div>
@@ -223,8 +223,8 @@ export default function HeroAudioPreview() {
           <CheckCircle2 className="size-3.5 shrink-0 text-emerald-600" />
           <span>Auto-Logged to {scenario.crmTarget} + Google Calendar</span>
         </div>
-        <span className="font-mono text-[10px] uppercase text-ink/75">
-          Zero robotic pauses
+        <span className="font-mono text-[10px] uppercase text-ink/65">
+          Simulated example call
         </span>
       </div>
     </div>

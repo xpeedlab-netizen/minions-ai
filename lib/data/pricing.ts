@@ -105,7 +105,6 @@ export const pricingAddOns: PricingAddOn[] = [
     name: "Pip — website chat agent",
     description: "Catches the visitors who will never pick up the phone. Shares one knowledge base with Rex, so a visitor who starts in chat can be handed straight to a call.",
     setup: "$900 setup",
-    monthly: "+$97/mo",
     note: "$900 when added at signature, because Pip reuses the knowledge base and CRM mapping built for Rex. Added later as a standalone project, it is $1,200.",
   },
   {
@@ -117,13 +116,11 @@ export const pricingAddOns: PricingAddOn[] = [
     name: "Additional language",
     description: "Rex and Pip answering in a second language, with scripts written natively.",
     setup: "$800 setup",
-    monthly: "+$49/mo",
   },
   {
     name: "Additional location",
     description: "A further number, calendar and routing set for another branch or franchise.",
     setup: "$450 setup",
-    monthly: "+$79/mo",
   },
 ];
 
@@ -234,7 +231,7 @@ export const pricingFaq = [
   },
   {
     q: "What happens after go-live?",
-    a: "A 30-day tuning window is included in the build fee at no extra cost — we keep adjusting scripts, routing and workflows against real conversations. After that the system is yours to run, and many clients do exactly that. If you would rather we kept looking after it, care plans start at $297 a month and are all-inclusive: voice platform, automation and CRM usage sit inside that figure, along with a monthly allowance of support hours. You can cancel with 30 days' notice and you keep every account and workflow.",
+    a: "A 30-day tuning window is included in the build fee at no extra cost — we keep adjusting scripts, routing and workflows against real conversations. After that the system is yours to run, and many clients do exactly that. If you would rather we kept looking after it, optional care plans are available: voice platform, automation and CRM usage sit inside that figure, along with a monthly allowance of support hours. You can cancel with 30 days' notice and you keep every account and workflow.",
   },
   {
     q: "Which CRMs and dispatch systems do you integrate with?",

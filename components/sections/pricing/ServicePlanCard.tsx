@@ -1,6 +1,6 @@
 import { Check, Sparkles, Clock } from "lucide-react";
 import Button from "@/components/ui/Button";
-import { currentPricingMonth } from "@/lib/current-month";
+import DynamicPricingMonth from "@/components/ui/DynamicPricingMonth";
 import type { PricingPlan } from "@/lib/data/pricing";
 
 export default function ServicePlanCard({ plan }: { plan: PricingPlan }) {
@@ -29,7 +29,7 @@ export default function ServicePlanCard({ plan }: { plan: PricingPlan }) {
             isPopular ? "bg-white/15 text-cream" : "border border-border bg-cream text-teal"
           }`}
         >
-          {currentPricingMonth()} pricing
+          <DynamicPricingMonth />
         </span>
 
         <div className="flex items-center justify-between">

@@ -1,15 +1,33 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2, Clock, MailCheck, RotateCcw } from "lucide-react";
+import { CheckCircle2, Clock, MailCheck, RotateCcw, AlertCircle } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import Button from "@/components/ui/Button";
+import RecaptchaField from "@/components/ui/RecaptchaField";
+import { validateContact } from "@/lib/validation";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [contactValue, setContactValue] = useState("");
+  const [contactError, setContactError] = useState<string | null>(null);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const reduceMotion = useReducedMotion();
+
+  const handleContactBlur = () => {
+    if (!contactValue.trim()) {
+      setContactError(null);
+      return;
+    }
+    const result = validateContact(contactValue);
+    if (!result.isValid) {
+      setContactError(result.error || "Please enter a valid email or phone number.");
+    } else {
+      setContactError(null);
+    }
+  };
 
   return (
     <AnimatePresence mode="wait">
@@ -86,7 +104,12 @@ export default function ContactForm() {
 
             <button
               type="button"
-              onClick={() => setSubmitted(false)}
+              onClick={() => {
+                setSubmitted(false);
+                setContactValue("");
+                setContactError(null);
+                setRecaptchaToken(null);
+              }}
               className="inline-flex items-center gap-1.5 font-mono text-xs text-teal hover:text-teal-dark font-medium underline underline-offset-4 transition-colors"
             >
               <RotateCcw className="size-3.5" />
@@ -101,17 +124,32 @@ export default function ContactForm() {
             e.preventDefault();
             const form = e.currentTarget;
             const data = new FormData(form);
-            setSubmitting(true);
             setError(null);
+
+            const name = String(data.get("name") || "").trim();
+            const contact = contactValue.trim();
+            const need = String(data.get("need") || "").trim();
+            const botField = String(data.get("website_hp") || "");
+
+            // Client-side contact validation
+            const contactValidation = validateContact(contact);
+            if (!contactValidation.isValid) {
+              setContactError(contactValidation.error || "Please enter a valid email or phone number.");
+              return;
+            }
+
+            setSubmitting(true);
 
             try {
               const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                  name: data.get("name"),
-                  contact: data.get("contact"),
-                  need: data.get("need"),
+                  name,
+                  contact,
+                  need,
+                  recaptchaToken,
+                  botField,
                 }),
               });
 
@@ -121,6 +159,9 @@ export default function ContactForm() {
               }
 
               form.reset();
+              setContactValue("");
+              setContactError(null);
+              setRecaptchaToken(null);
               setSubmitted(true);
             } catch (err) {
               setError(
@@ -132,6 +173,16 @@ export default function ContactForm() {
           }}
           className="flex flex-col gap-5"
         >
+          {/* Honeypot hidden input */}
+          <div className="sr-only" aria-hidden="true">
+            <input
+              type="text"
+              name="website_hp"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-ink mb-2">
               Your name
@@ -145,19 +196,39 @@ export default function ContactForm() {
               className="min-h-12 w-full rounded-xl border border-border bg-white px-4 text-base placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-teal"
             />
           </div>
+
           <div>
-            <label htmlFor="contact" className="block text-sm font-medium text-ink mb-2">
-              Phone or email
-            </label>
+            <div className="flex items-center justify-between mb-2">
+              <label htmlFor="contact" className="block text-sm font-medium text-ink">
+                Phone or email
+              </label>
+              {contactError && (
+                <span className="flex items-center gap-1 text-xs text-red-600 font-medium">
+                  <AlertCircle className="size-3.5" />
+                  {contactError}
+                </span>
+              )}
+            </div>
             <input
               id="contact"
               name="contact"
               type="text"
               required
+              value={contactValue}
+              onChange={(e) => {
+                setContactValue(e.target.value);
+                if (contactError) setContactError(null);
+              }}
+              onBlur={handleContactBlur}
               placeholder="john@company.com"
-              className="min-h-12 w-full rounded-xl border border-border bg-white px-4 text-base placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-teal"
+              className={`min-h-12 w-full rounded-xl border bg-white px-4 text-base placeholder:text-ink/40 focus:outline-none focus:ring-2 ${
+                contactError
+                  ? "border-red-500 focus:ring-red-400"
+                  : "border-border focus:ring-teal"
+              }`}
             />
           </div>
+
           <div>
             <label htmlFor="need" className="block text-sm font-medium text-ink mb-2">
               What do you need help with?
@@ -171,11 +242,21 @@ export default function ContactForm() {
               className="w-full rounded-xl border border-border bg-white px-4 py-3 text-base placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-teal"
             />
           </div>
+
+          {/* reCAPTCHA verification field */}
+          <div>
+            <RecaptchaField
+              onVerify={(token) => setRecaptchaToken(token)}
+              onExpired={() => setRecaptchaToken(null)}
+            />
+          </div>
+
           {error && (
             <p role="alert" className="text-sm text-red-600">
               {error}
             </p>
           )}
+
           <Button type="submit" showArrow className="w-full" disabled={submitting}>
             {submitting ? "Sending…" : "Send"}
           </Button>
@@ -184,4 +265,3 @@ export default function ContactForm() {
     </AnimatePresence>
   );
 }
-

@@ -57,6 +57,52 @@ export default function PricingPreview() {
           </Reveal>
         ))}
       </div>
+
+      {/* 40 / 40 / 20 Safe Payment Milestone Card */}
+      <Reveal delay={0.2} className="mt-8 lg:mx-auto lg:max-w-4xl">
+        <div className="rounded-2xl border border-ink/10 bg-white p-5 shadow-sm sm:p-6">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-ink/10 pb-4">
+            <div>
+              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-teal">
+                Payment Safety
+              </span>
+              <h3 className="font-heading text-base font-bold text-ink sm:text-lg">
+                Pay in 3 Safe Milestones — Zero Upfront Risk
+              </h3>
+            </div>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-teal/10 px-3 py-1 font-mono text-xs font-semibold text-teal">
+              30-day tuning window included
+            </span>
+          </div>
+
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            <div className="rounded-xl border border-border bg-cream p-3.5 sm:p-4">
+              <span className="font-mono text-base font-bold text-teal sm:text-lg">40%</span>
+              <p className="mt-0.5 font-heading text-xs font-bold text-ink sm:text-sm">On Signature</p>
+              <p className="mt-1 text-[11px] leading-relaxed text-ink/70">
+                Reserves your build slot and starts custom discovery.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border bg-cream p-3.5 sm:p-4">
+              <span className="font-mono text-base font-bold text-teal sm:text-lg">40%</span>
+              <p className="mt-0.5 font-heading text-xs font-bold text-ink sm:text-sm">At Working UAT</p>
+              <p className="mt-1 text-[11px] leading-relaxed text-ink/70">
+                Due only when you receive the working system to test.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border bg-cream p-3.5 sm:p-4">
+              <span className="font-mono text-base font-bold text-teal sm:text-lg">20%</span>
+              <p className="mt-0.5 font-heading text-xs font-bold text-ink sm:text-sm">At Go-Live</p>
+              <p className="mt-1 text-[11px] leading-relaxed text-ink/70">
+                Due when your agent answers its first live customer call.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Reveal>
+
       <div className="mt-10 text-center">
         <Button href="/pricing" variant="text" showArrow className="min-h-[44px] text-lg">
           See full pricing details
@@ -65,3 +111,4 @@ export default function PricingPreview() {
     </Section>
   );
 }
+

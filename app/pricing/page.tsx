@@ -185,11 +185,10 @@ export default function PricingPage() {
         {/* Deliberately understated: the proposal is explicit that ongoing care is
             raised at the 30-day review, not sold up front. */}
         <div className="mt-10 rounded-2xl border border-border bg-cream p-6 sm:p-8">
-          <div className="flex flex-wrap items-baseline justify-between gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-3">
             <h3 className="font-heading font-bold text-lg text-ink">{carePlan.heading}</h3>
-            <span className="font-mono text-sm font-bold text-teal">
-              From {carePlan.from}
-              {carePlan.cadence}
+            <span className="rounded-full bg-teal/10 px-3 py-1 font-mono text-xs font-bold text-teal">
+              Optional Ongoing Care
             </span>
           </div>
           <p className="mt-3 max-w-3xl text-sm text-ink/70 leading-relaxed">{carePlan.body}</p>

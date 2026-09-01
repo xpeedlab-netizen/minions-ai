@@ -234,7 +234,7 @@ export const pricingFaq = [
   },
   {
     q: "What happens after go-live?",
-    a: "A 30-day tuning window is included in the build fee at no extra cost — we keep adjusting scripts, routing and workflows against real conversations. After that the system is yours to run, and many clients do exactly that. If you would rather we kept looking after it, care plans start at $297 a month and are all-inclusive: voice platform, automation and CRM usage sit inside that figure, along with a monthly allowance of support hours. You can cancel with 30 days' notice and you keep every account and workflow.",
+    a: "A 30-day tuning window is included in the build fee at no extra cost — we keep adjusting scripts, routing and workflows against real conversations. After that the system is yours to run, and many clients do exactly that. If you would rather we kept looking after it, optional care plans are available: voice platform, automation and CRM usage sit inside that figure, along with a monthly allowance of support hours. You can cancel with 30 days' notice and you keep every account and workflow.",
   },
   {
     q: "Which CRMs and dispatch systems do you integrate with?",

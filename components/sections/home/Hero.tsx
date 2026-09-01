@@ -43,19 +43,19 @@ export default function Hero() {
               number.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-3.5">
+            <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center">
               <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow className="whitespace-nowrap">
                 Book a 15-minute call
               </Button>
               <a
                 href={`tel:${SITE_PHONE_TEL}`}
-                className="group inline-flex min-h-[48px] items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-ink/20 bg-white px-4 py-2.5 text-sm font-bold text-ink shadow-sm transition-all hover:border-teal hover:text-teal focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2 active:scale-95 sm:text-base"
+                className="group inline-flex min-h-14 items-center justify-center gap-2.5 whitespace-nowrap rounded-xl border-2 border-ink/15 bg-white px-5 font-heading text-base font-bold text-ink shadow-sm transition-all duration-150 hover:border-teal hover:text-teal hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2 sm:text-lg"
               >
-                <span className="relative flex size-2">
+                <span className="relative flex size-2.5 shrink-0">
                   <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+                  <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500" />
                 </span>
-                <Phone aria-hidden className="size-4 shrink-0 text-teal transition-transform group-hover:scale-110" />
+                <Phone aria-hidden className="size-4.5 shrink-0 text-teal transition-transform group-hover:scale-110" />
                 <span>Hear AI Live: {SITE_PHONE_NUMBER}</span>
               </a>
             </div>

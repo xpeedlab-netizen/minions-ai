@@ -41,7 +41,8 @@ const CALL_LINES: Line[] = [
 const BARS = [14, 28, 42, 22, 36, 48, 30, 44, 24, 38, 18, 32, 46, 26, 34, 16];
 
 export default function HeroAudioPreview() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  // Auto-plays and loops continuously by default
+  const [isPlaying, setIsPlaying] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progressSec, setProgressSec] = useState(3);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -53,11 +54,7 @@ export default function HeroAudioPreview() {
     if (isPlaying) {
       timerRef.current = setInterval(() => {
         setCurrentIndex((prev) => {
-          if (prev >= CALL_LINES.length - 1) {
-            setIsPlaying(false);
-            return prev;
-          }
-          const next = prev + 1;
+          const next = (prev + 1) % CALL_LINES.length;
           setProgressSec(CALL_LINES[next].timeSec);
           return next;
         });
@@ -71,15 +68,7 @@ export default function HeroAudioPreview() {
   }, [isPlaying]);
 
   const togglePlay = () => {
-    if (isPlaying) {
-      setIsPlaying(false);
-    } else {
-      if (currentIndex >= CALL_LINES.length - 1) {
-        setCurrentIndex(0);
-        setProgressSec(3);
-      }
-      setIsPlaying(true);
-    }
+    setIsPlaying((prev) => !prev);
   };
 
   return (
@@ -120,7 +109,7 @@ export default function HeroAudioPreview() {
           </button>
           <div>
             <p className="font-heading text-xs sm:text-sm font-bold text-ink">
-              {isPlaying ? "Playing Live Audio..." : "Hear Rex Handle an Inbound Call"}
+              {isPlaying ? "Playing Live Simulation..." : "Live Call Paused"}
             </p>
             <p className="text-[11px] text-ink/65 font-mono mt-0.5">
               15s automated scheduling flow

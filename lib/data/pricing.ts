@@ -105,7 +105,6 @@ export const pricingAddOns: PricingAddOn[] = [
     name: "Pip — website chat agent",
     description: "Catches the visitors who will never pick up the phone. Shares one knowledge base with Rex, so a visitor who starts in chat can be handed straight to a call.",
     setup: "$900 setup",
-    monthly: "+$97/mo",
     note: "$900 when added at signature, because Pip reuses the knowledge base and CRM mapping built for Rex. Added later as a standalone project, it is $1,200.",
   },
   {
@@ -117,13 +116,11 @@ export const pricingAddOns: PricingAddOn[] = [
     name: "Additional language",
     description: "Rex and Pip answering in a second language, with scripts written natively.",
     setup: "$800 setup",
-    monthly: "+$49/mo",
   },
   {
     name: "Additional location",
     description: "A further number, calendar and routing set for another branch or franchise.",
     setup: "$450 setup",
-    monthly: "+$79/mo",
   },
 ];
 

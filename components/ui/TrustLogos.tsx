@@ -97,7 +97,7 @@ export default function TrustLogos() {
 
         {/* Google Calendar */}
         <div className="flex items-center gap-2 transition-colors hover:text-ink">
-          <svg className="h-4.5 w-auto" viewBox="0 0 130 24" fill="currentColor" aria-label="Google Calendar">
+          <svg className="h-4.5 w-auto" viewBox="0 0 142 24" fill="currentColor" aria-label="Google Calendar">
             <rect x="2" y="3" width="16" height="18" rx="3" stroke="currentColor" strokeWidth="2" fill="none" />
             <line x1="2" y1="8" x2="18" y2="8" stroke="currentColor" strokeWidth="2" />
             <rect x="6" y="11" width="3" height="3" fill="currentColor" />

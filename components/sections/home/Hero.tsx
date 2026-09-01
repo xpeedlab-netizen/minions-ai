@@ -44,12 +44,12 @@ export default function Hero() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-3.5">
-              <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>
+              <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow className="whitespace-nowrap">
                 Book a 15-minute call
               </Button>
               <a
                 href={`tel:${SITE_PHONE_TEL}`}
-                className="group inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl border border-ink/20 bg-white px-4 py-2.5 text-sm font-bold text-ink shadow-sm transition-all hover:border-teal hover:text-teal focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2 active:scale-95 sm:text-base"
+                className="group inline-flex min-h-[48px] items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-ink/20 bg-white px-4 py-2.5 text-sm font-bold text-ink shadow-sm transition-all hover:border-teal hover:text-teal focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2 active:scale-95 sm:text-base"
               >
                 <span className="relative flex size-2">
                   <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />

@@ -52,29 +52,29 @@ export default function Header() {
           Minions<span className="text-teal">.AI</span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
-          <Link href="/how-it-works" className="font-medium text-ink hover:text-teal transition-colors min-h-[44px] flex items-center">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
+          <Link href="/how-it-works" className="whitespace-nowrap font-medium text-ink hover:text-teal transition-colors min-h-[44px] flex items-center">
             How It Works
           </Link>
-          <Link href="/pricing" className="font-medium text-ink hover:text-teal transition-colors min-h-[44px] flex items-center">
+          <Link href="/pricing" className="whitespace-nowrap font-medium text-ink hover:text-teal transition-colors min-h-[44px] flex items-center">
             Pricing
           </Link>
           <NavDropdown label="The Crew" items={services} />
           <NavDropdown label="Industries" items={industries} />
-          <Link href="/blog" className="font-medium text-ink hover:text-teal transition-colors min-h-[44px] flex items-center">
+          <Link href="/blog" className="whitespace-nowrap font-medium text-ink hover:text-teal transition-colors min-h-[44px] flex items-center">
             Blog
           </Link>
         </nav>
 
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-3.5 xl:gap-6">
           <a
             href={`tel:${SITE_PHONE_TEL}`}
-            className="flex items-center gap-2 font-mono text-sm font-semibold text-ink/80 hover:text-teal transition-colors min-h-[44px]"
+            className="hidden xl:flex items-center gap-2 font-mono text-xs xl:text-sm font-semibold text-ink/80 hover:text-teal transition-colors min-h-[44px] whitespace-nowrap"
           >
             <Phone className="size-4 text-teal" />
             {SITE_PHONE_NUMBER}
           </a>
-          <Button href={primaryCtaHref} showArrow>
+          <Button href={primaryCtaHref} showArrow className="whitespace-nowrap">
             {primaryCtaLabel}
           </Button>
         </div>

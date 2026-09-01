@@ -23,7 +23,7 @@ export default function Hero() {
   return (
     <section className="overflow-x-hidden bg-cream pt-14 pb-16 sm:pt-20 sm:pb-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
+        <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-12 xl:grid-cols-[1.2fr_1fr] xl:gap-14">
           <div className="min-w-0">
             <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white px-3 py-1 sm:px-3.5 sm:py-1.5 font-mono text-[11px] sm:text-xs font-medium uppercase tracking-[0.06em] text-ink/70 shadow-sm">
               <span
@@ -43,19 +43,25 @@ export default function Hero() {
               number.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center">
-              <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow className="whitespace-nowrap">
+            {/* CTA Conversion Triggers — Wraps cleanly at all viewport widths */}
+            <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center lg:flex-wrap xl:flex-nowrap">
+              <Button
+                href={BOOKING_CALENDAR_URL}
+                size="lg"
+                showArrow
+                className="w-full sm:w-auto justify-center whitespace-nowrap"
+              >
                 Book a 15-minute call
               </Button>
               <a
                 href={`tel:${SITE_PHONE_TEL}`}
-                className="group inline-flex min-h-14 items-center justify-center gap-2.5 rounded-xl border-2 border-ink/15 bg-white px-4 py-3 sm:px-5 font-heading text-sm sm:text-base lg:text-lg font-bold text-ink shadow-sm transition-all duration-150 hover:border-teal hover:text-teal hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2 whitespace-nowrap"
+                className="group inline-flex min-h-14 w-full sm:w-auto items-center justify-center gap-2 rounded-xl border-2 border-ink/15 bg-white px-4 py-3 sm:px-4.5 font-heading text-sm sm:text-base font-bold text-ink shadow-sm transition-all duration-150 hover:border-teal hover:text-teal hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2 whitespace-nowrap"
               >
                 <span className="relative flex size-2.5 shrink-0">
                   <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                   <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500" />
                 </span>
-                <Phone aria-hidden className="size-4.5 shrink-0 text-teal transition-transform group-hover:scale-110" />
+                <Phone aria-hidden className="size-4 shrink-0 text-teal transition-transform group-hover:scale-110" />
                 <span>Hear AI Live: {SITE_PHONE_NUMBER}</span>
               </a>
             </div>
@@ -75,7 +81,7 @@ export default function Hero() {
           </div>
 
           {/* Interactive Live Audio & Transcript Preview */}
-          <div className="relative min-w-0 w-full">
+          <div className="relative min-w-0 w-full lg:max-w-lg lg:ml-auto">
             <HeroAudioPreview />
           </div>
         </div>
@@ -88,4 +94,3 @@ export default function Hero() {
     </section>
   );
 }
-

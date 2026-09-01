@@ -72,62 +72,64 @@ export default function HeroAudioPreview() {
   };
 
   return (
-    <div className="w-full rounded-2xl border border-ink/10 bg-white p-5 shadow-lg">
+    <div className="w-full max-w-full overflow-hidden rounded-2xl border border-ink/10 bg-white p-3.5 sm:p-5 shadow-lg">
       {/* Header: Clean & Minimalist */}
-      <div className="flex items-center justify-between border-b border-ink/10 pb-3.5">
+      <div className="flex items-center justify-between border-b border-ink/10 pb-3">
         <div className="flex items-center gap-2">
-          <span className="relative flex size-2.5">
+          <span className="relative flex size-2.5 shrink-0">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex size-2.5 rounded-full bg-emerald-600"></span>
           </span>
           <span className="font-heading text-xs sm:text-sm font-bold text-ink">
             Live Call Sample
           </span>
-          <span className="text-xs text-ink/50 font-mono">· Rex in action</span>
+          <span className="hidden xs:inline text-xs text-ink/50 font-mono">· Rex in action</span>
         </div>
 
-        <span className="inline-flex items-center gap-1 rounded-full bg-teal/10 px-2.5 py-1 font-mono text-[11px] font-bold text-teal">
-          <Sparkles className="size-3" />
+        <span className="inline-flex items-center gap-1 rounded-full bg-teal/10 px-2 py-0.5 sm:px-2.5 sm:py-1 font-mono text-[10px] sm:text-[11px] font-bold text-teal">
+          <Sparkles className="size-3 shrink-0" />
           Answers on Ring 1
         </span>
       </div>
 
       {/* Audio Playhead & Waveform Strip */}
-      <div className="mt-4 flex items-center justify-between gap-4 rounded-xl bg-cream/50 p-3.5 border border-border/60">
-        <div className="flex items-center gap-3">
+      <div className="mt-3 sm:mt-4 flex items-center justify-between gap-2.5 sm:gap-4 rounded-xl bg-cream/50 p-2.5 sm:p-3.5 border border-border/60">
+        <div className="flex min-w-0 flex-1 items-center gap-2.5 sm:gap-3">
           <button
             type="button"
             onClick={togglePlay}
             aria-label={isPlaying ? "Pause sample call" : "Play sample call"}
-            className="flex size-11 shrink-0 items-center justify-center rounded-full bg-teal text-white shadow-md transition-transform hover:scale-105 active:scale-95 hover:bg-teal-dark"
+            className="flex size-9 sm:size-11 shrink-0 items-center justify-center rounded-full bg-teal text-white shadow-md transition-transform hover:scale-105 active:scale-95 hover:bg-teal-dark"
           >
             {isPlaying ? (
-              <Pause className="size-4 fill-current" />
+              <Pause className="size-3.5 sm:size-4 fill-current" />
             ) : (
-              <Play className="ml-0.5 size-4 fill-current" />
+              <Play className="ml-0.5 size-3.5 sm:size-4 fill-current" />
             )}
           </button>
-          <div>
-            <p className="font-heading text-xs sm:text-sm font-bold text-ink">
+          <div className="min-w-0 flex-1">
+            <p className="truncate font-heading text-xs sm:text-sm font-bold text-ink">
               {isPlaying ? "Playing Live Simulation..." : "Live Call Paused"}
             </p>
-            <p className="text-[11px] text-ink/65 font-mono mt-0.5">
+            <p className="truncate text-[10px] sm:text-[11px] text-ink/65 font-mono mt-0.5">
               15s automated scheduling flow
             </p>
           </div>
         </div>
 
         {/* Audio Waveform Equalizer */}
-        <div className="flex items-center gap-1.5 bg-white px-3 py-2 rounded-lg border border-border/80 shadow-2xs">
-          <div className="flex items-end gap-[2.5px] h-5">
+        <div className="flex shrink-0 items-center gap-1 sm:gap-1.5 bg-white px-2 py-1.5 sm:px-2.5 sm:py-2 rounded-lg border border-border/80 shadow-2xs">
+          <div className="flex items-end gap-[2px] sm:gap-[2.5px] h-4 sm:h-5">
             {BARS.map((h, idx) => {
               const barHeight = isPlaying
-                ? Math.max(4, (h * (idx % 2 === 0 ? 0.9 : 0.6) * (isRex ? 1.1 : 0.75)))
-                : 4;
+                ? Math.max(3, (h * (idx % 2 === 0 ? 0.9 : 0.6) * (isRex ? 1.1 : 0.75)))
+                : 3;
               return (
                 <span
                   key={idx}
-                  className={`w-[2.5px] rounded-full transition-all duration-300 ${
+                  className={`${
+                    idx >= 8 ? "hidden xs:inline-block" : "inline-block"
+                  } w-[2px] sm:w-[2.5px] rounded-full transition-all duration-300 ${
                     isPlaying
                       ? isRex
                         ? "bg-teal"
@@ -139,14 +141,14 @@ export default function HeroAudioPreview() {
               );
             })}
           </div>
-          <span className="ml-1 font-mono text-[11px] font-bold text-ink/80 tabular-nums min-w-[34px] text-right">
+          <span className="ml-1 font-mono text-[10px] sm:text-[11px] font-bold text-ink/80 tabular-nums min-w-[28px] sm:min-w-[34px] text-right">
             0:{progressSec < 10 ? `0${progressSec}` : progressSec}
           </span>
         </div>
       </div>
 
       {/* Spoken Quote Stream — Clean & Fixed Height for Zero Jitter */}
-      <div className="mt-4 flex h-[108px] flex-col justify-between rounded-xl border border-border bg-ink/[0.02] p-3.5">
+      <div className="mt-3 sm:mt-4 flex h-[104px] sm:h-[108px] flex-col justify-between rounded-xl border border-border bg-ink/[0.02] p-3 sm:p-3.5">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span
@@ -154,11 +156,11 @@ export default function HeroAudioPreview() {
                 isRex ? "bg-teal" : "bg-coral"
               }`}
             />
-            <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-ink">
+            <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-ink">
               {currentLine.speakerLabel}
             </span>
           </div>
-          <span className="font-mono text-[11px] text-ink/40">
+          <span className="font-mono text-[10px] sm:text-[11px] text-ink/40">
             {currentIndex + 1} of {CALL_LINES.length}
           </span>
         </div>
@@ -180,12 +182,12 @@ export default function HeroAudioPreview() {
       </div>
 
       {/* Minimal Footer */}
-      <div className="mt-3.5 flex items-center justify-between border-t border-ink/10 pt-3 text-[11px]">
-        <div className="flex items-center gap-1.5 font-medium text-emerald-800">
+      <div className="mt-3 flex items-center justify-between border-t border-ink/10 pt-2.5 sm:pt-3 text-[10px] sm:text-[11px]">
+        <div className="flex items-center gap-1.5 font-medium text-emerald-800 truncate">
           <CheckCircle2 className="size-3.5 shrink-0 text-emerald-600" />
-          <span>Locks slot on your calendar &amp; syncs to your CRM</span>
+          <span className="truncate">Locks slot on your calendar &amp; syncs to your CRM</span>
         </div>
-        <span className="font-mono text-[10px] text-ink/50 uppercase">
+        <span className="font-mono text-[9px] sm:text-[10px] text-ink/50 uppercase shrink-0 ml-2">
           Simulated Call
         </span>
       </div>

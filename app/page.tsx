@@ -4,7 +4,6 @@ import HowItWorks from "@/components/sections/home/HowItWorks";
 import MeetTheCrew from "@/components/sections/home/MeetTheCrew";
 import PricingPreview from "@/components/sections/home/PricingPreview";
 import FinalCta from "@/components/sections/FinalCta";
-import MobileStickyCta from "@/components/ui/MobileStickyCta";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
 /**
@@ -31,7 +30,6 @@ export default function Home() {
         image="/images/illustrations/outcome-home-on-time.webp"
         imageAlt="A service business owner home in the evening, kneeling to greet his young daughter with his phone put away"
       />
-      <MobileStickyCta />
     </>
   );
 }

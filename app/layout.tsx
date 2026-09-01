@@ -166,7 +166,7 @@ export default function RootLayout({
       lang="en"
       className={`${anton.variable} ${archivo.variable} ${inter.variable} ${plexMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-cream text-ink font-body pb-16 md:pb-0">
+      <body className="min-h-full flex flex-col bg-cream text-ink font-body pb-16 md:pb-0 overflow-x-hidden">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalJsonLd) }}

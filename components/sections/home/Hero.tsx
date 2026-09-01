@@ -21,11 +21,11 @@ import TrustLogos from "@/components/ui/TrustLogos";
  */
 export default function Hero() {
   return (
-    <section className="bg-cream pt-14 pb-16 sm:pt-20 sm:pb-24">
+    <section className="overflow-x-hidden bg-cream pt-14 pb-16 sm:pt-20 sm:pb-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white px-3.5 py-1.5 font-mono text-xs font-medium uppercase tracking-[0.06em] text-ink/70 shadow-sm">
+        <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
+          <div className="min-w-0">
+            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white px-3 py-1 sm:px-3.5 sm:py-1.5 font-mono text-[11px] sm:text-xs font-medium uppercase tracking-[0.06em] text-ink/70 shadow-sm">
               <span
                 aria-hidden
                 className="size-1.5 rounded-full bg-success animate-breathe"
@@ -49,7 +49,7 @@ export default function Hero() {
               </Button>
               <a
                 href={`tel:${SITE_PHONE_TEL}`}
-                className="group inline-flex min-h-14 items-center justify-center gap-2.5 whitespace-nowrap rounded-xl border-2 border-ink/15 bg-white px-5 font-heading text-base font-bold text-ink shadow-sm transition-all duration-150 hover:border-teal hover:text-teal hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2 sm:text-lg"
+                className="group inline-flex min-h-14 items-center justify-center gap-2.5 rounded-xl border-2 border-ink/15 bg-white px-4 py-3 sm:px-5 font-heading text-sm sm:text-base lg:text-lg font-bold text-ink shadow-sm transition-all duration-150 hover:border-teal hover:text-teal hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2 whitespace-nowrap"
               >
                 <span className="relative flex size-2.5 shrink-0">
                   <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -75,7 +75,7 @@ export default function Hero() {
           </div>
 
           {/* Interactive Live Audio & Transcript Preview */}
-          <div className="relative w-full">
+          <div className="relative min-w-0 w-full">
             <HeroAudioPreview />
           </div>
         </div>

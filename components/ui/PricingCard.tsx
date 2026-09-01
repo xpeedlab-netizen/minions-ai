@@ -1,6 +1,6 @@
 import { Check } from "lucide-react";
 import Button from "./Button";
-import { currentPricingMonth } from "@/lib/current-month";
+import DynamicPricingMonth from "./DynamicPricingMonth";
 import type { PricingPlan } from "@/lib/data/pricing";
 
 export default function PricingCard({ plan }: { plan: PricingPlan }) {
@@ -26,7 +26,7 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
           plan.popular ? "bg-white/15 text-cream" : "border border-border bg-cream text-teal"
         }`}
       >
-        {currentPricingMonth()} pricing
+        <DynamicPricingMonth />
       </span>
 
       <h3 className="font-heading font-bold text-2xl">{plan.name}</h3>

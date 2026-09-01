@@ -1,33 +1,40 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, AlertCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
+import RecaptchaField from "@/components/ui/RecaptchaField";
 import { partnerClientOptions, partnerTypeOptions } from "@/lib/data/partners";
+import { validateEmail } from "@/lib/validation";
 
 /**
- * Partner application form.
- *
- * DELIVERY: this posts to the EXISTING /api/contact route rather than a new one
- * (owner decision, 2026-08-29) — no new mailbox, no new env vars, nothing to
- * provision before the page can go live. The route's contract is {name, contact,
- * need}, so the partner-specific fields are folded into `need` as a labelled block
- * below. That keeps the route untouched and still working for the contact page.
- *
- * The consequence worth knowing: applications land in the same inbox as customer
- * support mail. Every submission is prefixed "PARTNER APPLICATION" so it can be
- * filtered. If a real partners@ mailbox is ever provisioned, split this into its own
- * route rather than widening the contact route's schema.
+ * Partner application form with email validation & reCAPTCHA protection.
  */
 export default function PartnerApplyForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [emailValue, setEmailValue] = useState("");
+  const [emailError, setEmailError] = useState<string | null>(null);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
   const fieldClass =
     "min-h-12 w-full rounded-xl border border-white/20 bg-white/10 px-4 text-base text-white placeholder:text-cream/50 focus:outline-none focus:ring-2 focus:ring-cream";
   const labelClass =
     "block font-mono text-xs font-bold uppercase tracking-[0.08em] text-cream/80 mb-2";
+
+  const handleEmailBlur = () => {
+    if (!emailValue.trim()) {
+      setEmailError(null);
+      return;
+    }
+    const result = validateEmail(emailValue);
+    if (!result.isValid) {
+      setEmailError(result.error || "Please enter a valid work email address.");
+    } else {
+      setEmailError(null);
+    }
+  };
 
   if (submitted) {
     return (
@@ -42,7 +49,12 @@ export default function PartnerApplyForm() {
         </p>
         <button
           type="button"
-          onClick={() => setSubmitted(false)}
+          onClick={() => {
+            setSubmitted(false);
+            setEmailValue("");
+            setEmailError(null);
+            setRecaptchaToken(null);
+          }}
           className="mt-6 font-mono text-xs uppercase tracking-[0.08em] text-cream underline underline-offset-4"
         >
           Submit another application
@@ -57,11 +69,21 @@ export default function PartnerApplyForm() {
         e.preventDefault();
         const form = e.currentTarget;
         const data = new FormData(form);
-        setSubmitting(true);
         setError(null);
 
+        // Validate email
+        const emailValidation = validateEmail(emailValue);
+        if (!emailValidation.isValid) {
+          setEmailError(emailValidation.error || "Please enter a valid work email address.");
+          return;
+        }
+
+        setSubmitting(true);
+
+        const name = String(data.get("name") || "").trim();
         const company = String(data.get("company") || "").trim();
         const notes = String(data.get("notes") || "").trim();
+        const botField = String(data.get("company_hp") || "");
 
         const need = [
           "PARTNER APPLICATION",
@@ -79,9 +101,11 @@ export default function PartnerApplyForm() {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              name: data.get("name"),
-              contact: data.get("email"),
+              name,
+              contact: emailValue.trim(),
               need,
+              recaptchaToken,
+              botField,
             }),
           });
 
@@ -91,6 +115,9 @@ export default function PartnerApplyForm() {
           }
 
           form.reset();
+          setEmailValue("");
+          setEmailError(null);
+          setRecaptchaToken(null);
           setSubmitted(true);
         } catch (err) {
           setError(
@@ -102,6 +129,11 @@ export default function PartnerApplyForm() {
       }}
       className="rounded-2xl border border-white/20 bg-white/[0.06] p-6 sm:p-8"
     >
+      {/* Honeypot hidden input */}
+      <div className="sr-only" aria-hidden="true">
+        <input type="text" name="company_hp" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="partner-name" className={labelClass}>
@@ -110,10 +142,31 @@ export default function PartnerApplyForm() {
           <input id="partner-name" name="name" type="text" required className={fieldClass} />
         </div>
         <div>
-          <label htmlFor="partner-email" className={labelClass}>
-            Work email
-          </label>
-          <input id="partner-email" name="email" type="email" required className={fieldClass} />
+          <div className="flex items-center justify-between mb-2">
+            <label htmlFor="partner-email" className={labelClass.replace("mb-2", "")}>
+              Work email
+            </label>
+            {emailError && (
+              <span className="flex items-center gap-1 text-xs text-coral font-medium">
+                <AlertCircle className="size-3.5" />
+                {emailError}
+              </span>
+            )}
+          </div>
+          <input
+            id="partner-email"
+            name="email"
+            type="email"
+            required
+            value={emailValue}
+            onChange={(e) => {
+              setEmailValue(e.target.value);
+              if (emailError) setEmailError(null);
+            }}
+            onBlur={handleEmailBlur}
+            placeholder="you@company.com"
+            className={`${fieldClass} ${emailError ? "border-coral ring-2 ring-coral/50" : ""}`}
+          />
         </div>
       </div>
 
@@ -167,6 +220,15 @@ export default function PartnerApplyForm() {
           rows={4}
           placeholder="The industries you serve, a client you already have in mind, or a question you want answered on the call."
           className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-base text-white placeholder:text-cream/50 focus:outline-none focus:ring-2 focus:ring-cream"
+        />
+      </div>
+
+      {/* reCAPTCHA verification field */}
+      <div className="mt-5">
+        <RecaptchaField
+          theme="dark"
+          onVerify={(token) => setRecaptchaToken(token)}
+          onExpired={() => setRecaptchaToken(null)}
         />
       </div>
 

@@ -9,70 +9,19 @@ import Button from "@/components/ui/Button";
 import Section, { SectionHeading, SectionLead, Eyebrow } from "@/components/ui/Section";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
-/**
- * The crew showcase — one hero plus three supports.
- *
- * ARCHETYPE HISTORY. Five full-bleed split panels → an asymmetric 3/3/2/2/2 card grid →
- * an equal-cell rail → this. The rail was right to kill the old grid (five square
- * mascots rendered at two different sizes read as a broken row, and the 3/3/2/2/2 split
- * implied Rex and Zip mattered more with no stated reason). But it over-corrected: four
- * interchangeable cells told the visitor nothing about where to look, and it was a lie
- * about the product.
- *
- * The owner interview (2026-08-29) settled what the product actually is: REX IS THE
- * PRODUCT and the other three exist because Rex has physical limits. Zip is the safety
- * net under Rex — the second simultaneous caller, the hang-up, the channels that never
- * ring. Pip owns everything written, before and after the sale. Gia works the quotes
- * that didn't close. That is a hierarchy, so the layout is one now.
- *
- * WHY THIS DOESN'T REPEAT THE BROKEN ROW. The earlier failure was the SAME object
- * rendered at two sizes. Rex's mascot is deliberately large and centred in a tall cell;
- * the three supports are horizontal rows with a small avatar. They aren't the same
- * object at different scales, so the size difference reads as hierarchy rather than as
- * a sizing mistake. Mobile stacks to exactly the same reading order.
- *
- * EXPAND IN PLACE, NOT LINKS. The cards no longer navigate — the detail opens inline so
- * the visitor stays on the page through to the final CTA. KNOWN TRADE-OFF, accepted by
- * the owner: /ai-voice-agent, /speed-to-lead, /customer-support-ai and /crm-automation
- * now receive internal links only from the services nav and the footer. If those pages
- * lose search visibility, this is the change to look at first.
- *
- * Rex is the one card that does NOT collapse. Its detail is always open: collapsing the
- * hero leaves a large empty cell, and the hero's job is to be the thing you read.
- *
- * Otto (Back Office) was removed from this section on 2026-08-29. He still ships on
- * /back-office-automation, in the services nav, in lib/data/crew.ts (the About strip)
- * and in the industry crew bentos — this was a homepage editorial cut, not a product
- * removal. The heading spells the count in words, so it must be hand-edited whenever
- * this array changes.
- *
- * TONE: this band owns the page's second INK slot. The mascots are rendered with rim
- * lighting and drop shadows and have always looked better on dark.
- *
- * Colors are static class strings per member rather than interpolated, because Tailwind
- * only sees classes that appear literally in the source.
- */
-
 type Support = {
   id: string;
+  code: string;
   name: string;
   role: string;
   hook: string;
   points: string[];
-  /** Optional sourced figure. Carries its year, like the Proof band's citations. */
   stat?: string;
   source?: string;
-  /** Mascot PNGs are fixed brand assets — see .claude/invariants.md #1. */
   src: string;
   roleClass: string;
 };
 
-/*
- * Card hooks are market-NEUTRAL and the detail names both co-primary markets
- * (invariants.md #3). Naming "a route" and "a showing" in every hook made each line
- * read as a list of two examples; at a glance nobody should feel excluded, and the
- * specificity is there the moment they open a card.
- */
 const rex = {
   name: "Rex",
   role: "24/7 AI receptionist",
@@ -82,9 +31,6 @@ const rex = {
     "Quotes from your real price list and books straight onto your calendar.",
     "Escalates a true emergency to your on-call phone instead of taking a message.",
   ],
-  /* No citation here on purpose. The MIT/InsideSales and HBR speed-to-lead figures are
-     already the entire Proof band two sections up; a third run at the same argument
-     reads as padding. */
   aside:
     "The operator is on a route. The agent is mid-showing. Rex is the one who is always free.",
   src: "/images/mascots/rex.png",
@@ -93,6 +39,7 @@ const rex = {
 const supports: Support[] = [
   {
     id: "zip",
+    code: "02 // SAFETY NET",
     name: "Zip",
     role: "Missed-call text back",
     hook: "Catches what a phone line physically can't.",
@@ -102,10 +49,11 @@ const supports: Support[] = [
       "Covers the channels that never ring — web forms, ad leads, portal inquiries.",
     ],
     src: "/images/mascots/zip.png",
-    roleClass: "text-crew-zip-on-dark",
+    roleClass: "text-[#c4472a]",
   },
   {
     id: "pip",
+    code: "03 // INQUIRY",
     name: "Pip",
     role: "Website chat",
     hook: "Handles every written question, from a stranger at 11pm to a customer asking where the tech is.",
@@ -114,17 +62,14 @@ const supports: Support[] = [
       "Qualifies and books visitors who would never pick up the phone.",
       "Absorbs the routine reschedule and arrival-time questions, so the line stays open for new revenue.",
     ],
-    /* Gartner's headline finding is that self-service FAILS — quoted flat it argues
-       against Pip. The pairing is the honest version: people reach for it first and
-       mostly don't get an answer, because 43% can't find relevant content. Grounding
-       Pip in verified business data is the fix for exactly that failure. */
     stat: "73% of customers try self-service first. Only 14% get a full answer.",
     source: "Gartner Customer Service & Support consumer study, 2024",
     src: "/images/mascots/pip.png",
-    roleClass: "text-crew-pip-on-dark",
+    roleClass: "text-teal",
   },
   {
     id: "gia",
+    code: "04 // PIPELINE",
     name: "Gia",
     role: "Follow-up & reviews",
     hook: "Works every quote that didn't close, until they book or say no.",
@@ -133,15 +78,10 @@ const supports: Support[] = [
       "Confirms appointments so they don't quietly evaporate.",
       "Asks for the review after the job, on the profile that drives your next call.",
     ],
-    /* NOT the ubiquitous "80% of sales need five follow-ups". Sales & Marketing
-       Executives International traced that one to a 1942 survey of fewer than 40 people
-       about wartime door-to-door calls, with no published methodology; Marketing Donut
-       has since pulled its version. Velocify's figure comes from 3.5M lead records. The
-       year ships with the citation because the study is old. */
     stat: "93% of converted leads were reached within six contact attempts.",
     source: "Velocify, Ultimate Contact Strategy (3.5M lead records), 2013",
     src: "/images/mascots/gia.png",
-    roleClass: "text-crew-gia-on-dark",
+    roleClass: "text-emerald-700",
   },
 ];
 
@@ -151,11 +91,11 @@ function Detail({ points }: { points: string[] }) {
       {points.map((p) => (
         <li
           key={p}
-          className="flex gap-2.5 text-[0.9375rem] leading-relaxed text-white/75"
+          className="flex gap-2.5 text-[0.9375rem] leading-relaxed text-ink/80"
         >
           <span
             aria-hidden
-            className="mt-[0.45rem] size-1 shrink-0 rounded-full bg-white/40"
+            className="mt-[0.45rem] size-1.5 shrink-0 rounded-full bg-ink/35"
           />
           <span>{p}</span>
         </li>
@@ -170,7 +110,7 @@ function SupportRow({ m, delay }: { m: Support; delay: number }) {
 
   return (
     <Reveal as="li" delay={delay}>
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] transition-colors duration-300 hover:border-white/20">
+      <div className="relative overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all duration-200 hover:border-ink/20">
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
@@ -178,44 +118,43 @@ function SupportRow({ m, delay }: { m: Support; delay: number }) {
           aria-controls={panelId}
           className="relative flex w-full items-center gap-4 p-5 text-left focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:-outline-offset-2"
         >
-          {/* Small avatar, not a scaled-down copy of the hero treatment — see the
-              "broken row" note in the header comment. */}
-          <div className="relative size-14 shrink-0 select-none">
+          {/* Small avatar container */}
+          <div className="relative size-14 shrink-0 select-none rounded-xl bg-cream/70 p-1">
             <Image
               src={m.src}
               alt=""
               fill
               sizes="56px"
-              className="object-contain drop-shadow-[0_8px_14px_rgba(0,0,0,0.35)]"
+              className="object-contain drop-shadow-[0_6px_12px_rgba(18,36,42,0.12)]"
             />
           </div>
 
           <div className="min-w-0 flex-1">
-            <p
-              className={`font-mono text-xs font-bold uppercase tracking-wider ${m.roleClass}`}
-            >
-              {m.role}
-            </p>
-            <h3 className="mt-1 font-heading text-lg font-bold tracking-[-0.01em] text-white">
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-[10px] font-bold tracking-wider text-ink/40 uppercase">
+                {m.code}
+              </span>
+              <span className="text-ink/20">·</span>
+              <p className={`font-mono text-xs font-bold uppercase tracking-wider ${m.roleClass}`}>
+                {m.role}
+              </p>
+            </div>
+            <h3 className="mt-1 font-heading text-lg font-bold tracking-tight text-ink">
               {m.name}
             </h3>
-            <p className="mt-1 text-[0.9375rem] leading-relaxed text-white/75">{m.hook}</p>
+            <p className="mt-1 text-[0.9375rem] leading-relaxed text-ink/75">{m.hook}</p>
           </div>
 
-          <Plus
-            aria-hidden
-            className={`size-5 shrink-0 text-white/70 transition-transform duration-300 ${
-              open ? "rotate-45" : ""
-            }`}
-          />
+          <div className="flex size-8 shrink-0 items-center justify-center rounded-full border border-border bg-cream/50 transition-colors">
+            <Plus
+              aria-hidden
+              className={`size-4 text-ink/70 transition-transform duration-300 ${
+                open ? "rotate-45" : ""
+              }`}
+            />
+          </div>
         </button>
 
-        {/* Rendered ALWAYS and collapsed by height, never conditionally mounted. These
-            cards no longer link to the service pages, so this panel IS the only place
-            the bullets and the two citations exist — mounting them on click would keep
-            the section's entire substance out of the server HTML and therefore out of
-            the index. `aria-hidden` keeps a screen reader from reading collapsed rows;
-            the button's `aria-expanded` carries the state. */}
         <motion.div
           id={panelId}
           initial={false}
@@ -224,14 +163,14 @@ function SupportRow({ m, delay }: { m: Support; delay: number }) {
           aria-hidden={!open}
           className="relative overflow-hidden"
         >
-          <div className="border-t border-white/10 px-5 pb-5 pt-4">
+          <div className="border-t border-border bg-cream/25 px-5 pb-5 pt-4">
             <Detail points={m.points} />
             {m.stat && (
-              <div className="mt-4 border-l-2 border-white/20 pl-3.5">
-                <p className="text-[0.9375rem] font-medium leading-snug text-white">
+              <div className="mt-4 border-l-2 border-teal pl-3.5">
+                <p className="text-[0.9375rem] font-medium leading-snug text-ink">
                   {m.stat}
                 </p>
-                <p className="mt-1 font-mono text-xs uppercase tracking-wide text-white/70">
+                <p className="mt-1 font-mono text-xs uppercase tracking-wide text-ink/60">
                   {m.source}
                 </p>
               </div>
@@ -245,86 +184,99 @@ function SupportRow({ m, delay }: { m: Support; delay: number }) {
 
 export default function MeetTheCrew() {
   return (
-    <Section id="crew" tone="ink" width="wide" className="relative overflow-hidden">
+    <Section id="crew" tone="cream" width="wide" className="relative overflow-hidden">
       <div className="relative z-10">
         <div className="max-w-2xl">
-          <Eyebrow tone="dark" className="mb-5">
-            What you get
+          <Eyebrow className="mb-5">
+            The Crew
           </Eyebrow>
-          <SectionHeading className="text-white">
+          <SectionHeading className="text-ink">
             A 24/7 AI receptionist, and three more behind it.
           </SectionHeading>
-          <SectionLead tone="dark">
+          <SectionLead>
             Rex answers the phone. The other three cover the texts, the website chat and
             the follow-up — the places a phone line can&apos;t reach.
           </SectionLead>
         </div>
 
-        {/* Two columns at lg: the hero holds the left, the three supports stack down the
-            right, CENTRED in their cell — collapsed they measure ~381px against Rex's
-            ~719px, and top-aligning them left a 290px void that read as a missing fourth
-            card once the decorative glow behind it was removed. Below lg the same grid collapses to one column, which puts Rex
-            full-width above three stacked rows — the intended mobile order, with no
-            sideways scroll and no orphan cell. */}
-        <div className="mt-12 grid gap-4 lg:grid-cols-2 lg:gap-6">
+        {/* Two columns at lg: Rex on the left, supports stacked on the right */}
+        <div className="mt-12 grid gap-6 lg:grid-cols-2 lg:gap-8 items-stretch">
           <Reveal>
-            <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 sm:p-8">
-              {/* Deliberately much larger than the support avatars. A small difference
-                  would read as a mistake; this reads as the hero.
+            <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white p-6 sm:p-8 shadow-sm">
+              {/* Editorial dossier top status strip */}
+              <div className="flex items-center justify-between border-b border-border pb-4 mb-6">
+                <span className="font-mono text-xs font-bold uppercase tracking-wider text-teal">
+                  [ AGENT 01 // INBOUND DISPATCH ]
+                </span>
+                <span className="inline-flex items-center gap-1.5 font-mono text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  PRIMARY CALL AGENT
+                </span>
+              </div>
 
-                  Capped below sm for the same reason the HowItWorks portrait is: at
-                  240px inside a 358px phone card, the mascot pushed Rex's actual copy
-                  most of a screen down. The hierarchy only has to survive next to the
-                  56px support avatars, and 176px still does that by a factor of three. */}
-              <div className="relative mx-auto aspect-square w-full max-w-[11rem] select-none sm:max-w-[15rem]">
+              {/* Fixed mascot image */}
+              <div className="relative mx-auto aspect-square w-full max-w-[12rem] select-none sm:max-w-[15rem] py-2">
                 <Image
                   src={rex.src}
                   alt={`${rex.name} — ${rex.role} 3D mascot`}
                   fill
-                  sizes="(max-width: 640px) 176px, 240px"
-                  className="object-contain drop-shadow-[0_20px_32px_rgba(0,0,0,0.4)]"
+                  sizes="(max-width: 640px) 192px, 240px"
+                  className="object-contain drop-shadow-[0_16px_28px_rgba(18,36,42,0.12)]"
                 />
               </div>
 
-              <div className="relative mt-6">
-                <p className="font-mono text-xs font-bold uppercase tracking-wider text-crew-rex-on-dark">
-                  {rex.role}
-                </p>
-                <h3 className="mt-1.5 font-heading text-2xl font-bold tracking-[-0.01em] text-white">
-                  {rex.name}
-                </h3>
-                <p className="mt-2 text-base leading-relaxed text-white/85">
-                  {rex.hook}
-                </p>
+              <div className="relative mt-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <p className="font-mono text-xs font-bold uppercase tracking-wider text-teal">
+                    {rex.role}
+                  </p>
+                  <h3 className="mt-1.5 font-heading text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+                    {rex.name}
+                  </h3>
+                  <p className="mt-2 text-base leading-relaxed text-ink/80">
+                    {rex.hook}
+                  </p>
 
-                <div className="mt-6 border-t border-white/10 pt-5">
-                  <Detail points={rex.points} />
+                  <div className="mt-6 border-t border-border pt-5">
+                    <Detail points={rex.points} />
+                  </div>
                 </div>
 
-                <p className="mt-5 text-[0.9375rem] italic leading-relaxed text-white/75">
-                  {rex.aside}
-                </p>
+                <div className="mt-6 border-l-2 border-teal bg-cream/30 p-3 rounded-r-lg">
+                  <p className="text-[0.9375rem] italic leading-relaxed text-ink/75">
+                    &ldquo;{rex.aside}&rdquo;
+                  </p>
+                </div>
               </div>
             </article>
           </Reveal>
 
-          <ul className="flex flex-col gap-4 lg:justify-center lg:gap-6">
+          <ul className="flex flex-col gap-4 lg:justify-center lg:gap-5">
             {supports.map((m, i) => (
               <SupportRow key={m.id} m={m} delay={0.08 + i * 0.06} />
             ))}
           </ul>
         </div>
 
-        {/* The band had no next step: a heading, four outbound links, then the
-            Industries table. This is the one action. */}
+        {/* Closing Action Pill */}
         <Reveal delay={0.2}>
-          <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-            <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>
-              Book a 15-minute call
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-border bg-white p-6 sm:p-8 shadow-sm">
+            <div>
+              <p className="font-heading text-lg font-bold text-ink">
+                All four crew members deploy together.
+              </p>
+              <p className="mt-1 text-sm text-ink/70">
+                One fixed setup, pre-integrated with your calendar and CRM. Zero monthly contract.
+              </p>
+            </div>
+            <Button
+              href={BOOKING_CALENDAR_URL}
+              variant="primary"
+              showArrow
+              className="shrink-0 w-full sm:w-auto"
+            >
+              Book 15-Minute Setup Call
             </Button>
-            <p className="text-[0.9375rem] leading-relaxed text-white/75">
-              Not sure which ones you need? We&apos;ll scope it on the call.
-            </p>
           </div>
         </Reveal>
       </div>

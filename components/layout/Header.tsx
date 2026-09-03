@@ -3,11 +3,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
-import { services, industries } from "@/lib/data/nav";
+import { crewNav, industries } from "@/lib/data/nav";
 import { SITE_PHONE_NUMBER, SITE_PHONE_TEL, BOOKING_CALENDAR_URL, DEMO_VIDEO_URL } from "@/lib/data/placeholders";
 import Button from "@/components/ui/Button";
 
-function NavDropdown({ label, items }: { label: string; items: typeof services }) {
+function CrewNavDropdown() {
   const [open, setOpen] = useState(false);
   return (
     <div
@@ -20,12 +20,67 @@ function NavDropdown({ label, items }: { label: string; items: typeof services }
         className="flex items-center gap-1 py-2 font-medium text-ink hover:text-teal transition-colors min-h-[44px]"
         aria-expanded={open}
       >
-        {label}
+        The Crew
         <ChevronDown className="size-4" />
       </button>
       {open && (
-        <div className="absolute left-0 top-full w-64 rounded-xl border border-border bg-white p-2 shadow-lg z-50">
-          {items.map((item) => (
+        <div className="absolute left-0 top-full w-72 rounded-xl border border-border bg-white p-2 shadow-xl z-50">
+          <div className="px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider text-ink/45 border-b border-border mb-1">
+            24/7 Front-Office Agents
+          </div>
+          {crewNav.map((c) => (
+            <Link
+              key={c.name}
+              href={c.href}
+              className="block rounded-lg px-3 py-2 text-ink hover:bg-cream transition-colors group"
+            >
+              <div className="flex items-center justify-between">
+                <span className="font-heading font-bold text-sm text-ink group-hover:text-teal transition-colors">
+                  {c.name}
+                </span>
+                <span className="font-mono text-[11px] text-teal font-semibold">
+                  {c.name === "Rex" ? "Phone" : c.name === "Zip" ? "Text-Back" : c.name === "Pip" ? "Chat" : c.name === "Gia" ? "Follow-Up" : "Ops"}
+                </span>
+              </div>
+              <p className="text-xs text-ink/65 group-hover:text-ink/85 transition-colors">
+                {c.role}
+              </p>
+            </Link>
+          ))}
+          <div className="mt-1 border-t border-border pt-2 px-3 pb-1">
+            <Link
+              href="/#crew"
+              className="text-xs font-mono font-medium text-teal hover:underline flex items-center justify-between"
+            >
+              <span>See full crew on homepage</span>
+              <span>↓</span>
+            </Link>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function IndustriesNavDropdown() {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        type="button"
+        className="flex items-center gap-1 py-2 font-medium text-ink hover:text-teal transition-colors min-h-[44px]"
+        aria-expanded={open}
+      >
+        Industries
+        <ChevronDown className="size-4" />
+      </button>
+      {open && (
+        <div className="absolute left-0 top-full w-64 rounded-xl border border-border bg-white p-2 shadow-xl z-50">
+          {industries.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -59,8 +114,8 @@ export default function Header() {
           <Link href="/pricing" className="whitespace-nowrap font-medium text-ink hover:text-teal transition-colors min-h-[44px] flex items-center">
             Pricing
           </Link>
-          <NavDropdown label="The Crew" items={services} />
-          <NavDropdown label="Industries" items={industries} />
+          <CrewNavDropdown />
+          <IndustriesNavDropdown />
           <Link href="/blog" className="whitespace-nowrap font-medium text-ink hover:text-teal transition-colors min-h-[44px] flex items-center">
             Blog
           </Link>
@@ -113,17 +168,20 @@ export default function Header() {
               onClick={() => setMobileOpen(false)}
               className="min-h-12 flex items-center font-medium text-ink border-b border-border"
             >
-              Blog & Field Guides
+              Blog &amp; Field Guides
             </Link>
             <p className="mt-3 mb-1 text-xs font-mono uppercase tracking-wide text-ink/50">The Crew</p>
-            {services.map((item) => (
+            {crewNav.map((c) => (
               <Link
-                key={item.href}
-                href={item.href}
+                key={c.href}
+                href={c.href}
                 onClick={() => setMobileOpen(false)}
-                className="min-h-12 flex items-center text-ink border-b border-border"
+                className="min-h-12 flex flex-col justify-center border-b border-border"
               >
-                {item.label}
+                <div className="flex items-center justify-between">
+                  <span className="font-heading font-semibold text-ink">{c.name}</span>
+                  <span className="font-mono text-[11px] text-teal">{c.role}</span>
+                </div>
               </Link>
             ))}
             <p className="mt-3 mb-1 text-xs font-mono uppercase tracking-wide text-ink/50">Industries</p>

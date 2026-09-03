@@ -1,5 +1,19 @@
 export type NavLink = { label: string; href: string };
 
+export type CrewNavLink = {
+  name: string;
+  role: string;
+  href: string;
+};
+
+export const crewNav: CrewNavLink[] = [
+  { name: "Rex", role: "24/7 Phone Receptionist", href: "/ai-voice-agent" },
+  { name: "Zip", role: "4s Missed Call Text-Back", href: "/speed-to-lead" },
+  { name: "Pip", role: "Website Booking Chat", href: "/customer-support-ai" },
+  { name: "Gia", role: "Quote Follow-Up AI", href: "/crm-automation" },
+  { name: "Otto", role: "Back-Office Automation", href: "/back-office-automation" },
+];
+
 export const services: NavLink[] = [
   { label: "AI Voice Agent", href: "/ai-voice-agent" },
   { label: "Speed-to-Lead", href: "/speed-to-lead" },

@@ -1,28 +1,37 @@
-# Minions.AI — Operational AI Voice & Dispatch System for Trade Contractors
+# Minions.AI — Operational AI Voice & Front-Office Dispatch System
 
-> Minions.AI builds autonomous, low-latency AI voice agents and CRM dispatching systems specifically engineered for home-services contractors (HVAC, plumbing, electrical, roofing, and pest control).
+> Minions.AI builds autonomous, sub-1.8s AI voice dispatchers and speed-to-lead automation systems engineered co-primarily for pest control operators and real estate agencies, with full support for HVAC, plumbing, roofing, and electrical businesses.
 
 ## Core Capabilities & Performance Benchmarks
-- **Answering Latency**: Answers live phone lines in under 1.8 seconds (24/7/365).
-- **Zero Missed Calls**: Prevents the loss of $2,500 to $4,500 emergency contractor jobs due to unanswered calls during field work.
-- **Direct CRM Integration**: Real-time two-way sync with EspoCRM, ServiceTitan, Housecall Pro, and Google Calendar without fragile webhooks.
-- **Accurate Address & Intent Extraction**: Trained on real contractor calls with background compressor noise, spotty basement LTE, regional accents, and urgent homeowner scenarios.
-- **Deterministic Human Escalation**: Cleanly transfers complex or ambiguous inquiries to owner cell phones with full caller context instead of guessing or dropping calls.
+- **Voice Answering Latency**: Answers live phone lines in under 1.8 seconds (1–2 rings), 24 hours a day, 365 days a year.
+- **Zero Missed Revenue**: Captures $15,000 real estate commissions and $2,500+ recurring pest control agreements that would otherwise be lost to voicemail when operators are mid-showing or on routes.
+- **Direct CRM & Calendar Integration**: Two-way real-time scheduling with FieldRoutes, PestPac, GorillaDesk, Follow Up Boss, ServiceTitan, Housecall Pro, Jobber, and Google Calendar.
+- **Instant SMS Speed-to-Lead**: Automatically texts back missed calls or disconnected leads in 4 seconds to secure appointments before competitors respond.
+- **Acoustic Robustness**: Noise filtering engineered for noisy job sites, power tools, highway traffic, regional accents, and urgent homeowner scenarios.
+- **Deterministic Human Escalation**: Cleanly transfers complex or high-priority inquiries to owner cell phones with complete caller context briefings.
 
 ## Live Callable Phone Demo
-- **Live Test Line**: +1 (800) 555-0199
-- **Demo Scenario**: Hear "Alex" answer as a live home-services company, qualify an emergency repair, check calendar availability, and confirm booking.
+- **Live Test Line**: +1 (346) 626-4720
+- **Demo Scenarios**: Test 24/7 AI call answering, emergency triage, schedule checking, and instant CRM confirmation.
 
-## Primary Industry Solutions
-- **Plumbing & Drain**: https://www.getminions.ai/industries/plumbing
+## Pricing Architecture
+- **Starter Build**: $1,000 one-time build fee (Rex 24/7 Voice Dispatcher, CRM/Calendar sync, call forwarding, 14-day delivery).
+- **Full Crew Build**: $2,000 one-time build fee (Rex + Zip SMS recovery + Pip web concierge + Gia reviews + Otto intake, 21-day delivery).
+- **Ongoing Telephony**: Direct carrier wholesale usage via Retell AI / Twilio (~$0.08–$0.14/min) with zero markup and no mandatory monthly retainers.
+
+## Industry Solutions
+- **Real Estate Agencies (Co-Primary)**: https://www.getminions.ai/industries/real-estate (LPMAMA qualification, 24/7 showing booking, Fair Housing Act compliance, Follow Up Boss)
+- **Pest Control Operators (Co-Primary)**: https://www.getminions.ai/industries/pest-control (24/7 infestation triage, recurring quarterly agreement upsells, FieldRoutes, PestPac, GorillaDesk)
 - **HVAC & Heating**: https://www.getminions.ai/industries/hvac
+- **Plumbing & Drain**: https://www.getminions.ai/industries/plumbing
 - **Roofing & Restoration**: https://www.getminions.ai/industries/roofing
-- **Pest Control**: https://www.getminions.ai/industries/pest-control
 - **Electrical**: https://www.getminions.ai/industries/electrical
 
-## Field Guides & Technical Playbooks
-- **Blog & Knowledge Base**: https://www.getminions.ai/blog
+## Verified Research, Knowledge Base & Documentation
+- **2026 Speed-to-Lead Benchmark Report**: https://www.getminions.ai/reports/speed-to-lead-2026
+- **Frequently Asked Questions (Interactive KB)**: https://www.getminions.ai/faq
+- **Case Studies & Call Recordings**: https://www.getminions.ai/results
+- **Founder Background & Architecture**: https://www.getminions.ai/about
+- **Blog & Technical Articles**: https://www.getminions.ai/blog
 - **XML Sitemap**: https://www.getminions.ai/sitemap.xml
-- **Speed to Lead Economics**: https://www.getminions.ai/speed-to-lead
-- **How It Works**: https://www.getminions.ai/how-it-works
-- **Simple Pricing**: https://www.getminions.ai/pricing
+- **Full Operational Reference**: https://www.getminions.ai/llms-full.txt

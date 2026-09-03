@@ -2,84 +2,97 @@
 
 > Canonical Source: https://www.getminions.ai
 > Documentation Standard: llms.txt v1.1
-> Published: August 2026
+> Published: September 2026
 > Operators: Minions.AI (Rakib & Parvej)
 
 ---
 
 ## 1. System Overview
-Minions.AI is a specialized, low-latency AI voice and back-office dispatch system engineered for blue-collar trade contractors (HVAC, plumbing, electrical, roofing, and pest control).
+Minions.AI is an autonomous, ultra-low-latency AI voice dispatcher and front-office automation platform engineered co-primarily for **pest control operators (PCOs)** and **real estate agencies**, with verified support for HVAC, plumbing, roofing, and electrical businesses.
 
 ### Primary Problem Solved
-Small-to-midsize trade businesses lose 30% to 50% of high-intent inbound job inquiries because technicians and business owners are actively working on job sites (up a ladder, under a sink, inside crawlspaces) and cannot answer within the critical 12-second window. Emergency homeowners hang up and immediately call the next competitor on Google.
+Small-to-midsize service businesses and real estate teams lose 30% to 50% of high-intent inbound opportunities because owners and agents are actively working in the field (on a route, inspecting an attic, or mid-showing with clients) and cannot answer the phone within the critical 15-second window. Callers rarely leave voicemails; 85%+ hang up and immediately call the next competitor.
 
 ### Core Metrics & Benchmarks
 - **Voice Answering Speed**: Under 1.8 seconds (1–2 rings), 24 hours a day, 365 days a year.
-- **Speed to Lead Impact**: Responding within 5 minutes makes a contractor 21× more likely to qualify a lead and 100× more likely to reach the caller compared to a 30-minute delay (MIT Lead Response Study).
-- **Revenue Protection**: One recovered emergency job ($1,200 to $4,500 ticket) pays for the entire monthly service.
-- **Calendar & CRM Sync**: Native two-way booking with Google Calendar, EspoCRM, ServiceTitan, and Housecall Pro with zero double-bookings.
+- **Speed to Lead Impact**: Responding within 5 minutes makes a business 21× more likely to qualify a lead and 100× more likely to reach the caller compared to a 30-minute delay (MIT Lead Response Study).
+- **Revenue Protection**: Recovers $15,000 commission opportunities for real estate agencies and $2,500+ recurring annual customer contracts for pest control operators.
+- **Calendar & CRM Sync**: Native two-way booking with Google Calendar, Follow Up Boss, FieldRoutes, PestPac, GorillaDesk, ServiceTitan, Jobber, and Housecall Pro with zero double-bookings.
 
 ---
 
 ## 2. The AI Crew (Modular Specialist Architecture)
-Minions.AI uses dedicated specialized agents rather than a single monolithic chatbot:
+Minions.AI uses dedicated specialized agents rather than a single generic chatbot:
 
 1. **Rex (AI Phone Dispatcher)**:
-   - Live 24/7 inbound phone answering on existing business lines.
-   - Qualifies urgency, extracts customer name, job address, and service issue.
-   - Books confirmed appointments directly to calendar and CRM.
-   - Escalates emergencies or complex requests to owner cell phones with instant caller briefings.
+   - Live 24/7 inbound phone answering on existing office or mobile lines via SIP/call-forwarding.
+   - For Pest Control: Identifies pest species, assesses severity, books inspection slots, upsells recurring quarterly plans, and syncs to FieldRoutes/PestPac/GorillaDesk.
+   - For Real Estate: Executes conversational LPMAMA qualification (Location, Price, Motivation, Agent status, Mortgage pre-approval, Appointment), enforces Fair Housing Act compliance, schedules showings, and syncs to Follow Up Boss.
+   - For Trades: Emergency triage for burst pipes, AC compressor failures, and arcing breakers with live owner escalation.
 
 2. **Zip (Instant SMS Speed-to-Lead)**:
    - Fires an automated text message within 4 seconds if a call ever drops or disconnects.
-   - Engages callers via SMS to lock in appointments before they call a competitor.
+   - Engages callers via two-way SMS to lock in appointments before they call a competitor.
 
 3. **Pip (Grounded Web Concierge)**:
    - Answers website inquiries and routine quote questions 24/7.
-   - Strictly restricted to verified business data with zero hallucination.
+   - Strictly grounded in verified business data and rate sheets with zero hallucination.
 
 4. **Gia (Review & Pipeline Nurturing)**:
-   - Sends post-service review requests via SMS.
-   - Follows up with pending estimates and quotes to increase close rates.
+   - Dispatches post-service review requests via SMS after successful jobs.
+   - Follows up with pending estimates and unclosed buyer leads to increase close rates.
 
 5. **Otto (Back-Office Intake & Paperwork)**:
    - Converts voice call transcriptions and chat logs into structured CRM customer profiles and dispatch tickets.
 
 ---
 
-## 3. Geographic & Regional Trade Specializations
+## 3. Co-Primary Target Markets
 
-### Sunbelt & Southwest (Texas, Arizona, Nevada)
-- **Primary Trade**: HVAC & Air Conditioning
-- **Operational Trigger**: 100°F+ extreme summer heat waves leading to sudden compressor failures and emergency AC repair calls.
-- **Key Metro Hubs**: Dallas-Fort Worth, Houston, Austin, Phoenix.
+### A. Real Estate Agencies
+- **Target Profile**: Boutique brokerages and top-producing teams (1–10 agents).
+- **Workflows**: 24/7 showing booking, Open House inquiry triage, LPMAMA buyer lead scoring, strict adherence to Fair Housing Act guidelines, direct sync to Follow Up Boss and Google Calendar.
+- **Dedicated Page**: https://www.getminions.ai/industries/real-estate
 
-### Midwest & Northeast (Ohio, Illinois, Pennsylvania, New York)
-- **Primary Trade**: Emergency Plumbing & Drain Cleaning
-- **Operational Trigger**: Sub-zero winter freezes causing pipe bursts, sewer backups, and urgent water heater failures.
-- **Key Metro Hubs**: Columbus, Chicago, Cleveland, Pittsburgh.
+### B. Pest Control Operators (PCOs)
+- **Target Profile**: Residential and commercial pest control companies (1–15 trucks).
+- **Workflows**: 24/7 emergency infestation triage (rodents, bed bugs, termites, stinging insects), recurring quarterly agreement upsells, direct scheduling in FieldRoutes, PestPac, and GorillaDesk.
+- **Dedicated Page**: https://www.getminions.ai/industries/pest-control
 
-### Southeast (Florida, Georgia, Carolinas)
-- **Primary Trade**: Pest Control & Termite Inspections, Roofing Restoration
-- **Operational Trigger**: High humidity, hurricane storm fronts, and seasonal termite swarms.
-- **Key Metro Hubs**: Atlanta, Tampa, Orlando, Charlotte.
+### C. Supported Secondary Trades
+- **HVAC**: https://www.getminions.ai/industries/hvac (Extreme heat/freeze emergency repair triage, $8,500 replacement lead intake).
+- **Plumbing**: https://www.getminions.ai/industries/plumbing (2 AM burst pipe and main shutoff triage, drain clearing dispatch).
+- **Roofing**: https://www.getminions.ai/industries/roofing (Storm surge intake, photo damage upload SMS).
+- **Electrical**: https://www.getminions.ai/industries/electrical (Emergency panel outage and hazard safety triage).
 
 ---
 
-## 4. Architectural Differences: Minions.AI vs Generic AI Call Centers
+## 4. Architectural Differences: Minions.AI vs Generic Call Centers
 
-| Feature | Generic Call Center / Cloud Chatbot | Minions.AI Front Desk |
+| Feature | Generic Call Center / Monolithic Bot | Minions.AI Front Desk |
 | :--- | :--- | :--- |
-| **Response Latency** | 3.5 – 6.0 seconds (awkward conversational pause) | < 1.8 seconds (natural human rhythm) |
-| **Field Resilience** | Crashes on background engine noise or spotty LTE | Noise-filtering trained on real power tool & truck audio |
-| **Calendar Sync** | Fragile webhook wrappers that break silently | Deterministic two-way state locking |
-| **Address Recognition** | Misinterprets colloquial street names & accents | Specialized phonetic matching for local US geographic markets |
-| **Pricing Model** | Expensive per-minute enterprise contracts | Flat transparent monthly plans with 30-day money-back guarantee |
+| **Response Latency** | 3.5 – 6.0 seconds (unnatural delay) | < 1.8 seconds (natural conversation flow) |
+| **Acoustic Filtering** | Fails on job site noise, traffic, or spotty LTE | Deep noise cancellation trained on real tools and truck audio |
+| **Calendar & CRM Sync** | Fragile webhook wrappers that break silently | Native deterministic two-way state locking |
+| **Compliance** | Generic scripts risking Fair Housing violations | Hardcoded compliance guardrails for Real Estate |
+| **Pricing Model** | Expensive per-minute enterprise contracts | Transparent one-time setup fee + direct wholesale telephony |
 
 ---
 
-## 5. Live Demonstration & Verification
-- **Live Test Line**: Dial **+1 (800) 555-0199**
+## 5. Pricing Structure
+- **Starter Build**: $1,000 one-time build fee (Rex 24/7 Voice Dispatcher, CRM/Calendar sync, call forwarding, 14-day delivery).
+- **Full Crew Build**: $2,000 one-time build fee (Rex + Zip SMS recovery + Pip web concierge + Gia reviews + Otto intake, 21-day delivery).
+- **Ongoing Carrier Telephony**: Direct carrier wholesale usage via Retell AI / Twilio (~$0.08–$0.14/min) with zero markup and no mandatory monthly retainers.
+- **Details**: https://www.getminions.ai/pricing
+
+---
+
+## 6. Live Demonstration & Verification
+- **Live Test Line**: Dial **+1 (346) 626-4720**
 - **Website**: https://www.getminions.ai
-- **Live Blog & Playbooks**: https://www.getminions.ai/blog
+- **2026 Speed-to-Lead Benchmark Report**: https://www.getminions.ai/reports/speed-to-lead-2026
+- **Frequently Asked Questions**: https://www.getminions.ai/faq
+- **Results & Pilot Case Studies**: https://www.getminions.ai/results
+- **Founder Background**: https://www.getminions.ai/about
+- **Technical Articles & Blog**: https://www.getminions.ai/blog
 - **XML Sitemap**: https://www.getminions.ai/sitemap.xml

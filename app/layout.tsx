@@ -48,6 +48,9 @@ const defaultDescription =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.getminions.ai"),
+  alternates: {
+    canonical: "https://www.getminions.ai",
+  },
   title: {
     default: "Minions.AI — Never Miss Another Call",
     template: "%s | Minions.AI",
@@ -98,6 +101,16 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "@id": "https://www.getminions.ai/#website",
+        "url": "https://www.getminions.ai",
+        "name": "Minions.AI",
+        "description": defaultDescription,
+        "publisher": {
+          "@id": "https://www.getminions.ai/#organization"
+        }
+      },
+      {
         "@type": "Organization",
         "@id": "https://www.getminions.ai/#organization",
         "name": "Minions.AI",
@@ -144,11 +157,11 @@ export default function RootLayout({
         "applicationCategory": "BusinessApplication",
         "offers": {
           "@type": "AggregateOffer",
-          "lowPrice": "2500",
-          "highPrice": "4500",
+          "lowPrice": "1000",
+          "highPrice": "2000",
           "offerCount": "2",
           "priceCurrency": "USD",
-          "description": "A fixed one-time build fee — Core Crew $2,500, Full Crew $4,500 — live in 3–6 weeks, with a 30-day tuning window included after go-live."
+          "description": "A fixed one-time build fee — Starter Build $1,000, Full Crew Build $2,000 — live in 14–21 business days, with a 30-day tuning window included after go-live."
         },
         "featureList": [
           "Under 1.8-second live voice answering",

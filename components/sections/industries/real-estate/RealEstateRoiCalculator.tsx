@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Calculator, Sparkles } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
+import { ANNUAL_MINIONS_COST } from "@/lib/data/pricing";
 
 export default function RealEstateRoiCalculator() {
   const [missedCalls, setMissedCalls] = useState(15);
@@ -15,7 +16,7 @@ export default function RealEstateRoiCalculator() {
   const closedDealsMonthly = (missedCalls * (closeRate / 100));
   const monthlyLostRevenue = Math.round(closedDealsMonthly * commissionPerDeal);
   const annualLostRevenue = monthlyLostRevenue * 12;
-  const annualMinionsCost = 5988;
+  const annualMinionsCost = ANNUAL_MINIONS_COST;
   const netAnnualProfit = Math.max(0, annualLostRevenue - annualMinionsCost);
   const roiMultiplier = (annualLostRevenue / Math.max(1, annualMinionsCost)).toFixed(1);
 

@@ -263,3 +263,17 @@ const buildFees = pricingPlans
 export const BUILD_FEE_LOW = Math.min(...buildFees);
 export const BUILD_FEE_HIGH = Math.max(...buildFees);
 export const BUILD_FEE_COUNT = buildFees.length;
+
+/**
+ * First-year cost used by the industry ROI calculators: the Core Crew build fee plus
+ * twelve months of the care plan.
+ *
+ * Derived, because it was hardcoded in six calculators and had already drifted — five
+ * said 6064 while real-estate said 5988, a figure built from a $290/mo care plan that
+ * has never existed (the plan is $297). That page was quoting a price we do not sell.
+ * The same class of bug hit these files once before, on 2026-08-29, when five of them
+ * were found hardcoding a retired $499/mo subscription.
+ */
+const carePlanMonthly = Number(carePlan.from.replace(/[^0-9.]/g, ""));
+
+export const ANNUAL_MINIONS_COST = BUILD_FEE_LOW + carePlanMonthly * 12;

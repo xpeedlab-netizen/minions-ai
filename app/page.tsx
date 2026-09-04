@@ -7,6 +7,7 @@ import PricingPreview from "@/components/sections/home/PricingPreview";
 import Proof from "@/components/sections/home/Proof";
 import WhoThisIsNotFor from "@/components/sections/home/WhoThisIsNotFor";
 import GuaranteeSection from "@/components/sections/home/GuaranteeSection";
+import HomeFaq from "@/components/sections/home/HomeFaq";
 import FinalCta from "@/components/sections/FinalCta";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
@@ -28,7 +29,8 @@ import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
  *   07 WhoThisIsNotFor    white   is this for me?
  *   08 PricingPreview     cream   what does it cost?
  *   09 GuaranteeSection   ink     what if it fails?
- *   10 FinalCta           teal    what is my next step?
+ *   10 HomeFaq            cream   what am I still worried about?
+ *   11 FinalCta           teal    what is my next step?
  *
  * Proof, WhoThisIsNotFor and GuaranteeSection were built, then unrendered on 2026-08-29
  * when the page was cut from 14 bands to 9 for being too long and too prose-heavy. They
@@ -51,6 +53,7 @@ export default function Home() {
       <WhoThisIsNotFor />
       <PricingPreview />
       <GuaranteeSection />
+      <HomeFaq />
       <FinalCta
         heading="Get home on time. Let the crew answer."
         subtext="Your AI crew is live in 3–6 weeks for a fixed one-time fee, with 30 days of tuning included after go-live."

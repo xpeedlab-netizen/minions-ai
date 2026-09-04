@@ -91,6 +91,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Core Solutions
     {
+      // Targets the visitor who searched for Retell by name — a different, warmer
+      // intent than the homepage serves. Deliberately indexed, unlike /partners.
+      url: `${BASE_URL}/retell-ai-implementation`,
+      lastModified: SITE_RELEASE_DATE,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/ai-voice-agent`,
       lastModified: SITE_RELEASE_DATE,
       changeFrequency: "monthly",

@@ -119,26 +119,47 @@ export const CALL_RECORDINGS: CallRecording[] = [
     id: "realestate-showing",
     segment: "real-estate",
     src: "/media/calls/realestate-showing.mp3",
-    durationSec: 120,
+    durationSec: 117,
     badge: "Showing booked",
     title: "A buyer calling about a listing",
     outcome:
-      "Checked representation, confirmed lender pre-approval, and booked the showing — the qualifying an agent does by hand.",
+      "Checked representation, confirmed lender pre-approval, offered alternatives when the requested slot was full, and booked the showing — the qualifying an agent does by hand.",
     redactedSpans: [],
+    /*
+     * Re-recorded 2026-09-05 (Retell call_288b1f8ae0fc792f2471f5bc48e, call_successful:
+     * true). Replaces the 2026-08-25 take, which the owner judged unusable.
+     *
+     * Cue `t` values are the FIRST WORD START from `transcript_object[].words`, so the
+     * caption lights on the syllable. Do not hand-author these.
+     *
+     * Cue TEXT is lightly cleaned where Retell's ASR mis-transcribed the caller, since
+     * the caption must read as what a listener hears, not as a raw ASR dump. Audio is
+     * untouched — only these strings differ:
+     *   43.2  "so I'm good. Into move."  -> "so I'm looking to move quickly."
+     *   58.5  "Tomorrow afternoon, what's?" -> "Tomorrow afternoon, if you have it."
+     *   107.7 "I'm not" (clipped false start) -> folded into the 105.6 cue, not shown.
+     * Nothing here changes meaning; if you re-cut the audio, re-check these three.
+     *
+     * The 64.7 agent turn is the most valuable moment in the clip: the requested slot is
+     * unavailable and it offers two alternatives instead of failing. Keep it.
+     */
     cues: [
-      { t: 0.1, speaker: "agent", text: "Hi! I'm Alex, the AI assistant for Horizon Realty on a recorded line. How can I help with your property search today?" },
-      { t: 13.7, speaker: "caller", text: "I'm calling about four four Elm Street in Austin. I saw the listing online, and I'd love to schedule a tour." },
-      { t: 21.5, speaker: "agent", text: "That is a beautiful home! To get started, are you currently committed under a signed exclusive agreement with another real estate agent?" },
-      { t: 33.0, speaker: "caller", text: "No. I'm not working with any agent right now." },
-      { t: 36.7, speaker: "agent", text: "Great! Are you planning on a cash purchase, or have you already been pre-approved with a lender?" },
-      { t: 46.0, speaker: "caller", text: "I'm preapproved with Chase Bank. Up to six hundred thousand dollars." },
-      { t: 52.1, speaker: "agent", text: "That is great to hear. Let me check our calendar for some available times to show you the home on Elm Street. It looks like our first openings are Tuesday, August twenty-fifth. Would three P-M or four P-M work better for you?" },
-      { t: 69.1, speaker: "caller", text: "Four PM could work for me, but my lease is up in thirty days, so I'm looking to move quickly." },
-      { t: 77.5, speaker: "agent", text: "I understand the urgency with your lease ending soon. May I have your full name and phone number to finalize your tour for Tuesday at four P-M?" },
-      { t: 88.4, speaker: "caller", text: "Sure. My name is Marcus Vance, and my phone number is five zero eight five five five nine eight seven six." },
-      { t: 97.5, speaker: "agent", text: "I'm getting that tour scheduled for you now. You're all booked for that showing! I'm texting you a quick digital pre-tour agreement—once you tap to confirm, your appointment is locked in." },
-      { t: 111.8, speaker: "caller", text: "Awesome. That's everything. Thank you, Alex. Have a good one." },
-      { t: 116.0, speaker: "agent", text: "You're very welcome, Marcus! Thanks for calling Horizon Realty and have a wonderful day!" },
+      { t: 0.2, speaker: "agent", text: "Hi! I'm Alex, the AI assistant for Horizon Realty on a recorded line. How can I help with your property search today?" },
+      { t: 6.1, speaker: "caller", text: "Hi. I'm calling about the listing at eight oh four Elm Street. I saw it online last night, and I'd like to get in and see it." },
+      { t: 18.3, speaker: "agent", text: "That is a beautiful home! Before we look at the calendar, are you currently committed under a signed exclusive agreement with another real estate agent?" },
+      { t: 27.5, speaker: "caller", text: "No, not at all. I'm just starting to look." },
+      { t: 31.6, speaker: "agent", text: "That's great to hear. Will this be a cash purchase, or are you already pre-approved with a lender?" },
+      { t: 38.0, speaker: "caller", text: "I'm pre-approved through Chase, up to six hundred thousand." },
+      { t: 42.7, speaker: "caller", text: "And my lease is up in about thirty days, so I'm looking to move quickly." },
+      { t: 50.4, speaker: "agent", text: "It sounds like you're in a great position to move quickly. What day this week or upcoming weekend works best for you to view the home?" },
+      { t: 58.5, speaker: "caller", text: "Tomorrow afternoon, if you have it. Let's do four o'clock." },
+      { t: 64.7, speaker: "agent", text: "I'm sorry, we don't have any openings tomorrow. We do have slots this Saturday at two o'clock or three o'clock in the afternoon. Would either of those work?" },
+      { t: 72.6, speaker: "caller", text: "Yeah, Saturday at two works. Let's put that down." },
+      { t: 77.8, speaker: "agent", text: "Perfect. May I have your full name and the best cell phone number to send the confirmation to?" },
+      { t: 84.4, speaker: "caller", text: "Sure. Marcus Vance. Five five five, zero one four seven." },
+      { t: 92.5, speaker: "agent", text: "I'm getting that showing at eight oh four Elm Street scheduled for you right now. You're all booked for Saturday at two o'clock! I've just texted the showing details and confirmation pass directly to your phone." },
+      { t: 105.6, speaker: "caller", text: "Okay, that's everything." },
+      { t: 112.3, speaker: "agent", text: "It was a pleasure helping you today, Marcus. Thanks for calling Horizon Realty and have a wonderful day!" },
     ],
   },
   {
@@ -159,8 +180,21 @@ export const CALL_RECORDINGS: CallRecording[] = [
   },
 ];
 
-/** The call shown by default and to the pest audience. */
-export const DEFAULT_RECORDING_ID = "pest-bedbug-emergency";
+/**
+ * The call the HERO plays — the first thing a cold visitor hears.
+ *
+ * Real estate, not pest, since 2026-09-05: the pest recording is a known-bad take
+ * (the agent misbehaves) and is being re-recorded once that agent is fixed. Until then
+ * the hero must lead with the clip that actually demonstrates the product.
+ *
+ * This is deliberately NOT tied to the audience segment — the hero renders above the
+ * toggle, so it needs one fixed clip. `SEGMENT_COPY[...].recordingId` in lib/segments.ts
+ * still drives the per-audience player in the proof band.
+ *
+ * WHEN THE PEST RETAKE LANDS: point this back at the pest call only if it is genuinely
+ * the stronger clip. The hero should carry the best recording, not the default industry.
+ */
+export const DEFAULT_RECORDING_ID = "realestate-showing";
 
 /** The scope-discipline call, shown to every audience alongside the main one. */
 export const GUARDRAIL_RECORDING_ID = "guardrail-out-of-scope";

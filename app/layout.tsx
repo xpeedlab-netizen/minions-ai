@@ -126,20 +126,6 @@ export default function RootLayout({
         "description":
           "The 24/7 AI front office and speed-to-lead crew for pest control operators, real estate agencies, and home service businesses. Answers calls in under 1.8s, qualifies the lead, and books straight into FieldRoutes, PestPac, GorillaDesk, Follow Up Boss, ServiceTitan, Jobber, or Housecall Pro.",
         "foundingDate": "2026",
-        "founders": [
-          {
-            "@type": "Person",
-            "name": "Rakib",
-            "jobTitle": "Co-Founder & Operations Architecture",
-            "sameAs": "https://www.linkedin.com/in/rakibs"
-          },
-          {
-            "@type": "Person",
-            "name": "Parvej",
-            "jobTitle": "Co-Founder & AI Voice Engineering",
-            "sameAs": "https://www.linkedin.com/in/parvej"
-          }
-        ],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-346-626-4720",

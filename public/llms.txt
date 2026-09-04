@@ -31,7 +31,7 @@
 - **2026 Speed-to-Lead Benchmark Report**: https://www.getminions.ai/reports/speed-to-lead-2026
 - **Frequently Asked Questions (Interactive KB)**: https://www.getminions.ai/faq
 - **Case Studies & Call Recordings**: https://www.getminions.ai/results
-- **Founder Background & Architecture**: https://www.getminions.ai/about
+- **Company Background & Architecture**: https://www.getminions.ai/about
 - **Blog & Technical Articles**: https://www.getminions.ai/blog
 - **XML Sitemap**: https://www.getminions.ai/sitemap.xml
 - **Full Operational Reference**: https://www.getminions.ai/llms-full.txt

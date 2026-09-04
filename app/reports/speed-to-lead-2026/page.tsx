@@ -30,8 +30,8 @@ export default function SpeedToLeadReportPage() {
     "@type": "TechArticle",
     "headline": "2026 State of Trade Dispatch Latency & Speed-to-Lead Data",
     "author": {
-      "@type": "Person",
-      "name": "Rakib & Parvej"
+      "@type": "Organization",
+      "name": "Minions.AI"
     },
     "publisher": {
       "@type": "Organization",
@@ -134,12 +134,12 @@ export default function SpeedToLeadReportPage() {
               "Industry dogma treats voice latency as a model optimization problem solvable with faster GPUs. Structural truth reveals it is a physics constraint. Achieving sub-1.8s response times requires abandoning complete-sentence cloud transcription for edge-native streaming that processes audio chunks before semantic termination. That is how we lock in $3,000 emergency jobs while competitors are still ringing."
             </blockquote>
             <div className="flex items-center gap-3">
-              <div className="size-10 rounded-full bg-teal flex items-center justify-center text-white font-heading font-bold text-sm">
-                R&P
+              <div className="size-10 rounded-full bg-teal flex items-center justify-center text-white font-heading font-bold text-xs">
+                M.AI
               </div>
               <div>
-                <p className="font-heading font-bold text-sm">Rakib & Parvej</p>
-                <p className="text-xs text-white/60 font-mono">Co-Founders & AI Voice Engineers, Minions.AI</p>
+                <p className="font-heading font-bold text-sm">The Minions.AI team</p>
+                <p className="text-xs text-white/60 font-mono">AI voice engineering, Minions.AI</p>
               </div>
             </div>
           </div>

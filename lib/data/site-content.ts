@@ -1,7 +1,7 @@
 /**
  * SINGLE SOURCE OF TRUTH FOR ALL SITE CLAIMS, STATS, AND APPROVED COPY.
  *
- * Every statistic, guarantee term, setup promise, founder story, FAQ, and trust line
+ * Every statistic, guarantee term, setup promise, FAQ, and trust line
  * MUST be imported from this file. Do NOT hardcode inline claims in components.
  */
 
@@ -91,21 +91,6 @@ export const PROOF_STATS = [
 ];
 
 export const PROOF_STATS_CLOSING = "Your AI crew answers incoming calls in under 3 seconds, 24/7.";
-
-/*
- * Reworked so it speaks to both co-primary markets (invariants.md #3). The previous
- * version was trades-only — "trade business owners", "up a ladder, under a sink" —
- * which read as someone else's story to a real-estate broker. The shared truth is
- * that both businesses pay to make the phone ring and then cannot answer it: the PCO
- * is on a route, the agent is mid-showing. That is the story, and it covers both
- * without going generic.
- */
-export const FOUNDER_STORY = {
-  pullQuote: "We built this because owners were losing thousands in revenue while their hands were full — on a route, or in the middle of a showing.",
-  heading: "Engineered to solve the #1 revenue killer: the call nobody answered.",
-  body: "We're software engineers who kept seeing the same thing. A pest control operator on a route, or an agent mid-showing, spends real money to get the phone ringing — then loses half those calls because nobody could pick up. Traditional call centers put people on hold and read generic scripts. We built Minions.AI as an integrated AI front desk: voice dispatching, grounded web chat, and automatic lead logging.",
-  attribution: "Rakib & Parvej, Co-founders",
-};
 
 export const HONEST_TRUTH = {
   heading: "Our Promise, In Plain Terms",

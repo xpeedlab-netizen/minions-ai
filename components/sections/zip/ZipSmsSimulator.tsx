@@ -30,7 +30,7 @@ const scenarios = [
       { sender: "System", text: "🌐 New Web Form Lead Submitted — Requesting Quote", type: "event" },
       { sender: "Zip", text: "Hi John! Thanks for requesting an AC replacement quote on our site. I'm Zip. Are you looking for a free in-home estimate this week?", time: "3:15 PM (+3s)", badge: "< 4s Response" },
       { sender: "Customer", text: "Yes! Our unit is 15 years old and stopped blowing cold air.", time: "3:16 PM" },
-      { sender: "Zip", text: "Got it! I can get technician Parvej out tomorrow morning between 9 AM and 11 AM. Shall I confirm that slot?", time: "3:16 PM" },
+      { sender: "Zip", text: "Got it! I can get technician Marcus out tomorrow morning between 9 AM and 11 AM. Shall I confirm that slot?", time: "3:16 PM" },
       { sender: "Customer", text: "Sounds perfect. Please lock that in.", time: "3:17 PM" },
       { sender: "System", text: "✅ Prospect Qualified & Free Estimate Calendar Slot Reserved", type: "status" },
     ],

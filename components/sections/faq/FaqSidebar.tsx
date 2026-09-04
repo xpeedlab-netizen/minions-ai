@@ -104,11 +104,11 @@ export default function FaqSidebar({
         </a>
       </div>
 
-      {/* Founder Direct Assistance */}
+      {/* Direct assistance from the build team */}
       <div className="rounded-2xl border border-border bg-cream p-4 text-xs text-ink/75 shadow-xs">
         <p className="font-heading font-bold text-ink text-sm">Need a custom workflow?</p>
         <p className="mt-1 text-ink/70 leading-relaxed">
-          Talk directly with founders Rakib & Parvej about your dispatch setup.
+          Talk directly with the engineers who build it about your dispatch setup.
         </p>
         <Link
           href="/contact"

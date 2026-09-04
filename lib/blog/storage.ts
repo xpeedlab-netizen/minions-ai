@@ -230,7 +230,7 @@ export async function savePost(payload: BlogPublishPayload): Promise<BlogPost> {
     pillar: payload.pillar || "Contractor Realities",
     author: {
       name: authorName,
-      role: payload.author?.role || "Co-Founder, Minions.AI",
+      role: payload.author?.role || "Minions.AI",
       avatar: "/images/minions_ai_logo_primary_transparent.png",
     },
     publishedAt,

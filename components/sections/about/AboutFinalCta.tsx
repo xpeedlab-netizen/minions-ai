@@ -12,7 +12,7 @@ export default function AboutFinalCta() {
         </p>
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
           <Button href="/contact" size="lg" showArrow>
-            Book a call with a founder
+            Book a call with the build team
           </Button>
           <Button href="/pricing" variant="text">
             See our Pricing

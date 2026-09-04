@@ -4,7 +4,7 @@ export const FAQ_CATEGORIES = [
   { id: "setup-tech", label: "Setup & CRMs", icon: "SlidersHorizontal" },
   { id: "pricing-contracts", label: "Pricing & Terms", icon: "Receipt" },
   { id: "compliance-safety", label: "Compliance & Safety", icon: "ShieldCheck" },
-  { id: "the-team", label: "Founders & Support", icon: "Users" },
+  { id: "the-team", label: "Your Build Team", icon: "Users" },
 ] as const;
 
 export type FaqCategoryId = (typeof FAQ_CATEGORIES)[number]["id"];

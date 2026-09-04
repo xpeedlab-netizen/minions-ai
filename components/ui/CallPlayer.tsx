@@ -30,15 +30,6 @@ import type { CallRecording } from "@/lib/data/call-recordings";
  */
 let activeAudio: HTMLAudioElement | null = null;
 
-/**
- * Default playback rate. The recordings are natural-paced phone calls; at 1x a visitor
- * evaluating the product sits through dead air while the agent waits for the caller.
- * 1.25x is the standard podcast nudge — noticeably brisker, still unmistakably natural
- * (browsers pitch-correct by default via preservesPitch). The listener can override it.
- */
-const DEFAULT_RATE = 1.25;
-const RATES = [1, 1.25, 1.5] as const;
-
 /** Bars in the signal meter. Fixed so the layout never depends on audio decoding. */
 const BAR_COUNT = 28;
 
@@ -70,7 +61,6 @@ export default function CallPlayer({
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [rate, setRate] = useState<number>(DEFAULT_RATE);
   const [levels, setLevels] = useState<number[]>(() => new Array(BAR_COUNT).fill(0));
 
   const duration = recording.durationSec;
@@ -183,7 +173,6 @@ export default function CallPlayer({
       activeAudio = el;
       ensureAnalyser();
       void audioCtxRef.current?.resume();
-      el.playbackRate = rate;
       void el.play();
       if (!playedRef.current) {
         playedRef.current = true;
@@ -192,7 +181,7 @@ export default function CallPlayer({
     } else {
       el.pause();
     }
-  }, [recording.id, rate, ensureAnalyser]);
+  }, [recording.id, ensureAnalyser]);
 
   const seekTo = useCallback(
     (seconds: number) => {
@@ -205,20 +194,11 @@ export default function CallPlayer({
         activeAudio = el;
         ensureAnalyser();
         void audioCtxRef.current?.resume();
-        el.playbackRate = rate;
         void el.play();
       }
     },
-    [rate, ensureAnalyser],
+    [ensureAnalyser],
   );
-
-  const cycleRate = useCallback(() => {
-    setRate((r) => {
-      const next = RATES[(RATES.indexOf(r as (typeof RATES)[number]) + 1) % RATES.length];
-      if (audioRef.current) audioRef.current.playbackRate = next;
-      return next;
-    });
-  }, []);
 
   /**
    * Follow the active cue, but stop the moment the visitor scrolls the rail themselves —
@@ -288,17 +268,6 @@ export default function CallPlayer({
     </div>
   );
 
-  const rateButton = (
-    <button
-      type="button"
-      onClick={cycleRate}
-      aria-label={`Playback speed ${rate}x. Tap to change.`}
-      className="shrink-0 rounded-lg border border-white/20 px-2.5 py-1 font-mono text-xs font-bold tabular-nums text-cream transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
-    >
-      {rate}×
-    </button>
-  );
-
   const scrubber = (
     <div className="flex items-center gap-3">
       <input
@@ -358,7 +327,6 @@ export default function CallPlayer({
       <div className="mt-5 flex items-center gap-4">
         {playButton}
         {meter}
-        {rateButton}
       </div>
 
       <div className="mt-4">{scrubber}</div>
@@ -455,59 +423,83 @@ function CaptionStage({
   onSeek: (t: number) => void;
   isHero: boolean;
 }) {
-  // Before playback starts, show the opening lines rather than an empty stage.
+  // Before playback starts, show the opening line rather than an empty stage.
   const focus = activeIndex < 0 ? 0 : activeIndex;
+  const prev = focus > 0 ? recording.cues[focus - 1] : null;
+  const cue = recording.cues[focus];
+  const next = recording.cues[focus + 1] ?? null;
+
+  if (!cue) return null;
 
   return (
     <div
-      className={`relative mt-5 overflow-hidden ${isHero ? "h-[13.5rem]" : "h-[12rem]"}`}
-      aria-live="polite"
-      aria-atomic="false"
+      className={`relative mt-5 flex flex-col justify-center overflow-hidden ${
+        isHero ? "h-56" : "h-52"
+      }`}
     >
-      <ol
-        className="absolute inset-x-0 top-0 space-y-2 transition-transform duration-500 ease-out motion-reduce:transition-none"
-        /*
-          Slide the list so the focused cue sits one row down from the top: high enough
-          that a long active line has the rest of the stage to wrap into, low enough
-          that the preceding line stays visible as context. Rows are a fixed height
-          (min-h below) so a uniform step lands exactly without measuring the DOM.
-        */
-        style={{ transform: `translateY(-${focus * 5.5}rem)` }}
-      >
-        {recording.cues.map((cue, i) => {
-          const dist = Math.abs(i - focus);
-          const isActive = i === focus;
-          // Fade with distance from the active line; hide anything far away so the
-          // stage never shows a wall of text.
-          const opacity = isActive ? 1 : dist === 1 ? 0.42 : dist === 2 ? 0.16 : 0;
-          return (
-            <li key={`${cue.t}-${i}`} className="flex h-[5.5rem] flex-col justify-start">
-              <button
-                type="button"
-                onClick={() => onSeek(cue.t)}
-                aria-current={isActive ? "true" : undefined}
-                tabIndex={dist > 2 ? -1 : 0}
-                className="block w-full text-left transition-opacity duration-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white motion-reduce:transition-none"
-                style={{ opacity }}
-              >
-                <span
-                  className={`block font-mono text-[0.625rem] font-bold uppercase tracking-[0.08em] ${
-                    cue.speaker === "agent" ? "text-coral" : "text-cream/75"
-                  }`}
-                >
-                  {cue.speaker === "agent" ? "AI receptionist" : "Caller"}
-                </span>
-                <span
-                  className={`mt-1 block leading-[1.45] ${
-                    isActive ? "text-white" : "text-cream/80"
-                  } ${isHero ? "text-base sm:text-lg" : "text-[0.9375rem] sm:text-base"}`}
-                >
-                  {cue.text}
-                </span>
-              </button>
-            </li>
-          );
-        })}
+      {/*
+        One caption at a time, with its neighbours dimmed — the shape a viewer knows
+        from subtitles.
+
+        An earlier version absolutely positioned every cue and slid the list, which
+        overlapped them the moment a cue wrapped past its fixed row height (the pest
+        call's prep-instructions line runs five lines). Rendering only three cues in
+        normal flow means a long line simply takes the room it needs and the stage
+        stays a fixed height, so the band above never reflows.
+
+        The full transcript still reaches crawlers and screen readers through the
+        visually-hidden list below — captions are a presentation of it, not a
+        replacement for it.
+      */}
+      <div aria-hidden className="space-y-2">
+        {prev && (
+          <p className="line-clamp-1 text-[0.8125rem] leading-[1.5] text-cream/35">
+            {prev.text}
+          </p>
+        )}
+
+        <button
+          type="button"
+          onClick={() => onSeek(cue.t)}
+          className="block w-full text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+        >
+          <span
+            className={`block font-mono text-[0.625rem] font-bold uppercase tracking-[0.08em] ${
+              cue.speaker === "agent" ? "text-coral" : "text-cream/75"
+            }`}
+          >
+            {cue.speaker === "agent" ? "AI receptionist" : "Caller"}
+          </span>
+          {/*
+            Clamped to four lines. One turn in the pest call (the prep instructions)
+            runs five lines at this measure and would otherwise push its neighbours out
+            of the stage. The full sentence stays in the sr-only transcript below and in
+            the scrolling rail on the #hear-it band, so nothing is lost — only this
+            presentation is bounded.
+          */}
+          <span
+            className={`mt-1 line-clamp-4 text-white ${
+              isHero ? "text-base leading-[1.45] sm:text-lg" : "text-[0.9375rem] leading-[1.45]"
+            }`}
+          >
+            {cue.text}
+          </span>
+        </button>
+
+        {next && (
+          <p className="line-clamp-1 text-[0.8125rem] leading-[1.5] text-cream/35">
+            {next.text}
+          </p>
+        )}
+      </div>
+
+      {/* The complete transcript, for assistive tech and crawlers. */}
+      <ol className="sr-only">
+        {recording.cues.map((c, i) => (
+          <li key={`${c.t}-${i}`} aria-current={i === focus ? "true" : undefined}>
+            {c.speaker === "agent" ? "AI receptionist" : "Caller"}: {c.text}
+          </li>
+        ))}
       </ol>
     </div>
   );

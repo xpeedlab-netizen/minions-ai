@@ -70,7 +70,7 @@ export default function HowItWorks3Step() {
         </div>
 
         <div className="mt-8 text-center">
-          <p className="text-xs font-mono text-ink/60">
+          <p className="text-xs font-mono text-ink/65">
             * A 30-day tuning window after go-live is included in the build fee. Ongoing care afterwards is optional, starts at $297/mo, and is discussed at your 30-day review — not before.
           </p>
         </div>

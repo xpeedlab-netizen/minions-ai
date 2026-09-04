@@ -1,6 +1,6 @@
 import { Bug } from "lucide-react";
 import Button from "@/components/ui/Button";
-import PestHeroAnimation from "./PestHeroAnimation";
+import IndustryCallPanel from "@/components/ui/IndustryCallPanel";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 
 export default function PestHero() {
@@ -43,15 +43,18 @@ export default function PestHero() {
             </Button>
           </div>
 
-          <p className="font-mono text-xs text-ink/50 flex items-center gap-2 pt-1">
+          <p className="font-mono text-xs text-ink/65 flex items-center gap-2 pt-1">
             <span className="size-1.5 rounded-full bg-teal" />
             Zero technical setup. Live in your routes in 3–6 weeks.
           </p>
         </div>
 
-        {/* Right Column: Interactive Pest Dispatch Simulator */}
+        {/* Right Column: a real recorded pest call, not a simulation. */}
         <div className="lg:col-span-6 relative">
-          <PestHeroAnimation />
+          <IndustryCallPanel
+            recordingId="pest-bedbug-emergency"
+            eyebrow="Hear the AI live"
+          />
         </div>
       </div>
     </section>

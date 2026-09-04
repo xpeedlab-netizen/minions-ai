@@ -15,7 +15,7 @@ export default function RoofingTestimonial() {
           </div>
           <div className="absolute -bottom-4 -right-4 rounded-xl border border-border bg-white px-3 py-2 shadow-md text-center">
             <p className="font-heading font-extrabold text-sm text-teal">Storm Ready</p>
-            <p className="font-mono text-[9px] uppercase tracking-wide text-ink/50">Active Dispatch</p>
+            <p className="font-mono text-[9px] uppercase tracking-wide text-ink/65">Active Dispatch</p>
           </div>
         </div>
 

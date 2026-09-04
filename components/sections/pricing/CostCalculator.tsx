@@ -46,7 +46,7 @@ export default function CostCalculator() {
                 </label>
                 <span className="font-mono text-xl font-bold text-teal">
                   {monthlyCalls.toLocaleString()}{" "}
-                  <span className="text-xs text-ink/60 font-normal">calls</span>
+                  <span className="text-xs text-ink/65 font-normal">calls</span>
                 </span>
               </div>
               <input
@@ -60,7 +60,7 @@ export default function CostCalculator() {
                 onChange={(e) => setMonthlyCalls(Number(e.target.value))}
                 className="mt-3 w-full accent-teal h-2 bg-white rounded-lg cursor-pointer"
               />
-              <div className="mt-1.5 flex justify-between text-[10px] font-mono text-ink/50">
+              <div className="mt-1.5 flex justify-between text-[10px] font-mono text-ink/65">
                 <span>25 calls</span>
                 <span>500 calls</span>
                 <span>1,250 calls</span>
@@ -80,7 +80,7 @@ export default function CostCalculator() {
                 </label>
                 <span className="font-mono text-xl font-bold text-coral">
                   {avgDurationMinutes.toFixed(1)}{" "}
-                  <span className="text-xs text-ink/60 font-normal">min</span>
+                  <span className="text-xs text-ink/65 font-normal">min</span>
                 </span>
               </div>
               <input
@@ -94,7 +94,7 @@ export default function CostCalculator() {
                 onChange={(e) => setAvgDurationMinutes(Number(e.target.value))}
                 className="mt-3 w-full accent-coral h-2 bg-white rounded-lg cursor-pointer"
               />
-              <div className="mt-1.5 flex justify-between text-[10px] font-mono text-ink/50">
+              <div className="mt-1.5 flex justify-between text-[10px] font-mono text-ink/65">
                 <span>1.0 min (Quick)</span>
                 <span>3.5 min (Standard)</span>
                 <span>8.0 min (Detailed)</span>
@@ -128,7 +128,7 @@ export default function CostCalculator() {
                           ~${preset.ratePerMin}/min
                         </div>
                       </div>
-                      <div className="text-[10px] text-ink/60 mt-1.5 truncate">
+                      <div className="text-[10px] text-ink/65 mt-1.5 truncate">
                         {preset.models}
                       </div>
                     </button>
@@ -207,7 +207,7 @@ export default function CostCalculator() {
             <span>View Full Retell AI Pricing Breakdown</span>
             <ExternalLink className="size-4 text-teal" />
           </a>
-          <span className="text-xs text-ink/60 font-mono">
+          <span className="text-xs text-ink/65 font-mono">
             (Wholesale provider rates for all voice models & telephony)
           </span>
         </div>

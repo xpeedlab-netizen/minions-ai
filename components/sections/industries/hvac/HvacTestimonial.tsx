@@ -34,7 +34,7 @@ export default function HvacTestimonial() {
           {stats.map((s) => (
             <div key={s.label} className="rounded-2xl border border-border bg-white p-5 text-center">
               <p className="font-heading font-extrabold text-2xl text-teal">{s.value}</p>
-              <p className="mt-1 text-xs text-ink/60">{s.label}</p>
+              <p className="mt-1 text-xs text-ink/65">{s.label}</p>
             </div>
           ))}
         </div>

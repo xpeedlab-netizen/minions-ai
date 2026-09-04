@@ -54,7 +54,7 @@ export default function RoofingProblem() {
                     <span className={`flex size-10 items-center justify-center rounded-2xl border ${c.iconColor}`}>
                       <c.icon className="size-5" />
                     </span>
-                    <span className="font-mono text-[10px] font-bold text-ink/50 bg-cream px-2.5 py-1 rounded-full uppercase">
+                    <span className="font-mono text-[10px] font-bold text-ink/65 bg-cream px-2.5 py-1 rounded-full uppercase">
                       Leak #{i + 1}
                     </span>
                   </div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { track } from "@/lib/analytics";
 import type { FaqItem } from "@/lib/data/faq";
 
 export default function FaqAccordion({
@@ -21,7 +22,11 @@ export default function FaqAccordion({
           <div key={item.q}>
             <button
               type="button"
-              onClick={() => setOpenIndex(isOpen ? null : i)}
+              onClick={() => {
+                // Opening a question is a real engagement signal; closing one is not.
+                if (!isOpen) track("faq_open", { question: item.q });
+                setOpenIndex(isOpen ? null : i);
+              }}
               aria-expanded={isOpen}
               className="flex w-full items-center justify-between gap-4 py-5 text-left min-h-12"
             >

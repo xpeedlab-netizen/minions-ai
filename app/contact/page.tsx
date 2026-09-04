@@ -28,7 +28,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
           <div>
             <h2 className="font-heading font-bold text-2xl text-teal">Pick a time that works.</h2>
-            <p className="mt-2 text-ink/60">
+            <p className="mt-2 text-ink/65">
               No pressure and no hard sell — just a quick chat about your business.
             </p>
             <div className="mt-6">
@@ -38,7 +38,7 @@ export default function ContactPage() {
 
           <div>
             <h2 className="font-heading font-bold text-2xl text-teal">Send a message</h2>
-            <p className="mt-2 text-ink/60">
+            <p className="mt-2 text-ink/65">
               Prefer email? Drop us a line and we&apos;ll get back to you within 24 hours.
             </p>
             <div className="mt-6">

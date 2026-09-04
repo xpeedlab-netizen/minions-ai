@@ -54,7 +54,7 @@ export default function LiveDemoOptionA() {
         </span>
       </div>
 
-      <p className="mt-3 text-ink/60 leading-relaxed">
+      <p className="mt-3 text-ink/65 leading-relaxed">
         The fastest way to experience Minions.AI. We&apos;ll connect your mic directly to Rex&apos;s
         voice interface.
       </p>
@@ -73,7 +73,7 @@ export default function LiveDemoOptionA() {
           >
             <div className="rounded-xl border border-border bg-cream p-4 flex gap-3">
               <Info className="size-4 shrink-0 mt-0.5 text-teal" />
-              <p className="text-sm text-ink/60">
+              <p className="text-sm text-ink/65">
                 <strong className="text-ink">Important:</strong> Your browser will ask for microphone
                 access. Please click &lsquo;Allow&rsquo; to start the voice conversation.
               </p>
@@ -104,7 +104,7 @@ export default function LiveDemoOptionA() {
                     Live Session Active
                   </span>
                 </div>
-                <div className="flex items-center gap-1.5 font-mono text-xs text-ink/60">
+                <div className="flex items-center gap-1.5 font-mono text-xs text-ink/65">
                   <Radio className="size-3.5 text-teal animate-pulse" />
                   <span>Rex Listening</span>
                 </div>

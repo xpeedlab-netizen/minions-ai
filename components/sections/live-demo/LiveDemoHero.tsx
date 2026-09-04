@@ -2,7 +2,7 @@ export default function LiveDemoHero() {
   return (
     <section className="bg-cream py-16 sm:py-20">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-ink/60">
+        <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-ink/65">
           <span className="relative flex size-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" />
             <span className="relative inline-flex size-2 rounded-full bg-success" />

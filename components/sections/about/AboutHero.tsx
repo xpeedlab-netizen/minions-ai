@@ -15,12 +15,12 @@ export default function AboutHero() {
             The Mission
           </span>
           <h1 className="mt-5 font-heading font-bold text-ink text-4xl sm:text-5xl leading-[1.1] text-balance">
-            Two people. One promise: you&apos;ll never lose a job to a missed call again.
+            One promise: you&apos;ll never lose a job to a missed call again.
           </h1>
           <p className="mt-6 text-lg text-ink/70 leading-relaxed max-w-xl">
-            We aren&apos;t a massive agency with thousands of employees. We&apos;re two automation
-            experts who believe blue-collar businesses deserve the same high-tech leverage as
-            Silicon Valley startups.
+            We aren&apos;t a massive agency with thousands of employees. We&apos;re a small
+            team of automation engineers who believe pest control operators and real estate
+            teams deserve the same leverage as a Silicon Valley startup.
           </p>
         </div>
 

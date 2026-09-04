@@ -170,7 +170,7 @@ export default function Header() {
             >
               Blog &amp; Field Guides
             </Link>
-            <p className="mt-3 mb-1 text-xs font-mono uppercase tracking-wide text-ink/50">The Crew</p>
+            <p className="mt-3 mb-1 text-xs font-mono uppercase tracking-wide text-ink/65">The Crew</p>
             {crewNav.map((c) => (
               <Link
                 key={c.href}
@@ -184,7 +184,7 @@ export default function Header() {
                 </div>
               </Link>
             ))}
-            <p className="mt-3 mb-1 text-xs font-mono uppercase tracking-wide text-ink/50">Industries</p>
+            <p className="mt-3 mb-1 text-xs font-mono uppercase tracking-wide text-ink/65">Industries</p>
             {industries.map((item) => (
               <Link
                 key={item.href}

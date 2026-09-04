@@ -37,7 +37,7 @@ export default function PlumbingCrew() {
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-teal-dark text-balance">
             Meet your new plumbing front-office crew
           </h2>
-          <p className="mt-4 text-ink/60">
+          <p className="mt-4 text-ink/65">
             Automation that feels like extra hands in the shop, not just lines of code.
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function PlumbingCrew() {
                   <f.icon className="size-5" />
                 </span>
                 <h3 className="mt-4 font-heading font-bold text-ink">{f.title}</h3>
-                <p className="mt-2 text-sm text-ink/60 leading-relaxed">{f.body}</p>
+                <p className="mt-2 text-sm text-ink/65 leading-relaxed">{f.body}</p>
               </div>
             </Reveal>
           ))}

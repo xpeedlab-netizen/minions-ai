@@ -18,7 +18,7 @@ export default function RexHeroAnimation() {
     <div className="relative w-full max-w-lg mx-auto rounded-3xl border border-border bg-white p-6 shadow-lg overflow-hidden">
       {/* Illustration Badge */}
       <div className="mb-3 flex items-center justify-between">
-        <span className="rounded-md bg-cream border border-border px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-ink/60">
+        <span className="rounded-md bg-cream border border-border px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-ink/65">
           Example — not a live call
         </span>
         <button

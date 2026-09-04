@@ -12,13 +12,13 @@ export default function AboutFinalCta() {
         </p>
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
           <Button href="/contact" size="lg" showArrow>
-            Book a call with a founder
+            Book a call with the build team
           </Button>
           <Button href="/pricing" variant="text">
             See our Pricing
           </Button>
         </div>
-        <p className="mt-6 font-mono text-xs text-ink/50">
+        <p className="mt-6 font-mono text-xs text-ink/65">
           15-minute intro. No pressure. Just solutions.
         </p>
       </div>

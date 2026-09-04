@@ -16,13 +16,6 @@
 export const SITE_PHONE_NUMBER: string = "(346) 626-4720";
 export const SITE_PHONE_TEL: string = "+13466264720";
 export const BOOKING_CALENDAR_URL: string = "/contact";
-export const FOUNDER_PHOTO_URL: string = "/images/founders-placeholder.png";
-
-/** Real founder headshots, used in the FoundersTrust attribution cluster. */
-export const FOUNDER_PHOTOS: { src: string; name: string }[] = [
-  { src: "/images/founder-rakib.jpg", name: "Rakib" },
-  { src: "/images/founder-parvej.jpg", name: "Parvej" },
-];
 
 /**
  * YouTube video ID for the product demo — the 11-character ID only, NOT the full URL.
@@ -32,13 +25,6 @@ export const FOUNDER_PHOTOS: { src: string; name: string }[] = [
  * without leaving empty containers, broken players, or orphaned headings.
  */
 export const DEMO_VIDEO_ID: string = "";
-
-/**
- * YouTube video ID for the founder introduction — the 11-character ID only.
- * When empty, the founder video block inside FoundersTrust does not render;
- * the written founder story still does.
- */
-export const FOUNDER_VIDEO_ID: string = "";
 
 /**
  * Derived from DEMO_VIDEO_ID — do not set directly.

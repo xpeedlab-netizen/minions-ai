@@ -1,3 +1,10 @@
+/**
+ * Voicemail vs answering service vs Minions.
+ *
+ * Moved off the homepage on 2026-09-04: a text table sitting next to the price cards is
+ * the same shape twice, and the category comparison belongs at the moment a visitor is
+ * already comparing — which is here, not three bands before the price.
+ */
 import { Check, X, Minus } from "lucide-react";
 import Section, { SectionHeading } from "@/components/ui/Section";
 import { pricingPlans } from "@/lib/data/pricing";
@@ -32,9 +39,17 @@ const features: { name: string; service: Cell; voicemail: Cell; rex: Cell }[] = 
 ];
 
 function renderIcon(type: Cell["type"]) {
-  if (type === "check") return <Check className="size-5 text-teal shrink-0" aria-hidden />;
-  if (type === "cross") return <X className="size-5 text-coral-text shrink-0" aria-hidden />;
-  return <Minus className="size-5 text-ink/40 shrink-0" aria-hidden />;
+  /*
+   * The lightened `-on-dark` tokens, not the brand ones. On the ink ground `text-teal`
+   * (#0e5c63) is roughly 1.5:1 and `text-coral-text` (#c43d1e) little better — the same
+   * invisibility the Eyebrow component documents. The brand tokens themselves are
+   * untouched, per invariants.md #8.
+   */
+  if (type === "check")
+    return <Check className="size-5 shrink-0 text-crew-gia-on-dark" aria-hidden />;
+  if (type === "cross")
+    return <X className="size-5 shrink-0 text-crew-zip-on-dark" aria-hidden />;
+  return <Minus className="size-5 shrink-0 text-white/40" aria-hidden />;
 }
 
 export default function ComparisonTable() {
@@ -52,13 +67,13 @@ export default function ComparisonTable() {
   const columns = [
     { key: "service" as const, label: "Traditional Answering Service" },
     { key: "voicemail" as const, label: "Voicemail" },
-    { key: "rex" as const, label: "Rex (Minions.AI)" },
+    { key: "rex" as const, label: "Minions.AI" },
   ];
 
   return (
-    <Section tone="white" width="wide">
-      <SectionHeading className="text-ink text-center max-w-3xl mx-auto">
-        Why Service Contractors Are Replacing Call Centers with Minions.AI
+    <Section tone="ink" width="wide">
+      <SectionHeading className="text-white text-center max-w-3xl mx-auto">
+        Why owners replace call centres and voicemail with Minions.AI
       </SectionHeading>
 
       {/*
@@ -71,36 +86,36 @@ export default function ComparisonTable() {
           <thead>
             <tr>
               <th className="p-4 sm:p-6 w-1/4"></th>
-              <th className="p-4 sm:p-6 w-1/4 font-heading text-base font-bold tracking-[-0.01em] text-ink/70">
+              <th className="p-4 sm:p-6 w-1/4 font-heading text-base font-bold tracking-[-0.01em] text-cream/70">
                 Traditional Answering Service
               </th>
-              <th className="p-4 sm:p-6 w-1/4 font-heading text-base font-bold tracking-[-0.01em] text-ink/70">
+              <th className="p-4 sm:p-6 w-1/4 font-heading text-base font-bold tracking-[-0.01em] text-cream/70">
                 Voicemail
               </th>
-              <th className="p-4 sm:p-6 w-1/4 font-heading text-base font-bold tracking-[-0.01em] text-teal bg-cream rounded-t-2xl border-t border-x border-border">
+              <th className="p-4 sm:p-6 w-1/4 font-heading text-base font-bold tracking-[-0.01em] text-white bg-white/10 rounded-t-2xl border-t border-x border-white/15">
                 Rex (Minions.AI)
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-border">
+          <tbody className="divide-y divide-white/10">
             {features.map((f) => (
               <tr key={f.name}>
-                <th scope="row" className="p-4 sm:p-6 text-[0.9375rem] font-medium text-ink/80 text-left">
+                <th scope="row" className="p-4 sm:p-6 text-[0.9375rem] font-medium text-cream/80 text-left">
                   {f.name}
                 </th>
-                <td className="p-4 sm:p-6 text-[0.9375rem] text-ink/65">
+                <td className="p-4 sm:p-6 text-[0.9375rem] text-cream/60">
                   <div className="flex items-center gap-3">
                     {renderIcon(f.service.type)}
                     {f.service.text}
                   </div>
                 </td>
-                <td className="p-4 sm:p-6 text-[0.9375rem] text-ink/65">
+                <td className="p-4 sm:p-6 text-[0.9375rem] text-cream/60">
                   <div className="flex items-center gap-3">
                     {renderIcon(f.voicemail.type)}
                     {f.voicemail.text}
                   </div>
                 </td>
-                <td className="p-4 sm:p-6 text-[0.9375rem] text-ink font-medium bg-cream border-x border-border">
+                <td className="p-4 sm:p-6 text-[0.9375rem] text-white font-medium bg-white/10 border-x border-white/15">
                   <div className="flex items-center gap-3">
                     {renderIcon(f.rex.type)}
                     {f.rex.text}
@@ -109,12 +124,12 @@ export default function ComparisonTable() {
               </tr>
             ))}
             <tr>
-              <th scope="row" className="p-4 sm:p-6 font-medium text-ink/80 border-b border-border text-left">
+              <th scope="row" className="p-4 sm:p-6 font-medium text-cream/80 border-b border-white/10 text-left">
                 {costRow.name}
               </th>
-              <td className="p-4 sm:p-6 text-[0.9375rem] text-ink/65 border-b border-border">{costRow.service}</td>
-              <td className="p-4 sm:p-6 text-[0.9375rem] text-ink/65 border-b border-border">{costRow.voicemail}</td>
-              <td className="p-4 sm:p-6 text-[0.9375rem] text-ink font-bold bg-cream rounded-b-2xl border-b border-x border-border">
+              <td className="p-4 sm:p-6 text-[0.9375rem] text-cream/60 border-b border-white/10">{costRow.service}</td>
+              <td className="p-4 sm:p-6 text-[0.9375rem] text-cream/60 border-b border-white/10">{costRow.voicemail}</td>
+              <td className="p-4 sm:p-6 text-[0.9375rem] text-white font-bold bg-white/10 rounded-b-2xl border-b border-x border-white/15">
                 {costRow.rex}
               </td>
             </tr>
@@ -131,13 +146,13 @@ export default function ComparisonTable() {
               key={col.key}
               className={`rounded-2xl border p-5 ${
                 isRex
-                  ? "border-teal bg-cream shadow-sm"
-                  : "border-border bg-white"
+                  ? "border-white/25 bg-white/10"
+                  : "border-white/10 bg-white/[0.03]"
               }`}
             >
               <h3
                 className={`font-heading font-bold text-lg ${
-                  isRex ? "text-teal" : "text-ink"
+                  isRex ? "text-white" : "text-cream/80"
                 }`}
               >
                 {col.label}
@@ -147,20 +162,20 @@ export default function ComparisonTable() {
                 {features.map((f) => (
                   <div
                     key={f.name}
-                    className="flex items-start justify-between gap-4 border-t border-border pt-3"
+                    className="flex items-start justify-between gap-4 border-t border-white/10 pt-3"
                   >
-                    <dt className="text-sm font-medium text-ink/70 shrink-0">{f.name}</dt>
-                    <dd className="flex items-center gap-2 text-sm text-ink text-right">
+                    <dt className="text-sm font-medium text-cream/65 shrink-0">{f.name}</dt>
+                    <dd className="flex items-center gap-2 text-sm text-cream text-right">
                       <span>{f[col.key].text}</span>
                       {renderIcon(f[col.key].type)}
                     </dd>
                   </div>
                 ))}
-                <div className="flex items-start justify-between gap-4 border-t border-border pt-3">
-                  <dt className="text-sm font-medium text-ink/70 shrink-0">Cost / month</dt>
+                <div className="flex items-start justify-between gap-4 border-t border-white/10 pt-3">
+                  <dt className="text-sm font-medium text-cream/65 shrink-0">Cost / month</dt>
                   <dd
                     className={`text-sm text-right ${
-                      isRex ? "text-ink font-bold" : "text-ink/70"
+                      isRex ? "text-white font-bold" : "text-cream/65"
                     }`}
                   >
                     {costRow[col.key]}

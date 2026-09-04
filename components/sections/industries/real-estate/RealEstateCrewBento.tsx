@@ -123,7 +123,7 @@ export default function RealEstateCrewBento() {
                   </span>
                 </div>
                 <div className="flex items-center justify-between border-t border-border/60 pt-3">
-                  <span className="text-[10px] font-mono text-ink/50">Lead Score</span>
+                  <span className="text-[10px] font-mono text-ink/65">Lead Score</span>
                   <span className="text-xs font-mono font-bold text-success">90/100</span>
                 </div>
               </div>

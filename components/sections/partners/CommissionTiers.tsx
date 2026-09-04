@@ -85,7 +85,7 @@ export default function CommissionTiers() {
             <div className="mt-7 flex flex-wrap items-baseline gap-x-2.5">
               <span className="type-display text-4xl leading-none text-ink">{tier.rate}</span>
               {tier.rateSuffix && (
-                <span className="font-mono text-sm text-ink/60">{tier.rateSuffix}</span>
+                <span className="font-mono text-sm text-ink/65">{tier.rateSuffix}</span>
               )}
             </div>
             <p className="mt-3 text-[0.9375rem] leading-[1.6] text-ink/70">{tier.rateNote}</p>

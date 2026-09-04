@@ -40,7 +40,7 @@ export default function PlumbingEmergencyMode() {
           </div>
           <div className="mt-5 space-y-3">
             <div className="flex items-start gap-2.5">
-              <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-ink/10 font-mono text-[9px] font-bold text-ink/60">
+              <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-ink/10 font-mono text-[9px] font-bold text-ink/65">
                 CUST
               </span>
               <p className="max-w-[85%] rounded-2xl rounded-tl-sm bg-cream px-4 py-2.5 text-sm text-ink/80">

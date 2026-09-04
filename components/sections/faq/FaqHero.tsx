@@ -58,7 +58,7 @@ export default function FaqHero({
               <button
                 type="button"
                 onClick={() => onSearchChange("")}
-                className="absolute right-3.5 flex size-7 items-center justify-center rounded-full bg-cream-dark text-ink/60 hover:text-ink hover:bg-border transition-colors"
+                className="absolute right-3.5 flex size-7 items-center justify-center rounded-full bg-cream-dark text-ink/65 hover:text-ink hover:bg-border transition-colors"
                 aria-label="Clear search query"
               >
                 <X className="size-3.5" />
@@ -68,7 +68,7 @@ export default function FaqHero({
 
           {/* Quick Tag Suggestions & Result Counter */}
           <div className="mt-3.5 flex flex-wrap items-center justify-center gap-2 text-xs">
-            <span className="font-mono text-ink/50 text-[11px] uppercase tracking-wider flex items-center gap-1">
+            <span className="font-mono text-ink/65 text-[11px] uppercase tracking-wider flex items-center gap-1">
               <Sparkles className="size-3 text-teal" /> Popular:
             </span>
             {POPULAR_SEARCH_TAGS.map((tag) => (
@@ -88,7 +88,7 @@ export default function FaqHero({
           </div>
 
           {isFiltered && typeof totalResultsCount === "number" && (
-            <div className="mt-3 text-xs font-mono text-ink/60">
+            <div className="mt-3 text-xs font-mono text-ink/65">
               Showing <span className="font-bold text-teal">{totalResultsCount}</span> {totalResultsCount === 1 ? "question" : "questions"} matching &ldquo;{searchQuery}&rdquo;
             </div>
           )}

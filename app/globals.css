@@ -130,3 +130,38 @@ h4 {
     scroll-behavior: auto !important;
   }
 }
+
+/*
+ * Scrollbar for scrolling panels on the ink bands (the call transcript rails).
+ *
+ * The default chrome scrollbar is a light-grey system widget: on a #12242a card it is
+ * the one element that looks unstyled, and it sits right beside the transcript the
+ * band exists to show. `scrollbar-width: thin` covers Firefox; the ::-webkit rules
+ * cover Chrome and Safari, which ignore it.
+ *
+ * The thumb is deliberately low-contrast (white/15, lifting to white/30 on hover) —
+ * it is an affordance, not content, and a bright bar would compete with the active
+ * transcript line. This is a scrollbar, not text, so the 4.5:1 floor does not apply;
+ * WCAG's 3:1 non-text minimum is met against the card at rest.
+ */
+.scrollbar-dark {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255 255 255 / 0.15) transparent;
+}
+
+.scrollbar-dark::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-dark::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-dark::-webkit-scrollbar-thumb {
+  background-color: rgb(255 255 255 / 0.15);
+  border-radius: 9999px;
+}
+
+.scrollbar-dark::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(255 255 255 / 0.3);
+}

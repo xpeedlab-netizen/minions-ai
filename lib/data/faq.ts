@@ -122,19 +122,19 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     tag: "256-bit AES Security",
   },
 
-  // 5. Founders & Support
+  // 5. Your Build Team
   {
     id: "who-builds-this",
     category: "the-team",
-    categoryLabel: "Founders & Support",
+    categoryLabel: "Your Build Team",
     q: "Who configures and supports our AI crew?",
-    a: "You work directly with the two co-founders, Rakib & Parvej. We personally engineer your prompt architecture, test your phone line with background job-site noise scenarios, and provide white-glove ongoing support.",
-    tag: "Founder-Led Setup",
+    a: "You work directly with the engineers who build your system — not a support queue or an account manager. The same people engineer your prompt architecture, test your phone line against background job-site noise, and handle your ongoing support.",
+    tag: "Direct Access"
   },
   {
     id: "ongoing-updates",
     category: "the-team",
-    categoryLabel: "Founders & Support",
+    categoryLabel: "Your Build Team",
     q: "What happens when our pricing or service areas change?",
     a: "Simply text or message us your changes. We update your AI crew's knowledge profile and dispatch rules within hours, with zero downtime on your live line.",
     tag: "Zero-Downtime Updates",

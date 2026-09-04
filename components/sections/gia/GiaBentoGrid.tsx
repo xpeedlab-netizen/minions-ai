@@ -118,7 +118,7 @@ export default function GiaBentoGrid() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-border/60 font-mono text-xs text-ink/60 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-border/60 font-mono text-xs text-ink/65 flex items-center justify-between">
                 <span>No-Show Drop</span>
                 <span className="font-bold text-success">Up to 85%</span>
               </div>
@@ -141,7 +141,7 @@ export default function GiaBentoGrid() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-border/60 font-mono text-xs text-ink/60 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-border/60 font-mono text-xs text-ink/65 flex items-center justify-between">
                 <span>Review Link</span>
                 <span className="font-bold text-amber-600">Automated 1-Click</span>
               </div>

@@ -32,7 +32,7 @@ export default function RexHero() {
             </Button>
           </div>
 
-          <div className="mt-6 flex items-center gap-2 text-ink/60 font-mono text-xs font-semibold">
+          <div className="mt-6 flex items-center gap-2 text-ink/65 font-mono text-xs font-semibold">
             <ShieldCheck className="size-4 text-teal shrink-0" />
             <span>{TUNING_WINDOW.short}</span>
           </div>

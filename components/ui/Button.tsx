@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
+import TrackedLink from "@/components/ui/TrackedLink";
+import type { AnalyticsEvent, AnalyticsParams } from "@/lib/analytics";
 
 type ButtonVariant = "primary" | "secondary" | "outline" | "text";
 
@@ -11,6 +13,12 @@ type BaseProps = {
   showArrow?: boolean;
   className?: string;
   disabled?: boolean;
+  /**
+   * Report this button's click to GA4. Supplying it swaps the plain server-rendered
+   * Link for a small client leaf (TrackedLink); omitting it keeps Button fully
+   * server-rendered, which is why this is opt-in rather than automatic.
+   */
+  track?: { event: AnalyticsEvent; params?: AnalyticsParams };
 };
 
 type ButtonAsLink = BaseProps & {
@@ -50,14 +58,34 @@ export default function Button({
   onClick,
   type = "button",
   disabled = false,
+  track,
 }: ButtonAsLink | ButtonAsButton) {
   const classes = `${base} ${variant !== "text" ? sizes[size] : ""} ${variants[variant]} ${className} ${disabled ? "opacity-60 cursor-not-allowed hover:scale-100 active:scale-100" : ""}`;
 
   if (href) {
-    return (
-      <Link href={href} className={classes}>
+    const inner = (
+      <>
         {children}
         {showArrow && <ArrowRight className="size-[1.1em]" strokeWidth={2.5} />}
+      </>
+    );
+
+    if (track) {
+      return (
+        <TrackedLink
+          href={href}
+          className={classes}
+          event={track.event}
+          params={track.params}
+        >
+          {inner}
+        </TrackedLink>
+      );
+    }
+
+    return (
+      <Link href={href} className={classes}>
+        {inner}
       </Link>
     );
   }

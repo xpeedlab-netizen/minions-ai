@@ -21,8 +21,8 @@ export default function GuaranteeSection() {
       className="relative overflow-hidden"
       innerClassName="relative z-10 text-center"
     >
-      {/* Matches the atmosphere treatment on FoundersTrust so the page's two dark bands
-          read as the same deliberate device rather than two different accidents. */}
+      {/* Matches the atmosphere treatment on the call-proof band, so the page's two
+          dark bands read as one deliberate device rather than two accidents. */}
       <div
         aria-hidden
         className="pointer-events-none absolute -top-1/4 left-1/2 size-[40rem] -translate-x-1/2 rounded-full bg-teal/15 blur-3xl"
@@ -38,7 +38,7 @@ export default function GuaranteeSection() {
         {TUNING_WINDOW.body}
       </p>
 
-      <p className="mt-8 font-mono text-xs font-bold uppercase tracking-[0.08em] text-teal">
+      <p className="mt-8 font-mono text-xs font-bold uppercase tracking-[0.08em] text-crew-rex-on-dark">
         {TUNING_WINDOW.days}-Day Tuning Window
       </p>
 

@@ -2,7 +2,7 @@ import Button from "@/components/ui/Button";
 import PricingCard from "@/components/ui/PricingCard";
 import Reveal from "@/components/ui/Reveal";
 import Section, { SectionHeading, SectionLead } from "@/components/ui/Section";
-import { pricingPlans } from "@/lib/data/pricing";
+import { pricingPlans, paymentMilestones } from "@/lib/data/pricing";
 
 /**
  * Band 06 — price and guarantee.
@@ -53,7 +53,7 @@ export default function PricingPreview() {
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mx-auto lg:max-w-4xl">
         {pricingPlans.map((plan, i) => (
           <Reveal key={plan.name} delay={i * 0.08} className="h-full">
-            <PricingCard plan={plan} />
+            <PricingCard plan={plan} analyticsLocation="home_pricing_preview" />
           </Reveal>
         ))}
       </div>
@@ -75,30 +75,27 @@ export default function PricingPreview() {
             </span>
           </div>
 
+          {/*
+            Sourced from `paymentMilestones` rather than retyped. These three tiles were
+            hardcoded here and had already drifted from the data file ("At Working UAT"
+            vs "At UAT handover"), which is how payment terms end up saying two things
+            on two pages.
+          */}
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-xl border border-border bg-cream p-3.5 sm:p-4">
-              <span className="font-mono text-base font-bold text-teal sm:text-lg">40%</span>
-              <p className="mt-0.5 font-heading text-xs font-bold text-ink sm:text-sm">On Signature</p>
-              <p className="mt-1 text-[11px] leading-relaxed text-ink/70">
-                Reserves your build slot and starts custom discovery.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-border bg-cream p-3.5 sm:p-4">
-              <span className="font-mono text-base font-bold text-teal sm:text-lg">40%</span>
-              <p className="mt-0.5 font-heading text-xs font-bold text-ink sm:text-sm">At Working UAT</p>
-              <p className="mt-1 text-[11px] leading-relaxed text-ink/70">
-                Due only when you receive the working system to test.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-border bg-cream p-3.5 sm:p-4">
-              <span className="font-mono text-base font-bold text-teal sm:text-lg">20%</span>
-              <p className="mt-0.5 font-heading text-xs font-bold text-ink sm:text-sm">At Go-Live</p>
-              <p className="mt-1 text-[11px] leading-relaxed text-ink/70">
-                Due when your agent answers its first live customer call.
-              </p>
-            </div>
+            {paymentMilestones.map((m) => (
+              <div
+                key={m.when}
+                className="rounded-xl border border-border bg-cream p-3.5 sm:p-4"
+              >
+                <span className="font-mono text-base font-bold text-teal sm:text-lg">
+                  {m.pct}
+                </span>
+                <p className="mt-0.5 font-heading text-xs font-bold text-ink sm:text-sm">
+                  {m.when}
+                </p>
+                <p className="mt-1 text-[11px] leading-relaxed text-ink/70">{m.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </Reveal>

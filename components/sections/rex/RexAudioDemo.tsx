@@ -49,7 +49,7 @@ const sampleCalls = [
       { speaker: "Caller", text: "I bought a Tesla and need a Level 2 charger installed in my garage." },
       { speaker: "Rex", text: "Congratulations on the new EV! Level 2 charger installations typically range from $650 to $1,200 depending on panel distance. We offer free on-site estimates. I have openings tomorrow at 10:00 AM or 2:00 PM. Which works best?" },
       { speaker: "Caller", text: "10:00 AM tomorrow works great." },
-      { speaker: "Rex", text: "Perfect. I've booked your free estimate for tomorrow at 10:00 AM with technician Parvej. You're all set!" },
+      { speaker: "Rex", text: "Perfect. I've booked your free estimate for tomorrow at 10:00 AM with technician Marcus. You're all set!" },
       { speaker: "System", text: "✅ On-Site Estimate Scheduled ➔ Assigned to Technician ➔ Lead Logged to CRM", type: "status" },
     ],
   },

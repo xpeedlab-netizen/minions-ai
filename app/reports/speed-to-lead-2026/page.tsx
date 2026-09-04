@@ -30,8 +30,8 @@ export default function SpeedToLeadReportPage() {
     "@type": "TechArticle",
     "headline": "2026 State of Trade Dispatch Latency & Speed-to-Lead Data",
     "author": {
-      "@type": "Person",
-      "name": "Rakib & Parvej"
+      "@type": "Organization",
+      "name": "Minions.AI"
     },
     "publisher": {
       "@type": "Organization",
@@ -47,7 +47,7 @@ export default function SpeedToLeadReportPage() {
 
       <article className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
-          <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-ink/60 hover:text-teal transition-colors">
+          <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-ink/65 hover:text-teal transition-colors">
             <ArrowLeft className="size-4" />
             Back to Playbooks
           </Link>
@@ -117,7 +117,7 @@ export default function SpeedToLeadReportPage() {
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-xs font-mono text-ink/50 text-right">
+          <p className="mt-3 text-xs font-mono text-ink/65 text-right">
             Source: Minions.AI Internal Telemetry (Q1 2026) & MIT InsideSales Baseline
           </p>
         </section>
@@ -134,12 +134,12 @@ export default function SpeedToLeadReportPage() {
               "Industry dogma treats voice latency as a model optimization problem solvable with faster GPUs. Structural truth reveals it is a physics constraint. Achieving sub-1.8s response times requires abandoning complete-sentence cloud transcription for edge-native streaming that processes audio chunks before semantic termination. That is how we lock in $3,000 emergency jobs while competitors are still ringing."
             </blockquote>
             <div className="flex items-center gap-3">
-              <div className="size-10 rounded-full bg-teal flex items-center justify-center text-white font-heading font-bold text-sm">
-                R&P
+              <div className="size-10 rounded-full bg-teal flex items-center justify-center text-white font-heading font-bold text-xs">
+                M.AI
               </div>
               <div>
-                <p className="font-heading font-bold text-sm">Rakib & Parvej</p>
-                <p className="text-xs text-white/60 font-mono">Co-Founders & AI Voice Engineers, Minions.AI</p>
+                <p className="font-heading font-bold text-sm">The Minions.AI team</p>
+                <p className="text-xs text-white/60 font-mono">AI voice engineering, Minions.AI</p>
               </div>
             </div>
           </div>
@@ -152,7 +152,7 @@ export default function SpeedToLeadReportPage() {
           </p>
           <a
             href={`tel:${SITE_PHONE_TEL}`}
-            className="inline-flex items-center gap-2 rounded-xl bg-coral hover:bg-coral-text text-white px-8 py-4 font-heading font-bold text-lg shadow-md transition-transform hover:scale-105"
+            className="inline-flex items-center gap-2 rounded-xl bg-coral hover:bg-vest-orange text-ink px-8 py-4 font-heading font-bold text-lg shadow-md transition-transform hover:scale-105"
           >
             <PhoneCall className="size-5" />
             {SITE_PHONE_NUMBER}

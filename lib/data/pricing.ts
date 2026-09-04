@@ -242,3 +242,38 @@ export const pricingFaq = [
     a: "You do. Accounts, workflows and phone numbers are created in your name and stay yours if we part ways. Either party may pause the project in writing; work already delivered is invoiced at the last completed milestone and nothing beyond it.",
   },
 ];
+
+/**
+ * Numeric build-fee bounds, derived from `pricingPlans` rather than written down again.
+ *
+ * The JSON-LD AggregateOffer in app/layout.tsx used to hardcode "1000"/"2000" — the
+ * Starter/Full ladder retired on 2026-08-29 — so Google was being told a price that had
+ * not existed for months, while the page beside it said $2,500/$4,500. A prospect who
+ * sees one price in search and another on the page is a lost sale, so the offer is now
+ * computed from the same array the pricing cards render.
+ *
+ * `price` is a display string ("$2,500"), which is the right shape for the cards and the
+ * wrong shape for schema.org — hence the strip. Plans with a null price (custom/contact
+ * tiers, if one ever returns) are excluded rather than coerced to 0.
+ */
+const buildFees = pricingPlans
+  .map((plan) => Number(plan.price?.replace(/[^0-9.]/g, "")))
+  .filter((n) => Number.isFinite(n) && n > 0);
+
+export const BUILD_FEE_LOW = Math.min(...buildFees);
+export const BUILD_FEE_HIGH = Math.max(...buildFees);
+export const BUILD_FEE_COUNT = buildFees.length;
+
+/**
+ * First-year cost used by the industry ROI calculators: the Core Crew build fee plus
+ * twelve months of the care plan.
+ *
+ * Derived, because it was hardcoded in six calculators and had already drifted — five
+ * said 6064 while real-estate said 5988, a figure built from a $290/mo care plan that
+ * has never existed (the plan is $297). That page was quoting a price we do not sell.
+ * The same class of bug hit these files once before, on 2026-08-29, when five of them
+ * were found hardcoding a retired $499/mo subscription.
+ */
+const carePlanMonthly = Number(carePlan.from.replace(/[^0-9.]/g, ""));
+
+export const ANNUAL_MINIONS_COST = BUILD_FEE_LOW + carePlanMonthly * 12;

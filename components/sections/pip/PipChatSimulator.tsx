@@ -27,7 +27,7 @@ const chatScenarios = [
       { sender: "Pip", text: "Thank you for asking! We specialize strictly in main electrical panel upgrades, EV charger installations, and whole-home rewiring. We do not perform solar panel installations.", badge: "Zero Hallucinations", time: "2:14 PM" },
       { sender: "Customer", text: "Ah got it. Can you do a 200-Amp panel upgrade for a EV charger?", time: "2:15 PM" },
       { sender: "Pip", text: "Absolutely! Panel upgrades to 200 Amps range from $2,400 to $3,800 depending on utility line distance. May I get your name and phone number so our master electrician can review your panel photos?", badge: "Verified Service Rules", time: "2:15 PM" },
-      { sender: "Customer", text: "Sure! My name is Rakib and phone is (555) 349-8291.", time: "2:16 PM" },
+      { sender: "Customer", text: "Sure! My name is Dana and phone is (555) 349-8291.", time: "2:16 PM" },
       { sender: "System", text: "✅ Qualified Inquiry Captured & Summary Sent to Owner", type: "status" },
     ],
   },

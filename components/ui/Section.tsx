@@ -78,8 +78,8 @@ export default function Section({
  *
  * ALIGNMENT RULE: headings range left by default. The one band that centres on the
  * home page is Proof (teal) — it is a full-width statement with no asymmetric partner,
- * which is the only case that earns it. FoundersTrust used to be the second such band
- * and has been removed.
+ * which is the only case that earns it. A founders band used to be the second such
+ * band; it was removed, and the founders section was dropped site-wide on 2026-09-04.
  *
  * Alignment is NOT the lever for making a long scroll feel varied: the page once had
  * eight bands ranging left and one centred, and it still read as the same band eight

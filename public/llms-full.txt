@@ -3,7 +3,7 @@
 > Canonical Source: https://www.getminions.ai
 > Documentation Standard: llms.txt v1.1
 > Published: September 2026
-> Operators: Minions.AI (Rakib & Parvej)
+> Operators: Minions.AI
 
 ---
 
@@ -93,6 +93,6 @@ Minions.AI uses dedicated specialized agents rather than a single generic chatbo
 - **2026 Speed-to-Lead Benchmark Report**: https://www.getminions.ai/reports/speed-to-lead-2026
 - **Frequently Asked Questions**: https://www.getminions.ai/faq
 - **Results & Pilot Case Studies**: https://www.getminions.ai/results
-- **Founder Background**: https://www.getminions.ai/about
+- **Company Background**: https://www.getminions.ai/about
 - **Technical Articles & Blog**: https://www.getminions.ai/blog
 - **XML Sitemap**: https://www.getminions.ai/sitemap.xml

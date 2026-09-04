@@ -175,7 +175,7 @@ export default function ArticleContent({ content }: ArticleContentProps) {
                         <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl" />
                       </div>
                       {altText && altText !== "Editorial Image" && altText !== "Editorial Cover Card" && (
-                        <p className="mt-3 text-center text-xs font-mono tracking-tight text-ink/60 italic truncate px-2">
+                        <p className="mt-3 text-center text-xs font-mono tracking-tight text-ink/65 italic truncate px-2">
                           {altText}
                         </p>
                       )}
@@ -285,7 +285,7 @@ export default function ArticleContent({ content }: ArticleContentProps) {
               </div>
               <a
                 href={`tel:${cleanPhone}`}
-                className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-coral hover:bg-coral-text text-white px-6 py-3.5 font-heading font-bold text-sm shadow-md transition-colors"
+                className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-coral hover:bg-vest-orange text-ink px-6 py-3.5 font-heading font-bold text-sm shadow-md transition-colors"
               >
                 <Phone className="size-4" />
                 Dial {rawPhone}

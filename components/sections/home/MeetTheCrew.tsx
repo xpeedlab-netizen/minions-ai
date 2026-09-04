@@ -131,7 +131,7 @@ function SupportRow({ m, delay }: { m: Support; delay: number }) {
 
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2">
-              <span className="font-mono text-[10px] font-bold tracking-wider text-ink/40 uppercase">
+              <span className="font-mono text-[10px] font-bold tracking-wider text-ink/65 uppercase">
                 {m.code}
               </span>
               <span className="text-ink/20">·</span>
@@ -170,7 +170,7 @@ function SupportRow({ m, delay }: { m: Support; delay: number }) {
                 <p className="text-[0.9375rem] font-medium leading-snug text-ink">
                   {m.stat}
                 </p>
-                <p className="mt-1 font-mono text-xs uppercase tracking-wide text-ink/60">
+                <p className="mt-1 font-mono text-xs uppercase tracking-wide text-ink/65">
                   {m.source}
                 </p>
               </div>
@@ -271,6 +271,7 @@ export default function MeetTheCrew() {
             </div>
             <Button
               href={BOOKING_CALENDAR_URL}
+              track={{ event: "cta_click", params: { location: "crew" } }}
               variant="primary"
               showArrow
               className="shrink-0 w-full sm:w-auto"

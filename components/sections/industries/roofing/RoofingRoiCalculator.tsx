@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Calculator, Sparkles } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
+import { ANNUAL_MINIONS_COST } from "@/lib/data/pricing";
 
 export default function RoofingRoiCalculator() {
   const [missedCalls, setMissedCalls] = useState(15);
@@ -15,7 +16,7 @@ export default function RoofingRoiCalculator() {
   const annualLostRevenue = monthlyLostRevenue * 12;
   // First-year cost of a Core Crew build ($2,500 one-time) plus an optional care plan
   // at $297/mo. There is no $499/mo subscription — that plan was retired on 2026-08-29.
-  const annualMinionsCost = 6064; // $2,500 build + ($297 x 12)
+  const annualMinionsCost = ANNUAL_MINIONS_COST;
   const netAnnualProfit = Math.max(0, annualLostRevenue - annualMinionsCost);
   const roiMultiplier = (annualLostRevenue / Math.max(1, annualMinionsCost)).toFixed(1);
 
@@ -96,7 +97,7 @@ export default function RoofingRoiCalculator() {
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs font-mono">
                 <span className="text-white/70">Estimated Close Rate:</span>
-                <span className="font-bold text-success text-sm bg-success/20 px-3 py-1 rounded-lg border border-success/40">
+                <span className="font-bold text-crew-gia-on-dark text-sm bg-success/20 px-3 py-1 rounded-lg border border-success/40">
                   {closeRate}% Conversion
                 </span>
               </div>
@@ -107,7 +108,7 @@ export default function RoofingRoiCalculator() {
                 step="5"
                 value={closeRate}
                 onChange={(e) => setCloseRate(Number(e.target.value))}
-                className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-success"
+                className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-crew-gia-on-dark"
               />
             </div>
           </div>
@@ -118,7 +119,7 @@ export default function RoofingRoiCalculator() {
               <p className="font-mono text-xs uppercase tracking-wide text-white/50">
                 Annual Leaked Revenue
               </p>
-              <p className="mt-1 font-mono text-3xl sm:text-4xl font-extrabold text-coral-text">
+              <p className="mt-1 font-mono text-3xl sm:text-4xl font-extrabold text-crew-zip-on-dark">
                 -${annualLostRevenue.toLocaleString()}
               </p>
               <p className="mt-1 font-mono text-[11px] text-white/50">

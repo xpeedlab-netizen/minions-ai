@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Calculator, Sparkles } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
+import { ANNUAL_MINIONS_COST } from "@/lib/data/pricing";
 
 export default function RealEstateRoiCalculator() {
   const [missedCalls, setMissedCalls] = useState(15);
@@ -15,7 +16,7 @@ export default function RealEstateRoiCalculator() {
   const closedDealsMonthly = (missedCalls * (closeRate / 100));
   const monthlyLostRevenue = Math.round(closedDealsMonthly * commissionPerDeal);
   const annualLostRevenue = monthlyLostRevenue * 12;
-  const annualMinionsCost = 5988;
+  const annualMinionsCost = ANNUAL_MINIONS_COST;
   const netAnnualProfit = Math.max(0, annualLostRevenue - annualMinionsCost);
   const roiMultiplier = (annualLostRevenue / Math.max(1, annualMinionsCost)).toFixed(1);
 
@@ -96,7 +97,7 @@ export default function RealEstateRoiCalculator() {
             <div className="space-y-2 w-full">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs font-mono w-full">
                 <span className="text-white/70 whitespace-normal break-words">Average Commission / Side:</span>
-                <span className="font-bold text-success text-sm bg-success/20 px-3 py-1.5 rounded-lg border border-success/40 w-full sm:w-auto text-center sm:text-left shrink-0 truncate">
+                <span className="font-bold text-crew-gia-on-dark text-sm bg-success/20 px-3 py-1.5 rounded-lg border border-success/40 w-full sm:w-auto text-center sm:text-left shrink-0 truncate">
                   {commissionRate}% (~${commissionPerDeal.toLocaleString()})
                 </span>
               </div>
@@ -107,7 +108,7 @@ export default function RealEstateRoiCalculator() {
                 step="0.25"
                 value={commissionRate}
                 onChange={(e) => setCommissionRate(Number(e.target.value))}
-                className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-success block"
+                className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-crew-gia-on-dark block"
               />
             </div>
           </div>
@@ -118,7 +119,7 @@ export default function RealEstateRoiCalculator() {
               <p className="font-mono text-xs uppercase tracking-wide text-white/50 break-words">
                 Annual Leaked Commission (GCI)
               </p>
-              <p className="mt-1 font-mono text-3xl sm:text-4xl font-extrabold text-coral-text drop-shadow-[0_0_15px_rgba(255,107,107,0.4)] truncate">
+              <p className="mt-1 font-mono text-3xl sm:text-4xl font-extrabold text-crew-zip-on-dark drop-shadow-[0_0_15px_rgba(255,107,107,0.4)] truncate">
                 -${annualLostRevenue.toLocaleString()}
               </p>
               <p className="mt-1 font-mono text-[11px] text-white/50 break-words">

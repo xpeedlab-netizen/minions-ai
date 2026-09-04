@@ -5,7 +5,7 @@ export default function ZipHonestPitch() {
   return (
     <section className="bg-[#E8E1DA] py-16 sm:py-24">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5 font-mono text-xs text-ink/60">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5 font-mono text-xs text-ink/65">
           <CheckCircle2 className="size-3.5 text-success" />
           The Honest Pitch
         </span>

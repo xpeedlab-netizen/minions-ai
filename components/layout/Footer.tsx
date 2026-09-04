@@ -1,10 +1,21 @@
 import Link from "next/link";
-import { Phone } from "lucide-react";
-import {
-  SITE_PHONE_NUMBER,
-  SITE_PHONE_TEL,
-  BOOKING_CALENDAR_URL,
-} from "@/lib/data/placeholders";
+import { SITE_PHONE_NUMBER, SITE_PHONE_TEL, BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
+
+/**
+ * Clean, High-Conversion B2B Footer — Cooldock-inspired Anchor + Streamlined Directory
+ *
+ * ARCHITECTURAL PRINCIPLES:
+ * 1. Cognitive Simplicity: Drop verbose crew sub-links that clutter the directory.
+ *    Keep only high-value pages: Product, Industries (as requested), and Company.
+ * 2. Left Hero Anchor: Clear value proposition for Pest Control & Real Estate (Invariant #3)
+ *    with a single high-contrast conversion action: call live AI / book a call.
+ * 3. Full-Bleed Monumental Plinth: An oversized architectural "MINIONS.AI" watermark
+ *    spanning edge-to-edge (15.5vw) using .type-display (Anton) and text-coral/35.
+ *    Full-bleed ensures it scales smoothly across all screens (widescreen, desktop, mobile)
+ *    without being constrained or clipped by container max-width.
+ * 4. Enterprise Colophon: Infrastructure credit (Retell AI · n8n · Google Calendar · EspoCRM)
+ *    and clean single-line copyright.
+ */
 
 const FOOTER_PRODUCT = [
   { label: "How It Works", href: "/how-it-works" },
@@ -30,8 +41,8 @@ const FOOTER_COMPANY = [
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-ink text-cream/80">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-8 sm:pt-20 sm:pb-12">
-        {/* Upper Tier: Focused Anchor Block + Minimal 3-Column Directory */}
+      {/* Upper Tier: Focused Anchor Block + Minimal 3-Column Directory */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-6 sm:pt-20 sm:pb-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-14 items-start">
           {/* Brand Anchor (Left 5 cols) */}
           <div className="lg:col-span-5 flex flex-col items-start">
@@ -39,7 +50,7 @@ export default function Footer() {
               href="/"
               className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight"
             >
-              Minions<span className="text-vest-orange">.AI</span>
+              Minions<span className="text-coral">.AI</span>
             </Link>
 
             <p className="mt-4 max-w-sm text-sm sm:text-base leading-relaxed text-cream/70">
@@ -53,20 +64,19 @@ export default function Footer() {
                 href={`tel:${SITE_PHONE_TEL}`}
                 className="group inline-flex items-center gap-2.5 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 font-heading text-xs font-bold text-white shadow-sm transition-all duration-150 hover:border-teal hover:bg-white/10 active:scale-[0.98]"
               >
-                <span className="relative flex size-2 shrink-0">
-                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+                <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="font-mono text-cream/60 group-hover:text-cream">
+                  Hear AI Live:
                 </span>
-                <Phone className="size-3.5 text-teal transition-transform group-hover:scale-110" />
-                <span>Hear AI Live: {SITE_PHONE_NUMBER}</span>
+                <span>{SITE_PHONE_NUMBER}</span>
               </a>
 
-              <a
+              <Link
                 href={BOOKING_CALENDAR_URL}
-                className="text-xs font-heading font-semibold text-cream/70 hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
+                className="font-mono text-xs font-medium text-cream/50 hover:text-teal transition-colors"
               >
                 Book 15-min call →
-              </a>
+              </Link>
             </div>
 
             {/* Quiet Operational Telephony Status */}
@@ -136,16 +146,18 @@ export default function Footer() {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Middle Tier: The Big Minimal Architectural Wordmark Plinth */}
-        <div className="relative mt-16 sm:mt-20 select-none pointer-events-none overflow-hidden border-t border-white/10 pt-10 sm:pt-14 pb-2">
-          <div className="text-center font-display font-black tracking-[-0.04em] text-white/[0.04] text-[15vw] sm:text-[14vw] leading-[0.82] uppercase whitespace-nowrap">
-            MINIONS<span className="text-vest-orange/[0.08]">.AI</span>
-          </div>
+      {/* Middle Tier: Full-Bleed Monumental Wordmark Plinth */}
+      <div className="w-full select-none pointer-events-none border-t border-white/10 pt-10 sm:pt-16 pb-4 sm:pb-8 overflow-hidden">
+        <div className="w-full text-center type-display tracking-[-0.02em] text-white/[0.045] uppercase whitespace-nowrap leading-[0.85] text-[16vw] sm:text-[15.5vw]">
+          MINIONS<span className="text-coral/35">.AI</span>
         </div>
+      </div>
 
-        {/* Bottom Tier: Clean Utility & Infrastructure Bar */}
-        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-cream/50">
+      {/* Bottom Tier: Clean Utility & Infrastructure Bar */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-cream/50">
           <p>© {new Date().getFullYear()} Minions.AI. All rights reserved.</p>
 
           <p className="font-mono text-[11px] text-center sm:text-right text-cream/45">

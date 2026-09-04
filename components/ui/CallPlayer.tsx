@@ -56,6 +56,9 @@ export default function CallPlayer({
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const railRef = useRef<HTMLOListElement | null>(null);
   const userScrolledRef = useRef(false);
+  /** True while the follow-the-cue effect is driving the rail, so its own scroll events
+      are not mistaken for the visitor grabbing the scrollbar. */
+  const autoScrollingRef = useRef(false);
   const playedRef = useRef(false);
   const milestonesRef = useRef<Set<number>>(new Set());
 
@@ -171,6 +174,9 @@ export default function CallPlayer({
     if (el.paused) {
       if (activeAudio && activeAudio !== el) activeAudio.pause();
       activeAudio = el;
+      // Pressing play is an explicit "follow along" gesture: re-arm auto-scroll even if
+      // the visitor had scrolled the rail by hand earlier.
+      userScrolledRef.current = false;
       ensureAnalyser();
       void audioCtxRef.current?.resume();
       void el.play();
@@ -189,6 +195,7 @@ export default function CallPlayer({
       if (!el) return;
       el.currentTime = seconds;
       setCurrentTime(seconds);
+      userScrolledRef.current = false;
       if (el.paused) {
         if (activeAudio && activeAudio !== el) activeAudio.pause();
         activeAudio = el;
@@ -204,14 +211,53 @@ export default function CallPlayer({
    * Follow the active cue, but stop the moment the visitor scrolls the rail themselves —
    * an auto-scroll that fights the reader is worse than none. Caption mode does not
    * scroll at all; it swaps which lines are lit.
+   *
+   * Two traps here, both of which silently disabled this once:
+   *
+   * 1. `onScroll` cannot tell a user's scroll from this effect's own. Setting
+   *    `userScrolled` from a raw handler meant the FIRST auto-scroll flagged itself as
+   *    manual and every later cue was ignored — the rail followed cue one and then froze.
+   *    So the effect announces its own scrolls via `autoScrollingRef`, cleared once the
+   *    smooth animation has settled.
+   * 2. `scrollIntoView({block:"nearest"})` moves the minimum distance, which parks the
+   *    active line against the rail edge under the mask fade. We set `scrollTop`
+   *    directly to centre the cue, and scroll the RAIL only — `scrollIntoView` will
+   *    happily scroll the page too and yank the band around mid-playback.
    */
   useEffect(() => {
     if (variant !== "rail") return;
     if (activeIndex < 0 || userScrolledRef.current) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const rail = railRef.current;
     const node = rail?.children[activeIndex] as HTMLElement | undefined;
-    node?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    if (!rail || !node) return;
+
+    // Measure against the RAIL, not `offsetTop` — `offsetTop` is relative to the nearest
+    // positioned ancestor (the card, several levels up), which yields values in the
+    // thousands and clamps every cue to the bottom of the rail.
+    const delta =
+      node.getBoundingClientRect().top - rail.getBoundingClientRect().top;
+    const target = Math.max(
+      0,
+      Math.min(
+        rail.scrollTop + delta - rail.clientHeight / 2 + node.offsetHeight / 2,
+        rail.scrollHeight - rail.clientHeight,
+      ),
+    );
+    if (Math.abs(target - rail.scrollTop) < 2) return;
+
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    autoScrollingRef.current = true;
+    rail.scrollTo({ top: target, behavior: reduced ? "auto" : "smooth" });
+
+    // Outlive the smooth animation, otherwise its trailing scroll events land after the
+    // flag clears and get misread as the visitor taking over.
+    const done = window.setTimeout(
+      () => {
+        autoScrollingRef.current = false;
+      },
+      reduced ? 50 : 700,
+    );
+    return () => window.clearTimeout(done);
   }, [activeIndex, variant]);
 
   useEffect(() => {
@@ -342,6 +388,7 @@ export default function CallPlayer({
         <ol
           ref={railRef}
           onScroll={() => {
+            if (autoScrollingRef.current) return;
             userScrolledRef.current = true;
           }}
           /*

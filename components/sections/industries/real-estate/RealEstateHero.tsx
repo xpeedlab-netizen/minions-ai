@@ -1,6 +1,6 @@
 import { Building2, Sparkles, Phone } from "lucide-react";
 import Button from "@/components/ui/Button";
-import RealEstateHeroAnimation from "./RealEstateHeroAnimation";
+import IndustryCallPanel from "@/components/ui/IndustryCallPanel";
 import { BOOKING_CALENDAR_URL, SITE_PHONE_NUMBER } from "@/lib/data/placeholders";
 
 export default function RealEstateHero() {
@@ -46,7 +46,7 @@ export default function RealEstateHero() {
             </Button>
           </div>
 
-          <div className="pt-2 flex items-center gap-4 text-xs font-mono text-ink/60">
+          <div className="pt-2 flex items-center gap-4 text-xs font-mono text-ink/65">
             <span className="flex items-center gap-1.5">
               <Sparkles className="size-3.5 text-teal" /> 100-Pt Lead Scoring
             </span>
@@ -57,9 +57,12 @@ export default function RealEstateHero() {
           </div>
         </div>
 
-        {/* Right Column: Interactive Real Estate Voice Simulator */}
+        {/* Right Column: a real recorded showing call, not a simulation. */}
         <div className="lg:col-span-6 relative w-full min-w-0">
-          <RealEstateHeroAnimation />
+          <IndustryCallPanel
+            recordingId="realestate-showing"
+            eyebrow="Hear the AI live"
+          />
         </div>
       </div>
     </section>

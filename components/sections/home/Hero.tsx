@@ -7,7 +7,7 @@ import {
   SITE_PHONE_NUMBER,
   SITE_PHONE_TEL,
 } from "@/lib/data/placeholders";
-import HeroCallPoster from "@/components/sections/home/HeroCallPoster";
+import HeroCallPlayer from "@/components/sections/home/HeroCallPlayer";
 import TrustLogos from "@/components/ui/TrustLogos";
 
 /**
@@ -82,10 +82,9 @@ export default function Hero() {
               </span>
             </div>
           </div>
-
-          {/* Still of a real recorded call; the playable version is the #hear-it band. */}
+          {/* A real recorded call, playable in the first screen. */}
           <div className="relative min-w-0 w-full lg:max-w-lg lg:ml-auto">
-            <HeroCallPoster />
+            <HeroCallPlayer />
           </div>
         </div>
 

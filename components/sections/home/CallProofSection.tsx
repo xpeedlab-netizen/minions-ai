@@ -26,8 +26,8 @@ export default function CallProofSection() {
         Don&apos;t take our word for it. Hear it answer.
       </SectionHeading>
       <SectionLead tone="dark">
-        Real calls to our demo business, unedited except for muting the caller&apos;s
-        personal details. Read the transcript, or press play.
+        Real recorded calls to our demo line, start to finish. Read the transcript,
+        or press play.
       </SectionLead>
 
       <div className="mt-12 grid gap-6 lg:grid-cols-2 lg:items-start">

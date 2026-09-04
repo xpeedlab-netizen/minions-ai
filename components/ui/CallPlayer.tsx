@@ -12,10 +12,15 @@ import type { CallRecording } from "@/lib/data/call-recordings";
  * via AnimatePresence, which meant a screen reader got a shuffling live region and a
  * visitor who never pressed play got almost nothing. Here every cue is in the DOM as a
  * button that seeks to its own timestamp, so the transcript is readable cold, indexable,
- * and doubles as navigation. The band states the outcome in text for the same reason.
+ * and doubles as navigation.
  *
- * No framer-motion: this sits below the fold on a page that already ships it for
- * Reveal, and a highlight colour does not need a physics engine.
+ * CAPTION MODE (`variant="caption"`) renders that same list as a subtitle stage: the
+ * active line large and lit, the two before it fading back, the next one queued. It is
+ * a presentation of the identical DOM, not a second source of truth — everything stays
+ * selectable and readable with audio off.
+ *
+ * No framer-motion: this ships on the homepage's critical path and a fading caption is
+ * a CSS opacity transition.
  */
 
 /**
@@ -24,6 +29,18 @@ import type { CallRecording } from "@/lib/data/call-recordings";
  * is the whole fix — no context, no provider.
  */
 let activeAudio: HTMLAudioElement | null = null;
+
+/**
+ * Default playback rate. The recordings are natural-paced phone calls; at 1x a visitor
+ * evaluating the product sits through dead air while the agent waits for the caller.
+ * 1.25x is the standard podcast nudge — noticeably brisker, still unmistakably natural
+ * (browsers pitch-correct by default via preservesPitch). The listener can override it.
+ */
+const DEFAULT_RATE = 1.25;
+const RATES = [1, 1.25, 1.5] as const;
+
+/** Bars in the signal meter. Fixed so the layout never depends on audio decoding. */
+const BAR_COUNT = 28;
 
 function formatTime(sec: number) {
   if (!Number.isFinite(sec) || sec < 0) sec = 0;
@@ -35,9 +52,15 @@ function formatTime(sec: number) {
 export default function CallPlayer({
   recording,
   className = "",
+  variant = "rail",
+  size = "default",
 }: {
   recording: CallRecording;
   className?: string;
+  /** "rail" = scrolling transcript list. "caption" = YouTube-style subtitle stage. */
+  variant?: "rail" | "caption";
+  /** "hero" enlarges the play control and caption type for above-the-fold use. */
+  size?: "default" | "hero";
 }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const railRef = useRef<HTMLOListElement | null>(null);
@@ -47,8 +70,11 @@ export default function CallPlayer({
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
+  const [rate, setRate] = useState<number>(DEFAULT_RATE);
+  const [levels, setLevels] = useState<number[]>(() => new Array(BAR_COUNT).fill(0));
 
   const duration = recording.durationSec;
+  const isHero = size === "hero";
 
   /**
    * Derived, not stored. A second piece of state for "which cue is active" is a second
@@ -79,6 +105,75 @@ export default function CallPlayer({
     }
   }, [duration, recording.id]);
 
+  /**
+   * Live signal meter.
+   *
+   * Built lazily on first play and never before: constructing an AudioContext on mount
+   * trips autoplay policy warnings, and connecting a MediaElementSource permanently
+   * reroutes the element's output, so it must happen once and stay connected for the
+   * element's life. Everything is wrapped — Web Audio is unavailable or blocked in
+   * enough contexts (older Safari, strict privacy modes) that a throw here would take
+   * the whole player down with it, and the meter is decoration.
+   */
+  const audioCtxRef = useRef<AudioContext | null>(null);
+  const analyserRef = useRef<AnalyserNode | null>(null);
+  const rafRef = useRef<number | null>(null);
+
+  const ensureAnalyser = useCallback(() => {
+    if (analyserRef.current || !audioRef.current) return;
+    try {
+      const Ctor =
+        window.AudioContext ||
+        (window as unknown as { webkitAudioContext?: typeof AudioContext })
+          .webkitAudioContext;
+      if (!Ctor) return;
+      const ctx = new Ctor();
+      const source = ctx.createMediaElementSource(audioRef.current);
+      const analyser = ctx.createAnalyser();
+      analyser.fftSize = 128;
+      analyser.smoothingTimeConstant = 0.75;
+      source.connect(analyser);
+      analyser.connect(ctx.destination);
+      audioCtxRef.current = ctx;
+      analyserRef.current = analyser;
+    } catch {
+      /* Meter stays flat; playback is unaffected. */
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isPlaying) {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
+      setLevels(new Array(BAR_COUNT).fill(0));
+      return;
+    }
+    const analyser = analyserRef.current;
+    if (!analyser) return;
+
+    const bins = new Uint8Array(analyser.frequencyBinCount);
+    const tick = () => {
+      analyser.getByteFrequencyData(bins);
+      // Fold the spectrum into BAR_COUNT buckets. Speech lives low, so bias the
+      // sampling toward the bottom of the range or every bar reads near zero.
+      const usable = Math.floor(bins.length * 0.7);
+      const per = Math.max(1, Math.floor(usable / BAR_COUNT));
+      const next: number[] = [];
+      for (let i = 0; i < BAR_COUNT; i++) {
+        let sum = 0;
+        for (let j = 0; j < per; j++) sum += bins[i * per + j] ?? 0;
+        next.push(Math.min(1, sum / per / 190));
+      }
+      setLevels(next);
+      rafRef.current = requestAnimationFrame(tick);
+    };
+    rafRef.current = requestAnimationFrame(tick);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
+    };
+  }, [isPlaying]);
+
   const togglePlay = useCallback(() => {
     const el = audioRef.current;
     if (!el) return;
@@ -86,6 +181,9 @@ export default function CallPlayer({
     if (el.paused) {
       if (activeAudio && activeAudio !== el) activeAudio.pause();
       activeAudio = el;
+      ensureAnalyser();
+      void audioCtxRef.current?.resume();
+      el.playbackRate = rate;
       void el.play();
       if (!playedRef.current) {
         playedRef.current = true;
@@ -94,38 +192,133 @@ export default function CallPlayer({
     } else {
       el.pause();
     }
-  }, [recording.id]);
+  }, [recording.id, rate, ensureAnalyser]);
 
-  const seekTo = useCallback((seconds: number) => {
-    const el = audioRef.current;
-    if (!el) return;
-    el.currentTime = seconds;
-    setCurrentTime(seconds);
-    if (el.paused) {
-      if (activeAudio && activeAudio !== el) activeAudio.pause();
-      activeAudio = el;
-      void el.play();
-    }
+  const seekTo = useCallback(
+    (seconds: number) => {
+      const el = audioRef.current;
+      if (!el) return;
+      el.currentTime = seconds;
+      setCurrentTime(seconds);
+      if (el.paused) {
+        if (activeAudio && activeAudio !== el) activeAudio.pause();
+        activeAudio = el;
+        ensureAnalyser();
+        void audioCtxRef.current?.resume();
+        el.playbackRate = rate;
+        void el.play();
+      }
+    },
+    [rate, ensureAnalyser],
+  );
+
+  const cycleRate = useCallback(() => {
+    setRate((r) => {
+      const next = RATES[(RATES.indexOf(r as (typeof RATES)[number]) + 1) % RATES.length];
+      if (audioRef.current) audioRef.current.playbackRate = next;
+      return next;
+    });
   }, []);
 
   /**
    * Follow the active cue, but stop the moment the visitor scrolls the rail themselves —
-   * an auto-scroll that fights the reader is worse than none.
+   * an auto-scroll that fights the reader is worse than none. Caption mode does not
+   * scroll at all; it swaps which lines are lit.
    */
   useEffect(() => {
+    if (variant !== "rail") return;
     if (activeIndex < 0 || userScrolledRef.current) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const rail = railRef.current;
     const node = rail?.children[activeIndex] as HTMLElement | undefined;
     node?.scrollIntoView({ block: "nearest", behavior: "smooth" });
-  }, [activeIndex]);
+  }, [activeIndex, variant]);
 
   useEffect(() => {
     return () => {
       const el = audioRef.current;
       if (el && activeAudio === el) activeAudio = null;
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      void audioCtxRef.current?.close();
     };
   }, []);
+
+  const progressPct = duration > 0 ? (Math.min(currentTime, duration) / duration) * 100 : 0;
+
+  const playButton = (
+    <button
+      type="button"
+      onClick={togglePlay}
+      aria-label={isPlaying ? `Pause ${recording.title}` : `Play ${recording.title}`}
+      className={`group relative flex shrink-0 items-center justify-center rounded-full bg-coral text-ink transition-transform hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-3 focus-visible:outline-white focus-visible:outline-offset-2 ${
+        isHero ? "size-20 sm:size-24" : "size-14"
+      }`}
+    >
+      {/* Resting pulse — a still play button on a page selling a live voice product
+          reads as a screenshot. Stops while playing, where the meter carries motion. */}
+      {!isPlaying && (
+        <span
+          aria-hidden
+          className="absolute inset-0 animate-ping rounded-full bg-coral/40 [animation-duration:2.2s] motion-reduce:hidden"
+        />
+      )}
+      {isPlaying ? (
+        <Pause className={isHero ? "relative size-8" : "relative size-6"} strokeWidth={2.5} />
+      ) : (
+        <Play
+          className={isHero ? "relative ml-1 size-9" : "relative ml-0.5 size-6"}
+          strokeWidth={2.5}
+        />
+      )}
+    </button>
+  );
+
+  const meter = (
+    <div
+      aria-hidden
+      className={`flex flex-1 items-center gap-[3px] ${isHero ? "h-14" : "h-10"}`}
+    >
+      {levels.map((v, i) => (
+        <span
+          key={i}
+          className="flex-1 rounded-full bg-crew-rex-on-dark/70 transition-[height] duration-75 ease-out"
+          style={{ height: `${Math.max(8, v * 100)}%`, minHeight: 3 }}
+        />
+      ))}
+    </div>
+  );
+
+  const rateButton = (
+    <button
+      type="button"
+      onClick={cycleRate}
+      aria-label={`Playback speed ${rate}x. Tap to change.`}
+      className="shrink-0 rounded-lg border border-white/20 px-2.5 py-1 font-mono text-xs font-bold tabular-nums text-cream transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+    >
+      {rate}×
+    </button>
+  );
+
+  const scrubber = (
+    <div className="flex items-center gap-3">
+      <input
+        type="range"
+        min={0}
+        max={duration}
+        step={0.5}
+        value={Math.min(currentTime, duration)}
+        onChange={(e) => seekTo(Number(e.target.value))}
+        aria-label={`Seek within ${recording.title}`}
+        className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-white/15 accent-coral"
+        style={{
+          background: `linear-gradient(to right, var(--color-coral) ${progressPct}%, rgba(255,255,255,0.15) ${progressPct}%)`,
+        }}
+      />
+      <span className="shrink-0 font-mono text-xs tabular-nums text-cream/70">
+        {formatTime(currentTime)} / {formatTime(duration)}
+      </span>
+    </div>
+  );
 
   return (
     <div
@@ -151,92 +344,82 @@ export default function CallPlayer({
           <span className="inline-block rounded-full border border-white/20 bg-white/10 px-3 py-1 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.08em] text-cream">
             {recording.badge}
           </span>
-          <h3 className="mt-3 font-heading text-lg font-bold tracking-[-0.01em] text-white sm:text-xl">
+          <h3
+            className={`mt-3 font-heading font-bold tracking-[-0.01em] text-white ${
+              isHero ? "text-xl sm:text-2xl" : "text-lg sm:text-xl"
+            }`}
+          >
             {recording.title}
           </h3>
         </div>
       </div>
 
-      {/* Controls */}
-      <div className="mt-5 flex items-center gap-3">
-        <button
-          type="button"
-          onClick={togglePlay}
-          aria-label={isPlaying ? `Pause ${recording.title}` : `Play ${recording.title}`}
-          className="flex size-12 shrink-0 items-center justify-center rounded-full bg-coral text-ink transition-transform hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-3 focus-visible:outline-white focus-visible:outline-offset-2"
-        >
-          {isPlaying ? (
-            <Pause className="size-5" strokeWidth={2.5} />
-          ) : (
-            <Play className="ml-0.5 size-5" strokeWidth={2.5} />
-          )}
-        </button>
-
-        <input
-          type="range"
-          min={0}
-          max={duration}
-          step={0.5}
-          value={Math.min(currentTime, duration)}
-          onChange={(e) => seekTo(Number(e.target.value))}
-          aria-label={`Seek within ${recording.title}`}
-          className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-white/15 accent-coral"
-        />
-
-        <span className="shrink-0 font-mono text-xs tabular-nums text-cream/70">
-          {formatTime(currentTime)} / {formatTime(duration)}
-        </span>
+      {/* Transport: big button, live meter, speed. */}
+      <div className="mt-5 flex items-center gap-4">
+        {playButton}
+        {meter}
+        {rateButton}
       </div>
 
-      {/* Transcript */}
-      <ol
-        ref={railRef}
-        onScroll={() => {
-          userScrolledRef.current = true;
-        }}
-        /*
-          Fixed height, not max-height. The rail always scrolls internally, so swapping
-          between two recordings of different transcript lengths cannot resize the card
-          — otherwise the audience toggle reflows the band under the reader's cursor.
-        */
-        className="mt-5 h-72 space-y-1 overflow-y-auto pr-1"
-      >
-        {recording.cues.map((cue, i) => {
-          const isActive = i === activeIndex;
-          return (
-            <li key={`${cue.t}-${i}`}>
-              <button
-                type="button"
-                onClick={() => seekTo(cue.t)}
-                aria-current={isActive ? "true" : undefined}
-                className={`flex w-full gap-3 rounded-lg px-3 py-2 text-left transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-white ${
-                  isActive ? "bg-white/10" : "hover:bg-white/5"
-                }`}
-              >
-                <span className="shrink-0 pt-0.5 font-mono text-[0.6875rem] tabular-nums text-cream/45">
-                  {formatTime(cue.t)}
-                </span>
-                <span className="min-w-0">
-                  <span
-                    className={`block font-mono text-[0.625rem] font-bold uppercase tracking-[0.08em] ${
-                      cue.speaker === "agent" ? "text-coral" : "text-cream/55"
-                    }`}
-                  >
-                    {cue.speaker === "agent" ? "AI receptionist" : "Caller"}
+      <div className="mt-4">{scrubber}</div>
+
+      {variant === "caption" ? (
+        <CaptionStage
+          recording={recording}
+          activeIndex={activeIndex}
+          onSeek={seekTo}
+          isHero={isHero}
+        />
+      ) : (
+        <ol
+          ref={railRef}
+          onScroll={() => {
+            userScrolledRef.current = true;
+          }}
+          /*
+            Fixed height, not max-height. The rail always scrolls internally, so swapping
+            between two recordings of different transcript lengths cannot resize the card
+            — otherwise the audience toggle reflows the band under the reader's cursor.
+          */
+          className="mt-5 h-72 space-y-1 overflow-y-auto pr-1"
+        >
+          {recording.cues.map((cue, i) => {
+            const isActive = i === activeIndex;
+            return (
+              <li key={`${cue.t}-${i}`}>
+                <button
+                  type="button"
+                  onClick={() => seekTo(cue.t)}
+                  aria-current={isActive ? "true" : undefined}
+                  className={`flex w-full gap-3 rounded-lg px-3 py-2 text-left transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-white ${
+                    isActive ? "bg-white/10" : "hover:bg-white/5"
+                  }`}
+                >
+                  <span className="shrink-0 pt-0.5 font-mono text-[0.6875rem] tabular-nums text-cream/70">
+                    {formatTime(cue.t)}
                   </span>
-                  <span
-                    className={`mt-0.5 block text-[0.875rem] leading-[1.55] ${
-                      isActive ? "text-white" : "text-cream/70"
-                    }`}
-                  >
-                    {cue.text}
+                  <span className="min-w-0">
+                    <span
+                      className={`block font-mono text-[0.625rem] font-bold uppercase tracking-[0.08em] ${
+                        cue.speaker === "agent" ? "text-coral" : "text-cream/75"
+                      }`}
+                    >
+                      {cue.speaker === "agent" ? "AI receptionist" : "Caller"}
+                    </span>
+                    <span
+                      className={`mt-0.5 block text-[0.875rem] leading-[1.55] ${
+                        isActive ? "text-white" : "text-cream/70"
+                      }`}
+                    >
+                      {cue.text}
+                    </span>
                   </span>
-                </span>
-              </button>
-            </li>
-          );
-        })}
-      </ol>
+                </button>
+              </li>
+            );
+          })}
+        </ol>
+      )}
 
       {/*
         Sized for the longest outcome line rather than the shortest. Swapping recordings
@@ -248,6 +431,84 @@ export default function CallPlayer({
         <span className="font-semibold text-white">What it did: </span>
         {recording.outcome}
       </p>
+    </div>
+  );
+}
+
+/**
+ * Subtitle stage. Shows the active line plus the two before it and the one after,
+ * fading with distance — the shape a viewer already knows from captions.
+ *
+ * Every cue stays in the DOM (the non-visible ones are clipped by the fixed-height
+ * window, not removed), so the transcript is still complete for a crawler and a screen
+ * reader; only its presentation changes. Height is fixed for the same reason the rail's
+ * is: the band sits under an audience toggle and must not reflow on swap.
+ */
+function CaptionStage({
+  recording,
+  activeIndex,
+  onSeek,
+  isHero,
+}: {
+  recording: CallRecording;
+  activeIndex: number;
+  onSeek: (t: number) => void;
+  isHero: boolean;
+}) {
+  // Before playback starts, show the opening lines rather than an empty stage.
+  const focus = activeIndex < 0 ? 0 : activeIndex;
+
+  return (
+    <div
+      className={`relative mt-5 overflow-hidden ${isHero ? "h-[13.5rem]" : "h-[12rem]"}`}
+      aria-live="polite"
+      aria-atomic="false"
+    >
+      <ol
+        className="absolute inset-x-0 top-0 space-y-2 transition-transform duration-500 ease-out motion-reduce:transition-none"
+        /*
+          Slide the list so the focused cue sits one row down from the top: high enough
+          that a long active line has the rest of the stage to wrap into, low enough
+          that the preceding line stays visible as context. Rows are a fixed height
+          (min-h below) so a uniform step lands exactly without measuring the DOM.
+        */
+        style={{ transform: `translateY(-${focus * 5.5}rem)` }}
+      >
+        {recording.cues.map((cue, i) => {
+          const dist = Math.abs(i - focus);
+          const isActive = i === focus;
+          // Fade with distance from the active line; hide anything far away so the
+          // stage never shows a wall of text.
+          const opacity = isActive ? 1 : dist === 1 ? 0.42 : dist === 2 ? 0.16 : 0;
+          return (
+            <li key={`${cue.t}-${i}`} className="flex h-[5.5rem] flex-col justify-start">
+              <button
+                type="button"
+                onClick={() => onSeek(cue.t)}
+                aria-current={isActive ? "true" : undefined}
+                tabIndex={dist > 2 ? -1 : 0}
+                className="block w-full text-left transition-opacity duration-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white motion-reduce:transition-none"
+                style={{ opacity }}
+              >
+                <span
+                  className={`block font-mono text-[0.625rem] font-bold uppercase tracking-[0.08em] ${
+                    cue.speaker === "agent" ? "text-coral" : "text-cream/75"
+                  }`}
+                >
+                  {cue.speaker === "agent" ? "AI receptionist" : "Caller"}
+                </span>
+                <span
+                  className={`mt-1 block leading-[1.45] ${
+                    isActive ? "text-white" : "text-cream/80"
+                  } ${isHero ? "text-base sm:text-lg" : "text-[0.9375rem] sm:text-base"}`}
+                >
+                  {cue.text}
+                </span>
+              </button>
+            </li>
+          );
+        })}
+      </ol>
     </div>
   );
 }

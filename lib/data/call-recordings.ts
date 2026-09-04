@@ -162,6 +162,29 @@ export const CALL_RECORDINGS: CallRecording[] = [
      * Result: caller -17.2..-21.1dB vs agent -15.9..-17.1dB (was a 10dB gap, now ~1.5dB);
      * 250-1000Hz matched to 0.4dB; LUFS -16.4, LRA 5.7. Gaps sit at -85dB mid-window.
      *
+     * [NOISE] A further pass added broadband denoise, because the caller carried audible
+     * hiss that the compression amplified along with the voice. It was NOT in the gaps —
+     * the source room tone is -68..-87dB and flat, so the gate had already dealt with
+     * silence. The hiss rides ON the voice: during the caller's turn the >6kHz band sat
+     * 7dB HOTTER than during the agent's, and the +3dB presence lift made it worse.
+     *
+     * Fix: afftdn=nr=30:nf=-38:tn=1 placed after the highpass and before the gate, plus a
+     * 6.5kHz lowpass and a -7dB shelf at 6kHz. Speech intelligibility lives below ~6kHz,
+     * so that band is nearly all noise on a phone call.
+     *
+     *   caller hiss (>6kHz)     -29.4dB -> -36.0dB   (like-for-like, same loudness)
+     *   caller speech-to-hiss    10.1dB ->  16.8dB   (agent's own figure is 15.9dB)
+     *   caller 1-3kHz           -25.4dB -> -25.4dB   (intelligibility UNCHANGED)
+     *   caller 4-6kHz           -34.5dB vs agent -33.9dB (sibilance intact)
+     *
+     * Those last two lines are the guard rails: aggressive denoise kills consonants
+     * (s/f/t live at 4-6kHz) and dulls the 1-3kHz band. If you retune nr/nf, re-measure
+     * BOTH or you will trade hiss for a muffled, lisping caller.
+     *
+     * Do not compare the shipped ratio against the RAW source (18.9dB) and conclude this
+     * made things worse — the raw figure is taken on a signal ~14dB quieter that the
+     * compressor then lifts. Only compare two fully-processed files at the same loudness.
+     *
      * [TRAP] The gate must come BEFORE the EQ. Placed after, the 160Hz lift amplifies
      * low-frequency room tone past the gate's detection sensitivity and the makeup gain
      * carries it through — a 15dB noise-floor rise, the same class of regression as the

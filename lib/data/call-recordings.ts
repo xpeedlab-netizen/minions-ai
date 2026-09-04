@@ -93,7 +93,7 @@ export const CALL_RECORDINGS: CallRecording[] = [
     badge: "Showing booked",
     title: "A buyer calling about a listing",
     outcome:
-      "Checked agent representation, confirmed lender pre-approval, and booked a showing — the qualification an agent would otherwise do by hand.",
+      "Checked representation, confirmed lender pre-approval, and booked the showing — the qualifying an agent does by hand.",
     redactedSpans: [
       [13.7, 15.9],
       [97.5, 100.9],

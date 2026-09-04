@@ -10,6 +10,7 @@ import SecurityTrustSection from "@/components/sections/home/SecurityTrustSectio
 import ServicePlanCard from "@/components/sections/pricing/ServicePlanCard";
 import HowItWorks3Step from "@/components/sections/pricing/HowItWorks3Step";
 import CostCalculator from "@/components/sections/pricing/CostCalculator";
+import ComparisonTable from "@/components/sections/pricing/ComparisonTable";
 import { Sparkles, Check } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -210,7 +211,12 @@ export default function PricingPage() {
       {/* 6. Retell AI cost estimator */}
       <CostCalculator />
 
-      {/* 7. Enterprise security */}
+      {/* 7. How this compares to voicemail and an answering service. On ink: it lands
+             between two light bands and it is the one adversarial moment on the page,
+             which is exactly what the dark tone is for. */}
+      <ComparisonTable />
+
+      {/* 8. Enterprise security */}
       <SecurityTrustSection />
 
       {/* 8. Pricing FAQ */}

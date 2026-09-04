@@ -1,10 +1,7 @@
 import Section, { SectionHeading, SectionLead, Eyebrow } from "@/components/ui/Section";
 import CallPlayer from "@/components/ui/CallPlayer";
-import {
-  getRecording,
-  DEFAULT_RECORDING_ID,
-  GUARDRAIL_RECORDING_ID,
-} from "@/lib/data/call-recordings";
+import SegmentedCallPlayer from "@/components/segment/SegmentedCallPlayer";
+import { getRecording, GUARDRAIL_RECORDING_ID } from "@/lib/data/call-recordings";
 
 /**
  * "Hear it work" — the proof band.
@@ -20,10 +17,7 @@ import {
  * the objection every skeptical buyer arrives with.
  */
 export default function CallProofSection() {
-  const main = getRecording(DEFAULT_RECORDING_ID);
   const guardrail = getRecording(GUARDRAIL_RECORDING_ID);
-
-  if (!main) return null;
 
   return (
     <Section tone="ink" width="wide" id="hear-it">
@@ -37,7 +31,8 @@ export default function CallProofSection() {
       </SectionLead>
 
       <div className="mt-12 grid gap-6 lg:grid-cols-2 lg:items-start">
-        <CallPlayer recording={main} />
+        {/* Follows the visitor's industry; defaults to the pest call. */}
+        <SegmentedCallPlayer />
 
         {guardrail && (
           <div className="lg:sticky lg:top-24">

@@ -1,6 +1,7 @@
 import Reveal from "@/components/ui/Reveal";
 import Section, { SectionHeading } from "@/components/ui/Section";
 import { PROOF_STATS, PROOF_STATS_CLOSING } from "@/lib/data/site-content";
+import { CUSTOMER_PROOF } from "@/lib/data/customer-proof";
 
 /**
  * Proof band.
@@ -69,6 +70,57 @@ export default function Proof() {
         <p className="mx-auto mt-12 max-w-xl text-balance text-center font-heading text-lg font-semibold leading-[1.4] tracking-[-0.01em] text-white/90">
           {PROOF_STATS_CLOSING}
         </p>
+
+        {/*
+          Customer results join this band rather than getting their own, because
+          "the research says" and "our customers saw" answer the same question and a
+          band of its own would need a tone the page has already spent. Renders nothing
+          until lib/data/customer-proof.ts has a real entry — a length check on the data,
+          not a flag someone has to remember to flip.
+        */}
+        {CUSTOMER_PROOF.length > 0 && (
+          <div className="mt-14 border-t border-white/15 pt-12">
+            <h3 className="text-center font-heading text-lg font-bold tracking-[-0.01em] text-white">
+              And in our customers&apos; own businesses.
+            </h3>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {CUSTOMER_PROOF.map((c) => (
+                <figure
+                  key={c.company}
+                  className="flex h-full flex-col rounded-2xl border border-white/12 bg-white/[0.04] p-6"
+                >
+                  <figcaption className="font-heading text-base font-bold text-white">
+                    {c.company}
+                    <span className="mt-0.5 block font-body text-xs font-normal text-white/60">
+                      {c.industry}
+                    </span>
+                  </figcaption>
+                  <blockquote className="mt-4 flex-1 text-[0.9375rem] leading-[1.6] text-white/80">
+                    &ldquo;{c.quote}&rdquo;
+                  </blockquote>
+                  <p className="mt-3 font-mono text-xs text-white/55">{c.attribution}</p>
+                  {c.metrics.length > 0 && (
+                    <dl className="mt-5 grid grid-cols-2 gap-4 border-t border-white/12 pt-4">
+                      {c.metrics.map((m) => (
+                        <div key={m.label}>
+                          <dt className="sr-only">{m.label}</dt>
+                          <dd>
+                            <span className="block font-mono text-xl font-medium tabular-nums text-white">
+                              {m.value}
+                            </span>
+                            <span className="mt-0.5 block text-xs leading-snug text-white/60">
+                              {m.label}
+                            </span>
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  )}
+                </figure>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </Section>
   );

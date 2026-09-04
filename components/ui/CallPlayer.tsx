@@ -144,7 +144,9 @@ export default function CallPlayer({
         onTimeUpdate={onTimeUpdate}
       />
 
-      <div className="flex items-start justify-between gap-4">
+      {/* min-h so a one-line title and a two-line title produce the same card height;
+          without it the audience toggle nudges the whole band by a few pixels. */}
+      <div className="flex min-h-[4.25rem] items-start justify-between gap-4">
         <div>
           <span className="inline-block rounded-full border border-white/20 bg-white/10 px-3 py-1 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.08em] text-cream">
             {recording.badge}
@@ -192,7 +194,12 @@ export default function CallPlayer({
         onScroll={() => {
           userScrolledRef.current = true;
         }}
-        className="mt-5 max-h-72 space-y-1 overflow-y-auto pr-1"
+        /*
+          Fixed height, not max-height. The rail always scrolls internally, so swapping
+          between two recordings of different transcript lengths cannot resize the card
+          — otherwise the audience toggle reflows the band under the reader's cursor.
+        */
+        className="mt-5 h-72 space-y-1 overflow-y-auto pr-1"
       >
         {recording.cues.map((cue, i) => {
           const isActive = i === activeIndex;
@@ -231,7 +238,13 @@ export default function CallPlayer({
         })}
       </ol>
 
-      <p className="mt-4 border-t border-white/10 pt-4 text-[0.8125rem] leading-[1.6] text-cream/70">
+      {/*
+        Sized for the longest outcome line rather than the shortest. Swapping recordings
+        must not change the card's height — the audience toggle sits above this band, so
+        any delta reflows the page under the reader. 5.5rem clears four wrapped lines
+        plus the border and padding at the narrowest column this card is used in.
+      */}
+      <p className="mt-4 min-h-[5.5rem] border-t border-white/10 pt-4 text-[0.8125rem] leading-[1.6] text-cream/70">
         <span className="font-semibold text-white">What it did: </span>
         {recording.outcome}
       </p>

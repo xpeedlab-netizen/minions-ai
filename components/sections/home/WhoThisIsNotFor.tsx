@@ -38,7 +38,11 @@ export default function WhoThisIsNotFor() {
           <p className="mb-5 font-heading text-lg font-bold tracking-[-0.01em] text-ink">
             {WHO_THIS_IS_NOT_FOR.closing}
           </p>
-          <Button href={BOOKING_CALENDAR_URL} showArrow>
+          <Button
+            href={BOOKING_CALENDAR_URL}
+            showArrow
+            track={{ event: "cta_click", params: { location: "disqualifier" } }}
+          >
             Book a 15-Minute Setup Call
           </Button>
         </div>

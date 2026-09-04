@@ -7,6 +7,12 @@ import Footer from "@/components/layout/Footer";
 import MobileStickyBar from "@/components/layout/MobileStickyBar";
 import PipChatWidget from "@/components/pip-widget/PipChatWidget";
 import { PipSessionProvider } from "@/components/pip-widget/usePipSession";
+import {
+  BUILD_FEE_LOW,
+  BUILD_FEE_HIGH,
+  BUILD_FEE_COUNT,
+} from "@/lib/data/pricing";
+import { SETUP_TIME_PROMISE } from "@/lib/data/site-content";
 
 /*
  * Two-tier heading system.
@@ -157,11 +163,11 @@ export default function RootLayout({
         "applicationCategory": "BusinessApplication",
         "offers": {
           "@type": "AggregateOffer",
-          "lowPrice": "1000",
-          "highPrice": "2000",
-          "offerCount": "2",
+          "lowPrice": String(BUILD_FEE_LOW),
+          "highPrice": String(BUILD_FEE_HIGH),
+          "offerCount": String(BUILD_FEE_COUNT),
           "priceCurrency": "USD",
-          "description": "A fixed one-time build fee — Starter Build $1,000, Full Crew Build $2,000 — live in 14–21 business days, with a 30-day tuning window included after go-live."
+          "description": `A fixed one-time build fee — Core Crew $${BUILD_FEE_LOW.toLocaleString("en-US")}, Full Crew $${BUILD_FEE_HIGH.toLocaleString("en-US")} — live in ${SETUP_TIME_PROMISE}, with a 30-day tuning window included after go-live.`
         },
         "featureList": [
           "Under 1.8-second live voice answering",

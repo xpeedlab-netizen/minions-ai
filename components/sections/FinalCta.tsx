@@ -12,6 +12,7 @@ export default function FinalCta({
   hideSecondary = false,
   image,
   imageAlt = "",
+  analyticsLocation = "final_cta",
 }: {
   heading: string;
   subtext?: string;
@@ -27,6 +28,11 @@ export default function FinalCta({
    */
   image?: string;
   imageAlt?: string;
+  /**
+   * Which page's closing band this is. Every page renders a FinalCta, so without this
+   * they would all report as one undifferentiated CTA in GA4.
+   */
+  analyticsLocation?: string;
 }) {
   const copy = (
     <>
@@ -39,7 +45,12 @@ export default function FinalCta({
         </p>
       )}
       <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-        <Button href={primaryHref} size="lg" showArrow>
+        <Button
+          href={primaryHref}
+          size="lg"
+          showArrow
+          track={{ event: "cta_click", params: { location: analyticsLocation } }}
+        >
           {primaryLabel}
         </Button>
         {!hideSecondary && (

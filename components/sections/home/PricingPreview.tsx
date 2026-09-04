@@ -53,7 +53,7 @@ export default function PricingPreview() {
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mx-auto lg:max-w-4xl">
         {pricingPlans.map((plan, i) => (
           <Reveal key={plan.name} delay={i * 0.08} className="h-full">
-            <PricingCard plan={plan} />
+            <PricingCard plan={plan} analyticsLocation="home_pricing_preview" />
           </Reveal>
         ))}
       </div>

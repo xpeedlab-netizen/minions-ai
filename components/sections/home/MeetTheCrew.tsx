@@ -271,6 +271,7 @@ export default function MeetTheCrew() {
             </div>
             <Button
               href={BOOKING_CALENDAR_URL}
+              track={{ event: "cta_click", params: { location: "crew" } }}
               variant="primary"
               showArrow
               className="shrink-0 w-full sm:w-auto"

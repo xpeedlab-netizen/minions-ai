@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { Phone, Check } from "lucide-react";
 import Button from "@/components/ui/Button";
+import TrackedPhoneLink from "@/components/ui/TrackedPhoneLink";
 import {
   BOOKING_CALENDAR_URL,
   SITE_PHONE_NUMBER,
   SITE_PHONE_TEL,
 } from "@/lib/data/placeholders";
-import HeroAudioPreview from "@/components/sections/home/HeroAudioPreview";
+import HeroCallPoster from "@/components/sections/home/HeroCallPoster";
 import TrustLogos from "@/components/ui/TrustLogos";
 
 /**
@@ -49,12 +50,14 @@ export default function Hero() {
                 href={BOOKING_CALENDAR_URL}
                 size="lg"
                 showArrow
+                track={{ event: "cta_click", params: { location: "hero" } }}
                 className="w-full sm:w-auto justify-center whitespace-nowrap"
               >
                 Book a 15-minute call
               </Button>
-              <a
+              <TrackedPhoneLink
                 href={`tel:${SITE_PHONE_TEL}`}
+                location="hero"
                 className="group inline-flex min-h-14 w-full sm:w-auto items-center justify-center gap-2 rounded-xl border-2 border-ink/15 bg-white px-4 py-3 sm:px-4.5 font-heading text-sm sm:text-base font-bold text-ink shadow-sm transition-all duration-150 hover:border-teal hover:text-teal hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2 whitespace-nowrap"
               >
                 <span className="relative flex size-2.5 shrink-0">
@@ -63,7 +66,7 @@ export default function Hero() {
                 </span>
                 <Phone aria-hidden className="size-4 shrink-0 text-teal transition-transform group-hover:scale-110" />
                 <span>Hear AI Live: {SITE_PHONE_NUMBER}</span>
-              </a>
+              </TrackedPhoneLink>
             </div>
 
             {/* Micro-Reassurance Checkpoints */}
@@ -80,9 +83,9 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Interactive Live Audio & Transcript Preview */}
+          {/* Still of a real recorded call; the playable version is the #hear-it band. */}
           <div className="relative min-w-0 w-full lg:max-w-lg lg:ml-auto">
-            <HeroAudioPreview />
+            <HeroCallPoster />
           </div>
         </div>
 

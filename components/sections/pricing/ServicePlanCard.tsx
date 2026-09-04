@@ -3,7 +3,18 @@ import Button from "@/components/ui/Button";
 import DynamicPricingMonth from "@/components/ui/DynamicPricingMonth";
 import type { PricingPlan } from "@/lib/data/pricing";
 
-export default function ServicePlanCard({ plan }: { plan: PricingPlan }) {
+export default function ServicePlanCard({
+  plan,
+  /**
+   * Which surface this card is rendered on, reported with its CTA click. Defaults to
+   * the pricing page because that is where the card originated; the homepage preview
+   * passes its own so the two can be told apart in GA4.
+   */
+  analyticsLocation = "pricing_page",
+}: {
+  plan: PricingPlan;
+  analyticsLocation?: string;
+}) {
   const isPopular = plan.popular;
 
   return (
@@ -129,6 +140,10 @@ export default function ServicePlanCard({ plan }: { plan: PricingPlan }) {
         <Button
           href="/contact"
           variant={isPopular ? "primary" : "outline"}
+          track={{
+            event: "cta_click",
+            params: { location: analyticsLocation, plan: plan.name },
+          }}
           className={`w-full justify-center text-center font-heading font-bold ${
             isPopular ? "bg-cream text-ink hover:bg-white border-0" : ""
           }`}

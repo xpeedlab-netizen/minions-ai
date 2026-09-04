@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Section, { SectionHeading, SectionLead } from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
-import SegmentToggle from "@/components/segment/SegmentToggle";
 
 /**
  * "The Real Cost" — band 02. The page's single problem statement.
@@ -134,9 +133,6 @@ export default function TheRealCost() {
         ))}
       </ul>
 
-      {/* Audience fork. Placed here, after the problem lands, so choosing an industry
-          buys the visitor something concrete: their own recorded call in the next band. */}
-      <SegmentToggle />
     </Section>
   );
 }

@@ -19,11 +19,25 @@
  * redacting only the audio leaves the PII sitting in the page's HTML.
  *
  * AUDIO PROCESSING. Sources are pulled from Retell at 24kHz mono and processed with
- * `highpass=f=80, acompressor=threshold=-24dB:ratio=3, loudnorm=I=-16:TP=-1.5:LRA=7`
+ *
+ *   highpass=f=80,
+ *   agate=threshold=0.0056:ratio=4:attack=8:release=180:knee=4,
+ *   acompressor=threshold=-24dB:ratio=3:attack=15:release=250:makeup=2,
+ *   loudnorm=I=-16:TP=-1.5:LRA=7
+ *
  * before a 64kbps mono encode. The raw recordings run -24 to -29 LUFS with a loudness
  * range near 16 — far too quiet, and with the caller sitting well below the agent.
- * The chain lifts them to ~-16.5 LUFS and roughly halves that range, which is what
- * makes the caller audible against the agent. Do not ship a raw Retell export.
+ * The chain lifts them to ~-16.6 LUFS and roughly halves that range.
+ *
+ * THE GATE IS NOT OPTIONAL, and it must stay BEFORE the compressor. A first pass
+ * shipped without it and sounded noticeably noisy: makeup gain lifts everything,
+ * including the silence between turns, so a source noise floor of -61dB arrived at
+ * -40dB — audible hiss that was not in the original recording. Gating first keeps
+ * those gaps at -65dB while speech lands at -19dB. If you re-encode these, measure a
+ * silent window (e.g. 108s in the real-estate call) as well as the LUFS: loudness
+ * targets alone will not catch a raised noise floor.
+ *
+ * Do not ship a raw Retell export.
  *
  * CUE TIMINGS ARE THE RECORDING'S OWN. Every `t` below is the first word's start time
  * from Retell's `transcript_object` (GET /v2/get-call/<id>, which carries per-word

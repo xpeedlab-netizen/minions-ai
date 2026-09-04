@@ -1,6 +1,7 @@
 import Section, { SectionHeading, SectionLead, Eyebrow } from "@/components/ui/Section";
 import CallPlayer from "@/components/ui/CallPlayer";
 import SegmentedCallPlayer from "@/components/segment/SegmentedCallPlayer";
+import SegmentToggle from "@/components/segment/SegmentToggle";
 import { getRecording, GUARDRAIL_RECORDING_ID } from "@/lib/data/call-recordings";
 
 /**
@@ -30,7 +31,13 @@ export default function CallProofSection() {
         or press play.
       </SectionLead>
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-2 lg:items-start">
+      {/* The switch sits with the thing it switches. See SegmentToggle's docblock for
+          why it is not at the foot of the previous band any more. */}
+      <div className="mt-10">
+        <SegmentToggle tone="dark" />
+      </div>
+
+      <div className="mt-8 grid gap-6 lg:grid-cols-2 lg:items-start">
         {/* Follows the visitor's industry; defaults to the pest call. */}
         <SegmentedCallPlayer />
 

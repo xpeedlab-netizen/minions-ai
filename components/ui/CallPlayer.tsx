@@ -349,7 +349,18 @@ export default function CallPlayer({
             between two recordings of different transcript lengths cannot resize the card
             — otherwise the audience toggle reflows the band under the reader's cursor.
           */
-          className="mt-5 h-72 space-y-1 overflow-y-auto pr-1"
+          /*
+            The fade mask makes the clipped first and last lines read as "there is more
+            here" rather than as a rendering fault. `mask-image` is not animated and
+            degrades to no mask where unsupported, which is only a cosmetic loss.
+          */
+          style={{
+            maskImage:
+              "linear-gradient(to bottom, transparent 0, #000 1.25rem, #000 calc(100% - 1.25rem), transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, transparent 0, #000 1.25rem, #000 calc(100% - 1.25rem), transparent 100%)",
+          }}
+          className="scrollbar-dark mt-5 h-72 space-y-1 overflow-y-auto py-2 pr-2"
         >
           {recording.cues.map((cue, i) => {
             const isActive = i === activeIndex;

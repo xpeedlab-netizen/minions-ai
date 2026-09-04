@@ -43,7 +43,7 @@ export default function GiaHero() {
             </Button>
           </div>
 
-          <p className="font-mono text-xs text-ink/50 flex items-center gap-2 pt-1">
+          <p className="font-mono text-xs text-ink/65 flex items-center gap-2 pt-1">
             <span className="size-1.5 rounded-full bg-success" />
             No technical setup required. We build and manage your pipeline for you.
           </p>

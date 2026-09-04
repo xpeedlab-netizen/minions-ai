@@ -141,7 +141,7 @@ export default function FaqContent({
                       {category.label}
                     </h2>
                   </div>
-                  <span className="ml-auto rounded-full bg-white px-2.5 py-0.5 text-xs font-mono font-medium text-ink/60 border border-border">
+                  <span className="ml-auto rounded-full bg-white px-2.5 py-0.5 text-xs font-mono font-medium text-ink/65 border border-border">
                     {items.length} {items.length === 1 ? "item" : "items"}
                   </span>
                 </div>
@@ -182,7 +182,7 @@ export default function FaqContent({
                             className={`mt-1 flex size-7 shrink-0 items-center justify-center rounded-full transition-transform duration-200 ${
                               isOpen
                                 ? "bg-teal text-white rotate-180"
-                                : "bg-cream text-ink/60"
+                                : "bg-cream text-ink/65"
                             }`}
                           >
                             <ChevronDown className="size-4" />
@@ -214,7 +214,7 @@ export default function FaqContent({
                   ? "Search Results"
                   : FAQ_CATEGORIES.find((c) => c.id === selectedCategory)?.label}
               </span>
-              <span className="font-mono text-xs text-ink/50">
+              <span className="font-mono text-xs text-ink/65">
                 {filteredFaqs.length} {filteredFaqs.length === 1 ? "question" : "questions"}
               </span>
             </div>
@@ -242,7 +242,7 @@ export default function FaqContent({
                       <div className="space-y-1.5 pr-2">
                         <div className="flex flex-wrap items-center gap-2">
                           {item.categoryLabel && (
-                            <span className="rounded-md bg-cream px-2 py-0.5 font-mono text-[10px] uppercase tracking-wide text-ink/60">
+                            <span className="rounded-md bg-cream px-2 py-0.5 font-mono text-[10px] uppercase tracking-wide text-ink/65">
                               {item.categoryLabel}
                             </span>
                           )}
@@ -261,7 +261,7 @@ export default function FaqContent({
                         className={`mt-1 flex size-7 shrink-0 items-center justify-center rounded-full transition-transform duration-200 ${
                           isOpen
                             ? "bg-teal text-white rotate-180"
-                            : "bg-cream text-ink/60"
+                            : "bg-cream text-ink/65"
                         }`}
                       >
                         <ChevronDown className="size-4" />

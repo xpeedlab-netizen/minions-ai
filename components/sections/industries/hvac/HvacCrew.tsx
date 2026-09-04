@@ -47,7 +47,7 @@ export default function HvacCrew() {
                   <f.icon className="size-5" />
                 </span>
                 <h3 className="mt-4 font-heading font-bold text-ink">{f.title}</h3>
-                <p className="mt-2 text-sm text-ink/60 leading-relaxed">{f.body}</p>
+                <p className="mt-2 text-sm text-ink/65 leading-relaxed">{f.body}</p>
               </div>
             </Reveal>
           ))}

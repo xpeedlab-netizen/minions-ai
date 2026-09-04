@@ -38,7 +38,7 @@ export default function FaqFinalCta() {
           </a>
         </div>
 
-        <p className="mt-6 font-mono text-xs text-ink/50">
+        <p className="mt-6 font-mono text-xs text-ink/65">
           No long-term contract · Fixed price, paid across three milestones · You own every account
         </p>
       </div>

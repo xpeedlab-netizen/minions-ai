@@ -39,7 +39,7 @@ export default function FaqSidebar({
     <aside className="lg:sticky lg:top-28 space-y-6">
       {/* Category Selection Nav */}
       <div className="rounded-2xl border border-border bg-white p-3 sm:p-4 shadow-xs">
-        <p className="px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-ink/50">
+        <p className="px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-ink/65">
           Browse by Topic
         </p>
         <nav className="mt-2 space-y-1" aria-label="FAQ Categories">
@@ -71,7 +71,7 @@ export default function FaqSidebar({
                   className={`rounded-full px-2 py-0.5 text-xs font-mono transition-colors shrink-0 ${
                     isSelected
                       ? "bg-white/20 text-white font-bold"
-                      : "bg-cream-dark text-ink/60"
+                      : "bg-cream-dark text-ink/65"
                   }`}
                 >
                   {count}
@@ -97,7 +97,7 @@ export default function FaqSidebar({
 
         <a
           href={`tel:${SITE_PHONE_TEL}`}
-          className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-coral px-4 py-2.5 font-heading font-bold text-xs text-white hover:bg-coral-text shadow-sm transition-transform active:scale-95"
+          className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-coral px-4 py-2.5 font-heading font-bold text-xs text-ink hover:bg-vest-orange shadow-sm transition-transform active:scale-95"
         >
           <Phone className="size-3.5" />
           Call {SITE_PHONE_NUMBER}

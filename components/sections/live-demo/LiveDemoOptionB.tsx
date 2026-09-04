@@ -14,7 +14,7 @@ export default function LiveDemoOptionB() {
       <h2 className="mt-1 font-heading font-bold text-xl sm:text-2xl text-ink">
         Have it call your phone
       </h2>
-      <p className="mt-2 text-sm text-ink/60 leading-relaxed">
+      <p className="mt-2 text-sm text-ink/65 leading-relaxed">
         Experience the latency-free audio on your own device.
       </p>
 
@@ -25,11 +25,11 @@ export default function LiveDemoOptionB() {
         }}
         className="mt-5"
       >
-        <label htmlFor="livedemo-phone" className="block font-mono text-[11px] uppercase tracking-wide text-ink/50 mb-2">
+        <label htmlFor="livedemo-phone" className="block font-mono text-[11px] uppercase tracking-wide text-ink/65 mb-2">
           Phone Number
         </label>
         <div className="flex items-center gap-2 rounded-xl border border-border px-4 min-h-12">
-          <span className="text-ink/50 text-sm">+1</span>
+          <span className="text-ink/65 text-sm">+1</span>
           <input
             id="livedemo-phone"
             type="tel"
@@ -51,7 +51,7 @@ export default function LiveDemoOptionB() {
       </p>
 
       {called && (
-        <p className="mt-3 rounded-lg bg-cream px-3 py-2 text-xs text-ink/60 font-mono">
+        <p className="mt-3 rounded-lg bg-cream px-3 py-2 text-xs text-ink/65 font-mono">
           Design preview — calling connects once our AI provider is wired up.
         </p>
       )}

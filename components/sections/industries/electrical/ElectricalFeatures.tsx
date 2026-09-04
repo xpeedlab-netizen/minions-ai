@@ -35,7 +35,7 @@ export default function ElectricalFeatures() {
                   <c.icon className="size-5" />
                 </span>
                 <h3 className="mt-4 font-heading font-bold text-ink">{c.title}</h3>
-                <p className="mt-2 text-sm text-ink/60 leading-relaxed">{c.body}</p>
+                <p className="mt-2 text-sm text-ink/65 leading-relaxed">{c.body}</p>
               </div>
             </Reveal>
           ))}

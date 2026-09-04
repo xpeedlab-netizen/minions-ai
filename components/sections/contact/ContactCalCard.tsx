@@ -13,7 +13,7 @@ export default function ContactCalCard() {
           </div>
           <div>
             <p className="font-heading font-bold text-ink">Chat with Rex</p>
-            <p className="font-mono text-xs text-ink/50">15 min Meeting</p>
+            <p className="font-mono text-xs text-ink/65">15 min Meeting</p>
           </div>
         </div>
         <CalendarDays className="size-5 text-teal" />

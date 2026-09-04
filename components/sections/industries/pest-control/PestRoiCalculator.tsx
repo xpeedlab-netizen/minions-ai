@@ -97,7 +97,7 @@ export default function PestRoiCalculator() {
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs font-mono">
                 <span className="text-white/70">Estimated Close Rate:</span>
-                <span className="font-bold text-success text-sm bg-success/20 px-3 py-1 rounded-lg border border-success/40">
+                <span className="font-bold text-crew-gia-on-dark text-sm bg-success/20 px-3 py-1 rounded-lg border border-success/40">
                   {closeRate}% Conversion
                 </span>
               </div>
@@ -108,7 +108,7 @@ export default function PestRoiCalculator() {
                 step="5"
                 value={closeRate}
                 onChange={(e) => setCloseRate(Number(e.target.value))}
-                className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-success"
+                className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-crew-gia-on-dark"
               />
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function PestRoiCalculator() {
               <p className="font-mono text-xs uppercase tracking-wide text-white/50">
                 Annual Leaked Recurring LTV
               </p>
-              <p className="mt-1 font-mono text-3xl sm:text-4xl font-extrabold text-coral-text">
+              <p className="mt-1 font-mono text-3xl sm:text-4xl font-extrabold text-crew-zip-on-dark">
                 -${annualLostRevenue.toLocaleString()}
               </p>
               <p className="mt-1 font-mono text-[11px] text-white/50">

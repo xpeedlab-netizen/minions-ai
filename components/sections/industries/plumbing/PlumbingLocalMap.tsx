@@ -8,7 +8,7 @@ export default function PlumbingLocalMap() {
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-teal-dark text-balance">
             Rex knows your local map
           </h2>
-          <p className="mt-4 text-ink/60">
+          <p className="mt-4 text-ink/65">
             Rex is trained on your specific service zip codes. He knows the difference between a
             high-priority local job and an out-of-bounds lead.
           </p>
@@ -34,7 +34,7 @@ export default function PlumbingLocalMap() {
           </div>
 
           <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 rounded-xl bg-white px-4 py-3 shadow-lg text-right">
-            <p className="font-mono text-[10px] uppercase tracking-wide text-ink/50">Coverage</p>
+            <p className="font-mono text-[10px] uppercase tracking-wide text-ink/65">Coverage</p>
             <p className="mt-0.5 font-heading font-bold text-teal">Service Area Matched</p>
           </div>
         </div>

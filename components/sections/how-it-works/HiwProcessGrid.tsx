@@ -15,12 +15,12 @@ export default function HiwProcessGrid() {
                 <span className="flex size-8 items-center justify-center rounded-full bg-teal font-heading font-bold text-white text-sm">
                   1
                 </span>
-                <span className="rounded-full bg-cream px-3 py-1 font-mono text-xs text-ink/50">WEEK 1</span>
+                <span className="rounded-full bg-cream px-3 py-1 font-mono text-xs text-ink/65">WEEK 1</span>
               </div>
               <h3 className="relative mt-4 font-heading font-bold text-xl text-ink">
                 Discovery call (15 minutes)
               </h3>
-              <p className="relative mt-2 text-sm text-ink/60 leading-relaxed">
+              <p className="relative mt-2 text-sm text-ink/65 leading-relaxed">
                 You tell us how your business actually runs. We tell you honestly whether we can
                 help. If we can&apos;t, we&apos;ll say so.
               </p>
@@ -42,18 +42,18 @@ export default function HiwProcessGrid() {
                 <span className="flex size-8 items-center justify-center rounded-full bg-teal font-heading font-bold text-white text-sm">
                   2
                 </span>
-                <span className="rounded-full bg-cream px-3 py-1 font-mono text-xs text-ink/50">WEEK 2</span>
+                <span className="rounded-full bg-cream px-3 py-1 font-mono text-xs text-ink/65">WEEK 2</span>
               </div>
               <h3 className="mt-4 font-heading font-bold text-xl text-ink">
                 We build and train your crew.
               </h3>
-              <p className="mt-2 text-sm text-ink/60 leading-relaxed">
+              <p className="mt-2 text-sm text-ink/65 leading-relaxed">
                 We load in your services, prices, service area, hours and FAQs, then connect your
                 calendar and CRM.
               </p>
               <div className="mt-5 flex gap-3">
-                <span className="rounded-lg bg-cream px-3 py-2 font-mono text-xs text-ink/60">CALENDAR</span>
-                <span className="rounded-lg bg-cream px-3 py-2 font-mono text-xs text-ink/60">CRM LINK</span>
+                <span className="rounded-lg bg-cream px-3 py-2 font-mono text-xs text-ink/65">CALENDAR</span>
+                <span className="rounded-lg bg-cream px-3 py-2 font-mono text-xs text-ink/65">CRM LINK</span>
               </div>
             </div>
           </Reveal>
@@ -65,10 +65,10 @@ export default function HiwProcessGrid() {
                 <span className="flex size-8 items-center justify-center rounded-full bg-teal font-heading font-bold text-white text-sm">
                   3
                 </span>
-                <span className="rounded-full bg-cream px-3 py-1 font-mono text-xs text-ink/50">WEEK 3</span>
+                <span className="rounded-full bg-cream px-3 py-1 font-mono text-xs text-ink/65">WEEK 3</span>
               </div>
               <h3 className="mt-4 font-heading font-bold text-xl text-ink">You listen and approve.</h3>
-              <p className="mt-2 text-sm text-ink/60 leading-relaxed">
+              <p className="mt-2 text-sm text-ink/65 leading-relaxed">
                 You hear real test calls. You tell us what&apos;s wrong. We fix it. Nothing goes
                 live without your sign-off.
               </p>
@@ -79,7 +79,7 @@ export default function HiwProcessGrid() {
                 <div className="h-1.5 flex-1 rounded-full bg-border overflow-hidden">
                   <div className="h-full w-2/3 rounded-full bg-teal" />
                 </div>
-                <span className="font-mono text-xs text-ink/50">0:45</span>
+                <span className="font-mono text-xs text-ink/65">0:45</span>
               </div>
             </div>
           </Reveal>

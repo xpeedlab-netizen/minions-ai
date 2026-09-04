@@ -40,7 +40,7 @@ export default function RoofingCrew() {
                 <MessageSquareText className="size-5" />
               </span>
               <h3 className="mt-4 font-heading font-bold text-ink">Instant text-backs (Zip)</h3>
-              <p className="mt-2 text-sm text-ink/60 leading-relaxed">
+              <p className="mt-2 text-sm text-ink/65 leading-relaxed">
                 When you&apos;re on a roof and miss a call, Zip automatically texts the lead a link
                 to upload photos of their damage.
               </p>
@@ -57,7 +57,7 @@ export default function RoofingCrew() {
                 <FileCheck2 className="size-5" />
               </span>
               <h3 className="mt-4 font-heading font-bold text-ink">Insurance intake assistance</h3>
-              <p className="mt-2 text-sm text-ink/60 leading-relaxed">
+              <p className="mt-2 text-sm text-ink/65 leading-relaxed">
                 Our AI collects carrier names and claim details upfront, so your sales team walks
                 into every estimate with a loaded folder.
               </p>

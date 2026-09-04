@@ -110,7 +110,7 @@ export default function PlumbingCrewBento() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-border/60 font-mono text-xs text-ink/60 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-border/60 font-mono text-xs text-ink/65 flex items-center justify-between">
                 <span>Knowledge Base</span>
                 <span className="font-bold text-accent-blue">100% Grounded</span>
               </div>
@@ -133,7 +133,7 @@ export default function PlumbingCrewBento() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-border/60 font-mono text-xs text-ink/60 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-border/60 font-mono text-xs text-ink/65 flex items-center justify-between">
                 <span>Google Reviews</span>
                 <span className="font-bold text-success">Automated 1-Click</span>
               </div>

@@ -18,7 +18,7 @@ export default function MobileStickyBar() {
         href={BOOKING_CALENDAR_URL}
         event="cta_click"
         params={{ location: "mobile_sticky_bar" }}
-        className="flex flex-1 items-center justify-center gap-2 font-heading text-xs font-bold text-white bg-coral hover:bg-coral-dark active:scale-[0.98] transition-all"
+        className="flex flex-1 items-center justify-center gap-2 font-heading text-xs font-bold text-ink bg-coral hover:bg-vest-orange active:scale-[0.98] transition-all"
       >
         <Calendar className="size-4" />
         Book Setup Call

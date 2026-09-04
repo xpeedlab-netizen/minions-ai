@@ -38,7 +38,7 @@ export default function GuaranteeSection() {
         {TUNING_WINDOW.body}
       </p>
 
-      <p className="mt-8 font-mono text-xs font-bold uppercase tracking-[0.08em] text-teal">
+      <p className="mt-8 font-mono text-xs font-bold uppercase tracking-[0.08em] text-crew-rex-on-dark">
         {TUNING_WINDOW.days}-Day Tuning Window
       </p>
 

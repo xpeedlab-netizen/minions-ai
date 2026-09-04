@@ -38,7 +38,7 @@ export default function PipFeatures() {
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance">
             Hardworking Support, No Lunch Breaks
           </h2>
-          <p className="mt-4 text-ink/60">
+          <p className="mt-4 text-ink/65">
             Pip isn&apos;t just a chatbot. It&apos;s a trained member of your crew who knows your
             business inside and out.
           </p>
@@ -55,7 +55,7 @@ export default function PipFeatures() {
                   <f.icon className="size-5" />
                 </span>
                 <h3 className="mt-4 font-heading font-bold text-ink">{f.title}</h3>
-                <p className="mt-2 text-sm text-ink/60 leading-relaxed">{f.body}</p>
+                <p className="mt-2 text-sm text-ink/65 leading-relaxed">{f.body}</p>
                 {f.preview && (
                   <div className="mt-4 space-y-2 rounded-xl border border-border bg-white p-3">
                     <p className="max-w-[85%] rounded-lg rounded-tl-sm bg-cream px-3 py-2 text-xs text-ink/70">

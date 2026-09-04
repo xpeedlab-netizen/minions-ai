@@ -33,7 +33,7 @@ export default function AboutHowWeWork() {
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance">
             How we work
           </h2>
-          <p className="mt-4 text-ink/60">
+          <p className="mt-4 text-ink/65">
             We&apos;ve stripped away the agency fluff to give you what actually moves the needle.
           </p>
         </div>
@@ -48,7 +48,7 @@ export default function AboutHowWeWork() {
                 </span>
                 <c.cornerIcon className="absolute top-6 right-6 size-4 text-ink/20" />
                 <h3 className="mt-4 font-heading font-bold text-ink">{c.title}</h3>
-                <p className="mt-2 text-sm text-ink/60 leading-relaxed">{c.body}</p>
+                <p className="mt-2 text-sm text-ink/65 leading-relaxed">{c.body}</p>
               </div>
             </Reveal>
           ))}

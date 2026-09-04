@@ -53,7 +53,7 @@ export default function RoofingStats() {
                 {s.value}
               </p>
               <p className="mt-1 font-heading font-bold text-sm text-ink">{s.label}</p>
-              <p className="mt-1 font-mono text-[11px] text-ink/60">{s.sub}</p>
+              <p className="mt-1 font-mono text-[11px] text-ink/65">{s.sub}</p>
             </div>
           ))}
         </div>

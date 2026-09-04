@@ -73,14 +73,14 @@ export default function Footer() {
 
               <Link
                 href={BOOKING_CALENDAR_URL}
-                className="font-mono text-xs font-medium text-cream/50 hover:text-teal transition-colors"
+                className="font-mono text-xs font-medium text-cream/70 hover:text-crew-rex-on-dark transition-colors"
               >
                 Book 15-min call →
               </Link>
             </div>
 
             {/* Quiet Operational Telephony Status */}
-            <div className="mt-5 flex items-center gap-2 font-mono text-[11px] text-cream/45">
+            <div className="mt-5 flex items-center gap-2 font-mono text-[11px] text-cream/70">
               <span className="size-1.5 rounded-full bg-emerald-500" />
               <span>Voice dispatch active · Sub-1.8s answering speed</span>
             </div>
@@ -160,11 +160,11 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-cream/50">
           <p>© {new Date().getFullYear()} Minions.AI. All rights reserved.</p>
 
-          <p className="font-mono text-[11px] text-center sm:text-right text-cream/45">
+          <p className="font-mono text-[11px] text-center sm:text-right text-cream/70">
             Built on enterprise voice infrastructure — Retell AI · n8n · Google Calendar · EspoCRM
           </p>
 
-          <p className="text-[11px] text-cream/40">
+          <p className="text-[11px] text-cream/65">
             Not affiliated with any film franchise.
           </p>
         </div>

@@ -97,7 +97,7 @@ export default function ContactForm() {
 
           {/* Note & Reset Action */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2 border-t border-border/60">
-            <div className="flex items-center gap-2 text-xs text-ink/60 font-mono">
+            <div className="flex items-center gap-2 text-xs text-ink/65 font-mono">
               <MailCheck className="size-4 text-teal shrink-0" />
               <span>Message delivered</span>
             </div>

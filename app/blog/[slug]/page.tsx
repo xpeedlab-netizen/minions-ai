@@ -155,7 +155,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="mb-8 max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-ink/60 hover:text-teal transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-ink/65 hover:text-teal transition-colors"
           >
             <ArrowLeft className="size-4" />
             Back to All Playbooks
@@ -170,11 +170,11 @@ export default async function BlogPostPage({ params }: PageProps) {
               <Tag className="size-3.5" />
               {post.audience} Playbook
             </span>
-            <span className="inline-flex items-center gap-1.5 text-xs font-mono text-ink/60 bg-white px-3 py-1 rounded-full border border-border/80 shadow-xs">
+            <span className="inline-flex items-center gap-1.5 text-xs font-mono text-ink/65 bg-white px-3 py-1 rounded-full border border-border/80 shadow-xs">
               <Clock className="size-3.5 text-teal" />
               {post.readingTimeMinutes} min read
             </span>
-            <span className="inline-flex items-center gap-1.5 text-xs font-mono text-ink/50">
+            <span className="inline-flex items-center gap-1.5 text-xs font-mono text-ink/65">
               <Calendar className="size-3.5" />
               {new Date(post.publishedAt).toLocaleDateString("en-US", {
                 month: "long",
@@ -215,7 +215,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
             <div className="mt-14 pt-6 border-t border-border/80 flex flex-wrap items-center gap-2">
-              <span className="text-xs font-mono text-ink/50 uppercase tracking-wider mr-2">Tags:</span>
+              <span className="text-xs font-mono text-ink/65 uppercase tracking-wider mr-2">Tags:</span>
               {post.tags.map((tag) => (
                 <span
                   key={tag}
@@ -235,7 +235,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               </div>
               <div>
                 <p className="font-heading font-bold text-base text-ink">{post.author.name}</p>
-                <p className="text-xs text-ink/60 font-mono">{post.author.role}</p>
+                <p className="text-xs text-ink/65 font-mono">{post.author.role}</p>
               </div>
             </div>
 
@@ -261,7 +261,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <div className="flex flex-wrap items-center justify-center gap-4 relative z-10">
               <a
                 href={`tel:${SITE_PHONE_TEL}`}
-                className="inline-flex items-center gap-2 rounded-xl bg-coral hover:bg-coral-text text-white px-6 py-3.5 font-heading font-bold text-sm shadow-md transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl bg-coral hover:bg-vest-orange text-ink px-6 py-3.5 font-heading font-bold text-sm shadow-md transition-colors"
               >
                 <Phone className="size-4" />
                 Dial Live AI Demo: {SITE_PHONE_NUMBER}

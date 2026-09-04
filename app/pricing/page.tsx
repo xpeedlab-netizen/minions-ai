@@ -151,10 +151,10 @@ export default function PricingPage() {
                 </p>
                 <p className="mt-4 font-mono text-sm font-bold text-teal">
                   {addOn.setup}
-                  {addOn.monthly ? <span className="text-ink/60"> · {addOn.monthly}</span> : null}
+                  {addOn.monthly ? <span className="text-ink/65"> · {addOn.monthly}</span> : null}
                 </p>
                 {addOn.note && (
-                  <p className="mt-2 text-xs text-ink/55 leading-relaxed">{addOn.note}</p>
+                  <p className="mt-2 text-xs text-ink/65 leading-relaxed">{addOn.note}</p>
                 )}
               </div>
             </Reveal>
@@ -201,7 +201,7 @@ export default function PricingPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-5 font-mono text-xs text-ink/55">{carePlan.footnote}</p>
+          <p className="mt-5 font-mono text-xs text-ink/65">{carePlan.footnote}</p>
         </div>
       </Section>
 

@@ -118,7 +118,7 @@ export default function OttoBentoGrid() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-border/60 font-mono text-xs text-ink/60 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-border/60 font-mono text-xs text-ink/65 flex items-center justify-between">
                 <span>Extraction Precision</span>
                 <span className="font-bold text-teal">High Precision OCR</span>
               </div>
@@ -141,7 +141,7 @@ export default function OttoBentoGrid() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-border/60 font-mono text-xs text-ink/60 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-border/60 font-mono text-xs text-ink/65 flex items-center justify-between">
                 <span>Filing Speed</span>
                 <span className="font-bold text-accent-blue">Instant Routing</span>
               </div>

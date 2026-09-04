@@ -77,7 +77,7 @@ export default function ServicePlanCard({
                   {plan.originalPrice && (
                     <span
                       className={`font-mono text-base line-through ${
-                        isPopular ? "text-white/50" : "text-ink/40"
+                        isPopular ? "text-white/65" : "text-ink/55"
                       }`}
                     >
                       {plan.originalPrice}
@@ -113,7 +113,7 @@ export default function ServicePlanCard({
         <div className="mt-8">
           <span
             className={`text-xs font-mono uppercase tracking-wider font-semibold block mb-4 ${
-              isPopular ? "text-cream" : "text-ink/60"
+              isPopular ? "text-cream" : "text-ink/65"
             }`}
           >
             Included in your build:

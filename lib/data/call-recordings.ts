@@ -142,6 +142,32 @@ export const CALL_RECORDINGS: CallRecording[] = [
      *
      * The 64.7 agent turn is the most valuable moment in the clip: the requested slot is
      * unavailable and it offers two alternatives instead of failing. Keep it.
+     *
+     * [AUDIO] Re-processed 2026-09-05 after the owner said the caller still sounded bad.
+     * Level alone was not the problem — the caller's TONE was. Measured per band against
+     * the agent, the source caller was down 21.7dB at 80-250Hz, 9.8dB at 250-1000Hz and
+     * 5.2dB at 1-3kHz: a loss tilted hard against the low end, which is what a phone held
+     * away from the face (or on speakerphone) sounds like. Turning it up just makes a
+     * thin voice louder, so the chain now restores body before it restores level:
+     *
+     *   highpass 70            kill rumble the 160Hz lift would otherwise amplify
+     *   agate                  BEFORE the EQ - see the trap below
+     *   EQ +5 @160  +2 @300    body the caller lost to mic distance
+     *      +3 @2.6k            presence, so the words cut through
+     *   acompressor x2         -30dB/6:1 does the level matching (it acts far harder on
+     *                          the quiet caller), then -18dB/3:1 evens the result
+     *   alimiter 0.89          catch the peaks the boosts create
+     *   loudnorm I=-16 LRA=6   two-pass, measured values inline below
+     *
+     * Result: caller -17.2..-21.1dB vs agent -15.9..-17.1dB (was a 10dB gap, now ~1.5dB);
+     * 250-1000Hz matched to 0.4dB; LUFS -16.4, LRA 5.7. Gaps sit at -85dB mid-window.
+     *
+     * [TRAP] The gate must come BEFORE the EQ. Placed after, the 160Hz lift amplifies
+     * low-frequency room tone past the gate's detection sensitivity and the makeup gain
+     * carries it through — a 15dB noise-floor rise, the same class of regression as the
+     * 21dB one on the previous pass. Also: do not judge a gap from a window average.
+     * A window spanning the tail of one word and the start of the next reads ~-48dB and
+     * looks broken; slice it at 0.2s and the middle is -85dB. Check the SHAPE, not the mean.
      */
     cues: [
       { t: 0.2, speaker: "agent", text: "Hi! I'm Alex, the AI assistant for Horizon Realty on a recorded line. How can I help with your property search today?" },

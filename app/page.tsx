@@ -6,6 +6,7 @@ import MeetTheCrew from "@/components/sections/home/MeetTheCrew";
 import PricingPreview from "@/components/sections/home/PricingPreview";
 import Proof from "@/components/sections/home/Proof";
 import WhoThisIsNotFor from "@/components/sections/home/WhoThisIsNotFor";
+import PilotOffer from "@/components/sections/home/PilotOffer";
 import GuaranteeSection from "@/components/sections/home/GuaranteeSection";
 import HomeFaq from "@/components/sections/home/HomeFaq";
 import FinalCta from "@/components/sections/FinalCta";
@@ -26,11 +27,20 @@ import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
  *   04 MeetTheCrew        cream   who does what?
  *   05 HowItWorks         white   how does it get built?
  *   06 Proof              teal    does it work?
- *   07 WhoThisIsNotFor    white   is this for me?
- *   08 PricingPreview     cream   what does it cost?
- *   09 GuaranteeSection   ink     what if it fails?
- *   10 HomeFaq            cream   what am I still worried about?
- *   11 FinalCta           teal    what is my next step?
+ *   07 PilotOffer         cream   has anyone actually paid you?
+ *   08 WhoThisIsNotFor    white   is this for me?
+ *   09 PricingPreview     cream   what does it cost?
+ *   10 GuaranteeSection   ink     what if it fails?
+ *   11 HomeFaq            cream   what am I still worried about?
+ *   12 FinalCta           teal    what is my next step?
+ *
+ * PilotOffer sits at 07 because that is where the question it answers actually gets
+ * asked. Proof (06) is the page's evidence band, and a visitor who has just read three
+ * third-party statistics is the one thinking "fine, but has anyone hired YOU" — so the
+ * admission that there is no customer yet lands immediately after the research, not
+ * pages later. It also has to precede pricing: the pilot changes what the price cards
+ * mean, and reading $2,500 before learning the first 30 days are free is the wrong
+ * order. Cream is the only tone that keeps the alternation rule between teal and white.
  *
  * Proof, WhoThisIsNotFor and GuaranteeSection were built, then unrendered on 2026-08-29
  * when the page was cut from 14 bands to 9 for being too long and too prose-heavy. They
@@ -50,6 +60,7 @@ export default function Home() {
       <MeetTheCrew />
       <HowItWorks />
       <Proof />
+      <PilotOffer />
       <WhoThisIsNotFor />
       <PricingPreview />
       <GuaranteeSection />

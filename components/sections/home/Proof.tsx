@@ -31,8 +31,15 @@ export default function Proof() {
       />
 
       <div className="relative z-10">
+        {/*
+          The heading follows the STATS, and the stats changed on 2026-09-05 (see the
+          sourcing note on PROOF_STATS). They no longer say "fast responses win" — they
+          say most businesses never respond at all, which is a stronger and more
+          specific claim, and it is the one the reader can check. Heading rewritten to
+          match rather than left generic.
+        */}
         <SectionHeading className="mx-auto max-w-3xl text-center text-white">
-          Speed to Lead Wins the Deal — And the Research Proves It.
+          Most businesses never call back. That is the whole opportunity.
         </SectionHeading>
 
         {/*

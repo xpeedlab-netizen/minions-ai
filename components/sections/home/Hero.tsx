@@ -7,7 +7,7 @@ import {
   SITE_PHONE_NUMBER,
   SITE_PHONE_TEL,
 } from "@/lib/data/placeholders";
-import HeroCallPlayer from "@/components/sections/home/HeroCallPlayer";
+import SegmentedHeroCallPlayer from "@/components/segment/SegmentedHeroCallPlayer";
 import TrustLogos from "@/components/ui/TrustLogos";
 
 /**
@@ -82,9 +82,11 @@ export default function Hero() {
               </span>
             </div>
           </div>
-          {/* A real recorded call, playable in the first screen. */}
+          {/* A real recorded call, playable in the first screen. Follows `?for=` so a
+              visitor arriving from a pest ad hears a pest call; see the note in
+              components/segment/SegmentedHeroCallPlayer.tsx. */}
           <div className="relative min-w-0 w-full lg:max-w-lg lg:ml-auto">
-            <HeroCallPlayer />
+            <SegmentedHeroCallPlayer />
           </div>
         </div>
 

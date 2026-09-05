@@ -72,21 +72,53 @@ export const CONTRACTOR_DAY_TIMELINE = [
   },
 ];
 
+/**
+ * The research row on the homepage's teal band.
+ *
+ * SOURCING RULE — READ BEFORE ADDING A STAT.
+ * Every figure here must trace to a PRIMARY source we have actually opened: the
+ * organisation that ran the study, not a vendor blog quoting it. This band is the
+ * page's credibility moment, and a prospect who checks one citation and finds a
+ * content-marketing page has learned something bad about the whole site.
+ *
+ * Two live examples of why, both found on 2026-09-05:
+ *
+ *  1. "ServiceTitan: 62% of contractor calls go unanswered, 50,000 phone lines
+ *     analysed" is repeated by at least a dozen answering-service vendors. It is NOT
+ *     on ServiceTitan's page. Their actual study is 3,000+ businesses, June 2022, and
+ *     reports a 42% BOOKING rate — a different metric entirely. The 62% figure appears
+ *     to have been invented somewhere in the citation chain and laundered by repetition.
+ *     Do not use it. Do not use any missed-call percentage sourced to a company that
+ *     sells missed-call software.
+ *
+ *  2. The two figures previously here ("100x", "21x") were sourced to the MIT /
+ *     InsideSales Lead Response Study of 2007. The underlying research is real, but
+ *     InsideSales was the vendor that commissioned it, the raw study is no longer
+ *     retrievable at any primary URL, and a 2007 date under a 2026 AI product invites
+ *     exactly the wrong question. Removed rather than re-dressed.
+ *
+ * The HBR study stays despite its age because it is a genuine primary source, the
+ * sample is stated, and it is the finding least likely to have moved: it measures how
+ * slowly businesses respond, and nothing since suggests that got better.
+ */
 export const PROOF_STATS = [
   {
-    stat: "100×",
-    description: "more likely to reach the customer if you respond within 5 minutes instead of 30.",
-    source: "MIT / InsideSales Lead Response Study, 2007",
+    stat: "63%",
+    description:
+      "of companies never replied at all when researchers submitted a real enquiry to 1,000 businesses and waited.",
+    source: "RevenueHero, B2B Lead Response Study (1,000 companies), March 2024",
   },
   {
-    stat: "21×",
-    description: "more likely to qualify and convert that lead into a paying customer when you answer first.",
-    source: "MIT / InsideSales Lead Response Study, 2007",
+    stat: "29 hours",
+    description:
+      "the average time to first reply among the roughly one in three that did respond.",
+    source: "RevenueHero, B2B Lead Response Study (1,000 companies), March 2024",
   },
   {
-    stat: "42 hours",
-    description: "the average business response time to inbound leads across 2,241 companies studied. Most never respond at all.",
-    source: "Harvard Business Review, \"The Short Life of Online Sales Leads,\" 2011",
+    stat: "7×",
+    description:
+      "more likely to have a real conversation with a decision-maker if you respond within an hour instead of waiting one more.",
+    source: "Harvard Business Review, \"The Short Life of Online Sales Leads\" (2,241 companies), 2011",
   },
 ];
 

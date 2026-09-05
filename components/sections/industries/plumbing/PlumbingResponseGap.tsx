@@ -9,11 +9,19 @@ export default function PlumbingResponseGap() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white text-balance">
-            The 100x Response Gap
+            The Response Gap
           </h2>
           <p className="mt-4 text-white/60 leading-relaxed">
-            A landmark MIT/InsideSales study found that responding to a lead in 5 minutes vs 30
-            minutes increases conversion by 100x.
+            {/* "landmark" removed and "conversion" corrected to "reach" on 2026-09-05:
+                the MIT/InsideSales finding is about CONTACT rate — how often you get the
+                person on the phone — not about closing. The study is also 2007 and
+                vendor-commissioned, so the year is now stated rather than hidden. See
+                the sourcing note on PROOF_STATS in lib/data/site-content.ts. */}
+            An MIT/InsideSales study found that responding in 5 minutes rather than 30
+            makes you far likelier to reach the lead at all.
+          </p>
+          <p className="mt-3 font-mono text-xs text-white/40">
+            MIT / InsideSales Lead Response Study, 2007
           </p>
           <div className="mt-8 space-y-5">
             {bars.map((b) => (

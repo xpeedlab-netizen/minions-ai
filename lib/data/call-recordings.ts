@@ -86,7 +86,7 @@ export const CALL_RECORDINGS: CallRecording[] = [
      * The 2026-09-05 retake. Replaces "pest-bedbug-emergency", the 2026-08-22 take the
      * owner judged unusable: it ran 170s, spent its first 80 seconds collecting details
      * one field at a time, and the agent asked for the phone number before the address.
-     * This one books in 77 seconds.
+     * This one books in 74 seconds.
      *
      * Recorded on a NEW agent — "Ironclad Pest Solutions AI Dispatcher (Fast
      * Single-Prompt)" (call_6315c7b0f1fd07721cd01c36c38) — which is why it is faster:
@@ -95,10 +95,16 @@ export const CALL_RECORDINGS: CallRecording[] = [
      * EDITED FOR PACE, AND THIS IS THE ONE THING TO KNOW BEFORE RE-CUTTING IT. The
      * source is 132s of which only ~72s is speech; the rest is six inter-turn gaps of
      * 5.6-8.3s while the live agent thinks. Every gap is compressed to a 0.6s beat and
-     * the tail after the confirmation is dropped, giving 77s with every spoken word
-     * intact. Nothing is reordered and no speech is removed. Cue `t` values are
+     * the tail after the confirmation is dropped, giving 74s with every spoken word
+     * intact up to the cut point below. Nothing is reordered. Cue `t` values are
      * therefore NOT the source timestamps — they are recomputed on the trimmed
      * timeline, so pulling fresh timings from Retell for this call will NOT line up.
+     *
+     * The 74s end point is a SENTENCE BOUNDARY, not an arbitrary trim: the agent
+     * finishes "...texted the preparation details to your cell." at 74.06s and then
+     * asks "Is there anything else I can help you with today?" — a question whose
+     * answer was already cut with the tail, so leaving it in ended the demo on an
+     * unanswered prompt. Cut at 74.15s with a 0.2s fade. Do not extend it back.
      * The segment map is in the session notes; rebuild from the source if you need it.
      *
      * Cut using the MULTICHANNEL export (recording_multichannel.wav), caller on ch0 and
@@ -129,11 +135,11 @@ export const CALL_RECORDINGS: CallRecording[] = [
     id: "pest-ants-booking",
     segment: "pest",
     src: "/media/calls/pest-ants-booking.mp3",
-    durationSec: 77,
-    badge: "Booked in 77 seconds",
+    durationSec: 74,
+    badge: "Booked in 74 seconds",
     title: "Ants in the kitchen, booked on the first call",
     outcome:
-      "Took the address, offered the next two open slots, and confirmed a Saturday morning window with prep details texted — start to finish in under 80 seconds.",
+      "Took the address, offered the next two open slots, and confirmed a Saturday morning window with prep details texted — start to finish in 74 seconds.",
     redactedSpans: [],
     cues: [
       { t: 0.0, speaker: "agent", text: "Thanks for calling Ironclad Pest Solutions. This is Alex. How can I help you today?" },

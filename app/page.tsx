@@ -5,7 +5,6 @@ import HowItWorks from "@/components/sections/home/HowItWorks";
 import MeetTheCrew from "@/components/sections/home/MeetTheCrew";
 import PricingPreview from "@/components/sections/home/PricingPreview";
 import Proof from "@/components/sections/home/Proof";
-import WhoThisIsNotFor from "@/components/sections/home/WhoThisIsNotFor";
 import PilotOffer from "@/components/sections/home/PilotOffer";
 import GuaranteeSection from "@/components/sections/home/GuaranteeSection";
 import HomeFaq from "@/components/sections/home/HomeFaq";
@@ -27,12 +26,11 @@ import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
  *   04 MeetTheCrew        cream   who does what?
  *   05 HowItWorks         white   how does it get built?
  *   06 Proof              teal    does it work?
- *   07 PilotOffer         cream   has anyone actually paid you?
- *   08 WhoThisIsNotFor    white   is this for me?
- *   09 PricingPreview     cream   what does it cost?
- *   10 GuaranteeSection   ink     what if it fails?
- *   11 HomeFaq            cream   what am I still worried about?
- *   12 FinalCta           teal    what is my next step?
+ *   07 PilotOffer         cream   has anyone actually paid you? / is this for me?
+ *   08 PricingPreview     white   what does it cost?
+ *   09 GuaranteeSection   ink     what if it fails?
+ *   10 HomeFaq            cream   what am I still worried about?
+ *   11 FinalCta           teal    what is my next step?
  *
  * PilotOffer sits at 07 because that is where the question it answers actually gets
  * asked. Proof (06) is the page's evidence band, and a visitor who has just read three
@@ -42,12 +40,20 @@ import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
  * mean, and reading $2,500 before learning the first 30 days are free is the wrong
  * order. Cream is the only tone that keeps the alternation rule between teal and white.
  *
- * Proof, WhoThisIsNotFor and GuaranteeSection were built, then unrendered on 2026-08-29
+ * WhoThisIsNotFor was removed from the page on 2026-09-05 and its content folded into
+ * PilotOffer as a single fit line. It ran immediately after the pilot band, so the page
+ * spent band 07 removing every reason to hesitate and band 08 asking whether the visitor
+ * qualified. Bands 07 to 10 were also four consecutive commitment moments, each with its
+ * own CTA. Three of its four disqualifiers also excluded nobody. The component is kept
+ * compiling and unrendered rather than deleted. Removing it left two cream bands
+ * adjacent, so PricingPreview moved cream -> white.
+ *
+ * Proof and GuaranteeSection were built, then unrendered on 2026-08-29
  * when the page was cut from 14 bands to 9 for being too long and too prose-heavy. They
  * are back because the page swung too far the other way: it asked for a booking without
- * ever proving the product works, disqualifying anyone, or naming what happens if it
- * fails. They return unmodified — the earlier cut was about page length, not about these
- * components being wrong.
+ * ever proving the product works or naming what happens if it fails. They return
+ * unmodified: the earlier cut was about page length, not about these components being
+ * wrong.
  */
 export const revalidate = 86400;
 
@@ -61,7 +67,6 @@ export default function Home() {
       <HowItWorks />
       <Proof />
       <PilotOffer />
-      <WhoThisIsNotFor />
       <PricingPreview />
       <GuaranteeSection />
       <HomeFaq />

@@ -20,7 +20,14 @@ import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
  *  3. Two short lists rather than prose. "You get" / "we ask" is scannable in about four
  *     seconds, which is the real attention budget on a mid-page band.
  *
- * TONE. `cream` — the bands either side are teal (Proof) and white (WhoThisIsNotFor),
+ * ABSORBED THE DISQUALIFIER (2026-09-05). The standalone "Is Minions.AI Right For Your
+ * Business?" band used to follow this one, which meant the page removed every reason to
+ * hesitate and then immediately manufactured a new one — four consecutive commitment
+ * moments, each with its own CTA. Its one honest filter now renders here as a single
+ * hairline row on the way to the button. WhoThisIsNotFor.tsx is kept compiling and
+ * unrendered rather than deleted, as with the 2026-08-29 cut.
+ *
+ * TONE. `cream` — the bands either side are teal (Proof) and white (PricingPreview),
  * so cream is the only tone that keeps the alternation rule in components/ui/Section.tsx
  * intact. Check that rule before moving this band.
  *
@@ -31,7 +38,9 @@ export default function PilotOffer() {
   const soldOut = PILOT.slotsRemaining <= 0;
 
   return (
-    <Section tone="cream" width="default">
+    /* id: the pricing band links back here so the price never appears without its
+       pilot context. Renaming it breaks that link. */
+    <Section id="founding-pilot" tone="cream" width="default">
       <div className="mx-auto max-w-3xl rounded-3xl border-2 border-ink bg-white p-6 sm:p-10 lg:p-12">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <span className="font-mono text-xs font-bold uppercase tracking-[0.08em] text-coral-text">
@@ -116,9 +125,25 @@ export default function PilotOffer() {
               </div>
             </div>
 
-            <p className="mt-8 rounded-2xl bg-cream p-5 text-[0.875rem] leading-[1.6] text-ink/70">
-              {PILOT.terms}
-            </p>
+            {/*
+              Terms and fit sit SIDE BY SIDE, not stacked. Stacked, they were two grey
+              paragraphs in a row above a third (the line under the CTA) — three
+              low-contrast blocks of near-identical weight that the eye has to wade
+              through to reach the button. Side by side they read as one reference row,
+              and the band gets ~90px shorter, which matters: see the height note in the
+              docblock. They stack on mobile, where there is no column to share.
+
+              The fit test was absorbed from the deleted disqualifier band; see the
+              fitLine note in lib/data/pilot.ts.
+            */}
+            <div className="mt-8 grid gap-px overflow-hidden rounded-2xl bg-border sm:grid-cols-[1.5fr_1fr]">
+              <p className="bg-cream p-5 text-[0.875rem] leading-[1.6] text-ink/70">
+                {PILOT.terms}
+              </p>
+              <p className="bg-cream p-5 text-[0.875rem] leading-[1.6] text-ink/70">
+                {PILOT.fitLine}
+              </p>
+            </div>
           </>
         )}
 

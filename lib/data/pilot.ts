@@ -44,6 +44,19 @@ export type PilotOffer = {
   weAsk: string[];
   /** The honest small print, stated up front rather than discovered on the call. */
   terms: string;
+  /**
+   * The one-line fit test. Absorbed 2026-09-05 from the standalone disqualifier band
+   * (WhoThisIsNotFor), which asked "Is Minions.AI right for your business?" immediately
+   * after this band had removed every reason to hesitate, and routed the answer to a
+   * booking rather than answering it.
+   *
+   * Only genuine filters belong here. The band it replaced listed four, of which three
+   * excluded nobody: a receptionist catching 100% of calls, and "you prefer leaving
+   * leads in voicemail and risking lost job revenue" — nobody self-identifies with
+   * that, and a reader who spots the strawman discounts the rest of the page. What
+   * survives is the call-volume floor and the front-desk requirement, which are real.
+   */
+  fitLine: string;
   ctaLabel: string;
   waitlistHeading: string;
   waitlistLead: string;
@@ -97,6 +110,8 @@ export const PILOT: PilotOffer = {
    * other claim as suspect.
    */
   terms: "No card, no contract, nothing to cancel. Your only cost during the pilot is your own Retell usage: billed straight to your account at their per-second rates, typically $30–80 a month at normal call volume. Keep it after thirty days and the standard build fee applies from there. Walk away and you keep your number and owe nothing.",
+
+  fitLine: "Best fit if you take more than ten calls a month and lose some of them after hours. If what you need is a person physically at your front desk, this is not that.",
 
   ctaLabel: "Claim Your Pilot Slot",
 

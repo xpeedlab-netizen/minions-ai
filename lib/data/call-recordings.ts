@@ -82,37 +82,69 @@ export type CallRecording = {
 
 export const CALL_RECORDINGS: CallRecording[] = [
   {
-    id: "pest-bedbug-emergency",
+    /*
+     * The 2026-09-05 retake. Replaces "pest-bedbug-emergency", the 2026-08-22 take the
+     * owner judged unusable: it ran 170s, spent its first 80 seconds collecting details
+     * one field at a time, and the agent asked for the phone number before the address.
+     * This one books in 77 seconds.
+     *
+     * Recorded on a NEW agent — "Ironclad Pest Solutions AI Dispatcher (Fast
+     * Single-Prompt)" (call_6315c7b0f1fd07721cd01c36c38) — which is why it is faster:
+     * it takes the address and the slot in two turns instead of six.
+     *
+     * EDITED FOR PACE, AND THIS IS THE ONE THING TO KNOW BEFORE RE-CUTTING IT. The
+     * source is 132s of which only ~72s is speech; the rest is six inter-turn gaps of
+     * 5.6-8.3s while the live agent thinks. Every gap is compressed to a 0.6s beat and
+     * the tail after the confirmation is dropped, giving 77s with every spoken word
+     * intact. Nothing is reordered and no speech is removed. Cue `t` values are
+     * therefore NOT the source timestamps — they are recomputed on the trimmed
+     * timeline, so pulling fresh timings from Retell for this call will NOT line up.
+     * The segment map is in the session notes; rebuild from the source if you need it.
+     *
+     * Cut using the MULTICHANNEL export (recording_multichannel.wav), caller on ch0 and
+     * agent on ch1, which is why the caller could be corrected without touching the
+     * agent: ch1 measures -91dB under the caller's speech, i.e. true isolation. The
+     * caller sat 16.7dB down at 80-250Hz (phone held away from the face) but within
+     * 2.5dB through the midrange, so the fix is body, not level:
+     *
+     *   caller: volume=-8dB, highpass=75, +6dB@170Hz, +2dB@320Hz, +0.8dB@2600Hz,
+     *           acompressor(-34dB, 4:1, makeup=12), volume=-5.5dB
+     *   agent:  volume=-2dB, highpass=75, acompressor(-22dB, 3:1, makeup=1)
+     *   master: alimiter(0.9), two-pass loudnorm(I=-16.7, TP=-2), volume=+1.0dB
+     *
+     * NO DENOISE HERE, deliberately. The real-estate clip needed afftdn; this caller's
+     * noise floor is -83dB above 6kHz, so running one would only risk the consonants.
+     * Measure before reaching for it.
+     *
+     * The -8dB before the EQ is headroom, not taste: +6dB at 170Hz overflows the
+     * intermediate stage without it and ffmpeg reports clipping in the equalizer. The
+     * -5.5dB after the compressor is what actually sets the caller against the agent —
+     * trimming `makeup` does not, because the compressor normalises it back.
+     * Result: caller within 0.6dB of the agent, -16.7 LUFS matching the other clips.
+     *
+     * PII: the caller is the owner, speaking their own name, and they have explicitly
+     * declined redaction (2026-09-05). The number spoken is not a real one. The file's
+     * PII rule above still stands for any recording of a third party.
+     */
+    id: "pest-ants-booking",
     segment: "pest",
-    src: "/media/calls/pest-bedbug-emergency.mp3",
-    durationSec: 170,
-    badge: "Emergency booking",
-    title: "A bed bug call at the end of the day",
+    src: "/media/calls/pest-ants-booking.mp3",
+    durationSec: 77,
+    badge: "Booked in 77 seconds",
+    title: "Ants in the kitchen, booked on the first call",
     outcome:
-      "Qualified the infestation, booked a next-morning window, and gave prep instructions — without a human picking up.",
+      "Took the address, offered the next two open slots, and confirmed a Saturday morning window with prep details texted — start to finish in under 80 seconds.",
     redactedSpans: [],
     cues: [
-      { t: 0.7, speaker: "agent", text: "Thanks for calling Ironclad Pest Solutions. This is Alex. How can I help you today?" },
-      { t: 5.5, speaker: "caller", text: "Hi Alex, I've been getting bites at night and I think it might be bed bugs, so I need to book an emergency visit." },
-      { t: 17.2, speaker: "agent", text: "I'm sorry to hear you're dealing with that. I can certainly help you get someone out there. May I have your name?" },
-      { t: 22.1, speaker: "caller", text: "It's Emily Carter." },
-      { t: 29.3, speaker: "agent", text: "Okay, Emily. What's the best phone number for the appointment?" },
-      { t: 29.7, speaker: "caller", text: "617-555-0123. And the address is 241 Elm Street, apartment 5B." },
-      { t: 55.7, speaker: "agent", text: "Got it, 241 Elm Street. And is this a house or an apartment building?" },
-      { t: 60.1, speaker: "caller", text: "It's an apartment." },
-      { t: 65.6, speaker: "agent", text: "Where exactly in the apartment have you been noticing the activity?" },
-      { t: 69.5, speaker: "caller", text: "In my bedroom." },
-      { t: 74.0, speaker: "agent", text: "How long have you been noticing the activity in your bedroom, Emily?" },
-      { t: 74.4, speaker: "caller", text: "About a week now." },
-      { t: 82.7, speaker: "agent", text: "Thanks for that info. Since I have everything I need, I'll go ahead and look for the next available appointment for you." },
-      { t: 88.8, speaker: "caller", text: "And you handle the scheduling here?" },
-      { t: 101.1, speaker: "agent", text: "We have some openings for today, Saturday, August 22nd. We could do 8:00 AM to 9:00 AM, 9:00 AM to 10:00 AM, or 10:00 AM to 11:00 AM. Which of those works best for you?" },
-      { t: 112.2, speaker: "caller", text: "10 to 11 would be great." },
-      { t: 124.1, speaker: "agent", text: "Alright, you are all set! Before we finish, would you like any prep instructions?" },
-      { t: 132.5, speaker: "caller", text: "That would be helpful. I don't know what to do before they arrive." },
-      { t: 142.8, speaker: "agent", text: "For the visit, it's really helpful if you can clear access under your sinks and along the baseboards. Also, please make sure to keep any pets and kids away from the treated areas for a few hours, and definitely secure your pets while the technician is there. Does that make sense, or do you have any other questions?" },
-      { t: 157.0, speaker: "caller", text: "No, that makes sense. Thanks for the advice." },
-      { t: 163.7, speaker: "agent", text: "You're very welcome, Emily. I'm glad we could get that sorted for you today. Thanks for calling Ironclad Pest Solutions, and have a good rest of your day." },
+      { t: 0.0, speaker: "agent", text: "Thanks for calling Ironclad Pest Solutions. This is Alex. How can I help you today?" },
+      { t: 5.7, speaker: "caller", text: "Hi, Alex. I'd like to schedule a pest control appointment for my home. I'm noticing ants in the kitchen and would like to get someone out to inspect and treat the problem." },
+      { t: 17.2, speaker: "agent", text: "I'm so sorry you're dealing with ants in your kitchen—let's get a technician out to take care of that for you. What is the street address where you need service?" },
+      { t: 25.2, speaker: "caller", text: "Sure. The service address is one two three Main Street." },
+      { t: 29.8, speaker: "agent", text: "Thanks for that address. What day this week or upcoming weekend works best for an inspection? We're fully booked for the rest of the week, but we have openings this Saturday, September fifth, at eight in the morning or nine in the morning. Which one works better for you?" },
+      { t: 43.4, speaker: "caller", text: "Saturday, September fifth. At eight in the morning. Works for me. I'd like to book the appointment." },
+      { t: 50.2, speaker: "agent", text: "Great, I have you down for Saturday, September fifth, at eight in the morning. May I have your full name and the best cell phone number for the technician?" },
+      { t: 58.3, speaker: "caller", text: "My full name is Parvaj Shah. And my phone number is one seven zero zero zero zero oh." },
+      { t: 65.2, speaker: "agent", text: "You're all set for Saturday, September fifth, at eight in the morning! Our licensed technician will arrive during that window, and I've just texted the preparation details to your cell." },
     ],
   },
   {
@@ -212,19 +244,45 @@ export const CALL_RECORDINGS: CallRecording[] = [
     ],
   },
   {
+    /*
+     * The 2026-09-05 retake (call_448f50f2dc3cceb42326c947f09), replacing the
+     * 2026-08-20 version. Both are plumbing calls the agent turns down, but the old one
+     * only refuses. This one refuses AND names what it could help with — "if you're
+     * seeing any pests like ants or roaches around your sink, I'd be happy to help" —
+     * which is the behaviour actually worth showing: it proves the agent will not invent
+     * an answer without ending the call on a dead end.
+     *
+     * Same multichannel treatment as the ants call, but a DIFFERENT caller correction,
+     * and the reason is worth keeping. This caller is 7.9dB down BROADBAND with a treble
+     * rolloff, not the 80-250Hz deficit of the ants call, so the fix is level and air
+     * rather than body:
+     *
+     *   caller: volume=-6dB, highpass=75, +2dB@200Hz, +3dB@3000Hz, +2dB@5200Hz,
+     *           acompressor(-34dB, 4:1, makeup=13), volume=-9.5dB
+     *   agent:  volume=-2dB, highpass=75, acompressor(-22dB, 3:1, makeup=1)
+     *   master: alimiter(0.9), two-pass loudnorm(I=-16.7, TP=-2), volume=+1.0dB
+     *
+     * Do not copy a chain between recordings without measuring first — these two callers
+     * needed opposite corrections. Result: caller within 0.3dB of the agent.
+     *
+     * Trimmed 35.1s -> 32.2s by compressing the inter-turn gaps to 0.55s beats; no
+     * speech removed. Cue `t` values are on the TRIMMED timeline, not the source.
+     */
     id: "guardrail-out-of-scope",
     segment: "any",
     src: "/media/calls/guardrail-out-of-scope.mp3",
-    durationSec: 38,
+    durationSec: 32,
     badge: "Out of scope",
     title: "Someone calls about a plumbing leak",
     outcome:
-      "Said it only handles pest control rather than inventing an answer — the failure mode that matters most.",
+      "Turned down work it does not do, then pointed at what it can help with — rather than inventing an answer.",
     redactedSpans: [],
     cues: [
-      { t: 0.8, speaker: "agent", text: "Thanks for calling Ironclad Pest Solutions. This is Alex. How can I help you today?" },
-      { t: 19.8, speaker: "caller", text: "I have got water leaking under my kitchen sink, and it's getting worse." },
-      { t: 32.9, speaker: "agent", text: "I'm sorry to hear about the leak, but since I'm with Ironclad Pest Solutions, I only handle pest-related issues." },
+      { t: 0.0, speaker: "agent", text: "Thanks for calling Ironclad Pest Solutions. This is Alex. How can I help you today?" },
+      { t: 5.44, speaker: "caller", text: "I have a problem. In my kitchen sink. It's a plumbing problem." },
+      { t: 13.11, speaker: "agent", text: "I'm sorry to hear about your kitchen sink, but I specialize in pest control. If you're seeing any pests like ants or roaches around your sink, I'd be happy to help you with that!" },
+      { t: 23.03, speaker: "caller", text: "Oh, then sorry. Thank you." },
+      { t: 25.91, speaker: "agent", text: "You're very welcome! If you ever need help with pests in the future, please don't hesitate to reach out. Have a wonderful day!" },
     ],
   },
 ];

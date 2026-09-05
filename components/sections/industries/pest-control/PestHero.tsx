@@ -52,7 +52,7 @@ export default function PestHero() {
         {/* Right Column: a real recorded pest call, not a simulation. */}
         <div className="lg:col-span-6 relative">
           <IndustryCallPanel
-            recordingId="pest-bedbug-emergency"
+            recordingId="pest-ants-booking"
             eyebrow="Hear the AI live"
           />
         </div>

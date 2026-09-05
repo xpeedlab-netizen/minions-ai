@@ -73,7 +73,7 @@ export type CallRecording = {
   /** Short label for the call, e.g. "Emergency booking". */
   badge: string;
   title: string;
-  /** What the agent actually achieved — stated in text so it lands without playing. */
+  /** What the agent actually achieved, stated in text so it lands without playing. */
   outcome: string;
   /** Muted PII windows, in seconds. Kept for auditability. */
   redactedSpans: [number, number][];
@@ -139,11 +139,15 @@ export const CALL_RECORDINGS: CallRecording[] = [
     badge: "Booked in 74 seconds",
     title: "Ants in the kitchen, booked on the first call",
     outcome:
-      "Took the address, offered the next two open slots, and confirmed a Saturday morning window with prep details texted — start to finish in 74 seconds.",
+      "Took the address, offered the next two open slots, and confirmed a Saturday morning window with prep details texted, start to finish in 74 seconds.",
     redactedSpans: [],
     cues: [
       { t: 0.0, speaker: "agent", text: "Thanks for calling Ironclad Pest Solutions. This is Alex. How can I help you today?" },
       { t: 5.7, speaker: "caller", text: "Hi, Alex. I'd like to schedule a pest control appointment for my home. I'm noticing ants in the kitchen and would like to get someone out to inspect and treat the problem." },
+      /* The em-dash here is VERBATIM. Em-dashes were removed from site copy on
+         2026-09-05 because they read as machine-generated, but transcript cues must
+         match the audio word for word: this is what the agent said and the caption is
+         checked against the recording. Do not "clean" it. */
       { t: 17.2, speaker: "agent", text: "I'm so sorry you're dealing with ants in your kitchen—let's get a technician out to take care of that for you. What is the street address where you need service?" },
       { t: 25.2, speaker: "caller", text: "Sure. The service address is one two three Main Street." },
       { t: 29.8, speaker: "agent", text: "Thanks for that address. What day this week or upcoming weekend works best for an inspection? We're fully booked for the rest of the week, but we have openings this Saturday, September fifth, at eight in the morning or nine in the morning. Which one works better for you?" },
@@ -161,7 +165,7 @@ export const CALL_RECORDINGS: CallRecording[] = [
     badge: "Showing booked",
     title: "A buyer calling about a listing",
     outcome:
-      "Checked representation, confirmed lender pre-approval, offered alternatives when the requested slot was full, and booked the showing — the qualifying an agent does by hand.",
+      "Checked representation, confirmed lender pre-approval, offered alternatives when the requested slot was full, and booked the showing, the qualifying an agent does by hand.",
     redactedSpans: [],
     /*
      * Re-recorded 2026-09-05 (Retell call_288b1f8ae0fc792f2471f5bc48e, call_successful:
@@ -281,7 +285,7 @@ export const CALL_RECORDINGS: CallRecording[] = [
     badge: "Out of scope",
     title: "Someone calls about a plumbing leak",
     outcome:
-      "Turned down work it does not do, then pointed at what it can help with — rather than inventing an answer.",
+      "Turned down work it does not do, then pointed at what it can help with, rather than inventing an answer.",
     redactedSpans: [],
     cues: [
       { t: 0.0, speaker: "agent", text: "Thanks for calling Ironclad Pest Solutions. This is Alex. How can I help you today?" },

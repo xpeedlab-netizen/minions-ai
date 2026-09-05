@@ -40,12 +40,12 @@ export const RETELL_CLAIM = {
   "building-on": {
     eyebrow: "Retell AI implementation",
     heading: "We build Retell AI voice agents for pest control and real estate.",
-    lead: "Retell is a developer platform — powerful, and not something a service business owner is going to wire up between jobs. We do the building, the integrations and the tuning, and hand you a phone line that answers.",
+    lead: "Retell is a developer platform: powerful, and not something a service business owner is going to wire up between jobs. We do the building, the integrations and the tuning, and hand you a phone line that answers.",
   },
   official: {
     eyebrow: "Official Retell AI implementation partner",
     heading: "Official Retell AI implementation partner for pest control and real estate.",
-    lead: "Retell is a developer platform — powerful, and not something a service business owner is going to wire up between jobs. We do the building, the integrations and the tuning, and hand you a phone line that answers.",
+    lead: "Retell is a developer platform: powerful, and not something a service business owner is going to wire up between jobs. We do the building, the integrations and the tuning, and hand you a phone line that answers.",
   },
 }[RETELL_PARTNER_STATUS];
 
@@ -71,7 +71,7 @@ export const RETELL_GAP = {
     items: [
       "A prompt that survives a real caller who interrupts, mumbles and changes their mind",
       "Live two-way calendar booking, not just an agent that says it booked something",
-      "Writes into the system you actually run — FieldRoutes, PestPac, GorillaDesk, ServiceTitan, Housecall Pro or Jobber",
+      "Writes into the system you actually run: FieldRoutes, PestPac, GorillaDesk, ServiceTitan, Housecall Pro or Jobber",
       "Guardrails so it refuses work you do not do instead of inventing an answer",
       "Number porting, call routing and after-hours behaviour that matches how you work",
       "Someone to fix it in week three when a caller finds a phrasing nobody predicted",
@@ -118,7 +118,7 @@ export const retellFaqs = [
   {
     q: "Can I just use Retell AI myself?",
     a:
-      "If you have a developer, yes — it is a good platform and the API is well documented. Most pest control and real estate operators do not, and the platform is only the starting point: the prompt, the calendar integration, the CRM writes, the guardrails and the tuning after go-live are all still work. That is the part we do.",
+      "If you have a developer, yes, it is a good platform and the API is well documented. Most pest control and real estate operators do not, and the platform is only the starting point: the prompt, the calendar integration, the CRM writes, the guardrails and the tuning after go-live are all still work. That is the part we do.",
   },
   {
     q: "Do I own the agent and the phone number?",
@@ -128,7 +128,7 @@ export const retellFaqs = [
   {
     q: "What does Retell itself cost?",
     a:
-      "Usage is billed by the second directly to your account at Retell's published rates — we add nothing to it. The pricing page has a calculator that estimates the monthly figure from your call volume.",
+      "Usage is billed by the second directly to your account at Retell's published rates, we add nothing to it. The pricing page has a calculator that estimates the monthly figure from your call volume.",
   },
   {
     q: "Why pest control and real estate specifically?",

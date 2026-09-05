@@ -39,9 +39,9 @@ export default function Hero() {
             </h1>
 
             <p className="mt-5 max-w-lg text-[1.0625rem] leading-[1.6] text-ink/75 sm:text-lg">
-              Answers on the first ring at 2 AM, on weekends, mid-route and mid-showing —
-              quotes from your real price list, books onto your calendar, and you keep your
-              number.
+              Answers on the first ring at 2 AM, on weekends, mid-route and mid-showing.
+              Quotes from your real price list, books onto your calendar, and you keep
+              your number.
             </p>
 
             {/* CTA Conversion Triggers — Wraps cleanly at all viewport widths */}

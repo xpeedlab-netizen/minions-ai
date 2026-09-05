@@ -7,9 +7,9 @@ import ResultsPromise from "@/components/sections/results/ResultsPromise";
 import ResultsFinalCta from "@/components/sections/results/ResultsFinalCta";
 
 export const metadata: Metadata = {
-  title: "How It Works In Practice — Hear the Crew Live",
+  title: "How It Works In Practice | Hear the Crew Live",
   description:
-    "No testimonials and no case studies — we are pre-launch and will not invent them. Call our live demo line and hear the AI answer, qualify the caller, and book an appointment.",
+    "No testimonials and no case studies, we are pre-launch and will not invent them. Call our live demo line and hear the AI answer, qualify the caller, and book an appointment.",
 };
 
 export default function ResultsPage() {

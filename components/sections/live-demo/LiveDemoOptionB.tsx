@@ -52,7 +52,7 @@ export default function LiveDemoOptionB() {
 
       {called && (
         <p className="mt-3 rounded-lg bg-cream px-3 py-2 text-xs text-ink/65 font-mono">
-          Design preview — calling connects once our AI provider is wired up.
+          Design preview: calling connects once our AI provider is wired up.
         </p>
       )}
     </div>

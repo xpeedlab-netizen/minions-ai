@@ -13,7 +13,7 @@ export default function PestMath() {
               The difference in contact rates when you respond in 5 minutes vs 30 minutes.
             </p>
             <p className="mt-3 font-mono text-xs italic text-white/40">
-              — MIT / InsideSales Lead Response Study, 2007
+: MIT / InsideSales Lead Response Study, 2007
             </p>
           </div>
 

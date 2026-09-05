@@ -161,7 +161,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Minions.AI. All rights reserved.</p>
 
           <p className="font-mono text-[11px] text-center sm:text-right text-cream/70">
-            Built on enterprise voice infrastructure — Retell AI · n8n · Google Calendar · EspoCRM
+            Built on enterprise voice infrastructure: Retell AI · n8n · Google Calendar · EspoCRM
           </p>
 
           <p className="text-[11px] text-cream/65">

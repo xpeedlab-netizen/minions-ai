@@ -8,15 +8,15 @@ import PipFinalCta from "@/components/sections/pip/PipFinalCta";
 import FaqSection from "@/components/sections/faq/FaqSection";
 
 export const metadata: Metadata = {
-  title: "Pip 24/7 Grounded Website Chat Assistant — Minions.AI",
+  title: "Pip 24/7 Grounded Website Chat Assistant | Minions.AI",
   description:
-    "Pip answers routine website inquiries 24/7—pricing ranges, service areas, guarantees, and licensing—grounded strictly in your verified business content with zero hallucinations.",
+    "Pip answers routine website inquiries 24/7, pricing ranges, service areas, guarantees, and licensing, grounded strictly in your verified business content with zero hallucinations.",
 };
 
 const pipFaq = [
   {
     q: "Will Pip make things up (hallucinate)?",
-    a: "No. Pip only answers from information you've approved. If it isn't sure of an answer, it says so and escalates to you instead of guessing — that's our No-Guess Policy.",
+    a: "No. Pip only answers from information you've approved. If it isn't sure of an answer, it says so and escalates to you instead of guessing. That's our No-Guess Policy.",
   },
   {
     q: "What if a website visitor needs an emergency call?",

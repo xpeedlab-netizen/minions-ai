@@ -31,7 +31,7 @@ const features = [
     icon: Sparkles,
     title: "Accurate Pricing Quotes",
     badge: "100% Custom Rules",
-    body: "Quotes your exact service fees, diagnostic charges, and hourly rates—trained strictly on your business rules with zero hallucinations.",
+    body: "Quotes your exact service fees, diagnostic charges, and hourly rates, trained strictly on your business rules with zero hallucinations.",
     colSpan: "lg:col-span-1",
   },
   {
@@ -85,7 +85,7 @@ export default function RexFeatures() {
             8 Ways Rex Automates Your Phone Line &amp; Captures Revenue
           </h2>
           <p className="mt-4 text-lg text-ink/75 leading-relaxed">
-            Rex isn&apos;t a basic voicemail recording—he is a full-service AI dispatcher who quotes exact service rates, schedules calendar appointments, qualifies leads, and transfers emergency calls 24/7/365.
+            Rex isn&apos;t a basic voicemail recording, he is a full-service AI dispatcher who quotes exact service rates, schedules calendar appointments, qualifies leads, and transfers emergency calls 24/7/365.
           </p>
         </div>
 

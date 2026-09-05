@@ -77,7 +77,7 @@ const problemCards = [
        "taking the call while they wait", which removes the hand the model kept failing
        on. Native 1024px square, not upscaled to the 1200px of the rest of the set. */
     title: "Two calls at once",
-    body: "You can only talk to one person. Voicemail takes a message from the other one — whoever answered takes the customer.",
+    body: "You can only talk to one person. Voicemail takes a message from the other one, whoever answered takes the customer.",
     src: "/images/illustrations/pain-mid-showing-v4.webp",
     alt: "A real estate agent taking a phone call during a viewing while the buyer couple behind her waits, with a stack of incoming calls queued beside her",
   },
@@ -101,7 +101,7 @@ export default function TheRealCost() {
         */}
         <SectionLead>
           A pest control operator loses a quarterly plan; a broker loses a listing to
-          whoever picked up. Both are recurring revenue — the number a buyer values you on.
+          whoever picked up. Both are recurring revenue: the number a buyer values you on.
         </SectionLead>
       </div>
 

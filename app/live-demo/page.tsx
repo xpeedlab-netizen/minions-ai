@@ -7,7 +7,7 @@ import Button from "@/components/ui/Button";
 import YouTubeEmbed from "@/components/ui/YouTubeEmbed";
 
 export const metadata: Metadata = {
-  title: "Product Demo & Assistant Preview — Minions.AI",
+  title: "Product Demo & Assistant Preview | Minions.AI",
   description:
     "Watch our recorded AI video demonstration or test Pip live in browser chat.",
 };

@@ -62,7 +62,7 @@ export const pricingPlans: PricingPlan[] = [
     originalPrice: "$3,000",
     setupFee: "One-time build fee",
     popular: false,
-    description: "Rex on your phone line — answering, qualifying and booking, 24/7. Best for a single location or one clear call type.",
+    description: "Rex on your phone line: answering, qualifying and booking, 24/7. Best for a single location or one clear call type.",
     turnaround: "3–4 weeks to go-live",
     features: [
       "1 inbound voice agent with one call flow, answering 24/7",
@@ -83,11 +83,11 @@ export const pricingPlans: PricingPlan[] = [
     setupFee: "One-time build fee",
     popular: true,
     badge: "Most Chosen",
-    description: "Rex, Zip and Gia working together — answering, texting back, and following up until the lead converts. Best where the phone drives revenue.",
+    description: "Rex, Zip and Gia working together: answering, texting back, and following up until the lead converts. Best where the phone drives revenue.",
     turnaround: "5–6 weeks to go-live",
     features: [
       "Everything in Core Crew, plus:",
-      "2 agents — inbound reception plus outbound follow-up",
+      "2 agents: inbound reception plus outbound follow-up",
       "Up to 3 call flows with routing by caller intent",
       "Custom knowledge base trained on your services",
       "Full pipeline automation, tagging, and lead scoring",
@@ -102,14 +102,14 @@ export const pricingPlans: PricingPlan[] = [
 /** Priced separately and quoted on request — never assumed into a build. */
 export const pricingAddOns: PricingAddOn[] = [
   {
-    name: "Pip — website chat agent",
+    name: "Pip: website chat agent",
     description: "Catches the visitors who will never pick up the phone. Shares one knowledge base with Rex, so a visitor who starts in chat can be handed straight to a call.",
     setup: "$900 setup",
     note: "$900 when added at signature, because Pip reuses the knowledge base and CRM mapping built for Rex. Added later as a standalone project, it is $1,200.",
   },
   {
     name: "Additional call flow",
-    description: "A second use case for Rex — a different department, service line or campaign.",
+    description: "A second use case for Rex, a different department, service line or campaign.",
     setup: "$600 setup",
   },
   {
@@ -138,7 +138,7 @@ export const paymentMilestones: PaymentMilestone[] = [
   {
     pct: "40%",
     when: "At UAT handover",
-    body: "Due when we hand you the working system to test — the milestone marked UAT in the timeline.",
+    body: "Due when we hand you the working system to test, the milestone marked UAT in the timeline.",
   },
   {
     pct: "20%",
@@ -155,14 +155,14 @@ export const carePlan = {
   from: "$297",
   cadence: "/mo",
   heading: "After the first 30 days",
-  body: "Your system is yours to run, and many clients do exactly that. If you would rather we kept looking after it, we can pick up ongoing care once the tuning window closes — there is nothing to decide now, and nothing to sign today.",
+  body: "Your system is yours to run, and many clients do exactly that. If you would rather we kept looking after it, we can pick up ongoing care once the tuning window closes, there is nothing to decide now, and nothing to sign today.",
   includes: [
     "Voice platform, automation and CRM usage included up to your plan's monthly call allowance",
     "Support hours each month for script, workflow and routing changes",
     "Monitoring and alerting on call failures",
     "Fixes when a platform or model changes underneath the system",
     "Monthly performance reporting",
-    "Cancel with 30 days' notice — you keep every account and workflow",
+    "Cancel with 30 days' notice, you keep every account and workflow",
   ],
   footnote: "Discussed at your 30-day review, not before.",
 };
@@ -219,11 +219,11 @@ export const calculatorPresets: CalculatorPreset[] = [
 export const pricingFaq = [
   {
     q: "What is not included in the one-time build fee?",
-    a: "Third-party running costs, billed to you directly: voice platform usage charged per minute of call time, phone number rental and carrier charges, SMS and email sending credits, your automation platform subscription, and your CRM subscription if you do not already hold one. On the build side, anything not named at kickoff — extra agents or call flows, integrations with systems we did not scope, custom BI dashboards, HIPAA or PCI compliance work, and website or funnel development — is quoted separately rather than assumed.",
+    a: "Third-party running costs, billed to you directly: voice platform usage charged per minute of call time, phone number rental and carrier charges, SMS and email sending credits, your automation platform subscription, and your CRM subscription if you do not already hold one. On the build side, anything not named at kickoff, extra agents or call flows, integrations with systems we did not scope, custom BI dashboards, HIPAA or PCI compliance work, and website or funnel development, is quoted separately rather than assumed.",
   },
   {
     q: "How do payments work?",
-    a: "40% on signature, 40% when we hand you the working system to test, and 20% at go-live. The price is fixed for the agreed scope — no hourly billing, and no change to the figure without your written approval. The middle payment is triggered by our delivery into testing rather than your sign-off, so your review is never rushed by an invoice. Monthly instalments across the build period can be arranged if you ask before signature.",
+    a: "40% on signature, 40% when we hand you the working system to test, and 20% at go-live. The price is fixed for the agreed scope, no hourly billing, and no change to the figure without your written approval. The middle payment is triggered by our delivery into testing rather than your sign-off, so your review is never rushed by an invoice. Monthly instalments across the build period can be arranged if you ask before signature.",
   },
   {
     q: "How long does the build take?",
@@ -231,11 +231,11 @@ export const pricingFaq = [
   },
   {
     q: "What happens after go-live?",
-    a: "A 30-day tuning window is included in the build fee at no extra cost — we keep adjusting scripts, routing and workflows against real conversations. After that the system is yours to run, and many clients do exactly that. If you would rather we kept looking after it, optional care plans are available: voice platform, automation and CRM usage sit inside that figure, along with a monthly allowance of support hours. You can cancel with 30 days' notice and you keep every account and workflow.",
+    a: "A 30-day tuning window is included in the build fee at no extra cost, we keep adjusting scripts, routing and workflows against real conversations. After that the system is yours to run, and many clients do exactly that. If you would rather we kept looking after it, optional care plans are available: voice platform, automation and CRM usage sit inside that figure, along with a monthly allowance of support hours. You can cancel with 30 days' notice and you keep every account and workflow.",
   },
   {
     q: "Which CRMs and dispatch systems do you integrate with?",
-    a: "We natively connect with ServiceTitan, Housecall Pro, Jobber, FieldRoutes, PestPac and GorillaDesk on the field-service side, and with GoHighLevel, HubSpot, Salesforce, Zoho and Pipedrive on the sales side — plus 400+ other systems via direct webhooks and APIs.",
+    a: "We natively connect with ServiceTitan, Housecall Pro, Jobber, FieldRoutes, PestPac and GorillaDesk on the field-service side, and with GoHighLevel, HubSpot, Salesforce, Zoho and Pipedrive on the sales side: plus 400+ other systems via direct webhooks and APIs.",
   },
   {
     q: "Who owns the accounts and the phone number?",

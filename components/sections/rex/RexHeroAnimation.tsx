@@ -19,7 +19,7 @@ export default function RexHeroAnimation() {
       {/* Illustration Badge */}
       <div className="mb-3 flex items-center justify-between">
         <span className="rounded-md bg-cream border border-border px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-ink/65">
-          Example — not a live call
+          Example: not a live call
         </span>
         <button
           type="button"
@@ -43,7 +43,7 @@ export default function RexHeroAnimation() {
             />
           </div>
           <div>
-            <h3 className="font-heading font-bold text-ink text-base">Rex — AI Dispatcher</h3>
+            <h3 className="font-heading font-bold text-ink text-base">Rex, AI Dispatcher</h3>
             <p className="font-mono text-xs text-ink/50">24/7 Phone Answering &amp; Booking</p>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function RexHeroAnimation() {
                   <span>Rex Speaking Live:</span>
                 </div>
                 <p className="text-sm leading-relaxed text-white/90 italic">
-                  &ldquo;Thanks for calling. Don&apos;t worry — I can take your info and get emergency service scheduled for you right away.&rdquo;
+                  &ldquo;Thanks for calling. Don&apos;t worry, I can take your info and get emergency service scheduled for you right away.&rdquo;
                 </p>
               </div>
             </motion.div>

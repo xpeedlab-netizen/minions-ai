@@ -24,7 +24,7 @@ const HVAC_SCENARIOS = [
     shortName: "Night Call",
     badge: "First Ring Answer",
     badgeBg: "bg-coral/20 text-coral-text",
-    caller: "Robert Vance — 11:45 PM Call",
+    caller: "Robert Vance: 11:45 PM Call",
     location: "Oak Ridge • 98° Outside",
     issue: "AC Blowing Warm Air • Compressor Failed",
     ticketEst: "$8,500 System Replacement Potential",
@@ -40,7 +40,7 @@ const HVAC_SCENARIOS = [
     shortName: "AI Triage",
     badge: "Fee Verified",
     badgeBg: "bg-teal/20 text-teal",
-    caller: "Robert Vance — 11:45 PM Call",
+    caller: "Robert Vance: 11:45 PM Call",
     location: "Oak Ridge • 98° Outside",
     issue: "Diagnostic Fee ($129) Confirmed",
     ticketEst: "$8,500 System Replacement Potential",
@@ -56,7 +56,7 @@ const HVAC_SCENARIOS = [
     shortName: "ST Booked",
     badge: "Synced to Calendar",
     badgeBg: "bg-success/20 text-success",
-    caller: "Robert Vance — 11:45 PM Call",
+    caller: "Robert Vance: 11:45 PM Call",
     location: "Oak Ridge • 98° Outside",
     issue: "Booked: Tomorrow 8:00 AM Slot",
     ticketEst: "$8,500 Job Locked In",
@@ -72,7 +72,7 @@ const HVAC_SCENARIOS = [
     shortName: "5★ Review",
     badge: "Review Collected",
     badgeBg: "bg-amber-500/20 text-amber-500",
-    caller: "Robert Vance — Job Completed",
+    caller: "Robert Vance: Job Completed",
     location: "Oak Ridge • System Replaced",
     issue: "Invoice $8,750 Paid & Closed",
     ticketEst: "$8,750 Won & Closed",
@@ -133,7 +133,7 @@ export default function HvacHeroAnimation() {
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h3 className="font-heading font-bold text-white text-base">Rex — HVAC Dispatcher</h3>
+              <h3 className="font-heading font-bold text-white text-base">Rex, HVAC Dispatcher</h3>
               <span className="flex size-2 rounded-full bg-success animate-pulse" />
             </div>
             <p className="font-mono text-[11px] text-white/50">ServiceTitan Live Integration</p>

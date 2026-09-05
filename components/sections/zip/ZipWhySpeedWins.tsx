@@ -12,7 +12,7 @@ export default function ZipWhySpeedWins() {
             The 5-Minute Gold Mine
           </span>
           <h2 className="font-heading font-bold text-3xl sm:text-5xl text-ink text-balance">
-            Speed to Lead Wins the Job — And Research Proves It
+            Speed to Lead Wins the Job, And Research Proves It
           </h2>
           <p className="mt-6 text-lg text-ink/75 leading-relaxed">
             Responding within 5 minutes instead of 30 makes you{" "}

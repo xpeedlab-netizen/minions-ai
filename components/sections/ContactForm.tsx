@@ -52,7 +52,7 @@ export default function ContactForm() {
             </motion.div>
             <div>
               <h3 className="font-heading font-bold text-xl sm:text-2xl text-ink">
-                Thank you — message received!
+                Thank you: message received!
               </h3>
               <p className="text-xs font-mono text-teal uppercase tracking-wide mt-0.5">
                 Submission confirmed

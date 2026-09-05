@@ -114,7 +114,7 @@ export default function OttoBentoGrid() {
                   AI Optical Data Extraction
                 </h3>
                 <p className="mt-2 text-sm text-ink/70 leading-relaxed">
-                  Reads PDFs, permits, and scanned images—extracting key fields and numbers straight into your CRM variables.
+                  Reads PDFs, permits, and scanned images, extracting key fields and numbers straight into your CRM variables.
                 </p>
               </div>
 

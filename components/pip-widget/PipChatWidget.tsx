@@ -25,7 +25,7 @@ function PipPanelHeader({ onClose }: { onClose?: () => void }) {
         </div>
         <div className="min-w-0">
           <h3 className="font-heading font-extrabold text-ink text-sm truncate">
-            Pip — Support AI
+            Pip, Support AI
           </h3>
           <p className="font-mono text-[11px] text-ink/50 truncate">
             24/7 Web Chat &amp; Email Support

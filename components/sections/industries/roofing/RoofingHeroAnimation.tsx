@@ -25,7 +25,7 @@ const ROOFING_SCENARIOS = [
     shortName: "Storm Call",
     badge: "First Ring Answer",
     badgeBg: "bg-coral/20 text-coral-text",
-    caller: "David Miller — Post-Hail Emergency",
+    caller: "David Miller: Post-Hail Emergency",
     location: "Pine Valley • Active Hail Storm",
     issue: "Tree Branch Damage • Ceiling Leak",
     ticketEst: "$18,500 Full Roof Claim Potential",
@@ -41,7 +41,7 @@ const ROOFING_SCENARIOS = [
     shortName: "Claim Intake",
     badge: "Carrier Verified",
     badgeBg: "bg-teal/20 text-teal",
-    caller: "David Miller — Post-Hail Emergency",
+    caller: "David Miller: Post-Hail Emergency",
     location: "Pine Valley • State Farm Policy",
     issue: "Claim #SF-88921 • Date of Loss: Today",
     ticketEst: "$18,500 Full Roof Claim Potential",
@@ -57,7 +57,7 @@ const ROOFING_SCENARIOS = [
     shortName: "ST Synced",
     badge: "Synced to Calendar",
     badgeBg: "bg-success/20 text-success",
-    caller: "David Miller — Post-Hail Emergency",
+    caller: "David Miller: Post-Hail Emergency",
     location: "Pine Valley • Photo Package Ready",
     issue: "Booked: Tomorrow 10:00 AM Inspection",
     ticketEst: "$18,500 Claim Locked In",
@@ -73,7 +73,7 @@ const ROOFING_SCENARIOS = [
     shortName: "5★ Review",
     badge: "Review Collected",
     badgeBg: "bg-amber-500/20 text-amber-500",
-    caller: "David Miller — Claim Settled",
+    caller: "David Miller: Claim Settled",
     location: "Pine Valley • Architectural Shingles",
     issue: "Insurance Check $18,900 Processed",
     ticketEst: "$18,900 Won & Closed",
@@ -134,7 +134,7 @@ export default function RoofingHeroAnimation() {
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h3 className="font-heading font-bold text-white text-base">Rex — Roofing Dispatcher</h3>
+              <h3 className="font-heading font-bold text-white text-base">Rex, Roofing Dispatcher</h3>
               <span className="flex size-2 rounded-full bg-success animate-pulse" />
             </div>
             <p className="font-mono text-[11px] text-white/50">ServiceTitan / Jobber Live Sync</p>

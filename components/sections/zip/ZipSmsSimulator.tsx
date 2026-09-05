@@ -12,7 +12,7 @@ const scenarios = [
     triggerTime: "10:42 AM",
     caller: "Homeowner (Leaky Roof)",
     messages: [
-      { sender: "System", text: "📞 Incoming Call Missed — Hands Full on Job Site", type: "event" },
+      { sender: "System", text: "📞 Incoming Call Missed: Hands Full on Job Site", type: "event" },
       { sender: "Zip", text: "Hi! This is Zip from Apex Roofing. Saw we just missed your call! How can we help you today?", time: "10:42 AM (+4s)", badge: "< 5s Text-Back" },
       { sender: "Customer", text: "Hi Zip! We have a leak in our living room ceiling from the storm. Can someone come take a look?", time: "10:43 AM" },
       { sender: "Zip", text: "We certainly can! I have an emergency inspection slot open today at 2:00 PM. Would that work for you?", time: "10:43 AM" },
@@ -27,7 +27,7 @@ const scenarios = [
     triggerTime: "3:15 PM",
     caller: "Web Visitor (AC Replacement)",
     messages: [
-      { sender: "System", text: "🌐 New Web Form Lead Submitted — Requesting Quote", type: "event" },
+      { sender: "System", text: "🌐 New Web Form Lead Submitted: Requesting Quote", type: "event" },
       { sender: "Zip", text: "Hi John! Thanks for requesting an AC replacement quote on our site. I'm Zip. Are you looking for a free in-home estimate this week?", time: "3:15 PM (+3s)", badge: "< 4s Response" },
       { sender: "Customer", text: "Yes! Our unit is 15 years old and stopped blowing cold air.", time: "3:16 PM" },
       { sender: "Zip", text: "Got it! I can get technician Marcus out tomorrow morning between 9 AM and 11 AM. Shall I confirm that slot?", time: "3:16 PM" },
@@ -42,9 +42,9 @@ const scenarios = [
     triggerTime: "6:00 PM",
     caller: "Missed Evening Lead",
     messages: [
-      { sender: "System", text: "📞 Unanswered Missed Call — Initial Text Sent", type: "event" },
+      { sender: "System", text: "📞 Unanswered Missed Call: Initial Text Sent", type: "event" },
       { sender: "Zip", text: "Hi there! Saw we missed your call. We'd love to help with your plumbing service. Let us know what you need!", time: "6:00 PM (+5s)", badge: "< 5s Text-Back" },
-      { sender: "System", text: "⏳ 15 Minutes Elapsed — No Reply Detected", type: "event" },
+      { sender: "System", text: "⏳ 15 Minutes Elapsed, No Reply Detected", type: "event" },
       { sender: "Zip", text: "Just following up! If this is an urgent emergency leak, reply YES and I can patch you directly to our on-call technician.", time: "6:15 PM (+15m Follow-Up)", badge: "Auto Follow-Up" },
       { sender: "Customer", text: "YES it is an emergency pipe leak!", time: "6:16 PM" },
       { sender: "System", text: "🚨 High-Priority Lead Flagged & On-Call Cell Notified", type: "status" },

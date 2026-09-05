@@ -12,7 +12,7 @@ const sampleCalls = [
     duration: "1:12",
     scenario: "Customer calls with an overflowing main pipe in the middle of the night.",
     transcript: [
-      { speaker: "System", text: "📞 Incoming Call — 2:15 AM (After Hours Emergency)", type: "event" },
+      { speaker: "System", text: "📞 Incoming Call: 2:15 AM (After Hours Emergency)", type: "event" },
       { speaker: "Rex", text: "Thank you for calling Apex Plumbing. My name is Rex. Are you calling with an urgent leak or to schedule a standard estimate?" },
       { speaker: "Caller", text: "My main pipe just burst under the kitchen sink! Water is everywhere!" },
       { speaker: "Rex", text: "I understand this is an emergency. First, please locate the shut-off valve under the sink or main supply to stop the water. I can dispatch our emergency technician immediately. May I have your service address?" },
@@ -28,7 +28,7 @@ const sampleCalls = [
     duration: "0:58",
     scenario: "Homeowner calls on Saturday afternoon when air conditioning stops cooling.",
     transcript: [
-      { speaker: "System", text: "📞 Incoming Call — Saturday 3:30 PM (Weekend Dispatch)", type: "event" },
+      { speaker: "System", text: "📞 Incoming Call: Saturday 3:30 PM (Weekend Dispatch)", type: "event" },
       { speaker: "Rex", text: "Thanks for calling AirPro Comfort Systems. I'm Rex. How can I help you today?" },
       { speaker: "Caller", text: "Hi, our AC stopped cooling and it's 92 degrees inside. Do you have any openings today?" },
       { speaker: "Rex", text: "We certainly do. I have a weekend diagnostic slot open between 4:00 PM and 6:00 PM today. Our diagnostic fee is $89. Would you like me to reserve that window for you?" },
@@ -44,7 +44,7 @@ const sampleCalls = [
     duration: "1:05",
     scenario: "Prospective client calling to get a quote and schedule an on-site evaluation.",
     transcript: [
-      { speaker: "System", text: "📞 Incoming Call — Tuesday 10:15 AM (New Estimate Inquiry)", type: "event" },
+      { speaker: "System", text: "📞 Incoming Call: Tuesday 10:15 AM (New Estimate Inquiry)", type: "event" },
       { speaker: "Rex", text: "Thank you for calling Volt Electrical. This is Rex. Are you looking to schedule a panel upgrade, EV charger install, or general repair?" },
       { speaker: "Caller", text: "I bought a Tesla and need a Level 2 charger installed in my garage." },
       { speaker: "Rex", text: "Congratulations on the new EV! Level 2 charger installations typically range from $650 to $1,200 depending on panel distance. We offer free on-site estimates. I have openings tomorrow at 10:00 AM or 2:00 PM. Which works best?" },

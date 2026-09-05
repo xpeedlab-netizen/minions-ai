@@ -6,7 +6,7 @@ import ContactTrustStrip from "@/components/sections/contact/ContactTrustStrip";
 export const metadata: Metadata = {
   title: "Contact & Book a Call",
   description:
-    "Book a free 15-minute call or send us a message. No complex enterprise sales cycles — just a straightforward conversation about how automation can buy back your time.",
+    "Book a free 15-minute call or send us a message. No complex enterprise sales cycles, just a straightforward conversation about how automation can buy back your time.",
 };
 
 export default function ContactPage() {
@@ -29,7 +29,7 @@ export default function ContactPage() {
           <div>
             <h2 className="font-heading font-bold text-2xl text-teal">Pick a time that works.</h2>
             <p className="mt-2 text-ink/65">
-              No pressure and no hard sell — just a quick chat about your business.
+              No pressure and no hard sell, just a quick chat about your business.
             </p>
             <div className="mt-6">
               <ContactCalCard />

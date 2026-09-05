@@ -42,7 +42,7 @@ import {
 export const metadata: Metadata = {
   title: "Retell AI Implementation for Pest Control & Real Estate",
   description:
-    "We build and deploy Retell AI voice agents for pest control operators and real estate teams — prompt, calendar booking, CRM integration and post-launch tuning. You own the account; we never mark up your minutes.",
+    "We build and deploy Retell AI voice agents for pest control operators and real estate teams, covering the prompt, calendar booking, CRM integration and post-launch tuning. You own the account; we never mark up your minutes.",
   alternates: { canonical: "https://www.getminions.ai/retell-ai-implementation" },
   openGraph: {
     title: "Retell AI Implementation for Pest Control & Real Estate",
@@ -165,7 +165,7 @@ export default function RetellImplementationPage() {
       {/* 03 — Verticals. Equal weight, per invariant #3. */}
       <Section tone="ink" width="default">
         <SectionHeading className="max-w-3xl text-white">
-          A voice agent is only as good as its script — and a script is only good if it
+          A voice agent is only as good as its script, and a script is only good if it
           knows the trade.
         </SectionHeading>
         <SectionLead tone="dark" className="mt-5">

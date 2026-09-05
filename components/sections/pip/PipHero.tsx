@@ -14,7 +14,7 @@ export default function PipHero() {
             Instant Website Answers Grounded in Real Business Data.
           </h1>
           <p className="mt-4 text-lg text-ink/75 leading-relaxed max-w-xl">
-            Pip handles routine website inquiries 24/7—pricing ranges, service areas, and guarantees—with zero hallucinations.
+            Pip handles routine website inquiries 24/7, pricing ranges, service areas, and guarantees, with zero hallucinations.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>

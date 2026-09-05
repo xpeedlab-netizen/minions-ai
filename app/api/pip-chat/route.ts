@@ -19,7 +19,7 @@ type PipResponse = {
 
 function proxyFallback(session_id: string): PipResponse {
   return {
-    answer: `Let me grab a human for that — try calling ${SITE_PHONE_NUMBER} or book a call instead.`,
+    answer: `Let me grab a human for that: try calling ${SITE_PHONE_NUMBER} or book a call instead.`,
     sources: [],
     session_id,
     error: true,

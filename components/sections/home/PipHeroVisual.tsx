@@ -50,7 +50,7 @@ export default function PipHeroVisual() {
           </div>
 
           <div className="mt-3 pt-2 border-t border-border text-center text-[9px] text-ink/40 uppercase tracking-widest font-mono font-medium">
-            Example — Not Live Data
+            Example: Not Live Data
           </div>
         </div>
 

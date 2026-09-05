@@ -63,7 +63,7 @@ export default function PartnersPage() {
         <SectionHeading className="mt-6">Tell us who you work with.</SectionHeading>
         <SectionLead tone="dark">
           Two minutes. We read every application ourselves and reply within three business
-          days — including when the answer is that it is not the right fit.
+          days, including when the answer is that it is not the right fit.
         </SectionLead>
 
         <div className="mt-10 max-w-3xl">

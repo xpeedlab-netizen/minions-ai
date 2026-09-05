@@ -38,8 +38,12 @@ function cleanTextFormatting(text: string): string {
     .replace(/(?:^|\n|\s+)(\*\*[^*\n]{3,60}:\*\*)/g, "\n\n$1")
     .replace(/\s+,\s+/g, ", ")
     .replace(/\s+,\s*$/gm, ",")
-    .replace(/—/g, " — ")
-    .replace(/--/g, " — ")
+    /* Em-dashes read as machine-generated, so blog prose is normalised away from them
+       (owner, 2026-09-05). A comma is used rather than a colon because this runs blind
+       over arbitrary generated text: a comma is grammatical in almost every position an
+       em-dash occupies, whereas a colon is wrong wherever the dash was parenthetical. */
+    .replace(/\s*—\s*/g, ", ")
+    .replace(/\s+--\s+/g, ", ")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 }

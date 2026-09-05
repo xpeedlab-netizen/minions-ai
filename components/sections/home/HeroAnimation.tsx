@@ -24,7 +24,7 @@ const SCRIPT: Line[] = [
   { from: "caller", text: "Hi, I've got a burst pipe under my kitchen sink." },
   { from: "rex", text: "I can get someone out today. What's the address?" },
   { from: "caller", text: "412 Oak Street. How fast can you get here?" },
-  { from: "rex", text: "Booked for 2:30 PM — you're all set." },
+  { from: "rex", text: "Booked for 2:30 PM, you're all set." },
 ];
 
 const LINE_INTERVAL_MS = 2200;

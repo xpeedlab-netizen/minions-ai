@@ -47,7 +47,7 @@ export default function PricingPreview() {
         means ~115 characters at that measure; budget for it rather than widening.
       */}
       <SectionLead>
-        No per-minute billing, no hold music, no contract — a front-desk hire, not a phone
+        No per-minute billing, no hold music, no contract, a front-desk hire, not a phone
         bill. You own every account.
       </SectionLead>
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mx-auto lg:max-w-4xl">
@@ -67,7 +67,7 @@ export default function PricingPreview() {
                 Payment Safety
               </span>
               <h3 className="font-heading text-base font-bold text-ink sm:text-lg">
-                Pay in 3 Safe Milestones — Zero Upfront Risk
+                Pay in 3 Safe Milestones: Zero Upfront Risk
               </h3>
             </div>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-teal/10 px-3 py-1 font-mono text-xs font-semibold text-teal">

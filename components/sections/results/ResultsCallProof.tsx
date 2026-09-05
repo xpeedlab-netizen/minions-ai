@@ -67,7 +67,7 @@ export default function ResultsCallProof() {
             What this looks like on a real line
           </h2>
           <p className="mt-3 text-base text-ink/70">
-            Illustrative scenarios, not customer results — we are pre-launch and will not invent references. Call the demo line and hear it handle one yourself.
+            Illustrative scenarios, not customer results: we are pre-launch and will not invent references. Call the demo line and hear it handle one yourself.
           </p>
         </div>
 
@@ -141,7 +141,7 @@ export default function ResultsCallProof() {
             </div>
             <div>
               <h4 className="font-heading font-bold text-lg text-ink">
-                Don&apos;t take our word for it — call it.
+                Don&apos;t take our word for it: call it.
               </h4>
               <p className="text-[0.9375rem] text-ink/75 mt-1">
                 We are pre-launch, so we have no customer references to offer yet. What we do
@@ -218,15 +218,15 @@ export default function ResultsCallProof() {
             <div className="mt-5 rounded-xl border border-border overflow-hidden">
               <div className="flex items-center gap-2 border-b border-border bg-cream px-4 py-3">
                 <CalendarDays className="size-4 text-ink/75" />
-                <span className="text-sm font-medium text-ink">Tomorrow Schedule — Board A</span>
+                <span className="text-sm font-medium text-ink">Tomorrow Schedule: Board A</span>
               </div>
               <div className="border-l-4 border-teal bg-teal/5 px-4 py-3 flex items-center justify-between">
-                <span className="text-sm font-medium text-ink">Emergency AC Diagnostic — 1420 Oak St</span>
+                <span className="text-sm font-medium text-ink">Emergency AC Diagnostic: 1420 Oak St</span>
                 <span className="font-mono text-xs text-ink/75">8:00 AM</span>
               </div>
               <div className="px-4 py-3 border-t border-border" />
               <div className="border-l-4 border-teal bg-teal/5 px-4 py-3 flex items-center justify-between border-t border-border">
-                <span className="text-sm font-medium text-ink">Scheduled Maintenance — 88 Pine Ave</span>
+                <span className="text-sm font-medium text-ink">Scheduled Maintenance: 88 Pine Ave</span>
                 <span className="font-mono text-xs text-ink/75">10:30 AM</span>
               </div>
             </div>

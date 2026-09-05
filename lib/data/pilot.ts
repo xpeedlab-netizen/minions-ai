@@ -76,10 +76,10 @@ export const PILOT: PilotOffer = {
    * thing a bigger vendor genuinely cannot match: the people who built it working on
    * your account directly.
    */
-  lead: "We are opening five founding slots. You get the complete system — built, integrated and tuned to your business — answering your calls for thirty days before you decide anything. Founding operators work directly with the team that builds it, and that access does not survive our first hundred customers.",
+  lead: "We are opening five founding slots. You get the complete system built, integrated and tuned to your business, answering your calls for thirty days before you decide anything. Founding operators work directly with the team that builds it, and that access does not survive our first hundred customers.",
 
   youGet: [
-    "The complete build — your agent, your script, your calendar and CRM, connected and live",
+    "The complete build: your agent, your script, your calendar and CRM, connected and live",
     "Your number stays yours. Keep it and forward it, or take a new one",
     "Thirty days answering real calls, tuned against what your callers actually say",
     "Every account in your name from day one. You own it whatever you decide",
@@ -87,7 +87,7 @@ export const PILOT: PilotOffer = {
 
   weAsk: [
     "Thirty minutes up front, so the agent knows your services and your prices",
-    "Your honest verdict at the end — whichever way it goes",
+    "Your honest verdict at the end: whichever way it goes",
   ],
 
   /*
@@ -96,12 +96,12 @@ export const PILOT: PilotOffer = {
    * range rather than buried, because a visitor who discovers a cost later treats every
    * other claim as suspect.
    */
-  terms: "No card, no contract, nothing to cancel. Your only cost during the pilot is your own Retell usage — billed straight to your account at their per-second rates, typically $30–80 a month at normal call volume. Keep it after thirty days and the standard build fee applies from there. Walk away and you keep your number and owe nothing.",
+  terms: "No card, no contract, nothing to cancel. Your only cost during the pilot is your own Retell usage: billed straight to your account at their per-second rates, typically $30–80 a month at normal call volume. Keep it after thirty days and the standard build fee applies from there. Walk away and you keep your number and owe nothing.",
 
   ctaLabel: "Claim Your Pilot Slot",
 
   /* Shown once slotsRemaining hits 0, so the band never prints "0 of 5 remaining". */
   waitlistHeading: "All five founding slots are taken.",
-  waitlistLead: "The founding round is allocated and in build. Book a call anyway — you will hear how those builds are going, and we will tell you straight whether to wait for the next round or start a standard build now.",
+  waitlistLead: "The founding round is allocated and in build. Book a call anyway, you will hear how those builds are going, and we will tell you straight whether to wait for the next round or start a standard build now.",
   waitlistCtaLabel: "Book a 15-Minute Call",
 };

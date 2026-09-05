@@ -14,7 +14,7 @@ export default function ZipHero() {
             Instant Missed-Call Text-Back in Under 5 Seconds.
           </h1>
           <p className="mt-4 text-lg text-ink/75 leading-relaxed max-w-xl">
-            When you can&apos;t pick up, Zip texts back in under 5 seconds—qualifying the lead before they call your competitor.
+            When you can&apos;t pick up, Zip texts back in under 5 seconds, qualifying the lead before they call your competitor.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>

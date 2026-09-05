@@ -14,7 +14,7 @@ export default function GiaFinalCta() {
           <div className="relative z-10 space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full bg-success/20 border border-success/40 px-4 py-1.5 font-mono text-xs font-bold text-success uppercase tracking-wider">
               <ShieldCheck className="size-4" />
-              <span>Gia — 100% Done-For-You Setup</span>
+              <span>Gia, 100% Done-For-You Setup</span>
             </div>
 
             <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white text-balance leading-tight">
@@ -23,7 +23,7 @@ export default function GiaFinalCta() {
             </h2>
 
             <p className="text-white/75 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-              We build your pipelines, configure your 2-way SMS follow-ups, and sync your calendar. Gia ships with the Full Crew build — 5–6 weeks from kickoff to live calls, with zero technical work on your end.
+              We build your pipelines, configure your 2-way SMS follow-ups, and sync your calendar. Gia ships with the Full Crew build: 5–6 weeks from kickoff to live calls, with zero technical work on your end.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">

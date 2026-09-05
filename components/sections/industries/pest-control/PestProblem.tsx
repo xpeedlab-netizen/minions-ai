@@ -38,10 +38,10 @@ export default function PestProblem() {
             <span>The 3 Costliest Pest Revenue Leaks</span>
           </div>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance leading-tight">
-            Pest emergencies are high urgency — missed calls destroy recurring subscription growth.
+            Pest emergencies are high urgency: missed calls destroy recurring subscription growth.
           </h2>
           <p className="text-base text-ink/70 max-w-2xl mx-auto">
-            Every missed emergency call isn&apos;t just a missed $149 spray — it&apos;s $2,500+ in lost recurring revenue.
+            Every missed emergency call isn&apos;t just a missed $149 spray, it&apos;s $2,500+ in lost recurring revenue.
           </p>
         </div>
 

@@ -37,9 +37,9 @@ import { PROOF_STATS } from "@/lib/data/site-content";
  */
 
 export const metadata: Metadata = {
-  title: "Speed to Lead for the Trades: What Response Time Is Worth",
+  title: "Speed to Lead for the Trades | What Response Time Is Worth",
   description:
-    "Why response time decides who books the job in pest control, HVAC and plumbing — what the research actually shows, and measured answer latency from our own demo line.",
+    "Why response time decides who books the job in pest control, HVAC and plumbing. What the research actually shows, and measured answer latency from our own demo line.",
   alternates: {
     canonical: "https://www.getminions.ai/reports/speed-to-lead-2026",
   },
@@ -106,13 +106,13 @@ export default function SpeedToLeadReportPage() {
         <header className="mb-12">
           <div className="mb-4 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-teal">
             <Timer className="size-4" />
-            Speed to lead — an explainer
+            Speed to lead, an explainer
           </div>
           <h1 className="mb-6 font-heading text-4xl font-black leading-[1.12] tracking-tight text-ink sm:text-5xl">
             What response time is actually worth in the trades
           </h1>
           <p className="text-xl leading-relaxed text-ink/70">
-            Most inbound leads are lost before anyone quotes a price — not to a
+            Most inbound leads are lost before anyone quotes a price, and not to a
             competitor&apos;s pitch, but to the fact that nobody picked up. Here is what
             the research shows, and what our own line measures.
           </p>
@@ -127,7 +127,7 @@ export default function SpeedToLeadReportPage() {
             When researchers submitted real enquiries to 1,000 businesses, 63% never
             replied at all, and the ones that did averaged 29 hours. In a trade where the
             caller has a wasp nest, a leak or a buyer on a deadline, that is not a slow
-            reply — it is an absent one. Whoever answers first books the job.
+            reply, it is an absent one. Whoever answers first books the job.
           </p>
         </section>
 
@@ -163,7 +163,7 @@ export default function SpeedToLeadReportPage() {
             A note on sourcing, because this topic is full of laundered numbers. A widely
             repeated claim that 62% of contractor calls go unanswered, supposedly from an
             analysis of 50,000 phone lines, does not appear at the source it is credited
-            to — that study covers about 3,000 businesses and reports a booking rate, a
+            to: that study covers about 3,000 businesses and reports a booking rate, a
             different measure entirely. We do not cite it, and we would treat any
             missed-call statistic published by a company selling missed-call software the
             same way.
@@ -192,7 +192,7 @@ export default function SpeedToLeadReportPage() {
                   {(DEMO_LINE_LATENCY.p90Ms / 1000).toFixed(2)}s
                 </p>
                 <p className="mt-2 text-[0.9375rem] leading-[1.6] text-ink/75">
-                  90th percentile — the slower turns, published because a median hides
+                  90th percentile: the slower turns, published because a median hides
                   them
                 </p>
               </div>
@@ -210,7 +210,7 @@ export default function SpeedToLeadReportPage() {
               Measured {DEMO_LINE_LATENCY.measuredOn} across{" "}
               {DEMO_LINE_LATENCY.calls} calls ({DEMO_LINE_LATENCY.turns} agent turns) on
               the Minions.AI demo line, from Retell end-to-end latency telemetry. This is
-              a demo line, not an industry benchmark — a sample this size tells you what
+              a demo line, not an industry benchmark, a sample this size tells you what
               our stack does, not what yours will average under load.
             </p>
           </div>
@@ -218,7 +218,7 @@ export default function SpeedToLeadReportPage() {
           <p className="mt-6 text-[0.9375rem] leading-[1.65] text-ink/70">
             For context, a phone that rings four times before voicemail has already taken
             about fifteen seconds. The gap that matters is not the difference between one
-            second and two — it is the difference between answering and not.
+            second and two, it is the difference between answering and not.
           </p>
         </section>
 
@@ -237,7 +237,7 @@ export default function SpeedToLeadReportPage() {
               working. Transcribing a complete sentence, then sending it to a model, then
               synthesising a reply, stacks three waits end to end. Streaming speech
               recognition and starting generation before the caller has finished their
-              sentence removes most of that — which is what the numbers above reflect. We
+              sentence removes most of that: which is what the numbers above reflect. We
               build on Retell for this layer rather than assembling it ourselves, and the
               honest framing is that the platform does the hard part of the voice while we
               build the booking, the integrations and the guardrails around it.
@@ -250,7 +250,7 @@ export default function SpeedToLeadReportPage() {
             Hear it for yourself
           </h2>
           <p className="mx-auto mb-8 max-w-xl text-ink/70">
-            The line above is a real one. Call it and time the answer yourself — that is
+            The line above is a real one. Call it and time the answer yourself: that is
             a better test than any number on this page.
           </p>
           <a

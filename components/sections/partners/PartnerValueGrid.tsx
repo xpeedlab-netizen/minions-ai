@@ -30,7 +30,7 @@ export default function PartnerValueGrid() {
       <Eyebrow>Why partner</Eyebrow>
       <SectionHeading className="mt-6">What you get out of it.</SectionHeading>
       <SectionLead>
-        This is built to be the easiest line of revenue you add this year — because the hard
+        This is built to be the easiest line of revenue you add this year: because the hard
         part, the delivery, never lands on your team.
       </SectionLead>
 

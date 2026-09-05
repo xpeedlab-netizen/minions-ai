@@ -5,7 +5,7 @@ import Button from "@/components/ui/Button";
 const perks = [
   "White-glove implementation (we build the AI flows for you)",
   "Direct line to our engineering crew (Zip, Rex, and the humans)",
-  "Locked-in founding pricing—forever",
+  "Locked-in founding pricing, forever",
 ];
 
 export default function ResultsFoundingOffer() {

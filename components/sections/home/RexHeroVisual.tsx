@@ -67,7 +67,7 @@ export default function RexHeroVisual() {
               <Sparkles className="w-3 h-3 text-teal" /> Instant Calendar Sync
             </span>
             <span className="text-[9px] text-ink/40 uppercase tracking-widest font-mono font-medium">
-              Example — Not Live Data
+              Example: Not Live Data
             </span>
           </div>
         </div>

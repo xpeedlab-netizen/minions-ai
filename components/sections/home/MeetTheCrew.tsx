@@ -25,7 +25,7 @@ type Support = {
 const rex = {
   name: "Rex",
   role: "24/7 AI receptionist",
-  hook: "Answers on ring one, quotes your pricing, books the job — 24/7.",
+  hook: "Answers on ring one, quotes your pricing, books the job, 24/7.",
   points: [
     "Picks up in under 3 seconds, day or night, in your company name.",
     "Quotes from your real price list and books straight onto your calendar.",
@@ -46,7 +46,7 @@ const supports: Support[] = [
     points: [
       "Texts back within five seconds when two calls land at once.",
       "Picks up callers who hang up during the greeting.",
-      "Covers the channels that never ring — web forms, ad leads, portal inquiries.",
+      "Covers the channels that never ring: web forms, ad leads, portal inquiries.",
     ],
     src: "/images/mascots/zip.png",
     roleClass: "text-[#c4472a]",
@@ -58,7 +58,7 @@ const supports: Support[] = [
     role: "Website chat",
     hook: "Handles every written question, from a stranger at 11pm to a customer asking where the tech is.",
     points: [
-      "Answers from your verified business data only — never invents a price or a policy.",
+      "Answers from your verified business data only, never invents a price or a policy.",
       "Qualifies and books visitors who would never pick up the phone.",
       "Absorbs the routine reschedule and arrival-time questions, so the line stays open for new revenue.",
     ],
@@ -195,7 +195,7 @@ export default function MeetTheCrew() {
           </SectionHeading>
           <SectionLead>
             Rex answers the phone. The other three cover the texts, the website chat and
-            the follow-up — the places a phone line can&apos;t reach.
+            the follow-up: the places a phone line can&apos;t reach.
           </SectionLead>
         </div>
 
@@ -218,7 +218,7 @@ export default function MeetTheCrew() {
               <div className="relative mx-auto aspect-square w-full max-w-[12rem] select-none sm:max-w-[15rem] py-2">
                 <Image
                   src={rex.src}
-                  alt={`${rex.name} — ${rex.role} 3D mascot`}
+                  alt={`${rex.name}: ${rex.role} 3D mascot`}
                   fill
                   sizes="(max-width: 640px) 192px, 240px"
                   className="object-contain drop-shadow-[0_16px_28px_rgba(18,36,42,0.12)]"

@@ -10,7 +10,7 @@ export default function PipFinalCta() {
           Turn Your Website Into a 24/7 Revenue-Capturing Front Desk.
         </h2>
         <p className="mt-4 text-cream/80 text-lg max-w-xl mx-auto leading-relaxed">
-          Add Pip&apos;s grounded website chat assistant to your build for $900 — he reuses the knowledge base and CRM mapping built for Rex, so he ships in the same cycle. A 30-day tuning window is included, with no long-term contract.
+          Add Pip&apos;s grounded website chat assistant to your build for $900: he reuses the knowledge base and CRM mapping built for Rex, so he ships in the same cycle. A 30-day tuning window is included, with no long-term contract.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-4">
           <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>

@@ -29,7 +29,7 @@ export default function HiwProcessGrid() {
                   <Image src="/images/mascots/rex.png" alt="Rex" fill className="object-contain" />
                 </div>
                 <p className="text-sm text-ink/70 italic">
-                  &ldquo;No fluff. Just checking if our crew fits your shop.&rdquo; — Rex
+                  &ldquo;No fluff. Just checking if our crew fits your shop.&rdquo; Rex
                 </p>
               </div>
             </div>
@@ -95,7 +95,7 @@ export default function HiwProcessGrid() {
               </div>
               <h3 className="mt-4 font-heading font-bold text-xl text-white">Go live.</h3>
               <p className="mt-2 text-sm text-white/70 leading-relaxed">
-                You forward your calls — a two-minute step we walk you through — and your crew
+                You forward your calls, a two-minute step we walk you through, and your crew
                 starts working. We keep tuning it for 30 days as real calls come in, included.
               </p>
               <div className="mt-5 flex items-center gap-3">

@@ -38,7 +38,7 @@ export default function RoofingProblem() {
             <span>The 3 Costliest Roofing Revenue Leaks</span>
           </div>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance leading-tight">
-            Storm surges bring high revenue — but only if you answer the phone.
+            Storm surges bring high revenue: but only if you answer the phone.
           </h2>
           <p className="text-base text-ink/70 max-w-2xl mx-auto">
             If your office misses a call during a storm event, that $18,500 replacement check goes straight to your competitor.

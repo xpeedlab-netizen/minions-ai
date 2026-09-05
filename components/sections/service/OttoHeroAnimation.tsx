@@ -33,7 +33,7 @@ export default function OttoHeroAnimation() {
             />
           </div>
           <div>
-            <h3 className="font-heading font-bold text-ink text-base">Otto — Back-Office AI</h3>
+            <h3 className="font-heading font-bold text-ink text-base">Otto, Back-Office AI</h3>
             <p className="font-mono text-xs text-ink/50">Paperwork &amp; Document Automation</p>
           </div>
         </div>

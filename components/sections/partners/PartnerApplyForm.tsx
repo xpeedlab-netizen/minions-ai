@@ -45,7 +45,7 @@ export default function PartnerApplyForm() {
         </h3>
         <p className="mt-3 max-w-md text-[0.9375rem] leading-[1.6] text-cream/80">
           We read every application ourselves and will come back to you within three business
-          days — including if the answer is that it is not the right fit.
+          days, including if the answer is that it is not the right fit.
         </p>
         <button
           type="button"
@@ -88,12 +88,12 @@ export default function PartnerApplyForm() {
         const need = [
           "PARTNER APPLICATION",
           "",
-          `Company or website: ${company || "—"}`,
+          `Company or website: ${company || ", "}`,
           `Best describes them: ${data.get("partnerType")}`,
           `Clients this could suit: ${data.get("clientType")}`,
           "",
           "Notes:",
-          notes || "—",
+          notes || ", ",
         ].join("\n");
 
         try {
@@ -172,7 +172,7 @@ export default function PartnerApplyForm() {
 
       <div className="mt-5">
         <label htmlFor="partner-company" className={labelClass}>
-          Company or website <span className="font-normal text-cream/50">— optional</span>
+          Company or website <span className="font-normal text-cream/50">(optional)</span>
         </label>
         <input id="partner-company" name="company" type="text" className={fieldClass} />
       </div>
@@ -212,7 +212,7 @@ export default function PartnerApplyForm() {
 
       <div className="mt-5">
         <label htmlFor="partner-notes" className={labelClass}>
-          Anything you want us to know <span className="font-normal text-cream/50">— optional</span>
+          Anything you want us to know <span className="font-normal text-cream/50">(optional)</span>
         </label>
         <textarea
           id="partner-notes"

@@ -26,7 +26,7 @@ const tuningDays = 30;
 export const TUNING_WINDOW = {
   days: tuningDays,
   heading: "Your build does not end at go-live. It ends 30 days later.",
-  body: `Most systems are handed over the day they start working, which is the day you know least about them. Yours stays open for ${tuningDays} days after your agent takes its first live call — scripts, routing and follow-up tuned against real conversations rather than assumptions, included in the build fee. Every account, workflow and phone number is created in your name and stays yours.`,
+  body: `Most systems are handed over the day they start working, which is the day you know least about them. Yours stays open for ${tuningDays} days after your agent takes its first live call: scripts, routing and follow-up tuned against real conversations rather than assumptions, included in the build fee. Every account, workflow and phone number is created in your name and stays yours.`,
   short: `You own every account · ${tuningDays}-day tuning window included · No long-term lock-in`,
 };
 
@@ -130,9 +130,9 @@ export const HONEST_TRUTH = {
 };
 
 export const INTEGRATION_COPY = {
-  calendar: "Books, modifies, and cancels appointments directly on Google Calendar — no double bookings.",
-  phone: "Keep your existing phone number — simple call forwarding takes under 2 minutes.",
-  crm: "We configure and manage your dedicated lead pipeline — calls, chats, and missed calls logged automatically with zero manual entry.",
+  calendar: "Books, modifies, and cancels appointments directly on Google Calendar, no double bookings.",
+  phone: "Keep your existing phone number: simple call forwarding takes under 2 minutes.",
+  crm: "We configure and manage your dedicated lead pipeline: calls, chats, and missed calls logged automatically with zero manual entry.",
 };
 
 export const APPROVED_FAQS = [
@@ -149,7 +149,7 @@ export const APPROVED_FAQS = [
   {
     id: "wrong-price",
     q: "What if it quotes the wrong pricing or service detail?",
-    a: "The AI is strictly trained on your exact pricing schedules, service areas, and company rules. It never guesses or hallucinates details—and both voice and website chat answers are grounded in your verified data.",
+    a: "The AI is strictly trained on your exact pricing schedules, service areas, and company rules. It never guesses or hallucinates details, and both voice and website chat answers are grounded in your verified data.",
   },
   {
     id: "if-it-breaks",
@@ -159,12 +159,12 @@ export const APPROVED_FAQS = [
   {
     id: "change-number",
     q: "Do I have to change my business phone number?",
-    a: "Never. You keep your existing business phone number. You simply activate call forwarding—which takes under 2 minutes and works with any carrier.",
+    a: "Never. You keep your existing business phone number. You simply activate call forwarding, which takes under 2 minutes and works with any carrier.",
   },
   {
     id: "how-long-setup",
     q: "How long does setup take?",
-    a: "3 to 4 weeks for Core Crew and 5 to 6 weeks for Full Crew, from kickoff to your agent taking live calls. Our team handles 100% of the build, knowledge base setup, calendar sync, and CRM pipeline configuration for you — what we need from you is a 60–90 minute kickoff session, your call script inputs, and feedback returned within 3 business days at each review point.",
+    a: "3 to 4 weeks for Core Crew and 5 to 6 weeks for Full Crew, from kickoff to your agent taking live calls. Our team handles 100% of the build, knowledge base setup, calendar sync, and CRM pipeline configuration for you: what we need from you is a 60–90 minute kickoff session, your call script inputs, and feedback returned within 3 business days at each review point.",
   },
   {
     id: "calls-recorded",
@@ -174,7 +174,7 @@ export const APPROVED_FAQS = [
   {
     id: "why-trust-you",
     q: "Why choose Minions.AI over a traditional call center?",
-    a: `Traditional call centers charge per minute, place callers on hold, and can only take basic messages. Minions.AI is a one-time build fee rather than a per-minute bill, answers in under 3 seconds 24/7, quotes accurate pricing, books directly to your calendar, and logs every lead automatically — then stays open for ${tuningDays} days of tuning after go-live.`,
+    a: `Traditional call centers charge per minute, place callers on hold, and can only take basic messages. Minions.AI is a one-time build fee rather than a per-minute bill, answers in under 3 seconds 24/7, quotes accurate pricing, books directly to your calendar, and logs every lead automatically, then stays open for ${tuningDays} days of tuning after go-live.`,
   },
 ];
 

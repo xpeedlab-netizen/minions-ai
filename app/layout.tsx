@@ -58,12 +58,12 @@ export const metadata: Metadata = {
     canonical: "https://www.getminions.ai",
   },
   title: {
-    default: "Minions.AI — Never Miss Another Call",
+    default: "Minions.AI | Never Miss Another Call",
     template: "%s | Minions.AI",
   },
   description: defaultDescription,
   openGraph: {
-    title: "Minions.AI — Never Miss Another Call",
+    title: "Minions.AI | Never Miss Another Call",
     description: defaultDescription,
     url: "https://www.getminions.ai",
     siteName: "Minions.AI",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Minions.AI — Never Miss Another Call",
+    title: "Minions.AI | Never Miss Another Call",
     description: defaultDescription,
     images: ["/images/roofing-hero-photo.jpg"],
   },
@@ -153,7 +153,7 @@ export default function RootLayout({
           "highPrice": String(BUILD_FEE_HIGH),
           "offerCount": String(BUILD_FEE_COUNT),
           "priceCurrency": "USD",
-          "description": `A fixed one-time build fee — Core Crew $${BUILD_FEE_LOW.toLocaleString("en-US")}, Full Crew $${BUILD_FEE_HIGH.toLocaleString("en-US")} — live in ${SETUP_TIME_PROMISE}, with a 30-day tuning window included after go-live.`
+          "description": `A fixed one-time build fee, Core Crew $${BUILD_FEE_LOW.toLocaleString("en-US")}, Full Crew $${BUILD_FEE_HIGH.toLocaleString("en-US")}, live in ${SETUP_TIME_PROMISE}, with a 30-day tuning window included after go-live.`
         },
         "featureList": [
           "Under 1.8-second live voice answering",

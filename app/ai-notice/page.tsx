@@ -40,9 +40,9 @@ export default function AiNoticePage() {
       <div>
         <h2>Why we disclose on every call</h2>
         <p>
-          Two-party consent states — including California, Connecticut, Delaware, Florida,
+          Two-party consent states, including California, Connecticut, Delaware, Florida,
           Illinois, Maryland, Massachusetts, Montana, Nevada, New Hampshire, Oregon, Pennsylvania
-          and Washington — require both parties to consent to a call being recorded. Rather than
+          and Washington: require both parties to consent to a call being recorded. Rather than
           track which state a caller is in, we disclose recording at the start of every call,
           everywhere.
         </p>
@@ -51,7 +51,7 @@ export default function AiNoticePage() {
       <div>
         <h2>Inbound vs. outbound</h2>
         <p>
-          Inbound answering — where a customer calls you — is low-risk. Outbound calling or
+          Inbound answering: where a customer calls you, is low-risk. Outbound calling or
           texting is where most of the legal exposure lives. If a client wants outbound campaigns,
           we set up proper consent and Do-Not-Call handling with them first.
         </p>

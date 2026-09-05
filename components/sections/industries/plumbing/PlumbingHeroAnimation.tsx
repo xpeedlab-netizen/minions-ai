@@ -24,7 +24,7 @@ const PLUMBING_SCENARIOS = [
     shortName: "2 AM Burst",
     badge: "First Ring Answer",
     badgeBg: "bg-coral/20 text-coral-text",
-    caller: "Sarah Jenkins — 2:15 AM Emergency",
+    caller: "Sarah Jenkins: 2:15 AM Emergency",
     location: "Maple Heights • Basement Flooding",
     issue: "Main Water Line Snapped • Active Flooding",
     ticketEst: "$4,500 Water Line Repiping",
@@ -40,7 +40,7 @@ const PLUMBING_SCENARIOS = [
     shortName: "Shutoff Advice",
     badge: "Valve Guidance",
     badgeBg: "bg-teal/20 text-teal",
-    caller: "Sarah Jenkins — 2:15 AM Emergency",
+    caller: "Sarah Jenkins: 2:15 AM Emergency",
     location: "Maple Heights • Basement Flooding",
     issue: "Guided: Main Shut-off Valve Closed",
     ticketEst: "$4,500 Repiping & Containment",
@@ -56,7 +56,7 @@ const PLUMBING_SCENARIOS = [
     shortName: "ST Synced",
     badge: "Synced to Calendar",
     badgeBg: "bg-success/20 text-success",
-    caller: "Sarah Jenkins — 2:15 AM Emergency",
+    caller: "Sarah Jenkins: 2:15 AM Emergency",
     location: "Maple Heights • Basement Flooding",
     issue: "Booked: Priority 1 Slot (7:30 AM)",
     ticketEst: "$4,500 Job Locked In",
@@ -72,7 +72,7 @@ const PLUMBING_SCENARIOS = [
     shortName: "5★ Review",
     badge: "Review Collected",
     badgeBg: "bg-amber-500/20 text-amber-500",
-    caller: "Sarah Jenkins — Job Completed",
+    caller: "Sarah Jenkins: Job Completed",
     location: "Maple Heights • Water Line Repiped",
     issue: "Invoice $4,850 Paid & Closed",
     ticketEst: "$4,850 Won & Closed",
@@ -133,7 +133,7 @@ export default function PlumbingHeroAnimation() {
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h3 className="font-heading font-bold text-white text-base">Rex — Plumbing Dispatcher</h3>
+              <h3 className="font-heading font-bold text-white text-base">Rex, Plumbing Dispatcher</h3>
               <span className="flex size-2 rounded-full bg-success animate-pulse" />
             </div>
             <p className="font-mono text-[11px] text-white/50">ServiceTitan Live Integration</p>

@@ -61,7 +61,7 @@ export const partnerTiers: PartnerTier[] = [
       "Send one introduction, that is the whole job",
       "We run every conversation from there",
       "Nothing to learn, nothing to present",
-      "Refer once or refer often — both are fine",
+      "Refer once or refer often, both are fine",
     ],
   },
   {
@@ -148,12 +148,12 @@ export const partnerSplit = {
   you: [
     "Introduce the client and tell us what you know about them",
     "Register the deal by email so it is protected",
-    "Join the first call if you want to — optional at every tier",
+    "Join the first call if you want to, optional at every tier",
     "Agency partners only: stay the client's first point of contact",
   ],
   us: [
     "Discovery, scoping and the written proposal",
-    "The full build — voice agent, automations and CRM integration",
+    "The full build: voice agent, automations and CRM integration",
     "Testing, go-live and team training",
     "Ongoing monitoring, fixes and support after launch",
     "Invoicing, collection and your commission payment",
@@ -169,7 +169,7 @@ export type PartnerSegment = { title: string; body: string };
 export const partnerSegments: PartnerSegment[] = [
   {
     title: "Marketing & CRM agencies",
-    body: "You already run automation for a roster of clients. Missed calls quietly ruin the ROI you report — fixing that makes your own numbers better.",
+    body: "You already run automation for a roster of clients. Missed calls quietly ruin the ROI you report, and fixing that makes your own numbers better.",
   },
   {
     title: "MSPs & telecom resellers",
@@ -209,7 +209,7 @@ export const partnerSteps: PartnerStep[] = [
   {
     label: "Step 3",
     title: "Get your kit",
-    body: "Proposal template, recorded demo, one-pager and objection answers — everything you need to raise it with a client, in your inbox the same week.",
+    body: "Proposal template, recorded demo, one-pager and objection answers, everything you need to raise it with a client, in your inbox the same week.",
   },
   {
     label: "Step 4",
@@ -238,11 +238,11 @@ export const partnerFaqs: FaqItem[] = [
   },
   {
     q: "When exactly do I get paid?",
-    a: "Commission is paid on money actually collected, not on signed contracts — 30 days after the client's payment clears. Recurring commission for agency partners is paid monthly thereafter. If a client refunds or cancels within 90 days, that portion is reversed; after 90 days it is yours regardless.",
+    a: "Commission is paid on money actually collected, not on signed contracts: 30 days after the client's payment clears. Recurring commission for agency partners is paid monthly thereafter. If a client refunds or cancels within 90 days, that portion is reversed; after 90 days it is yours regardless.",
   },
   {
     q: "How long does the recurring commission last?",
-    a: "For agency partners, it continues for as long as the client stays and you remain the account owner — there is no twelve-month cliff. It is tied to you staying genuinely involved: holding the relationship and taking the first support call. If the account management moves back to us, the recurring share ends and the build commission is unaffected.",
+    a: "For agency partners, it continues for as long as the client stays and you remain the account owner, there is no twelve-month cliff. It is tied to you staying genuinely involved: holding the relationship and taking the first support call. If the account management moves back to us, the recurring share ends and the build commission is unaffected.",
   },
   {
     q: "Can I sell this under my own brand?",
@@ -250,7 +250,7 @@ export const partnerFaqs: FaqItem[] = [
   },
   {
     q: "What kinds of businesses is this actually for?",
-    a: "Any business where a missed call is lost revenue and a booking is worth real money — pest control, property and real estate, home services, clinics, legal and the trades are the most common. The pattern to look for is a phone that rings during jobs, after hours, or faster than a small team can answer.",
+    a: "Any business where a missed call is lost revenue and a booking is worth real money: pest control, property and real estate, home services, clinics, legal and the trades are the most common. The pattern to look for is a phone that rings during jobs, after hours, or faster than a small team can answer.",
   },
   {
     q: "Can I move between tiers later?",

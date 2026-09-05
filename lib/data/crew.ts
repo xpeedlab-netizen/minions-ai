@@ -44,7 +44,7 @@ export const crew: CrewMember[] = [
     role: "Automated CRM & Follow-ups",
     tagline: "Automates pipeline follow-ups, reminders & 5-star reviews.",
     description:
-      "Keeps your pipeline organized on autopilot — sending appointment reminders, quote follow-ups, and review requests without extra manual work.",
+      "Keeps your pipeline organized on autopilot, sending appointment reminders, quote follow-ups, and review requests without extra manual work.",
     href: "/crm-automation",
     image: "/images/mascots/gia.png",
     accent: "#1B8A5A",

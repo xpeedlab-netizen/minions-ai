@@ -49,7 +49,7 @@ export default function CommissionTiers() {
           </SectionHeading>
           <SectionLead>
             Pick the tier that matches the effort you actually want to put in. You can start
-            at one and move up whenever it suits you — nothing is locked. Worked figures
+            at one and move up whenever it suits you: nothing is locked. Worked figures
             below use a typical Core Crew client: $2,500 build plus $297 a month.
           </SectionLead>
         </div>

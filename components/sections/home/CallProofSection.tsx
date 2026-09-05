@@ -46,7 +46,7 @@ export default function CallProofSection() {
             <CallPlayer recording={guardrail} />
             <p className="mt-4 px-1 text-[0.8125rem] leading-[1.6] text-cream/60">
               It answers from your approved services and pricing. When a caller asks for
-              something outside them, it says so and hands off — it does not guess.
+              something outside them, it says so and hands off, it does not guess.
             </p>
           </div>
         )}

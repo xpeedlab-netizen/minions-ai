@@ -32,7 +32,7 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "ai-experience",
     categoryLabel: "AI Voice & Experience",
     q: "What if it quotes the wrong pricing or service detail?",
-    a: "The AI is strictly trained on your exact pricing schedules, service areas, and company rules. It never guesses or hallucinates details—and both voice and website chat answers are grounded in your verified data.",
+    a: "The AI is strictly trained on your exact pricing schedules, service areas, and company rules. It never guesses or hallucinates details, and both voice and website chat answers are grounded in your verified data.",
     tag: "Zero Hallucination",
   },
   {
@@ -50,7 +50,7 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "setup-tech",
     categoryLabel: "Setup & CRMs",
     q: "Do I have to change my business phone number?",
-    a: "Never. You keep your existing business phone number. You simply activate call forwarding—which takes under 2 minutes and works with any carrier.",
+    a: "Never. You keep your existing business phone number. You simply activate call forwarding, which takes under 2 minutes and works with any carrier.",
     tag: "Keep Your Number",
   },
   {
@@ -58,7 +58,7 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "setup-tech",
     categoryLabel: "Setup & CRMs",
     q: "How long does setup take?",
-    a: `${SETUP_TIME_CORE} for Core Crew and ${SETUP_TIME_FULL} for Full Crew, from kickoff to your agent taking live calls. Our team handles 100% of the build, knowledge base setup, calendar sync, and CRM pipeline configuration for you. What we need from you is a 60–90 minute kickoff session, your call script inputs, and feedback returned within 3 business days at each review point — that last one is the single biggest factor in hitting the dates.`,
+    a: `${SETUP_TIME_CORE} for Core Crew and ${SETUP_TIME_FULL} for Full Crew, from kickoff to your agent taking live calls. Our team handles 100% of the build, knowledge base setup, calendar sync, and CRM pipeline configuration for you. What we need from you is a 60–90 minute kickoff session, your call script inputs, and feedback returned within 3 business days at each review point, that last one is the single biggest factor in hitting the dates.`,
     tag: "3–6 Week Build",
   },
   {
@@ -66,7 +66,7 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "setup-tech",
     categoryLabel: "Setup & CRMs",
     q: "Which CRMs and dispatch calendars do you support?",
-    a: "We integrate directly with ServiceTitan, Housecall Pro, Jobber, FieldRoutes, PestPac and GorillaDesk on the field-service side, and with GoHighLevel, HubSpot, Salesforce, Zoho and Pipedrive on the sales side — plus Google Calendar for two-way job scheduling without double bookings, and 400+ other systems via direct webhooks and APIs.",
+    a: "We integrate directly with ServiceTitan, Housecall Pro, Jobber, FieldRoutes, PestPac and GorillaDesk on the field-service side, and with GoHighLevel, HubSpot, Salesforce, Zoho and Pipedrive on the sales side: plus Google Calendar for two-way job scheduling without double bookings, and 400+ other systems via direct webhooks and APIs.",
     tag: "Direct CRM Sync",
   },
   {
@@ -74,7 +74,7 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "setup-tech",
     categoryLabel: "Setup & CRMs",
     q: "Can I customize after-hours vs daytime handling?",
-    a: "Yes. You can route calls differently based on time of day—for example, booking daytime estimates during normal hours and dispatching high-priority emergency rates directly to on-call technicians at night.",
+    a: "Yes. You can route calls differently based on time of day, for example, booking daytime estimates during normal hours and dispatching high-priority emergency rates directly to on-call technicians at night.",
     tag: "Custom Dispatch Rules",
   },
 
@@ -84,7 +84,7 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "pricing-contracts",
     categoryLabel: "Pricing & Terms",
     q: "Why choose Minions.AI over a traditional call center?",
-    a: `Traditional call centers charge per minute, place callers on hold, and can only take basic messages. Minions.AI is a one-time build fee rather than a per-minute bill, answers in under 3 seconds 24/7, quotes accurate pricing, books directly to your calendar, and logs every lead automatically — then stays open for ${TUNING_WINDOW.days} days of tuning after go-live.`,
+    a: `Traditional call centers charge per minute, place callers on hold, and can only take basic messages. Minions.AI is a one-time build fee rather than a per-minute bill, answers in under 3 seconds 24/7, quotes accurate pricing, books directly to your calendar, and logs every lead automatically, then stays open for ${TUNING_WINDOW.days} days of tuning after go-live.`,
     tag: "Call Center vs AI",
   },
   {
@@ -92,7 +92,7 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "pricing-contracts",
     categoryLabel: "Pricing & Terms",
     q: "Are there long-term contracts or cancellation fees?",
-    a: "No long-term contract. The build is a fixed one-time fee paid across three milestones — 40% on signature, 40% when we hand you the working system to test, 20% at go-live — and the price does not change without your written approval. Either party may pause the project in writing, in which case work already delivered is invoiced at the last completed milestone and nothing beyond it. Ongoing care afterwards is optional and cancellable on 30 days' notice.",
+    a: "No long-term contract. The build is a fixed one-time fee paid across three milestones, 40% on signature, 40% when we hand you the working system to test, 20% at go-live, and the price does not change without your written approval. Either party may pause the project in writing, in which case work already delivered is invoiced at the last completed milestone and nothing beyond it. Ongoing care afterwards is optional and cancellable on 30 days' notice.",
     tag: "Fixed Price, No Lock-In",
   },
   {
@@ -100,7 +100,7 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "pricing-contracts",
     categoryLabel: "Pricing & Terms",
     q: `What does the ${TUNING_WINDOW.days}-day tuning window cover?`,
-    a: `For ${TUNING_WINDOW.days} days after your agent takes its first live call, we keep working on it at no extra cost — script wording, routing rules, follow-up sequences and edge cases you only discover once real callers are on the line. It is included in the build fee. We do not offer a money-back guarantee; what we offer instead is that you approve the script before we build, you run the test calls yourself, and 60% of the fee falls due only after you have a working system in front of you.`,
+    a: `For ${TUNING_WINDOW.days} days after your agent takes its first live call, we keep working on it at no extra cost: script wording, routing rules, follow-up sequences and edge cases you only discover once real callers are on the line. It is included in the build fee. We do not offer a money-back guarantee; what we offer instead is that you approve the script before we build, you run the test calls yourself, and 60% of the fee falls due only after you have a working system in front of you.`,
     tag: "Included In Your Build",
   },
 
@@ -128,7 +128,7 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "the-team",
     categoryLabel: "Your Build Team",
     q: "Who configures and supports our AI crew?",
-    a: "You work directly with the engineers who build your system — not a support queue or an account manager. The same people engineer your prompt architecture, test your phone line against background job-site noise, and handle your ongoing support.",
+    a: "You work directly with the engineers who build your system, not a support queue or an account manager. The same people engineer your prompt architecture, test your phone line against background job-site noise, and handle your ongoing support.",
     tag: "Direct Access"
   },
   {

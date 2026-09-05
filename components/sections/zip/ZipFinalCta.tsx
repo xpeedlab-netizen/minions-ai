@@ -10,7 +10,7 @@ export default function ZipFinalCta() {
           Stop Losing $500–$5,000 Jobs to Competitors Who Respond First.
         </h2>
         <p className="mt-4 text-cream/80 text-lg max-w-xl mx-auto leading-relaxed">
-          Zip&apos;s instant missed-call text-back engine ships with the Full Crew build — 5–6 weeks from kickoff, a 30-day tuning window after go-live, and no long-term contract.
+          Zip&apos;s instant missed-call text-back engine ships with the Full Crew build: 5–6 weeks from kickoff, a 30-day tuning window after go-live, and no long-term contract.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-4">
           <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow>

@@ -38,7 +38,7 @@ export default function ElectricalProblem() {
             <span>The 3 Costliest Electrical Revenue Leaks</span>
           </div>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance leading-tight">
-            Electrical emergencies are high-hazard — missed calls lose big ticket jobs.
+            Electrical emergencies are high-hazard: missed calls lose big ticket jobs.
           </h2>
           <p className="text-base text-ink/70 max-w-2xl mx-auto">
             Every missed call is a high-margin panel upgrade or EV charger installation handed to your competitor.

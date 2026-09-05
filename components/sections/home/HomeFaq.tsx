@@ -23,7 +23,7 @@ export default function HomeFaq() {
       </SectionHeading>
       <SectionLead>
         The eight that come up on nearly every call. If yours is not here, ask it on the
-        call — we would rather answer it before you buy than after.
+        call: we would rather answer it before you buy than after.
       </SectionLead>
 
       <div className="mt-12">

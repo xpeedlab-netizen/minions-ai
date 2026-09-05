@@ -183,7 +183,7 @@ export default function LiveDemoOptionA() {
             </div>
 
             <p className="rounded-xl bg-cream px-4 py-3 text-sm text-ink/70 font-mono border border-border/50">
-              This is a design preview — the live voice demo connects once our AI provider is wired
+              This is a design preview: the live voice demo connects once our AI provider is wired
               up.
             </p>
           </motion.div>

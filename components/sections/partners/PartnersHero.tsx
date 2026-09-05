@@ -37,7 +37,7 @@ export default function PartnersHero() {
           </h1>
           <p className="mt-6 max-w-xl text-[1.0625rem] sm:text-lg leading-[1.6] text-cream/85">
             Minions.AI builds AI voice agents that answer every call, book the job and update
-            the CRM — for the kind of businesses you already serve. Bring us the relationship,
+            the CRM: for the kind of businesses you already serve. Bring us the relationship,
             we handle the build, and you earn on every client for as long as they stay.
           </p>
 

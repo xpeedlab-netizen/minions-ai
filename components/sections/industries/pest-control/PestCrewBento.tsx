@@ -40,7 +40,7 @@ export default function PestCrewBento() {
                     <PhoneCall className="size-5" />
                   </span>
                   <span className="font-mono text-xs font-bold text-teal-300 bg-teal/20 border border-teal/40 px-3 py-1 rounded-full uppercase">
-                    Rex — Voice Chief Dispatcher
+                    Rex, Voice Chief Dispatcher
                   </span>
                 </div>
 
@@ -75,7 +75,7 @@ export default function PestCrewBento() {
                     <MessageSquare className="size-5" />
                   </span>
                   <span className="font-mono text-[11px] font-bold text-coral-text bg-coral/20 px-2.5 py-1 rounded-full uppercase">
-                    Zip — Speed Agent
+                    Zip, Speed Agent
                   </span>
                 </div>
 
@@ -103,7 +103,7 @@ export default function PestCrewBento() {
                 </span>
 
                 <h3 className="mt-6 font-heading font-bold text-xl text-ink">
-                  Pip — 24/7 Web Chat Support
+                  Pip, 24/7 Web Chat Support
                 </h3>
                 <p className="mt-2 text-sm text-ink/70 leading-relaxed">
                   Answers website questions about pet safety, chemicals, and spray schedules with zero hallucinations.
@@ -126,7 +126,7 @@ export default function PestCrewBento() {
                 </span>
 
                 <h3 className="mt-6 font-heading font-bold text-xl text-ink">
-                  Gia — CRM &amp; Renewal Engine
+                  Gia, CRM &amp; Renewal Engine
                 </h3>
                 <p className="mt-2 text-sm text-ink/70 leading-relaxed">
                   Dispatches 24h/1h appointment reminders, triggers quarterly renewals, and collects 5-star Google reviews.
@@ -149,12 +149,12 @@ export default function PestCrewBento() {
                     <FileText className="size-5" />
                   </span>
                   <span className="font-mono text-[11px] font-bold text-white bg-white/20 px-2.5 py-1 rounded-full uppercase">
-                    Otto — Inspection Doc AI
+                    Otto, Inspection Doc AI
                   </span>
                 </div>
 
                 <h3 className="mt-6 font-heading font-bold text-xl text-white">
-                  Otto — WDO &amp; Chemical Logs
+                  Otto, WDO &amp; Chemical Logs
                 </h3>
                 <p className="mt-2 text-sm text-white/80 leading-relaxed">
                   Automates Wood Destroying Organism (WDO) reports, chemical logs, and state compliance filings without paperwork.

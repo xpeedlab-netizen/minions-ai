@@ -12,7 +12,7 @@ export default function CrewCard({ member }: { member: CrewMember }) {
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-cream">
         <Image
           src={member.image}
-          alt={`${member.name} — ${member.role}`}
+          alt={`${member.name}: ${member.role}`}
           fill
           className="object-cover"
           sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 100vw"

@@ -28,7 +28,7 @@ export default function RealEstateCrewBento() {
                   <PhoneCall className="size-5" />
                 </span>
                 <span className="font-mono text-xs font-bold text-teal-300 bg-teal/20 border border-teal/40 px-3 py-1 rounded-full uppercase tracking-wide">
-                  Alex — Inside Sales
+                  Alex, Inside Sales
                 </span>
               </div>
 

@@ -17,7 +17,7 @@ export default function PipHeroAnimation() {
             />
           </div>
           <div>
-            <h3 className="font-heading font-bold text-ink text-sm">Pip — Support AI</h3>
+            <h3 className="font-heading font-bold text-ink text-sm">Pip, Support AI</h3>
             <p className="font-mono text-[11px] text-ink/50 flex items-center gap-1">
               <ShieldCheck className="size-3 text-[#3A6EA5]" /> No-Guess Policy
             </p>

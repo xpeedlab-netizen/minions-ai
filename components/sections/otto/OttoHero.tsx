@@ -19,7 +19,7 @@ export default function OttoHero() {
               <span className="relative inline-flex size-2 rounded-full bg-teal" />
             </span>
             <ShieldCheck className="size-3.5 text-teal" />
-            <span>Otto — Back-Office &amp; Document Automation AI</span>
+            <span>Otto, Back-Office &amp; Document Automation AI</span>
           </div>
 
           <h1 className="font-heading font-bold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-balance">

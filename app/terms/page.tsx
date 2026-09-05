@@ -21,7 +21,7 @@ export default function TermsPage() {
       <div>
         <h2>Description of services</h2>
         <p>
-          Minions.AI provides done-for-you AI automation services — including AI voice answering,
+          Minions.AI provides done-for-you AI automation services, including AI voice answering,
           missed-call text-back, customer support automation, CRM automation, and back-office
           automation. We are not a telecom carrier; we build on top of third-party voice, CRM, and
           telephony platforms.
@@ -47,8 +47,8 @@ export default function TermsPage() {
         <h2>Fees, billing and cancellation</h2>
         <p>
           Builds are quoted as a fixed one-time fee for an agreed scope, shown on our pricing
-          page. The fee is payable across three milestones — 40% on signature, 40% when we hand
-          you the working system for testing, and 20% at go-live — and does not change without
+          page. The fee is payable across three milestones: 40% on signature, 40% when we hand
+          you the working system for testing, and 20% at go-live, and does not change without
           your written approval. Either party may pause a project in writing, in which case work
           already delivered is invoiced at the last completed milestone and nothing beyond it.
         </p>

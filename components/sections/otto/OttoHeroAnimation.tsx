@@ -75,7 +75,7 @@ const WORKFLOW_STAGES = [
     detailLogs: [
       "Document routed to Google Drive / Client Folder",
       "Pushed extracted metadata into ServiceTitan / CRM",
-      "Intake marked 100% COMPLETE — Zero human paperwork!",
+      "Intake marked 100% COMPLETE: Zero human paperwork!",
     ],
   },
 ];

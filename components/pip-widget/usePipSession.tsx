@@ -12,7 +12,7 @@ import {
 import { SITE_PHONE_NUMBER } from "@/lib/data/placeholders";
 
 const SESSION_KEY = "pip_session_id";
-const FALLBACK_MESSAGE = `Let me grab a human for that — try calling ${SITE_PHONE_NUMBER} or book a call instead.`;
+const FALLBACK_MESSAGE = `Let me grab a human for that. Try calling ${SITE_PHONE_NUMBER} or book a call instead.`;
 
 export type PipSource = { source_page?: string; heading?: string };
 

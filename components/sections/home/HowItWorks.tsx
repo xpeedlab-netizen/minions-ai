@@ -19,7 +19,7 @@ const steps = [
   },
   {
     n: "03",
-    title: "You forward your line — two minutes",
+    title: "You forward your line, two minutes",
     body: `${INTEGRATION_COPY.phone} From that second on, every call is answered instantly.`,
   },
 ];

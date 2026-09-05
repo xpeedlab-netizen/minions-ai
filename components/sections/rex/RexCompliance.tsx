@@ -8,7 +8,7 @@ export default function RexCompliance() {
           How Call Recording &amp; Consent Work
         </h2>
         <p className="mt-4 text-white/80 leading-relaxed max-w-2xl mx-auto text-base sm:text-lg">
-          Recording is configurable, and recording law varies by state — including two-party-consent states like California and Illinois. We&apos;ll set this up with you during onboarding so it matches the rules where you operate. We won&apos;t quietly switch it on and leave you to find out.
+          Recording is configurable, and recording law varies by state, including two-party-consent states like California and Illinois. We&apos;ll set this up with you during onboarding so it matches the rules where you operate. We won&apos;t quietly switch it on and leave you to find out.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
           <span className="flex items-center gap-2 text-sm text-white/90 font-medium">

@@ -19,7 +19,7 @@ export default function GiaHero() {
               <span className="relative inline-flex size-2 rounded-full bg-success" />
             </span>
             <ShieldCheck className="size-3.5 text-success" />
-            <span>Gia — Managed CRM &amp; Pipeline Autopilot</span>
+            <span>Gia, Managed CRM &amp; Pipeline Autopilot</span>
           </div>
 
           <h1 className="font-heading font-bold text-ink text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-balance">

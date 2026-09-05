@@ -14,7 +14,7 @@ export default function OttoFinalCta() {
           <div className="relative z-10 space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full bg-teal/20 border border-teal/40 px-4 py-1.5 font-mono text-xs font-bold text-teal-300 uppercase tracking-wider">
               <ShieldCheck className="size-4" />
-              <span>Otto — 100% Managed Back-Office Autopilot</span>
+              <span>Otto, 100% Managed Back-Office Autopilot</span>
             </div>
 
             <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white text-balance leading-tight">

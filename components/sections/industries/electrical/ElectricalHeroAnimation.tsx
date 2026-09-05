@@ -25,7 +25,7 @@ const ELECTRICAL_SCENARIOS = [
     shortName: "11:15 PM Call",
     badge: "First Ring Answer",
     badgeBg: "bg-coral/20 text-coral-text",
-    caller: "Marcus Sterling — 11:15 PM Call",
+    caller: "Marcus Sterling, 11:15 PM Call",
     location: "Highland Park • Main Panel Arcing",
     issue: "Sparkling Breaker • Burning Smell",
     ticketEst: "$4,850 200A Panel Upgrade Potential",
@@ -41,7 +41,7 @@ const ELECTRICAL_SCENARIOS = [
     shortName: "Safety Advice",
     badge: "Safety Guided",
     badgeBg: "bg-teal/20 text-teal",
-    caller: "Marcus Sterling — 11:15 PM Call",
+    caller: "Marcus Sterling, 11:15 PM Call",
     location: "Highland Park • Main Panel Arcing",
     issue: "Guided: Main Shut-off Switch Opened",
     ticketEst: "$4,850 Panel Upgrade & Containment",
@@ -57,7 +57,7 @@ const ELECTRICAL_SCENARIOS = [
     shortName: "ST Synced",
     badge: "Synced to Calendar",
     badgeBg: "bg-success/20 text-success",
-    caller: "Marcus Sterling — 11:15 PM Call",
+    caller: "Marcus Sterling, 11:15 PM Call",
     location: "Highland Park • Safety Securing",
     issue: "Booked: Priority 1 Slot (7:30 AM)",
     ticketEst: "$4,850 Job Locked In",
@@ -73,7 +73,7 @@ const ELECTRICAL_SCENARIOS = [
     shortName: "5★ Review",
     badge: "Review Collected",
     badgeBg: "bg-amber-500/20 text-amber-500",
-    caller: "Marcus Sterling — Job Completed",
+    caller: "Marcus Sterling: Job Completed",
     location: "Highland Park • 200A Panel Installed",
     issue: "Invoice $4,850 Paid & Closed",
     ticketEst: "$4,850 Won & Closed",
@@ -134,7 +134,7 @@ export default function ElectricalHeroAnimation() {
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h3 className="font-heading font-bold text-white text-base">Rex — Electrical Dispatcher</h3>
+              <h3 className="font-heading font-bold text-white text-base">Rex, Electrical Dispatcher</h3>
               <span className="flex size-2 rounded-full bg-success animate-pulse" />
             </div>
             <p className="font-mono text-[11px] text-white/50">ServiceTitan / Housecall Pro Live Sync</p>

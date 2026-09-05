@@ -6,7 +6,7 @@ const pipCapabilities = [
     icon: MessageSquare,
     title: "24/7 Grounded Website Chat",
     badge: "0 Hallucinations",
-    desc: "Answers customer questions 24/7—pricing ranges, service areas, and guarantees—grounded strictly in your data.",
+    desc: "Answers customer questions 24/7, pricing ranges, service areas, and guarantees, grounded strictly in your data.",
     colSpan: "lg:col-span-2",
   },
   {

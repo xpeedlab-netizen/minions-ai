@@ -15,7 +15,7 @@ const rows = [
   {
     icon: CalendarClock,
     title: "Recurring Service Scheduling",
-    body: "One-off sprays don't build a business—contracts do. Rex books initial inspections and signs up leads for recurring maintenance plans directly in your CRM.",
+    body: "One-off sprays don't build a business, contracts do. Rex books initial inspections and signs up leads for recurring maintenance plans directly in your CRM.",
     checklist: ["Automatic follow-ups", "Subscription-first mindset"],
     image: "/images/pest-control-photo.jpg",
     imageAlt: "Pest control technician reviewing a job on a tablet",
@@ -79,7 +79,7 @@ export default function PestCrew() {
               <h3 className="font-heading font-bold text-lg text-white">Zip&apos;s Insta-Text Back</h3>
               <p className="mt-2 text-sm text-white/85 leading-relaxed">
                 If a call is missed, Zip texts back immediately. &quot;Hey, saw we missed your
-                call—was it regarding a pest emergency?&quot; The next exterminator never even gets
+                call, was it regarding a pest emergency?&quot; The next exterminator never even gets
                 dialed.
               </p>
             </div>

@@ -52,13 +52,13 @@ export const SEGMENT_COPY: Record<
     shortLabel: "Pest control",
     recordingId: "pest-ants-booking",
     proofLine:
-      "Ants in the kitchen — address taken, the next two open slots offered, and a Saturday morning window confirmed in 74 seconds, with nobody in the office.",
+      "Ants in the kitchen: address taken, the next two open slots offered, and a Saturday morning window confirmed in 74 seconds, with nobody in the office.",
   },
   "real-estate": {
     label: "I'm in real estate",
     shortLabel: "Real estate",
     recordingId: "realestate-showing",
     proofLine:
-      "A buyer calling about a listing — representation checked, lender pre-approval confirmed, showing booked, while the agent was mid-showing elsewhere.",
+      "A buyer calling about a listing: representation checked, lender pre-approval confirmed, showing booked, while the agent was mid-showing elsewhere.",
   },
 };

@@ -290,16 +290,22 @@ export const CALL_RECORDINGS: CallRecording[] = [
 /**
  * The call the HERO plays — the first thing a cold visitor hears.
  *
- * Real estate, not pest, since 2026-09-05: the pest recording is a known-bad take
- * (the agent misbehaves) and is being re-recorded once that agent is fixed. Until then
- * the hero must lead with the clip that actually demonstrates the product.
+ * Real estate, and the pest retake did NOT change this (owner's call, 2026-09-05).
+ * The earlier note here said to reconsider once a good pest take existed. One now does
+ * — pest-ants-booking books in 77s against this clip's 117s — and the decision was
+ * still to keep real estate, because the two clips prove different things. The ants
+ * call is a clean happy path: nothing goes wrong, so nothing is tested. This one is
+ * asked for a slot that is unavailable (0:64) and offers alternatives instead of
+ * failing. A call where the agent RECOVERS is stronger proof than one where it is
+ * never challenged, and that is worth the extra 40 seconds in the hero.
+ *
+ * So do not "fix" this by pointing it at the shorter clip. If you want to revisit it,
+ * the argument to beat is the recovery moment, not the duration.
  *
  * This is deliberately NOT tied to the audience segment — the hero renders above the
  * toggle, so it needs one fixed clip. `SEGMENT_COPY[...].recordingId` in lib/segments.ts
- * still drives the per-audience player in the proof band.
- *
- * WHEN THE PEST RETAKE LANDS: point this back at the pest call only if it is genuinely
- * the stronger clip. The hero should carry the best recording, not the default industry.
+ * still drives the per-audience player in the proof band, where a pest visitor gets the
+ * ants call.
  */
 export const DEFAULT_RECORDING_ID = "realestate-showing";
 

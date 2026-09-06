@@ -130,12 +130,25 @@ function SupportRow({ m, delay }: { m: Support; delay: number }) {
           </div>
 
           <div className="min-w-0 flex-1">
-            <div className="flex items-center gap-2">
-              <span className="font-mono text-[10px] font-bold tracking-wider text-ink/65 uppercase">
+            {/*
+              flex-wrap + whitespace-nowrap, not the default nowrap row. At 390px the
+              row is ~197px wide, and a non-wrapping row squeezed BOTH labels until each
+              broke mid-phrase onto two lines ("MISSED-CALL / TEXT BACK" beside
+              "02 // SAFETY NET"), leaving the separator dot stranded between two ragged
+              columns. Letting the ROW wrap while forbidding a break INSIDE each label
+              keeps every label whole and drops the role to its own line when it will not
+              fit. The dot hides when they wrap, so it never dangles at a line end.
+            */}
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+              <span className="whitespace-nowrap font-mono text-[10px] font-bold tracking-wider text-ink/65 uppercase">
                 {m.code}
               </span>
-              <span className="text-ink/20">·</span>
-              <p className={`font-mono text-xs font-bold uppercase tracking-wider ${m.roleClass}`}>
+              <span aria-hidden className="hidden text-ink/20 sm:inline">
+                ·
+              </span>
+              <p
+                className={`whitespace-nowrap font-mono text-xs font-bold uppercase tracking-wider ${m.roleClass}`}
+              >
                 {m.role}
               </p>
             </div>

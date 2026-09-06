@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Plus } from "lucide-react";
@@ -20,6 +20,13 @@ type Support = {
   source?: string;
   src: string;
   roleClass: string;
+  /**
+   * Renders expanded on load. Exactly one row should carry this: three collapsed rows
+   * next to the Rex card show only names and one-line hooks, so a visitor who never taps
+   * leaves the band knowing what the crew is CALLED and nothing about what it does. One
+   * open row shows the shape of the detail and makes the others legible as "same again".
+   */
+  defaultOpen?: boolean;
 };
 
 const rex = {
@@ -66,6 +73,10 @@ const supports: Support[] = [
     source: "Gartner Customer Service & Support consumer study, 2024",
     src: "/images/mascots/pip.png",
     roleClass: "text-teal",
+    /* Pip, not Zip or Gia: it is the middle row, so an open panel here sits between two
+       closed ones and reads as the pattern rather than as the first row being special.
+       It also carries a sourced stat, which is the strongest content in the group. */
+    defaultOpen: true,
   },
   {
     id: "gia",
@@ -104,17 +115,66 @@ function Detail({ points }: { points: string[] }) {
   );
 }
 
+/**
+ * Hover peeks, click decides.
+ *
+ * Hover ADDS to the click state, it never subtracts: a row opened by clicking stays open
+ * when the pointer leaves, so the pointer crossing this stack on its way to another row
+ * cannot close what the visitor deliberately opened. Without that rule an accordion in a
+ * vertical stack collapses panels under the cursor as you travel past them, which moves
+ * the very content you are reaching for.
+ *
+ * `(hover: hover) and (pointer: fine)` gates it to real pointers. A touch device fires a
+ * synthetic mouseenter on tap, so without the gate the first tap would both hover-open
+ * and click-toggle the row — opening and instantly closing it. Touch keeps click alone,
+ * which is the behaviour it already had.
+ */
+function useHoverIntent() {
+  const [hovered, setHovered] = useState(false);
+  /**
+   * Resolved in an effect, not during render. Reading matchMedia while rendering gives
+   * the server one answer and the client another, which is a hydration mismatch; false
+   * on the first paint means the markup agrees and hover simply switches on a tick later.
+   */
+  const [canHover, setCanHover] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const sync = () => setCanHover(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  return {
+    hovered: canHover && hovered,
+    bind: canHover
+      ? {
+          onMouseEnter: () => setHovered(true),
+          onMouseLeave: () => setHovered(false),
+        }
+      : {},
+  };
+}
+
 function SupportRow({ m, delay }: { m: Support; delay: number }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(Boolean(m.defaultOpen));
+  const { hovered, bind } = useHoverIntent();
   const panelId = `crew-panel-${m.id}`;
+
+  // Union, not a replacement — see useHoverIntent. Clicking still owns the durable state.
+  const expanded = open || hovered;
 
   return (
     <Reveal as="li" delay={delay}>
-      <div className="relative overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all duration-200 hover:border-ink/20">
+      <div
+        {...bind}
+        className="relative overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all duration-200 hover:border-ink/20"
+      >
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
+          aria-expanded={expanded}
           aria-controls={panelId}
           className="relative flex w-full items-center gap-4 p-5 text-left focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:-outline-offset-2"
         >
@@ -162,7 +222,7 @@ function SupportRow({ m, delay }: { m: Support; delay: number }) {
             <Plus
               aria-hidden
               className={`size-4 text-ink/70 transition-transform duration-300 ${
-                open ? "rotate-45" : ""
+                expanded ? "rotate-45" : ""
               }`}
             />
           </div>
@@ -171,9 +231,9 @@ function SupportRow({ m, delay }: { m: Support; delay: number }) {
         <motion.div
           id={panelId}
           initial={false}
-          animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
+          animate={{ height: expanded ? "auto" : 0, opacity: expanded ? 1 : 0 }}
           transition={{ duration: 0.28, ease: "easeOut" }}
-          aria-hidden={!open}
+          aria-hidden={!expanded}
           className="relative overflow-hidden"
         >
           <div className="border-t border-border bg-cream/25 px-5 pb-5 pt-4">

@@ -29,17 +29,27 @@ type Support = {
   defaultOpen?: boolean;
 };
 
+/**
+ * TRIMMED 2026-09-06. This card ran 817px for 81 words and made the crew the tallest
+ * band on the page, because most of it restated the hero almost verbatim: the hero
+ * already says "Quotes from your real price list, books onto your calendar" and
+ * "mid-route and mid-showing", which were two of Rex's three bullets and the whole of
+ * the italic aside. "Picks up in under 3 seconds" is also the Proof band's closing line.
+ *
+ * What survives is the one claim the hero does NOT make: emergency escalation to a real
+ * phone. The pricing list mentions "transfers to a human on request", which is a weaker
+ * and different promise, so this is the only place the page says a genuine emergency
+ * reaches a person. Check the hero before adding a bullet back here.
+ */
 const rex = {
   name: "Rex",
   role: "24/7 AI receptionist",
   hook: "Answers on ring one, quotes your pricing, books the job, 24/7.",
-  points: [
-    "Picks up in under 3 seconds, day or night, in your company name.",
-    "Quotes from your real price list and books straight onto your calendar.",
-    "Escalates a true emergency to your on-call phone instead of taking a message.",
-  ],
-  aside:
-    "The operator is on a route. The agent is mid-showing. Rex is the one who is always free.",
+  /* One sentence, not a bullet list. A single bullet under a rule reads like the rest
+     of the list was deleted, and this is the only claim left that the hero does not
+     already make, so it carries more weight as prose than as a lone item. */
+  escalation:
+    "A true emergency goes straight to your on-call phone. It never sits in a message.",
   src: "/images/mascots/rex.png",
 };
 
@@ -298,28 +308,25 @@ export default function MeetTheCrew() {
                 />
               </div>
 
-              <div className="relative mt-6 flex-1 flex flex-col justify-between">
-                <div>
-                  <p className="font-mono text-xs font-bold uppercase tracking-wider text-teal">
-                    {rex.role}
-                  </p>
-                  <h3 className="mt-1.5 font-heading text-2xl sm:text-3xl font-bold tracking-tight text-ink">
-                    {rex.name}
-                  </h3>
-                  <p className="mt-2 text-base leading-relaxed text-ink/80">
-                    {rex.hook}
-                  </p>
+              {/* mt-auto/mb-auto, not a plain block. The card stretches to match the
+                  three accordion rows beside it, so with the copy trimmed the text sat
+                  at the top over ~130px of dead space. Auto margins on both sides centre
+                  the block in whatever height the right column dictates, so the card
+                  reads as composed rather than as a column with the bottom cut off. */}
+              <div className="relative my-auto pt-6">
+                <p className="font-mono text-xs font-bold uppercase tracking-wider text-teal">
+                  {rex.role}
+                </p>
+                <h3 className="mt-1.5 font-heading text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+                  {rex.name}
+                </h3>
+                <p className="mt-2 text-base leading-relaxed text-ink/80">
+                  {rex.hook}
+                </p>
 
-                  <div className="mt-6 border-t border-border pt-5">
-                    <Detail points={rex.points} />
-                  </div>
-                </div>
-
-                <div className="mt-6 border-l-2 border-teal bg-cream/30 p-3 rounded-r-lg">
-                  <p className="text-[0.9375rem] italic leading-relaxed text-ink/75">
-                    &ldquo;{rex.aside}&rdquo;
-                  </p>
-                </div>
+                <p className="mt-5 border-t border-border pt-5 text-[0.9375rem] leading-relaxed text-ink/75">
+                  {rex.escalation}
+                </p>
               </div>
             </article>
           </Reveal>

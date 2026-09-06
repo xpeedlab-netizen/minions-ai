@@ -133,12 +133,16 @@ export const paymentMilestones: PaymentMilestone[] = [
   {
     pct: "40%",
     when: "On signature",
-    body: "Reserves your build slot and starts discovery. This is the only money that moves before you have something to look at.",
+    /* "You approve the script" was carried by the guarantee band until it was removed on
+       2026-09-06 for restating bands 07 and 08. It is the only place the page tells a
+       NON-pilot buyer they control the build before the bulk of the fee is due, so it
+       moved here rather than being lost with the band. */
+    body: "Reserves your build slot and starts discovery. You approve the script before any build work starts, and this is the only money that moves before you have something to look at.",
   },
   {
     pct: "40%",
     when: "At UAT handover",
-    body: "Due when we hand you the working system to test, the milestone marked UAT in the timeline.",
+    body: "Due when we hand you the working system and you run the test calls yourself, the milestone marked UAT in the timeline.",
   },
   {
     pct: "20%",

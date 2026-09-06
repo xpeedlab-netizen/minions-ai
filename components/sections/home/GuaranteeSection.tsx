@@ -3,10 +3,20 @@ import Section, { SectionHeading } from "@/components/ui/Section";
 import { TUNING_WINDOW, HONEST_TRUTH } from "@/lib/data/site-content";
 
 /**
- * Trust band, unrendered on the homepage since 2026-08-29 (see app/page.tsx) but kept
- * compiling. It used to carry a money-back guarantee; that claim was retired site-wide
- * because the approved deployment proposal offers a 30-day TUNING WINDOW instead, not a
- * refund. If this band is ever restored, it must not promise money back.
+ * Trust band, UNRENDERED. Restored to the page in early September 2026 and removed
+ * again on 2026-09-06: four of its eight claims (30-day tuning, accounts in your name,
+ * no long-term contract, and 40% falling due only at handover) were already made by the
+ * pilot and pricing bands above it, the last of them by a milestone strip drawn
+ * immediately before this band ran. So it opened on its most-repeated material and put
+ * the genuinely new part — that the buyer approves the script and runs the test calls —
+ * below the fold of the band under a heading promising nothing specific. Those two
+ * claims moved into `paymentMilestones` in lib/data/pricing.ts.
+ *
+ * Kept compiling rather than deleted, as with WhoThisIsNotFor. BEFORE RESTORING: check
+ * what bands 07 and 08 already say, or this returns to restating them. It also used to
+ * carry a money-back guarantee; that claim was retired site-wide because the approved
+ * deployment proposal offers a 30-day TUNING WINDOW, not a refund. If this band is ever
+ * restored it must not promise money back.
  *
  * Absorbs what used to be the standalone HonestProof section —
  * two text elements that occupied an entire py-16 sm:py-24 band on their own, the

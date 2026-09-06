@@ -6,7 +6,6 @@ import MeetTheCrew from "@/components/sections/home/MeetTheCrew";
 import PricingPreview from "@/components/sections/home/PricingPreview";
 import Proof from "@/components/sections/home/Proof";
 import PilotOffer from "@/components/sections/home/PilotOffer";
-import GuaranteeSection from "@/components/sections/home/GuaranteeSection";
 import HomeFaq from "@/components/sections/home/HomeFaq";
 import FinalCta from "@/components/sections/FinalCta";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
@@ -27,10 +26,9 @@ import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
  *   05 HowItWorks         white   how does it get built?
  *   06 Proof              teal    does it work?
  *   07 PilotOffer         cream   has anyone actually paid you? / is this for me?
- *   08 PricingPreview     white   what does it cost?
- *   09 GuaranteeSection   ink     what if it fails?
- *   10 HomeFaq            cream   what am I still worried about?
- *   11 FinalCta           teal    what is my next step?
+ *   08 PricingPreview     white   what does it cost? / what if it fails?
+ *   09 HomeFaq            cream   what am I still worried about?
+ *   10 FinalCta           teal    what is my next step?
  *
  * PilotOffer sits at 07 because that is where the question it answers actually gets
  * asked. Proof (06) is the page's evidence band, and a visitor who has just read three
@@ -48,11 +46,25 @@ import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
  * compiling and unrendered rather than deleted. Removing it left two cream bands
  * adjacent, so PricingPreview moved cream -> white.
  *
- * Proof and GuaranteeSection were built, then unrendered on 2026-08-29
- * when the page was cut from 14 bands to 9 for being too long and too prose-heavy. They
- * are back because the page swung too far the other way: it asked for a booking without
- * ever proving the product works or naming what happens if it fails. They return
- * unmodified: the earlier cut was about page length, not about these components being
+ * GuaranteeSection was removed from the page on 2026-09-06. Of its eight claims, four
+ * were already made by bands 07 and 08 (30-day tuning, accounts in your name, no
+ * long-term contract, and 40% falling due only at handover, which band 08 draws as a
+ * milestone strip directly above it) — so it spent an entire ink band opening on its
+ * most-repeated material under a heading that promised nothing specific. What was NOT
+ * said anywhere else is the buyer's control over the build: approving the script before
+ * work starts and running the test calls. That moved into band 08's milestone strip,
+ * which is where the payment sequence it belongs to already lives. The component is
+ * kept compiling and unrendered rather than deleted, as with WhoThisIsNotFor.
+ *
+ * This leaves ONE dark band (03) where there were two. The pairing was deliberate — see
+ * the atmosphere note in GuaranteeSection — so the page's closing third is now lighter
+ * than it was. Band 08 white -> band 09 cream still satisfies the alternation rule, so
+ * no retoning was needed.
+ *
+ * Proof was built, then unrendered on 2026-08-29 when the page was cut from 14 bands to
+ * 9 for being too long and too prose-heavy. It is back because the page swung too far
+ * the other way and asked for a booking without ever proving the product works. It
+ * returned unmodified: that cut was about page length, not about the component being
  * wrong.
  */
 export const revalidate = 86400;
@@ -68,7 +80,6 @@ export default function Home() {
       <Proof />
       <PilotOffer />
       <PricingPreview />
-      <GuaranteeSection />
       <HomeFaq />
       <FinalCta
         heading="Get home on time. Let the crew answer."

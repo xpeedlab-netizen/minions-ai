@@ -25,7 +25,7 @@ export default function HvacTestimonial() {
           </p>
           <div className="mt-6">
             <Button href={BOOKING_CALENDAR_URL} showArrow>
-              Book a 15-minute call
+              Book a consultation
             </Button>
           </div>
         </div>

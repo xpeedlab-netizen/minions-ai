@@ -27,8 +27,8 @@ export default function CallProofSection() {
         Don&apos;t take our word for it. Hear it answer.
       </SectionHeading>
       <SectionLead tone="dark">
-        Real recorded calls to our demo line, start to finish. Read the transcript,
-        or press play.
+        Recorded demonstrations of our AI receptionist. Read the transcript, or press
+        play to hear how it handles a real booking conversation.
       </SectionLead>
 
       {/* The switch sits with the thing it switches. See SegmentToggle's docblock for

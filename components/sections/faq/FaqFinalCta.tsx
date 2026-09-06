@@ -1,4 +1,4 @@
-import { Phone, ShieldCheck, ArrowRight, MessageSquare } from "lucide-react";
+import { Phone, ShieldCheck, ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { TUNING_WINDOW } from "@/lib/data/site-content";
 import { SITE_PHONE_NUMBER, SITE_PHONE_TEL } from "@/lib/data/placeholders";
@@ -20,12 +20,12 @@ export default function FaqFinalCta() {
         </h2>
 
         <p className="mt-4 text-base sm:text-lg text-ink/75 leading-relaxed max-w-xl mx-auto">
-          We&apos;re software engineers who answer our own phones. Let&apos;s find 15 minutes to review your call volume and CRM setup before you spend a dime.
+          We&apos;re software engineers who answer our own phones. Let&apos;s review your call volume and CRM setup before you spend a dime.
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button href="/contact" size="lg">
-            Book a 15-minute call
+            Book a consultation
             <ArrowRight className="size-4" />
           </Button>
 

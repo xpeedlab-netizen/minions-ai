@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/blog/storage";
-import { ArrowLeft, Clock, Calendar, Tag, Phone, ShieldCheck, Sparkles, Share2 } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, Tag, Phone, Sparkles } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { SITE_PHONE_NUMBER, SITE_PHONE_TEL } from "@/lib/data/placeholders";
 import ArticleContent from "@/components/blog/ArticleContent";

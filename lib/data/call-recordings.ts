@@ -136,10 +136,10 @@ export const CALL_RECORDINGS: CallRecording[] = [
     segment: "pest",
     src: "/media/calls/pest-ants-booking.mp3",
     durationSec: 74,
-    badge: "Booked in 74 seconds",
+    badge: "Recorded demo",
     title: "Ants in the kitchen, booked on the first call",
     outcome:
-      "Took the address, offered the next two open slots, and confirmed a Saturday morning window with prep details texted, start to finish in 74 seconds.",
+      "Took the address, offered the next two open slots, and confirmed a Saturday morning window with prep details texted.",
     redactedSpans: [],
     cues: [
       { t: 0.0, speaker: "agent", text: "Thanks for calling Ironclad Pest Solutions. This is Alex. How can I help you today?" },

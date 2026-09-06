@@ -18,7 +18,7 @@ export default function HiwProcessGrid() {
                 <span className="rounded-full bg-cream px-3 py-1 font-mono text-xs text-ink/65">WEEK 1</span>
               </div>
               <h3 className="relative mt-4 font-heading font-bold text-xl text-ink">
-                Discovery call (15 minutes)
+                Discovery call
               </h3>
               <p className="relative mt-2 text-sm text-ink/65 leading-relaxed">
                 You tell us how your business actually runs. We tell you honestly whether we can

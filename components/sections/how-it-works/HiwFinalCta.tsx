@@ -9,7 +9,7 @@ export default function HiwFinalCta() {
           Ready to get your week back?
         </h2>
         <p className="mt-4 text-ink/70 text-lg">
-          Take 15 minutes to find out if Minions.AI is the right fit for your service business.
+          Find out whether Minions.AI is the right fit for your service business.
         </p>
         <Button href="/contact" size="lg" className="mt-8">
           <CalendarCheck className="size-4" />

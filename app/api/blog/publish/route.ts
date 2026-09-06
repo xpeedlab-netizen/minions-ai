@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
     try {
       revalidatePath("/blog");
       revalidatePath(`/blog/${post.slug}`);
-    } catch (e) {
+    } catch {
       // Ignore in non-production builds
     }
 

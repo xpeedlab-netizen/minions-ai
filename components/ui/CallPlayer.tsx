@@ -269,8 +269,11 @@ export default function CallPlayer({
   }, [activeIndex, variant]);
 
   useEffect(() => {
+    // Capture the node at mount. Reading audioRef.current inside the cleanup risks
+    // it already being null, which would strand this element in the activeAudio
+    // singleton and stop a later clip from pausing it.
+    const el = audioRef.current;
     return () => {
-      const el = audioRef.current;
       if (el && activeAudio === el) activeAudio = null;
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       void audioCtxRef.current?.close();

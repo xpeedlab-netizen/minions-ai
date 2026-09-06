@@ -82,7 +82,7 @@ export const pricingPlans: PricingPlan[] = [
     originalPrice: "$5,500",
     setupFee: "One-time build fee",
     popular: true,
-    badge: "Most Chosen",
+    badge: "Recommended",
     description: "Rex, Zip and Gia working together: answering, texting back, and following up until the lead converts. Best where the phone drives revenue.",
     turnaround: "5–6 weeks to go-live",
     features: [

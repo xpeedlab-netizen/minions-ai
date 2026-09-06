@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { PhoneOff, MessageSquare, Clock, CheckCircle2, Sparkles, Send, Smartphone, UserCheck, BellRing } from "lucide-react";
+import { Sparkles, Smartphone, UserCheck, BellRing } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
 const scenarios = [

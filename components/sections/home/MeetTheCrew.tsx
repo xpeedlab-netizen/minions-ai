@@ -343,10 +343,11 @@ export default function MeetTheCrew() {
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-border bg-white p-6 sm:p-8 shadow-sm">
             <div>
               <p className="font-heading text-lg font-bold text-ink">
-                All four crew members deploy together.
+                Start with the crew your workflow needs.
               </p>
               <p className="mt-1 text-sm text-ink/70">
-                One fixed setup, pre-integrated with your calendar and CRM. Zero monthly contract.
+                Core starts with Rex. Full adds Zip and Gia. Pip website chat is available when
+                it fits your lead flow.
               </p>
             </div>
             <Button
@@ -356,7 +357,7 @@ export default function MeetTheCrew() {
               showArrow
               className="shrink-0 w-full sm:w-auto"
             >
-              Book 15-Minute Setup Call
+              Book a Consultation
             </Button>
           </div>
         </Reveal>

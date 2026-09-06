@@ -43,6 +43,7 @@ export async function POST(request: NextRequest) {
     need?: unknown;
     recaptchaToken?: unknown;
     botField?: unknown;
+    attribution?: unknown;
   };
 
   try {
@@ -61,6 +62,21 @@ export async function POST(request: NextRequest) {
   const need = typeof body.need === "string" ? body.need.trim() : "";
   const recaptchaToken =
     typeof body.recaptchaToken === "string" ? body.recaptchaToken.trim() : "";
+  const attribution =
+    body.attribution && typeof body.attribution === "object" && !Array.isArray(body.attribution)
+      ? Object.entries(body.attribution)
+          .filter((entry): entry is [string, string] => typeof entry[1] === "string")
+          .map(([key, value]) => [key.slice(0, 60), value.trim().slice(0, 500)] as const)
+          .filter(([, value]) => value.length > 0)
+      : [];
+  const attributionText = attribution.length
+    ? attribution.map(([key, value]) => `${key}: ${value}`).join("\n")
+    : "None";
+  const attributionHtml = attribution.length
+    ? attribution
+        .map(([key, value]) => `<li><strong>${escapeHtml(key)}:</strong> ${escapeHtml(value)}</li>`)
+        .join("")
+    : "<li>None</li>";
 
   if (!name || !contact || !need) {
     return Response.json(
@@ -121,12 +137,14 @@ export async function POST(request: NextRequest) {
       to: emailTo,
       replyTo: validation.type === "email" ? contact : undefined,
       subject: `New contact form submission from ${name}`,
-      text: `Name: ${name}\nContact: ${contact} (${validation.type})\n\nMessage:\n${need}`,
+      text: `Name: ${name}\nContact: ${contact} (${validation.type})\n\nMessage:\n${need}\n\nAttribution:\n${attributionText}`,
       html: `
         <p><strong>Name:</strong> ${escapeHtml(name)}</p>
         <p><strong>Contact:</strong> ${escapeHtml(contact)} (<em>${validation.type}</em>)</p>
         <p><strong>Message:</strong></p>
         <p>${escapeHtml(need).replace(/\n/g, "<br>")}</p>
+        <p><strong>Attribution:</strong></p>
+        <ul>${attributionHtml}</ul>
       `,
     });
 

@@ -19,7 +19,7 @@ export default function AboutFinalCta() {
           </Button>
         </div>
         <p className="mt-6 font-mono text-xs text-ink/65">
-          15-minute intro. No pressure. Just solutions.
+          A brief intro. No pressure. Just solutions.
         </p>
       </div>
     </section>

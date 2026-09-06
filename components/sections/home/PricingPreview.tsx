@@ -69,8 +69,8 @@ export default function PricingPreview() {
         its docblock on measure — and a className max-w loses the cascade to it.
       */}
       <SectionLead>
-        No per-minute billing, no contract, no lock-in. Every account is in your name,
-        whatever you decide.
+        One fixed build fee, then you own the system. Third-party voice and messaging
+        usage is billed separately, with optional ongoing care after launch.
       </SectionLead>
 
       {/*
@@ -116,7 +116,7 @@ export default function PricingPreview() {
                 Payment Safety
               </span>
               <h3 className="font-heading text-base font-bold text-ink sm:text-lg">
-                Pay in 3 Safe Milestones: Zero Upfront Risk
+                Fixed scope. Three clear payment milestones.
               </h3>
             </div>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-teal/10 px-3 py-1 font-mono text-xs font-semibold text-teal">
@@ -157,4 +157,3 @@ export default function PricingPreview() {
     </Section>
   );
 }
-

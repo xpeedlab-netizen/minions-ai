@@ -1,6 +1,6 @@
 import { PROOF_STATS } from "@/lib/data/site-content";
 import Reveal from "@/components/ui/Reveal";
-import { Zap, Clock, TrendingUp, ShieldCheck } from "lucide-react";
+import { Zap, TrendingUp } from "lucide-react";
 
 export default function ZipWhySpeedWins() {
   return (

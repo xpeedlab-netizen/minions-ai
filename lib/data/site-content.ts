@@ -149,17 +149,17 @@ export const APPROVED_FAQS = [
   {
     id: "wrong-price",
     q: "What if it quotes the wrong pricing or service detail?",
-    a: "The AI is strictly trained on your exact pricing schedules, service areas, and company rules. It never guesses or hallucinates details, and both voice and website chat answers are grounded in your verified data.",
+    a: "The AI is trained on your approved pricing, service areas, and company rules. When it does not have an approved answer, it follows the handoff rules you set instead of inventing a price or policy. Both voice and website chat are grounded in your verified data.",
   },
   {
     id: "if-it-breaks",
     q: "What happens if a call fails or is disconnected?",
-    a: "If an unexpected issue occurs, calls automatically fall back to your existing phone voicemail system or warm-transfer directly to your mobile phone. You are completely protected.",
+    a: "If an unexpected issue occurs, calls can fall back to your existing voicemail or warm-transfer to your mobile phone, based on the routing rules you approve during setup. We test those fallback paths before go-live.",
   },
   {
     id: "change-number",
     q: "Do I have to change my business phone number?",
-    a: "Never. You keep your existing business phone number. You simply activate call forwarding, which takes under 2 minutes and works with any carrier.",
+    a: "You keep your existing business phone number. We configure call forwarding during setup and confirm compatibility with your carrier before go-live.",
   },
   {
     id: "how-long-setup",
@@ -186,7 +186,7 @@ export const WHO_THIS_IS_NOT_FOR = {
     "You prefer leaving caller leads in voicemail and risking lost job revenue",
     "You require a physical receptionist sitting at your office front desk",
   ],
-  closing: "Want to see if your business qualifies? Book a 15-minute setup call.",
+  closing: "Want to see if your business qualifies? Book a consultation.",
 };
 
 export const PIP_GREETING = "Hello! I'm Pip. How can I help you today?";

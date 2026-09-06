@@ -6,11 +6,18 @@ import Button from "@/components/ui/Button";
 import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 import { ANNUAL_MINIONS_COST } from "@/lib/data/pricing";
 
+/**
+ * Unlike the other industry calculators, this one does not expose close rate as a
+ * slider — the three inputs above already carry the estimate. It was previously held
+ * in state with no setter call, which read as an unfinished control.
+ */
+const CLOSE_RATE_PCT = 15;
+
 export default function RealEstateRoiCalculator() {
   const [missedCalls, setMissedCalls] = useState(15);
   const [medianPrice, setMedianPrice] = useState(550000);
   const [commissionRate, setCommissionRate] = useState(2.75);
-  const [closeRate, setCloseRate] = useState(15);
+  const closeRate = CLOSE_RATE_PCT;
 
   const commissionPerDeal = Math.round(medianPrice * (commissionRate / 100));
   const closedDealsMonthly = (missedCalls * (closeRate / 100));

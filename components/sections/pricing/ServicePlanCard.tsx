@@ -138,7 +138,7 @@ export default function ServicePlanCard({
       {/* Button CTA */}
       <div className="mt-8 pt-4">
         <Button
-          href="/contact"
+          href={`/contact?plan=${encodeURIComponent(plan.name)}`}
           variant={isPopular ? "primary" : "outline"}
           track={{
             event: "cta_click",

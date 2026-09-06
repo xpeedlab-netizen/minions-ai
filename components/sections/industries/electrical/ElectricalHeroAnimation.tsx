@@ -3,20 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  PhoneCall,
-  CheckCircle2,
-  Calendar,
-  Sparkles,
-  ShieldCheck,
-  Play,
-  RotateCcw,
-  ArrowRight,
-  Zap,
-  ShieldAlert,
-  Flame,
-  Wrench,
-} from "lucide-react";
+import { CheckCircle2, Sparkles, ShieldCheck, Play, RotateCcw, ArrowRight, Zap, Wrench } from "lucide-react";
 
 const ELECTRICAL_SCENARIOS = [
   {

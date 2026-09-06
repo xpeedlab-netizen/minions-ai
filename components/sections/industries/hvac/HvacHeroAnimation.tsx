@@ -3,19 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  PhoneCall,
-  CheckCircle2,
-  Calendar,
-  Sparkles,
-  ShieldCheck,
-  Play,
-  RotateCcw,
-  ArrowRight,
-  Flame,
-  Snowflake,
-  Wrench,
-} from "lucide-react";
+import { CheckCircle2, Sparkles, ShieldCheck, Play, RotateCcw, ArrowRight, Flame, Snowflake } from "lucide-react";
 
 const HVAC_SCENARIOS = [
   {

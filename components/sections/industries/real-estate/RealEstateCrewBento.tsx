@@ -1,4 +1,4 @@
-import { PhoneCall, MessageSquare, Bot, Layers, FileText, CheckCircle2, CalendarCheck, Sparkles } from "lucide-react";
+import { PhoneCall, MessageSquare, Bot, Layers, FileText, CalendarCheck, Sparkles } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
 export default function RealEstateCrewBento() {

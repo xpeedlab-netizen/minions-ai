@@ -12,6 +12,11 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     ".agents/**",
     ".github/**",
+    // Node CommonJS tooling: `require()` is correct here, and these never ship
+    // to the browser. Linting them under the Next/TS browser config only ever
+    // produced false `no-require-imports` errors.
+    "scripts/**",
+    ".claude/**",
   ]),
 ]);
 

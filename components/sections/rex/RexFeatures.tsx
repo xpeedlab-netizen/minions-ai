@@ -1,14 +1,4 @@
-import {
-  Clock,
-  AudioLines,
-  CheckCircle2,
-  CalendarCheck,
-  PhoneForwarded,
-  Sparkles,
-  MessageSquareText,
-  ShieldCheck,
-  Database,
-} from "lucide-react";
+import { Clock, AudioLines, CheckCircle2, CalendarCheck, PhoneForwarded, Sparkles, ShieldCheck, Database } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import { INTEGRATION_COPY } from "@/lib/data/site-content";
 

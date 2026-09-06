@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Phone, Check } from "lucide-react";
 import Button from "@/components/ui/Button";
 import TrackedPhoneLink from "@/components/ui/TrackedPhoneLink";
@@ -17,7 +16,7 @@ import TrustLogos from "@/components/ui/TrustLogos";
  * COPY & CRO:
  *   - Outcome-first H1 + clear subhead covering both co-primary markets.
  *   - Two frictionless conversion paths:
- *     1. 15-minute setup call booking
+ *     1. A consultation booking
  *     2. Instant interactive dual-market call preview (Pest Control & Real Estate) + live demo phone line
  *   - Visual CRM integration logos (FieldRoutes, PestPac, GorillaDesk, ServiceTitan, Follow Up Boss, Jobber, Google Calendar).
  */
@@ -50,7 +49,7 @@ export default function Hero() {
                 track={{ event: "cta_click", params: { location: "hero" } }}
                 className="w-full sm:w-auto justify-center whitespace-nowrap"
               >
-                Book a 15-minute call
+                Book a Consultation
               </Button>
               <TrackedPhoneLink
                 href={`tel:${SITE_PHONE_TEL}`}
@@ -76,6 +75,9 @@ export default function Hero() {
               </span>
               <span className="inline-flex items-center gap-1">
                 <Check className="size-3.5 text-teal" /> 30-day tuning included
+              </span>
+              <span className="inline-flex items-center gap-1">
+                <Check className="size-3.5 text-teal" /> From $2,500, live in 3 to 6 weeks
               </span>
             </div>
           </div>

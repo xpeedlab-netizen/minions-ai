@@ -22,6 +22,13 @@ declare global {
   }
 }
 
+/**
+ * Inlined by Next at build time, so it is a constant for the life of the bundle.
+ * It was previously copied into state via an effect, which only ever produced one
+ * wasted render before the widget could mount.
+ */
+const SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? null;
+
 interface RecaptchaFieldProps {
   onVerify: (token: string) => void;
   onExpired?: () => void;
@@ -37,25 +44,17 @@ export default function RecaptchaField({
 }: RecaptchaFieldProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<number | null>(null);
-  const [siteKey, setSiteKey] = useState<string | null>(null);
   const [isSimulatedVerified, setIsSimulatedVerified] = useState(false);
 
   useEffect(() => {
-    const key = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-    if (key) {
-      setSiteKey(key);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!siteKey || !containerRef.current) return;
+    if (!SITE_KEY || !containerRef.current) return;
 
     const loadRecaptcha = () => {
       if (window.grecaptcha && window.grecaptcha.render) {
         if (containerRef.current && widgetIdRef.current === null) {
           try {
             const id = window.grecaptcha.render(containerRef.current, {
-              sitekey: siteKey,
+              sitekey: SITE_KEY,
               callback: (token: string) => onVerify(token),
               "expired-callback": () => {
                 if (onExpired) onExpired();
@@ -88,10 +87,10 @@ export default function RecaptchaField({
         document.head.appendChild(script);
       }
     }
-  }, [siteKey, onVerify, onExpired, theme]);
+  }, [onVerify, onExpired, theme]);
 
   // If site key is configured, render the Google reCAPTCHA mount container
-  if (siteKey) {
+  if (SITE_KEY) {
     return (
       <div className={`recaptcha-container my-1 ${className}`}>
         <div ref={containerRef} />

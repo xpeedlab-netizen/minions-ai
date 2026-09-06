@@ -1,4 +1,4 @@
-import { ClipboardCheck, Cpu, Rocket, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ClipboardCheck, Cpu, Rocket } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
 const steps = [

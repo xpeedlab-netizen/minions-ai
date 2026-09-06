@@ -6,6 +6,19 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import RecaptchaField from "@/components/ui/RecaptchaField";
 import { validateContact } from "@/lib/validation";
+import { track } from "@/lib/analytics";
+
+const attributionKeys = ["plan", "for", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid", "fbclid"] as const;
+
+function getAttribution() {
+  const params = new URLSearchParams(window.location.search);
+  return Object.fromEntries(
+    attributionKeys.flatMap((key) => {
+      const value = params.get(key)?.trim();
+      return value ? [[key, value.slice(0, 500)]] : [];
+    }),
+  );
+}
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -130,6 +143,7 @@ export default function ContactForm() {
             const contact = contactValue.trim();
             const need = String(data.get("need") || "").trim();
             const botField = String(data.get("website_hp") || "");
+            const attribution = getAttribution();
 
             // Client-side contact validation
             const contactValidation = validateContact(contact);
@@ -150,6 +164,7 @@ export default function ContactForm() {
                   need,
                   recaptchaToken,
                   botField,
+                  attribution,
                 }),
               });
 
@@ -163,6 +178,13 @@ export default function ContactForm() {
               setContactError(null);
               setRecaptchaToken(null);
               setSubmitted(true);
+              track("lead_submit", {
+                location: "contact_form",
+                plan: attribution.plan,
+                segment: attribution.for,
+                utm_source: attribution.utm_source,
+                utm_campaign: attribution.utm_campaign,
+              });
             } catch (err) {
               setError(
                 err instanceof Error ? err.message : "Failed to send your message.",

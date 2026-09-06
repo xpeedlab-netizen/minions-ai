@@ -1,4 +1,4 @@
-import { Sparkles, Phone, ArrowRight } from "lucide-react";
+import { Sparkles, Phone } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { BOOKING_CALENDAR_URL, SITE_PHONE_NUMBER, SITE_PHONE_TEL } from "@/lib/data/placeholders";
 

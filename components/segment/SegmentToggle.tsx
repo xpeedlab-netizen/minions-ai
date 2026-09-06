@@ -95,7 +95,9 @@ function ToggleButtons({
               aria-pressed={isActive}
               onClick={() => {
                 track("segment_select", { segment: seg });
-                router.replace(`/?for=${seg}#hear-it`, { scroll: false });
+                const params = new URLSearchParams(window.location.search);
+                params.set("for", seg);
+                router.replace(`/?${params.toString()}#hear-it`, { scroll: false });
               }}
               className={`min-h-11 flex-1 whitespace-nowrap rounded-full px-5 py-2 font-heading text-sm font-bold transition-colors focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 sm:flex-none ${
                 isDark ? "focus-visible:outline-white" : "focus-visible:outline-teal"

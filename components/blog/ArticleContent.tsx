@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { CheckCircle2, Phone, Sparkles, Terminal, Copy, Check, ShieldAlert, Cpu } from "lucide-react";
+import React from "react";
+import { Phone, Sparkles, Copy, Check } from "lucide-react";
 import { SITE_PHONE_NUMBER } from "@/lib/data/placeholders";
 
 interface ArticleContentProps {

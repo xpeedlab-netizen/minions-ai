@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MessageSquare, ShieldCheck, CheckCircle2, Sparkles, Send, Smartphone, UserCheck, BellRing, Database } from "lucide-react";
+import { MessageSquare, ShieldCheck, Sparkles, UserCheck } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
 const chatScenarios = [

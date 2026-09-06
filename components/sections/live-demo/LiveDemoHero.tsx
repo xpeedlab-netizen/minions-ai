@@ -13,7 +13,7 @@ export default function LiveDemoHero() {
           Experience how the crew answers customer inquiries.
         </h1>
         <p className="mt-6 text-lg text-ink/70 leading-relaxed">
-          Test Pip live in browser chat or book a 15-minute call to hear test recordings built specifically around your business services.
+          Test Pip live in browser chat or book a consultation to hear test recordings built specifically around your business services.
         </p>
       </div>
     </section>

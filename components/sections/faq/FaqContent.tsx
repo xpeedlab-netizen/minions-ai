@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import Link from "next/link";
 import {
   ChevronDown,
   Search,
@@ -13,11 +12,10 @@ import {
   HelpCircle,
   Phone,
   Sparkles,
-  ArrowRight,
 } from "lucide-react";
 import { KNOWLEDGE_BASE_FAQS, FaqItem } from "@/lib/data/faq";
 import { FAQ_CATEGORIES, FaqCategoryId } from "./categories";
-import { SITE_PHONE_NUMBER, SITE_PHONE_TEL } from "@/lib/data/placeholders";
+import { SITE_PHONE_TEL } from "@/lib/data/placeholders";
 
 const CATEGORY_ICONS = {
   "ai-experience": Headset,

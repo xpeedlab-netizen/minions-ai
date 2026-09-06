@@ -1,4 +1,4 @@
-import { Check, X, Minus, DollarSign, Clock, ShieldCheck } from "lucide-react";
+import { Check, X, Minus } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import { pricingPlans } from "@/lib/data/pricing";
 

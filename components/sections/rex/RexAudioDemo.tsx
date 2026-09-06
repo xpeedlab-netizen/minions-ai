@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Play, Pause, PhoneCall, CalendarCheck, ShieldCheck, CheckCircle2, Sparkles, Volume2, Mic, Activity, UserCheck, BellRing, PhoneOff } from "lucide-react";
+import { Play, Pause, PhoneCall, CalendarCheck, ShieldCheck, Volume2, Activity, UserCheck } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
 const sampleCalls = [

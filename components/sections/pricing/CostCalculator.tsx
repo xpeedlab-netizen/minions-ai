@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Calculator, ExternalLink, PhoneCall, Clock, Sparkles, CheckCircle } from "lucide-react";
+import { Calculator, ExternalLink, PhoneCall, Clock, CheckCircle } from "lucide-react";
 import { calculatorPresets } from "@/lib/data/pricing";
 
 export default function CostCalculator() {

@@ -1,4 +1,4 @@
-import { PhoneMissed, Scale, Car, AlertCircle, ArrowDownRight, Clock } from "lucide-react";
+import { PhoneMissed, Scale, Car, AlertCircle, ArrowDownRight } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
 const leaks = [

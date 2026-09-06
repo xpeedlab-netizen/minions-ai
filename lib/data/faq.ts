@@ -32,7 +32,7 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "ai-experience",
     categoryLabel: "AI Voice & Experience",
     q: "What if it quotes the wrong pricing or service detail?",
-    a: "The AI is strictly trained on your exact pricing schedules, service areas, and company rules. It never guesses or hallucinates details, and both voice and website chat answers are grounded in your verified data.",
+    a: "The AI is trained on your approved pricing, service areas, and company rules. When it does not have an approved answer, it follows the handoff rules you set instead of inventing a price or policy. Both voice and website chat are grounded in your verified data.",
     tag: "Zero Hallucination",
   },
   {
@@ -40,7 +40,7 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "ai-experience",
     categoryLabel: "AI Voice & Experience",
     q: "What happens if a call fails or is disconnected?",
-    a: "If an unexpected issue occurs, calls automatically fall back to your existing phone voicemail system or warm-transfer directly to your mobile phone. You are completely protected.",
+    a: "If an unexpected issue occurs, calls can fall back to your existing voicemail or warm-transfer to your mobile phone, based on the routing rules you approve during setup. We test those fallback paths before go-live.",
     tag: "Fail-Safe Routing",
   },
 
@@ -50,7 +50,7 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "setup-tech",
     categoryLabel: "Setup & CRMs",
     q: "Do I have to change my business phone number?",
-    a: "Never. You keep your existing business phone number. You simply activate call forwarding, which takes under 2 minutes and works with any carrier.",
+    a: "You keep your existing business phone number. We configure call forwarding during setup and confirm compatibility with your carrier before go-live.",
     tag: "Keep Your Number",
   },
   {
@@ -147,4 +147,3 @@ export const homeFaq: FaqItem[] = APPROVED_FAQS.map((item) => ({
 }));
 
 export const fullFaq: FaqItem[] = KNOWLEDGE_BASE_FAQS;
-

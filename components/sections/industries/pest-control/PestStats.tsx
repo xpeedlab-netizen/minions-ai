@@ -1,32 +1,45 @@
 import { DollarSign, Zap, PhoneOff, CalendarCheck2 } from "lucide-react";
 
+/**
+ * CAPABILITIES, NOT RESULTS.
+ *
+ * These cards used to read as outcomes we had produced ("$640k+ Annual Contract Value
+ * At Stake", "0 Swarm-Season Losses", "100% Synced"). We have no customer evidence
+ * behind those numbers, and a number presented as achieved proof that cannot be
+ * sourced is the fastest way to lose a buyer who checks. See
+ * lib/data/customer-proof.ts, which is still empty.
+ *
+ * So each card now states what the system is BUILT to do, and any figure is labelled
+ * as an illustration of the buyer's own exposure rather than our track record. When
+ * real customer numbers exist, they belong here with a named source.
+ */
 const items = [
   {
     value: "$640k+",
-    unit: "Recurring LTV",
-    label: "Annual Contract Value At Stake",
-    sub: "From 5-8 saved quarterly plan leads/wk",
+    unit: "Illustrative",
+    label: "Recurring Value You Are Protecting",
+    sub: "Example only: 5-8 saved quarterly plans/wk at your own contract value",
     icon: DollarSign,
   },
   {
     value: "< 5s",
-    unit: "Speed",
+    unit: "Designed",
     label: "Pest Photo Text-Back",
-    sub: "Sends species photo link instantly",
+    sub: "Texts the species photo link while the caller is still on the line",
     icon: Zap,
   },
   {
-    value: "0",
-    unit: "Missed",
-    label: "Swarm-Season Losses",
-    sub: "Answers wasp/rodent calls 24/7",
+    value: "24/7",
+    unit: "Coverage",
+    label: "Built For Swarm Season",
+    sub: "Answers wasp and rodent calls at 2 AM, weekends and peak",
     icon: PhoneOff,
   },
   {
-    value: "100%",
-    unit: "Synced",
+    value: "Native",
+    unit: "Integration",
     label: "FieldRoutes & PestPac Sync",
-    sub: "Direct route density booking",
+    sub: "Books direct, with route density rules you set",
     icon: CalendarCheck2,
   },
 ];

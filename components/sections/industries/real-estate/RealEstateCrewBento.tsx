@@ -1,5 +1,45 @@
-import { PhoneCall, MessageSquare, Bot, Layers, FileText, CalendarCheck, Sparkles } from "lucide-react";
+import {
+  PhoneCall,
+  MessageSquare,
+  CalendarCheck,
+  Sparkles,
+  MessagesSquare,
+  Star,
+  FileText,
+} from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
+
+/* The four agents that support Alex on a listing. Compact rows rather than full
+   Bento cards — see the matching note in PestCrewBento: an ad visitor is deciding
+   "does this answer my phone?" first, but the five-agent suite is the documented
+   product model (.claude/features/industries/rules.md) and must stay visible so this
+   page agrees with the homepage crew band and /how-it-works. */
+const supporting = [
+  {
+    icon: MessageSquare,
+    name: "Zip",
+    role: "Speed to Lead",
+    body: "Texts missed callers in under 5 seconds with a link to book a private tour.",
+  },
+  {
+    icon: MessagesSquare,
+    name: "Pip",
+    role: "Web Chat & Email",
+    body: "Answers listing, neighbourhood and process questions from your verified data only.",
+  },
+  {
+    icon: Star,
+    name: "Gia",
+    role: "Reminders & Reviews",
+    body: "Sends 24h and 1h showing reminders, then requests a review once the deal closes.",
+  },
+  {
+    icon: FileText,
+    name: "Otto",
+    role: "Back Office",
+    body: "Handles client intake forms and disclosure paperwork so nothing stalls a file.",
+  },
+];
 
 export default function RealEstateCrewBento() {
   return (
@@ -15,144 +55,67 @@ export default function RealEstateCrewBento() {
           </h2>
         </div>
 
-        {/* Bento Grid Layout */}
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          
-          {/* Card 1: Alex — 24/7 Real Estate Voice ISA (Featured Large Card) */}
-          <Reveal className="lg:col-span-2">
-            <div className="relative h-full rounded-3xl border border-ink/20 bg-ink p-7 text-white shadow-xl overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:shadow-teal/20 hover:border-teal/40 hover:-translate-y-1 transition-all duration-300">
-              <div className="absolute top-0 right-0 -mr-16 -mt-16 size-64 rounded-full bg-teal/20 blur-3xl pointer-events-none" />
-
-              <div className="flex items-center justify-between mb-8">
-                <span className="flex size-11 items-center justify-center rounded-2xl bg-teal/20 text-teal-300 border border-teal/40">
-                  <PhoneCall className="size-5" />
-                </span>
-                <span className="font-mono text-xs font-bold text-teal-300 bg-teal/20 border border-teal/40 px-3 py-1 rounded-full uppercase tracking-wide">
-                  Alex, Inside Sales
-                </span>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="font-heading font-bold text-2xl text-white">
-                    24/7 Voice & Calendar Sync
-                  </h3>
-                  <p className="mt-2 text-sm text-white/75 leading-relaxed">
-                    Answers on ring one, qualifies buyers with LPMAMA, and books directly to Google Calendar.
-                  </p>
-                </div>
-                
-                {/* Visual UI Mockup */}
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
-                  <div className="flex items-center gap-3 border-b border-white/10 pb-3 mb-3">
-                    <div className="size-8 rounded-full bg-teal/20 flex items-center justify-center text-teal-300">
-                      <CalendarCheck className="size-4" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-white">44 Elm St Showing</p>
-                      <p className="text-[10px] text-teal-300 font-mono">Friday @ 10:00 AM</p>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-2 w-3/4 bg-white/10 rounded-full" />
-                    <div className="h-2 w-1/2 bg-white/10 rounded-full" />
-                  </div>
-                </div>
-              </div>
+        {/* Alex leads at full width; the four supporting agents sit in a compact row. */}
+        <Reveal>
+          <div className="relative mt-12 overflow-hidden rounded-3xl border border-ink/20 bg-ink p-7 text-white shadow-xl transition-all duration-300 hover:border-teal/40 hover:shadow-2xl hover:shadow-teal/20">
+            <div className="mb-8 flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+              <span className="flex size-11 items-center justify-center rounded-2xl bg-teal/20 text-teal-300 border border-teal/40">
+                <PhoneCall className="size-5" />
+              </span>
+              <span className="font-mono text-xs font-bold text-teal-300 bg-teal/20 border border-teal/40 px-3 py-1 rounded-full uppercase tracking-wide">
+                Alex, Inside Sales
+              </span>
             </div>
-          </Reveal>
 
-          {/* Card 2: Zip — 5-Second Speed to Lead */}
-          <Reveal delay={0.05}>
-            <div className="relative h-full rounded-3xl border border-coral/30 bg-coral/5 p-7 text-ink shadow-sm flex flex-col hover:shadow-xl hover:shadow-coral/10 hover:border-coral/50 hover:-translate-y-1 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="flex size-10 items-center justify-center rounded-2xl bg-coral/10 text-coral-text">
-                  <MessageSquare className="size-5" />
-                </span>
-                <h3 className="font-heading font-bold text-lg text-ink">Speed Agent</h3>
-              </div>
-              
-              {/* iMessage Visual Mockup */}
-              <div className="mt-auto bg-white border border-border/80 rounded-2xl p-3 shadow-sm relative">
-                <div className="absolute -left-2 top-4 w-3 h-3 bg-white border-l border-b border-border/80 rotate-45" />
-                <p className="text-xs font-medium text-ink/80 relative z-10 leading-relaxed">
-                  Hi! Sorry we missed your call. Would you like to schedule a private tour for 44 Elm St?
+            <div className="grid items-center gap-8 sm:grid-cols-2">
+              <div className="min-w-0">
+                <h3 className="font-heading font-bold text-2xl text-white">
+                  24/7 Voice & Calendar Sync
+                </h3>
+                <p className="mt-2 text-sm text-white/75 leading-relaxed">
+                  Answers on ring one, qualifies buyers with LPMAMA, and books directly to Google Calendar.
                 </p>
               </div>
-            </div>
-          </Reveal>
 
-          {/* Card 3: Pip — Listing FAQ AI */}
-          <Reveal delay={0.1}>
-            <div className="relative h-full rounded-3xl border border-border bg-white p-7 shadow-xs hover:shadow-xl hover:border-teal/40 hover:-translate-y-1 transition-all duration-300 flex flex-col">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="flex size-10 items-center justify-center rounded-2xl bg-accent-blue/10 text-accent-blue border border-accent-blue/20">
-                  <Bot className="size-5" />
-                </span>
-                <h3 className="font-heading font-bold text-lg text-ink">Listing FAQ</h3>
-              </div>
-
-              {/* Chat Interface Mockup */}
-              <div className="mt-auto space-y-3">
-                <div className="bg-ink/5 rounded-xl rounded-tr-sm p-2.5 text-[11px] font-medium w-[80%] ml-auto text-right">
-                  What are the HOA fees?
+              {/* Visual UI Mockup */}
+              <div className="min-w-0 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <div className="mb-3 flex items-center gap-3 border-b border-white/10 pb-3">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal/20 text-teal-300">
+                    <CalendarCheck className="size-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs font-bold text-white">44 Elm St Showing</p>
+                    <p className="font-mono text-[10px] text-teal-300">Friday @ 10:00 AM</p>
+                  </div>
                 </div>
-                <div className="bg-accent-blue/10 text-accent-blue border border-accent-blue/20 rounded-xl rounded-tl-sm p-2.5 text-[11px] font-medium w-[90%]">
-                  HOA is $250/mo. Covers pool & lawn care!
+                <div className="space-y-2">
+                  <div className="h-2 w-3/4 rounded-full bg-white/10" />
+                  <div className="h-2 w-1/2 rounded-full bg-white/10" />
                 </div>
               </div>
             </div>
-          </Reveal>
+          </div>
+        </Reveal>
 
-          {/* Card 4: Gia — 100-Point CRM Scoring */}
-          <Reveal delay={0.15}>
-            <div className="relative h-full rounded-3xl border border-border bg-white p-7 shadow-xs hover:shadow-xl hover:border-teal/40 hover:-translate-y-1 transition-all duration-300 flex flex-col">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="flex size-10 items-center justify-center rounded-2xl bg-success/10 text-success border border-success/20">
-                  <Layers className="size-5" />
+        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {supporting.map((agent, i) => (
+            <Reveal key={agent.name} delay={0.05 + i * 0.05}>
+              <div className="h-full min-w-0 rounded-2xl border border-border/60 bg-white p-5 shadow-xs">
+                <span className="flex size-9 items-center justify-center rounded-xl bg-coral/10 text-coral-text">
+                  <agent.icon className="size-4" />
                 </span>
-                <h3 className="font-heading font-bold text-lg text-ink">CRM Sync</h3>
-              </div>
-
-              {/* CRM Tag Mockup */}
-              <div className="mt-auto border border-border/80 rounded-xl p-3 bg-cream-dark/50">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="h-2 w-16 bg-ink/10 rounded-full" />
-                  <span className="bg-coral/10 text-coral-text px-2 py-0.5 rounded text-[9px] font-bold tracking-widest uppercase">
-                    Tier 1 Hot
+                <p className="mt-3.5 font-heading font-bold text-base text-ink">
+                  {agent.name}
+                  <span className="ml-1.5 font-mono text-[11px] font-semibold uppercase tracking-wide text-ink/50">
+                    {agent.role}
                   </span>
-                </div>
-                <div className="flex items-center justify-between border-t border-border/60 pt-3">
-                  <span className="text-[10px] font-mono text-ink/65">Lead Score</span>
-                  <span className="text-xs font-mono font-bold text-success">90/100</span>
-                </div>
+                </p>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink/70">
+                  {agent.body}
+                </p>
               </div>
-            </div>
-          </Reveal>
-
-          {/* Card 5: Otto — Showing Agreements */}
-          <Reveal delay={0.2}>
-            <div className="relative h-full rounded-3xl border border-ink/20 bg-ink p-7 text-white flex flex-col hover:shadow-2xl hover:border-white/30 hover:-translate-y-1 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="flex size-10 items-center justify-center rounded-2xl bg-white/10 text-white">
-                  <FileText className="size-5" />
-                </span>
-                <h3 className="font-heading font-bold text-lg text-white">Document AI</h3>
-              </div>
-
-              {/* PDF Mockup */}
-              <div className="mt-auto border border-white/20 rounded-xl p-3 bg-white/5 backdrop-blur-sm flex items-center gap-3">
-                <div className="size-10 bg-coral/20 rounded-lg flex items-center justify-center text-coral-text shrink-0">
-                  <FileText className="size-5" />
-                </div>
-                <div>
-                  <p className="text-[11px] font-bold text-white truncate">Showing_Pass.pdf</p>
-                  <p className="text-[9px] text-white/50 font-mono mt-0.5">Generated instantly</p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-          
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

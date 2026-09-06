@@ -1,24 +1,29 @@
+import Image from "next/image";
 import { PhoneMissed, Scale, Car, AlertCircle, ArrowDownRight } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
+/**
+ * `loss` figures are ILLUSTRATIVE EXPOSURE, not measured losses — see the note in
+ * PestProblem.tsx. The rendered label says so; keep it if you reword these.
+ */
 const leaks = [
   {
     icon: PhoneMissed,
     iconColor: "text-coral-text bg-coral/10 border-coral/20",
     title: "The 90-Second Zillow Dropoff",
-    loss: "$180k+ / Year Lost",
+    loss: "Revenue at risk",
   },
   {
     icon: Scale,
     iconColor: "text-accent-blue bg-accent-blue/10 border-accent-blue/20",
     title: "Post-NAR Exclusivity Trap",
-    loss: "$5,000+ MLS Penalties",
+    loss: "Revenue at risk",
   },
   {
     icon: Car,
     iconColor: "text-teal bg-teal/10 border-teal/20",
     title: "Weekend Showing Burnout",
-    loss: "$120k+ / Year Lost",
+    loss: "Revenue at risk",
   },
 ];
 
@@ -33,9 +38,29 @@ export default function RealEstateProblem() {
             <span>The 3 Costliest Revenue Leaks</span>
           </div>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-ink text-balance leading-tight">
-            Missed calls cost small agencies hundreds of thousands.
+            Every unanswered call is a lead a competitor answers first.
           </h2>
         </div>
+
+        {/* The homepage's own mid-showing image (TheRealCost), reused rather than
+            regenerated: it already depicts this page's exact scenario, and it is real
+            estate's only representation in the site's imagery.
+
+            It leads the band rather than sitting beside the leak list, because the
+            decay chart below is already the meaningful visual there — two competing
+            images in one row would be decoration, not explanation. Keep the -vN suffix
+            if you swap it: /_next/image caches optimised output by URL. */}
+        <Reveal className="mb-12">
+          <div className="relative aspect-[21/9] w-full overflow-hidden rounded-[32px] border border-border">
+            <Image
+              src="/images/illustrations/pain-mid-showing-v4.webp"
+              alt="A real estate agent taking a phone call during a viewing while the buyer couple behind her waits, with a stack of incoming calls queued beside her"
+              fill
+              sizes="(max-width: 1024px) 100vw, 1152px"
+              className="object-cover"
+            />
+          </div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           
@@ -126,7 +151,9 @@ export default function RealEstateProblem() {
                   </span>
                   <div className="flex-1">
                     <h3 className="font-heading font-bold text-lg text-ink">{leak.title}</h3>
-                    <p className="font-mono text-xs font-semibold text-coral-text mt-1">{leak.loss}</p>
+                    <p className="font-mono text-xs font-normal text-ink/55 mt-1">
+                      {leak.loss}
+                    </p>
                   </div>
                 </div>
               </Reveal>

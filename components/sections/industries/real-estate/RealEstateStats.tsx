@@ -1,32 +1,47 @@
 import { DollarSign, Zap, Scale, CalendarCheck2 } from "lucide-react";
 
+/**
+ * CAPABILITIES, NOT RESULTS. Same rule as PestStats — see the note there.
+ *
+ * Two of these were engineering measurements ("< 800ms" latency, "87ms" lookup)
+ * printed as marketing proof. A precise millisecond figure invites a buyer to hold us
+ * to it on their network and their CRM, where we do not control the result, so they
+ * now describe the behaviour instead of quoting a number we would have to defend.
+ *
+ * "100% Compliant" was the riskiest claim on either page: Fair Housing is a legal
+ * exposure, and guaranteeing perfect compliance is a promise we cannot make on a
+ * customer's behalf. Compliance is the BROKERAGE's obligation and the agent is one
+ * control inside it, so every Fair Housing string on this page (here, the hero, and
+ * the page metadata) now says the agent FOLLOWS RULES THE CUSTOMER APPROVES rather
+ * than that it enforces or guarantees the law. Keep that framing if you reword these.
+ */
 const items = [
   {
     value: "$360k+",
-    unit: "Annual GCI",
-    label: "Commission Pipeline At Stake",
-    sub: "From 2 saved buyer/seller deals per month",
+    unit: "Illustrative",
+    label: "Commission Pipeline You Are Protecting",
+    sub: "Example only: 2 saved deals a month at your own average commission",
     icon: DollarSign,
   },
   {
-    value: "< 800ms",
-    unit: "Latency",
+    value: "Sub-second",
+    unit: "Designed",
     label: "Natural Voice Cadence",
-    sub: "Human-grade speed with Cartesia & Gemini",
+    sub: "Answers without the pause that tells a caller it is a bot",
     icon: Zap,
   },
   {
-    value: "100%",
-    unit: "Compliant",
+    value: "Your Rules",
+    unit: "Guardrails",
     label: "Fair Housing & Post-NAR",
-    sub: "Zero-tolerance crime & exclusivity deflection",
+    sub: "Follows the guardrails and escalation rules you approve",
     icon: Scale,
   },
   {
-    value: "87ms",
-    unit: "Lookup",
+    value: "Live",
+    unit: "Integration",
     label: "Google Cal & CRM Sync",
-    sub: "Follow Up Boss, KVCore & EspoCRM ready",
+    sub: "Checks real availability before it offers a slot",
     icon: CalendarCheck2,
   },
 ];

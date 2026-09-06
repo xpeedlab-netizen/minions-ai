@@ -137,31 +137,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
 
-    // Supported Secondary Verticals
-    {
-      url: `${BASE_URL}/industries/hvac`,
-      lastModified: SITE_RELEASE_DATE,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/industries/plumbing`,
-      lastModified: SITE_RELEASE_DATE,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/industries/roofing`,
-      lastModified: SITE_RELEASE_DATE,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/industries/electrical`,
-      lastModified: SITE_RELEASE_DATE,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+    /* Supported Secondary Verticals — hvac, plumbing, roofing and electrical were
+       dropped from the sitemap on 2026-09-07 (owner's call) so crawl priority sits
+       with the two pages that have had the trust and visual passes. The pages are
+       NOT noindexed and NOT redirected: they still render at their own URLs and any
+       existing inbound link keeps working. Re-add these four entries to put them
+       back. See lib/data/nav.ts. */
 
     // Blog Hub
     {

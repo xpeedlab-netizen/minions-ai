@@ -1,6 +1,13 @@
+import Image from "next/image";
 import { Moon, RefreshCw, MapPinOff, AlertCircle } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
+/**
+ * The `loss` figures are ILLUSTRATIVE EXPOSURE, not measured customer losses — we
+ * have no sourced evidence behind them (lib/data/customer-proof.ts is still empty)
+ * and they render more prominently than the copy that qualifies them. The rendered
+ * label says so. If real sourced numbers arrive, cite the source next to them.
+ */
 const cards = [
   {
     icon: Moon,
@@ -8,7 +15,14 @@ const cards = [
     title: "10:45 PM Panic Calls",
     subtitle: "Missed Emergency Dropoff",
     body: "Homeowners with late-night infestations call down Google until someone answers. Rex locks the deal on ring one.",
-    loss: "$60k+ / Year",
+    loss: "Revenue at risk",
+    /* The homepage's own 2 AM image (TheRealCost), reused rather than regenerated:
+       it already depicts exactly this leak and was cast and re-shot deliberately.
+       Only the LEAD card carries an image — one generous visual per band reads as
+       deliberate, whereas three would be decoration competing with the copy. Keep the
+       -vN suffix if you swap it: /_next/image caches optimised output by URL. */
+    src: "/images/illustrations/pain-2am-emergency-v4.webp",
+    alt: "A business owner asleep at night while a phone rings unanswered on the nightstand beside him, its screen glowing",
   },
   {
     icon: RefreshCw,
@@ -16,7 +30,7 @@ const cards = [
     title: "The One-Off Spray Trap",
     subtitle: "Lost Subscription LTV",
     body: "Single sprays bleed margin. Rex automatically pitches recurring $59/mo protection on every inbound call.",
-    loss: "$75k+ / Year",
+    loss: "Revenue at risk",
   },
   {
     icon: MapPinOff,
@@ -24,7 +38,7 @@ const cards = [
     title: "Route Disruption",
     subtitle: "Wasted Gas & Drive Time",
     body: "Zero wasted fuel on 35-mile one-offs. Rex enforces strict zip code territory and route density logic.",
-    loss: "$25k+ / Year",
+    loss: "Revenue at risk",
   },
 ];
 
@@ -45,10 +59,22 @@ export default function PestProblem() {
           </p>
         </div>
 
-        <div className="mt-12 grid sm:grid-cols-3 gap-6">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {cards.map((c, i) => (
-            <Reveal key={c.title} delay={i * 0.08} className="h-full">
-              <div className="h-full rounded-3xl border border-border/80 bg-white p-6 shadow-xs hover:shadow-md hover:border-teal/40 transition-all flex flex-col justify-between">
+            <Reveal key={c.title} delay={i * 0.08} className={`h-full${c.src ? " sm:col-span-2" : ""}`}>
+              <div className={`h-full overflow-hidden rounded-3xl border border-border/80 bg-white shadow-xs transition-all hover:border-teal/40 hover:shadow-md ${c.src ? "grid sm:grid-cols-2" : "flex flex-col justify-between p-6"}`}>
+                {c.src && (
+                  <div className="relative aspect-[4/3] w-full sm:aspect-auto sm:h-full sm:min-h-64">
+                    <Image
+                      src={c.src}
+                      alt={c.alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+                <div className={c.src ? "flex flex-col justify-between p-6" : "contents"}>
                 <div>
                   <div className="flex items-center justify-between">
                     <span className={`flex size-10 items-center justify-center rounded-2xl border ${c.iconColor}`}>
@@ -71,9 +97,9 @@ export default function PestProblem() {
                   </p>
                 </div>
 
-                <div className="mt-5 pt-3.5 border-t border-border/50 font-mono text-xs text-coral-text flex items-center justify-between">
-                  <span>Estimated Loss:</span>
-                  <span className="font-bold font-mono">{c.loss}</span>
+                <div className="mt-5 pt-3.5 border-t border-border/50 font-mono text-xs text-ink/55">
+                  <span>{c.loss}</span>
+                </div>
                 </div>
               </div>
             </Reveal>

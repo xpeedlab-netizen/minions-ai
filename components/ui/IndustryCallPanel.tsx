@@ -4,6 +4,10 @@ import { getRecording } from "@/lib/data/call-recordings";
 /**
  * A real recorded call, framed for an industry hero.
  *
+ * Header says "Recorded demo" rather than "Real recorded call": these ARE genuine
+ * Retell recordings, but the homepage settled on demo-framing (CallProofSection,
+ * and each recording's own `badge` field), and one label across the site beats two.
+ *
  * The industry heroes shipped simulated widgets — scripted dispatch logs and SMS
  * threads on timers. They were the same credibility problem the homepage had: a page
  * selling an AI that answers the phone, showing an animation of an AI answering the
@@ -31,7 +35,7 @@ export default function IndustryCallPanel({
           {eyebrow}
         </span>
         <span className="font-mono text-[0.6875rem] uppercase tracking-[0.08em] text-cream/65">
-          Real recorded call
+          Recorded demo
         </span>
       </div>
 

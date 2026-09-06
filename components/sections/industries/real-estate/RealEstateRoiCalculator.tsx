@@ -10,6 +10,10 @@ import { ANNUAL_MINIONS_COST } from "@/lib/data/pricing";
  * Unlike the other industry calculators, this one does not expose close rate as a
  * slider — the three inputs above already carry the estimate. It was previously held
  * in state with no setter call, which read as an unfinished control.
+ *
+ * It is still the single biggest lever on the output, so it is PRINTED in the
+ * assumptions line below the result. A projection whose dominant assumption is
+ * invisible is the thing that makes a skeptical buyer distrust the whole page.
  */
 const CLOSE_RATE_PCT = 15;
 
@@ -25,7 +29,6 @@ export default function RealEstateRoiCalculator() {
   const annualLostRevenue = monthlyLostRevenue * 12;
   const annualMinionsCost = ANNUAL_MINIONS_COST;
   const netAnnualProfit = Math.max(0, annualLostRevenue - annualMinionsCost);
-  const roiMultiplier = (annualLostRevenue / Math.max(1, annualMinionsCost)).toFixed(1);
 
   return (
     <section className="bg-white py-16 sm:py-24 border-b border-border w-full overflow-hidden">
@@ -46,9 +49,6 @@ export default function RealEstateRoiCalculator() {
 
         {/* Calculator Widget Box */}
         <div className="relative rounded-[32px] border border-white/10 bg-ink/95 backdrop-blur-2xl p-5 sm:p-10 text-white shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center ring-1 ring-white/10 w-full max-w-full">
-          {/* Background Glow */}
-          <div className="absolute top-0 right-0 size-80 rounded-full bg-teal/20 blur-3xl pointer-events-none" />
-
           {/* Left Inputs Column */}
           <div className="lg:col-span-7 space-y-6 relative z-10 w-full min-w-0">
             {/* Slider 1: Missed Inbound Calls / Month */}
@@ -126,7 +126,7 @@ export default function RealEstateRoiCalculator() {
               <p className="font-mono text-xs uppercase tracking-wide text-white/50 break-words">
                 Annual Leaked Commission (GCI)
               </p>
-              <p className="mt-1 font-mono text-3xl sm:text-4xl font-extrabold text-crew-zip-on-dark drop-shadow-[0_0_15px_rgba(255,107,107,0.4)] truncate">
+              <p className="mt-1 font-mono text-3xl sm:text-4xl font-extrabold text-crew-zip-on-dark truncate">
                 -${annualLostRevenue.toLocaleString()}
               </p>
               <p className="mt-1 font-mono text-[11px] text-white/50 break-words">
@@ -136,19 +136,35 @@ export default function RealEstateRoiCalculator() {
 
             <div className="border-b border-white/10 pb-4">
               <p className="font-mono text-xs uppercase tracking-wide text-white/50 break-words">
-                Projected Net GCI Recovered
+                Illustrative Revenue Opportunity
               </p>
               <p className="mt-1 font-mono text-4xl sm:text-5xl font-extrabold text-teal-300 truncate">
                 +${netAnnualProfit.toLocaleString()}
               </p>
               <p className="mt-1 font-mono text-[11px] text-teal-300 font-bold flex items-center gap-1 justify-center sm:justify-start flex-wrap">
                 <Sparkles className="size-3 shrink-0" />
-                <span>Estimated {roiMultiplier}x Annual Broker ROI</span>
+                <span>Estimated upside based on your inputs, not a guarantee</span>
               </p>
             </div>
 
-            <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow className="w-full bg-teal hover:bg-teal-dark text-white shadow-lg justify-center truncate">
-              Protect Your Commission
+            {/* The assumptions behind the number above, stated where the number is
+                read. CLOSE_RATE_PCT is not a slider, so without this line the largest
+                driver of the result would be invisible. */}
+            <p className="font-mono text-[11px] leading-relaxed text-white/50 break-words">
+              Assumes {closeRate}% of recovered calls close, a $
+              {commissionPerDeal.toLocaleString()} commission per deal, and a $
+              {annualMinionsCost.toLocaleString()} first-year cost. Your own numbers
+              will differ.
+            </p>
+
+            <Button
+              href={BOOKING_CALENDAR_URL}
+              size="lg"
+              showArrow
+              track={{ event: "cta_click", params: { location: "real_estate_roi_calculator" } }}
+              className="w-full bg-teal hover:bg-teal-dark text-white shadow-lg justify-center truncate"
+            >
+              Discuss This Estimate
             </Button>
           </div>
         </div>

@@ -27,8 +27,8 @@ const FOOTER_PRODUCT = [
 const FOOTER_INDUSTRIES = [
   { label: "Pest Control", href: "/industries/pest-control" },
   { label: "Real Estate", href: "/industries/real-estate" },
-  { label: "HVAC", href: "/industries/hvac" },
-  { label: "Plumbing", href: "/industries/plumbing" },
+  /* HVAC + Plumbing unlinked 2026-09-07 — see the note in lib/data/nav.ts. Routes
+     still exist; this is a link removal, not a deletion. */
 ];
 
 const FOOTER_COMPANY = [

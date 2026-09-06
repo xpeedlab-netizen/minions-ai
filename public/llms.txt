@@ -22,10 +22,7 @@
 ## Industry Solutions
 - **Real Estate Agencies (Co-Primary)**: https://www.getminions.ai/industries/real-estate (LPMAMA qualification, 24/7 showing booking, Fair Housing Act compliance, Follow Up Boss)
 - **Pest Control Operators (Co-Primary)**: https://www.getminions.ai/industries/pest-control (24/7 infestation triage, recurring quarterly agreement upsells, FieldRoutes, PestPac, GorillaDesk)
-- **HVAC & Heating**: https://www.getminions.ai/industries/hvac
-- **Plumbing & Drain**: https://www.getminions.ai/industries/plumbing
-- **Roofing & Restoration**: https://www.getminions.ai/industries/roofing
-- **Electrical**: https://www.getminions.ai/industries/electrical
+- **HVAC, Plumbing, Roofing & Electrical**: supported verticals; contact us for these builds.
 
 ## Verified Research, Knowledge Base & Documentation
 - **2026 Speed-to-Lead Benchmark Report**: https://www.getminions.ai/reports/speed-to-lead-2026

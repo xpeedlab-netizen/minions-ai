@@ -22,13 +22,22 @@ export const services: NavLink[] = [
   { label: "Back-Office Automation", href: "/back-office-automation" },
 ];
 
+/**
+ * UNLINKED 2026-09-07, owner's call: HVAC, plumbing, roofing and electrical were
+ * removed from this menu so the site points paid traffic at the two pages that have
+ * had the commercial-clarity, trust and visual passes. The ROUTES STILL EXIST and
+ * still render — app/industries/{hvac,plumbing,roofing,electrical}/page.tsx are
+ * untouched and reachable by direct URL. Nothing was deleted, redirected or
+ * noindexed, so restoring them is just putting these four lines back (plus the
+ * matching entries in components/layout/Footer.tsx and app/sitemap.ts).
+ *
+ * The [ORDERING] invariant in .claude/memory.md still governs the FULL six-vertical
+ * order if they come back: real-estate, pest-control, hvac, plumbing, roofing,
+ * electrical.
+ */
 export const industries: NavLink[] = [
   { label: "Real Estate", href: "/industries/real-estate" },
   { label: "Pest Control", href: "/industries/pest-control" },
-  { label: "HVAC", href: "/industries/hvac" },
-  { label: "Plumbing", href: "/industries/plumbing" },
-  { label: "Roofing", href: "/industries/roofing" },
-  { label: "Electrical", href: "/industries/electrical" },
 ];
 
 export const footerProduct: NavLink[] = [

@@ -60,10 +60,7 @@ Minions.AI uses dedicated specialized agents rather than a single generic chatbo
 - **Dedicated Page**: https://www.getminions.ai/industries/pest-control
 
 ### C. Supported Secondary Trades
-- **HVAC**: https://www.getminions.ai/industries/hvac (Extreme heat/freeze emergency repair triage, $8,500 replacement lead intake).
-- **Plumbing**: https://www.getminions.ai/industries/plumbing (2 AM burst pipe and main shutoff triage, drain clearing dispatch).
-- **Roofing**: https://www.getminions.ai/industries/roofing (Storm surge intake, photo damage upload SMS).
-- **Electrical**: https://www.getminions.ai/industries/electrical (Emergency panel outage and hazard safety triage).
+- **HVAC, Plumbing, Roofing & Electrical**: supported verticals covering emergency repair triage, burst pipe and shutoff calls, storm surge intake and panel outage safety triage. No dedicated landing pages are published for these at present; enquiries go through the contact page.
 
 ---
 

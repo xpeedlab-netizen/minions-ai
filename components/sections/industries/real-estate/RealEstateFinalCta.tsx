@@ -1,14 +1,11 @@
 import { Sparkles, Phone } from "lucide-react";
 import Button from "@/components/ui/Button";
+import TrackedPhoneLink from "@/components/ui/TrackedPhoneLink";
 import { BOOKING_CALENDAR_URL, SITE_PHONE_NUMBER, SITE_PHONE_TEL } from "@/lib/data/placeholders";
 
 export default function RealEstateFinalCta() {
   return (
     <section className="relative bg-ink py-20 sm:py-28 text-white overflow-hidden">
-      {/* Glow Effects */}
-      <div className="absolute top-0 right-1/4 size-96 rounded-full bg-teal/20 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 size-80 rounded-full bg-coral/15 blur-3xl pointer-events-none" />
-
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center space-y-8">
         <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 font-mono text-xs font-bold text-teal-300 uppercase tracking-wider">
           <Sparkles className="size-3.5" />
@@ -16,11 +13,11 @@ export default function RealEstateFinalCta() {
         </div>
 
         <h2 className="font-heading font-bold text-3xl sm:text-5xl text-white text-balance leading-tight max-w-3xl mx-auto">
-          Every missed call is a $15,000 commission check to your competitor. Let&apos;s fix it.
+          Keep the Next Buyer From Calling the Next Brokerage.
         </h2>
 
         <p className="text-base sm:text-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
-          Deploy your custom AI real estate ISA in 3–6 weeks depending on scope. Fixed price, a 30-day tuning window after go-live, and no long-term contract lock-in.
+          Deploy your custom AI real estate ISA in 3–6 weeks depending on scope. From $2,500, a 30-day tuning window after go-live, and no long-term contract lock-in. Third-party usage is billed separately.
         </p>
 
         <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -28,18 +25,20 @@ export default function RealEstateFinalCta() {
             href={BOOKING_CALENDAR_URL}
             size="lg"
             showArrow
+            track={{ event: "cta_click", params: { location: "real_estate_final_cta" } }}
             className="w-full sm:w-auto bg-teal hover:bg-teal-dark text-white shadow-xl px-8"
           >
-            Book Your 15-Minute Setup Call
+            Book a Consultation
           </Button>
 
-          <a
+          <TrackedPhoneLink
             href={`tel:${SITE_PHONE_TEL}`}
+            location="real_estate_final_cta"
             className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 font-mono text-sm font-semibold text-white hover:bg-white/10 transition-colors w-full sm:w-auto"
           >
             <Phone className="size-4 text-teal" />
-            Test Live Demo: {SITE_PHONE_NUMBER}
-          </a>
+            Hear AI Live: {SITE_PHONE_NUMBER}
+          </TrackedPhoneLink>
         </div>
 
         <p className="font-mono text-xs text-white/50 pt-2">

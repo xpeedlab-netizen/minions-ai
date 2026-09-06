@@ -8,6 +8,7 @@ import {
   SITE_PHONE_TEL,
 } from "@/lib/data/placeholders";
 import SegmentedHeroCallPlayer from "@/components/segment/SegmentedHeroCallPlayer";
+import SegmentedHeroPill from "@/components/segment/SegmentedHeroPill";
 import TrustLogos from "@/components/ui/TrustLogos";
 
 /**
@@ -26,13 +27,9 @@ export default function Hero() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-12 xl:grid-cols-[1.2fr_1fr] xl:gap-14">
           <div className="min-w-0">
-            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white px-3 py-1 sm:px-3.5 sm:py-1.5 font-mono text-[11px] sm:text-xs font-medium uppercase tracking-[0.06em] text-ink/70 shadow-sm">
-              <span
-                aria-hidden
-                className="size-1.5 rounded-full bg-success animate-breathe"
-              />
-              For pest control &amp; real estate owners
-            </span>
+            {/* Follows ?for= like the call player does; with no param it still names
+                both industries, per invariant #3. See SegmentedHeroPill. */}
+            <SegmentedHeroPill />
 
             <h1 className="mt-5 type-display text-4xl leading-[0.98] tracking-[-0.005em] text-balance text-ink sm:text-5xl lg:text-6xl">
               Your AI receptionist answers every call, 24/7.

@@ -45,11 +45,23 @@ export function normalizeSegment(value: string | null | undefined): Segment {
  */
 export const SEGMENT_COPY: Record<
   Segment,
-  { label: string; shortLabel: string; recordingId: string; proofLine: string }
+  {
+    label: string;
+    shortLabel: string;
+    /**
+     * The hero pill. Only shown when the visitor has DECLARED a segment via `?for=`.
+     * With no param the pill keeps naming both industries, because invariant #3 makes
+     * them co-primary and the static default must not pick one — see SegmentedHeroPill.
+     */
+    pillLabel: string;
+    recordingId: string;
+    proofLine: string;
+  }
 > = {
   pest: {
     label: "I run a pest control company",
     shortLabel: "Pest control",
+    pillLabel: "For pest control owners",
     recordingId: "pest-ants-booking",
     proofLine:
       "Ants in the kitchen: address taken, the next two open slots offered, and a Saturday morning window confirmed in 74 seconds, with nobody in the office.",
@@ -57,6 +69,7 @@ export const SEGMENT_COPY: Record<
   "real-estate": {
     label: "I'm in real estate",
     shortLabel: "Real estate",
+    pillLabel: "For real estate teams",
     recordingId: "realestate-showing",
     proofLine:
       "A buyer calling about a listing: representation checked, lender pre-approval confirmed, showing booked, while the agent was mid-showing elsewhere.",

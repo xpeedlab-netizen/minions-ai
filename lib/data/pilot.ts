@@ -24,7 +24,7 @@
  * whose whole argument is that we do not invent numbers, so:
  *   - Update it the same day a slot is taken. A stale count is a false claim.
  *   - Never edit it upward to manufacture urgency. If more slots open, say so plainly.
- *   - At 0 the band renders a waitlist instead of "0 of 5 remaining" — see PilotOffer.
+ *   - At 0 the band renders a waitlist instead of "0 of 3 remaining" — see PilotOffer.
  *     Do not "fix" that by resetting the number.
  * If maintaining it honestly becomes a chore, delete the counter and keep the offer:
  * `showCounter: false` renders the band with no count and nothing to keep in sync.
@@ -64,11 +64,11 @@ export type PilotOffer = {
 };
 
 export const PILOT: PilotOffer = {
-  totalSlots: 5,
-  slotsRemaining: 5,
+  totalSlots: 3,
+  slotsRemaining: 3,
   showCounter: true,
 
-  eyebrow: "Founding pilot · 5 operators",
+  eyebrow: "Founding pilot · 3 operators",
 
   heading: "Run it free for 30 days. Then decide.",
 
@@ -89,7 +89,7 @@ export const PILOT: PilotOffer = {
    * thing a bigger vendor genuinely cannot match: the people who built it working on
    * your account directly.
    */
-  lead: "We are opening five founding slots. You get the complete system built, integrated and tuned to your business, answering your calls for thirty days before you decide anything. Founding operators work directly with the team that builds it, and that access does not survive our first hundred customers.",
+  lead: "We are opening three founding slots. You get the complete system built, integrated and tuned to your business, answering your calls for thirty days before you decide anything. Founding operators work directly with the team that builds it, and that access does not survive our first hundred customers.",
 
   youGet: [
     "The complete build: your agent, your script, your calendar and CRM, connected and live",
@@ -115,8 +115,8 @@ export const PILOT: PilotOffer = {
 
   ctaLabel: "Claim Your Pilot Slot",
 
-  /* Shown once slotsRemaining hits 0, so the band never prints "0 of 5 remaining". */
-  waitlistHeading: "All five founding slots are taken.",
+  /* Shown once slotsRemaining hits 0, so the band never prints "0 of 3 remaining". */
+  waitlistHeading: "All three founding slots are taken.",
   waitlistLead: "The founding round is allocated and in build. Book a call anyway, you will hear how those builds are going, and we will tell you straight whether to wait for the next round or start a standard build now.",
   waitlistCtaLabel: "Book a 15-Minute Call",
 };

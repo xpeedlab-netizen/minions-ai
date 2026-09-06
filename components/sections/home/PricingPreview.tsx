@@ -44,25 +44,33 @@ export default function PricingPreview() {
         Cut from five lines to two. The valuation argument ("recurring revenue is the
         number an acquirer pays for") was dropped rather than compressed: band 02 already
         makes it in full, so at this point in the scroll it was a restatement costing three
-        lines. What survives is the part only this band can say — the category comparison
-        and the ownership terms.
+        lines. What survives is the part only this band can say: the ownership terms.
 
-        NO max-w OVERRIDE HERE. SectionLead caps itself at max-w-xl (576px) on purpose —
-        see its docblock on measure — and a `max-w-2xl` passed through className loses the
-        cascade to it, so the override this used to carry did nothing at all. Two lines
-        means ~115 characters at that measure; budget for it rather than widening.
+        Two lines is ~100 characters at SectionLead's measure, MEASURED in-browser at
+        1440px — an earlier note here guessed ~115 and a 120-char line ran to three.
+        Count it in the DOM rather than trusting the estimate.
       */}
       {/*
-        Was: "No per-minute billing, no hold music, no contract, a front-desk hire, not a
-        phone bill." That read as a four-item list whose fourth item contradicted the
-        fifth. The pivot had been carried by an em-dash ("no contract — a front-desk
-        hire, not a phone bill") and the 2026-09-05 de-dash pass replaced it with a
-        comma, which cannot do that job. Split into two sentences so the category
-        argument stands on its own instead of trailing a list of negations.
+        TIGHTENED 2026-09-06. The band asserted ownership three times over: "Then it is
+        yours" (heading), "you own every account" (here) and "if you decide to keep it"
+        (pilot line). Saying it once and letting it stand is stronger than saying it
+        three ways, so the lead now carries the ONE thing the heading cannot — WHY the
+        ownership claim is true, which is that the accounts are in the buyer's name.
+
+        Also dropped "This is a front-desk hire, not a phone bill." It explained a
+        metaphor the reader had not raised, and a page that argues against a comparison
+        nobody made plants the comparison. "No lock-in" does that work in three words.
+
+        Earlier history: the line was once a four-item list whose fourth item
+        contradicted the fifth, after a de-dash pass replaced a pivot em-dash with a
+        comma. Kept as separate sentences for that reason.
+
+        NO max-w OVERRIDE. SectionLead caps itself at max-w-xl (576px) on purpose — see
+        its docblock on measure — and a className max-w loses the cascade to it.
       */}
       <SectionLead>
-        No per-minute billing, no hold music, no contract. This is a front-desk hire, not
-        a phone bill, and you own every account.
+        No per-minute billing, no contract, no lock-in. Every account is in your name,
+        whatever you decide.
       </SectionLead>
 
       {/*
@@ -79,9 +87,9 @@ export default function PricingPreview() {
       {PILOT.slotsRemaining > 0 && (
         <p className="mt-5 max-w-xl text-[0.9375rem] leading-[1.6] text-ink/70">
           <span className="font-semibold text-ink">
-            Founding pilots pay none of this for the first thirty days.
+            Founding pilots pay none of this for thirty days.
           </span>{" "}
-          You only pay a build fee if you decide to keep it.{" "}
+          Keep it after that and the fee applies.{" "}
           <a
             href="#founding-pilot"
             className="font-medium text-teal underline underline-offset-4 hover:text-ink"

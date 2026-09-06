@@ -45,9 +45,17 @@ export default function CallPlayer({
   className = "",
   variant = "rail",
   size = "default",
+  reserveOutcomeHeight = false,
 }: {
   recording: CallRecording;
   className?: string;
+  /**
+   * Reserve a fixed height for the outcome line. Only meaningful on a player whose
+   * recording can SWAP under the reader (the segmented one): there, a shorter outcome
+   * would shrink the card and reflow the band mid-read. On a card that never swaps the
+   * reservation is just a gap, so it stays off by default.
+   */
+  reserveOutcomeHeight?: boolean;
   /** "rail" = scrolling transcript list. "caption" = YouTube-style subtitle stage. */
   variant?: "rail" | "caption";
   /** "hero" enlarges the play control and caption type for above-the-fold use. */
@@ -337,7 +345,7 @@ export default function CallPlayer({
 
   return (
     <div
-      className={`rounded-3xl border border-white/10 bg-white/[0.04] p-5 sm:p-6 ${className}`}
+      className={`flex flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-5 sm:p-6 ${className}`}
     >
       <audio
         ref={audioRef}
@@ -447,13 +455,23 @@ export default function CallPlayer({
         </ol>
       )}
 
+      {/* Absorbs any surplus height from a stretched column so it opens ABOVE the
+          outcome rule rather than below the text, keeping the rule on the card's foot. */}
+      <div aria-hidden className="grow" />
+
       {/*
-        Sized for the longest outcome line rather than the shortest. Swapping recordings
-        must not change the card's height — the audience toggle sits above this band, so
-        any delta reflows the page under the reader. 5.5rem clears four wrapped lines
-        plus the border and padding at the narrowest column this card is used in.
+        Sized for the longest outcome line rather than the shortest, but only where the
+        recording can change: the audience toggle sits above this band, so a swap to a
+        shorter outcome would otherwise resize the card and reflow the page under the
+        reader. 5.5rem clears four wrapped lines plus the border and padding at the
+        narrowest column this card is used in. A card that never swaps opts out — there
+        the reserved height is 30px of empty ink above whatever follows.
       */}
-      <p className="mt-4 min-h-[5.5rem] border-t border-white/10 pt-4 text-[0.8125rem] leading-[1.6] text-cream/70">
+      <p
+        className={`mt-4 border-t border-white/10 pt-4 text-[0.8125rem] leading-[1.6] text-cream/70 ${
+          reserveOutcomeHeight ? "min-h-[5.5rem]" : ""
+        }`}
+      >
         <span className="font-semibold text-white">What it did: </span>
         {recording.outcome}
       </p>

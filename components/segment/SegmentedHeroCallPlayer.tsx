@@ -61,11 +61,15 @@ function Player({ recording }: { recording: CallRecording }) {
         </span>
       </div>
 
+      {/* reserveOutcomeHeight: the clip swaps on ?for=, and the two outcome lines differ
+          by ~24 characters — enough to cross a line boundary and resize the hero card
+          under the reader. The caption stage above is already fixed-height. */}
       <CallPlayer
         recording={recording}
         variant="caption"
         size="hero"
         className="border-0 bg-transparent"
+        reserveOutcomeHeight
       />
     </div>
   );

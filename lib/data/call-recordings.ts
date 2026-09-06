@@ -285,7 +285,7 @@ export const CALL_RECORDINGS: CallRecording[] = [
     badge: "Out of scope",
     title: "Someone calls about a plumbing leak",
     outcome:
-      "Turned down work it does not do, then pointed at what it can help with, rather than inventing an answer.",
+      "Turned down work outside your approved services, then pointed at what it can help with, rather than inventing an answer.",
     redactedSpans: [],
     cues: [
       { t: 0.0, speaker: "agent", text: "Thanks for calling Ironclad Pest Solutions. This is Alex. How can I help you today?" },

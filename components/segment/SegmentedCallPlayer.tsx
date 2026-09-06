@@ -21,7 +21,13 @@ import { DEFAULT_SEGMENT, SEGMENT_COPY, type Segment } from "@/lib/segments";
  */
 function Player({ segment }: { segment: Segment }) {
   const rec = getRecording(SEGMENT_COPY[segment].recordingId);
-  return rec ? <CallPlayer recording={rec} /> : null;
+  // reserveOutcomeHeight: this is the ONE player whose recording swaps under the reader,
+  // so its outcome line holds a fixed height or the toggle reflows the band.
+  // h-full: this is a direct child of the stretched grid in CallProofSection, so the
+  // card fills its column and both cards end on the same baseline.
+  return rec ? (
+    <CallPlayer recording={rec} reserveOutcomeHeight className="h-full" />
+  ) : null;
 }
 
 function LivePlayer() {

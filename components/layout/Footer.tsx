@@ -150,8 +150,15 @@ export default function Footer() {
 
       {/* Middle Tier: Full-Bleed Monumental Wordmark Plinth */}
       <div className="w-full select-none pointer-events-none border-t border-white/10 pt-10 sm:pt-16 pb-4 sm:pb-8 overflow-hidden">
-        <div className="w-full text-center type-display tracking-[-0.02em] text-white/[0.045] uppercase whitespace-nowrap leading-[0.85] text-[16vw] sm:text-[15.5vw]">
-          MINIONS<span className="text-coral/35">.AI</span>
+        {/* Opacity raised from white/[0.045] + coral/35 (2026-09-08). At 4.5% on ink
+            the wordmark measured 1.14:1 contrast — below the ~1.5:1 where a shape this
+            size reliably registers — while the coral ".AI" sat at 1.73:1. The two
+            halves being that far apart meant the eye caught a floating ".AI" and
+            missed the brand name, so it read as an artefact rather than a plinth.
+            Both halves lifted and re-balanced: still a watermark that sits behind the
+            content, now legible as one mark. */}
+        <div className="w-full text-center type-display tracking-[-0.02em] text-white/[0.11] uppercase whitespace-nowrap leading-[0.85] text-[16vw] sm:text-[15.5vw]">
+          MINIONS<span className="text-coral/60">.AI</span>
         </div>
       </div>
 

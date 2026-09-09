@@ -628,8 +628,13 @@ function CaptionStage({
 
   return (
     <div
+      /* Still a FIXED height at every width — that is what keeps a wrapping cue from
+         reflowing the band above (see the note below). It is merely a smaller fixed
+         height on small screens: at hero size the 224px stage pushed the homepage's
+         booking CTA off a 390x844 first screen once the panel moved above it. The
+         breakpoint changes the number, never the fixed-ness. */
       className={`relative mt-5 flex flex-col justify-center overflow-hidden ${
-        isHero ? "h-56" : "h-52"
+        isHero ? "h-44 sm:h-56" : "h-48 sm:h-52"
       }`}
     >
       {/*

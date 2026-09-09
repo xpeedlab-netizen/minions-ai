@@ -22,26 +22,35 @@ import TrustLogos from "@/components/ui/TrustLogos";
  */
 export default function Hero() {
   return (
-    <section className="overflow-x-hidden bg-cream pt-14 pb-16 sm:pt-20 sm:pb-24">
+    // pt-6 on mobile, not pt-14: with the call panel reordered above the CTA the first
+    // screen must carry headline, subhead, panel and buttons, and the top gap was the
+    // cheapest space to reclaim. Desktop keeps its original pt-20.
+    <section className="overflow-x-hidden bg-cream pt-6 pb-16 sm:pt-20 sm:pb-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-12 xl:grid-cols-[1.2fr_1fr] xl:gap-14">
-          <div className="min-w-0">
+        {/* MOBILE ORDER IS NOT THE DESKTOP ORDER — see the note on the call panel below.
+            `contents` on mobile dissolves the text column so its children and the panel
+            become siblings of one flex container and can be interleaved by `order`. At
+            `lg` it reverts to a normal grid child and the two-column layout is unchanged. */}
+        <div className="flex min-w-0 flex-col gap-8 sm:gap-10 lg:grid lg:items-center lg:grid-cols-[1.15fr_1fr] lg:gap-12 xl:grid-cols-[1.2fr_1fr] xl:gap-14">
+          <div className="contents min-w-0 lg:block">
             {/* Follows ?for= like the call player does; with no param it still names
                 both industries, per invariant #3. See SegmentedHeroPill. */}
-            <SegmentedHeroPill />
+            <div className="order-1 lg:order-none">
+              <SegmentedHeroPill />
+            </div>
 
-            <h1 className="mt-5 type-display text-4xl leading-[0.98] tracking-[-0.005em] text-balance text-ink sm:text-5xl lg:text-6xl">
+            <h1 className="order-2 mt-4 type-display text-4xl leading-[0.98] tracking-[-0.005em] text-balance text-ink sm:mt-5 sm:text-5xl lg:order-none lg:mt-5 lg:text-6xl">
               Your AI receptionist answers every call, 24/7.
             </h1>
 
-            <p className="mt-5 max-w-lg text-[1.0625rem] leading-[1.6] text-ink/75 sm:text-lg">
+            <p className="order-3 mt-4 max-w-lg text-[1.0625rem] leading-[1.6] text-ink/75 sm:mt-5 sm:text-lg lg:order-none lg:mt-5">
               Answers on the first ring at 2 AM, on weekends, mid-route and mid-showing.
               Quotes from your real price list, books onto your calendar, and you keep
               your number.
             </p>
 
             {/* CTA Conversion Triggers — Wraps cleanly at all viewport widths */}
-            <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center lg:flex-wrap xl:flex-nowrap">
+            <div className="order-5 mt-0 flex flex-col gap-3.5 sm:flex-row sm:items-center lg:order-none lg:mt-8 lg:flex-wrap xl:flex-nowrap">
               {/* Ink, not coral. The play button on the call panel is the one coral thing
                   in the first screen, because listening comes before booking — these two
                   are a sequence, not rivals. See the `ink` variant in components/ui/Button.tsx. */}
@@ -83,7 +92,7 @@ export default function Hero() {
             </div>
 
             {/* Micro-Reassurance Checkpoints */}
-            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs font-medium text-ink/70">
+            <div className="order-6 -mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs font-medium text-ink/70 sm:-mt-5 lg:order-none lg:mt-4">
               <span className="inline-flex items-center gap-1">
                 <Check className="size-3.5 text-teal" /> Keep your existing number
               </span>
@@ -97,8 +106,19 @@ export default function Hero() {
           </div>
           {/* A real recorded call, playable in the first screen. Follows `?for=` so a
               visitor arriving from a pest ad hears a pest call; see the note in
-              components/segment/SegmentedHeroCallPlayer.tsx. */}
-          <div className="relative min-w-0 w-full lg:max-w-lg lg:ml-auto">
+              components/segment/SegmentedHeroCallPlayer.tsx.
+
+              ON MOBILE THIS SITS ABOVE THE CTA (order-4, between the subhead and the
+              buttons); on lg+ it returns to the right-hand column. Measured 2026-09-10 at
+              390x844: the play button landed at y=839 while the fixed bottom bar occupies
+              788-844, so the one asset the page is built to showcase was completely
+              hidden on the ~83% of landing traffic that is mobile — the page asked for a
+              booking before it offered any proof. Reordering costs no vertical space,
+              which trimming padding alone could not have bought (~60px available against
+              ~130px needed), and it puts the sequence in the order the visitor actually
+              reasons: headline -> subhead -> hear it work -> book. Desktop is untouched:
+              there the panel already cleared the fold beside the copy. */}
+          <div className="relative order-4 min-w-0 w-full lg:order-none lg:max-w-lg lg:ml-auto">
             <SegmentedHeroCallPlayer />
           </div>
         </div>

@@ -51,21 +51,31 @@ export default function Hero() {
                 size="lg"
                 showArrow
                 track={{ event: "cta_click", params: { location: "hero" } }}
-                className="w-full sm:w-auto justify-center whitespace-nowrap"
+                /* Taller and wider than the phone link beside it, which sits at the
+                   shared min-h-14. The booking CTA is the strongest ACTION in the hero
+                   even though the play button is the strongest IMAGE — size carries that
+                   here, so the coral never has to. */
+                className="w-full sm:w-auto justify-center whitespace-nowrap sm:min-h-[3.75rem] sm:px-10 sm:text-[1.0625rem]"
               >
                 Book a Consultation
               </Button>
               <TrackedPhoneLink
                 href={`tel:${SITE_PHONE_TEL}`}
                 location="hero"
-                className="group inline-flex min-h-14 w-full sm:w-auto items-center justify-center gap-2 rounded-xl border-2 border-ink/15 bg-white px-4 py-3 sm:px-4.5 font-heading text-sm sm:text-base font-bold text-ink shadow-sm transition-all duration-150 hover:border-teal hover:text-teal hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2 whitespace-nowrap"
+                /* Quieter than the booking CTA on purpose. A solid white card with a
+                   2px border and a shadow made this read as a second primary action —
+                   it was physically the LARGEST element in the row — when it is really
+                   the fallback for someone who would rather not fill in a form. Now: no
+                   fill, hairline border, no shadow, medium weight. Still obviously a
+                   control, no longer a rival. */
+                className="group inline-flex min-h-14 w-full sm:w-auto items-center justify-center gap-1.5 rounded-xl border border-ink/15 bg-transparent px-4 py-3 sm:px-3.5 font-heading text-sm font-semibold text-ink/80 transition-all duration-150 hover:border-teal hover:text-teal active:scale-[0.98] focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2 whitespace-nowrap"
               >
                 {/* A steady dot, not a pulsing one. Two things blinking in the same screen
                     cancel each other out — neither reads as urgent — so the animation is
                     spent on the play button, the action this hero wants first. The dot
                     still carries its "line is live" meaning without competing. */}
-                <span className="relative flex size-2.5 shrink-0">
-                  <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500" />
+                <span className="relative flex size-2 shrink-0">
+                  <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
                 </span>
                 <Phone aria-hidden className="size-4 shrink-0 text-teal transition-transform group-hover:scale-110" />
                 <span>Hear AI Live: {SITE_PHONE_NUMBER}</span>

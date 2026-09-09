@@ -56,8 +56,14 @@ const variants: Record<ButtonVariant, string> = {
    *
    * Not a downgrade: ink on cream is the highest contrast pairing the palette has. It
    * gives up loudness, not legibility.
+   *
+   * The coral is spent on the ARROW and the hover, not the fill. That keeps the button
+   * the strongest *action* in the hero while the play button stays the strongest
+   * *image* — separating actionability from visual weight, which a solid coral fill
+   * collapses back into one axis and re-creates the competition this variant exists to
+   * end. The shadow lifts it off the cream so it reads as raised rather than flat.
    */
-  ink: "bg-ink text-white hover:bg-ink shadow-sm",
+  ink: "bg-ink text-white shadow-md shadow-ink/15 hover:bg-ink/90 hover:shadow-lg hover:shadow-ink/25 [&>svg]:text-coral",
   text: "text-teal underline-offset-4 hover:underline px-0 min-h-0",
 };
 

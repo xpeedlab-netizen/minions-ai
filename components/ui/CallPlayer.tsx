@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import { Play, Pause } from "lucide-react";
 import { track } from "@/lib/analytics";
 import type { CallRecording } from "@/lib/data/call-recordings";
@@ -46,9 +46,22 @@ export default function CallPlayer({
   variant = "rail",
   size = "default",
   reserveOutcomeHeight = false,
+  clickAnywhereToPlay = false,
 }: {
   recording: CallRecording;
   className?: string;
+  /**
+   * Make the whole card a play target, not just the button.
+   *
+   * A panel carrying a play button, a scrub bar and a transcript reads as a SCREENSHOT
+   * of an audio player — the visual vocabulary of a marketing illustration — and cold
+   * visitors are trained not to click those. Widening the target to the card is what
+   * actually says "this is equipment, not a picture of equipment".
+   *
+   * Off by default: on the #hear-it band two players sit side by side, where a card-wide
+   * target would make an errant click stop the clip the visitor is already hearing.
+   */
+  clickAnywhereToPlay?: boolean;
   /**
    * Reserve a fixed height for the outcome line. Only meaningful on a player whose
    * recording can SWAP under the reader (the segmented one): there, a shorter outcome
@@ -62,6 +75,7 @@ export default function CallPlayer({
   size?: "default" | "hero";
 }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const cardRef = useRef<HTMLDivElement | null>(null);
   const railRef = useRef<HTMLOListElement | null>(null);
   const userScrolledRef = useRef(false);
   /** True while the follow-the-cue effect is driving the rail, so its own scroll events
@@ -73,9 +87,22 @@ export default function CallPlayer({
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [levels, setLevels] = useState<number[]>(() => new Array(BAR_COUNT).fill(0));
+  /** Drives the finite attention pulse. See the IntersectionObserver effect below. */
+  const [pulsing, setPulsing] = useState(false);
 
   const duration = recording.durationSec;
   const isHero = size === "hero";
+
+  /**
+   * The invitation line under the transport, e.g. "Play a real 1:57 customer call".
+   *
+   * Derived from `durationSec`, never hardcoded. The hero clip SWAPS on `?for=` and the
+   * two calls are different lengths (117s real estate, 74s pest), so a literal duration
+   * would be wrong for every visitor arriving from a pest ad — an inaccuracy sitting
+   * directly beneath the words "real recorded call", which is the one place on this page
+   * a wrong number costs the most.
+   */
+  const inviteLabel = `Play a real ${formatTime(duration)} customer call`;
 
   /**
    * Derived, not stored. A second piece of state for "which cue is active" is a second
@@ -190,6 +217,8 @@ export default function CallPlayer({
       void el.play();
       if (!playedRef.current) {
         playedRef.current = true;
+        // The invitation has done its job; from here the meter carries the motion.
+        setPulsing(false);
         track("call_play", { recording_id: recording.id });
       }
     } else {
@@ -268,6 +297,40 @@ export default function CallPlayer({
     return () => window.clearTimeout(done);
   }, [activeIndex, variant]);
 
+  /**
+   * The resting pulse on the play button, gated to when the card is actually in view.
+   *
+   * CONTINUOUS, not a fixed number of beats. A finite pulse was tried and removed: it is
+   * spent by the time a visitor scrolls back up to the hero after reading a band or two,
+   * which is exactly the returning-attention moment the invitation exists to serve. On a
+   * page selling a live voice product, a still play button reads as a screenshot.
+   *
+   * The observer earns its place by holding the animation until the panel is on screen
+   * and stopping it once the visitor has played — at which point the meter carries the
+   * motion and a pulse would just compete with it. Suppressed under prefers-reduced-motion
+   * both here and via `motion-reduce:hidden` on the element.
+   */
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card || playedRef.current) return;
+    if (
+      typeof IntersectionObserver === "undefined" ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setPulsing(entry.isIntersecting && !playedRef.current);
+      },
+      { threshold: 0.4 },
+    );
+    observer.observe(card);
+
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     // Capture the node at mount. Reading audioRef.current inside the cleanup risks
     // it already being null, which would strand this element in the activeAudio
@@ -287,13 +350,12 @@ export default function CallPlayer({
       type="button"
       onClick={togglePlay}
       aria-label={isPlaying ? `Pause ${recording.title}` : `Play ${recording.title}`}
-      className={`group relative flex shrink-0 items-center justify-center rounded-full bg-coral text-ink transition-transform hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-3 focus-visible:outline-white focus-visible:outline-offset-2 ${
+      className={`group relative flex shrink-0 cursor-pointer items-center justify-center rounded-full bg-coral text-ink transition-transform hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-3 focus-visible:outline-white focus-visible:outline-offset-2 ${
         isHero ? "size-20 sm:size-24" : "size-14"
       }`}
     >
-      {/* Resting pulse — a still play button on a page selling a live voice product
-          reads as a screenshot. Stops while playing, where the meter carries motion. */}
-      {!isPlaying && (
+      {/* The resting pulse. Continuous by design — see the note on the observer effect. */}
+      {!isPlaying && pulsing && (
         <span
           aria-hidden
           className="absolute inset-0 animate-ping rounded-full bg-coral/40 [animation-duration:2.2s] motion-reduce:hidden"
@@ -346,9 +408,33 @@ export default function CallPlayer({
     </div>
   );
 
+  /**
+   * Card-wide play, without stealing clicks from the controls inside it.
+   *
+   * The card already contains a play button, a range input, caption and cue buttons, and
+   * selectable transcript text. A naive wrapper handler would double-fire on the play
+   * button (toggling twice, so it never starts), and would restart the clip when someone
+   * clicks a cue to seek. So: ignore anything originating on an interactive element, and
+   * ignore a click that is really the end of a text selection.
+   */
+  const onCardClick = useCallback(
+    (e: MouseEvent<HTMLDivElement>) => {
+      if (!clickAnywhereToPlay) return;
+      const target = e.target as HTMLElement;
+      if (target.closest("button, a, input, [role='button']")) return;
+      if (window.getSelection()?.toString()) return;
+      togglePlay();
+    },
+    [clickAnywhereToPlay, togglePlay],
+  );
+
   return (
     <div
-      className={`flex flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-5 sm:p-6 ${className}`}
+      ref={cardRef}
+      onClick={onCardClick}
+      className={`group/card flex flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-5 sm:p-6 ${
+        clickAnywhereToPlay && !isPlaying ? "cursor-pointer" : ""
+      } ${className}`}
     >
       <audio
         ref={audioRef}
@@ -382,9 +468,39 @@ export default function CallPlayer({
 
       {/* Transport: big button, live meter, speed. */}
       <div className="mt-5 flex items-center gap-4">
-        {playButton}
+        <div className="relative shrink-0">
+          {playButton}
+          {/*
+            Desktop-only affordance, deliberately additive. There is no hover on touch,
+            which is most of this page's traffic, so the hover label can never be the
+            thing that tells a visitor to click — that job belongs to the always-visible
+            invitation line below. This just rewards a cursor that is already there.
+          */}
+          {!isPlaying && (
+            <span
+              aria-hidden
+              className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-2.5 py-1 font-mono text-[0.625rem] font-bold uppercase tracking-[0.08em] text-ink opacity-0 shadow-lg transition-opacity duration-150 group-hover/card:opacity-100"
+            >
+              Play demo
+            </span>
+          )}
+        </div>
         {meter}
       </div>
+
+      {/*
+        The always-visible invitation. This is the element doing the real work: it names
+        the action ("Play"), vouches for the artefact ("real … customer call") and prices
+        the commitment (the duration) in one line, on every device, without a hover.
+
+        It stays put during playback rather than hiding: the line is as much a label for
+        what is playing as it is a prompt, and removing it mid-play collapses the card by
+        its own height — a reflow under the reader at the exact moment they are listening.
+      */}
+      <p className="mt-3 flex items-center gap-1.5 text-[0.8125rem] text-cream/75">
+        <Play aria-hidden className="size-3 fill-current" strokeWidth={0} />
+        {inviteLabel}
+      </p>
 
       <div className="mt-4">{scrubber}</div>
 
@@ -428,7 +544,7 @@ export default function CallPlayer({
                   type="button"
                   onClick={() => seekTo(cue.t)}
                   aria-current={isActive ? "true" : undefined}
-                  className={`flex w-full gap-3 rounded-lg px-3 py-2 text-left transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-white ${
+                  className={`flex w-full cursor-pointer gap-3 rounded-lg px-3 py-2 text-left transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-white ${
                     isActive ? "bg-white/10" : "hover:bg-white/5"
                   }`}
                 >
@@ -540,7 +656,7 @@ function CaptionStage({
         <button
           type="button"
           onClick={() => onSeek(cue.t)}
-          className="block w-full text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+          className="block w-full cursor-pointer text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
         >
           <span
             className={`block font-mono text-[0.625rem] font-bold uppercase tracking-[0.08em] ${

@@ -51,25 +51,26 @@ import { SEGMENT_COPY, type Segment } from "@/lib/segments";
 function Player({ recording }: { recording: CallRecording }) {
   return (
     <div className="rounded-[1.75rem] bg-ink p-2 shadow-xl shadow-ink/10">
-      <div className="flex items-center justify-between gap-3 px-4 pt-3 pb-1">
+      <div className="flex items-center gap-3 px-4 pt-3 pb-1">
         <span className="inline-flex items-center gap-2 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.08em] text-crew-gia-on-dark">
           <span className="size-1.5 animate-pulse rounded-full bg-crew-gia-on-dark motion-reduce:animate-none" />
-          Hear the AI live
-        </span>
-        <span className="font-mono text-[0.6875rem] uppercase tracking-[0.08em] text-cream/65">
-          Real recorded call
+          Click to hear the AI live
         </span>
       </div>
 
       {/* reserveOutcomeHeight: the clip swaps on ?for=, and the two outcome lines differ
           by ~24 characters — enough to cross a line boundary and resize the hero card
           under the reader. The caption stage above is already fixed-height. */}
+      {/* clickAnywhereToPlay: the hero panel is the one player with no sibling on screen,
+          so widening the target costs nothing and fixes the "this is a screenshot of an
+          audio player" read that keeps cold visitors from pressing anything at all. */}
       <CallPlayer
         recording={recording}
         variant="caption"
         size="hero"
         className="border-0 bg-transparent"
         reserveOutcomeHeight
+        clickAnywhereToPlay
       />
     </div>
   );

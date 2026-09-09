@@ -7,6 +7,14 @@ import { crewNav, industries } from "@/lib/data/nav";
 import { SITE_PHONE_NUMBER, SITE_PHONE_TEL, BOOKING_CALENDAR_URL, DEMO_VIDEO_URL } from "@/lib/data/placeholders";
 import Button from "@/components/ui/Button";
 
+/**
+ * Unlinked from the navbar on 2026-09-09, deliberately KEPT rather than deleted.
+ *
+ * This follows the 2026-09-07 industries precedent: hiding is reversible, deleting is
+ * not. Restoring the menu is re-adding `<CrewNavDropdown />` to the desktop nav — if
+ * this component were removed, that would instead be a rebuild from git history.
+ */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function CrewNavDropdown() {
   const [open, setOpen] = useState(false);
   return (
@@ -114,7 +122,11 @@ export default function Header() {
           <Link href="/pricing" className="whitespace-nowrap font-medium text-ink hover:text-teal transition-colors min-h-[44px] flex items-center">
             Pricing
           </Link>
-          <CrewNavDropdown />
+          {/* The Crew dropdown was unlinked from the navbar on 2026-09-09 at the owner's
+              request. UNLINK ONLY: CrewNavDropdown, lib/data/nav.ts's crewNav and all five
+              service pages are untouched and still build. The pages remain reachable
+              through the MeetTheCrew band on the homepage (lib/data/crew.ts) and stay in
+              the sitemap, so nothing is stranded. Restoring is re-adding this one line. */}
           <IndustriesNavDropdown />
           <Link href="/blog" className="whitespace-nowrap font-medium text-ink hover:text-teal transition-colors min-h-[44px] flex items-center">
             Blog
@@ -170,20 +182,7 @@ export default function Header() {
             >
               Blog &amp; Field Guides
             </Link>
-            <p className="mt-3 mb-1 text-xs font-mono uppercase tracking-wide text-ink/65">The Crew</p>
-            {crewNav.map((c) => (
-              <Link
-                key={c.href}
-                href={c.href}
-                onClick={() => setMobileOpen(false)}
-                className="min-h-12 flex flex-col justify-center border-b border-border"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-heading font-semibold text-ink">{c.name}</span>
-                  <span className="font-mono text-[11px] text-teal">{c.role}</span>
-                </div>
-              </Link>
-            ))}
+            {/* The Crew list unlinked here too — see the note in the desktop nav above. */}
             <p className="mt-3 mb-1 text-xs font-mono uppercase tracking-wide text-ink/65">Industries</p>
             {industries.map((item) => (
               <Link

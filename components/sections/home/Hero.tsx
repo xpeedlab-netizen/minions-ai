@@ -76,9 +76,6 @@ export default function Hero() {
               <span className="inline-flex items-center gap-1">
                 <Check className="size-3.5 text-teal" /> 30-day tuning included
               </span>
-              <span className="inline-flex items-center gap-1">
-                <Check className="size-3.5 text-teal" /> From $2,500, live in 3 to 6 weeks
-              </span>
             </div>
           </div>
           {/* A real recorded call, playable in the first screen. Follows `?for=` so a

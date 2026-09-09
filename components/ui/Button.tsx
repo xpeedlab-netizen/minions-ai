@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import TrackedLink from "@/components/ui/TrackedLink";
 import type { AnalyticsEvent, AnalyticsParams } from "@/lib/analytics";
 
-type ButtonVariant = "primary" | "secondary" | "outline" | "text";
+type ButtonVariant = "primary" | "secondary" | "outline" | "ink" | "text";
 
 type BaseProps = {
   children: ReactNode;
@@ -45,6 +45,19 @@ const variants: Record<ButtonVariant, string> = {
   primary: "bg-coral text-ink hover:bg-coral shadow-sm",
   secondary: "bg-teal text-white hover:bg-teal-dark",
   outline: "border-2 border-teal text-teal bg-transparent hover:bg-teal/5",
+  /**
+   * A solid, high-contrast CTA that is deliberately NOT coral.
+   *
+   * Added 2026-09-09 for the homepage hero, where three separate elements shared the
+   * exact same coral — the header CTA, the hero CTA and the call player's play button —
+   * so nothing in the first screen said which to press first. Those two actions are not
+   * rivals but a sequence: nobody books before hearing the product work. Coral now marks
+   * only the play button, and the booking CTA takes this variant.
+   *
+   * Not a downgrade: ink on cream is the highest contrast pairing the palette has. It
+   * gives up loudness, not legibility.
+   */
+  ink: "bg-ink text-white hover:bg-ink shadow-sm",
   text: "text-teal underline-offset-4 hover:underline px-0 min-h-0",
 };
 

@@ -42,8 +42,12 @@ export default function Hero() {
 
             {/* CTA Conversion Triggers — Wraps cleanly at all viewport widths */}
             <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center lg:flex-wrap xl:flex-nowrap">
+              {/* Ink, not coral. The play button on the call panel is the one coral thing
+                  in the first screen, because listening comes before booking — these two
+                  are a sequence, not rivals. See the `ink` variant in components/ui/Button.tsx. */}
               <Button
                 href={BOOKING_CALENDAR_URL}
+                variant="ink"
                 size="lg"
                 showArrow
                 track={{ event: "cta_click", params: { location: "hero" } }}
@@ -56,8 +60,11 @@ export default function Hero() {
                 location="hero"
                 className="group inline-flex min-h-14 w-full sm:w-auto items-center justify-center gap-2 rounded-xl border-2 border-ink/15 bg-white px-4 py-3 sm:px-4.5 font-heading text-sm sm:text-base font-bold text-ink shadow-sm transition-all duration-150 hover:border-teal hover:text-teal hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2 whitespace-nowrap"
               >
+                {/* A steady dot, not a pulsing one. Two things blinking in the same screen
+                    cancel each other out — neither reads as urgent — so the animation is
+                    spent on the play button, the action this hero wants first. The dot
+                    still carries its "line is live" meaning without competing. */}
                 <span className="relative flex size-2.5 shrink-0">
-                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                   <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500" />
                 </span>
                 <Phone aria-hidden className="size-4 shrink-0 text-teal transition-transform group-hover:scale-110" />

@@ -51,10 +51,33 @@ import { SEGMENT_COPY, type Segment } from "@/lib/segments";
 function Player({ recording }: { recording: CallRecording }) {
   return (
     <div className="rounded-[1.75rem] bg-ink p-2 shadow-xl shadow-ink/10">
-      <div className="flex items-center gap-3 px-4 pt-3 pb-1">
-        <span className="inline-flex items-center gap-2 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.08em] text-crew-gia-on-dark">
-          <span className="size-1.5 animate-pulse rounded-full bg-crew-gia-on-dark motion-reduce:animate-none" />
+      {/*
+        The strip is a label, not a row of its own: pt-2.5/pb-0 where it used to spend
+        16px of the first screen on air around a 17px line.
+
+        THE OUTCOME BADGE LIVES HERE, not above the title inside the card (see showBadge
+        in components/ui/CallPlayer.tsx). Stacked over the heading it cost the pill's own
+        height plus its margin — ~40px at the very top of the first screen — and it made
+        the card resize on a `?for=` swap, because a two-line title pushed that stack to
+        95px against a 4.25rem reserve. On this line it costs nothing: the row already
+        exists, and the right half of it was empty.
+
+        Cream, not the crew green beside it. Both halves in the same green would read as
+        one run-on label; subdued, it reads as what it is — the outcome this particular
+        recording is filed under.
+
+        10px and tighter tracking below sm, and nowrap on both halves: at 390px the two
+        labels came to exactly the 310px the strip has, so the live label wrapped onto a
+        second line and left the pulsing dot stranded beside it. At 0.625rem they total
+        ~282px and the line still holds on a 360px phone.
+      */}
+      <div className="flex items-center justify-between gap-3 px-4 pt-2.5 pb-0">
+        <span className="inline-flex items-center gap-2 whitespace-nowrap font-mono text-[0.625rem] font-bold uppercase tracking-[0.06em] text-crew-gia-on-dark sm:text-[0.6875rem] sm:tracking-[0.08em]">
+          <span className="size-1.5 shrink-0 animate-pulse rounded-full bg-crew-gia-on-dark motion-reduce:animate-none" />
           Click to hear the AI live
+        </span>
+        <span className="shrink-0 whitespace-nowrap font-mono text-[0.625rem] font-bold uppercase tracking-[0.06em] text-cream/60 sm:text-[0.6875rem] sm:tracking-[0.08em]">
+          {recording.badge}
         </span>
       </div>
 
@@ -71,6 +94,7 @@ function Player({ recording }: { recording: CallRecording }) {
         className="border-0 bg-transparent"
         reserveOutcomeHeight
         clickAnywhereToPlay
+        showBadge={false}
       />
     </div>
   );

@@ -47,6 +47,7 @@ export default function CallPlayer({
   size = "default",
   reserveOutcomeHeight = false,
   clickAnywhereToPlay = false,
+  showBadge = true,
 }: {
   recording: CallRecording;
   className?: string;
@@ -69,6 +70,14 @@ export default function CallPlayer({
    * reservation is just a gap, so it stays off by default.
    */
   reserveOutcomeHeight?: boolean;
+  /**
+   * Render the outcome badge above the title. On by default, which is every player
+   * except the hero: there the badge is hoisted into the panel's own header strip and
+   * shares a line with "Click to hear the AI live", so drawing it here too would
+   * duplicate it and spend a row of the first screen doing so. See
+   * components/segment/SegmentedHeroCallPlayer.tsx.
+   */
+  showBadge?: boolean;
   /** "rail" = scrolling transcript list. "caption" = YouTube-style subtitle stage. */
   variant?: "rail" | "caption";
   /** "hero" enlarges the play control and caption type for above-the-fold use. */
@@ -432,7 +441,12 @@ export default function CallPlayer({
     <div
       ref={cardRef}
       onClick={onCardClick}
-      className={`group/card flex flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-5 sm:p-6 ${
+      className={`group/card flex flex-col rounded-3xl border border-white/10 bg-white/[0.04] px-5 sm:px-6 ${
+        /* Vertical padding only: the hero card carries the first screen and every row of
+           its own air competes with the booking CTA below it. Horizontal padding is
+           untouched, and so is every other player on the site. */
+        isHero ? "py-4 sm:py-5" : "py-5 sm:py-6"
+      } ${
         clickAnywhereToPlay && !isPlaying ? "cursor-pointer" : ""
       } ${className}`}
     >
@@ -449,21 +463,35 @@ export default function CallPlayer({
         onTimeUpdate={onTimeUpdate}
       />
 
-      {/* min-h so a one-line title and a two-line title produce the same card height;
-          without it the audience toggle nudges the whole band by a few pixels. */}
-      <div className="flex min-h-[4.25rem] items-start justify-between gap-4">
-        <div>
-          <span className="inline-block rounded-full border border-white/20 bg-white/10 px-3 py-1 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.08em] text-cream">
+      {/*
+        min-h so a one-line and a two-line title produce the same card height; without it
+        the audience toggle nudges the whole band by a few pixels.
+
+        Two reserves, because there are two shapes. With the badge stacked above it
+        (every player but the hero) the block is pill + margin + title and 4.25rem is the
+        long-standing number. With the badge hoisted into the hero's header strip the
+        block is the title alone, and the reserve is measured rather than guessed: the
+        taller of the two hero titles ("Ants in the kitchen, booked on the first call")
+        runs two lines at 46px on a 390px phone and 55px at 1440px, so 3.25rem/3.75rem
+        clears both with a few px to spare and still hands ~35px back to the fold.
+      */}
+      <div
+        className={`flex flex-col items-start ${
+          showBadge ? "min-h-[4.25rem]" : "min-h-[3.25rem] sm:min-h-[3.75rem]"
+        }`}
+      >
+        {showBadge && (
+          <span className="mb-3 inline-block rounded-full border border-white/20 bg-white/10 px-3 py-1 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.08em] text-cream">
             {recording.badge}
           </span>
-          <h3
-            className={`mt-3 font-heading font-bold tracking-[-0.01em] text-white ${
-              isHero ? "text-xl sm:text-2xl" : "text-lg sm:text-xl"
-            }`}
-          >
-            {recording.title}
-          </h3>
-        </div>
+        )}
+        <h3
+          className={`font-heading font-bold tracking-[-0.01em] text-white ${
+            isHero ? "text-xl sm:text-2xl" : "text-lg sm:text-xl"
+          }`}
+        >
+          {recording.title}
+        </h3>
       </div>
 
       {/* Transport: big button, live meter, speed. */}
@@ -629,12 +657,17 @@ function CaptionStage({
   return (
     <div
       /* Still a FIXED height at every width — that is what keeps a wrapping cue from
-         reflowing the band above (see the note below). It is merely a smaller fixed
-         height on small screens: at hero size the 224px stage pushed the homepage's
-         booking CTA off a 390x844 first screen once the panel moved above it. The
-         breakpoint changes the number, never the fixed-ness. */
+         reflowing the band above (see the note below). The breakpoint changes the
+         number, never the fixed-ness.
+
+         The hero's wide number is measured, not guessed: sweeping every cue of both
+         recordings at 1440px puts the tallest at 178px, so 224px was leaving 46px of
+         empty ink centred around the captions — the "gap" visible under the scrubber.
+         11.5rem (184px) keeps a 6px cushion over the tallest cue and hands the rest
+         back to the fold. The 390px number is unchanged at h-44: there the tallest cue
+         measures 167px and the slack is already only 9px. */
       className={`relative mt-5 flex flex-col justify-center overflow-hidden ${
-        isHero ? "h-44 sm:h-56" : "h-48 sm:h-52"
+        isHero ? "h-44 sm:h-[11.5rem]" : "h-48 sm:h-52"
       }`}
     >
       {/*

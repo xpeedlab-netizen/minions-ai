@@ -118,5 +118,5 @@ export const PILOT: PilotOffer = {
   /* Shown once slotsRemaining hits 0, so the band never prints "0 of 3 remaining". */
   waitlistHeading: "All three founding slots are taken.",
   waitlistLead: "The founding round is allocated and in build. Book a call anyway, you will hear how those builds are going, and we will tell you straight whether to wait for the next round or start a standard build now.",
-  waitlistCtaLabel: "Book a consultation",
+  waitlistCtaLabel: "Book Setup Call",
 };

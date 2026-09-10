@@ -238,7 +238,7 @@ export default function PricingPage() {
       {/* 10. Final CTA */}
       <FinalCta
         heading="Ready to get your custom AI agent built?"
-        primaryLabel="Book a consultation"
+        primaryLabel="Book Setup Call"
         primaryHref={BOOKING_CALENDAR_URL}
         secondaryLabel={DEMO_VIDEO_URL ? "Hear the AI first" : "Contact Sales"}
         secondaryHref={secondaryHref}

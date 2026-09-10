@@ -14,7 +14,7 @@ import TrustLogos from "@/components/ui/TrustLogos";
  * Hero — band 01 of the landing brief.
  *
  * COPY & CRO:
- *   - Outcome-first H1 + clear subhead covering both co-primary markets.
+ *   - Loss-framed H1 + a subhead that carries the category, both co-primary markets.
  *   - Two frictionless conversion paths:
  *     1. A consultation booking
  *     2. Instant interactive dual-market call preview (Pest Control & Real Estate) + live demo phone line
@@ -63,14 +63,35 @@ export default function Hero() {
               <SegmentedHeroPill />
             </div>
 
+            {/* PAIN FIRST, AND THE NOUN IS LOAD-BEARING.
+                The H1 used to be "Your AI receptionist answers every call, 24/7." — the
+                product as subject, a capability with no stakes attached. Everything that
+                made a visitor FEEL something lived in band 02 ("the caller keeps scrolling
+                until someone picks up"), below the fold, which the 5-second rule means
+                most of them never reach. So the consequence moves up here and the category
+                moves down into the subhead, where the pill and the panel's "Click to hear
+                the AI live" already keep it legible.
+
+                "customer", NOT "job". This is invariant #3, not a style preference: a job
+                is trades language, and a real estate agent has clients, listings and
+                showings, never jobs. A loss-framed H1 built on "job" would quietly make
+                brand-level copy pest-only — the exact trades-only umbrella #3 forbids.
+                "customer", "caller" and "client" are the nouns that carry the same weight
+                for both markets. Any future rewrite of this line inherits that constraint.
+
+                It costs nothing to fit, which is why it was affordable at all. Measured
+                2026-09-10: 3 lines / 124px at 390 — IDENTICAL to the line it replaces. At
+                1440 it is 3 lines instead of 2, growing the text column 418 -> 487, but the
+                row height there is set by the 630px panel and lg:items-center, so the
+                column had 143px of unused headroom and the logos do not move from 807. */}
             <h1 className="order-2 mt-4 type-display text-4xl leading-[0.98] tracking-[-0.005em] text-balance text-ink sm:mt-5 sm:text-5xl lg:order-none lg:mt-5 lg:text-6xl">
-              Your AI receptionist answers every call, 24/7.
+              Every missed call is a customer someone else just booked.
             </h1>
 
             <p className="order-3 mt-4 max-w-lg text-[1.0625rem] leading-[1.6] text-ink/75 sm:mt-5 sm:text-lg lg:order-none lg:mt-5">
-              Answers on the first ring at 2 AM, on weekends, mid-route and mid-showing.
-              Quotes from your real price list, books onto your calendar, and you keep
-              your number.
+              Your AI receptionist answers on the first ring at 2 AM, on weekends,
+              mid-route and mid-showing — quoting from your real price list and booking
+              onto your calendar.
             </p>
 
             {/* CTA Conversion Triggers — Wraps cleanly at all viewport widths.
@@ -97,7 +118,7 @@ export default function Hero() {
                    here, so the coral never has to. */
                 className="order-5 mt-6 w-full sm:w-auto justify-center whitespace-nowrap sm:min-h-[3.75rem] sm:px-10 sm:text-[1.0625rem] lg:order-none lg:mt-0"
               >
-                Book a Consultation
+                Book Setup Call
               </Button>
               <TrackedPhoneLink
                 href={`tel:${SITE_PHONE_TEL}`}

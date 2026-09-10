@@ -28,7 +28,7 @@ export default function RealEstateFinalCta() {
             track={{ event: "cta_click", params: { location: "real_estate_final_cta" } }}
             className="w-full sm:w-auto bg-teal hover:bg-teal-dark text-white shadow-xl px-8"
           >
-            Book a Consultation
+            Book Setup Call
           </Button>
 
           <TrackedPhoneLink

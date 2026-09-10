@@ -106,7 +106,7 @@ function IndustriesNavDropdown() {
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const primaryCtaHref = DEMO_VIDEO_URL ? "/live-demo" : BOOKING_CALENDAR_URL;
-  const primaryCtaLabel = DEMO_VIDEO_URL ? "Hear the AI" : "Book a Call";
+  const primaryCtaLabel = DEMO_VIDEO_URL ? "Hear the AI" : "Book Setup Call";
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-cream/95 backdrop-blur">

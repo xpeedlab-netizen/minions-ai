@@ -5,7 +5,7 @@ import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 export default function FinalCta({
   heading,
   subtext,
-  primaryLabel = "Book a consultation",
+  primaryLabel = "Book Setup Call",
   primaryHref = BOOKING_CALENDAR_URL,
   secondaryLabel = "Contact Support",
   secondaryHref = "/contact",

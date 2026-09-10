@@ -25,7 +25,7 @@ export default function FaqFinalCta() {
 
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button href="/contact" size="lg">
-            Book a consultation
+            Book Setup Call
             <ArrowRight className="size-4" />
           </Button>
 

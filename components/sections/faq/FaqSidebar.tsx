@@ -114,7 +114,7 @@ export default function FaqSidebar({
           href="/contact"
           className="mt-3 inline-flex items-center gap-1 font-heading font-bold text-teal hover:text-teal-dark transition-colors"
         >
-          Book a consultation
+          Book Setup Call
           <ArrowRight className="size-3" />
         </Link>
       </div>

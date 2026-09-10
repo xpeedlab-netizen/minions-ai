@@ -37,7 +37,7 @@ export default function PestHero() {
               track={{ event: "cta_click", params: { location: "pest_hero" } }}
               className="bg-teal hover:bg-teal-dark text-white shadow-md"
             >
-              Book a Consultation
+              Book Setup Call
             </Button>
             <TrackedPhoneLink
               href={`tel:${SITE_PHONE_TEL}`}

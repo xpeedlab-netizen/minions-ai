@@ -357,7 +357,7 @@ export default function MeetTheCrew() {
               showArrow
               className="shrink-0 w-full sm:w-auto"
             >
-              Book a Consultation
+              Book Setup Call
             </Button>
           </div>
         </Reveal>

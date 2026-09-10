@@ -31,7 +31,7 @@ export default function PestFinalCta() {
                 track={{ event: "cta_click", params: { location: "pest_final_cta" } }}
                 className="bg-teal hover:bg-teal-dark text-white shadow-lg w-full sm:w-auto"
               >
-                Book a Consultation
+                Book Setup Call
               </Button>
               {/* Matches the real-estate final CTA and both heroes: the live line, not
                   an untracked /live-demo link, so the secondary action is the same

@@ -107,7 +107,7 @@ export default function RetellImplementationPage() {
             showArrow
             track={{ event: "cta_click", params: { location: "retell_hero" } }}
           >
-            Book a consultation
+            Book Setup Call
           </Button>
           <Button href="/#hear-it" variant="secondary">
             Hear a call it handled

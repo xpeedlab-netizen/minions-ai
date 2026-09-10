@@ -75,7 +75,7 @@ export default function Footer() {
                 href={BOOKING_CALENDAR_URL}
                 className="font-mono text-xs font-medium text-cream/70 hover:text-crew-rex-on-dark transition-colors"
               >
-                Book a consultation →
+                Book Setup Call →
               </Link>
             </div>
 

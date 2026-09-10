@@ -163,7 +163,21 @@ export const CALL_RECORDINGS: CallRecording[] = [
     src: "/media/calls/realestate-showing.mp3",
     durationSec: 117,
     badge: "Showing booked",
-    title: "A buyer calling about a listing",
+    /*
+     * Title is the TENSION, badge is the resolution — they are read together, top-right
+     * against the heading. It used to be "A buyer calling about a listing", which named
+     * the input and no outcome, on the clip most visitors see (this is the no-param hero
+     * default). The pest title states its own outcome because its badge is only "Recorded
+     * demo"; here the badge already says "Showing booked", so repeating it would spend the
+     * line twice.
+     *
+     * It names the recovery on purpose. The reason this clip is the default in the first
+     * place is that it is ASKED FOR AN UNAVAILABLE SLOT and offers alternatives — see
+     * DEFAULT_RECORDING_ID below. That was the strongest thing in the recording and the
+     * only part the card never said out loud. No pronoun for the caller: they never state
+     * one, and "the buyer" is what the transcript supports.
+     */
+    title: "The slot the buyer wanted was taken",
     outcome:
       "Checked representation, confirmed lender pre-approval, offered alternatives when the requested slot was full, and booked the showing, the qualifying an agent does by hand.",
     redactedSpans: [],

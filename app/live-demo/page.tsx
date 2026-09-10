@@ -48,7 +48,7 @@ export default function LiveDemoPage() {
               </div>
               <div className="mt-8 pt-6 border-t border-border">
                 <Button href={BOOKING_CALENDAR_URL} size="lg" showArrow className="w-full">
-                  Book a consultation
+                  Book Setup Call
                 </Button>
               </div>
             </div>

@@ -266,8 +266,15 @@ function SupportRow({ m, delay }: { m: Support; delay: number }) {
 }
 
 export default function MeetTheCrew() {
+  /* pb-8 sm:pb-12: cream -> white below is an invisible seam — see the tone note in
+     components/ui/Section.tsx. */
   return (
-    <Section id="crew" tone="cream" width="wide" className="relative overflow-hidden">
+    <Section
+      id="crew"
+      tone="cream"
+      width="wide"
+      className="relative overflow-hidden pb-8 sm:pb-12"
+    >
       <div className="relative z-10">
         <div className="max-w-2xl">
           <Eyebrow className="mb-5">

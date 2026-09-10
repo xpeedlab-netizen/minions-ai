@@ -33,8 +33,11 @@ import { PILOT } from "@/lib/data/pilot";
  * them.
  */
 export default function PricingPreview() {
+  /* pb-8 sm:pb-12: white -> cream below is an invisible seam — see the tone note in
+     components/ui/Section.tsx. `feature` still sets this band's TOP padding; the density
+     is about its entrance, and only the trailing air is spent here. */
   return (
-    <Section tone="white" width="wide" density="feature">
+    <Section tone="white" width="wide" density="feature" className="pb-8 sm:pb-12">
       {/* Ranged left, matching every other light content band. See the alignment
           note on SectionHeading — only the two accent bands centre. */}
       <SectionHeading className="max-w-2xl text-ink">

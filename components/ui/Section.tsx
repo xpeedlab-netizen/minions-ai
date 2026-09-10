@@ -10,6 +10,21 @@ import type { ReactNode } from "react";
  * Three axes, fixed scales, no ad-hoc values:
  * - `tone`    sets the band background. Adjacent sections must never share a tone —
  *             the colour change IS the separator (no border-t needed on top of it).
+ *
+ *             THE ONE PAIR THAT BREAKS THAT PROMISE IS cream/white. #FFF8F0 against
+ *             #FFFFFF differs in a single channel by seven points, so the "separator"
+ *             is invisible and the boundary is just two stacked pads of empty space
+ *             reading as one hole — measured 2026-09-10 at 192px, 224px and 224px on
+ *             the three home-page cream/white adjacencies. Every other pair on the
+ *             page (white/ink, ink/cream, white/teal, teal/cream, cream/teal) has a
+ *             real tone change doing real work and keeps its full spacing.
+ *
+ *             Where the seam is invisible, the LEADING band trims its bottom padding
+ *             to pb-8 sm:pb-12 at the call site. Bottom, not top, and only one side:
+ *             a band's top padding sets up its own heading and is worth paying for,
+ *             while its bottom padding is trailing air that is doing no separating
+ *             here. The following band keeps its full top padding — including
+ *             `feature`, so the density scale below still expresses itself.
  * - `width`   sets the measure. Narrower = more intimate//statement, wider = more grid.
  * - `density` sets vertical breathing room. This is what creates rhythm: `feature`
  *             bands are the moments that must land, `compact` bands are supporting.

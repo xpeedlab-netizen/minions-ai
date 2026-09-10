@@ -19,6 +19,21 @@ import Reveal from "@/components/ui/Reveal";
  * a missed call is recurring revenue that never started, and recurring revenue is what
  * the business sells for. The page never made that case before.
  *
+ * THE ARGUMENT IS UNCHANGED; ITS VOICE IS NOT (2026-09-10). It read as "A missed call is
+ * revenue that never starts. … Both are recurring revenue: the number a buyer values you
+ * on." — correct, and written like a CFO memo. Two problems. First, it never named the
+ * moment the valuation argument is actually ABOUT: the day the owner sells, which for
+ * this buyer is the day they retire. "Recurring revenue" is the mechanism; the exit is
+ * the stake, and only the stake is worth feeling. Second, the hero was reframed the same
+ * day to open on the loss ("Every missed call is a customer someone else just booked"),
+ * so this band's old heading no longer INTRODUCED that argument — it repeated it in the
+ * same sentence shape one screen later. It now escalates instead: the hero takes one
+ * call, this band takes the contract behind it and the number the company sells for.
+ *
+ * "Whatever you sell this business for" is deliberately conditional. Not every owner
+ * intends to sell, and presuming it would lose the ones who don't — but the company is
+ * their largest asset either way, so the conditional keeps the stake without the claim.
+ *
  * ARCHETYPE: this band is the page's ONE card grid, and it is the only one that should
  * be. Cut from three cards to two so it reads in a single glance, per the brief. The
  * card dropped was "Call Centers Fall Short" — it argued against a competitor instead of
@@ -88,20 +103,30 @@ export default function TheRealCost() {
     <Section tone="white" width="wide">
       <div className="max-w-3xl">
         <SectionHeading className="text-ink">
-          A missed call is revenue that never starts.
+          Whatever you sell this business for, it will be priced on the calls you
+          answered.
         </SectionHeading>
         {/*
-          Five lines down to three. Both markets stay named (invariants.md #3) and the
-          valuation argument stays — this band is the only place the page makes it, so it
-          is the one thing that cannot be cut for length. Three is the floor without
-          dropping either the two markets or the valuation clause.
+          Both markets stay named (invariants.md #3) and the valuation argument stays —
+          this band is the only place the page makes it, so it is the one thing that
+          cannot be cut for length.
+
+          "not one visit" / "not one showing" is the whole point of the sentence: the
+          reader's instinct is to price a missed call at one job, and the correction to
+          a recurring contract is what carries them to the heading's claim.
+
+          KEEP IT SHORT. A first draft ran the correction, the acquirer clause and "the
+          largest thing they own" together — 213 characters, five lines at 390, and the
+          owner cut it back. The heading now states the valuation claim outright, so the
+          lead does not have to argue it as well; it only has to correct the reader's
+          instinct and name the term. 131 characters, three lines at 390.
 
           The `max-w-2xl` this used to pass did nothing: SectionLead caps itself at
           max-w-xl and wins the cascade. Removed rather than forced.
         */}
         <SectionLead>
-          A pest control operator loses a quarterly plan; a broker loses a listing to
-          whoever picked up. Both are recurring revenue: the number a buyer values you on.
+          A pest control operator loses a quarterly plan, not one visit. A broker loses a
+          client, not one showing. That is recurring revenue.
         </SectionLead>
       </div>
 

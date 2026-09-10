@@ -37,10 +37,13 @@ import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
 export default function PilotOffer() {
   const soldOut = PILOT.slotsRemaining <= 0;
 
+  /* pb-8 sm:pb-12: cream -> white below is an invisible seam — see the tone note in
+     components/ui/Section.tsx. PricingPreview keeps its full `feature` top padding, so
+     this boundary lands wider than the other two by design. */
   return (
     /* id: the pricing band links back here so the price never appears without its
        pilot context. Renaming it breaks that link. */
-    <Section id="founding-pilot" tone="cream" width="default">
+    <Section id="founding-pilot" tone="cream" width="default" className="pb-8 sm:pb-12">
       <div className="mx-auto max-w-3xl rounded-3xl border-2 border-ink bg-white p-6 sm:p-10 lg:p-12">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <span className="font-mono text-xs font-bold uppercase tracking-[0.08em] text-coral-text">

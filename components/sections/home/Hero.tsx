@@ -26,7 +26,23 @@ export default function Hero() {
     // reassurance line and the call panel at every width, so the top gap is the
     // cheapest space to reclaim at each one. Desktop was pt-20; lg:pt-14 buys 24px
     // toward getting the integration logos into the same screen.
-    <section className="overflow-x-hidden bg-cream pt-6 pb-16 sm:pt-10 sm:pb-24 lg:pt-14">
+    //
+    // pb-8 sm:pb-12 IS DELIBERATELY TIGHTER THAN EVERY OTHER BAND, which all run
+    // py-16 sm:py-24. Do not "restore" it for consistency. Measured 2026-09-10 at
+    // 1440x900: this boundary was 194px of empty space, which is actually the
+    // SMALLEST on the page — the other six run 205 to 273 — so the number was never
+    // the problem. It reads as a hole because it is the only boundary where nothing
+    // separates the two bands: everywhere else the tone change does that work, but
+    // cream -> white is close to invisible, so 96px of empty cream, an unreadable
+    // seam and 96px of empty white land as one continuous void. The hero also ends
+    // on the lightest thing on the page, a hairline over 54px of small grey logos.
+    //
+    // So the trust bar stops being treated as a band's closing content. It is an
+    // appendix to the hero — its own border-t already separates it from the CTA —
+    // and it should sit ATTACHED to the hero rather than floating mid-gap. The next
+    // section's own pt (96px desktop, 64 mobile) still does the separating, so the
+    // total drops to 144/96 without the white side losing anything.
+    <section className="overflow-x-hidden bg-cream pt-6 pb-8 sm:pt-10 sm:pb-12 lg:pt-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* MOBILE ORDER IS NOT THE DESKTOP ORDER — see the note on the call panel below.
             `contents` below lg dissolves the text column so its children, the CTA row's

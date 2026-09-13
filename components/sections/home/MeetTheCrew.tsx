@@ -32,24 +32,30 @@ type Support = {
 /**
  * TRIMMED 2026-09-06. This card ran 817px for 81 words and made the crew the tallest
  * band on the page, because most of it restated the hero almost verbatim: the hero
- * already says "Quotes from your real price list, books onto your calendar" and
- * "mid-route and mid-showing", which were two of Rex's three bullets and the whole of
- * the italic aside. "Picks up in under 3 seconds" is also the Proof band's closing line.
+ * already carried the pricing and calendar claims, which were two of Rex's three
+ * bullets and the whole of the italic aside. "Picks up in under 3 seconds" is also the
+ * Proof band's closing line.
  *
- * What survives is the one claim the hero does NOT make: emergency escalation to a real
- * phone. The pricing list mentions "transfers to a human on request", which is a weaker
- * and different promise, so this is the only place the page says a genuine emergency
- * reaches a person. Check the hero before adding a bullet back here.
+ * What survives is the one claim the hero does NOT make: escalation to a real person.
+ * The pricing list mentions "transfers to a human on request", which is a weaker and
+ * different promise, so this is the only place the page says an unhandled call reaches
+ * someone. Check the hero before adding a bullet back here.
+ *
+ * REPOSITIONED 2026-09-13. Rex booked "the job" and escalated "a true emergency" to an
+ * "on-call phone" — dispatch framing that invariant #3 now bars as an umbrella, and a
+ * brokerage does not run an on-call rota. The escalation claim itself is unchanged in
+ * substance: something the agent should not handle reaches a person rather than a
+ * message. It now reaches the ASSIGNED AGENT, which is how a brokerage actually routes.
  */
 const rex = {
   name: "Rex",
-  role: "24/7 AI receptionist",
-  hook: "Answers on ring one, quotes your pricing, books the job, 24/7.",
+  role: "24/7 AI voice agent",
+  hook: "Answers on ring one, checks representation and financing, books the showing.",
   /* One sentence, not a bullet list. A single bullet under a rule reads like the rest
      of the list was deleted, and this is the only claim left that the hero does not
      already make, so it carries more weight as prose than as a lone item. */
   escalation:
-    "A true emergency goes straight to your on-call phone. It never sits in a message.",
+    "Anything it should not handle goes straight to the assigned agent. It never sits in a message.",
   src: "/images/mascots/rex.png",
 };
 
@@ -61,9 +67,9 @@ const supports: Support[] = [
     role: "Missed-call text back",
     hook: "Catches what a phone line physically can't.",
     points: [
-      "Texts back within five seconds when two calls land at once.",
+      "Texts back within five seconds when two leads land at once.",
       "Picks up callers who hang up during the greeting.",
-      "Covers the channels that never ring: web forms, ad leads, portal inquiries.",
+      "Covers the channels that never ring: portal inquiries, web forms, ad leads.",
     ],
     src: "/images/mascots/zip.png",
     roleClass: "text-[#c4472a]",
@@ -73,11 +79,11 @@ const supports: Support[] = [
     code: "03 // INQUIRY",
     name: "Pip",
     role: "Website chat",
-    hook: "Handles every written question, from a stranger at 11pm to a customer asking where the tech is.",
+    hook: "Handles every written question, from a stranger at 11pm to a client asking about a listing.",
     points: [
-      "Answers from your verified business data only, never invents a price or a policy.",
+      "Answers from your verified listing and brokerage data only, never invents a price or a policy.",
       "Qualifies and books visitors who would never pick up the phone.",
-      "Absorbs the routine reschedule and arrival-time questions, so the line stays open for new revenue.",
+      "Absorbs the routine availability and reschedule questions, so the line stays open for new leads.",
     ],
     stat: "73% of customers try self-service first. Only 14% get a full answer.",
     source: "Gartner Customer Service & Support consumer study, 2024",
@@ -93,11 +99,11 @@ const supports: Support[] = [
     code: "04 // PIPELINE",
     name: "Gia",
     role: "Follow-up & reviews",
-    hook: "Works every quote that didn't close, until they book or say no.",
+    hook: "Works every buyer and seller lead that went quiet, until they book or say no.",
     points: [
       "Follows up on a real cadence instead of once and never again.",
-      "Confirms appointments so they don't quietly evaporate.",
-      "Asks for the review after the job, on the profile that drives your next call.",
+      "Confirms showings so they don't quietly evaporate.",
+      "Asks for the review after closing, on the profile that drives your next referral.",
     ],
     stat: "93% of converted leads were reached within six contact attempts.",
     source: "Velocify, Ultimate Contact Strategy (3.5M lead records), 2013",
@@ -296,7 +302,7 @@ export default function MeetTheCrew() {
               {/* Editorial dossier top status strip */}
               <div className="flex items-center justify-between border-b border-border pb-4 mb-6">
                 <span className="font-mono text-xs font-bold uppercase tracking-wider text-teal">
-                  [ AGENT 01 // INBOUND DISPATCH ]
+                  [ AGENT 01 // INBOUND LEADS ]
                 </span>
                 <span className="inline-flex items-center gap-1.5 font-mono text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                   <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />

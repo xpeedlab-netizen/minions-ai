@@ -7,7 +7,7 @@ const steps = [
   {
     n: "01",
     title: "We learn your business",
-    body: "We analyze your services, pricing, service areas, and FAQs, then train your crew to represent your brand accurately.",
+    body: "We analyze your listings, brokerage policies, qualification rules and FAQs, then train your crew to represent your brand accurately.",
   },
   {
     n: "02",

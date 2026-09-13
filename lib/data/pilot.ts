@@ -11,7 +11,7 @@
  * the business has to honour when someone books:
  *   - We build the full system at no charge.
  *   - They run it for 30 days.
- *   - If it is not booking jobs they walk away owing nothing and keep their number.
+ *   - If it is not booking showings they walk away owing nothing and keep their number.
  *   - If they keep it, the normal build fee applies from that point.
  *   - They pay their own Retell usage throughout, billed to their own account at cost.
  *
@@ -68,7 +68,7 @@ export const PILOT: PilotOffer = {
   slotsRemaining: 3,
   showCounter: true,
 
-  eyebrow: "Founding pilot · 3 operators",
+  eyebrow: "Founding pilot · 3 real estate teams",
 
   heading: "Run it free for 30 days. Then decide.",
 
@@ -89,7 +89,7 @@ export const PILOT: PilotOffer = {
    * thing a bigger vendor genuinely cannot match: the people who built it working on
    * your account directly.
    */
-  lead: "We are opening three founding slots. You get the complete system built, integrated and tuned to your business, answering your calls for thirty days before you decide anything. Founding operators work directly with the team that builds it, and that access does not survive our first hundred customers.",
+  lead: "We are opening three founding slots. You get the complete system built, integrated and tuned to your business, answering your calls for thirty days before you decide anything. Founding teams work directly with the team that builds it, and that access does not survive our first hundred customers.",
 
   youGet: [
     "The complete build: your agent, your script, your calendar and CRM, connected and live",

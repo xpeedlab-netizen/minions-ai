@@ -151,12 +151,12 @@ export const APPROVED_FAQS = [
   {
     id: "know-its-ai",
     q: "Will callers know they are talking to AI?",
-    a: "Most callers simply focus on getting their job scheduled immediately by someone who knows your exact pricing. If a caller asks directly, the AI answers honestly while seamlessly continuing to assist them.",
+    a: "Most callers simply focus on getting their showing booked immediately by someone who knows the listing. If a caller asks directly, the AI answers honestly while seamlessly continuing to assist them.",
   },
   {
     id: "wrong-price",
-    q: "What if it quotes the wrong pricing or service detail?",
-    a: "The AI is trained on your approved pricing, service areas, and company rules. When it does not have an approved answer, it follows the handoff rules you set instead of inventing a price or policy. Both voice and website chat are grounded in your verified data.",
+    q: "What if it gives out the wrong listing or property detail?",
+    a: "The AI is trained on your approved listing data, brokerage policies and company rules. When it does not have an approved answer, it follows the handoff rules you set instead of inventing a figure or a policy. Both voice and website chat are grounded in your verified data.",
   },
   {
     id: "if-it-breaks",
@@ -172,6 +172,22 @@ export const APPROVED_FAQS = [
     id: "how-long-setup",
     q: "How long does setup take?",
     a: "3 to 4 weeks for Core Crew and 5 to 6 weeks for Full Crew, from kickoff to your agent taking live calls. Our team handles 100% of the build, knowledge base setup, calendar sync, and CRM pipeline configuration for you: what we need from you is a 60–90 minute kickoff session, your call script inputs, and feedback returned within 3 business days at each review point.",
+  },
+  {
+    /*
+     * ADDED 2026-09-13 with the real-estate repositioning, and placed FOURTH rather
+     * than last on purpose: for a brokerage this is not a curiosity, it is the
+     * compliance question that decides whether an AI can answer their phone at all.
+     * Fair Housing exposure is the objection this buyer actually arrives with.
+     *
+     * The answer describes REFUSAL BEHAVIOUR — what the agent declines to do — rather
+     * than promising compliance. We configure and test the guardrail; we are not the
+     * broker's compliance authority, and claiming otherwise would be both false and
+     * a liability. Keep that distinction in any rewrite.
+     */
+    id: "fair-housing",
+    q: "How do you handle Fair Housing rules?",
+    a: "The agent is configured to decline steering questions outright — anything about the demographics, ethnicity, religion or family makeup of a neighbourhood gets a neutral redirect to objective, published information such as schools data or public listing detail, never a characterisation. Those refusals are part of the test scenarios you review and sign off before the line goes live, and every call is transcribed so you can audit what was actually said. Your brokerage policy governs; we configure the agent to follow it.",
   },
   {
     id: "calls-recorded",

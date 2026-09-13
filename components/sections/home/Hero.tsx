@@ -114,10 +114,18 @@ export default function Hero() {
               Every missed call is a client someone else just signed.
             </h1>
 
+            {/* MEASURED 2026-09-13 at 390x844. A first draft ran the after-hours clause,
+                the representation/financing check, the booking and the CRM write all in
+                one sentence: 182 characters, FIVE lines, 136px — it pushed the play
+                button from 542 to 570 and was the only thing in the repositioning that
+                cost first-screen space. This is 129 characters, three lines, 82px, and
+                keeps the three claims that matter (qualifies, books, writes back). The
+                after-hours promise is not lost: it is the first reassurance chip below
+                the CTA and the whole subject of band 02. Desktop absorbed either — the
+                text column is 343px against a 630px panel — so this was a mobile fix. */}
             <p className="order-3 mt-4 max-w-lg text-[1.0625rem] leading-[1.6] text-ink/75 sm:mt-5 sm:text-lg lg:order-none lg:mt-5">
-              Your AI voice agent answers on the first ring — after hours, on weekends
-              and mid-showing — checks representation and financing, books the showing,
-              and writes it all back to your CRM.
+              Your AI voice agent answers every lead on the first ring, qualifies the
+              buyer, books the showing, and writes it back to your CRM.
             </p>
 
             {/* CTA Conversion Triggers — Wraps cleanly at all viewport widths.

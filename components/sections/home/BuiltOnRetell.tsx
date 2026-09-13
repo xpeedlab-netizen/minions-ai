@@ -50,6 +50,19 @@ import { RETELL_CLAIM, RETELL_BILLING } from "@/lib/data/retell";
  * top of it. Stating both honestly is what makes the claim credible — a page that
  * implied we built the speech stack ourselves would be lying, and a page that implied
  * Retell does all of it would be arguing itself out of a job.
+ *
+ * THE LEAD MUST NOT OPEN ON WHAT WE DO NOT DO (owner's correction, 2026-09-13). The
+ * first draft read "We did not build the speech engine, and we are not going to pretend
+ * we did." That is accurate and it was written for credibility, but it opens the band
+ * on an absence — a prospect reads it as an apology, in the one section whose whole job
+ * is to build confidence. Naming a dependency is not the problem; LEADING with a
+ * negation is.
+ *
+ * The honest content is unchanged: we still say plainly that Retell supplies the voice
+ * (the left column is titled "Retell AI provides"). The framing is now the engineering
+ * decision it actually is — building on proven infrastructure rather than reinventing a
+ * speech stack is what a competent shop does, and the value is in the six items on the
+ * right. Keep any rewrite pointed at what we build, not at what we buy.
  */
 
 const PLATFORM = {
@@ -82,9 +95,9 @@ export default function BuiltOnRetell() {
           Built on Retell AI. Configured and run for your brokerage.
         </SectionHeading>
         <SectionLead>
-          We did not build the speech engine, and we are not going to pretend we did.
-          Retell handles the voice. Everything between that and a booked showing is the
-          work we do.
+          We build on the same voice infrastructure the best AI phone products run on,
+          then do the part that actually books showings: your qualification logic, your
+          calendar, your CRM, your escalation rules.
         </SectionLead>
       </div>
 

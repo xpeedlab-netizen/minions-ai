@@ -82,7 +82,7 @@ export default function Footer() {
             {/* Quiet Operational Telephony Status */}
             <div className="mt-5 flex items-center gap-2 font-mono text-[11px] text-cream/70">
               <span className="size-1.5 rounded-full bg-emerald-500" />
-              <span>Voice dispatch active · Sub-1.8s answering speed</span>
+              <span>Voice agent active · Sub-1.8s answering speed</span>
             </div>
           </div>
 

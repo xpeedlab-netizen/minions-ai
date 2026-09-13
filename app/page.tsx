@@ -91,15 +91,28 @@ export default function Home() {
       <PilotOffer />
       <PricingPreview />
       <HomeFaq />
+      {/* The closing image was outcome-home-on-time.webp — a service-business owner
+          greeting his daughter, phone away. A good image, and the wrong OUTCOME for
+          this reader: it resolves the page on work-life balance, which is a trades
+          owner's pain, where a brokerage owner's is the lead that got away while they
+          were with another client. The heading followed the same logic and has moved
+          from "Get home on time" to the pipeline.
+
+          IMAGE IS A PLACEHOLDER: outcome-brokerage-team-v1.webp is currently a copy of
+          step-owner-portrait-v4.webp (the broker-owner already used in HowItWorks), so
+          the same face now appears twice on one page. It is real-estate correct but
+          repetitive — replace it with the generated brokerage-team image and delete
+          this paragraph. outcome-home-on-time.webp is KEPT on disk, unreferenced, per
+          the owner's standing rule about superseded variants. */}
       <FinalCta
-        heading="Get home on time. Let the crew answer."
+        heading="Stop losing leads you already paid for."
         subtext="Your AI crew is live in 3–6 weeks for a fixed one-time fee, with 30 days of tuning included after go-live."
         primaryLabel="Book Setup Call"
         primaryHref={BOOKING_CALENDAR_URL}
         analyticsLocation="home_final_cta"
         hideSecondary
-        image="/images/illustrations/outcome-home-on-time.webp"
-        imageAlt="A service business owner home in the evening, kneeling to greet his young daughter with his phone put away"
+        image="/images/illustrations/outcome-brokerage-team-v1.webp"
+        imageAlt="A real estate broker-owner in his sixties standing at ease in his own brokerage office"
       />
     </>
   );

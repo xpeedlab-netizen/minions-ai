@@ -5,6 +5,7 @@ import HowItWorks from "@/components/sections/home/HowItWorks";
 import MeetTheCrew from "@/components/sections/home/MeetTheCrew";
 import PricingPreview from "@/components/sections/home/PricingPreview";
 import Proof from "@/components/sections/home/Proof";
+import BuiltOnRetell from "@/components/sections/home/BuiltOnRetell";
 import PilotOffer from "@/components/sections/home/PilotOffer";
 import HomeFaq from "@/components/sections/home/HomeFaq";
 import FinalCta from "@/components/sections/FinalCta";
@@ -25,10 +26,18 @@ import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
  *   04 MeetTheCrew        cream   who does what?
  *   05 HowItWorks         white   how does it get built?
  *   06 Proof              teal    does it work?
- *   07 PilotOffer         cream   has anyone actually paid you? / is this for me?
- *   08 PricingPreview     white   what does it cost? / what if it fails?
- *   09 HomeFaq            cream   what am I still worried about?
- *   10 FinalCta           teal    what is my next step?
+ *   07 BuiltOnRetell      white   what is it built on? / who am I trusting?
+ *   08 PilotOffer         cream   has anyone actually paid you? / is this for me?
+ *   09 PricingPreview     white   what does it cost? / what if it fails?
+ *   10 HomeFaq            cream   what am I still worried about?
+ *   11 FinalCta           teal    what is my next step?
+ *
+ * BuiltOnRetell was inserted at 07 on 2026-09-13. The visitor has heard the call work
+ * and read the response research by this point, so the question they are holding is no
+ * longer "what is this" but "who is actually behind it". Naming the platform EARLIER
+ * would be a detour — see the audience argument in lib/data/retell.ts, which is why the
+ * hero does not mention Retell at all. white is the only tone that fits between teal
+ * and cream without retoning a neighbour.
  *
  * PilotOffer sits at 07 because that is where the question it answers actually gets
  * asked. Proof (06) is the page's evidence band, and a visitor who has just read three
@@ -78,6 +87,7 @@ export default function Home() {
       <MeetTheCrew />
       <HowItWorks />
       <Proof />
+      <BuiltOnRetell />
       <PilotOffer />
       <PricingPreview />
       <HomeFaq />

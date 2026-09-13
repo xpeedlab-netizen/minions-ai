@@ -8,7 +8,7 @@
 ---
 
 ## 1. System Overview
-Minions.AI is an autonomous, ultra-low-latency AI voice dispatcher and front-office automation platform engineered co-primarily for **pest control operators (PCOs)** and **real estate agencies**, with verified support for HVAC, plumbing, roofing, and electrical businesses.
+Minions.AI is an autonomous, ultra-low-latency AI voice agent and front-office automation platform engineered primarily for **real estate teams and brokerages**, with verified support for pest control, HVAC, plumbing, roofing, and electrical businesses as secondary verticals.
 
 ### Primary Problem Solved
 Small-to-midsize service businesses and real estate teams lose 30% to 50% of high-intent inbound opportunities because owners and agents are actively working in the field (on a route, inspecting an attic, or mid-showing with clients) and cannot answer the phone within the critical 15-second window. Callers rarely leave voicemails; 85%+ hang up and immediately call the next competitor.
@@ -16,8 +16,8 @@ Small-to-midsize service businesses and real estate teams lose 30% to 50% of hig
 ### Core Metrics & Benchmarks
 - **Voice Answering Speed**: Under 1.8 seconds (1–2 rings), 24 hours a day, 365 days a year.
 - **Speed to Lead Impact**: Responding within 5 minutes makes a business 21× more likely to qualify a lead and 100× more likely to reach the caller compared to a 30-minute delay (MIT Lead Response Study).
-- **Revenue Protection**: Recovers $15,000 commission opportunities for real estate agencies and $2,500+ recurring annual customer contracts for pest control operators.
-- **Calendar & CRM Sync**: Native two-way booking with Google Calendar, Follow Up Boss, FieldRoutes, PestPac, GorillaDesk, ServiceTitan, Jobber, and Housecall Pro with zero double-bookings.
+- **Lead Protection**: Recovers buyer and seller leads, listing inquiries and showing requests that would otherwise reach voicemail while agents are mid-showing or with another client.
+- **Calendar & CRM Sync**: Native two-way booking with Google Calendar, Follow Up Boss, kvCORE and EspoCRM for real estate, plus FieldRoutes, PestPac, GorillaDesk, ServiceTitan, Jobber and Housecall Pro for supported field-service verticals, with zero double-bookings.
 
 ---
 
@@ -26,7 +26,7 @@ Minions.AI uses dedicated specialized agents rather than a single generic chatbo
 
 1. **Rex (AI Phone Dispatcher)**:
    - Live 24/7 inbound phone answering on existing office or mobile lines via SIP/call-forwarding.
-   - For Pest Control: Identifies pest species, assesses severity, books inspection slots, upsells recurring quarterly plans, and syncs to FieldRoutes/PestPac/GorillaDesk.
+   - For Pest Control (secondary vertical): Identifies pest species, assesses severity, books inspection slots, upsells recurring quarterly plans, and syncs to FieldRoutes/PestPac/GorillaDesk.
    - For Real Estate: Executes conversational LPMAMA qualification (Location, Price, Motivation, Agent status, Mortgage pre-approval, Appointment), enforces Fair Housing Act compliance, schedules showings, and syncs to Follow Up Boss.
    - For Trades: Emergency triage for burst pipes, AC compressor failures, and arcing breakers with live owner escalation.
 
@@ -47,17 +47,17 @@ Minions.AI uses dedicated specialized agents rather than a single generic chatbo
 
 ---
 
-## 3. Co-Primary Target Markets
+## 3. Target Markets
 
-### A. Real Estate Agencies
+### A. Real Estate Agencies & Brokerages (Primary)
 - **Target Profile**: Boutique brokerages and top-producing teams (1–10 agents).
 - **Workflows**: 24/7 showing booking, Open House inquiry triage, LPMAMA buyer lead scoring, strict adherence to Fair Housing Act guidelines, direct sync to Follow Up Boss and Google Calendar.
 - **Dedicated Page**: https://www.getminions.ai/industries/real-estate
 
-### B. Pest Control Operators (PCOs)
+### B. Pest Control Operators (PCOs) — Secondary
 - **Target Profile**: Residential and commercial pest control companies (1–15 trucks).
 - **Workflows**: 24/7 emergency infestation triage (rodents, bed bugs, termites, stinging insects), recurring quarterly agreement upsells, direct scheduling in FieldRoutes, PestPac, and GorillaDesk.
-- **Dedicated Page**: https://www.getminions.ai/industries/pest-control
+- **Dedicated Page**: supported vertical, no dedicated landing page in active navigation at present.
 
 ### C. Supported Secondary Trades
 - **HVAC, Plumbing, Roofing & Electrical**: supported verticals covering emergency repair triage, burst pipe and shutoff calls, storm surge intake and panel outage safety triage. No dedicated landing pages are published for these at present; enquiries go through the contact page.

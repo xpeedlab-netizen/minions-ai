@@ -123,19 +123,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
 
-    // Co-Primary Flagship Verticals (Equal Weight: Real Estate & Pest Control)
+    // Primary vertical. Real estate alone as of 2026-09-13 (invariant #3).
     {
       url: `${BASE_URL}/industries/real-estate`,
       lastModified: SITE_RELEASE_DATE,
       changeFrequency: "weekly",
       priority: 0.9,
     },
-    {
-      url: `${BASE_URL}/industries/pest-control`,
-      lastModified: SITE_RELEASE_DATE,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
+    /* Pest control dropped from the sitemap 2026-09-13, joining hvac/plumbing/roofing/
+       electrical below. The page still exists and still returns 200; this only moves
+       crawl priority onto the vertical the site now sells. */
 
     /* Supported Secondary Verticals — hvac, plumbing, roofing and electrical were
        dropped from the sitemap on 2026-09-07 (owner's call) so crawl priority sits

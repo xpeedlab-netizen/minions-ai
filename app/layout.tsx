@@ -49,8 +49,27 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
+/*
+ * REPOSITIONED 2026-09-13 (invariant #3). This named pest control operators first and
+ * real estate second, back when both were co-primary. Real estate is now the sole
+ * primary market, and this string is the site's single most-syndicated sentence — it is
+ * the meta description, the OG description and the Twitter description — so it is the
+ * highest-leverage line in the repository for the repositioning.
+ */
 const defaultDescription =
-  "Never miss another call. Minions.AI builds an AI crew for pest control operators and real estate agencies that answers your phone 24/7, texts back missed leads in seconds, and books straight to your calendar. Hear it live.";
+  "Never miss another lead. Minions.AI builds an AI voice agent for real estate teams that answers every call 24/7, checks representation and financing, books the showing, and writes it back to your CRM. Hear it live.";
+
+/*
+ * The social preview was /images/roofing-hero-photo.jpg — a roofer, on every link the
+ * site has ever been shared as. It is now the mid-showing illustration, which is the
+ * strongest real-estate image in the set and already carries the brand's collage style.
+ *
+ * NOT IDEAL AND KNOWN: this asset is a 1:1 square rendered into a 1200x630 card, so
+ * social platforms centre-crop it. A purpose-made 1200x630 OG image is the right fix and
+ * is worth doing — but a correctly-cropped real-estate image beats a perfectly-sized
+ * roofing one, so this ships now rather than waiting on a new asset.
+ */
+const OG_IMAGE = "/images/illustrations/pain-mid-showing-v4.webp";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.getminions.ai"),
@@ -69,10 +88,10 @@ export const metadata: Metadata = {
     siteName: "Minions.AI",
     images: [
       {
-        url: "/images/roofing-hero-photo.jpg",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Minions.AI",
+        alt: "Minions.AI — an AI voice agent that answers every real estate lead",
       },
     ],
     locale: "en_US",
@@ -82,7 +101,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Minions.AI | Never Miss Another Call",
     description: defaultDescription,
-    images: ["/images/roofing-hero-photo.jpg"],
+    images: [OG_IMAGE],
   },
   icons: {
     icon: [
@@ -124,7 +143,7 @@ export default function RootLayout({
         "url": "https://www.getminions.ai",
         "logo": "https://www.getminions.ai/images/minions_ai_logo_primary_transparent.png",
         "description":
-          "The 24/7 AI front office and speed-to-lead crew for pest control operators, real estate agencies, and home service businesses. Answers calls in under 1.8s, qualifies the lead, and books straight into FieldRoutes, PestPac, GorillaDesk, Follow Up Boss, ServiceTitan, Jobber, or Housecall Pro.",
+          "The 24/7 AI voice agent and speed-to-lead crew for real estate teams and brokerages. Answers calls in under 1.8s, checks representation and financing, books the showing, and writes straight into Follow Up Boss, kvCORE, EspoCRM or Google Calendar.",
         "foundingDate": "2026",
         "contactPoint": {
           "@type": "ContactPoint",
@@ -157,10 +176,11 @@ export default function RootLayout({
         },
         "featureList": [
           "Under 1.8-second live voice answering",
-          "24/7/365 emergency dispatching",
+          "24/7 buyer and seller lead qualification",
+          "Representation and pre-approval checks before a showing is booked",
           "Native CRM & Google Calendar two-way scheduling",
           "Instant 4-second missed call SMS recovery",
-          "Noise-filtering trained on real job sites and power tools"
+          "Lead routing to the assigned agent"
         ]
       }
     ]

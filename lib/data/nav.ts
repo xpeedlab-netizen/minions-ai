@@ -35,9 +35,18 @@ export const services: NavLink[] = [
  * order if they come back: real-estate, pest-control, hvac, plumbing, roofing,
  * electrical.
  */
+/*
+ * PEST CONTROL UNLINKED 2026-09-13, same treatment as the four below and for the same
+ * reason: invariant #3 was rewritten to make real estate the sole primary market, so
+ * nav points at the one page that carries the positioning. The ROUTE IS UNTOUCHED —
+ * app/industries/pest-control/page.tsx still renders, still builds static, and still
+ * returns 200 on a direct visit. Nothing is deleted, redirected or noindexed.
+ *
+ * Restoring it is putting the line back here, in components/layout/Footer.tsx, in
+ * app/sitemap.ts and in both public/llms*.txt.
+ */
 export const industries: NavLink[] = [
   { label: "Real Estate", href: "/industries/real-estate" },
-  { label: "Pest Control", href: "/industries/pest-control" },
 ];
 
 export const footerProduct: NavLink[] = [
@@ -45,7 +54,6 @@ export const footerProduct: NavLink[] = [
   { label: "Pricing", href: "/pricing" },
   { label: "The Crew", href: "/#crew" },
   { label: "Real Estate AI", href: "/industries/real-estate" },
-  { label: "Pest Control AI", href: "/industries/pest-control" },
   { label: "Blog & Guides", href: "/blog" },
 ];
 

@@ -7,8 +7,8 @@ import { SITE_PHONE_NUMBER, SITE_PHONE_TEL, BOOKING_CALENDAR_URL } from "@/lib/d
  * ARCHITECTURAL PRINCIPLES:
  * 1. Cognitive Simplicity: Drop verbose crew sub-links that clutter the directory.
  *    Keep only high-value pages: Product, Industries (as requested), and Company.
- * 2. Left Hero Anchor: Clear value proposition for Pest Control & Real Estate (Invariant #3)
- *    with a single high-contrast conversion action: call live AI / book a call.
+ * 2. Left Hero Anchor: Clear value proposition for Real Estate (Invariant #3) with a
+ *    single high-contrast conversion action: call live AI / book a call.
  * 3. Full-Bleed Monumental Plinth: An oversized architectural "MINIONS.AI" watermark
  *    spanning edge-to-edge (15.5vw) using .type-display (Anton) and text-coral/35.
  *    Full-bleed ensures it scales smoothly across all screens (widescreen, desktop, mobile)
@@ -25,10 +25,10 @@ const FOOTER_PRODUCT = [
 ];
 
 const FOOTER_INDUSTRIES = [
-  { label: "Pest Control", href: "/industries/pest-control" },
   { label: "Real Estate", href: "/industries/real-estate" },
-  /* HVAC + Plumbing unlinked 2026-09-07 — see the note in lib/data/nav.ts. Routes
-     still exist; this is a link removal, not a deletion. */
+  /* HVAC + Plumbing unlinked 2026-09-07, Pest Control unlinked 2026-09-13 — see the
+     note in lib/data/nav.ts. All routes still exist and still build; these are link
+     removals, not deletions. */
 ];
 
 const FOOTER_COMPANY = [
@@ -54,8 +54,8 @@ export default function Footer() {
             </Link>
 
             <p className="mt-4 max-w-sm text-sm sm:text-base leading-relaxed text-cream/70">
-              The 24/7 AI front office for pest control operators and real estate
-              agencies. Answers on ring one and books directly onto your calendar.
+              The 24/7 AI voice agent for real estate teams. Answers on ring one,
+              qualifies the lead and books the showing onto your calendar.
             </p>
 
             {/* Single High-Value Action Pill */}

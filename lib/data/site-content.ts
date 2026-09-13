@@ -32,7 +32,14 @@ export const TUNING_WINDOW = {
 
 /* "Built for Trade & Service Businesses" excluded real estate, one of the two
    co-primary markets (invariants.md #3). Both are now named explicitly. */
-export const TRUST_BAR_TEXT = `Built for Pest Control & Real Estate • 24/7 Phone Answering • Missed-Call Text Back • Website Chat • ${tuningDays}-Day Tuning Window`;
+/*
+ * Repositioned 2026-09-13 (invariant #3): this led with "Built for Pest Control & Real
+ * Estate". NOTE: nothing imports this constant today — the hero renders its trust strip
+ * from components/ui/TrustLogos.tsx. It is corrected rather than deleted because it is
+ * brand-level copy that would be wrong the moment something picked it up again, and
+ * deleting an exported constant is a bigger change than this task called for.
+ */
+export const TRUST_BAR_TEXT = `Built for Real Estate Teams • 24/7 Phone Answering • Missed-Call Text Back • Website Chat • ${tuningDays}-Day Tuning Window`;
 
 export const CONTRACTOR_DAY_TIMELINE = [
   {

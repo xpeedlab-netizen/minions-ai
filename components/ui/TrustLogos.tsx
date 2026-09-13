@@ -3,10 +3,9 @@ import React from "react";
 /**
  * TrustLogos — Visual integration clearance strip.
  *
- * Renders monochrome/ink-toned SVGs for our core integration partners across
- * Pest Control, Real Estate, and Home Services (invariants #3, #4, #5):
+ * Renders monochrome/ink-toned SVGs for our core integration partners (invariants #4, #5):
+ *   - Real Estate: Follow Up Boss, kvCORE, EspoCRM
  *   - Pest Control / Trades: FieldRoutes, PestPac, GorillaDesk, ServiceTitan, Housecall Pro, Jobber
- *   - Real Estate: Follow Up Boss
  *   - Scheduling: Google Calendar
  *
  * Eliminates the #1 technical friction point ("Does this work with my CRM?")
@@ -128,20 +127,32 @@ const LOGOS: Record<TrustLogoName, React.ReactNode> = {
 };
 
 /**
- * Homepage order. kvCORE and EspoCRM are deliberately absent: they are real
- * integrations named in the real-estate copy, but we hold no brand SVG for either,
- * so they render as a neutral mark plus wordmark and are opted into by `only`
- * rather than shown on the broad brand page.
+ * The full set, in the order a page renders them when it does not pass `only`.
+ *
+ * REORDERED 2026-09-13. This used to open FieldRoutes, PestPac, GorillaDesk — so the
+ * first three marks a brokerage saw in the first screen were pest systems, which reads
+ * as "not built for you" before a word of copy is processed. Real estate leads now.
+ *
+ * INVARIANT #4 IS UNAFFECTED and was NOT edited. It requires the six field-service
+ * systems to be featured as CRM/dispatch partners; all six are still here, still
+ * rendered, and still lead the strip on /industries/pest-control via `only`. #4 governs
+ * which integrations we claim, not the order a given page lists them in.
+ *
+ * The homepage does not use this array any more — it passes an explicit real-estate
+ * `only` (see components/sections/home/Hero.tsx). This order governs any page that
+ * renders the unfiltered strip.
  */
 const ALL: TrustLogoName[] = [
+  "Follow Up Boss",
+  "KVCore",
+  "EspoCRM",
+  "Google Calendar",
   "FieldRoutes",
   "PestPac",
   "GorillaDesk",
-  "Follow Up Boss",
   "ServiceTitan",
   "Jobber",
   "Housecall Pro",
-  "Google Calendar",
 ];
 
 export default function TrustLogos({

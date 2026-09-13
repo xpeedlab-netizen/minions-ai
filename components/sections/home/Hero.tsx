@@ -6,19 +6,23 @@ import {
   SITE_PHONE_NUMBER,
   SITE_PHONE_TEL,
 } from "@/lib/data/placeholders";
-import SegmentedHeroCallPlayer from "@/components/segment/SegmentedHeroCallPlayer";
-import SegmentedHeroPill from "@/components/segment/SegmentedHeroPill";
+import HeroCallPanel from "@/components/sections/home/HeroCallPanel";
+import { HERO_PILL_LABEL } from "@/lib/segments";
 import TrustLogos from "@/components/ui/TrustLogos";
 
 /**
  * Hero — band 01 of the landing brief.
  *
  * COPY & CRO:
- *   - Loss-framed H1 + a subhead that carries the category, both co-primary markets.
+ *   - Loss-framed H1 + a subhead that carries the category, addressed to real estate.
  *   - Two frictionless conversion paths:
  *     1. A consultation booking
- *     2. Instant interactive dual-market call preview (Pest Control & Real Estate) + live demo phone line
- *   - Visual CRM integration logos (FieldRoutes, PestPac, GorillaDesk, ServiceTitan, Follow Up Boss, Jobber, Google Calendar).
+ *     2. A real recorded real-estate call, playable in the first screen + live demo line
+ *   - Visual CRM integration logos, led by the real-estate stack (see TrustLogos).
+ *
+ * REPOSITIONED 2026-09-13. This hero addressed two co-primary markets and forked its
+ * pill and its clip on `?for=`. Invariant #3 now makes real estate the sole primary
+ * market, so the fork is gone and every noun here is real-estate native.
  */
 export default function Hero() {
   return (
@@ -73,10 +77,15 @@ export default function Hero() {
             headline under the reader — if one lands, this goes back to items-start. */}
         <div className="flex min-w-0 flex-col lg:grid lg:items-center lg:grid-cols-[1.15fr_1fr] lg:gap-12 xl:grid-cols-[1.2fr_1fr] xl:gap-14">
           <div className="contents min-w-0 lg:block">
-            {/* Follows ?for= like the call player does; with no param it still names
-                both industries, per invariant #3. See SegmentedHeroPill. */}
+            {/* Static again as of 2026-09-13. This forked on `?for=` and hedged across
+                two industries when it had no param; with one audience it just says who
+                the page is for. Server-rendered, so the first screen carries one less
+                client island. */}
             <div className="order-1 lg:order-none">
-              <SegmentedHeroPill />
+              <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white px-3 py-1 sm:px-3.5 sm:py-1.5 font-mono text-[11px] sm:text-xs font-medium uppercase tracking-[0.06em] text-ink/70 shadow-sm">
+                <span aria-hidden className="size-1.5 rounded-full bg-success animate-breathe" />
+                {HERO_PILL_LABEL}
+              </span>
             </div>
 
             {/* PAIN FIRST, AND THE NOUN IS LOAD-BEARING.
@@ -88,12 +97,13 @@ export default function Hero() {
                 moves down into the subhead, where the pill and the panel's "Click to hear
                 the AI live" already keep it legible.
 
-                "customer", NOT "job". This is invariant #3, not a style preference: a job
-                is trades language, and a real estate agent has clients, listings and
-                showings, never jobs. A loss-framed H1 built on "job" would quietly make
-                brand-level copy pest-only — the exact trades-only umbrella #3 forbids.
-                "customer", "caller" and "client" are the nouns that carry the same weight
-                for both markets. Any future rewrite of this line inherits that constraint.
+                "client", NOT "customer" or "job" (2026-09-13). The line read "a customer
+                someone else just booked" while the page served two markets and needed a
+                noun that carried weight for both. Invariant #3 now names real estate
+                alone, so the noun can finally be the one the reader actually uses: a
+                brokerage has clients, listings and showings. "Job" was always forbidden
+                here and still is — it is dispatch language and #3 explicitly bars it as
+                an umbrella. Any future rewrite inherits that.
 
                 It costs nothing to fit, which is why it was affordable at all. Measured
                 2026-09-10: 3 lines / 124px at 390 — IDENTICAL to the line it replaces. At
@@ -101,13 +111,13 @@ export default function Hero() {
                 row height there is set by the 630px panel and lg:items-center, so the
                 column had 143px of unused headroom and the logos do not move from 807. */}
             <h1 className="order-2 mt-4 type-display text-4xl leading-[0.98] tracking-[-0.005em] text-balance text-ink sm:mt-5 sm:text-5xl lg:order-none lg:mt-5 lg:text-6xl">
-              Every missed call is a customer someone else just booked.
+              Every missed call is a client someone else just signed.
             </h1>
 
             <p className="order-3 mt-4 max-w-lg text-[1.0625rem] leading-[1.6] text-ink/75 sm:mt-5 sm:text-lg lg:order-none lg:mt-5">
-              Your AI receptionist answers on the first ring at 2 AM, on weekends,
-              mid-route and mid-showing — quoting from your real price list and booking
-              onto your calendar.
+              Your AI voice agent answers on the first ring — after hours, on weekends
+              and mid-showing — checks representation and financing, books the showing,
+              and writes it all back to your CRM.
             </p>
 
             {/* CTA Conversion Triggers — Wraps cleanly at all viewport widths.
@@ -175,9 +185,8 @@ export default function Hero() {
               </span>
             </div>
           </div>
-          {/* A real recorded call, playable in the first screen. Follows `?for=` so a
-              visitor arriving from a pest ad hears a pest call; see the note in
-              components/segment/SegmentedHeroCallPlayer.tsx.
+          {/* A real recorded real-estate call, playable in the first screen. One fixed
+              clip as of 2026-09-13 — see components/sections/home/HeroCallPanel.tsx.
 
               BELOW lg THIS SITS BETWEEN THE SUBHEAD AND THE CTA (order-4); on lg+ it
               returns to the right-hand column.
@@ -196,7 +205,7 @@ export default function Hero() {
               all above the 788 fold, with the play button clearing it by 158px rather
               than sitting behind the bar at y=839 as it did before any of this work. */}
           <div className="relative order-4 mt-6 min-w-0 w-full lg:order-none lg:mt-0 lg:max-w-lg lg:ml-auto">
-            <SegmentedHeroCallPlayer />
+            <HeroCallPanel />
           </div>
         </div>
 
@@ -204,7 +213,16 @@ export default function Hero() {
         {/* lg:mt-10: the integration logos are the "client logos above the fold" item,
             and on a 1440x900 screen they were missing it by 9px. */}
         <div className="mt-12 border-t border-ink/10 pt-8 lg:mt-10">
-          <TrustLogos />
+          {/* Explicit real-estate `only` as of 2026-09-13. The unfiltered strip opened on
+              FieldRoutes/PestPac/GorillaDesk, so the first integration marks a brokerage
+              met were pest systems — the single clearest "this is not for you" signal in
+              the first screen. These four are the same set /industries/real-estate has
+              always shown. The six field-service systems remain defined and still render
+              on their own industry pages; invariant #4 is untouched. */}
+          <TrustLogos
+            only={["Follow Up Boss", "KVCore", "EspoCRM", "Google Calendar"]}
+            heading="Books Straight Into Your Brokerage Stack"
+          />
         </div>
       </div>
     </section>

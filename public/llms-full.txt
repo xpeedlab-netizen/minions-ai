@@ -77,8 +77,8 @@ Minions.AI uses dedicated specialized agents rather than a single generic chatbo
 ---
 
 ## 5. Pricing Structure
-- **Starter Build**: $1,000 one-time build fee (Rex 24/7 Voice Dispatcher, CRM/Calendar sync, call forwarding, 14-day delivery).
-- **Full Crew Build**: $2,000 one-time build fee (Rex + Zip SMS recovery + Pip web concierge + Gia reviews + Otto intake, 21-day delivery).
+- **Core Crew Build**: $2,500 one-time build fee (Rex 24/7 Voice Dispatcher, CRM/Calendar sync, call forwarding, 3–4 weeks to go-live).
+- **Full Crew Build**: $4,500 one-time build fee (Rex + Zip SMS recovery + Pip web concierge + Gia reviews + Otto intake, 5–6 weeks to go-live).
 - **Ongoing Carrier Telephony**: Direct carrier wholesale usage via Retell AI / Twilio (~$0.08–$0.14/min) with zero markup and no mandatory monthly retainers.
 - **Details**: https://www.getminions.ai/pricing
 

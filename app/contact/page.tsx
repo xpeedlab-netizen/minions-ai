@@ -5,6 +5,7 @@ import ContactTrustStrip from "@/components/sections/contact/ContactTrustStrip";
 import { SITE_PHONE_NUMBER, SITE_PHONE_TEL } from "@/lib/data/placeholders";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact & Book a Call",
   description:
     "Book a free 30-minute consultation or send us a message. We will assess fit, integrations, and next steps for your workflow.",

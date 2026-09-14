@@ -17,7 +17,7 @@ export default function ZipHonestPitch() {
           the first week. If you only do one thing with us, do this.&rdquo;
         </p>
         <div className="relative mt-6 size-12 mx-auto overflow-hidden rounded-full border-2 border-white bg-coral/10 p-0.5 shadow">
-          <Image src="/images/mascots/zip.png" alt="Zip" fill className="object-contain" />
+          <Image src="/images/mascots/zip.png" alt="Zip" fill sizes="48px" className="object-contain" />
         </div>
       </div>
     </section>

@@ -9,7 +9,8 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: "Blog & Field Guide | Minions.AI",
+  alternates: { canonical: "/blog" },
+  title: "Blog & Field Guide",
   description: "Operational insights, AI voice dispatch benchmarks, and multi-agent systems playbooks for trade contractors and AI automation engineers.",
   openGraph: {
     title: "Blog & Field Guide | Minions.AI",

@@ -4,6 +4,7 @@ import FaqFinalCta from "@/components/sections/faq/FaqFinalCta";
 import { KNOWLEDGE_BASE_FAQS } from "@/lib/data/faq";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/faq" },
   title: "FAQ & Knowledge Base | AI Phone Answering Questions, Answered Straight",
   description:
     "Zero fluff answers on voice naturalness, the 3–6 week build timeline, CRM integrations (ServiceTitan, Jobber, Housecall Pro), payment milestones, and call recording compliance.",

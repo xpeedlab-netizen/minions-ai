@@ -17,7 +17,7 @@ export default function RoofingCrew() {
             <div className="h-full rounded-2xl bg-teal p-6 sm:p-8">
               <div className="flex items-center gap-3">
                 <div className="relative size-10 overflow-hidden rounded-full border border-white/20 bg-teal/20 p-0.5">
-                  <Image src="/images/mascots/rex.png" alt="Rex" fill className="object-contain" />
+                  <Image src="/images/mascots/rex.png" alt="Rex" fill sizes="40px" className="object-contain" />
                 </div>
                 <span className="font-mono text-xs uppercase tracking-wide text-white/60">
                   24/7 Voice Dispatch

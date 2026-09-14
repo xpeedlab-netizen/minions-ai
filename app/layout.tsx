@@ -73,9 +73,20 @@ const OG_IMAGE = "/images/illustrations/pain-mid-showing-v4.webp";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.getminions.ai"),
-  alternates: {
-    canonical: "https://www.getminions.ai",
-  },
+  /*
+   * NO `alternates.canonical` HERE — DELIBERATE, DO NOT RE-ADD.
+   *
+   * A canonical in the root layout is INHERITED, not defaulted: Next.js resolves it for
+   * every page that does not set its own, so a hardcoded "https://www.getminions.ai"
+   * declared the HOMEPAGE as the canonical URL of /pricing, /faq, /contact, /about,
+   * every /industries/* page and every service page. That tells Google those URLs are
+   * duplicates of the homepage and asks it to drop them from the index — on a site whose
+   * commercial value is precisely those long-tail pages.
+   *
+   * Self-referencing canonicals now come from each page's own `alternates.canonical`
+   * (see `canonical()` in lib/seo.ts), which is relative and resolved against
+   * metadataBase above. `/` sets its own in app/page.tsx.
+   */
   title: {
     default: "Minions.AI | Never Miss Another Call",
     template: "%s | Minions.AI",

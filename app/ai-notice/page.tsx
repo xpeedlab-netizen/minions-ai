@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import LegalLayout from "@/components/sections/LegalLayout";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/ai-notice" },
   title: "AI & Call Recording Notice",
   description: "How Minions.AI uses AI on calls and chats, and how we handle call recording.",
 };

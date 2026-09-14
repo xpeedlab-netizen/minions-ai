@@ -19,7 +19,7 @@ export default function ServicePlanCard({
 
   return (
     <div
-      className={`relative flex h-full flex-col justify-between rounded-3xl border p-8 transition-all ${
+      className={`relative flex h-full flex-col justify-between rounded-3xl border p-6 sm:p-8 transition-all ${
         isPopular
           ? "border-2 border-teal bg-teal text-white shadow-xl lg:-translate-y-2"
           : "border-border bg-white text-ink shadow-sm hover:shadow-md"

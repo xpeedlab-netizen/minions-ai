@@ -7,7 +7,8 @@ import HvacRoiCalculator from "@/components/sections/industries/hvac/HvacRoiCalc
 import HvacFinalCta from "@/components/sections/industries/hvac/HvacFinalCta";
 
 export const metadata: Metadata = {
-  title: "24/7 AI Voice Dispatch & Lead Automation for HVAC Contractors | Minions AI",
+  alternates: { canonical: "/industries/hvac" },
+  title: "24/7 AI Voice Dispatch & Lead Automation for HVAC Contractors",
   description:
     "Catch every emergency AC & heating call 24/7. Our AI crew answers on the 1st ring, texts back missed leads in under 5 seconds, and books service calls straight to ServiceTitan.",
 };

@@ -7,7 +7,8 @@ import ElectricalRoiCalculator from "@/components/sections/industries/electrical
 import ElectricalFinalCta from "@/components/sections/industries/electrical/ElectricalFinalCta";
 
 export const metadata: Metadata = {
-  title: "24/7 AI Emergency Dispatch & Lead Automation for Electricians | Minions AI",
+  alternates: { canonical: "/industries/electrical" },
+  title: "24/7 AI Emergency Dispatch & Lead Automation for Electricians",
   description:
     "When the lights go out or breakers arc, customers call the first electrician who answers. Our AI crew answers 24/7, guides main breaker safety, texts back missed leads in < 5 seconds, and books jobs directly into ServiceTitan or Housecall Pro.",
 };

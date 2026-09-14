@@ -110,7 +110,14 @@ export function SectionHeading({
 }: {
   children: ReactNode;
   className?: string;
-  as?: "h2" | "h3";
+  /*
+   * `h1` exists for a PAGE HERO heading and takes the same display scale as h2 — a
+   * standalone page's first heading is visually a section title, it just has to be the
+   * document's h1 for outline and SEO reasons. Use it at most once per page; every
+   * other band stays h2. (Added for /retell-ai-implementation, which had no h1 at all
+   * and started the document at h2.)
+   */
+  as?: "h1" | "h2" | "h3";
 }) {
   /*
    * Measured against Linear (48px / weight 510 / -1.056px tracking / 1.0 line-height)
@@ -130,7 +137,7 @@ export function SectionHeading({
    * trigger a synthetic bold; `.type-display` sets the weight itself.
    */
   const scale =
-    Tag === "h2"
+    Tag === "h1" || Tag === "h2"
       ? "type-display text-4xl sm:text-5xl lg:text-6xl leading-[1.0] tracking-[-0.005em]"
       : "font-heading font-bold text-xl sm:text-2xl leading-[1.15] tracking-[-0.01em]";
 

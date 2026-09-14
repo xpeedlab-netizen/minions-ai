@@ -10,6 +10,7 @@ export default function RoofingTestimonial() {
               src="/images/roofing-testimonial-photo.jpg"
               alt="Storm Dispatch"
               fill
+              sizes="(min-width: 640px) 220px, 192px"
               className="object-cover"
             />
           </div>

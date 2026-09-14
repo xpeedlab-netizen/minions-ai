@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import LegalLayout from "@/components/sections/LegalLayout";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/terms" },
   title: "Terms of Service",
   description: "The terms that govern your use of Minions.AI services.",
 };

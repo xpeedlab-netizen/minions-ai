@@ -7,7 +7,8 @@ import RoofingRoiCalculator from "@/components/sections/industries/roofing/Roofi
 import RoofingFinalCta from "@/components/sections/industries/roofing/RoofingFinalCta";
 
 export const metadata: Metadata = {
-  title: "24/7 AI Storm Dispatch & Lead Automation for Roofing Contractors | Minions AI",
+  alternates: { canonical: "/industries/roofing" },
+  title: "24/7 AI Storm Dispatch & Lead Automation for Roofing Contractors",
   description:
     "When storm surges hit, speed is profit. Our AI crew handles 100+ concurrent calls 24/7, gathers insurance carrier claim info, sends instant damage photo links, and books inspections straight to ServiceTitan or Jobber.",
 };

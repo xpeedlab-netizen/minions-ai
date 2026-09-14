@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/components/sections/home/Hero";
 import TheRealCost from "@/components/sections/home/TheRealCost";
 import CallProofSection from "@/components/sections/home/CallProofSection";
@@ -77,6 +78,17 @@ import { BOOKING_CALENDAR_URL } from "@/lib/data/placeholders";
  * wrong.
  */
 export const revalidate = 86400;
+
+/*
+ * The homepage's own self-referencing canonical.
+ *
+ * Previously this was inherited from the root layout, where a hardcoded absolute
+ * canonical also (incorrectly) applied itself to every other page. That declaration is
+ * gone; "/" now states its own, resolved against metadataBase.
+ */
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (

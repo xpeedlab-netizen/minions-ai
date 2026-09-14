@@ -54,17 +54,21 @@ export default function RealEstateRoiCalculator() {
             {/* Slider 1: Missed Inbound Calls / Month */}
             <div className="space-y-2 w-full">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs font-mono w-full">
-                <span className="text-white/70 whitespace-normal break-words">Missed Calls / Inquiries (Monthly):</span>
+                <label htmlFor="roi-missed-calls" className="text-white/70 whitespace-normal break-words">
+                  Missed Calls / Inquiries (Monthly):
+                </label>
                 <span className="font-bold text-teal-300 text-sm bg-teal/20 px-3 py-1.5 rounded-lg border border-teal/40 w-full sm:w-auto text-center sm:text-left shrink-0">
                   {missedCalls} Calls / Mo
                 </span>
               </div>
               <input
+                id="roi-missed-calls"
                 type="range"
                 min="5"
                 max="60"
                 step="5"
                 value={missedCalls}
+                aria-valuetext={`${missedCalls} missed calls per month`}
                 onChange={(e) => setMissedCalls(Number(e.target.value))}
                 className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-teal block"
               />
@@ -103,17 +107,21 @@ export default function RealEstateRoiCalculator() {
             {/* Slider 2: Average Commission Rate */}
             <div className="space-y-2 w-full">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs font-mono w-full">
-                <span className="text-white/70 whitespace-normal break-words">Average Commission / Side:</span>
+                <label htmlFor="roi-commission-rate" className="text-white/70 whitespace-normal break-words">
+                  Average Commission / Side:
+                </label>
                 <span className="font-bold text-crew-gia-on-dark text-sm bg-success/20 px-3 py-1.5 rounded-lg border border-success/40 w-full sm:w-auto text-center sm:text-left shrink-0 truncate">
                   {commissionRate}% (~${commissionPerDeal.toLocaleString()})
                 </span>
               </div>
               <input
+                id="roi-commission-rate"
                 type="range"
                 min="2.0"
                 max="3.5"
                 step="0.25"
                 value={commissionRate}
+                aria-valuetext={`${commissionRate} percent commission per side`}
                 onChange={(e) => setCommissionRate(Number(e.target.value))}
                 className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-crew-gia-on-dark block"
               />

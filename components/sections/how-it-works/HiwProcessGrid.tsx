@@ -26,7 +26,7 @@ export default function HiwProcessGrid() {
               </p>
               <div className="relative mt-5 flex items-center gap-3 rounded-xl bg-cream p-3">
                 <div className="relative size-9 shrink-0 overflow-hidden rounded-full border border-border bg-teal/10 p-0.5">
-                  <Image src="/images/mascots/rex.png" alt="Rex" fill className="object-contain" />
+                  <Image src="/images/mascots/rex.png" alt="Rex" fill sizes="36px" className="object-contain" />
                 </div>
                 <p className="text-sm text-ink/70 italic">
                   &ldquo;No fluff. Just checking if our crew fits your shop.&rdquo; Rex
@@ -102,7 +102,7 @@ export default function HiwProcessGrid() {
                 <div className="flex -space-x-2">
                   {["/images/mascots/rex.png", "/images/mascots/zip.png", "/images/mascots/pip.png"].map((img) => (
                     <div key={img} className="relative size-8 overflow-hidden rounded-full border-2 border-teal bg-white p-0.5">
-                      <Image src={img} alt="" fill className="object-contain" />
+                      <Image src={img} alt="" fill sizes="32px" className="object-contain" />
                     </div>
                   ))}
                 </div>

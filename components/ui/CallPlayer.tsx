@@ -178,13 +178,21 @@ export default function CallPlayer({
     }
   }, []);
 
+  /*
+   * Drives the meter while playing.
+   *
+   * The bars are zeroed in CLEANUP, not in the effect body. Resetting them in the body
+   * on the `!isPlaying` pass is a synchronous setState inside an effect
+   * (react-hooks/set-state-in-effect, which fails lint) and it also ran on mount, before
+   * anything had ever played. Cleanup runs on exactly the transitions that need it —
+   * play -> pause and unmount — so the meter still drops to flat when audio stops.
+   *
+   * `setLevels` inside `tick` is not affected: that fires from requestAnimationFrame,
+   * outside the effect body.
+   */
   useEffect(() => {
-    if (!isPlaying) {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      rafRef.current = null;
-      setLevels(new Array(BAR_COUNT).fill(0));
-      return;
-    }
+    if (!isPlaying) return;
+
     const analyser = analyserRef.current;
     if (!analyser) return;
 
@@ -208,6 +216,7 @@ export default function CallPlayer({
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
+      setLevels(new Array(BAR_COUNT).fill(0));
     };
   }, [isPlaying]);
 

@@ -34,6 +34,7 @@ import { partnerFaqs } from "@/lib/data/partners";
  *   08 Apply           teal    the close
  */
 export const metadata: Metadata = {
+  alternates: { canonical: "/partners" },
   title: "Partner Program",
   description:
     "Earn on every AI voice agent client you introduce. Three commission tiers, no cost to join, and we handle the entire build and support.",

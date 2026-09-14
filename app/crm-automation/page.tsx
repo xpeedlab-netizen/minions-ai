@@ -6,6 +6,7 @@ import GiaWhyManagedCrm from "@/components/sections/gia/GiaWhyManagedCrm";
 import GiaFinalCta from "@/components/sections/gia/GiaFinalCta";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/crm-automation" },
   title: "Managed CRM Setup & Automation for Contractors",
   description:
     "Gia sets up and runs your CRM so leads never fall through the cracks, with automatic follow-ups, appointment reminders, review requests and pipelines that run themselves.",

@@ -193,7 +193,7 @@ export default function ResultsCallProof() {
                   &ldquo;I understand completely. I have an emergency diagnostic window at 8:00 AM tomorrow. Should I book that for you?&rdquo;
                 </p>
                 <div className="relative size-7 shrink-0 overflow-hidden rounded-full border border-border bg-teal/10 p-0.5">
-                  <Image src="/images/mascots/rex.png" alt="Rex" fill className="object-contain" />
+                  <Image src="/images/mascots/rex.png" alt="Rex" fill sizes="28px" className="object-contain" />
                 </div>
               </div>
             </div>

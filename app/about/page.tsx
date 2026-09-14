@@ -7,6 +7,7 @@ import AboutCrewStrip from "@/components/sections/about/AboutCrewStrip";
 import AboutFinalCta from "@/components/sections/about/AboutFinalCta";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About Minions.AI, The Team Behind Your AI Crew",
   description:
     "We're a small, hands-on team building AI that answers phones and books jobs for small businesses, the same people who'll build and run your crew.",

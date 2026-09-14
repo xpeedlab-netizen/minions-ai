@@ -8,7 +8,8 @@ import PipFinalCta from "@/components/sections/pip/PipFinalCta";
 import FaqSection from "@/components/sections/faq/FaqSection";
 
 export const metadata: Metadata = {
-  title: "Pip 24/7 Grounded Website Chat Assistant | Minions.AI",
+  alternates: { canonical: "/customer-support-ai" },
+  title: "Pip 24/7 Grounded Website Chat Assistant",
   description:
     "Pip answers routine website inquiries 24/7, pricing ranges, service areas, guarantees, and licensing, grounded strictly in your verified business content with zero hallucinations.",
 };

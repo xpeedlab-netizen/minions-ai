@@ -7,7 +7,8 @@ import PlumbingRoiCalculator from "@/components/sections/industries/plumbing/Plu
 import PlumbingFinalCta from "@/components/sections/industries/plumbing/PlumbingFinalCta";
 
 export const metadata: Metadata = {
-  title: "24/7 AI Emergency Dispatch & Lead Automation for Plumbers | Minions AI",
+  alternates: { canonical: "/industries/plumbing" },
+  title: "24/7 AI Emergency Dispatch & Lead Automation for Plumbers",
   description:
     "Burst pipes don't wait for business hours. Our AI crew answers every call 24/7, guides emergency water shutoff valves, texts back missed leads in < 5 seconds, and books jobs directly into ServiceTitan.",
 };

@@ -14,7 +14,8 @@ import ComparisonTable from "@/components/sections/pricing/ComparisonTable";
 import { Sparkles, Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pricing, One-Time Custom Setup for AI Phone Agents | Minions AI",
+  alternates: { canonical: "/pricing" },
+  title: "Pricing, One-Time Custom Setup for AI Phone Agents",
   description:
     "Custom AI voice agents built and connected to your CRM for a fixed one-time build fee. Core Crew $2,500, Full Crew $4,500. Live in 3–6 weeks.",
 };

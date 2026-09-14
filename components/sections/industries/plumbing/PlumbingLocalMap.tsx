@@ -19,6 +19,7 @@ export default function PlumbingLocalMap() {
             src="/images/plumbing-service-area.jpg"
             alt="Minions.AI plumbing service area coverage map"
             fill
+            sizes="(min-width: 1280px) 1152px, 100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-ink/20" />

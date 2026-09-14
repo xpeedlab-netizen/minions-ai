@@ -165,3 +165,50 @@ h4 {
 .scrollbar-dark::-webkit-scrollbar-thumb:hover {
   background-color: rgb(255 255 255 / 0.3);
 }
+
+/*
+ * SINGLE-COLUMN GRID SHRINK FLOOR (narrow phones, < 360px)
+ *
+ * A CSS Grid item's automatic minimum size is `min-content`, not zero, so an implicit
+ * single-column track sizes itself to the WIDEST unbreakable thing inside it and then
+ * overflows its own container. The site has ~100 grids written as `grid gap-6
+ * sm:grid-cols-2` — one column at mobile, multi-column above — and on a 320px viewport
+ * several of them resolved tracks of 321-335px inside a 288px container, pushing the
+ * document to 338-350px. That is the horizontal scroll reported on the homepage,
+ * /pricing, /live-demo, /retell-ai-implementation and /ai-voice-agent. It does not
+ * reproduce at 360px or 390px, which is why it survived earlier mobile passes.
+ *
+ * Fixing it per call site would mean editing ~100 components for a defect that is one
+ * missing default, so the floor is set once here. `minmax(0, 1fr)` is what those grids
+ * mean by "one column"; this only ever RELAXES a minimum, so it cannot change a layout
+ * that already fits.
+ *
+ * Scoped deliberately:
+ *  - `max-width: 359.98px` — below Tailwind's `sm`, so every `sm:grid-cols-*` layout is
+ *    untouched. Above this width nothing in this block applies.
+ *  - `grid-template-columns: none` — ONLY grids that never declared columns for this
+ *    breakpoint. A grid with an explicit base `grid-cols-[240px_1fr]` keeps it.
+ *  - `> *` gets `min-width: 0` for the same reason one level down, where the item is a
+ *    flex or grid container of its own (Reveal wrappers are, on several of these).
+ */
+@media (max-width: 359.98px) {
+  /*
+   * `:not([class*="grid-cols-"])` keeps this off any grid that declares its own base
+   * columns — e.g. FaqInteractiveSection's `grid-cols-[240px_1fr]` and the Hero's
+   * `grid-cols-[1.15fr_1fr]`, which are intentional and must survive. What is left is
+   * exactly the "one implicit column now, real columns at sm/lg" case that overflows.
+   *
+   * Tailwind's responsive variants compile to `.sm\:grid-cols-2` etc., which DO match
+   * `[class*="grid-cols-"]`, so a grid that only defines columns at a breakpoint would
+   * be excluded too. The attribute test therefore looks for an UNPREFIXED token: the
+   * `~=` selectors below match a whole class name, and the prefixed variants contain a
+   * colon, so they never match these.
+   */
+  [class~="grid"]:not([class*="grid-cols-["]):not([class~="grid-cols-1"]):not([class~="grid-cols-2"]):not([class~="grid-cols-3"]):not([class~="grid-cols-4"]) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  [class~="grid"] > * {
+    min-width: 0;
+  }
+}

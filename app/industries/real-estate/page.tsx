@@ -8,7 +8,8 @@ import RealEstateRoiCalculator from "@/components/sections/industries/real-estat
 import RealEstateFinalCta from "@/components/sections/industries/real-estate/RealEstateFinalCta";
 
 export const metadata: Metadata = {
-  title: "24/7 AI Showing Receptionist & Lead Scoring for Real Estate | Minions AI",
+  alternates: { canonical: "/industries/real-estate" },
+  title: "24/7 AI Showing Receptionist & Lead Scoring for Real Estate",
   description:
     "Stop losing high-value buyers to voicemail. Alex answers 1st ring 24/7, qualifies buyers via LPMAMA, follows your approved Fair Housing guardrails, and syncs directly with Google Calendar and Follow Up Boss.",
 };

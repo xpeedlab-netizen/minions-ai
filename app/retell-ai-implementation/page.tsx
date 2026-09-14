@@ -34,18 +34,18 @@ import {
  * BAND ORDER — tones alternate, per components/ui/Section.tsx:
  *   01 Hero        cream   what we do, for whom
  *   02 The gap     white   what Retell gives you vs what still has to be built
- *   03 Verticals   ink     why pest control and real estate specifically
+ *   03 Verticals   ink     why real estate specifically (pest control second)
  *   04 Billing     cream   you own the account, we don't mark up minutes
  *   05 FAQ         white   the five questions this visitor actually has
  *   06 CTA         teal    book
  */
 export const metadata: Metadata = {
-  title: "Retell AI Implementation for Pest Control & Real Estate",
+  title: "Retell AI Implementation for Real Estate Teams",
   description:
-    "We build and deploy Retell AI voice agents for pest control operators and real estate teams, covering the prompt, calendar booking, CRM integration and post-launch tuning. You own the account; we never mark up your minutes.",
+    "We build and deploy Retell AI voice agents for real estate teams and brokerages, covering the prompt, calendar booking, CRM integration and post-launch tuning. You own the account; we never mark up your minutes.",
   alternates: { canonical: "https://www.getminions.ai/retell-ai-implementation" },
   openGraph: {
-    title: "Retell AI Implementation for Pest Control & Real Estate",
+    title: "Retell AI Implementation for Real Estate Teams",
     description:
       "Retell is a developer platform. We do the building, the integrations and the tuning, and hand you a phone line that answers.",
     url: "https://www.getminions.ai/retell-ai-implementation",
@@ -63,14 +63,14 @@ export default function RetellImplementationPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Retell AI Implementation for Pest Control & Real Estate",
+    name: "Retell AI Implementation for Real Estate Teams",
     serviceType: "AI voice agent implementation",
     provider: { "@id": "https://www.getminions.ai/#organization" },
     description:
-      "Design, build, integration and post-launch tuning of Retell AI voice agents for pest control operators and real estate teams.",
+      "Design, build, integration and post-launch tuning of Retell AI voice agents for real estate teams and brokerages, and for pest control operators.",
     audience: {
       "@type": "BusinessAudience",
-      name: "Pest control operators and real estate teams",
+      name: "Real estate teams and brokerages",
     },
     mainEntityOfPage: "https://www.getminions.ai/retell-ai-implementation",
   };
@@ -99,7 +99,9 @@ export default function RetellImplementationPage() {
       {/* 01 — Hero */}
       <Section tone="cream" width="default">
         <Eyebrow>{RETELL_CLAIM.eyebrow}</Eyebrow>
-        <SectionHeading className="mt-6 max-w-4xl">{RETELL_CLAIM.heading}</SectionHeading>
+        <SectionHeading as="h1" className="mt-6 max-w-4xl">
+          {RETELL_CLAIM.heading}
+        </SectionHeading>
         <SectionLead className="mt-6">{RETELL_CLAIM.lead}</SectionLead>
         <div className="mt-9 flex flex-wrap gap-4">
           <Button

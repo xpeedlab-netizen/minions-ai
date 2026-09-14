@@ -60,6 +60,7 @@ export default function HvacCrew() {
                 src="/images/hvac-crew-bento-photo.jpg"
                 alt="Minions.AI HVAC dispatch map showing active service calls"
                 fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover opacity-40"
               />
               <div className="absolute inset-0 bg-linear-to-t from-ink via-ink/70 to-ink/20" />

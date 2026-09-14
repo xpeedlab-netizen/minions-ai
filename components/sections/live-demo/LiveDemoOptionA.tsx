@@ -35,7 +35,7 @@ export default function LiveDemoOptionA() {
     <div className="relative h-full rounded-2xl border border-border bg-white p-6 sm:p-8 flex flex-col">
       <div className="flex items-center gap-3">
         <div className="relative size-9 overflow-hidden rounded-full border border-border bg-teal/10 p-0.5">
-          <Image src="/images/mascots/rex.png" alt="Rex" fill className="object-contain" />
+          <Image src="/images/mascots/rex.png" alt="Rex" fill sizes="36px" className="object-contain" />
         </div>
         <span className="rounded-full bg-ink px-3 py-1 font-mono text-[10px] uppercase tracking-wide text-white">
           Rex recommends

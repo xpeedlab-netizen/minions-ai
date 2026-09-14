@@ -3,9 +3,9 @@
  *
  * WHY THIS PAGE EXISTS, AND WHY IT IS NOT A HOMEPAGE BAND
  *
- * Retell is a developer platform. A pest control owner cannot build on it themselves,
- * so "we implement Retell for pest control and real estate" is a SPECIALISATION claim,
- * not reseller positioning — and specialisation is what sells a done-for-you service.
+ * Retell is a developer platform. A brokerage owner cannot build on it themselves, so
+ * "we implement Retell for real estate" is a SPECIALISATION claim, not reseller
+ * positioning — and specialisation is what sells a done-for-you service.
  *
  * But it addresses a different visitor than the homepage does. Someone searching
  * "missed calls are costing me jobs" has never heard of Retell; to them this material
@@ -39,13 +39,13 @@ export const RETELL_PARTNER_STATUS: "building-on" | "official" = "building-on";
 export const RETELL_CLAIM = {
   "building-on": {
     eyebrow: "Retell AI implementation",
-    heading: "We build Retell AI voice agents for pest control and real estate.",
-    lead: "Retell is a developer platform: powerful, and not something a service business owner is going to wire up between jobs. We do the building, the integrations and the tuning, and hand you a phone line that answers.",
+    heading: "We build Retell AI voice agents for real estate teams.",
+    lead: "Retell is a developer platform: powerful, and not something a broker or team lead is going to wire up between showings. We do the building, the integrations and the tuning, and hand you a phone line that answers.",
   },
   official: {
     eyebrow: "Official Retell AI implementation partner",
-    heading: "Official Retell AI implementation partner for pest control and real estate.",
-    lead: "Retell is a developer platform: powerful, and not something a service business owner is going to wire up between jobs. We do the building, the integrations and the tuning, and hand you a phone line that answers.",
+    heading: "Official Retell AI implementation partner for real estate teams.",
+    lead: "Retell is a developer platform: powerful, and not something a broker or team lead is going to wire up between showings. We do the building, the integrations and the tuning, and hand you a phone line that answers.",
   },
 }[RETELL_PARTNER_STATUS];
 
@@ -57,7 +57,7 @@ export const RETELL_CLAIM = {
  */
 export const RETELL_GAP = {
   heading: "What Retell gives you, and what still has to be built.",
-  lead: "Retell handles the hard part of the voice itself. Everything between that and a booked job is the work.",
+  lead: "Retell handles the hard part of the voice itself. Everything between that and a booked showing is the work.",
   platform: {
     label: "Retell provides",
     items: [
@@ -80,19 +80,18 @@ export const RETELL_GAP = {
 };
 
 /**
- * Vertical-specific proof. Invariant #3: pest control and real estate are co-primary
- * and carry EQUAL weight — never let one become the example and the other a footnote.
+ * Vertical-specific proof.
+ *
+ * ORDER IS LOAD-BEARING: real estate first. Invariant #3 was revised on 2026-09-13 to
+ * make real estate the SOLE primary market; pest control remains genuinely supported and
+ * keeps its own page, but must not be presented as a co-equal umbrella. This block
+ * previously carried the superseded "co-primary, EQUAL weight" reading of #3 and listed
+ * pest control first, which is what made the page contradict the homepage.
+ *
+ * Pest control is deliberately NOT deleted: the tuned-in-this-vertical experience is the
+ * page's specialisation claim and it is true. It is second, not absent.
  */
 export const RETELL_VERTICALS = [
-  {
-    name: "Pest control",
-    knows: [
-      "Bed bugs, roaches, rodents and wasps are different jobs with different urgency",
-      "A quarterly plan is worth more than a one-off treatment, and the agent quotes accordingly",
-      "Prep instructions before a technician arrives, so the visit is not wasted",
-    ],
-    stack: "FieldRoutes · PestPac · GorillaDesk",
-  },
   {
     name: "Real estate",
     knows: [
@@ -101,6 +100,15 @@ export const RETELL_VERTICALS = [
       "A listing enquiry at 9pm is a showing on Saturday, if someone answers",
     ],
     stack: "Follow Up Boss · HubSpot · Google Calendar",
+  },
+  {
+    name: "Pest control",
+    knows: [
+      "Bed bugs, roaches, rodents and wasps are different jobs with different urgency",
+      "A quarterly plan is worth more than a one-off treatment, and the agent quotes accordingly",
+      "Prep instructions before a technician arrives, so the visit is not wasted",
+    ],
+    stack: "FieldRoutes · PestPac · GorillaDesk",
   },
 ];
 
@@ -118,7 +126,7 @@ export const retellFaqs = [
   {
     q: "Can I just use Retell AI myself?",
     a:
-      "If you have a developer, yes, it is a good platform and the API is well documented. Most pest control and real estate operators do not, and the platform is only the starting point: the prompt, the calendar integration, the CRM writes, the guardrails and the tuning after go-live are all still work. That is the part we do.",
+      "If you have a developer, yes, it is a good platform and the API is well documented. Most brokerages and teams do not, and the platform is only the starting point: the prompt, the calendar integration, the CRM writes, the guardrails and the tuning after go-live are all still work. That is the part we do.",
   },
   {
     q: "Do I own the agent and the phone number?",
@@ -131,9 +139,9 @@ export const retellFaqs = [
       "Usage is billed by the second directly to your account at Retell's published rates, we add nothing to it. The pricing page has a calculator that estimates the monthly figure from your call volume.",
   },
   {
-    q: "Why pest control and real estate specifically?",
+    q: "Why real estate specifically?",
     a:
-      "Because a voice agent is only as good as its script, and a script is only good if it knows the trade. We have built and tuned agents in these two verticals, so we know what a bed bug call needs to ask and what disqualifies a buyer before a showing is worth booking. A generalist build has to learn that on your callers.",
+      "Because a voice agent is only as good as its script, and a script is only good if it knows the business. We have built and tuned agents for real estate, so we know what disqualifies a buyer before a showing is worth booking and why a 9pm listing enquiry cannot wait until Monday. A generalist build has to learn that on your leads. We also work in pest control, where the same logic applies to a different set of questions.",
   },
   {
     q: "How long does a build take?",

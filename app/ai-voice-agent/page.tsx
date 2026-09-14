@@ -9,7 +9,8 @@ import FaqSection from "@/components/sections/faq/FaqSection";
 import RexFinalCta from "@/components/sections/rex/RexFinalCta";
 
 export const metadata: Metadata = {
-  title: "Rex 24/7 AI Voice Dispatcher & Receptionist | Minions.AI",
+  alternates: { canonical: "/ai-voice-agent" },
+  title: "Rex 24/7 AI Voice Dispatcher & Receptionist",
   description:
     "Rex answers your phone on ring one 24/7/365, quotes exact service pricing, and books, modifies, or cancels appointments straight into your Google Calendar. Live in 3–4 weeks.",
 };

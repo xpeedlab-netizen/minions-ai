@@ -33,8 +33,21 @@ type ButtonAsButton = BaseProps & {
   type?: "button" | "submit";
 };
 
+/*
+ * `max-w-full` + `text-balance` instead of an unconditional `whitespace-nowrap`.
+ *
+ * nowrap is right for the short labels this takes almost everywhere, but it makes a long
+ * one overflow the viewport rather than wrap: at 320px a `size="lg"` button spends 56px
+ * on padding and 18px type, leaving ~232px for a label like "Book Your 15-Minute Setup
+ * Call" that needs ~296px — which is the horizontal scroll on /retell-ai-implementation
+ * and Rex's final CTA. Wrapping to a second line is the correct degradation for a
+ * control that cannot fit on one; `max-w-full` is what stops it pushing the document
+ * wider, and `text-balance` keeps the two lines even rather than leaving one orphan word.
+ *
+ * Short labels are unaffected — they never reach the wrap width.
+ */
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-xl font-heading font-bold whitespace-nowrap transition-transform duration-150 ease-out active:scale-[0.98] hover:scale-[1.03] focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2";
+  "inline-flex items-center justify-center gap-2 rounded-xl font-heading font-bold max-w-full text-balance transition-transform duration-150 ease-out active:scale-[0.98] hover:scale-[1.03] focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2";
 
 const sizes: Record<NonNullable<BaseProps["size"]>, string> = {
   md: "min-h-12 px-6 text-base",

@@ -80,7 +80,7 @@ export default function ContactForm() {
               <span>Next steps &amp; response timeline:</span>
             </div>
 
-            <ul className="space-y-3 text-sm text-ink/70">
+            <ul className="space-y-3 text-[15px] text-ink/75">
               <li className="flex items-start gap-2.5">
                 <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-cream text-teal font-mono text-xs font-bold border border-border">
                   1
@@ -110,7 +110,7 @@ export default function ContactForm() {
 
           {/* Note & Reset Action */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2 border-t border-border/60">
-            <div className="flex items-center gap-2 text-xs text-ink/65 font-mono">
+            <div className="flex items-center gap-2 text-[13px] text-ink/75 font-mono">
               <MailCheck className="size-4 text-teal shrink-0" />
               <span>Message delivered</span>
             </div>
@@ -215,7 +215,7 @@ export default function ContactForm() {
               type="text"
               required
               placeholder="John Doe"
-              className="min-h-12 w-full rounded-xl border border-border bg-white px-4 text-base placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-teal"
+              className="min-h-12 w-full rounded-xl border border-border bg-white px-4 text-base placeholder:text-ink/60 focus:outline-none focus:ring-2 focus:ring-teal"
             />
           </div>
 
@@ -243,7 +243,7 @@ export default function ContactForm() {
               }}
               onBlur={handleContactBlur}
               placeholder="john@company.com"
-              className={`min-h-12 w-full rounded-xl border bg-white px-4 text-base placeholder:text-ink/40 focus:outline-none focus:ring-2 ${
+              className={`min-h-12 w-full rounded-xl border bg-white px-4 text-base placeholder:text-ink/60 focus:outline-none focus:ring-2 ${
                 contactError
                   ? "border-red-500 focus:ring-red-400"
                   : "border-border focus:ring-teal"
@@ -261,7 +261,7 @@ export default function ContactForm() {
               rows={4}
               required
               placeholder="Tell us about your current workflow..."
-              className="w-full rounded-xl border border-border bg-white px-4 py-3 text-base placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-teal"
+              className="w-full rounded-xl border border-border bg-white px-4 py-3 text-base placeholder:text-ink/60 focus:outline-none focus:ring-2 focus:ring-teal"
             />
           </div>
 

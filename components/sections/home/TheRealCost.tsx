@@ -57,56 +57,23 @@ import Reveal from "@/components/ui/Reveal";
 
 const problemCards = [
   {
-    /* !!! PLACEHOLDER IMAGE — NOT THE REAL ASSET AS OF 2026-09-13 !!!
-       pain-after-hours-inquiry-v1.webp is currently a byte-for-byte COPY of
-       pain-2am-emergency-v4.webp, staged so the build stays green while the real
-       generation is produced. The v4 sleeper is a generic older man in a dark bedroom,
-       so it is not actively wrong for a brokerage owner — but it was briefed and
-       approved as a PEST-CONTROL owner's bad night and it has not been re-approved for
-       this card. Replace it before this reaches production, and delete this warning
-       when you do.
-
-       The prompt is written and matches the locked style block (torn-paper fragment,
-       deckled edge, coarse halftone, ink crosshairs, documentary 35mm) with the age
-       constraint restated — the model defaults hard to men in their thirties, and this
-       card is unambiguously the visitor's own bad night, so a young subject makes him
-       someone else. Anti-artefact constraints carried over from v3/v4: the phone screen
-       is a plain featureless coral rectangle with no UI for the model to invent, exactly
-       one phone and one nightstand, hands closed or out of frame.
-
-       WHY THE CARD CHANGED AT ALL. The old copy ("The 2 AM call / Your highest-margin
-       work") is emergency-dispatch framing: 2 AM is when a pest or plumbing emergency
-       calls, not when a buyer inquires. The real after-hours moment for a brokerage is
-       the evening, when someone browsing listings after work rings the number on the
-       sign. Same structure, same image composition, a moment the reader actually has.
+    /* pain-after-hours-inquiry-v2.webp (2026-09-14) replaced the v1 placeholder, which
+       was a byte-for-byte copy of pain-2am-emergency-v4.webp (a pest-control owner's
+       bad night, never re-approved for this card). Generated via ChatGPT image
+       generation (gemini.google.com was tried first but rendered the sleeping figure
+       too dark/muddy to read at any crop; switched tools per owner's request), restating
+       the full locked style block (torn-paper fragment, deckled edge, coarse halftone,
+       ink crosshairs, documentary 35mm) with the age constraint (thick silver-grey hair,
+       deep forehead creases, grey stubble, heavier older build — NOT a man in his
+       thirties) and the featureless-coral-screen anti-artefact constraint carried
+       forward from the pain-2am-emergency-* lineage this card's brief descends from.
 
        FRAMING: this card renders 4:3 from a square source, so object-cover crops 25%
        vertically. Keep his head and the glowing phone inside the central horizontal
-       band. Check any replacement at the real card crop.
-
-       ---- PRIOR HISTORY OF THE IMAGE THIS CARD USED (pain-2am-emergency-*), KEPT
-       BECAUSE THE NEW GENERATION INHERITS EVERY ONE OF THESE CONSTRAINTS ----
-
-       v3 (2026-08-29) replaced v2 for the same reason card 2 went to v4: it read as
-       AI-generated. v2's tell was the phone SCREEN — the model filled it with
-       meaningless blobs standing in for call buttons, which is the artefact a viewer
-       spots first on a lit screen in a dark frame. Fixed by specifying the screen as a
-       plain, uniform, featureless coral rectangle of light with no icons, buttons, call
-       controls or symbols at all, so there is no UI for the model to invent. Also
-       pinned "exactly one phone and one nightstand" (v1 produced mirrored duplicate
-       nightstands) and "hands relaxed and closed, tucked or out of frame".
-
-       v4 (2026-08-29) fixed the last ICP AGE mismatch on the page. v3's sleeper read as
-       a man of about thirty-five with dark hair, against a buyer in his late fifties to
-       sixties — and this card is unambiguously the visitor's own bad night, so he was
-       looking at someone else. Recast at 60 with the age named as the most important
-       part of the brief (thick silver-grey hair, deep forehead creases, grey stubble,
-       heavier older build) plus an explicit "do NOT make him a man in his thirties"
-       negation, which is required rather than optional — the model defaults hard to
-       young men otherwise. Every v3 constraint above was restated, not assumed. */
+       band. Check any future replacement at the real card crop. */
     title: "The 9 PM listing inquiry",
     body: "Most buyers start online, after work. They call the first number on the listing and keep going down the results until someone answers.",
-    src: "/images/illustrations/pain-after-hours-inquiry-v1.webp",
+    src: "/images/illustrations/pain-after-hours-inquiry-v2.webp",
     alt: "A brokerage owner in his sixties asleep in bed at night while a phone rings unanswered on the nightstand beside him, its screen glowing",
   },
   {

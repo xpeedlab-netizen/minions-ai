@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Section, { SectionHeading, SectionLead, Eyebrow } from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
@@ -51,6 +52,17 @@ import { RETELL_CLAIM, RETELL_BILLING } from "@/lib/data/retell";
  * implied we built the speech stack ourselves would be lying, and a page that implied
  * Retell does all of it would be arguing itself out of a job.
  *
+ * retell-infrastructure-v1.webp added 2026-09-14 at the owner's request: this band was
+ * the only one on the page carrying no image at all, which reads as denser reading load
+ * exactly where a visitor is evaluating a trust claim. Subject is deliberately NOT a
+ * person — every other band already pictures a broker or an agent, and this section is
+ * about the technology layer, not a human moment. It shows a studio microphone with a
+ * glowing coral audio waveform on a mixing console behind it, in the same locked collage
+ * style as every other illustration on the page (torn halftone photo, coral/teal flat
+ * blocks, cream ground, ink hairlines). Generated via ChatGPT image generation after
+ * repeated attempts kept substituting an unrelated woman's portrait for the requested
+ * equipment-only shot — fixed by an explicit "no human face, no person" negation.
+ *
  * THE LEAD MUST NOT OPEN ON WHAT WE DO NOT DO (owner's correction, 2026-09-13). The
  * first draft read "We did not build the speech engine, and we are not going to pretend
  * we did." That is accurate and it was written for credibility, but it opens the band
@@ -89,16 +101,27 @@ const OURS = {
 export default function BuiltOnRetell() {
   return (
     <Section tone="white" width="wide">
-      <div className="max-w-3xl">
-        <Eyebrow>{RETELL_CLAIM.eyebrow}</Eyebrow>
-        <SectionHeading className="mt-5 text-ink">
-          Built on Retell AI. Configured and run for your brokerage.
-        </SectionHeading>
-        <SectionLead>
-          We build on the same voice infrastructure the best AI phone products run on,
-          then do the part that actually books showings: your qualification logic, your
-          calendar, your CRM, your escalation rules.
-        </SectionLead>
+      <div className="grid gap-10 lg:grid-cols-[1fr_320px] lg:items-center lg:gap-14">
+        <div className="max-w-3xl">
+          <Eyebrow>{RETELL_CLAIM.eyebrow}</Eyebrow>
+          <SectionHeading className="mt-5 text-ink">
+            Built on Retell AI. Configured and run for your brokerage.
+          </SectionHeading>
+          <SectionLead>
+            We build on the same voice infrastructure the best AI phone products run on,
+            then do the part that actually books showings: your qualification logic, your
+            calendar, your CRM, your escalation rules.
+          </SectionLead>
+        </div>
+        <Reveal className="relative aspect-square w-full max-w-xs justify-self-center overflow-hidden rounded-3xl lg:max-w-none lg:justify-self-end">
+          <Image
+            src="/images/illustrations/retell-infrastructure-v1.webp"
+            alt="A studio microphone with a glowing audio waveform on a mixing console behind it"
+            fill
+            sizes="(min-width: 1024px) 320px, 320px"
+            className="object-cover"
+          />
+        </Reveal>
       </div>
 
       {/* Hairline-divided columns rather than two cards: the point is the DIVISION of

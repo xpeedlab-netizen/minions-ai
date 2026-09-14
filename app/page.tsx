@@ -98,12 +98,12 @@ export default function Home() {
           were with another client. The heading followed the same logic and has moved
           from "Get home on time" to the pipeline.
 
-          IMAGE IS A PLACEHOLDER: outcome-brokerage-team-v1.webp is currently a copy of
-          step-owner-portrait-v4.webp (the broker-owner already used in HowItWorks), so
-          the same face now appears twice on one page. It is real-estate correct but
-          repetitive — replace it with the generated brokerage-team image and delete
-          this paragraph. outcome-home-on-time.webp is KEPT on disk, unreferenced, per
-          the owner's standing rule about superseded variants. */}
+          outcome-brokerage-team-v2.webp (2026-09-14) replaced the v1 placeholder,
+          which was a copy of step-owner-portrait-v4.webp and put the same face on the
+          page twice. The new subject is deliberately a DIFFERENT man (leaner build,
+          close-cropped hair vs. the HowItWorks figure's thicker tousled hair) so the
+          two do not read as one person twice. outcome-home-on-time.webp is KEPT on
+          disk, unreferenced, per the owner's standing rule about superseded variants. */}
       <FinalCta
         heading="Stop losing leads you already paid for."
         subtext="Your AI crew is live in 3–6 weeks for a fixed one-time fee, with 30 days of tuning included after go-live."
@@ -111,8 +111,8 @@ export default function Home() {
         primaryHref={BOOKING_CALENDAR_URL}
         analyticsLocation="home_final_cta"
         hideSecondary
-        image="/images/illustrations/outcome-brokerage-team-v1.webp"
-        imageAlt="A real estate broker-owner in his sixties standing at ease in his own brokerage office"
+        image="/images/illustrations/outcome-brokerage-team-v2.webp"
+        imageAlt="A real estate broker-owner in his fifties standing at ease with arms crossed in his own brokerage office"
       />
     </>
   );

@@ -42,4 +42,4 @@ export const PRIMARY_SEGMENT: Segment = "real-estate";
  * The hero eyebrow pill. A plain constant now rather than a per-segment lookup: with
  * one audience the pill states it outright instead of hedging across two markets.
  */
-export const HERO_PILL_LABEL = "AI voice agents for real estate teams";
+export const HERO_PILL_LABEL = "24/7 AI receptionist for real estate teams";

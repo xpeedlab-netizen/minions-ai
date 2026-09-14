@@ -1,6 +1,6 @@
 import { CalendarDays } from "lucide-react";
 
-const CAL_LINK = "https://cal.com/xpeedlab/30min";
+const CAL_LINK = "https://cal.com/minionsai/30min";
 
 export default function ContactCalCard() {
   return (

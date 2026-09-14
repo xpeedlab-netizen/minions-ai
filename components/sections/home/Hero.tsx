@@ -230,6 +230,7 @@ export default function Hero() {
           <TrustLogos
             only={["Follow Up Boss", "KVCore", "EspoCRM", "Google Calendar"]}
             heading="Books Straight Into Your Brokerage Stack"
+            prominent
           />
         </div>
       </div>

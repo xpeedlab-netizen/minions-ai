@@ -15,7 +15,8 @@ import React from "react";
  * four names that visitor actually runs, because eight logos where four are irrelevant
  * reads as a generic list rather than a claim about THEIR stack. Omit it and every
  * logo renders in the order below, which is what the homepage wants. `heading`
- * overrides the caption for the same reason.
+ * overrides the caption for the same reason. `prominent` gives a focused four-logo
+ * strip more visual weight without enlarging the denser industry variants.
  *
  * Anything named in `only` must stay inside the approved integration set (invariant #5,
  * and the Fixed Crew Assets rule in CLAUDE.md); this prop narrows that list, never
@@ -158,19 +159,33 @@ const ALL: TrustLogoName[] = [
 export default function TrustLogos({
   only,
   heading = "Native Sync With Your Existing CRM & Dispatch Stack",
+  prominent = false,
 }: {
   only?: TrustLogoName[];
   heading?: string;
+  prominent?: boolean;
 } = {}) {
   const names = only?.length ? only : ALL;
 
   return (
     <div className="w-full">
-      <p className="text-center font-mono text-[11px] uppercase tracking-[0.12em] text-ink/75 sm:text-xs">
+      <p
+        className={`text-center font-mono uppercase text-ink/75 ${
+          prominent
+            ? "text-xs tracking-[0.1em] sm:text-sm"
+            : "text-[11px] tracking-[0.12em] sm:text-xs"
+        }`}
+      >
         {heading}
       </p>
 
-      <div className="mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-5 text-ink/75 sm:gap-x-12">
+      <div
+        className={`flex flex-wrap items-center justify-center text-ink/75 ${
+          prominent
+            ? "mt-6 gap-x-10 gap-y-6 text-ink/85 sm:gap-x-14 [&_svg]:h-[1.375rem] sm:[&_svg]:h-6"
+            : "mt-5 gap-x-8 gap-y-5 sm:gap-x-12"
+        }`}
+      >
         {names.map((name) => (
           <div key={name} className="flex items-center gap-2 transition-colors hover:text-ink">
             {LOGOS[name]}

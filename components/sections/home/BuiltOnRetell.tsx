@@ -1,7 +1,8 @@
-import Link from "next/link";
-import Section, { SectionHeading, SectionLead, Eyebrow } from "@/components/ui/Section";
+import Image from "next/image";
+import Section, { SectionHeading, SectionLead } from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
-import { RETELL_CLAIM, RETELL_BILLING } from "@/lib/data/retell";
+import ParallaxBackground from "./ParallaxBackground";
+import { RETELL_BILLING } from "@/lib/data/retell";
 
 /**
  * "Built on Retell AI" — the technology trust band, added 2026-09-13 at the owner's
@@ -13,8 +14,25 @@ import { RETELL_CLAIM, RETELL_BILLING } from "@/lib/data/retell";
  * only what we DO ("built on", "we configure"), never a status we hold. Specifically
  * forbidden here until RETELL_PARTNER_STATUS flips to "official" with owner sign-off:
  *   - "Official", "Certified", "Authorised" or "Partner" as a title
- *   - Retell's logo or wordmark as a badge
  *   - Any claim of being listed in their partner directory
+ *   - Presenting the logo as a badge, seal or endorsement mark of any kind
+ *
+ * LOGO — ADDED 2026-09-15 (owner's explicit request, confirmed NOT an official-partner
+ * claim). public/images/brands/retell-ai-logo-white.svg is Retell AI's own official
+ * white wordmark, downloaded from their published brand-assets page
+ * (retellai.com/logos). This is nominative/referential use — crediting the platform a
+ * product is built on ("Built with Stripe", "Powered by React") — not a certification
+ * badge, so it does not require RETELL_PARTNER_STATUS to be "official". Sized at h-9/h-10
+ * (owner's follow-up request: "larger and prominent", replacing an initial small inline
+ * placement next to the eyebrow) as a standalone mark above the heading — still never
+ * enlarged into a full hero lockup or paired with "Partner"/"Official"/"Certified" copy,
+ * which would cross back into the claim this section is not allowed to make.
+ *
+ * EYEBROW PILL AND CTA LINK REMOVED 2026-09-15 (owner: the goal is booking a call, not
+ * sending the visitor to read another page; also flagged /retell-ai-implementation as
+ * carrying stale pest-control content not yet fit to route brokerage visitors into).
+ * RETELL_CLAIM.eyebrow is still used on /retell-ai-implementation itself — do not delete
+ * it from lib/data/retell.ts on account of this file no longer rendering it.
  *
  * The heading is NOT hardcoded — it reads RETELL_CLAIM, which is derived from
  * RETELL_PARTNER_STATUS. That is the whole point of that indirection: the claim lives
@@ -58,13 +76,24 @@ import { RETELL_CLAIM, RETELL_BILLING } from "@/lib/data/retell";
  * background instead, with a scroll effect, and the two text columns sitting on top of
  * a blurred version of it rather than beside it.
  *
- * retell-infrastructure-v1.webp is a plain CSS background-image, not next/image —
- * `background-attachment: fixed` (the parallax "scroll effect") only exists as a CSS
- * background property, so the optimisation next/image gives up here is traded for the
- * effect the owner asked for. The asset is already a served-once static webp (~130KB),
- * so the cost is small. `bg-scroll lg:bg-fixed`: fixed-attachment parallax is desktop
- * only — it is unreliable and sometimes disabled outright on mobile Safari/Chrome, and
- * a static bg-cover image is a safe, correct fallback there rather than a broken one.
+ * PARALLAX IMPLEMENTATION — REWORKED 2026-09-15 (owner report: "not working on phone,
+ * perfectly working on desktop"). The first version used `bg-scroll lg:bg-fixed`, i.e.
+ * `background-attachment: fixed` gated to desktop only, with a static `bg-cover` image
+ * as the documented mobile fallback. That fallback was working exactly as designed —
+ * the "bug" was that "static image, no motion" IS what `lg:`-only fixed-attachment
+ * produces below `lg:`, and it reads as broken rather than as a deliberate no-op.
+ *
+ * Replaced with ParallaxBackground (./ParallaxBackground.tsx), a small client
+ * component using framer-motion's useScroll/useTransform to drive a `transform:
+ * translateY(...)` on the image as the section scrolls through the viewport. This is
+ * the same visual effect (`background-attachment: fixed` is itself just a scroll-linked
+ * translate under the hood) but implemented as a JS-driven transform instead of a CSS
+ * background property — transforms are not disabled on mobile Safari/Chrome the way
+ * `background-attachment: fixed` is, so the effect now runs on every viewport size
+ * without a separate mobile fallback path. framer-motion was already a project
+ * dependency loaded on this exact page (see Reveal.tsx below), so this adds no new
+ * library, only a second small client boundary next to the one that already existed
+ * here for Reveal.
  *
  * A dark ink scrim (gradient, not a flat overlay, so the top where the heading sits is
  * darkest and the image reads a little more through lower down) sits between the photo
@@ -127,15 +156,10 @@ const OURS = {
 export default function BuiltOnRetell() {
   return (
     <Section tone="ink" width="wide" className="relative isolate overflow-hidden">
-      {/* Full-bleed photo background. bg-fixed (lg+ only) is the parallax "scroll
-          effect": the image holds its position in the viewport while the section's
-          content scrolls over it, revealed within the section's own box. See the
-          docblock above for why this is a plain CSS background and not next/image. */}
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-scroll bg-cover bg-center lg:bg-fixed"
-        style={{ backgroundImage: "url(/images/illustrations/retell-infrastructure-v1.webp)" }}
-      />
+      {/* Full-bleed photo background with a scroll-linked parallax translate. See the
+          docblock above for why this is a JS transform (ParallaxBackground) rather
+          than `background-attachment: fixed`. */}
+      <ParallaxBackground src="/images/illustrations/retell-infrastructure-v1.webp" />
       {/* Darkest at the top where the heading sits, lighter toward the bottom so the
           photo still reads through behind the billing card. */}
       <div
@@ -145,7 +169,17 @@ export default function BuiltOnRetell() {
 
       <div className="relative">
         <div className="max-w-3xl">
-          <Eyebrow tone="dark">{RETELL_CLAIM.eyebrow}</Eyebrow>
+          {/* Nominative brand credit, not a partner badge — see CLAIM SAFETY above.
+              Sized prominently (owner's request, 2026-09-15) so it reads as a real
+              logo rather than a small inline mark, while staying plain — no border,
+              no "Partner" wording, no badge chrome around it. */}
+          <Image
+            src="/images/brands/retell-ai-logo-white.svg"
+            alt="Retell AI"
+            width={659}
+            height={227}
+            className="h-9 w-auto sm:h-10"
+          />
           <SectionHeading className="mt-5 text-white">
             Built on Retell AI. Configured and run for your brokerage.
           </SectionHeading>
@@ -198,13 +232,6 @@ export default function BuiltOnRetell() {
             <p className="mt-3 max-w-2xl text-[0.9375rem] leading-[1.65] text-ink/75">
               {RETELL_BILLING.body}
             </p>
-            <Link
-              href="/retell-ai-implementation"
-              className="mt-5 inline-flex min-h-11 items-center gap-1.5 font-heading text-sm font-bold text-teal underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-teal focus-visible:outline-offset-2"
-            >
-              How we implement Retell AI
-              <span aria-hidden>&rarr;</span>
-            </Link>
           </div>
         </Reveal>
       </div>

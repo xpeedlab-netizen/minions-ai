@@ -34,10 +34,14 @@ import {
  * BAND ORDER — tones alternate, per components/ui/Section.tsx:
  *   01 Hero        cream   what we do, for whom
  *   02 The gap     white   what Retell gives you vs what still has to be built
- *   03 Verticals   ink     why real estate specifically (pest control second)
+ *   03 Verticals   ink     why real estate specifically
  *   04 Billing     cream   you own the account, we don't mark up minutes
  *   05 FAQ         white   the five questions this visitor actually has
  *   06 CTA         teal    book
+ *
+ * VERTICALS WENT REAL-ESTATE-ONLY 2026-09-15 (owner's request; RETELL_VERTICALS in
+ * lib/data/retell.ts carries the full reasoning) — this page no longer also covers pest
+ * control, which pest control's own /industries/pest-control page still does.
  */
 export const metadata: Metadata = {
   title: "Retell AI Implementation for Real Estate Teams",
@@ -67,7 +71,7 @@ export default function RetellImplementationPage() {
     serviceType: "AI voice agent implementation",
     provider: { "@id": "https://www.getminions.ai/#organization" },
     description:
-      "Design, build, integration and post-launch tuning of Retell AI voice agents for real estate teams and brokerages, and for pest control operators.",
+      "Design, build, integration and post-launch tuning of Retell AI voice agents for real estate teams and brokerages.",
     audience: {
       "@type": "BusinessAudience",
       name: "Real estate teams and brokerages",
@@ -164,22 +168,25 @@ export default function RetellImplementationPage() {
         </div>
       </Section>
 
-      {/* 03 — Verticals. Equal weight, per invariant #3. */}
+      {/* 03 — Verticals. Real-estate only as of 2026-09-15 — see the docblock above. */}
       <Section tone="ink" width="default">
         <SectionHeading className="max-w-3xl text-white">
           A voice agent is only as good as its script, and a script is only good if it
           knows the trade.
         </SectionHeading>
         <SectionLead tone="dark" className="mt-5">
-          We build in two verticals rather than all of them, because the qualifying
-          questions are the product and they are different in each.
+          We build for real estate specifically, because the qualifying questions are the
+          product and a generalist build has to learn them on your leads.
         </SectionLead>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        {/* Single card as of 2026-09-15 (was a 2-column grid for real estate + pest
+            control) — capped at max-w-xl and centred rather than left in a half-width
+            grid column with an empty gap beside it. */}
+        <div className="mt-12 grid gap-6">
           {RETELL_VERTICALS.map((v) => (
             <div
               key={v.name}
-              className="flex h-full flex-col rounded-3xl border border-white/12 bg-white/[0.04] p-7 sm:p-9"
+              className="mx-auto flex w-full max-w-xl flex-col rounded-3xl border border-white/12 bg-white/[0.04] p-7 sm:p-9"
             >
               <h3 className="font-heading text-xl font-bold tracking-[-0.01em] text-white">
                 {v.name}

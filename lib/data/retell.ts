@@ -21,8 +21,18 @@
  * here therefore describes what we DO ("we build on", "we implement"), never a status
  * we hold. Do not add, from memory or enthusiasm:
  *   - "Official", "Certified", "Authorised" or "Partner" as a title
- *   - Retell's logo or wordmark as a badge
  *   - Any claim of being listed in their partner directory
+ *   - The logo presented as a badge, seal or endorsement mark of any kind
+ *
+ * LOGO EXCEPTION (2026-09-15, owner's explicit request): Retell's own white wordmark
+ * (public/images/brands/retell-ai-logo-white.svg, sourced from retellai.com/logos) may
+ * be used as a nominative brand credit — "built on X", the same way a product credits
+ * Stripe or React — because that is not a partnership claim and does not require
+ * RETELL_PARTNER_STATUS to be "official". See components/sections/home/BuiltOnRetell.tsx
+ * for the one place it is currently used (shown prominently, standalone above the
+ * heading, per the owner's follow-up request). Do not pair it with "Partner"/
+ * "Official"/"Certified" wording or badge chrome (border/pill/seal) around it — that
+ * combination is what would cross into the still-forbidden claim.
  *
  * When the partnership is confirmed, flip RETELL_PARTNER_STATUS to "official" and the
  * page upgrades its own wording in one place. Do not scatter the claim across strings.
@@ -71,7 +81,7 @@ export const RETELL_GAP = {
     items: [
       "A prompt that survives a real caller who interrupts, mumbles and changes their mind",
       "Live two-way calendar booking, not just an agent that says it booked something",
-      "Writes into the system you actually run: FieldRoutes, PestPac, GorillaDesk, ServiceTitan, Housecall Pro or Jobber",
+      "Writes into the system you actually run: Follow Up Boss, kvCORE or whatever you use",
       "Guardrails so it refuses work you do not do instead of inventing an answer",
       "Number porting, call routing and after-hours behaviour that matches how you work",
       "Someone to fix it in week three when a caller finds a phrasing nobody predicted",
@@ -82,14 +92,13 @@ export const RETELL_GAP = {
 /**
  * Vertical-specific proof.
  *
- * ORDER IS LOAD-BEARING: real estate first. Invariant #3 was revised on 2026-09-13 to
- * make real estate the SOLE primary market; pest control remains genuinely supported and
- * keeps its own page, but must not be presented as a co-equal umbrella. This block
- * previously carried the superseded "co-primary, EQUAL weight" reading of #3 and listed
- * pest control first, which is what made the page contradict the homepage.
- *
- * Pest control is deliberately NOT deleted: the tuned-in-this-vertical experience is the
- * page's specialisation claim and it is true. It is second, not absent.
+ * REAL-ESTATE ONLY as of 2026-09-15 (owner's request). This page previously also listed
+ * pest control as a genuinely-supported secondary vertical, kept "second, not absent"
+ * per invariant #3's 2026-09-13 rewrite (real estate sole primary; pest genuinely
+ * supported but never co-equal). The owner flagged that content as stale for THIS page
+ * specifically and asked for it removed — pest control keeps its own dedicated page
+ * (/industries/pest-control) and its site-wide support is untouched; this is a scope
+ * decision about one implementation-detail page, not a reversal of invariant #3.
  */
 export const RETELL_VERTICALS = [
   {
@@ -100,15 +109,6 @@ export const RETELL_VERTICALS = [
       "A listing enquiry at 9pm is a showing on Saturday, if someone answers",
     ],
     stack: "Follow Up Boss · HubSpot · Google Calendar",
-  },
-  {
-    name: "Pest control",
-    knows: [
-      "Bed bugs, roaches, rodents and wasps are different jobs with different urgency",
-      "A quarterly plan is worth more than a one-off treatment, and the agent quotes accordingly",
-      "Prep instructions before a technician arrives, so the visit is not wasted",
-    ],
-    stack: "FieldRoutes · PestPac · GorillaDesk",
   },
 ];
 
@@ -141,7 +141,7 @@ export const retellFaqs = [
   {
     q: "Why real estate specifically?",
     a:
-      "Because a voice agent is only as good as its script, and a script is only good if it knows the business. We have built and tuned agents for real estate, so we know what disqualifies a buyer before a showing is worth booking and why a 9pm listing enquiry cannot wait until Monday. A generalist build has to learn that on your leads. We also work in pest control, where the same logic applies to a different set of questions.",
+      "Because a voice agent is only as good as its script, and a script is only good if it knows the business. We have built and tuned agents for real estate, so we know what disqualifies a buyer before a showing is worth booking and why a 9pm listing enquiry cannot wait until Monday. A generalist build has to learn that on your leads.",
   },
   {
     q: "How long does a build take?",

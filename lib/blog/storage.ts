@@ -5,6 +5,14 @@ import { getSupabaseClient } from "./supabase";
 
 const BLOG_CONTENT_DIR = path.join(process.cwd(), "content", "blog");
 
+/**
+ * The only workspace whose posts belong on getminions.ai. The `blogs` table is
+ * shared by every Minions customer (it is also each workspace's record of what
+ * it published), so every read and write here must be scoped to this id.
+ * Unscoped, this site rendered other customers' posts under our own brand.
+ */
+export const BLOG_CLIENT_ID = process.env.BLOG_CLIENT_ID || "tenant-zero-getminions-ai";
+
 function ensureDirectoryExists() {
   if (!fs.existsSync(BLOG_CONTENT_DIR)) {
     fs.mkdirSync(BLOG_CONTENT_DIR, { recursive: true });
@@ -114,6 +122,7 @@ export async function getAllPosts(): Promise<BlogPost[]> {
       const { data, error } = await supabase
         .from("blogs")
         .select("*")
+        .eq("client_id", BLOG_CLIENT_ID)
         .order("published_at", { ascending: false });
 
       if (!error && data && data.length > 0) {
@@ -157,6 +166,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
       const { data, error } = await supabase
         .from("blogs")
         .select("*")
+        .eq("client_id", BLOG_CLIENT_ID)
         .eq("slug", slug)
         .single();
 
@@ -205,17 +215,23 @@ export async function savePost(payload: BlogPublishPayload): Promise<BlogPost> {
   let publishedAt = now;
   const supabaseForLookup = getSupabaseClient();
   if (supabaseForLookup) {
-    try {
-      const { data: existing } = await supabaseForLookup
-        .from("blogs")
-        .select("published_at")
-        .eq("slug", slug)
-        .maybeSingle();
-      if (existing?.published_at) {
-        publishedAt = existing.published_at;
-      }
-    } catch (e) {
-      console.warn("Could not look up existing published_at, defaulting to now:", e);
+    // A failed lookup must stop the publish: without it we cannot tell whether
+    // this slug already belongs to another workspace.
+    const { data: existing, error: lookupError } = await supabaseForLookup
+      .from("blogs")
+      .select("published_at, client_id")
+      .eq("slug", slug)
+      .maybeSingle();
+    if (lookupError) {
+      throw new Error(`Could not check slug "${slug}" before publishing: ${lookupError.message}`);
+    }
+    // Slugs are unique across ALL workspaces. Upserting on one that belongs
+    // to another customer would overwrite their post with ours.
+    if (existing && existing.client_id !== BLOG_CLIENT_ID) {
+      throw new Error(`Slug "${slug}" belongs to another workspace; refusing to overwrite it.`);
+    }
+    if (existing?.published_at) {
+      publishedAt = existing.published_at;
     }
   }
 
@@ -255,6 +271,7 @@ export async function savePost(payload: BlogPublishPayload): Promise<BlogPost> {
       const { error } = await supabase.from("blogs").upsert(
         {
           slug: post.slug,
+          client_id: BLOG_CLIENT_ID,
           title: post.title,
           subtitle: post.subtitle,
           hook: post.hook,

@@ -3,7 +3,20 @@ import { revalidatePath } from "next/cache";
 import { savePost, getAllPosts } from "@/lib/blog/storage";
 import { BlogPublishPayload } from "@/lib/blog/types";
 
-const DEFAULT_SECRET = "minions-publish-secret-2026";
+import { timingSafeEqual } from "crypto";
+
+/**
+ * Publishing needs BLOG_API_SECRET set in the environment. There is no
+ * fallback: a default secret used to live here, in git, and production
+ * accepted it, so anyone who had seen the repo could publish to our blog.
+ */
+function secretMatches(given: string | null | undefined): boolean {
+  const expected = process.env.BLOG_API_SECRET;
+  if (!expected || !given) return false;
+  const a = Buffer.from(given);
+  const b = Buffer.from(expected);
+  return a.length === b.length && timingSafeEqual(a, b);
+}
 
 export async function GET() {
   const posts = await getAllPosts();
@@ -23,9 +36,7 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const apiKey = req.headers.get("x-blog-api-key") || req.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
-    const expectedKey = process.env.BLOG_API_SECRET || DEFAULT_SECRET;
-
-    if (!apiKey || apiKey !== expectedKey) {
+    if (!secretMatches(apiKey)) {
       return NextResponse.json(
         { success: false, error: "Unauthorized. Missing or invalid x-blog-api-key header." },
         { status: 401 }

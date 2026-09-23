@@ -3,7 +3,14 @@ import { revalidatePath } from "next/cache";
 import { savePost, getAllPosts } from "@/lib/blog/storage";
 import { BlogPublishPayload } from "@/lib/blog/types";
 
-import { timingSafeEqual } from "crypto";
+import { createHash, timingSafeEqual } from "crypto";
+
+/**
+ * SHA-256 of the old default secret. It was committed to this public repo and
+ * production's BLOG_API_SECRET was still set to it, so it is refused outright
+ * even when configured: rotate BLOG_API_SECRET to re-enable publishing.
+ */
+const COMPROMISED_SECRET_SHA256 = "225cfdc0e6e21ba2a6b4bfca951f9e75bc2c439af19442c620dfdae840f9ad38";
 
 /**
  * Publishing needs BLOG_API_SECRET set in the environment. There is no
@@ -13,6 +20,7 @@ import { timingSafeEqual } from "crypto";
 function secretMatches(given: string | null | undefined): boolean {
   const expected = process.env.BLOG_API_SECRET;
   if (!expected || !given) return false;
+  if (createHash("sha256").update(expected).digest("hex") === COMPROMISED_SECRET_SHA256) return false;
   const a = Buffer.from(given);
   const b = Buffer.from(expected);
   return a.length === b.length && timingSafeEqual(a, b);

@@ -61,3 +61,8 @@ next-env.d.ts
 # Local scratch artifacts (typography comparison render, one-off ROI script)
 type-comparison.png
 update_roi.py
+
+# local data exports / scratch datasets
+*.csv
+*.tsv
+dubai_real_estate_brokerages_raw.json

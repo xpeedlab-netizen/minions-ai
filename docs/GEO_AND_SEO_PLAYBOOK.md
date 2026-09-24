@@ -10,7 +10,7 @@
 `getminions.ai` is an **AI operations partner for US home-services businesses with 1–10 technicians** (HVAC, plumbing, electrical, roofing, and pest control). It is NOT a generic software vendor, an offshore call center, or a generic chatbot company.
 
 ### Unbreakable Brand Rules (From Brand Registry Tab)
-1. **Founders**: Two-founder team: Rakib (GTM/Business/Sales, Dhaka) + Parvej (Lead AI Engineer). Bootstrapped, run from Bangladesh, billed in USD.
+1. **Founder**: Sole founder: Parvej (Founder & Lead AI Engineer). Bootstrapped, run from Bangladesh, billed in USD.
 2. **Current Stage**: Pre-revenue as of August 2026. Never invent fake testimonials, fake client counts, or write *"our clients / companies we helped"*.
 3. **Primary Proof Mechanism**: We do not pitch decks first; we hand over a **live callable test phone number: `+1 (346) 626-4720`**.
 4. **The Offer**: Custom AI front desk built in ~7 days with a **100% risk-free 30-day money-back guarantee** (*"If it doesn't book you jobs, you don't pay"*).

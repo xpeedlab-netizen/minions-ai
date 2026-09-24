@@ -114,6 +114,42 @@ interface SupabaseBlogRow {
   doc_url?: string;
 }
 
+export function sanitizeAuthor(
+  rawAuthor?: string | BlogPostAuthor | { name: string; role?: string; avatar?: string }
+): BlogPostAuthor {
+  let authorObj: BlogPostAuthor;
+  if (typeof rawAuthor === "string") {
+    try {
+      authorObj = JSON.parse(rawAuthor);
+    } catch {
+      authorObj = { name: "Minions.AI Team", role: "Operations & AI Dispatch" };
+    }
+  } else if (rawAuthor && typeof rawAuthor === "object") {
+    authorObj = {
+      name: rawAuthor.name || "Minions.AI Team",
+      role: rawAuthor.role || "Operations & AI Dispatch",
+      avatar: rawAuthor.avatar,
+    };
+  } else {
+    authorObj = { name: "Minions.AI Team", role: "Operations & AI Dispatch" };
+  }
+
+  const name = authorObj.name || "Minions.AI Team";
+  if (/rakib/i.test(name)) {
+    // Rakib is not co-founder; attribute to team
+    authorObj.name = "Minions.AI Team";
+    authorObj.role = "Operations & AI Dispatch";
+  } else if (/parvej/i.test(name)) {
+    // Parvej is the sole founder
+    authorObj.name = "Parvej";
+    authorObj.role = "Founder, Minions.AI";
+  } else if (authorObj.role && /co-?founder/i.test(authorObj.role)) {
+    authorObj.role = "Operations & AI Dispatch";
+  }
+
+  return authorObj;
+}
+
 export async function getAllPosts(): Promise<BlogPost[]> {
   const supabase = getSupabaseClient();
 
@@ -125,7 +161,10 @@ export async function getAllPosts(): Promise<BlogPost[]> {
         .eq("client_id", BLOG_CLIENT_ID)
         .order("published_at", { ascending: false });
 
-      if (!error && data && data.length > 0) {
+      if (!error && data) {
+        if (data.length === 0) {
+          return [];
+        }
         return (data as unknown as SupabaseBlogRow[]).map((row) => {
           const img = extractFeaturedImage(row.content, row.featured_image);
           return {
@@ -137,7 +176,7 @@ export async function getAllPosts(): Promise<BlogPost[]> {
             content: row.content,
             audience: row.audience,
             pillar: row.pillar,
-            author: typeof row.author === "string" ? JSON.parse(row.author) : row.author || { name: "Minions.AI Team", role: "Operations & AI Dispatch" },
+            author: sanitizeAuthor(row.author),
             publishedAt: row.published_at,
             readingTimeMinutes: row.reading_time_minutes || calculateReadingTime(row.content || ""),
             tags: row.tags || [row.audience, "Operations"],
@@ -180,7 +219,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
           content: data.content,
           audience: data.audience,
           pillar: data.pillar,
-          author: typeof data.author === "string" ? JSON.parse(data.author) : data.author || { name: "Minions.AI Team", role: "Operations & AI Dispatch" },
+          author: sanitizeAuthor(data.author),
           publishedAt: data.published_at,
           readingTimeMinutes: data.reading_time_minutes || calculateReadingTime(data.content),
           tags: data.tags || [data.audience, "Operations"],
@@ -209,7 +248,7 @@ export async function savePost(payload: BlogPublishPayload): Promise<BlogPost> {
     .slice(0, 160)
     .trim();
 
-  const authorName = payload.author?.name || "Minions.AI Team";
+  const sanitizedAuthor = sanitizeAuthor(payload.author);
 
   // Preserve the original publish date on re-publish/edit; only a brand-new slug gets "now".
   let publishedAt = now;
@@ -245,9 +284,9 @@ export async function savePost(payload: BlogPublishPayload): Promise<BlogPost> {
     audience: payload.audience || "ICP",
     pillar: payload.pillar || "Contractor Realities",
     author: {
-      name: authorName,
-      role: payload.author?.role || "Minions.AI",
-      avatar: "/images/minions_ai_logo_primary_transparent.png",
+      name: sanitizedAuthor.name,
+      role: sanitizedAuthor.role,
+      avatar: sanitizedAuthor.avatar || "/images/minions_ai_logo_primary_transparent.png",
     },
     publishedAt,
     readingTimeMinutes: readingTime,
@@ -300,4 +339,36 @@ export async function savePost(payload: BlogPublishPayload): Promise<BlogPost> {
   }
 
   return post;
+}
+
+export async function deletePost(slug: string): Promise<boolean> {
+  const filePath = path.join(BLOG_CONTENT_DIR, `${slug}.json`);
+  if (fs.existsSync(filePath)) {
+    try {
+      fs.unlinkSync(filePath);
+    } catch (e) {
+      console.warn(`Could not delete local file ${slug}.json:`, e);
+    }
+  }
+
+  const supabase = getSupabaseClient();
+  if (supabase) {
+    try {
+      const { error } = await supabase
+        .from("blogs")
+        .delete()
+        .eq("client_id", BLOG_CLIENT_ID)
+        .eq("slug", slug);
+
+      if (error) {
+        console.error(`Failed to delete post "${slug}" from Supabase:`, error);
+        return false;
+      }
+    } catch (e) {
+      console.error(`Error deleting post "${slug}":`, e);
+      return false;
+    }
+  }
+
+  return true;
 }

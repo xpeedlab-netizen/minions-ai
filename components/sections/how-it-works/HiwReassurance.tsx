@@ -16,7 +16,7 @@ export default function HiwReassurance() {
               You never have to touch a dashboard unless you want to.
             </h2>
             <p className="mt-4 text-cream/60 leading-relaxed max-w-md">
-              We run it. You get the jobs. Think of us as your digital dispatcher department that
+              We run it. You get the showings. Think of us as your inside sales desk that
               never takes a day off.
             </p>
           </div>

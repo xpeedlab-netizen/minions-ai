@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/faq" },
   title: "FAQ & Knowledge Base | AI Phone Answering Questions, Answered Straight",
   description:
-    "Zero fluff answers on voice naturalness, the 3–6 week build timeline, CRM integrations (ServiceTitan, Jobber, Housecall Pro), payment milestones, and call recording compliance.",
+    "Zero fluff answers on voice naturalness, the 3–6 week build timeline, CRM integrations (Follow Up Boss, kvCORE, Google Calendar), payment milestones, and call recording compliance.",
 };
 
 export default function FaqPage() {

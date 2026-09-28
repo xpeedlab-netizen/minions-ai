@@ -29,7 +29,7 @@ export default function HiwProcessGrid() {
                   <Image src="/images/mascots/rex.png" alt="Rex" fill sizes="36px" className="object-contain" />
                 </div>
                 <p className="text-sm text-ink/70 italic">
-                  &ldquo;No fluff. Just checking if our crew fits your shop.&rdquo; Rex
+                  &ldquo;No fluff. Just checking if our crew fits your brokerage.&rdquo; Rex
                 </p>
               </div>
             </div>
@@ -48,7 +48,7 @@ export default function HiwProcessGrid() {
                 We build and train your crew.
               </h3>
               <p className="mt-2 text-sm text-ink/65 leading-relaxed">
-                We load in your services, prices, service area, hours and FAQs, then connect your
+                We load in your listings, brokerage policies, qualification rules, hours and FAQs, then connect your
                 calendar and CRM.
               </p>
               <div className="mt-5 flex gap-3">

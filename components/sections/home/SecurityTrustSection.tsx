@@ -7,7 +7,7 @@ const TRUST_PILLARS = [
     icon: Lock,
     title: "256-Bit AES Encryption",
     description:
-      "All customer call recordings, transcripts, and dispatch records are encrypted at rest using AES-256 and in transit via TLS 1.3.",
+      "All customer call recordings, transcripts, and lead records are encrypted at rest using AES-256 and in transit via TLS 1.3.",
   },
   {
     icon: Database,
@@ -23,9 +23,9 @@ const TRUST_PILLARS = [
   },
   {
     icon: Server,
-    title: "SOC-2 Type II Certified Infrastructure",
+    title: "Your Voice Account, In Your Name",
     description:
-      "Hosted on enterprise-grade US cloud infrastructure with redundant carrier SIP trunking and 99.9% uptime SLA.",
+      "The voice layer runs on Retell AI, in a Retell account you own and pay directly at their published rates. You are never locked to us to keep the line running.",
   },
   {
     icon: UserCheck,
@@ -35,9 +35,9 @@ const TRUST_PILLARS = [
   },
   {
     icon: ShieldCheck,
-    title: "Zero Hallucination Guardrails",
+    title: "Approved Answers Only",
     description:
-      "Deterministic business rules ensure our AI crew only quotes the exact prices, services, and policies you explicitly approve.",
+      "Your AI crew only quotes the listings, prices and policies you approve. When it has no approved answer, it hands the caller to a person instead of guessing.",
   },
 ];
 
@@ -50,10 +50,10 @@ export default function SecurityTrustSection() {
           <span>Enterprise Security & Data Isolation</span>
         </div>
         <SectionHeading className="mt-4 text-ink">
-          Your Call Recordings & Business Data Are 100% Secure.
+          Your Call Recordings & Business Data Stay Yours.
         </SectionHeading>
         <p className="mt-4 text-base sm:text-lg text-ink/70">
-          Operators and agencies trust us with their phone lines every day. We protect your customers, your data, and your reputation with bank-level encryption.
+          Your callers' details, recordings and transcripts are encrypted, isolated to your account, and never used to train public models.
         </p>
       </div>
 

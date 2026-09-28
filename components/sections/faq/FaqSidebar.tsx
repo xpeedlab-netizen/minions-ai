@@ -92,7 +92,7 @@ export default function FaqSidebar({
           Hear Rex answer right now
         </h4>
         <p className="mt-1.5 text-xs text-cream/75 leading-relaxed">
-          Test sub-1.8s voice response and emergency job qualification live on your cell phone.
+          Test sub-1.8s voice response and buyer lead qualification live on your cell phone.
         </p>
 
         <a
@@ -108,7 +108,7 @@ export default function FaqSidebar({
       <div className="rounded-2xl border border-border bg-cream p-4 text-xs text-ink/75 shadow-xs">
         <p className="font-heading font-bold text-ink text-sm">Need a custom workflow?</p>
         <p className="mt-1 text-ink/70 leading-relaxed">
-          Talk directly with the engineers who build it about your dispatch setup.
+          Talk directly with the engineers who build it about your lead routing.
         </p>
         <Link
           href="/contact"

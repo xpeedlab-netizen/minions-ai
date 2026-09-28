@@ -24,7 +24,7 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "ai-experience",
     categoryLabel: "AI Voice & Experience",
     q: "Will callers know they are talking to AI?",
-    a: "Most callers simply focus on getting their job scheduled immediately by someone who knows your exact pricing. If a caller asks directly, the AI answers honestly while seamlessly continuing to assist them.",
+    a: "Most callers simply focus on getting their showing booked by someone who knows your listings. If a caller asks directly, the AI answers honestly while seamlessly continuing to assist them.",
     tag: "Caller Transparency",
   },
   {
@@ -32,8 +32,8 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "ai-experience",
     categoryLabel: "AI Voice & Experience",
     q: "What if it quotes the wrong pricing or service detail?",
-    a: "The AI is trained on your approved pricing, service areas, and company rules. When it does not have an approved answer, it follows the handoff rules you set instead of inventing a price or policy. Both voice and website chat are grounded in your verified data.",
-    tag: "Zero Hallucination",
+    a: "The AI is trained on your approved listings, pricing and brokerage rules. When it does not have an approved answer, it follows the handoff rules you set instead of inventing a price or policy. Both voice and website chat are grounded in your verified data.",
+    tag: "Approved Answers Only",
   },
   {
     id: "if-it-breaks",
@@ -65,8 +65,8 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     id: "supported-crms",
     category: "setup-tech",
     categoryLabel: "Setup & CRMs",
-    q: "Which CRMs and dispatch calendars do you support?",
-    a: "We integrate directly with ServiceTitan, Housecall Pro, Jobber, FieldRoutes, PestPac and GorillaDesk on the field-service side, and with GoHighLevel, HubSpot, Salesforce, Zoho and Pipedrive on the sales side: plus Google Calendar for two-way job scheduling without double bookings, and 400+ other systems via direct webhooks and APIs.",
+    q: "Which CRMs and calendars do you support?",
+    a: "For real estate we integrate with Follow Up Boss, kvCORE, Lofty and EspoCRM, plus Google Calendar for two-way showing scheduling without double bookings. We also connect to ServiceTitan, Housecall Pro, Jobber, FieldRoutes, PestPac and GorillaDesk on the field-service side, GoHighLevel, HubSpot, Salesforce, Zoho and Pipedrive on the sales side, and 400+ other systems via direct webhooks and APIs.",
     tag: "Direct CRM Sync",
   },
   {
@@ -74,8 +74,8 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "setup-tech",
     categoryLabel: "Setup & CRMs",
     q: "Can I customize after-hours vs daytime handling?",
-    a: "Yes. You can route calls differently based on time of day, for example, booking daytime estimates during normal hours and dispatching high-priority emergency rates directly to on-call technicians at night.",
-    tag: "Custom Dispatch Rules",
+    a: "Yes. You can route calls differently based on time of day, for example, booking showings during office hours and sending hot buyer and seller leads straight to the on-call agent at night.",
+    tag: "Custom Routing Rules",
   },
 
   // 3. Pricing & Guarantee
@@ -128,15 +128,15 @@ export const KNOWLEDGE_BASE_FAQS: FaqItem[] = [
     category: "the-team",
     categoryLabel: "Your Build Team",
     q: "Who configures and supports our AI crew?",
-    a: "You work directly with the engineers who build your system, not a support queue or an account manager. The same people engineer your prompt architecture, test your phone line against background job-site noise, and handle your ongoing support.",
+    a: "You work directly with the engineers who build your system, not a support queue or an account manager. The same people engineer your prompt architecture, test your phone line against real background noise, and handle your ongoing support.",
     tag: "Direct Access"
   },
   {
     id: "ongoing-updates",
     category: "the-team",
     categoryLabel: "Your Build Team",
-    q: "What happens when our pricing or service areas change?",
-    a: "Simply text or message us your changes. We update your AI crew's knowledge profile and dispatch rules within hours, with zero downtime on your live line.",
+    q: "What happens when our listings or policies change?",
+    a: "Simply text or message us your changes. We update your AI crew's knowledge profile and routing rules within hours, with zero downtime on your live line.",
     tag: "Zero-Downtime Updates",
   },
 ];

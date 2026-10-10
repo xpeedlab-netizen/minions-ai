@@ -51,8 +51,8 @@ export default function CallProofSection() {
         Don&apos;t take our word for it. Hear it answer.
       </SectionHeading>
       <SectionLead tone="dark">
-        A real buyer inquiry, answered end to end: representation checked, financing
-        confirmed, showing booked. Read the transcript, or press play.
+        A real buyer inquiry, answered end to end: financing checked, timeline
+        confirmed, consultation booked. Read the transcript, or press play.
       </SectionLead>
 
       {/* max-w-2xl + mx-auto: with the second card gone, a full-width player stretched

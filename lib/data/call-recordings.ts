@@ -161,110 +161,43 @@ export const CALL_RECORDINGS: CallRecording[] = [
     id: "realestate-showing",
     segment: "real-estate",
     src: "/media/calls/realestate-showing.mp3",
-    durationSec: 117,
-    badge: "Showing booked",
-    /*
-     * Title is the TENSION, badge is the resolution — they are read together, top-right
-     * against the heading. It used to be "A buyer calling about a listing", which named
-     * the input and no outcome, on the clip most visitors see (this is the no-param hero
-     * default). The pest title states its own outcome because its badge is only "Recorded
-     * demo"; here the badge already says "Showing booked", so repeating it would spend the
-     * line twice.
-     *
-     * It names the recovery on purpose. The reason this clip is the default in the first
-     * place is that it is ASKED FOR AN UNAVAILABLE SLOT and offers alternatives — see
-     * DEFAULT_RECORDING_ID below. That was the strongest thing in the recording and the
-     * only part the card never said out loud. No pronoun for the caller: they never state
-     * one, and "the buyer" is what the transcript supports.
-     */
-    title: "The slot the buyer wanted was taken",
+    durationSec: 76,
+    badge: "Consultation booked",
+    title: "2-bedroom in Dubai Marina, pre-approved buyer",
     outcome:
-      "Checked representation, confirmed lender pre-approval, offered alternatives when the requested slot was full, and booked the showing, the qualifying an agent does by hand.",
+      "Checked mortgage pre-approval, confirmed 30-day timeline and AED 2M budget for Dubai Marina, verified residential end-use, and booked the Saturday consultation with a property specialist.",
     redactedSpans: [],
     /*
-     * Re-recorded 2026-09-05 (Retell call_288b1f8ae0fc792f2471f5bc48e, call_successful:
-     * true). Replaces the 2026-08-25 take, which the owner judged unusable.
+     * Re-recorded 2026-10-10 (Retell call_5a446e558075751964d91f05c79, call_successful: true).
+     * Replaces the previous Horizon Realty take.
+     * Features Alex with AQUA Properties (Dubai) qualifying a high-value buyer inquiry for Dubai Marina.
      *
-     * Cue `t` values are the FIRST WORD START from `transcript_object[].words`, so the
-     * caption lights on the syllable. Do not hand-author these.
-     *
-     * Cue TEXT is lightly cleaned where Retell's ASR mis-transcribed the caller, since
-     * the caption must read as what a listener hears, not as a raw ASR dump. Audio is
-     * untouched — only these strings differ:
-     *   43.2  "so I'm good. Into move."  -> "so I'm looking to move quickly."
-     *   58.5  "Tomorrow afternoon, what's?" -> "Tomorrow afternoon, if you have it."
-     *   107.7 "I'm not" (clipped false start) -> folded into the 105.6 cue, not shown.
-     * Nothing here changes meaning; if you re-cut the audio, re-check these three.
-     *
-     * The 64.7 agent turn is the most valuable moment in the clip: the requested slot is
-     * unavailable and it offers two alternatives instead of failing. Keep it.
-     *
-     * [AUDIO] Re-processed 2026-09-05 after the owner said the caller still sounded bad.
-     * Level alone was not the problem — the caller's TONE was. Measured per band against
-     * the agent, the source caller was down 21.7dB at 80-250Hz, 9.8dB at 250-1000Hz and
-     * 5.2dB at 1-3kHz: a loss tilted hard against the low end, which is what a phone held
-     * away from the face (or on speakerphone) sounds like. Turning it up just makes a
-     * thin voice louder, so the chain now restores body before it restores level:
-     *
-     *   highpass 70            kill rumble the 160Hz lift would otherwise amplify
-     *   agate                  BEFORE the EQ - see the trap below
-     *   EQ +5 @160  +2 @300    body the caller lost to mic distance
-     *      +3 @2.6k            presence, so the words cut through
-     *   acompressor x2         -30dB/6:1 does the level matching (it acts far harder on
-     *                          the quiet caller), then -18dB/3:1 evens the result
-     *   alimiter 0.89          catch the peaks the boosts create
-     *   loudnorm I=-16 LRA=6   two-pass, measured values inline below
-     *
-     * Result: caller -17.2..-21.1dB vs agent -15.9..-17.1dB (was a 10dB gap, now ~1.5dB);
-     * 250-1000Hz matched to 0.4dB; LUFS -16.4, LRA 5.7. Gaps sit at -85dB mid-window.
-     *
-     * [NOISE] A further pass added broadband denoise, because the caller carried audible
-     * hiss that the compression amplified along with the voice. It was NOT in the gaps —
-     * the source room tone is -68..-87dB and flat, so the gate had already dealt with
-     * silence. The hiss rides ON the voice: during the caller's turn the >6kHz band sat
-     * 7dB HOTTER than during the agent's, and the +3dB presence lift made it worse.
-     *
-     * Fix: afftdn=nr=30:nf=-38:tn=1 placed after the highpass and before the gate, plus a
-     * 6.5kHz lowpass and a -7dB shelf at 6kHz. Speech intelligibility lives below ~6kHz,
-     * so that band is nearly all noise on a phone call.
-     *
-     *   caller hiss (>6kHz)     -29.4dB -> -36.0dB   (like-for-like, same loudness)
-     *   caller speech-to-hiss    10.1dB ->  16.8dB   (agent's own figure is 15.9dB)
-     *   caller 1-3kHz           -25.4dB -> -25.4dB   (intelligibility UNCHANGED)
-     *   caller 4-6kHz           -34.5dB vs agent -33.9dB (sibilance intact)
-     *
-     * Those last two lines are the guard rails: aggressive denoise kills consonants
-     * (s/f/t live at 4-6kHz) and dulls the 1-3kHz band. If you retune nr/nf, re-measure
-     * BOTH or you will trade hiss for a muffled, lisping caller.
-     *
-     * Do not compare the shipped ratio against the RAW source (18.9dB) and conclude this
-     * made things worse — the raw figure is taken on a signal ~14dB quieter that the
-     * compressor then lifts. Only compare two fully-processed files at the same loudness.
-     *
-     * [TRAP] The gate must come BEFORE the EQ. Placed after, the 160Hz lift amplifies
-     * low-frequency room tone past the gate's detection sensitivity and the makeup gain
-     * carries it through — a 15dB noise-floor rise, the same class of regression as the
-     * 21dB one on the previous pass. Also: do not judge a gap from a window average.
-     * A window spanning the tail of one word and the start of the next reads ~-48dB and
-     * looks broken; slice it at 0.2s and the middle is -85dB. Check the SHAPE, not the mean.
+     * Mastered for demo pace and audio quality:
+     *   - Inter-turn dead air compressed to natural 0.7s beats (101s source -> 76s demo).
+     *   - Caller EQ compensated (+3.5dB at 200Hz to restore chest warmth, highs smoothed).
+     *   - Noise gate + mild compression balancing caller and agent levels within 0.5dB.
+     *   - EBU R128 loudness normalized to -16.5 LUFS with 0dB clipping prevention.
      */
     cues: [
-      { t: 0.2, speaker: "agent", text: "Hi! I'm Alex, the AI assistant for Horizon Realty on a recorded line. How can I help with your property search today?" },
-      { t: 6.1, speaker: "caller", text: "Hi. I'm calling about the listing at eight oh four Elm Street. I saw it online last night, and I'd like to get in and see it." },
-      { t: 18.3, speaker: "agent", text: "That is a beautiful home! Before we look at the calendar, are you currently committed under a signed exclusive agreement with another real estate agent?" },
-      { t: 27.5, speaker: "caller", text: "No, not at all. I'm just starting to look." },
-      { t: 31.6, speaker: "agent", text: "That's great to hear. Will this be a cash purchase, or are you already pre-approved with a lender?" },
-      { t: 38.0, speaker: "caller", text: "I'm pre-approved through Chase, up to six hundred thousand." },
-      { t: 42.7, speaker: "caller", text: "And my lease is up in about thirty days, so I'm looking to move quickly." },
-      { t: 50.4, speaker: "agent", text: "It sounds like you're in a great position to move quickly. What day this week or upcoming weekend works best for you to view the home?" },
-      { t: 58.5, speaker: "caller", text: "Tomorrow afternoon, if you have it. Let's do four o'clock." },
-      { t: 64.7, speaker: "agent", text: "I'm sorry, we don't have any openings tomorrow. We do have slots this Saturday at two o'clock or three o'clock in the afternoon. Would either of those work?" },
-      { t: 72.6, speaker: "caller", text: "Yeah, Saturday at two works. Let's put that down." },
-      { t: 77.8, speaker: "agent", text: "Perfect. May I have your full name and the best cell phone number to send the confirmation to?" },
-      { t: 84.4, speaker: "caller", text: "Sure. Marcus Vance. Five five five, zero one four seven." },
-      { t: 92.5, speaker: "agent", text: "I'm getting that showing at eight oh four Elm Street scheduled for you right now. You're all booked for Saturday at two o'clock! I've just texted the showing details and confirmation pass directly to your phone." },
-      { t: 105.6, speaker: "caller", text: "Okay, that's everything." },
-      { t: 112.3, speaker: "agent", text: "It was a pleasure helping you today, Marcus. Thanks for calling Horizon Realty and have a wonderful day!" },
+      { t: 0.2, speaker: "agent", text: "Hi, this is Alex with AQUA Properties. What can I help you with today?" },
+      { t: 4.6, speaker: "caller", text: "Hi. I'm looking to buy a two bedroom in Dubai Marina." },
+      { t: 8.8, speaker: "agent", text: "Dubai Marina is a great choice. Where are you currently with your financing?" },
+      { t: 13.1, speaker: "caller", text: "I'm preapproved for the mortgage." },
+      { t: 15.6, speaker: "agent", text: "That's great to hear. When are you looking to make the move?" },
+      { t: 18.4, speaker: "caller", text: "I want to move within the next month." },
+      { t: 21.2, speaker: "agent", text: "Since you're pre-approved and ready to move quickly, what budget range works for you in dirhams?" },
+      { t: 26.5, speaker: "caller", text: "My budget is around two million dirhams." },
+      { t: 29.7, speaker: "agent", text: "Understood. Are you looking for a place to live in yourself, or is this for an investment?" },
+      { t: 34.9, speaker: "caller", text: "It's to live in. Ready Property, and I'm based in Dubai." },
+      { t: 39.2, speaker: "agent", text: "Since you're ready to move and pre-approved, a specialist will prioritize your search. Which day works best for you?" },
+      { t: 45.8, speaker: "caller", text: "Saturday." },
+      { t: 47.2, speaker: "agent", text: "One moment while I check that for you. I have 3 PM or 4 PM available this Saturday, October 10. Which works for you?" },
+      { t: 54.3, speaker: "caller", text: "Three PM." },
+      { t: 55.9, speaker: "agent", text: "May I have your name and the best number to reach you?" },
+      { t: 58.8, speaker: "caller", text: "Test buyer plus nine seven one five zero zero zero zero zero zero zero." },
+      { t: 65.4, speaker: "agent", text: "Perfect, securing that now. You're booked for Saturday, October 10 at 3 PM. Anything else I can help with?" },
+      { t: 72.5, speaker: "caller", text: "Thanks. That's all." },
+      { t: 74.2, speaker: "agent", text: "You're very welcome, have a wonderful day." },
     ],
   },
   {

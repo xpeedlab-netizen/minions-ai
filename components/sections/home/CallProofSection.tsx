@@ -1,6 +1,10 @@
 import Section, { SectionHeading, SectionLead, Eyebrow } from "@/components/ui/Section";
 import CallPlayer from "@/components/ui/CallPlayer";
-import { getRecording, DEFAULT_RECORDING_ID } from "@/lib/data/call-recordings";
+import {
+  getRecording,
+  DEFAULT_RECORDING_ID,
+  GUARDRAIL_RECORDING_ID,
+} from "@/lib/data/call-recordings";
 
 /**
  * "Hear it work" — the proof band.
@@ -9,59 +13,40 @@ import { getRecording, DEFAULT_RECORDING_ID } from "@/lib/data/call-recordings";
  * problem, and this is the first moment they can check whether the fix is real. Every
  * other claim on the page is downstream of believing this one.
  *
- * ONE PLAYER AS OF 2026-09-13, WHERE THERE WERE TWO. It previously rendered an industry
- * toggle, a per-segment player and a second "guardrail" clip in a two-column grid. All
- * three are gone, for two different reasons:
+ * TWO SCENARIOS SIDE BY SIDE:
+ *   1. Standard High-Intent Showing: qualifying pre-approval, timeline, and booking the slot.
+ *   2. Investor Guardrail & Compliance: handling an assertive cash investor demanding
+ *      unapproved return guarantees, explaining DLD transfer fees, and securing consultation.
  *
- *   - The toggle and the segmented player went with the audience fork. Invariant #3 now
- *     makes real estate the sole primary market, so there is one audience and nothing
- *     to switch between.
- *
- *   - The guardrail clip (guardrail-out-of-scope) was PEST-BRANDED, and not incidentally:
- *     the agent opens "Thanks for calling Ironclad Pest Solutions" and then says "I
- *     specialize in pest control". It was the single most pest-specific thing on the
- *     homepage, sitting in the band that exists to prove the product.
- *
- * LOSING IT COSTS SOMETHING REAL, AND THE ARGUMENT FOR IT IS WORTH KEEPING. Any voice
- * vendor can demo a call that goes well; the moment a caller asks for something outside
- * the approved scope is where an AI either admits the limit or invents something, and
- * showing a refusal is a stronger safety argument than any sentence we could write.
- * That objection is now answered by the Retell band's control list instead, which is
- * weaker — an assertion rather than a recording.
- *
- * THE FIX IS A REAL-ESTATE GUARDRAIL RECORDING, NOT A REWRITTEN PEST ONE. A genuine
- * candidate: a caller asking a question the agent must not answer — a Fair Housing
- * question about the neighbourhood ("what kind of people live there?") is the textbook
- * case, and refusing it correctly is a far stronger trust signal for a brokerage than
- * declining a plumbing job ever was. When that clip exists, restore the two-column grid
- * from git history (this file, before 2026-09-13) rather than rebuilding it.
- *
- * Until then: one authentic call beats two where one is off-message. The clip is the
- * Horizon Realty showing — the same recording the hero plays, deliberately. A visitor
- * who pressed play up there gets the full scrolling transcript and the outcome line
- * here; one who did not gets a second chance at the page's strongest asset.
+ * Demonstrating safety and compliance alongside speed-to-lead is the single strongest
+ * trust signal for brokerage owners worried about AI hallucinations.
  */
 export default function CallProofSection() {
-  const recording = getRecording(DEFAULT_RECORDING_ID);
+  const showingCall = getRecording(DEFAULT_RECORDING_ID);
+  const guardrailCall = getRecording(GUARDRAIL_RECORDING_ID);
 
   return (
     <Section tone="ink" width="wide" id="hear-it">
-      <Eyebrow tone="dark">Recorded call</Eyebrow>
+      <Eyebrow tone="dark">Recorded demonstrations</Eyebrow>
       <SectionHeading className="mt-5 text-white">
         Don&apos;t take our word for it. Hear it answer.
       </SectionHeading>
       <SectionLead tone="dark">
-        A real buyer inquiry, answered end to end: financing checked, timeline
-        confirmed, consultation booked. Read the transcript, or press play.
+        Real buyer inquiries, answered end to end. Hear how our AI qualifies high-intent
+        buyers and enforces strict brokerage compliance when investors press for unapproved guarantees.
       </SectionLead>
 
-      {/* max-w-2xl + mx-auto: with the second card gone, a full-width player stretched
-          the transcript rail to a ~1200px measure at 1440 — long enough that the eye
-          loses the line between cues. Capped to roughly the width the card had as one
-          half of the old two-column grid, so the rail reads the same as it always did
-          and the band does not look like a layout with a missing element. */}
-      <div className="mt-10 mx-auto w-full max-w-2xl">
-        {recording && <CallPlayer recording={recording} />}
+      <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-stretch">
+        {showingCall && (
+          <div className="flex flex-col">
+            <CallPlayer recording={showingCall} className="flex-1" />
+          </div>
+        )}
+        {guardrailCall && (
+          <div className="flex flex-col">
+            <CallPlayer recording={guardrailCall} className="flex-1" />
+          </div>
+        )}
       </div>
     </Section>
   );

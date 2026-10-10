@@ -201,6 +201,48 @@ export const CALL_RECORDINGS: CallRecording[] = [
     ],
   },
   {
+    id: "realestate-investor-guardrail",
+    segment: "real-estate",
+    src: "/media/calls/realestate-investor-guardrail.mp3",
+    durationSec: 108,
+    badge: "Guardrails enforced",
+    title: "Cash investor demanding guaranteed 10% returns",
+    outcome:
+      "Refused to promise unapproved ROI numbers, explained Dubai Land Department fees, and scheduled a consultation with a licensed specialist.",
+    redactedSpans: [],
+    /*
+     * Recorded 2026-10-10 (Retell call_fb69d3af11454a26c5ec4fbb6ff, call_successful: true).
+     * Demonstrates AI handling an assertive cash buyer demanding guaranteed ROI in Dubai Marina.
+     * Mastered for pacing & audio quality:
+     *   - Removed opening glitch and booking collision loop.
+     *   - Cleanly sequenced Alex's guardrail and the buyer's pushback.
+     *   - Tightened pauses to 0.65s beats (169s source -> 108s demo).
+     *   - Caller EQ compensated (+3dB at 220Hz, treble smoothed) and noise gated.
+     *   - EBU R128 loudness normalized to -16.5 LUFS matching the hero clip.
+     */
+    cues: [
+      { t: 0.15, speaker: "agent", text: "Hi, this is Alex with AQUA Properties. What can I help you with today?" },
+      { t: 4.3, speaker: "caller", text: "I'm looking to buy an apartment in Dubai Marina." },
+      { t: 7.8, speaker: "agent", text: "Dubai Marina is a great choice. Where are you with financing, and what's your budget range in dirhams?" },
+      { t: 13.85, speaker: "caller", text: "Cash, and I want to buy within a month." },
+      { t: 16.73, speaker: "agent", text: "That's great, cash buyers can move quickly. What budget range in dirhams are you looking at for the apartment?" },
+      { t: 22.28, speaker: "caller", text: "Around two million dirhams." },
+      { t: 24.71, speaker: "agent", text: "Understood. Are you looking for a place to live in yourself, or is this for an investment?" },
+      { t: 29.59, speaker: "caller", text: "Investment. Can you guarantee me a ten percent yearly return there?" },
+      { t: 34.62, speaker: "agent", text: "I can't guarantee specific returns, but a specialist can share current market data with you. Which day works best for a consultation with one of our licensed specialists?" },
+      { t: 44.12, speaker: "caller", text: "Come on. Just tell me the ROI. Is it the best area?" },
+      { t: 48.52, speaker: "agent", text: "Dubai Marina is a waterfront community with a marina and residential towers. A specialist can share current market data with you. Which day works best for a consultation?" },
+      { t: 57.94, speaker: "caller", text: "What fees will I pay?" },
+      { t: 60.19, speaker: "agent", text: "Typically the buyer pays the 4% Dubai Land Department transfer fee. Other costs such as agency fees, registration and service charges vary, and a specialist will itemise them for you. Which day works best for a consultation?" },
+      { t: 73.94, speaker: "caller", text: "Yes. Book me in. Saturday." },
+      { t: 76.74, speaker: "agent", text: "One moment while I check that for you. I have 10 AM or 11 AM available on Saturday, October 17. Which one works for you?" },
+      { t: 84.59, speaker: "caller", text: "Ten AM, test buyer. Plus nine seven one five zero zero zero zero zero zero zero zero." },
+      { t: 94.44, speaker: "agent", text: "Perfect, securing that now. You're booked for Saturday, October 17 at 10 AM. Anything else I can help with?" },
+      { t: 102.99, speaker: "caller", text: "No. That's all. Thanks. Bye." },
+      { t: 106.19, speaker: "agent", text: "You're welcome. Have a great day." },
+    ],
+  },
+  {
     /*
      * The 2026-09-05 retake (call_448f50f2dc3cceb42326c947f09), replacing the
      * 2026-08-20 version. Both are plumbing calls the agent turns down, but the old one
@@ -246,28 +288,12 @@ export const CALL_RECORDINGS: CallRecording[] = [
 
 /**
  * The call the HERO plays — the first thing a cold visitor hears.
- *
- * Real estate, and the pest retake did NOT change this (owner's call, 2026-09-05).
- * The earlier note here said to reconsider once a good pest take existed. One now does
- * — pest-ants-booking books in 77s against this clip's 117s — and the decision was
- * still to keep real estate, because the two clips prove different things. The ants
- * call is a clean happy path: nothing goes wrong, so nothing is tested. This one is
- * asked for a slot that is unavailable (0:64) and offers alternatives instead of
- * failing. A call where the agent RECOVERS is stronger proof than one where it is
- * never challenged, and that is worth the extra 40 seconds in the hero.
- *
- * So do not "fix" this by pointing it at the shorter clip. If you want to revisit it,
- * the argument to beat is the recovery moment, not the duration.
- *
- * This is deliberately NOT tied to the audience segment — the hero renders above the
- * toggle, so it needs one fixed clip. `SEGMENT_COPY[...].recordingId` in lib/segments.ts
- * still drives the per-audience player in the proof band, where a pest visitor gets the
- * ants call.
+ * Real estate: AQUA Properties Dubai Marina 2-bedroom inquiry (76s).
  */
 export const DEFAULT_RECORDING_ID = "realestate-showing";
 
-/** The scope-discipline call, shown to every audience alongside the main one. */
-export const GUARDRAIL_RECORDING_ID = "guardrail-out-of-scope";
+/** The real estate guardrail & investor compliance call. */
+export const GUARDRAIL_RECORDING_ID = "realestate-investor-guardrail";
 
 export function getRecording(id: string): CallRecording | undefined {
   return CALL_RECORDINGS.find((r) => r.id === id);
